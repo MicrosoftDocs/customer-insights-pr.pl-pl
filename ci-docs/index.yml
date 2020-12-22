@@ -1,0 +1,108 @@
+### YamlMime:Landing
+metadata:
+  title: Centrum pomocy w Dynamics 365 Customer Insights
+  author: m-hartmann
+  description: Znajdź odpowiednie artykuły, aby rozpocząć pracę z zawartością pomocy.
+  ms.author: mhart
+  ms.date: 10/29/2020
+  ms.service: customer-insights
+  ms.topic: landing-page
+  ms.openlocfilehash: f175ea858213022afc87fce77213893c7d050d30
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4406601"
+title: Dokumentacja usługi Dynamics 365 Customer Insights
+summary: Znajdź pomocne zasoby, aby rozpocząć i poznać funkcje i możliwości Customer Insights.
+landingContent:
+- title: Poznaj Customer Insights
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Omówienie Customer Insights
+      url: overview.md
+    - text: Plany wydań
+      url: https://docs.microsoft.com/dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Dostęp do środowiska
+      url: https://home.ci.ai.dynamics.com/
+- title: Zacznij od statystyk odbiorców
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Zarejestruj się w celu skorzystania z wersji próbnej
+      url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
+    - text: Co nowego
+      url: audience-insights/whats-new-audience-insights.md
+    - text: Dokumentacja analiz odbiorców
+      url: audience-insights/index.yml
+- title: Skontaktuj się
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Dołącz do społeczniości użytkowników usługi Dynamics 365
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+    - text: Podziel się swoimi pomysłami
+      url: https://go.microsoft.com/fwlink/?linkid=2074172
+    - text: Zgłoś problem
+      url: https://go.microsoft.com/fwlink/?linkid=2079641
+- title: Samouczki analiz odbiorców
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Utwórz nowe środowisko
+      url: audience-insights/home.md
+    - text: Utwórz ujednolicony profil klienta
+      url: https://docs.microsoft.com/learn/modules/unified-customer-profile/
+    - text: Praca z aplikacją
+      url: https://docs.microsoft.com/learn/modules/working-with-customer-insights/
+- title: Eksportowanie danych analiz odbiorców
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurowanie lokalizacji docelowych eksportu
+      url: audience-insights/export-destinations.md
+    - text: Kartoteki klientów w aplikacjach Dynamics 365
+      url: audience-insights/customer-card-add-in.md
+    - text: Łącznik usługi Power BI
+      url: audience-insights/export-power-bi.md
+- title: Administrowanie analizami odbiorców
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurowanie systemu
+      url: audience-insights/system.md
+    - text: Określanie uprawnień użytkownika
+      url: audience-insights/permissions.md
+    - text: Zarządzanie wieloma środowiskami
+      url: audience-insights/manage-environments.md
+- title: Informacje o zaangażowaniu (wersja zapoznawcza)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Omówienie funkcji
+      url: engagement-insights/overview.md
+    - text: Terminy i pojęcia
+      url: engagement-insights/glossary.md
+    - text: Rozpocznij
+      url: engagement-insights/get-started.md
+- title: Raporty analiz interakcji (wersja zapoznawcza)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Wyświetl raporty
+      url: engagement-insights/view-reports.md
+    - text: Tworzenie niestandardowych raportów
+      url: engagement-insights/custom-reports.md
+    - text: Wyświetlanie raportu ujednoliconych profilów
+      url: engagement-insights/profile-reports.md
+- title: Wydarzenia analiz interakcji (wersja zapoznawcza)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tworzenie wyrafinowanych zdarzeń
+      url: engagement-insights/refined-events.md
+    - text: Eksportowanie zdarzeń
+      url: engagement-insights/export-events.md
+    - text: Usuwanie i eksportowanie danych osobowych
+      url: engagement-insights/delete-export-personal-data.md

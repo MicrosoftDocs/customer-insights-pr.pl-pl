@@ -1,0 +1,79 @@
+### YamlMime:Landing
+title: Funkcje w statystykach odbiorców w Dynamics 365 Customer Insights
+summary: Pozyskiwanie, ujednolicanie i organizowanie danych klientów pochodzących z wielu źródeł. Tworzenie i zarządzanie profilami klientów i segmentacja w czasie rzeczywistym. Integrowanie danych klienta z innymi systemami w celu uczynienia ich bardziej funkcjonalnymi.
+metadata:
+  title: Dokumentacja analiz odbiorców
+  description: Centrum pomocy z kluczowymi łączami analiz odbiorców.
+  ms.service: customer-insights
+  ms.subservice: audience-insights
+  ms.topic: landing-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.date: 10/16/2020
+  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4406584"
+landingContent:
+- title: Informacje o analizach odbiorców
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Przegląd produktu
+      url: overview.md
+    - text: Nowe i zaktualizowane funkcje
+      url: whats-new-audience-insights.md
+    - text: Witryna wspólnoty
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+- title: Pozyskiwanie źródeł danych
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Dodaj źródła danych
+      url: data-sources.md
+    - text: Odświeżanie przyrostowe
+      url: incremental-refresh-data-sources.md
+    - text: Informacje o encjach
+      url: entities.md
+- title: Ujednolicanie danych
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Mapuj
+      url: map-entities.md
+    - text: Dopasowywanie
+      url: match-entities.md
+    - text: Scalanie
+      url: merge-entities.md
+- title: Precyzowanie profilów klientów
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurowanie relacji
+      url: relationships.md
+    - text: Lista działań klientów
+      url: activities.md
+    - text: Dobierz własne modele uczenia maszynowego
+      url: custom-models.md
+- title: Eksportowanie danych klientów
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurowanie lokalizacji docelowych eksportu
+      url: export-destinations.md
+    - text: Kartoteki klientów w aplikacjach Dynamics 365
+      url: customer-card-add-in.md
+    - text: Łącznik usługi Power BI
+      url: export-power-bi.md
+- title: Administrowanie aplikacją
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurowanie systemu
+      url: system.md
+    - text: Określanie uprawnień użytkownika
+      url: permissions.md
+    - text: Zarządzanie wieloma środowiskami
+      url: manage-environments.md
