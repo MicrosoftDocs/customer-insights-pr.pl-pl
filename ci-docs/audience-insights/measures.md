@@ -1,7 +1,7 @@
 ---
-title: Tworzenie i edytowanie miar
-description: Zdefiniowanie miar związanych z klientami w celu przeanalizowania i odzwierciedlenia wydajności pewnych obszarów biznesowych.
-ms.date: 10/15/2020
+title: Tworzenie miar i zarządzanie nimi
+description: Zdefiniuj miary do analizy i odzwierciedlenia wyników Twojej firmy.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406591"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269941"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
-**Miary** reprezentują kluczowe wskaźniki wydajności (KPI), które odzwierciedlają wydajność i kondycję poszczególnych obszarów biznesowych. Analiza odbiorców zapewnia intuicyjne środowisko tworzenia różnych typów miar za pomocą konstruktora zapytań, który nie wymaga ręcznego kodowania ani sprawdzania poprawności miar. Miary biznesowe można śledzić na **stronie głównej**, zobaczyć miary dotyczące określonych klientów w **Karcie klienta**, a następnie użyć miar w celu zdefiniowania segmentów klientów na stronie **Segmenty**.
+Miary pomagają lepiej zrozumieć zachowania klientów i wyniki biznesowe poprzez pobieranie odpowiednich wartości z [ujednoliconych profili](data-unification.md). Na przykład firma chce zobaczyć *łączne wydatki na klienta*, aby poznać historię zakupów poszczególnych klientów. Lub zmierz *całkowitą sprzedaż firmy*, aby poznać łączne przychody z całej firmy.  
+
+Miary są tworzone za pomocą konstruktora miar, platformy zapytań o dane z różnymi operatorami i prostymi opcjami mapowania. Umożliwia filtrowanie danych, grupowanie wyników, wykrywanie [ścieżek relacji między encjami](relationships.md) i wyświetlanie podglądu danych wyjściowych.
+
+Użyj konstruktora miar, aby zaplanować działania biznesowe, wykonując zapytania dotyczące danych klientów i wyodrębniając szczegółowe informacje. Na przykład utworzenie miary *całkowitych wydatków na klienta* i *całkowitego zwrotu na klienta* pomaga zidentyfikować grupę klientów z wysokimi wydatkami, ale z wysokim zwrotem. Możesz utworzyć [segment](segments.md), aby stworzyć najlepsze akcje. 
 
 ## <a name="create-a-measure"></a>Utwórz miarę
 
-Niniejsza sekcja zawiera instrukcje dotyczące tworzenia miary od podstaw. Miarą można zbudować na podstawie danych z wielu źródeł danych połączonych za pośrednictwem encji klienta. Niektóre [ograniczenia dotyczące usług](service-limits.md) mają zastosowanie.
+W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atrybutami danych z jednostek danych, które mają skonfigurowaną relację do łączenia się z encją Klient. 
 
 1. W analizach odbiorców przejdź do **Miary**.
 
-2. Wybierz opcję **Nowa miara**.
+1. Wybierz **Nowy**.
 
-3. Wybierz **typ** miary:
-
-   - **Atrybut klienta**: jedno pole na klienta, które odzwierciedla wyniki, wartość lub stan dla klienta. Atrybuty klienta są tworzone jako atrybuty w nowym obiekcie wygenerowanym przez system o nazwie **Customer_Measure**.
-
-   - **Miara klienta**: wgląd w informacje dotyczące zachowania klienta z podziałem według wybranych wymiarów. Dla każdej miary zostanie wygenerowana nowa encja, prawdopodobnie z wieloma rekordami na klienta.
-
-   - **Miary biznesowe**: pozwala śledzić wyniki działalności i kondycję prowadzonej działalności. Miary biznesowe mogą mieć dwie różne wyjścia: liczbowe wyniki, które są wyświetlane na **stronie głównej** lub w nowej encji, która znajduje się na stronie **Encje** .
-
-4. Wpisz **nazwę** i opcjonalnie **wyświetlaną nazwę**, a następnie wybierz **Dalej**.
-
-5. W sekcji **Encje** wybierz pierwszą encję z listy rozwijanej. W tym momencie należy określić, czy w ramach definicji miary są potrzebne dodatkowe encje.
-
-   > [!div class="mx-imgBorder"]
-   > ![Definicja miary](media/measure-definition.png "Definicja miary")
-
-   Aby dodać więcej encji, wybierz pozycję **Dodaj encję** i wybierz encje, które mają być używane dla miary.
-
+1. Wybierz opcję **Edytuj** nazwę i podaj **Nazwa** miary. 
    > [!NOTE]
-   > Możesz wybrać tylko encje, które mają powiązania z encją początkową. Aby uzyskać więcej informacji dotyczących definiowania relacji, zobacz [Relacje](relationships.md).
+   > Jeśli nowa konfiguracja miary ma tylko dwa pola, na przykład IDklienta i jedno obliczenie, dane wyjściowe zostaną dodane jako nowa kolumna do jednostki wygenerowanej przez system o nazwie Customer_Measure. Będziesz mógł zobaczyć wartość miary w ujednoliconym profilu klienta. Inne miary będą generować własne encje.
 
-6. Opcjonalnie można skonfigurować zmienne. W sekcji **Zmienne** wybierz pozycję **Nowa zmienna**.
+1. W obszarze konfiguracji wybierz funkcję agregowania z menu rozwijanego **Wybierz funkcję**. Funkcje agregowania obejmują: 
+   - **Sum**
+   - **Średnia**
+   - **Licznik**
+   - **Liczba unikatowych**
+   - **Maksimum**
+   - **Min**
+   - **Pierwszy**: pobiera pierwszą wartość rekordu danych
+   - **Ostatnia**: pobiera ostatnią wartość dodaną do rekordu danych
 
-   Zmienne są obliczeniami dokonywanymi w poszczególnych zaznaczonych rekordach. Na przykład: sumowanie punktów sprzedaży (POS) i sprzedaży online w przypadku poszczególnych rekordów klientów.
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatory do oceny obliczeń.":::
 
-7. W polu **Nazwa** podaj nazwę zmiennej.
+1. Wybierz **Dodaj atrybut**, aby wybrać dane potrzebne do utworzenia tej miary.
+   
+   1. Wybrane kartę **Atrybuty**. 
+   1. Encja danych: wybierz encję zawierającą atrybut, który chcesz zmierzyć. 
+   1. Atrybut danych: wybierz atrybut, którego chcesz użyć w funkcji agregowania, aby obliczyć miarę. Możesz wybrać tylko jeden atrybut naraz.
+   1. Atrybut danych można także wybrać z istniejącej miary, wybierając kartę **Miary**. Można także wyszukać nazwę encji lub miary. 
+   1. Wybierz opcję **Dodaj**, aby dodać do miary wybrany atrybut.
 
-8. W obszarze **Wyrażenia** wybierz pole, od którego chcesz rozpocząć obliczenia.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Wybierz atrybut, który ma być używany w obliczeniach.":::
 
-9. Umożliwia wpisanie wyrażenia w obszarze **Wyrażenia** podczas wybierania większej liczby pól, które mają zostać uwzględnione w obliczeniu.
+1. Aby zbudować bardziej złożone miary, możesz dodać więcej atrybutów lub użyć operatorów matematycznych w funkcji miary.
 
-   > [!NOTE]
-   > Obecnie obsługiwane są tylko wyrażenia arytmetyczne. Ponadto, obliczanie zmiennych nie jest obsługiwane w przypadku encjipochodzących z różnych [ścieżek encji](relationships.md).
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Utwórz złożoną miarę za pomocą operatorów matematycznych.":::
 
-10. Wybierz **Gotowe**.
+1. Aby dodać filtry, wybierz **Filtr** w obszarze konfiguracji. 
+  
+   1. W sekcji **Dodawanie atrybutu** w okienku **Filtry** wybierz atrybut, którego chcesz użyć do tworzenia filtrów.
+   1. Ustaw operatory filtru, aby zdefiniować filtr dla każdego wybranego atrybutu.
+   1. Wybierz opcję **Zastosuj**, aby dodać do miary wybrany filtr.
 
-11. W sekcji **Definicja miary** zdefiniujesz, jak wybrane encje i obliczane zmienne są agregowane w nowych encjach lub atrybutach miary.
+1. Aby dodać wymiary, wybierz **Wymiar** w obszarze konfiguracji. Wymiary będą wyświetlane jako kolumny w encji wyjściowej miary.
+   1. Wybierz opcję **Edytuj rozmiary**, aby dodać atrybuty danych, według których chcesz grupować wartości miary. Na przykład miasto lub płeć. Domyślnie wymiar *CustomerID* jest wybrany do tworzenia *miar na poziomie klienta*. Do utworzenia *miar na poziomie firmy* można usunąć rozmiar domyślny.
+   1. Wybierz opcję **Gotowe**, aby dodać do miary wybrany wymiar.
 
-12. Wybierz **Nowy wymiar**. Wymiar może być postrzegany jako funkcja *Grupuj według*. Dane wyjściowe encji lub atrybutu miary zostaną pogrupowane według wszystkich zdefiniowanych wymiarów.
+1. Jeśli istnieje wiele ścieżek między zmapowaną jednostką danych a jednostką Klient, musisz wybrać jedną ze zidentyfikowanych [ścieżek relacji między encjam](relationships.md). Wyniki mogą się różnić w zależności od wybranej ścieżki.
+   1. Wybierz **preferencje dotyczące danych** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary.
+   1. Wybierz opcję **Gotowe**, aby zastosować wybór. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Wybieranie cyklu agregacji](media/measures-businessreport-measure-definition2.png "Wybieranie cyklu agregacji")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Wybierz ścieżkę jednostki dla miary.":::
 
-    Wybierz lub wprowadź następujące informacje jako część definicji danego wymiaru:
+1. Aby dodać więcej obliczeń dla miary, wybierz opcję **Nowe obliczenia**. Do nowych obliczeń można używać tylko elementów znajdujących się na tej samej ścieżce encji. Więcej obliczeń zostanie wyświetlonych jako nowe kolumny w jednostce wyniku pomiaru.
 
-    - **Encja**: po zdefiniowaniu miary encji powinna ona zawierać co najmniej jeden atrybut. W przypadku zdefiniowania atrybutu miary będzie w nim domyślnie uwzględniony tylko jeden atrybut. Ta opcja służy do wybierania encji zawierającej dany atrybut.
-    - **Pole**: wybierz konkretny atrybut, który ma zostać uwzględniony w encji lub atrybucie miary.
-    - **Zasobnik**: należy wybrać, czy dane mają być agregowane codzienne, comiesięczne czy roczne. Jest to wymagane tylko w przypadku wybrania atrybutu typu Data.
-    - **Jako**: definiuje nazwę nowego pola.
-    - **Wyświetlana nazwa**: definiuje wyświetlaną nazwę pola.
+1. Wybierz opcję **...** w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
 
-    > [!NOTE]
-    > Miara biznesowa zostanie zapisana jako encja z jednym numerem i będzie widoczna na **stronie głównej**, chyba że dodasz więcej wymiarów do miary. Po dodaniu dodatkowych wymiarów miara *nie* zostanie wyświetlona na **stronie głównej**.
+1. W obszarze **Podgląd** jest wyświetlony schemat danych encji wyjściowej miary wraz z filtrami i rozmiarami. Podgląd jest dynamicznie reaktywny na zmiany w konfiguracji.
 
-13. Opcjonalnie dodaj funkcje agregowania. Każda utworzona wartość zagregowana powoduje utworzenie nowej wartości w encji lub atrybucie miary. Obsługiwane są następujące funkcje agregujące: **Min.**, **Max.**, **Średnia**, **Mediana**, **Suma**, **Liczba unikatowych**, **Pierwsze** (pobiera pierwszy rekord wartości wymiaru) i **ostatnia** (pobiera ostatni rekord dodany do wartości wymiaru).
+1. Wybierz opcję **Uruchom**, aby obliczyć wyniki dla skonfigurowanej miary. Wybierz opcję **Zapisz i zamknij**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później.
 
-14. Wybierz pozycję **Zapisz**, aby zapisać zmiany wprowadzone w miarze.
+1. Wybierz **Miary**, aby zobaczyć nowo utworzoną miarę na liście.
 
 ## <a name="manage-your-measures"></a>Zarządzanie miarami
 
-Po utworzeniu co najmniej jednej miary zostanie wyświetlona lista miar na stronie **Miary**.
+Po [utworzeniu jednej miary](#create-a-measure) zostanie wyświetlona lista miar na stronie **Miary**.
 
-Znajdują się na niej informacje o typie miary, autorze, dacie i godzinie utworzenia, daty i godziny ostatniej edycji, stanie (bez względu na to, czy miara jest aktywna, nieaktywna lub błędna) oraz data i godzina ostatniego odświeżenia. Po wybraniu miary z listy można wyświetlić podgląd jej wyników.
+Znajdziesz informacje o rodzaju miary, twórcy, dacie utworzenia, stanie i stanie. Po wybraniu miary z listy można wyświetlić podgląd wyniku i pobrać plik .CSV.
 
 Aby odświeżyć wszystkie miary w tym samym czasie, wybierz **Odśwież wszystko** bez wybierania określonej miary.
 
 > [!div class="mx-imgBorder"]
 > ![Akcje służące do zarządzania pojedynczymi miarami](media/measure-actions.png "Akcje służące do zarządzania pojedynczymi miarami")
 
-Można też wybrać miarę z listy, a następnie wykonać jedną z następujących czynności:
+Wybierz z listy miarę dla następujących opcji:
 
 - Wybierz nazwę miary, aby wyświetlić jej szczegóły.
 - **Edytuj** konfigurację miary.
+- **Odśwież** miarę na podstawie najnowszych danych.
 - **Zmień nazwę** miary.
 - **Usuń** miarę.
-- Wybierz wielokropek (...), a następnie **Odśwież**, aby rozpocząć proces odświeżania miary.
-- Wybierz wielokropek (...), a następnie **Pobierz**, aby uzyskać plik .CSV miary.
+- **Aktywuj** lub **Dezaktywuj**. Nieaktywne miary nie będą odświeżane podczas [zaplanowanego odświeżania](system.md#schedule-tab).
 
 > [!TIP]
 > Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
 
 ## <a name="next-step"></a>Następny krok
 
-W tym celu należy skorzystać z istniejących miar w celu utworzenia pierwszego segmentu klienta na stronie **Segmenty**. Aby uzyskać więcej informacji, zobacz [Segmenty](segments.md).
+Zastosowanie istniejących miar umożliwia utworzenie [segmentu klienta](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -6,16 +6,16 @@ metadata:
   description: Centrum pomocy z kluczowymi łączami analiz odbiorców.
   ms.service: customer-insights
   ms.subservice: audience-insights
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.date: 10/16/2020
-  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
-  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.openlocfilehash: ba5229067c7c338b4f8d0503aaf80f25b6c4002c
+  ms.sourcegitcommit: a8f7d5d0008b2d7d0ff0daeb746126abfc82c253
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "4406584"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "4745734"
 landingContent:
 - title: Informacje o analizach odbiorców
   linkLists:
@@ -27,36 +27,36 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Witryna wspólnoty
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-- title: Pozyskiwanie źródeł danych
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Dodaj źródła danych
-      url: data-sources.md
-    - text: Odświeżanie przyrostowe
-      url: incremental-refresh-data-sources.md
-    - text: Informacje o encjach
-      url: entities.md
 - title: Ujednolicanie danych
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Mapuj
-      url: map-entities.md
-    - text: Dopasowywanie
-      url: match-entities.md
-    - text: Scalanie
-      url: merge-entities.md
-- title: Precyzowanie profilów klientów
+    - text: Omówienie źródeł danych
+      url: data-sources.md
+    - text: Omówienie ujednolicenia
+      url: data-unification.md
+    - text: Informacje o encjach
+      url: entities.md
+- title: Wzbogacaj i udoskonalaj dane
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Wzbogacanie profilów klientów
+      url: enrichment-hub.md
     - text: Konfigurowanie relacji
       url: relationships.md
     - text: Lista działań klientów
       url: activities.md
-    - text: Dobierz własne modele uczenia maszynowego
-      url: custom-models.md
+- title: Pobierz wyniki analiz
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Utwórz segmenty
+      url: segments.md
+    - text: Tworzenie miar
+      url: measures.md
+    - text: Uzupełnij dane dzięki prognozom
+      url: predictions.md
 - title: Eksportowanie danych klientów
   linkLists:
   - linkListType: how-to-guide

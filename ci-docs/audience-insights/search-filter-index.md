@@ -1,7 +1,7 @@
 ---
 title: Wyszukiwanie i filtrowanie profilów klientów
 description: Szybki dostęp do informacji o ujednoliconych profilach klientów i filtrach dla określonych atrybutów.
-ms.date: 04/16/2020
+ms.date: 01/19/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d675738c43cbdb5f9b478d53d6124db38ba3004d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406595"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270079"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Profile klientów: Wyszukiwanie i indeks filtrów
 
@@ -28,14 +28,6 @@ Ujednolicenie danych klienta jest encją profilu klienta, która umożliwia zuni
 Jeśli za pierwszym razem definiuje się jako Administrator atrybuty jako atrybuty, które można wyszukiwać, należy najpierw zdefiniować pola indeksowane. Sugerujemy wybranie wszystkich atrybutów, dzięki którym użytkownicy mogą wyszukiwać i filtrować klientów na stronie **klienci**. Użytkownik może podać tylko te atrybuty, które istnieją w encji profil klienta, która została utworzona podczas procesu zjednoczenia danych.
 
 1. Otwórz stronę **Klienci** i wybierz **Wyszukiwanie i indeks filtrów**.
-
-> [!NOTE]
-> Tworzymy domyślną konfigurację indeksu wyszukiwania na atrybutach dostępnych w encji Klient z poziomu następujących typów semantycznych, jak zdefiniowano na stronie Mapa.
-> - Imię, Nazwisko, Drugie imię, Imię i nazwisko
-> - Nazwa organizacji
-> - Adres e-mail
-> - Numer telefonu
-> - Informacje o lokalizacji
 
 2. Wybierz **+ Dodaj**, aby określić indeksowane pola.
 
@@ -65,3 +57,10 @@ Menu **Filtruj** na stronie **Klienci** może zawierać różną liczbę poziom�
 2. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
 3. Wybierz opcję **Uruchom** po przygotowaniu się do zastosowania ustawień.
+
+## <a name="next-steps"></a>Następne kroki
+
+Przejdź na stronę **Klienci**, aby wyszukać profile klientów lub użyj pól indeksowanych, aby wyświetlić podzbiór wszystkich profilów klientów.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

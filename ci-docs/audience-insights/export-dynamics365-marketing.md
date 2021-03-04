@@ -1,20 +1,20 @@
 ---
 title: Eksport danych z Customer Insights do Dynamics 365 Marketing
 description: Informacje o konfigurowaniu połączenia z Dynamics 365 Marketing.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 163387779b64bd78ef08e2d96a5f1c9615062f28
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a06920b8ff25d7102ccd14ae68cf42fe91fa1ee6
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643786"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269067"
 ---
 # <a name="connector-for-dynamics-365-marketing-preview"></a>Łącznik dla Dynamics 365 Marketing (wersja zapoznawcza)
 
@@ -24,7 +24,10 @@ Za pomocą [segmentów](segments.md) utworzonych w aplikacji Customer Insights m
 
 ## <a name="prerequisite"></a>Warunek wstępny
 
-Rekordy kontaktów [z Dynamics 365 Marketing pozyskane przy użyciu Common Data Service](connect-power-query.md).
+- Rekordy kontaktów muszą być obecne w Dynamics 365 Marketing, zanim będzie można wyeksportować segment z Customer Insights do Marketing. Przeczytaj więcej o tym, jak pozyskiwać kontakty w [Dynamics 365 Marketing, używając Common Data Services](connect-power-query.md).
+
+  > [!NOTE]
+  > Eksportowanie segmentów ze statystyk odbiorców do Marketingu nie spowoduje utworzenia nowych rekordów kontaktów w wystąpieniach Marketing. Rekordy kontaktów z działu Marketing muszą być pozyskiwane w statystykach odbiorców i używane jako źródło danych. Muszą również zostać uwzględnione w ujednoliconej encji Customer, aby zmapować identyfikatory klientów do identyfikatorów kontaktów, zanim segmenty będą mogły zostać wyeksportowane.
 
 ## <a name="configure-the-connector-for-marketing"></a>Konfigurowanie łącznika dla modułu Marketing
 
@@ -49,3 +52,6 @@ Rekordy kontaktów [z Dynamics 365 Marketing pozyskane przy użyciu Common Data 
 ## <a name="export-the-data"></a>Eksportowanie danych
 
 Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406572"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267785"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Nawiązywanie połączenia ze źródłem danych Power Query
 
@@ -28,7 +28,10 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 1. Wybierz metodę **importu danych** i wybierz **Dalej**.
 
-1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych.
+1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych. Wytyczne dotyczące nazw: 
+   - Rozpocznij od litery.
+   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
+   - Użyj między 3 do 64 znaków.
 
 1. Wybierz jeden z [dostępnych łączników](#available-power-query-data-sources). W tym przykładzie wybraliśmy łącznik **Tekst/CSV**.
 
@@ -77,3 +80,6 @@ Sprawdź [Informacje na temat łączników Power Query](https://docs.microsoft.c
 3. Zastosuj zmiany i przekształcenia w oknie dialogowym **Power Query - edytuj zapytania**, jak to opisano w sekcji [Tworzenie nowego źródła danych](#create-a-new-data-source).
 
 4. Wybierz **Zapisz** w Power Query po zakończeniu edycji, aby zapisać zmiany.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

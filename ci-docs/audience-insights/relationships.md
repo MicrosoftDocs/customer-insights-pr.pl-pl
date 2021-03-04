@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 295c372bb452e7c40aa950506dc494d4a2de1108
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406594"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269894"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
@@ -28,8 +28,8 @@ Podczas procesów dopasowywania i scalania relacje systemu są tworzone w tle w 
 > ![Tworzenie relacji](media/relationships-entities-merge.png "Tworzenie relacji")
 
 - **Relacja *CustomerToContact*** jest utworzona między encją klienta i encją kontaktu. Encja klienta otrzymuje pole kluczowe **Contact_contactId** w celu powiązania jej z polem kluczowym encji kontaktu **contactId**.
-- **Relacja _CustomerToAccount_** jest utworzona między encją klienta i encją konta. Encja klienta otrzymuje pole kluczowe **Account_accountId** w celu powiązania jej z polem kluczowym encji konta **accountId**.
-- **Relacja _CustomerToWebAccount_** jest utworzona między encją klienta i encją konta sieci Web. Encja klienta otrzymuje pole kluczowe **WebAccount_webaccountId** w celu powiązania jej z polem kluczowym encji konta sieci Web **webaccountId**.
+- **Relacja *CustomerToAccount*** jest utworzona między encją klienta i encją konta. Encja klienta otrzymuje pole kluczowe **Account_accountId** w celu powiązania jej z polem kluczowym encji konta **accountId**.
+- **Relacja *CustomerToWebAccount*** jest utworzona między encją klienta i encją konta sieci Web. Encja klienta otrzymuje pole kluczowe **WebAccount_webaccountId** w celu powiązania jej z polem kluczowym encji konta sieci Web **webaccountId**.
 
 ## <a name="create-a-relationship"></a>Utwórz relację
 
@@ -69,3 +69,6 @@ Relacje niestandardowe należy zdefiniować na stronie **Relacje**. Każda relac
 ## <a name="next-step"></a>Następny krok
 
 System i relacje niestandardowe służą do tworzenia segmentów na podstawie wielu źródeł danych, które nie są już izolowane. Aby uzyskać więcej informacji, zobacz [Segmenty](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

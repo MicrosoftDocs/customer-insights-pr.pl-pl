@@ -1,7 +1,7 @@
 ---
 title: Konfiguracja systemu w statystykach odbiorców
 description: Dowiedz się o ustawieniach systemu w możliwości analiz odbiorców w Dynamics 365 Customer Insights.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406592"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267353"
 ---
 # <a name="system-configuration"></a>Konfiguracja systemu
 
-Strona **System** zawiera cztery karty: **Stan**, **Harmonogram**, **Informacje** i **Ogólne**.
+Strona **System** zawiera następujące karty:
+- [Status](#status-tab)
+- [Harmonogram](#schedule-tab)
+- [Użycie interfejsu API](#api-usage-tab)
+- [Informacje](#about-tab)
+- [Ogólne](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Strona systemowa](media/system-tabs.png "Strona systemowa")
 
 ## <a name="status-tab"></a>Karta Stan
 
-**Karta Stan** umożliwia śledzenie postępu przyjmowania danych, eksportu danych, i kilka ważnych procesów produktu. Przejrzyj informacje na tej karcie, aby zapewnić kompletność aktywnych procesów.
+Na **Karta Stan** można śledzić postęp przetwarzania danych, eksportowania danych i wielu innych ważnych procesów produktu. Przejrzyj informacje na tej karcie, aby zapewnić kompletność aktywnych procesów.
 
-Na tej karcie są zawarte tabele stanu dla **Źródeł danych**, **Procesów systemowych** i **Przygotowywania danych**. Każda tabela śledzi **Nazwę** zadania, odpowiadającą mu encję, **Stan** ostatniego uruchomienia oraz datę **Ostatniej aktualizacji**.
+Ta karta zawiera tabele ze statusem i informacjami o przetwarzaniu dla różnych procesów. Każda tabela śledzi **Nazwę** zadania, odpowiadającą mu encję, **Stan** ostatniego uruchomienia oraz datę **Ostatniej aktualizacji**.
 
 Wyświetl szczegółowe informacje na temat kilku ostatnich uruchomień zadania wybierajac jego nazwę.
 
@@ -40,7 +45,7 @@ Istnieje sześć typów stanu zadań. Poniższe typy stanów są również widoc
 - **Pominięto:** Zadanie zostało pominięte. Co najmniej jeden z procesów podrzędnych, od którego zależy to zadanie, zakończył się niepowodzeniem lub został pominięty.
 - **Niepowodzenie:** Przetwarzanie zadania nie powiodło się.
 - **Anulowano:** Przetwarzanie zostało anulowane przez użytkownika przed jego zakończeniem.
-- **W kolejce:** Przetwarzanie jest kolejkowane i uruchomi się po zakończeniu wszystkich zadań podrzędnych. Aby uzyskać więcej informacji, zobacz [Zasady odświeżania](#refresh-policies).
+- **Kolejka**: przetwarzanie jest ustawiane w kolejce i rozpoczyna się po zakończeniu wszystkich zadań. Aby uzyskać więcej informacji, zobacz [Zasady odświeżania](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Zasady odświeżania
 
@@ -89,4 +94,17 @@ Kliknij przycisk **Zapisz** i potwierdź wybór.
 
 ## <a name="api-usage-tab"></a>Karta użycia interfejsu API
 
-Zapoznaj się ze szczegółowymi informacjami o wykorzystaniu interfejsów API w czasie rzeczywistym i zobacz, jakie zdarzenia wystąpiły w danym zakresie czasu. Aby uzyskać więcej informacji, zobacz [Pozyskiwanie danych w czasie rzeczywistym](real-time-data-ingestion.md).
+Znajdź szczegółowe informacje na temat wykorzystania interfejsu API w czasie rzeczywistym i zobacz, które zdarzenia miały miejsce w danym przedziale czasowym. Pozycje, horyzont czasowy menu rozwijanego **Wybierz horyzont czasowy** listy rozwijanej. 
+
+**Użycie interfejsu API** zawiera trzy sekcje: 
+- **Wywołania interfejsu API** — wykres, który wizualizuje zagregowaną liczbę wywołań interfejsu API w wybranym przedziale czasu.
+
+- **Transfer danych** — wykres przedstawiający ilość danych przesłanych przez interfejs API w wybranym okresie.
+
+-  **Operacje** — tabelę z wierszami dla każdej dostępnej operacji API i szczegółami użycia tych operacji. Możesz wybrać nazwę operacji, aby przejść do odwołania [do interfejsu API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Operacje korzystające z [pozyskiwania danych w czasie rzeczywistym](real-time-data-ingestion.md) zawierają przycisk z symbolem lornetki do wyświetlania użycia interfejsu API w czasie rzeczywistym. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.   
+   Pole **Grupuj według** w okienku **Użycia interfejsu API w czasie rzeczywistym** umożliwia wybranie sposobu najlepszego prezentowania interakcji w czasie rzeczywistym. Dane można pogrupować według metody interfejsu API, kwalifikowanej nazwy encji (pobranej encji), utworzone przez (źródło zdarzenia), wyniku (powodzenie lub niepowodzenie) lub kodów błędów. Dane są dostępne jako wykres chronologiczny i jako tabela.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

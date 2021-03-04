@@ -5,16 +5,16 @@ ms.date: 06/05/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8260e3b5e529f3d54678d9d6e11aebb2795e27fd
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: c839f9dc7e403412c0e3d936392d45a43bc63545
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643696"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269987"
 ---
 # <a name="connector-for-facebook-ads-manager-preview"></a>Łącznik dla Menedżera Facebook Ads (wersja zapoznawcza)
 
@@ -62,7 +62,16 @@ Eksportuj segmenty zunifikowanych profilów klientów do Menedżera Facebook Ads
 
 Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).
 
+## <a name="known-limitations"></a>Znane ograniczenia
+
+- Do 10 milionów profili klientów na eksport do Menedżera reklam na Facebook 
+- Eksport do Menedżera reklam na Facebook jest ograniczony do segmentów
+- Eksportowanie segmentów zawierających łącznie 10 milionów profili może zająć do 90 minut
+
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 
 Włączając Dynamics 365 Customer Insights przesyłanie danych do menedżera reklam Facebook, zezwalasz na przesyłanie danych poza granice zgodności dla Dynamics 365 Customer Insights, w tym potencjalnie wrażliwych danych, takich jak Dane Osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że reklamy Facebook spełniają wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
 Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć tę lokalizację docelową eksportu, aby przestać używać tej funkcji.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

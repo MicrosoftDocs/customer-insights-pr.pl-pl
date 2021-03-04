@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 81540ad2f490cf566f031233543b3cb6aa838033
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643606"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269803"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji (wersja zapozawcza)
 
@@ -49,7 +49,7 @@ Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md
    [!div class="mx-imgBorder"]
    ![Przekształć datę urodzenia na datę](media/ecommerce-dob-date.PNG "przekształcić datę urodzenia na datę")
 
-1. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommerceContacts**
+1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommerceContacts**
 
 1. Zapisz źródło danych.
 
@@ -66,7 +66,7 @@ Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md
    - **PurchasedOn**: Data/godzina
    - **TotalPrice**: waluta
    
-1. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommercePurchases**.
+1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommercePurchases**.
 
 1. Zapisz źródło danych.
 
@@ -84,7 +84,7 @@ Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md
    - **RewardsPoints**: Pełny numer
    - **CreatedOn**: Data/godzina
 
-1. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **loyCustomers**.
+1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **loyCustomers**.
 
 1. Zapisz źródło danych.
 
@@ -166,7 +166,7 @@ Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie sub
 
      :::image type="content" source="media/model-levers.PNG" alt-text="Wybierz dźwignie modelu Okno predykcji i Definicja rezygnacji.":::
 
-1. Wybierz **Historia zakupów (wymagane)** i wybierz pozycję **Dodaj dane** dla historii subskrypcji.
+1. Wybierz **Historia zakupów (wymagane)** i wybierz pozycję **Dodaj dane** dla historii zakupów.
 
 1. Dodaj encję **eCommercePurchases : eCommerce** i zamapuj pola z eCommerce na odpowiadające im pola wymagane przez model.
 
@@ -204,3 +204,6 @@ Możesz utworzyć nowy segment na podstawie encji utworzonej przez model.
 Masz teraz dynamicznie aktualizowany segment, który identyfikuje klientów o wysokim ryzyku rezygnacji z subskrypcji.
 
 Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Wzbogacanie danych za pomocą HERE Technologies innych firm
 description: Ogólne informacje o wzbogacaniu strony trzeciej HERE Technologies.
-ms.date: 10/27/2020
+ms.date: 12/10/2020
 ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668691"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269527"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Wzbogacenie profili klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
@@ -43,7 +43,11 @@ Aby skonfigurować wzbogacenia HERE Technologies, muszą zostać spełnione nast
 
 1. Potwierdzenie obydwu składników są wprowadzane po wybraniu opcji **Połącz z HERE**.
 
-1. Wybierz opcję **Dodaj dane** i wybierz opcję, jeśli chcesz zmapować pola na adres podstawowy i/lub pomocniczy. Możesz określić mapowanie pól dla obu adresów (na przykład adresu domowego i adresu firmy) i wzbogacić profile dla obu adresów osobno. Wybierz **Dalej**.
+1.  Wybierz opcję **Dodaj dane** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić o dane lokalizacyjne z firmy HERE Technologies. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+
+    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Zrzut ekranu podczas wybierania zestawu danych klienta.":::
+
+1. Wybierz, jeśli chcesz zmapować pola na adres podstawowy i/lub pomocniczy. Możesz określić mapowanie pól dla obu adresów (na przykład adresu domowego i adresu firmy) i wzbogacić profile dla obu adresów osobno. Wybierz **Dalej**.
 
 1. Zdefiniuj, które pola z ujednoliconych profili mają być używane do wyszukiwania pasujących danych o lokalizacji z HERE Technologies. Pola **Ulica 1** i **Kod pocztowy** są wymagane dla wybranego adresu głównego i / lub dodatkowego. Aby zwiększyć dokładność dopasowania, można dodać więcej pól.
 
@@ -68,3 +72,6 @@ Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.
 
 Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi HERE Technologies można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że HERE Technologies spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
 Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

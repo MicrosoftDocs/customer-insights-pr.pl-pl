@@ -9,14 +9,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: a720641f7499fc71ff5bceeba48d296c51f77242
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 68aa1b56fb634da80a0c64db72f778d57507104d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643966"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269711"
 ---
-# <a name="overview-about-data-sources"></a>Omówienie źródeł danych
+# <a name="data-sources-overview"></a>Omówienie źródeł danych
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
@@ -49,7 +49,7 @@ Zostanie wyświetlona nazwa każdego pozyskanego źródła danych, jego stan i d
 |Odświeżanie    |Pobieranie danych jest w toku. Aby anulować operację, można wybrać opcję **Zatrzymaj odświeżanie** w kolumnie **Czynności**. Zatrzymanie odświeżania źródła danych spowoduje przywrócenie jego ostatniego stanu odświeżania.       |
 |Zakończone niepowodzeniem     |Pobieranie danych zostało napotkało błędy.         |
 
-Wybierz opcję **Stan odświeżania**, aby przejrzeć więcej informacji o stanie odświeżania, w tym szczegóły błędów i aktualizacje procesu podrzędnego.
+Wybierz wartość w kolumnie **Stan** dowolnego pola źródło danych, aby przejrzeć więcej szczegółów. W okienku **Szczegółów postępu** rozwiń pozycję **Źródła danych**. Wybierz opcję **Zobacz szczegółowe informacje**, aby uzyskać więcej informacji na temat stanu odświeżania, w tym szczegóły błędów i aktualizacje procesów podrzędnych.
 
 Ładowanie danych może potrwać trochę czasu. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie **Encji**. Aby uzyskać więcej informacji, zobacz [Encje](entities.md).
 
@@ -76,3 +76,6 @@ Aby odświeżyć źródło danych na żądanie, wykonaj następujące kroki:
 2. Zaznacz pionowy wielokropek obok źródła danych, które chcesz usunąć, i wybierz **Usuń** z menu rozwijanego.
 
 3. Potwierdź usunięcie.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

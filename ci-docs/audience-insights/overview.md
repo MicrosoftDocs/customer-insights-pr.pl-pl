@@ -1,30 +1,26 @@
 ---
-title: Funkcje w statystykach odbiorców
-description: Omówienie możliwości analiz odbiorców w Dynamics 365 Customer Insights.
-ms.date: 02/05/2020
+title: Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
+description: Przegląd informacji o odbiorcach dla Dynamics 365 Customer Insights.
+ms.date: 01/18/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 82763b294484cca4a3982f4ebef6f914a02f5cca
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406582"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477008"
 ---
-# <a name="dynamics-365-customer-insights-audience-insights-capability"></a>Funkcje analiz odbiorców Dynamics 365 Customer Insights
+# <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 
-Funkcja obsługi klienta stanowi podstawę ambicji cyfrowej transformacji każdej organizacji. Aby konkurować na dzisiejszym rynku, organizacje muszą budować znaczące relacje z klientami na poziomie osobistym. Efektywna personalizacja wymaga pełnego, zunifikowanego spojrzenia na klientów.
+Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy. Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.
 
-Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy.
-
-**Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.**
-
-Dzięki funkcji analiz odbiorców każda organizacja może:  
+## <a name="main-benefits"></a>Główne korzyści 
 
 - **Eliminować silosy danych i ujednolicać dane klienta**
 
@@ -33,15 +29,15 @@ Dzięki funkcji analiz odbiorców każda organizacja może:
 
 - **Wzbogacenie dzięki analizom odbiorcy zawartym w Microsoft Graph**
 
-  - Utwórz bogatsze profile klientów, dołączając analizy odbiorcy zawarte w Microsoft Graph.  
+  - Utwórz bogatsze profile klientów, [dołączając analizy odbiorcy zawarte w Microsoft Graph](enrichment-microsoft-graph.md).  
 
 - **Napędzaj procesy biznesowe i spersonalizowane środowiska dla klientów**
 
   - Angażuj się osobiście w różne kanały — zapewniaj specjalistom do spraw marketingu, sprzedaży i obsługi klienta standardowe, kontekstowe informacje o kliencie i dostosowane karty profili klientów, używane we wszystkich używanych przez nich codziennie aplikacjach biznesowych
   - Automatyzacja zorientowanych na klientach środowisk i procesów opartych na dostosowywanych profilach, działaniach biznesowych i segmentach.
-  - Włącz i rozszerz środowiska biznesowe na bazie Microsoft Power Platform. Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu PowerApps.  
+  - Włącz i rozszerz środowiska biznesowe na bazie [Microsoft Power Platform](https://powerplatform.microsoft.com/). Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu PowerApps.  
 
-Analizy odbiorców obejmują funkcje dla następujących kluczowych użytkowników:
+## <a name="key-audiences"></a>Kluczowi odbiorcy
 
 - **Analitycy/administratorzy danych:**
 
@@ -58,5 +54,8 @@ Analizy odbiorców obejmują funkcje dla następujących kluczowych użytkownik�
 
 - **Analitycy biznesowi:**
 
-  - Tworzenie dostosowywanych profilów, definiowanie miar i tworzenie segmentów w celu uzyskania pełnego widoku klienta, specyficznego dla organizacji.  
-  - Użyj gotowych łączników dla PowerApps lub Microsoft Power BI albo interfejsów API, aby uzyskać informacje na temat powierzchni w aplikacjach biznesowych lub na analizie BI.  
+  - Twórz konfigurowalne profile, definiuj miary, twórz segmenty i korzystaj z analiz predykcyjnych, aby uzyskać 360-stopniowy widok klienta, specyficzny dla Twojej organizacji.  
+  - Użyj gotowych łączników dla kilku aplikacji lub interfejsów API firmy Microsoft i innych firm, aby dalej przetwarzać szczegółowe informacje.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

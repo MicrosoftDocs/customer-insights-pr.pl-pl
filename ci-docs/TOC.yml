@@ -14,10 +14,10 @@
       href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Nowe i zaktualizowane funkcje
       href: audience-insights/whats-new-audience-insights.md
-    - name: Rozpocznij
+    - name: Utwórz nowe środowisko
+      href: audience-insights/home.md
+    - name: Zapoznaj się z modułami
       items:
-        - name: Utwórz nowe środowisko
-          href: audience-insights/home.md
         - name: Pozyskiwanie danych
           href: 'https://docs.microsoft.com/learn/modules/ingest-data-customer-insights/'
         - name: Utwórz ujednolicony profil klienta
@@ -44,7 +44,7 @@
           href: audience-insights/entities.md
     - name: Ujednolicenie danych
       items:
-        - name: Omówienie ujednolicenia
+        - name: Omówienie ujednolicenia danych
           href: audience-insights/data-unification.md
         - name: Mapowanie encji i atrybutów
           href: audience-insights/map-entities.md
@@ -80,6 +80,8 @@
           href: audience-insights/segments.md
         - name: Uzyskiwanie szczegółowych informacji o segmentach
           href: audience-insights/segment-insights.md
+        - name: Zobacz sugerowane segmenty
+          href: audience-insights/suggested-segments.md
         - name: Znajdź podobnych klientów
           href: audience-insights/find-similar-customer-segments.md
         - name: Definiowanie miar i wskaźników KPI
@@ -96,6 +98,12 @@
           href: audience-insights/predict-transactional-churn.md
         - name: Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji
           href: audience-insights/sample-guide-predict-transactional-churn.md
+        - name: Przewidywanie wartości okresu istnienia klienta (CLV)
+          href: audience-insights/predict-customer-lifetime-value.md
+        - name: Przewiduj rekomendacje produktów
+          href: audience-insights/predict-product-recommendation.md
+        - name: Przykładowy przewodnik dotyczący prognozowania rekomendacji produktów
+          href: audience-insights/sample-guide-predict-product-recommendation.md
         - name: Implementowanie niestandardowych modeli uczenia maszynowego
           href: audience-insights/custom-models.md
         - name: Eksperymenty z Uczeniem Maszynowym Azure
@@ -104,10 +112,14 @@
           href: audience-insights/machine-learning-studio-experiments.md
     - name: Opcje eksportu
       items:
-        - name: Odkrywaj lokalizacje docelowe eksportu
+        - name: Omówienie miejsc docelowych eksportu
           href: audience-insights/export-destinations.md
+        - name: Autopilot
+          href: audience-insights/export-autopilot.md
         - name: Azure Blob Storage
           href: audience-insights/export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: audience-insights/export-azure-data-lake-storage-gen2.md
         - name: DotDigital
           href: audience-insights/export-dotdigital.md
         - name: Rozwiązanie Dynamics 365 Customer Service (dodatek)
@@ -136,6 +148,8 @@
           href: audience-insights/export-power-apps.md
         - name: Power Automate
           href: audience-insights/export-power-automate.md
+        - name: SendGrid
+          href: audience-insights/export-sendgrid.md
         - name: SFTP
           href: audience-insights/export-sftp.md
     - name: Administracja
@@ -152,6 +166,8 @@
           href: audience-insights/supported-languages.md
     - name: Rozszerzalność
       items:
+        - name: Integrowanie danych sieci Web z analiz interakcji z klientami
+          href: audience-insights/integrate-engagement-insights.md
         - name: Przegląd schematów encji w Common Data Model
           href: audience-insights/entity-schemas.md
         - name: Praca z API
@@ -170,13 +186,9 @@
       href: engagement-insights/overview.md
     - name: Bezpłatna wersja próbna
       href: 'https://pi.dynamics.com/'
-    - name: Szybki start
+    - name: Rozpocznij pracę
       items:
-        - name: Szybki Start do prapremiery publicznej
-          href: engagement-insights/quickstart.md
-    - name: Rozpocznij
-      items:
-        - name: Rozpocznij
+        - name: Rozpocznij pracę
           href: engagement-insights/get-started.md
         - name: Tworzenie obszaru roboczego
           href: engagement-insights/create-workspace.md
@@ -223,4 +235,4 @@
     - name: Limity usługi
       href: engagement-insights/quotas.md
 - name: Skontaktuj się z pomocą techniczną
-  href: 'https://go.microsoft.com/fwlink/?linkid=2145734'
+  href: 'https://admin.powerplatform.microsoft.com/support'

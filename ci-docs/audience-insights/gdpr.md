@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f276a73feca52023391ad92fbc84359921b85328
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: ed9aa09fba938606611c6ce86c2b250c5e19c606
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406579"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268699"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -75,3 +75,6 @@ W celu wyeksportowania danych administrator dzierżawy może wykonać następuj�
 1. Wysłąć wiadomość e-mail na adres D365CI@microsoft.com określając adres e-mail użytkownika w żądaniu. Zespół Customer Insights wyśle wiadomość e-mail na adres e-mail zarejestrowanego administratora dzierżawcy, pytając o potwierdzenie wyeksportowania danych.
 2. Zatwierdź potwierdzenie wyeksportowania danych dla żądanego użytkownika.
 3. Pobierz eksportowane dane za pomocą adresu e-mail administratora dzierżawcy.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

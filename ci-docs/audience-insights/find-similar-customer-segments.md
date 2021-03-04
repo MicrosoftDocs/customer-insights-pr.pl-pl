@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: jimsonc
 manager: shellyha
-ms.openlocfilehash: 8cdec4edd599b0249fcf144b5e5c0124504e1e14
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: b9b2e7fa862b595c6a364a7208e42295b4f9df83
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406580"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268883"
 ---
 # <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
 
@@ -79,3 +79,6 @@ Model uczenia maszynowego klasyfikacji binarnych przypisuje wyniki do klientów 
 - Wyniki podobieństwa między 0,85 – 1 to klienci, których system klasyfikuje jako *bardzo podobni*
 
 Klienci o zbliżonych wynikach niższych niż 0,4 nie są uwzględnianiu w modelu wyjściowym. System nie uważa ich za wystarczająco podobnych do segmentu źródłowego.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

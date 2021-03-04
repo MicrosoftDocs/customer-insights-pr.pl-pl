@@ -5,16 +5,16 @@ ms.date: 11/12/2020
 ms.reviewer: zacook
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f3cbbf99a6cecba2aab2cf85428d53e5df8346e4
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: af461d290c69687fb47bacfcff446a0c62978383
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644416"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268331"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)
 
@@ -96,6 +96,8 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
 1. Możesz też wybrać pozycję **Dodaj dane** do **Działań klienta**. Wybierz encję, która dostarcza informacje o działaniu klienta w sposób opisany w sekcji wymagania wstępne.
 
 1. Zmapuj pola semantyczne na atrybuty w encji działań klienta i wybierz przycisk **Dalej**. Aby zapoznać się z opisami pól, należy zapoznać się z [wymaganiami wstępnymi](#prerequisites).
+
+   :::image type="content" source="media/map-transaction-data-fields.png" alt-text="Zamapuj pola klientów na dane transakcji.":::
 
 1. Wybierz typ działania odpowiadający typowi działania klienta, które konfigurujesz. Wybierz opcję **Utwórz nowy** i wybierz dostępny typ działania lub utwórz nowy typ.
 
@@ -185,3 +187,6 @@ Usunięcie przewidywanie usuwa również jej encję wyjściową.
 1. Wybierz pionowy wielokropek obok przewidywania, które chcesz usunąć.
 
 1. Wybierz **Usuń**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

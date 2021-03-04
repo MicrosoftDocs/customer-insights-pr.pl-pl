@@ -4,17 +4,17 @@ description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientó
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406589"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267491"
 ---
 # <a name="match-entities"></a>Dopasowywanie encji
 
@@ -22,7 +22,7 @@ Po zakończeniu fazy mapowania można dopasować swoje encje do własnych potrze
 
 ## <a name="specify-the-match-order"></a>Określ kolejność dopasowywania.
 
-Przejdź do **Ujednolicanie** > **Dopasowywanie** i wybierz **Ustaw kolejność**, aby rozpocząć fazę dopasowywania.
+Przejdź do opcji **Dane** > **Ujednolicanie** > **Dopasowywanie** i wybierz **Ustaw kolejność** , aby rozpocząć etap dopasowania.
 
 Każde dopasowanie łączy dwie lub więcej encji w jedeną encję, zachowując każdy unikalny rekord klienta. W poniższym przykładzie wybrano trzy encje: **ContactCSV: TestData** jako encja **Podstawowa**, **WebAccountCSV: TestData** jako **Encja 2**, a **CallRecordSmall: TestData** jako **Encja 3**. Diagram nad wybranymi encjami ilustruje sposób wykonywania kolejności dopasowania.
 
@@ -136,7 +136,7 @@ Po zidentyfikowaniu zdeduplikowanego rekordu zostanie on użyty w procesie dopas
 
 1. Uruchomienie procesu dopasowywania powoduje teraz grupowanie rekordów na podstawie warunków zdefiniowanych w regułach deduplikacji. Po zgrupowaniu rekordów stosowane są zasady scalania, aby zidentyfikować rekord zwycięzcy.
 
-1. Ten rekord zwycięzcy jest następnie przekazywany do dopasowania między encjami.
+1. Ten rekord zwycięzcy jest następnie przekazywany do dopasowania między obiektami, razem z rekordami zwycięzcy (na przykład alternatywnymi identyfikatorami), aby poprawić jakość dopasowania.
 
 1. Dowolne niestandardowe reguły dopasowania, które zdefiniowano jako kryterium zgodności i nigdy nie odpowiadają regułom deduplikacji z regułami. Jeśli reguła deduplikacji identyfikuje pasujące rekordy, a niestandardowa reguła dopasowania jest ustawiona tak, aby nigdy nie pasować do tych rekordów, te dwa rekordy nie zostaną dopasowane.
 
@@ -157,6 +157,17 @@ W pierwszym procesie dopasowywania powstaje ujednolicona encja główna. Każde 
 
 > [!TIP]
 > Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+
+## <a name="deduplication-output-as-an-entity"></a>Deduplikacja wyjściowa jako encja
+Oprócz ujednoliconej jednostki głównej utworzonej w ramach dopasowywania między obiektami, proces deduplikacji generuje również nową jednostkę dla każdej jednostki z kolejności dopasowania, aby zidentyfikować zdeduplikowane rekordy. Te encje można znaleźć razem z elementem **ConftronicMatchPpias:CustomerInsights** w sekcji **System** na stronie **Encje** i **Deduplication_Datasource_Entity**.
+
+Obiekt wyjściowy deduplikacji zawiera następujące informacje:
+- Identyfikatory/klucze
+  - Pole klucza podstawowego i jego inne pole identyfikatorów. Pole Alternatywne identyfikatory zawiera wszystkie alternatywne identyfikatory zidentyfikowane dla rekordu.
+  - Pole Deduplication_GroupId przedstawia grupę lub klaster zidentyfikowaną w ramach jednostki, która grupuje wszystkie podobne rekordy na podstawie określonych pól deduplikacji. Te dane są używane do przetwarzania w systemie. Jeśli nie określono reguł ręcznej deduplikacji i mają zastosowanie reguły deduplikacji zdefiniowane przez system, to pole może nie być dostępne w jednostce wyjściowej deduplikacji.
+  - Deduplication_WinnerId: To pole zawiera identyfikator zwycięzcy ze zidentyfikowanych grup lub klastrów. Jeśli Deduplication_WinnerId jest taki sam jak wartość klucza podstawowego dla rekordu, oznacza to, że rekord jest rekordem zwycięzcy.
+- Pola używane do definiowania reguł deduplikacji.
+- Pola Reguła i Wynik określające, które z reguł deduplikacji zostały zastosowane, oraz wynik zwracany przez algorytm dopasowujący.
 
 ## <a name="review-and-validate-your-matches"></a>Przejrzyj i zweryfikuj swoje dopasowania
 
@@ -200,6 +211,11 @@ Zwiększanie jakości dzięki ponownemu konfigurowaniu niektórych parametrów d
   > [!div class="mx-imgBorder"]
   > ![Duplikuj regułę](media/configure-data-duplicate-rule.png "Duplikuj regułę")
 
+- **Zdezaktywuj regułę**, aby zachować regułę dopasowania, wykluczając ją z procesu dopasowania.
+
+  > [!div class="mx-imgBorder"]
+  > ![Dezaktywuj regułę](media/configure-data-deactivate-rule.png "Dezaktywuj regułę")
+
 - **Dokonaj edycji reguł**, wybierając symbol **Edytuj**. Można również zastosować następujące zmiany:
 
   - Zmiana atrybutów warunku: Wybierz nowe atrybuty w wierszu określonego warunku.
@@ -229,6 +245,8 @@ Możesz określić warunki, według których określone rekordy powinny zawsze p
     - Entity2Key: 34567
 
    Ten sam plik szablonu może zawierać rekordy dopasowania niestandardowego pochodzące z wielu encji.
+   
+   Jeśli chcesz określić niestandardowe dopasowanie do deduplikacji w encji, podaj tę samą jednostkę, co Entity1 i Entity2, i ustaw różne wartości klucza podstawowego.
 
 5. Po dodaniu wszystkich zastąpień, które chcesz zastosować, zapisz plik szablonu.
 
@@ -250,3 +268,6 @@ Możesz określić warunki, według których określone rekordy powinny zawsze p
 ## <a name="next-step"></a>Następny krok
 
 Po zakończeniu procesu dopasowania dla co najmniej jednej pary dopasowań może dojść do rozstrzygnięcia możliwych zachodzących sprzeczności w danych za pośrednictwem tematu [**Scal**](merge-entities.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

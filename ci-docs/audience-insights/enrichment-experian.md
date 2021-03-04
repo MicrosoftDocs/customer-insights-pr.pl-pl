@@ -1,20 +1,20 @@
 ---
 title: Wzbogacanie danych za pomocą Experian innych firm
 description: Ogólne informacje o wzbogacaniu strony trzeciej Experian.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668825"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269573"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Wzbogacanie profilów klientów za pomocą danych demograficznych z Experian (wersja zapoznawcza)
 
@@ -41,7 +41,9 @@ Aby skonfigurować Experian, należy spełnić następujące wymagania wstępne:
 
 ## <a name="map-your-fields"></a>Zamapuj swoje pola
 
-1. Wybierz opcję **Dodaj dane** i wybierz identyfikatory kluczy z **Nazwa i adres**, **E-mail** lub **Telefon**, aby wysłać do Experian w celu rozpoznania tożsamości.
+1.  Wybierz opcję **Dodaj dane** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić danymi demograficznymi z programu Experian. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+
+1. Wybierz swoje kluczowe identyfikatory z listy **Nazwa i Adres**, **Adres e-mail** lub **Telefon** do wysłania do Experian w celu rozwiązania problemu tożsamości.
 
    > [!TIP]
    > Więcej atrybutów identyfikatorów kluczy wysłanych do Experian prawdopodobnie zapewni wyższy współczynnik zgodności.
@@ -52,8 +54,8 @@ Aby skonfigurować Experian, należy spełnić następujące wymagania wstępne:
 
 1.  Wybierz **Zapisz**, aby zakończyć mapowanie pola.
 
-   > [!div class="mx-imgBorder"]
-   > ![Mapowanie pól Experian](media/experian-field-mapping.png "Mapowanie pól Experian")
+    > [!div class="mx-imgBorder"]
+    > ![Mapowanie pól Experian](media/experian-field-mapping.png "Mapowanie pól Experian")
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
@@ -71,3 +73,6 @@ Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.
 
 Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi Experian można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że Experian spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
 Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689188"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270293"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
@@ -83,6 +83,7 @@ Szczegółowe informacje o tym interfejsie API, w tym parametry i odpowiedzi, mo
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Informacje o sposobie korzystania z telemetrii w czasie rzeczywistym
 
-Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Możesz uzyskać [dostęp do telemetrii w czasie rzeczywistym](system.md#api-usage-tab) przechodząc do **Administracja** > **System** > **Użycie interfejsu API**. W tabeli **Operacje** wiersze operacji interfejsu API, które korzystają z metod w czasie rzeczywistym, zawierają przycisk służący do wyświetlania wykorzystania interfejsu API w czasie rzeczywistym. Przycisk jest oznaczony symbolem lornetki. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.
+Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Można uzyskać dostęp do [telemetryki w czasie rzeczywistym](system.md#api-usage-tab). 
 
-Użyj selektora **Grupuj według**, aby wybrać najlepszy sposób wyświetlania interakcji w czasie rzeczywistym na osi czasu począwszy od ostatnich 24-godzin do ostatnich 30 dni. Dane można pogrupować według metody interfejsu API, kwalifikowanej nazwy encji (pobranej encji), utworzone przez (źródło zdarzenia), wyniku (powodzenie lub niepowodzenie) lub kodów błędów. Dane są dostępne jako wykres chronologiczny i jako tabela.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

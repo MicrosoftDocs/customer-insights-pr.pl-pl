@@ -4,16 +4,16 @@ description: Praca z modelami niestandardowymi z Uczenie maszynowe Azure w Dynam
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668916"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267247"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -46,15 +46,15 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
 1. Wybierz usługę sieciową Machine Learning Studio (klasyczną) lub potok Azure Machine Learning na liście rozwijanej **Uslugi sieci Web, która zawiera model**. Następnie wybierz **Dalej**.
    - Więcej informacji o [publikowaniu usługi sieci Web w Machine Learning Studio (klasyczny)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). 
-     > [!NOTE]
-     > Potok musi zostać opublikowany w [punkcie końcowym potoku](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Potok musi zostać opublikowany w [punkcie końcowym potoku](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. Dla **Dane wejściowe usług sieci Web**, wybierz pasującą **Encję** z analiz odbiorców i wybierz **Dalej**.
+   > [!NOTE]
+   > Przepływ pracy modelu niestandardowego zastosuje heurystykę do mapowania pól wejściowych usługi sieci Web do atrybutów encji na podstawie nazwy i typu danych pola. Jeśli nie można zamapować pola usługi sieci Web na jednostkę, pojawi się błąd.
 
    > [!div class="mx-imgBorder"]
    > ![Konfiguruj przepływ pracy](media/intelligence-screen2-updated.png "Konfiguruj przepływ pracy")
-
+   
 1. W kroku **Parametry wyjściowe modelu** ustaw następujące właściwości:
    - Machine Learning Studio (klasyczna)
       1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki usługi sieci Web.
@@ -112,3 +112,6 @@ Przepływ pracy jest również uruchamiany automatycznie przy każdym planowanym
 1. Wybierz **Usuń** i potwierdź usunięcie.
 
 Przepływ pracy zostanie usunięty. [Encja](entities.md) utworzona w momencie utworzenia przepływu pracy pozostanie i będzie można ją wyświetlać na stronie **Encje**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

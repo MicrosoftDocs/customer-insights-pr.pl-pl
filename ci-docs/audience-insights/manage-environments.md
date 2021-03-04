@@ -1,20 +1,20 @@
 ---
 title: Utwórz środowisko i zarządzaj nim.
 description: Dowiedz się, jak zapisać się w usłudze i zarządzać środowiskami.
-ms.date: 11/10/2020
+ms.date: 02/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: nimagen
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 010336445d0825a7ff82d1b7a65702fc12245788
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 744f0bcbf5d2700363180f44e38d6dee9bf5df63
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644146"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270125"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -46,9 +46,9 @@ Istnieją dwa sposoby utworzenia nowego środowiska. Można określić zupełnie
 
 Aby utworzyć nowe środowisko:
 
-1. Wybierz symbol **Ustawienia** w nagłówku aplikacji.
+1. Wybierz selektor **Środowiska** w nagłówku aplikacji.
 
-1. Wybierz **Nowe środowisko**.
+1. Wybierz **Nowy**.
 
    > [!div class="mx-imgBorder"]
    > ![Ustawienia środowiska](media/environment-settings-dialog.png)
@@ -75,7 +75,14 @@ Aby utworzyć nowe środowisko:
 
    - W przypadku opcji Azure Data Lake Storage Gen2 można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwa **Kontenera** nie może zostać zmieniona i będzie mieć wartość „customerinsights”.
    
-   - Aby użyć [przewidywania](predictions.md), wprowadź adres URL wystąpienia Common Data Service w polu **Adres serwera** w obszarze **Korzystanie z przewidywania**.
+   - Jeśli chcesz używać [przewidywań](predictions.md) lub konfigurować udostępnianie danych z aplikacjami i rozwiązaniami opartymi na Microsoft Dataverse, podaj adres URL środowiska Microsoft Dataverse w sekcji **Konfiguruj udostępnianie danych z Microsoft Dataverse i włącz dodatkowe możliwości**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
+
+     > [!NOTE]
+     > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
+     > - [Przewidywanie brakujących wartości w encji](predictions.md) nie są obecnie obsługiwane, jeśli w przypadku włączenia udostępniania danych w Microsoft Dataverse zarządzane są Data Lake.
+
+     > [!div class="mx-imgBorder"]
+     > ![Opcje konfiguracji umożliwiające udostępnianie danych z Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
 
    Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. Pliki danych i pliki model.json zostaną utworzone i dodane do odpowiednich podfolderów na podstawie uruchamianego procesu.
 
@@ -86,7 +93,7 @@ Aby utworzyć nowe środowisko:
 Kopiowane są następujące ustawienia konfiguracji:
 
 - Konfiguracja funkcji
-- Pobrane/zaimportowane źródła danych
+- Importowanie/importowanie źródeł danych
 - Konfiguracja ujednolicania danych (mapowanie, dopasowywanie, scalanie)
 - Segmenty
 - Miary
@@ -120,11 +127,11 @@ Po zakończeniu ujednolicania danych należy przejść do **Miary** i **Segmenty
 
 Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 
-1. Przejdź do **Administracja** > **System** > **Informacje**.
+1.  Wybierz selektor **Środowiska** w nagłówku aplikacji.
 
-2. Zaznacz **Edytuj**.
+2.  Wybierz ikonę **Edytuj**.
 
-3. Użytkownik może aktualizować **Wyświetlaną nazwę** środowiska, ale nie może zmienić **Regionu** ani **Typu**.
+3. W polu **Edytuj środowisko** można zaktualizować pole **Wyświetlana nazwa**, ale nie można zmienić **Regionu** lub **Typu**.
 
 4. Jeśli środowisko jest skonfigurowane do przechowywania danych w Azure Data Lake Storage Gen2, można zaktualizować **Klucz konta**. Nie można jednak zmienić **Nazwy konta** lub nazwy **Kontener**.
 
@@ -132,19 +139,27 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 
 ## <a name="reset-an-existing-environment"></a>Zresetuj istniejące środowisko
 
-Jeśli chcesz usunąć wszystkie konfiguracje i przetworzone dane, możesz zresetować środowisko do stanu pustego.
+Jako administrator jeśli chcesz usunąć wszystkie konfiguracje i przetworzone dane, możesz zresetować środowisko do stanu pustego.
 
-1.  Przejdź do **Administracja** > **System** > **Informacje**.
+1.  Wybierz selektor **Środowiska** w nagłówku aplikacji. 
 
-2.  Wybierz **Resetuj**. 
+2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek **...**. 
 
-3.  Aby potwierdzić usunięcie, wprowadź nazwę środowiska i wybierz pozycję **Zresetuj**.
+3. Wybierz opcję **Reset**. 
+
+4.  Aby potwierdzić usunięcie, wprowadź nazwę środowiska i wybierz pozycję **Zresetuj**.
+
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Usuwanie istniejącego środowiska (dostępnego tylko dla administratorów)
+
+Jako Administrator użytkownik możesz usunąć administrowane środowisko.
+
+1.  Wybierz selektor **Środowiska** w nagłówku aplikacji.
+
+2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek **...**. 
+
+3. Wybierz opcję **Usuń**. 
+
+4.  Aby potwierdzić usunięcie, wprowadź nazwę środowiska i wybierz **Usuń**.
 
 
-## <a name="delete-an-existing-environment"></a>Usuń istniejące środowisko
-
-1. Przejdź do **Administracja** > **System** > **Informacje**.
-
-1. Wybierz **Usuń**.
-
-1. Aby potwierdzić usunięcie, wprowadź nazwę środowiska i wybierz **Usuń**.
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

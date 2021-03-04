@@ -4,17 +4,17 @@ description: Zaimportuj dane z zarządzanego przez Common Data Service repozytor
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643411"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267827"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Łączenie się z danymi w repozytorium typu data lake, którym zarządza Common Data Service
 
@@ -34,7 +34,10 @@ Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być p
 
 3. Wybierz **Połącz z Common Data Service** i wybierz **Dalej**.
 
-4. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**.
+4. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**. Wytyczne dotyczące nazw: 
+   - Rozpocznij od litery.
+   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
+   - Użyj między 3 do 64 znaków.
 
 5. Wprowadź **Adres serwera** dla organizacji Common Data Service i wybierz **Zaloguj się**.
 
@@ -65,3 +68,6 @@ Aby połączyć z innym Common Data Service, [utwórz nowe źródło danych](#co
 3. Wybierz opcję **Edytuj** z listy.
 
 4. Wybierz dodatkowe encje z listy dostępnych encji i wybierz **Zapisz**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

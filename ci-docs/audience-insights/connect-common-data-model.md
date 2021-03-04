@@ -4,17 +4,17 @@ description: Pracuj z danymi Common Data Model przy użyciu usługi Azure Data L
 ms.date: 05/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 25de23e615704a72f6b41d98ae9418beb338e77e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 247e4d9c47ff2373065ebf3c6d554323e45a120b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643471"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267873"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 
@@ -38,17 +38,25 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 
 1. Wybierz **Dodaj źródła danych**.
 
-1. Wybierz opcję **Połącz z folderem Common Data Model**, wprowadź **Nazwę** źródła danych i wybierz przycisk **Dalej**.
+1. Wybierz opcję **Połącz z folderem Common Data Model**, wprowadź **Nazwę** źródła danych i wybierz przycisk **Dalej**. Wytyczne dotyczące nazw: 
+   - Rozpocznij od litery.
+   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
+   - Użyj między 3 do 64 znaków.
 
 1. Można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Wprowadź informacje o **Kontenerze** i wybierz opcję **Dalej**.
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe, w którym można wprowadzić szczegółowe dane dotyczące połączenia z Azure Data Lake](media/enter-new-storage-details.png)
-
-1. W oknie dialogowym **Wybierz folder Common Data Model** wybierz plik model.json w celu zaimportowania danych z programu i wybierz przycisk **Dalej**.
+   > ![Okno dialogowe umożliwiające wprowadzenie nowych szczegółów połączenia dla usługi Azure Data Lake](media/enter-new-storage-details.png)
    > [!NOTE]
-   > Żaden plik model.json powiązany z innym źródłem danych w środowisku nie zostanie wyświetlony na liście.
+   > Potrzebujesz jednej z następujących ról do kontenera lub konta magazynu, o którym mowa powyżej, aby móc nawiązać połączenie i utworzyć źródło danych:
+   >  - Czytnik danych Storage Blob
+   >  - Właściciel danych Storage Blob
+   >  - Współautor danych w usłudze Blob Storage
 
-1. Otrzymasz listę dostępnych encji w wybranym pliku model.json. Możesz przeanalizować i wybrać z listy dostępnych encji i wybrać **Zapisz**. Wszystkie wybrane encje zostaną pozyskane z nowego źródła danych.
+1. W oknie dialogowym **Wybierz folder Common Data Model** wybierz plik model.json lub manifest.json w celu zaimportowania danych z programu i wybierz przycisk **Dalej**.
+   > [!NOTE]
+   > Żaden plik model.json lub manifest.json powiązany z innym źródłem danych w środowisku nie zostanie wyświetlony na liście.
+
+1. Otrzymasz listę dostępnych encji w wybranym pliku model.json lub manifest.json. Możesz przeanalizować i wybrać z listy dostępnych encji i wybrać **Zapisz**. Wszystkie wybrane encje zostaną pozyskane z nowego źródła danych.
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe pokazujące listę encji z pliku model.json](media/review-entities.png)
 
@@ -59,11 +67,11 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 9. Po zapisaniu wybranych opcji zostanie otwarta strona **Źródła danych**. Łącze do folderu Common Data Model powinno być teraz widoczne jako źródło danych.
 
 > [!NOTE]
-> Plik typu model.json może mieć skojarzenie tylko jedno źródło danych w tym samym środowisku. Jednak ten sam plik model.json może być używany dla źródeł danych w wielu środowiskach.
+> Plik typu model.json lub manifest.json może mieć skojarzenie tylko jedno źródło danych w tym samym środowisku. Jednak ten sam plik model.json lub manifest.json może być używany dla źródeł danych w wielu środowiskach.
 
 ## <a name="edit-a-common-data-model-folder-data-source"></a>Edytowanie źródła danych folderu Common Data Model
 
-Możesz zaktualizować klucz dostępu dla konta magazynu zawierającego folder Common Data Model. Użytkownik może również zmienić plik model.json. Aby połączyć się z innym kontenerem z konta magazynu lub zmienić nazwę konta, [utwórz nowe połączenie źródła danych](#connect-to-a-common-data-model-folder).
+Możesz zaktualizować klucz dostępu dla konta magazynu zawierającego folder Common Data Model. Można również zmienić plik model.json lub manifest.json. Aby połączyć się z innym kontenerem z konta magazynu lub zmienić nazwę konta, [utwórz nowe połączenie źródła danych](#connect-to-a-common-data-model-folder).
 
 1. W analizach odbiorców przejdź do **Dane** > **Źródła danych**.
 
@@ -77,13 +85,24 @@ Możesz zaktualizować klucz dostępu dla konta magazynu zawierającego folder C
 
 5. Opcjonalnie można zaktualizować połączenie z klucza konta do połączenia opartego na zasobach lub subskrypcji. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Podczas aktualizowania połączenia nie można zmieniać informacji o **Kontenerze**.
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe, w którym można wprowadzić szczegółowe dane dotyczące połączenia z Azure Data Lake](media/enter-existing-storage-details.png)
 
-6. Opcjonalnie wybierz inny plik model.json z innym zestawem encji z kontenera.
+   > ![Okno dialogowe wprowadzania szczegółów połączenia dla danych Azure Data Lake do istniejącego konta magazynu](media/enter-existing-storage-details.png)
+
+   > [!NOTE]
+   > Potrzebujesz jednej z następujących ról do kontenera lub konta magazynu, o którym mowa powyżej, aby móc nawiązać połączenie i utworzyć źródło danych:
+   >  - Czytnik danych Storage Blob
+   >  - Właściciel danych Storage Blob
+   >  - Współautor danych w usłudze Blob Storage
+
+
+6. Opcjonalnie wybierz inny plik model.json lub manifest.json z innym zestawem jednostek z kontenera.
 
 7. Można też wybrać dodatkowe encje do pobrania. Jeśli nie ma zależności, można również usunąć wszystkie wybrane encje.
 
    > [!IMPORTANT]
-   > Jeśli istnieją zależności między istniejącym plikiem model.json a zestawem encji, zostanie wyświetlony komunikat o błędzie i nie będzie można wybrać innego pliku model.json. Usuń te zależności przed zmodyfikowaniem pliku model.json lub utwórz nowe źródło danych za pomocą pliku typu model.json, którego chcesz użyć, aby zapobiec usuwaniu zależności.
+   > Jeśli istnieją zależności między istniejącym plikiem model.json lub manifest.json a zestawem jednostek, zostanie wyświetlony komunikat o błędzie i nie będzie można wybrać innego pliku model.json lub manifest.json. Usuń te zależności przed zmianą pliku model.json lub manifest.json lub utwórz nowe źródło danych z plikiem model.json lub manifest.json, którego chcesz użyć, aby uniknąć usuwania zależności.
 
 8. Opcjonalnie możesz wybrać dodatkowe atrybuty lub encje, aby włączyć profilowanie danych lub wyłączyć już wybrane.   
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

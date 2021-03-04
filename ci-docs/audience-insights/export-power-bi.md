@@ -5,16 +5,16 @@ ms.date: 09/21/2020
 ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406553"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477101"
 ---
 # <a name="connector-for-power-bi-preview"></a>Łącznik dla Power BI (wersja zapoznawcza)
 
@@ -31,7 +31,7 @@ Utwórz wizualizacje danych za pomocą narzędzia Power BI Desktop. Tworzenie do
 
 1. Wybierz **Zobacz więcej** i wyszukaj **Dynamics 365 Customer Insights**
 
-1. Wybierz wyniki i wybierz **Połącz**.
+1. Wybierz pozycję **Połącz**.
 
 1. **Zaloguj się**, korzystając z tego samego konta organizacyjnego, które będzie używane dla Customer Insights i wybierz **Połącz**.
    > [!NOTE]
@@ -52,3 +52,22 @@ Utwórz wizualizacje danych za pomocą narzędzia Power BI Desktop. Tworzenie do
 ### <a name="work-with-a-subset-of-data"></a>Praca z podzbiorem danych
 
 Weź pod uwagę pracę z podzbiorem danych programu. Można na przykład utworzyć [segmenty](segments.md) zamiast eksportowania wszystkich rekordów klientów do Power BI.
+
+## <a name="troubleshooting"></a>Rozwiązywanie problemów
+
+### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>Środowisko Customer Insights nie jest wyświetlane w programie Power BI
+
+Środowiska, które mają więcej niż jedną [relację](relationships.md) zdefiniowaną między dwoma identycznymi jednostkami w szczegółowych informacjach o odbiorcach, nie będą dostępne w łączniku usługi Power BI.
+
+Możesz zidentyfikować i usunąć zduplikowane relacje.
+
+1. W odbiorcy danych przejdź do strony **Dane** > **Relacje** w środowisku, w którym nie ma Power BI.
+2. Zidentyfikuj zduplikowane relacje:
+   - Sprawdź, czy istnieje więcej niż jedna relacja zdefiniowana między tymi samymi dwoma obiektami.
+   - Sprawdź, czy istnieje relacja utworzona między dwiema jednostkami, które są objęte procesem unifikacji. Istnieje domniemana relacja między wszystkimi jednostkami uwzględnionymi w procesie unifikacji.
+3. Usuń wszystkie zidentyfikowane zduplikowane relacje.
+
+Po usunięciu zduplikowanych relacji spróbuj ponownie skonfigurować łącznik usługi Power BI. Środowisko powinno być teraz dostępne.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
+

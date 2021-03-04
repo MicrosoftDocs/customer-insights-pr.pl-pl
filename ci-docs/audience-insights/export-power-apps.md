@@ -1,20 +1,20 @@
 ---
 title: Łącznik usługi Power Apps
 description: Połącz z Power Apps i Power Automate.
-ms.date: 08/21/2020
+ms.date: 01/19/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5a8bbb9a09218d54228589d43c21c8894680b56e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406550"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268929"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Łącznik Microsoft Power Apps (wersja zapoznawcza)
 
@@ -31,7 +31,7 @@ Zapoznaj się z dokumentacją Power Apps, aby dowiedzieć się, jak [dodać poł
 Po dodaniu Customer Insights jako połączenia danych można wybrać następujące encje w Power Apps:
 
 - Klient: aby korzystać z danych z [ujednoliconego profilu klienta](customer-profiles.md).
-- Działanie ujednoliconego klienta: aby wyświetlić [oś czasu działania](activities.md) w aplikacji.
+- UnifiedActivity: aby wyświetlić ujednoliconą [oś czasu działań](activities.md) w aplikacji.
 
 ## <a name="limitations"></a>Ograniczenia
 
@@ -72,3 +72,6 @@ Można na przykład dodać profile klientów do [kontrolki galerii](https://docs
 1. Aby wyświetlić ujednoliconą oś czasu dla klienta, należy dodać element galerii i dodać właściwość elementu: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
     Przykład: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

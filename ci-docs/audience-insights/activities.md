@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667242"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267445"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
@@ -44,13 +44,13 @@ Połącz działania klientów z [różnych źródeł danych](data-sources.md) w 
 
 1. W sekcji **Konfigurowanie relacji** skonfiguruj szczegóły, aby połączyć dane działania z odpowiednim klientem.
 
-   > [!div class="mx-imgBorder"]
-   > ![Definiowanie relacji encji](media/activities-entities-define.png "Definiowanie relacji encji")
-
     - **Pole encji działania**: Wybierz pole w encji działanie, które będzie używane do ustanawiania relacji z inną encją.
     - **Encja klienta**: Wybierz odpowiednią encję źródłową klienta, z którą encja działania będzie w relacji. Relacje można powiązać tylko z encjami źródłowymi klienta używanymi w procesie zjednoczenia danych.
     - **Pole encja klienta**: To pole zawiera klucz podstawowy źródłowej encji klienta wybrany w procesie mapowania. To pole klucz podstawowy w encji źródłowej klienta jest używane do ustanawiania relacji z encją działanie.
     - **Nazwa**: Jeśli relacja między tą encją działania a wybraną encją źródłową klienta już istnieje, nazwa relacji zostanie wyświetlona w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym miejscu.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Definiowanie relacji encji](media/activities-entities-define.png "Definiowanie relacji encji")
 
 1. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
@@ -82,3 +82,6 @@ Połącz działania klientów z [różnych źródeł danych](data-sources.md) w 
 3. Wybierz ikonę **Usuń**.
 
 4. Potwierdź usunięcie.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

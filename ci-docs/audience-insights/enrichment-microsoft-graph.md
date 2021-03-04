@@ -1,20 +1,20 @@
 ---
 title: Wzbogacanie profili klientów za pomocą Microsoft Graph
 description: Użyj danych własności z programu Microsoft Graph, aby wzbogacić dane klientów z koligacjami marki i zainteresowań.
-ms.date: 09/28/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4f93a2337815f76b98185ecb3755e08443031748
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406560"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269343"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Wzbogać profile klientów dzięki koligacjom marki i zainteresowań (wersja zapoznawcza)
 
@@ -35,16 +35,21 @@ Korzystamy z danych wyszukiwania online z Microsoft Graph, aby znaleźć koligac
 
 [Informacje na temat Microsoft Graph](https://docs.microsoft.com/graph/overview).
 
-## <a name="affinity-score-and-confidence"></a>Wyniki koligacji i wiarygodność
+## <a name="affinity-level-and-score"></a>Poziom sympatii i wynik
 
-**Wynik koligacji** jest obliczany w skali 100-stopniowej, gdzie 100 reprezentuje segment, który ma najwyższą koligację dla danej marki lub zainteresowania.
+Na każdym wzbogaconym profilu klienta podajemy dwie powiązane wartości - poziom podobieństwa i wynik podobieństwa. Te wartości pomagają określić, jak silne jest podobieństwo segmentu demograficznego tego profilu, marki lub zainteresowań w porównaniu z innymi segmentami demograficznymi.
 
-**Zaufanie koligacji** jest obliczane na skali 100-punktowej. Wskazuje on poziom ufności systemu, w to, że segment ma koligację dla konkretnej marki lub zainteresowania. Poziom ufności jest określany na podstawie rozmiaru segmentu oraz stopnia szczegółowości segmentu. Wielkość segmentu jest określona przez ilość danych dla danego segmentu. Stopień szczegółowości segmentu jest określany przez liczbę atrybutów (wiek, płeć, lokalizacja) dostępnych w profilu.
+*Poziom sympatii* składa się z czterech poziomów, a *wynik sympatii* jest obliczany w skali 100-punktowej, mapowej na poziomy a automatycznie.
 
-Nie normalizujemy wyników zestawu danych. W związku z tym użytkownik może nie widzieć wszystkich możliwych wartości wyników koligacji dla zestawu danych. Na przykład w danych nie może istnieć wzbogacony profil klienta z wynikiem koligacji 100. Jest to możliwe jeśli żadni klienci nie istnieją w segmencie demograficznym, który otrzymał 100 dla danej marki lub zainteresowania.
 
-> [!TIP]
-> Podczas [tworzenia segmentów](segments.md) przy użyciu wyników koligacji należy przejrzeć zestawienie wyników koligacji dla swojego zestawu danych przed podjęciem decyzji na temat odpowiednich progów punktów. Na przykład wynik koligacji równy 10 można uznać za znaczący w zestawie danych, który ma najwyższy wynik koligacji o wartości 25 dla danej marki lub zainteresowania.
+|Poziom sympatii |Wynik sympatii  |
+|---------|---------|
+|Bardzo wysoko     | 85–100       |
+|Wysoka     | 70–84        |
+|Średnie     | 35–69        |
+|Niska     | 1–34        |
+
+W zależności od stopnia szczegółowości pomiaru podobieństwa można użyć poziomu sympatii lub wyniku. Wynik a ponadto pozwala na dokładniejsze kontrolowanie danych.
 
 ## <a name="supported-countriesregions"></a>Obsługiwane kraje/regiony
 
@@ -54,17 +59,13 @@ Aby wybrać kraj, należy otworzyć **Wzbogacenie marek** lub **Wzbogacenie zain
 
 ### <a name="implications-related-to-country-selection"></a>Implikacje dotyczące wyboru kraju
 
-- Kiedy [wybierasz własne marki](#define-your-brands-or-interests), zapewnimy sugestie na podstawie wybranego kraju/regionu.
+- Podczas [wybierania własnej marki](#define-your-brands-or-interests) system oferuje sugestie dotyczące wybranego kraju lub regionu.
 
-- Podczas [wybierania branży](#define-your-brands-or-interests) będziemy identyfikować najpopularniejsze marki lub zainteresowania oparte na wybranym kraju/regionie.
+- [Wybierając branżę](#define-your-brands-or-interests), otrzymasz najbardziej odpowiednie marki lub zainteresowania w oparciu o wybrany kraj lub region.
 
-- Kiedy [mapujesz pola](#map-your-fields), jeśli pole Kraj/region nie jest zamapowane, użyjemy danych z Microsoft Graph w wybranym kraju/regionie, aby wzbogacić profile klientów. Użyjemy tego wyboru również do wzbogacenia profili klientów, w których nie są dostępne dane o kraju/regionie.
-
-- Kiedy [wzbogacasz profile](#refresh-enrichment), wzbogacimy wszystkie profile klientów, dla których dysponujemy danymi Microsoft Graph na wybrane marki i zainteresowania, w tym profilami, które nie są dostępne w wybranym kraju/regionie. Jeśli na przykład wybrano Niemcy, wzbogacimy profile zlokalizowane w Stanach Zjednoczonych, jeśli posiadamy dane Microsoft Graph dostępne dla wybranych marek i zainteresowań w USA.
+- Podczas [wzbogacania profilów](#refresh-enrichment) wzbogacimy wszystkie profile klientów, dla których pobierzemy dane o wybranych profilach zainteresowaniach. Obejmuje profile, które nie znajdują się w wybranym kraju lub regionie. Jeśli na przykład wybrano Niemcy, wzbogacimy profile zlokalizowane w Stanach Zjednoczonych, jeśli posiadamy dane Microsoft Graph dostępne dla wybranych marek i zainteresowań w USA.
 
 ## <a name="configure-enrichment"></a>Konfigurowanie wzbogacenia
-
-Konfigurowanie wzbogacania marek lub zainteresowań składa się z dwóch kroków:
 
 ### <a name="define-your-brands-or-interests"></a>Zdefiniuj swoje marki i zainteresowania
 
@@ -75,9 +76,19 @@ Wybierz jedną z następujących opcji:
 
 Aby dodać markę lub zainteresowanie, wprowadź ją w obszarze wprowadzania, aby uzyskać sugestie na podstawie pasujących terminów. Jeśli nie ukazujemy szukanej marki lub zainteresowania, wyślij nam opinię przy użyciu łącza **Sugeruj**.
 
+### <a name="review-enrichment-preferences"></a>Przejrzyj preferencje wzbogacania
+
+Przejrzyj domyślne preferencje wzbogacania i zaktualizuj je w razie potrzeby.
+
+:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Zrzut ekranu okna preferencji dotyczących wzbogacenia.":::
+
+### <a name="select-entity-to-enrich"></a>Wybierz encję do wzbogacenia
+
+Wybierz opcję **Wzbogacona encja** i wybierz zestaw danych, który chcesz wzbogacić danymi firmy z Microsoft Graph. Można wybrać encję Klient, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+
 ### <a name="map-your-fields"></a>Zamapuj swoje pola
 
-Mapowanie pól ze zunifikowanej encji klienta na co najmniej dwa atrybuty w celu zdefiniowania segmentu demograficznego, który ma zostać użyty do wzbogacenia danych klienta. Wybierz **Edytuj**, aby zdefiniować mapowanie pól i wybierz **Zastosuj** po zakończeniu. Wybierz **Zapisz**, aby zakończyć mapowanie pola.
+Mapuj pola z ujednoliconej encji klienta, aby zdefiniować segment demograficzny, którego system ma używać do wzbogacania danych klientów. Zamapuj kraj / region i przynajmniej atrybuty Data urodzenia lub Płeć. Ponadto musisz zamapować co najmniej jeden z następujących atrybutów: Miejscowość (i Województwo) albo Kod pocztowy. Wybierz **Edytuj**, aby zdefiniować mapowanie pól i wybierz **Zastosuj** po zakończeniu. Wybierz **Zapisz**, aby zakończyć mapowanie pola.
 
 Obsługiwane są następujące formaty i wartości, wielkość liter w przypadku wartości nie ma znaczenia:
 
@@ -120,3 +131,6 @@ Koligacje marki i zainteresowań można również wyświetlać na kartach poszcz
 ## <a name="next-steps"></a>Następne kroki
 
 Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [Segmenty](segments.md), [Miary](measures.md), a nawet [eksportuj dane](export-destinations.md), aby zapewnić klientom spersonalizowane rozwiązania.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
