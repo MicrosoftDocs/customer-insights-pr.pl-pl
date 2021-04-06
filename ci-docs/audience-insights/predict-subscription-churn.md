@@ -2,19 +2,19 @@
 title: Przewidywanie zmian subskrypcji
 description: Przewiduj, czy istnieje zagrożenie, że klient przestanie używać subskrypcji na produkty lub usługi Twojej firmy.
 ms.date: 08/19/2020
-ms.reviewer: zacook
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: zacookmsft
+ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c12adab2e4573b1315d74f2111cf13b9f4ee6045
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268377"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595669"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
 

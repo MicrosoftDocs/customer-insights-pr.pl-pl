@@ -2,19 +2,19 @@
 title: Wzbogacanie profili klientów za pomocą Microsoft Graph
 description: Użyj danych własności z programu Microsoft Graph, aby wzbogacić dane klientów z koligacjami marki i zainteresowań.
 ms.date: 12/10/2020
-ms.reviewer: kishorem
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: kishorem-MS
+ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: aa46dac4f9c0d27881371877b14a92a6725710da
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269343"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596466"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Wzbogać profile klientów dzięki koligacjom marki i zainteresowań (wersja zapoznawcza)
 
@@ -33,7 +33,7 @@ Aby skonfigurować wzbogacanie koligacji zainteresowań, przejdź do karty **Odk
 
 Korzystamy z danych wyszukiwania online z Microsoft Graph, aby znaleźć koligacje marki i zainteresowania między różnymi segmentami demograficznymi (określonymi według wieku, płci lub lokalizacji). Wielkość wyszukiwania online dla marki lub zainteresowań określa stopień sympatii ze strony segmentu demograficznego, w porównaniu z innymi segmentami, dla tej marki lub zainteresowania.
 
-[Informacje na temat Microsoft Graph](https://docs.microsoft.com/graph/overview).
+[Informacje na temat Microsoft Graph](/graph/overview).
 
 ## <a name="affinity-level-and-score"></a>Poziom sympatii i wynik
 

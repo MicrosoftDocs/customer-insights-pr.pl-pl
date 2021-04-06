@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270217"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598352"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Użyj modeli opartych na Azure Machine Learning Studio (klasyczna)
 
@@ -37,7 +37,7 @@ W pierwszym kroku musimy utworzyć obszar roboczy i otworzyć Machine Learning S
 
 1. Wyszukaj **Obszar roboczy Machine Learning Studio** i wybierz **Utwórz**.
 
-1. Wprowadź wymagane informacje szczegółowe, aby [utworzyć obszar roboczy](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace). Wybierz **Warstwa cenowa planu usług sieci Web** na podstawie ilości danych do zaimportowania. W celu zapewnienia optymalnej wydajności należy wybrać **Lokalizację**, która znajduje się najbliżej.
+1. Wprowadź wymagane informacje szczegółowe, aby [utworzyć obszar roboczy](/azure/machine-learning/studio/create-workspace). Wybierz **Warstwa cenowa planu usług sieci Web** na podstawie ilości danych do zaimportowania. W celu zapewnienia optymalnej wydajności należy wybrać **Lokalizację**, która znajduje się najbliżej.
 
 1. Po utworzeniu zasobu zostanie wyświetlony pulpit nawigacyjny Obszar roboczy Machine Learning Studio. Wybierz **Uruchom Machine Learning Studio**.
 
@@ -65,7 +65,7 @@ Teraz możesz utworzyć nowy eksperyment lub zaimportować istniejący szablon e
 
    ![Konfigurowanie predykcyjnej usługi sieci Web](media/predictive-webservice-control.png)
 
-1. Po pomyślnym wyniku predykcyjnej usługi sieci Web można ją wdrożyć na potrzeby automatycznego planowania. Aby usługa sieci Web działała z Customer Insights, wybierz **Wdróż usługę sieci Web** > **Wdróż usługę sieci Web [Nowa] Wersja zapoznawcza**. [Więcej informacji na temat wdrażania usługi sieci Web](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
+1. Po pomyślnym wyniku predykcyjnej usługi sieci Web można ją wdrożyć na potrzeby automatycznego planowania. Aby usługa sieci Web działała z Customer Insights, wybierz **Wdróż usługę sieci Web** > **Wdróż usługę sieci Web [Nowa] Wersja zapoznawcza**. [Więcej informacji na temat wdrażania usługi sieci Web](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
    ![Wdrażania predykcyjnej usługi sieci Web](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ Na następującym rysunku przedstawiono model szkoleń i potok oceny z Azure Mac
 
 ![Model zmian w Azure Machine Learning Studio](media/azure-machine-learning-model.png)
 
-Stosujemy również technikę o nazwie **Ważność funkcji Permutacja**, ważny aspekt optymalizacyjny modelu. Wbudowane modele mają znikomy wgląd we wpływ konkretnej funkcji na końcowe przewidywanie. Kalkulator ważności funkcji używa niestandardowego algorytmu w celu obliczenia wpływu poszczególnych funkcji na wyniki dla określonego modelu. Ważność funkcji jest znormalizowana w zakresie od +1 do -1. Negatywny wpływ oznacza, że odpowiednia funkcja ma szkodliwy wpływ na wyniki i powinna zostać usunięta z modelu. Dodatni wpływ oznacza, że funkcja jest znacząco przyczynia się do przewidywania. Te wartości nie są współczynnikami korelacji, ponieważ są różnymi metrykami. Aby uzyskać więcej informacji, zobacz [Ważność funkcji Permutacja](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Stosujemy również technikę o nazwie **Ważność funkcji Permutacja**, ważny aspekt optymalizacyjny modelu. Wbudowane modele mają znikomy wgląd we wpływ konkretnej funkcji na końcowe przewidywanie. Kalkulator ważności funkcji używa niestandardowego algorytmu w celu obliczenia wpływu poszczególnych funkcji na wyniki dla określonego modelu. Ważność funkcji jest znormalizowana w zakresie od +1 do -1. Negatywny wpływ oznacza, że odpowiednia funkcja ma szkodliwy wpływ na wyniki i powinna zostać usunięta z modelu. Dodatni wpływ oznacza, że funkcja jest znacząco przyczynia się do przewidywania. Te wartości nie są współczynnikami korelacji, ponieważ są różnymi metrykami. Aby uzyskać więcej informacji, zobacz [Ważność funkcji Permutacja](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 Cały [eksperyment zmian jest dostępny w Galeria sztucznej inteligencji platformy Azure](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ Cały [eksperyment rekomendacji produktów można zobaczyć w Galerii sztucznej 
 
 ## <a name="integrate-custom-models"></a>Modele niestandardowe integracji
 
-Aby wykorzystać te przewidywania w Customer Insights, należy **wyeksportować** przewidywania wraz z identyfikatorami klientów. [Wyeksportuj je w tej samej lokalizacji magazynu obiektów Azure Blob](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs), w której są eksportowane dane źródłowe. Przewidywana usługa sieci Web może być zaplanowana do regularnego uruchamiana i aktualizowania wyników.
+Aby wykorzystać te przewidywania w Customer Insights, należy **wyeksportować** przewidywania wraz z identyfikatorami klientów. [Wyeksportuj je w tej samej lokalizacji magazynu obiektów Azure Blob](/azure/storage/common/storage-import-export-data-from-blobs), w której są eksportowane dane źródłowe. Przewidywana usługa sieci Web może być zaplanowana do regularnego uruchamiana i aktualizowania wyników.
 
 Dane generowane w ramach modelu niestandardowego mogą zostać użyte do dalszego wzbogacenia danych klientów. Aby uzyskać więcej informacji, zobacz [Niestandardowe modele uczenia maszynowego](custom-models.md).
 

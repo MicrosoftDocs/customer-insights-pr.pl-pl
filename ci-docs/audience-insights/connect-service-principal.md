@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267735"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596512"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure
 
@@ -23,7 +23,7 @@ Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze
 Możesz użyć nazwy głównej usługi, aby bezpiecznie [dodać lub edytować folder Common Data Model](connect-common-data-model.md) jako źródło danych lub [utworzyć nowe lub zaktualizować istniejące środowisko](manage-environments.md#create-an-environment-in-an-existing-organization).
 
 > [!IMPORTANT]
-> - Konto magazynu Azure Data Lake Gen2, które ma używać jednostki usługi, musi mieć [włączoną funkcję Hierarchiczna przestrzeń nazw (HNS)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Konto magazynu Azure Data Lake Gen2, które ma używać jednostki usługi, musi mieć [włączoną funkcję Hierarchiczna przestrzeń nazw (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
 > - Aby utworzyć nazwę główną usługi, trzeba mieć uprawnienia administratora w ramach Twojej subskrypcji platformy Azure.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Utwórz nazwę głównej usługi Azure do analiz odbiorców
@@ -48,7 +48,7 @@ Przed utworzeniem nowej nazwy głównej usługi na potrzeby statystyk odbiorców
 
 ### <a name="create-a-new-service-principal"></a>Utwórz nową nazwę główną usługi
 
-1. Zainstaluj najnowszą wersję **Azure Active Directory PowerShell for Graph**. Aby uzyskać więcej informacji, zobacz temat [Instalowanie Azure Active Directory PowerShell for Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Zainstaluj najnowszą wersję **Azure Active Directory PowerShell for Graph**. Aby uzyskać więcej informacji, zobacz temat [Instalowanie Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
    - Na komputerze wybierz klawisz Windows na klawiaturze i wyszukaj **Windows PowerShell** i **Uruchom jako administrator**.
    
    - W wyświetlonym oknie PowerShell wprowadź polecenie `Install-Module AzureAD`.

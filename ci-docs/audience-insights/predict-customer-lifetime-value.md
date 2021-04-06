@@ -2,19 +2,19 @@
 title: Przewidywanie Wartość okresu istnienia klienta (CLV)
 description: Potencjalne przychody aktywnych klientów w przyszłości.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268607"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595822"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Przewidywanie Wartości okresu istnienia klienta (wersja zapoznawcza)
 
@@ -194,11 +194,11 @@ Na stronie wyników wyszukiwania znajdują się trzy podstawowe sekcje danych.
   
   - **Wskaźnik sukcesu w przewidywaniu wartościowych klientów**
 
-  Zobacz różnicę w przewidywaniu klientów o dużej wartości za pomocą modelu AI w porównaniu z modelem bazowym. Na przykład wskaźnik sukcesu 84% oznacza, że spośród wszystkich klientów o dużej wartości w danych szkoleniowych model sztucznej inteligencji był w stanie dokładnie uchwycić 84%. Następnie porównujemy ten wskaźnik sukcesu ze wskaźnikiem sukcesu modelu bazowego, aby zgłosić względną zmianę. Ta wartość służy do przypisywania oceny modelowi.
+    Zobacz różnicę w przewidywaniu klientów o dużej wartości za pomocą modelu AI w porównaniu z modelem bazowym. Na przykład wskaźnik sukcesu 84% oznacza, że spośród wszystkich klientów o dużej wartości w danych szkoleniowych model sztucznej inteligencji był w stanie dokładnie uchwycić 84%. Następnie porównujemy ten wskaźnik sukcesu ze wskaźnikiem sukcesu modelu bazowego, aby zgłosić względną zmianę. Ta wartość służy do przypisywania oceny modelowi.
 
   - **Metryki błędów**
     
-  Inna metryka umożliwia przeglądanie ogólnej wydajności modelu pod kątem błędu w przewidywaniu przyszłych wartości. Do oceny tego błędu używamy ogólnej metryki Root Mean Squared Error (RMSE). RMSE to standardowy sposób pomiaru błędu modelu przy prognozowaniu danych ilościowych. Wartość RMSE modelu AI jest porównywana z wartością RMSE modelu bazowego i zgłaszana jest względna różnica.
+    Inna metryka umożliwia przeglądanie ogólnej wydajności modelu pod kątem błędu w przewidywaniu przyszłych wartości. Do oceny tego błędu używamy ogólnej metryki Root Mean Squared Error (RMSE). RMSE to standardowy sposób pomiaru błędu modelu przy prognozowaniu danych ilościowych. Wartość RMSE modelu AI jest porównywana z wartością RMSE modelu bazowego i zgłaszana jest względna różnica.
 
   Model AI nadaje priorytet dokładnemu rankingowi klientów zgodnie z wartością, jaką wnoszą do Twojej firmy. Tak więc do wyliczenia ostatecznej oceny modelu wykorzystuje się tylko wskaźnik sukcesu przewidywania klientów o wysokiej wartości. Metryka RMSE jest wrażliwa na wartości odstające. W scenariuszach, w których masz niewielki odsetek klientów z wyjątkowo wysokimi wartościami zakupów, ogólna metryka RMSE może nie dawać pełnego obrazu wydajności modelu.   
 

@@ -1,7 +1,7 @@
 ---
 title: Nowe i nadchodzące funkcje
 description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 02/02/2021
+ms.date: 03/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,18 +9,18 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270445"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598462"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Z przyjemnością informujemy o najnowszych aktualizacjach! W tym artykule podsumowano publiczne wersje zapoznawcze, ulepszenia ogólnej dostępności oraz aktualizacje funkcji. Aby zobaczyć długofalowe plany dotyczące funkcji, zapoznaj się z [planami wydań rozwiązań Dynamics 365 i Power Platform](https://docs.microsoft.com/dynamics365/release-plans/).
+Z przyjemnością informujemy o najnowszych aktualizacjach! W tym artykule podsumowano publiczne wersje zapoznawcze, ulepszenia ogólnej dostępności oraz aktualizacje funkcji. Aby zobaczyć długofalowe plany dotyczące funkcji, zapoznaj się z [planami wydań rozwiązań Dynamics 365 i Power Platform](/dynamics365/release-plans/).
 
 Możesz również obejrzeć poniższy film, aby dowiedzieć się więcej o możliwościach planowanych na ostatnie sześć miesięcy.
 
@@ -30,6 +30,40 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="february-2021-updates"></a>Aktualizacje z lutego 2021 r.
+
+Aktualizacje z lutego 2021 r. zawierają kilka funkcji, uaktualnienia wydajności i poprawki błędów.
+
+#### <a name="extensibility"></a>Rozszerzalność
+
+- **Eksportuj segmenty do rozwiązania AdRoll**
+
+  Rozszerzyliśmy nasze miejsca docelowe eksportu o rozwiązanie AdRoll. Obecnie można eksportować segmenty z odbiorców aplikacji Customer Insights do rozwiązania AdRoll i używać ich jako podstawy dla reklam. Aby uzyskać więcej informacji, zobacz temat [Łącznik dla rozwiązania AdRoll](export-adroll.md).
+
+#### <a name="segments"></a>Segmenty
+ 
+- **Duplikuj segment**
+  
+  Aby utworzyć nowy segment na podstawie istniejącego, można teraz zduplikować segment i edytować zduplikowany segment, aby dokładniej go sprecyzować. 
+
+- **Dodawanie dodatkowych atrybutów do segmentu**
+
+  Obecnie atrybuty można dołączać do pliku wyjściowego segmentu, nawet jeśli nie są one częścią profilu klienta. Na przykład można uwzględnić identyfikatory subskrypcji w segmencie, nawet jeśli należy on do encji subskrypcji, która ma relację M:1 z encją klienta. Jeśli atrybut należy do obiektu powiązanego z encją klienta, można go obecnie dołączać.  
+
+#### <a name="predictions"></a>Przewidywania
+
+- **Tworzenie predykcyjnych rekomendacji produktu**
+
+  Właściwa interpretacja zainteresowania klientów produktami do kupienia jest jednym z pierwszych kroków niezbędnych do zwiększenia przychodów firmy i zwiększenia lojalności klientów dzięki personalizacji i odpowiednim interakcjom. Podawanie rekomendacji dotyczących produktów, które nie interesują klienta, może stworzyć poczucie rozdziału między klientem a firmą, a w konsekwencji ograniczyć ogólny potencjalny przychód i pogorszyć wrażenia klienta. 
+
+  Używając własnych danych, można teraz tworzyć prognozy dotyczące produktów, które klienci będą prawdopodobnie chcieli kupić w przyszłości. Aby uzyskać więcej informacji, zobacz temat [Przewidywanie rekomendacji dotyczących produktów](predict-product-recommendation.md).
+
+#### <a name="system-administration"></a>Administrator systemu
+
+- **Kopiowanie środowiska obsługuje więcej typów źródeł danych**
+
+  Administratorzy mogą kopiować konfiguracje środowiska do nowego środowiska w tej samej organizacji. Ta funkcja rozszerza funkcjonalność kopiowania środowiska o przypadki, w których są używane źródła danych oparte na elemencie data lake usługi Common Data Service lub folderze modelu Common Data Model.
 
 ## <a name="january-2021-updates"></a>Aktualizacje ze stycznia 2021
 

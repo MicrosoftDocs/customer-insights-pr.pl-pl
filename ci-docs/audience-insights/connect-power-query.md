@@ -2,23 +2,23 @@
 title: Spożycie danych za pośrednictwem łącznika Power Query
 description: Łączniki źródeł danych oparte na Power Query.
 ms.date: 09/29/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: b9a1b30e37c3792aa7bdfcfc177da9e8a32c324d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267785"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596926"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Nawiązywanie połączenia ze źródłem danych Power Query
 
-Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. Dodawanie źródeł danych na podstawie łączników Power Query zazwyczaj przebiega zgodnie z krokami opisanymi w następnej sekcji. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby uzyskać więcej informacji, zobacz dokumentację dla poszczególnych łączników w [Informacje na temat łączników Power Query](https://docs.microsoft.com/power-query/connectors/).
+Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. Dodawanie źródeł danych na podstawie łączników Power Query zazwyczaj przebiega zgodnie z krokami opisanymi w następnej sekcji. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby uzyskać więcej informacji, zobacz dokumentację dla poszczególnych łączników w [Informacje na temat łączników Power Query](/power-query/connectors/).
 
 ## <a name="create-a-new-data-source"></a>Utwórz nowe źródło danych
 
@@ -44,7 +44,7 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe Edytuj zapytania](media/data-manager-configure-edit-queries.png "Okno dialogowe Edytuj zapytania")
 
-1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Korzystając z opcji dostępnych w oknie Power Query, można stosować przekształcenia. Każde przekształcenie jest wyświetlane w obszarze **Zastosowane kroki**. Power Query oferuje wiele wstępnie wbudowanych opcji transformacji. Aby uzyskać więcej informacji, zobacz [Transformacje Power Query](https://docs.microsoft.com/power-query/power-query-what-is-power-query#transformations).
+1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Korzystając z opcji dostępnych w oknie Power Query, można stosować przekształcenia. Każde przekształcenie jest wyświetlane w obszarze **Zastosowane kroki**. Power Query oferuje wiele wstępnie wbudowanych opcji transformacji. Aby uzyskać więcej informacji, zobacz [Transformacje Power Query](/power-query/power-query-what-is-power-query#transformations).
 
 1. Kolejne encje można dodać do źródła danych, wybierając polecenie **Pobierz dane** w oknie dialogowym **Edytuj zapytania**.
 
@@ -59,7 +59,7 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 ## <a name="available-power-query-data-sources"></a>Dostępne źródła danych Power Query
 
-Sprawdź [Informacje na temat łączników Power Query](https://docs.microsoft.com/power-query/connectors/), aby otrzymać aktualną listę łączników, które można wybrać w celu zaimportowania danych do usługi Customer Insights. 
+Sprawdź [Informacje na temat łączników Power Query](/power-query/connectors/), aby otrzymać aktualną listę łączników, które można wybrać w celu zaimportowania danych do usługi Customer Insights. 
 
 Łączniki ze znacznikiem wyboru w kolumnie **Customer Insights (Przepływy danych)** są dostępne w celu utworzenia nowych źródeł danych na podstawie Power Query. Przejrzyj dokumentację określonego łącznika, aby dowiedzieć się więcej o jego wymaganiach wstępnych, ograniczeniach i innych szczegółach.
 

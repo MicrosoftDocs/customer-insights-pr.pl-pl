@@ -1,31 +1,31 @@
 ---
 title: Obsługiwane języki w analizach odbiorców
 description: Rozumienie i konfigurowanie obsługi języka.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268193"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595485"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>Obsługiwane języki w funkcjach w analizach odbiorców
 
-Funkcja analiz odbiorców Dynamics 365 Customer Insights obsługuje wiele języków. W tym temat przedstawiono dostępne języki i zamieszczono pomoc techniczną dotyczącą zmian między nimi oraz przegląd informacji o przetłumaczonej zawartości.
+Szczegółowe informacje o odbiorcach na potrzeby aplikacji Dynamics 365 Customer Insights są tłumaczone na wiele języków. Poniższa lista zawiera dostępne języki i informacje dotyczące tego, co jest przetłumaczone. Możesz również dowiedzieć się więcej na temat sposobu zmieniania ustawień językowych. 
 
 ## <a name="languages"></a>Języki
 
 | Nazwa języka (Angielski)|  Nazwa języka (język macierzysty) |
 | ------------- | ------------- |
 | Baskijski | euskara |
-| bułgarski | Български |
+| bułgarski | български |
 | kataloński | català |
 | Chiński (uproszczony) | 中文(简体) |
 | Chiński (tradycyjny) | 中文(繁體) |
@@ -39,26 +39,26 @@ Funkcja analiz odbiorców Dynamics 365 Customer Insights obsługuje wiele język
 | francuski | français |
 | galicyjski | galego |
 | niemiecki | Deutsch |
-| grecki, | Ελληνικά |
-| Hindi | हिंदी |
-| węgierski, | magyar |
-| Indonezyjski | Bahasa Indonesia |
-| włoski | italiano |
+| Grecki | Ελληνικά |
+| hindi | हिंदी |
+| Węgierski | magyar |
+| Indonezyjski | Indonezja |
+| Włoski | italiano |
 | Japoński | 日本語 |
-| Kazachski | Қазақ |
-| koreański. | 한국어 |
-| Łotewski | latviešu |
-| Litewski | lietuvių |
-| Malajski | Bahasa Melayu |
-| norweski (Bokmål) | norsk (bokmål) |
-| polski | Polski |
+| kazachski | қазақ тілі |
+| Koreański | 한국어 |
+| łotewski | latviešu |
+| litewski | lietuvių |
+| Malajski | Melayu |
+| Norweski (Bokmål) | norsk bokmål |
+| Polski | polski |
 | portugalski (Brazylia) | português |
 | portugalski (Portugalia) | português |
-| Rumuński | română |
-| rosyjski, | Русский |
-| Serbski (cyrylica) | српски |
-| Serbski (łaciński) | srpski |
-| Słowacki | slovenčina |
+| rumuński | română |
+| Rosyjski | pусский |
+| serbski (cyrylica) | српски |
+| serbski (łaciński) | srpski |
+| słowacki | slovenčina |
 | Słoweński | slovenski |
 | hiszpański | español |
 | szwedzki, | svenska |

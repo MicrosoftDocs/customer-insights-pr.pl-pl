@@ -2,19 +2,19 @@
 title: Łącznik usługi Power BI
 description: Dowiedz się, jak używać łącznika Dynamics 365 Customer Insights w Power BI.
 ms.date: 09/21/2020
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477101"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596052"
 ---
 # <a name="connector-for-power-bi-preview"></a>Łącznik dla Power BI (wersja zapoznawcza)
 
@@ -23,7 +23,7 @@ Utwórz wizualizacje danych za pomocą narzędzia Power BI Desktop. Tworzenie do
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Posiadasz ujednolicone profile klientów.
-- Najnowsza wersja [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) jest zainstalowana na komputerze użytkownika. [Więcej informacji o Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-what-is-desktop).
+- Na komputerze została zainstalowana najnowsza wersja programu [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/). [Więcej informacji o Power BI Desktop](/power-bi/desktop-what-is-desktop).
 
 ## <a name="configure-the-connector-for-power-bi"></a>Konfigurowanie łącznika dla Power BI
 
@@ -47,7 +47,7 @@ Utwórz wizualizacje danych za pomocą narzędzia Power BI Desktop. Tworzenie do
 
 ## <a name="large-data-sets"></a>Duże zestawy danych
 
-Łącznik Customer Insights dla Power BI jest przeznaczony do pracy z zestawami danych zawierającymi do 1.000.000 profilów klientów. Importowanie większych zestawów danych może się udać, ale zajmie dużo czasu. Ponadto proces może przekroczyć limit czasu z powodu ograniczeń Power BI. Aby uzyskać więcej informacji, zobacz [Power BI: Rekomendacje dotyczące dużych zestawów danych](https://docs.microsoft.com/power-bi/admin/service-premium-what-is#large-datasets). 
+Łącznik Customer Insights dla Power BI jest przeznaczony do pracy z zestawami danych zawierającymi do 1.000.000 profilów klientów. Importowanie większych zestawów danych może się udać, ale zajmie dużo czasu. Ponadto proces może przekroczyć limit czasu z powodu ograniczeń Power BI. Aby uzyskać więcej informacji, zobacz [Power BI: Rekomendacje dotyczące dużych zestawów danych](/power-bi/admin/service-premium-what-is#large-datasets). 
 
 ### <a name="work-with-a-subset-of-data"></a>Praca z podzbiorem danych
 
@@ -70,4 +70,3 @@ Możesz zidentyfikować i usunąć zduplikowane relacje.
 Po usunięciu zduplikowanych relacji spróbuj ponownie skonfigurować łącznik usługi Power BI. Środowisko powinno być teraz dostępne.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
-

@@ -1,20 +1,20 @@
 ---
 title: Praca z API
 description: Korzystanie z interfejsów API i zrozumienie ograniczeń.
-ms.date: 12/04/2020
+ms.date: 03/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
+ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 966db1a22e7dece1bcd89733880bce059151157f
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 011fa700563c53534554a6b73e87c2391bfdf714
+ms.sourcegitcommit: a872f59e6febe4d4bd678ddd0b60a1660acca0f3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267537"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "5710473"
 ---
 # <a name="work-with-customer-insights-apis"></a>Pracuj z interfejsami API Customer Insights
 
@@ -36,7 +36,7 @@ Ten artykuł zawiera instrukcje dotyczące dostępu do interfejsów API usługi 
 
    :::image type="content" source="media/enable-apis.gif" alt-text="Włącz interfejsy API Customer Insights":::
 
-1. Zaznacz opcję **Poznaj nasze interfejsy API** w celu wypróbowania interfejsów API.
+1. Zaznacz opcję **Poznaj nasze interfejsy API** w celu [wypróbowania interfejsów API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
 1. Wybierz operację interfejsu API i wybierz opcję **Wypróbuj tę funkcję**.
 
@@ -47,6 +47,9 @@ Ten artykuł zawiera instrukcje dotyczące dostępu do interfejsów API usługi 
 1. Przewiń w dół do końca okienka bocznego i wybierz opcję **Wyślij**.
 
 Odpowiedź HTTP będzie wkrótce widoczna poniżej.
+
+
+   :::image type="content" source="media/try-apis.gif" alt-text="Animowany obraz w formacie GIF przedstawiający sposób wybierania testowych interfejsów API.":::
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Utwórz nową rejestrację aplikacji w witrynie Azure Portal
 
@@ -61,6 +64,8 @@ Te kroki ułatwiają rozpoczęcie korzystania z interfejsów API usługi Custome
 
 1. W nowej rejestracji aplikacji przejdź do **uprawnienia interfejsu API**.
 
+   :::image type="content" source="media/app-registration-1.gif" alt-text="Animowany obraz GIF przedstawiający sposób ustawiania uprawnień interfejsu API w rejestracji aplikacji.":::
+
 1. Zaznacz pole wyboru **Dodaj uprawnienie** i w okienku bocznym wybierz pozycję **Customer Insights**.
 
 1. W przypadku **Typu uprawnienia** Wybierz opcję **Uprawnienia delegowane** i wybierz uprawnienie **user_impersonation**.
@@ -71,9 +76,11 @@ Te kroki ułatwiają rozpoczęcie korzystania z interfejsów API usługi Custome
 
 Możesz użyć identyfikatora aplikacji/klienta do rejestracji tej aplikacji z biblioteką uwierzytelniania firmy Microsoft (MSAL), aby uzyskać token okaziciela do wysłania z żądaniem do interfejsu API.
 
+:::image type="content" source="media/grant-admin-consent.gif" alt-text="Animowany obraz GIF przedstawiający sposób udzielania zgody administratora.":::
+
 Aby uzyskać więcej informacji na temat MSAL, zobacz [Omówienie biblioteki uwierzytelniania Microsoft (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview).
 
-Aby uzyskać więcej informacji na temat rejestracji aplikacji w Azure, zobacz [Nowy interfejs usługi Azure Portal App Registration](https://docs.microsoft.com/azure/active-directory/develop/app-registration-portal-training-guide).
+Aby uzyskać więcej informacji na temat rejestracji aplikacji w Azure, zobacz [Nowy interfejs usługi Azure Portal App Registration](/azure/active-directory/develop/app-registration-portal-training-guide).
 
 Informacje o korzystaniu z interfejsów API naszych bibliotek klientów znajduje się w artykule [Biblioteki klienta usługi Customer Insights](#customer-insights-client-libraries).
 
@@ -101,6 +108,8 @@ Informacje o korzystaniu z interfejsów API naszych bibliotek klientów znajduje
 
 1. Wybierz opcję **Udziel administratorowi zgodę na...**, aby zakończyć rejestrację aplikacji.
 
+   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Animowany obraz GIF przedstawiający sposób udzielania zgody administratora.":::
+
 1. Na koniec musimy dodać nazwę rejestracji aplikacji jako użytkownika w Customer Insights.    
    Otwórz Customer Insights, przejdź do **Administrator** > **Uprawnienia** i wybierz **Dodaj użytkownika**.
 
@@ -108,7 +117,7 @@ Informacje o korzystaniu z interfejsów API naszych bibliotek klientów znajduje
 
 ## <a name="customer-insights-client-libraries"></a>Biblioteki klientów Customer Insights
 
-Ta sekcja ułatwia rozpoczęcie korzystania z bibliotek klienta dostępnych dla interfejsów API usługi Customer Insights.
+Ta sekcja ułatwia rozpoczęcie korzystania z bibliotek klienta dostępnych dla interfejsów API usługi Customer Insights. Cały kod źródłowy biblioteki oraz przykładowe aplikacje można znaleźć na [stronie GitHub aplikacji Customer Insights](https://github.com/microsoft/Dynamics365-CustomerInsights-Client-Libraries). 
 
 ### <a name="c-nuget"></a>C# NuGet
 
@@ -127,7 +136,7 @@ Dowiedz się jak rozpocząć pracę za pomocą klienta C# bibliotek z NuGet.org.
 
 #### <a name="use-the-c-client-library"></a>Korzystanie z biblioteki klienta C#
 
-1. Użyj [biblioteki uwierzytelniania firmy Microsoft (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview), aby uzyskać możliwość `AccessToken` za pomocą istniejącej [rejestracji aplikacji Azure](#create-a-new-app-registration-in-the-azure-portal).
+1. Użyj [biblioteki uwierzytelniania firmy Microsoft (MSAL)](/azure/active-directory/develop/msal-overview), aby uzyskać możliwość `AccessToken` za pomocą istniejącej [rejestracji aplikacji Azure](#create-a-new-app-registration-in-the-azure-portal).
 
 1. Po pomyślnym uwierzytelnieniu i uzyskaniu tokena utwórz nowy lub użyj istniejącego `HttpClient` z dodatkowym **DefaultRequestHeaders "Authorization"** ustawionym na **Element nośny <access token>** i **Ocp-Apim-Subscription-Key** ustawiony na [**klucz subskrypcji** ze środowiska Customer Insights](#get-started-trying-the-customer-insights-apis).    
    Nagłówek **Autoryzacji** jest resetowany w zależności od potrzeb. Na przykład ważność tokenu wygasła.
@@ -141,5 +150,12 @@ Dowiedz się jak rozpocząć pracę za pomocą klienta C# bibliotek z NuGet.org.
 1. Odpowiedź będzie prawdopodobnie typu `object`, ponieważ metoda może zwracać wiele typów (na przykład `IList<InstanceInfo>` i `ApiErrorResult`). Aby sprawdzić zwracany typ, można bezpiecznie rzutować obiekty do typów odpowiedzi określonych na [stronie szczegółów interfejsu API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) dla tej operacji.    
    Jeśli potrzeba więcej informacji na temat żądania, użyj **metod wiadomości http**, aby uzyskać dostęp do surowego obiektu odpowiedzi.
 
+### <a name="nodejs-package"></a>Pakiet NodeJS
+
+Korzystaj z bibliotek klientów NodeJS dostępnych za pośrednictwem NPM: https://www.npmjs.com/package/@microsoft/customerinsights
+
+### <a name="python-package"></a>Pakiet języka Python
+
+Korzystaj z bibliotek klientów Python dostępnych za pośrednictwem PyPi: https://pypi.org/project/customerinsights/
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

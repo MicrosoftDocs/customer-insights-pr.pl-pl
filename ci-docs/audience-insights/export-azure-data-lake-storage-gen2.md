@@ -2,19 +2,19 @@
 title: Eksportowanie danych Customer Insights do Azure Data Lake Storage Gen2
 description: Dowiedz się, jak skonfigurować połączenie z Azure Data Lake Storage Gen2.
 ms.date: 02/04/2021
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: b00c3d6178150cbc93fe800779f094809d4dc67b
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 7c0eef575f745efa6312d7141a6dd96607f9797e
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477192"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596651"
 ---
 # <a name="connector-for-azure-data-lake-storage-gen2-preview"></a>Łącznik dla usługi  Azure Data Lake Storage Gen2 (wersja zapoznawcza)
 
@@ -29,8 +29,8 @@ Przechowuj dane aplikacji Customer Insights w usłudze Azure Data Lake Storage G
 1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej rozpoznawalną nazwę.
 
 1. Wprowadź **Nazwę konta**, **Klucz klienta** i **Kontener** dla komputera Azure Data Lake Storage Gen2.
-    - Informacje o tworzeniu konta magazynu do używania z Azure Data Lake Storage Gen2 można przeczytać w temacie [Utwórz konto magazynu](https://docs.microsoft.com/azure/storage/blobs/create-data-lake-storage-account). 
-    - Aby dowiedzieć się więcej o tym, jak znaleźć nazwę konta magazynu Azure Data Lake Gen2 i klucz konta, zobacz [Zarządzaj ustawieniami konta magazynu w Azure Portal](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - Informacje o tworzeniu konta magazynu do używania z Azure Data Lake Storage Gen2 można przeczytać w temacie [Utwórz konto magazynu](/azure/storage/blobs/create-data-lake-storage-account). 
+    - Aby dowiedzieć się więcej o tym, jak znaleźć nazwę konta magazynu Azure Data Lake Gen2 i klucz konta, zobacz [Zarządzaj ustawieniami konta magazynu w Azure Portal](/azure/storage/common/storage-account-manage).
 
 1. Wybierz **Dalej**.
 

@@ -5,16 +5,16 @@ ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: zacook
+author: zacookmsft
+ms.author: zacook
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 577232c7e901dfd54a195c3e9cfac5d1f0f866e6
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268285"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595914"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Uzupełnij częściowe dane przy użyciu przewidywań
 
@@ -31,7 +31,7 @@ Przewidywania umożliwiają łatwe tworzenie prognozowanych wartości, które mo
 
 Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić, że są spełnione następujące wymagania wstępne:
 
-1. W organizacji jest używane wystąpienie [skonfigurowane w Common Data Service](https://docs.microsoft.com/ai-builder/build-model#prerequisites) i znajduje się on w tej samej organizacji, w której znajduje się klient Customer Insights.
+1. W organizacji jest używane wystąpienie [skonfigurowane w Common Data Service](/ai-builder/build-model#prerequisites) i znajduje się on w tej samej organizacji, w której znajduje się klient Customer Insights.
 
 2. Środowisko użytkownika jest dołączone do wystąpienia Common Data Service.
 
@@ -120,7 +120,7 @@ Po utworzeniu przewidywania można dostosować model w AI Builder w celu zwięks
 
 4. Wybierz **Dostosuj w aplikacji AI Builder**.
 
-5. Zaktualizuj model w konstruktorze AI Builder. [Więcej informacji o zarządzaniu modelami w AI builder](https://docs.microsoft.com/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Zaktualizuj model w konstruktorze AI Builder. [Więcej informacji o zarządzaniu modelami w AI builder](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Następne uruchomienie funkcji przewidywania będzie mieć zaktualizowany utworzony model.
 

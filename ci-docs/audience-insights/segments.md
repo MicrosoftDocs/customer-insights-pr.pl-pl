@@ -1,20 +1,20 @@
 ---
 title: Tworzenie segmentów i zarządzanie nimi
 description: W celu pogrupowania klientów na podstawie różnych atrybutów można utworzyć ich segmenty.
-ms.date: 10/15/2020
+ms.date: 03/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: jimsonc
+author: JimsonChalissery
+ms.author: jimsonc
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a1308f07ac3ba7d4b09931bab3d19b6dfaf479ee
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270369"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597068"
 ---
 # <a name="create-and-manage-segments"></a>Tworzenie segmentów i zarządzanie nimi
 
@@ -35,19 +35,19 @@ Segmenty są zarządzane na stronie **Segmenty**.
 
 1. W analizach odbiorców przejdź do strony **Segmenty**.
 
-2. Wybierz **Nowy** > **Pusty segment**.
+1. Wybierz **Nowy** > **Pusty segment**.
 
-3. W okienku **nowy segment** wybierz typ segmentu i podaj jego **nazwę**.
+1. W okienku **nowy segment** wybierz typ segmentu i podaj jego **nazwę**.
 
    Opcjonalnie można podać wyświetlaną nazwę i opis ułatwiający identyfikację segmentu.
 
-4. Wybierz **Dalej**, aby połączyć się ze stroną **Konstruktor segmentu**, na której jest definiowana grupa. Grupa jest zbiorem klientów.
+1. Wybierz **Dalej**, aby połączyć się ze stroną **Konstruktor segmentu**, na której jest definiowana grupa. Grupa jest zbiorem klientów.
 
-5. Wybierz encję zawierającą atrybut, według którego chcesz segmentować.
+1. Wybierz encję zawierającą atrybut, według którego chcesz segmentować.
 
-6. Wybierz atrybut, według którego ma zostać przeprowadzona segmentacja. Ten atrybut może mieć jeden z czterech typów wartości: numeryczny, ciąg, data lub wartość logiczna.
+1. Wybierz atrybut, według którego ma zostać przeprowadzona segmentacja. Ten atrybut może mieć jeden z czterech typów wartości: numeryczny, ciąg, data lub wartość logiczna.
 
-7. Wybierz operatora i wartość dla zaznaczonego atrybutu.
+1. Wybierz operatora i wartość dla zaznaczonego atrybutu.
 
    > [!div class="mx-imgBorder"]
    > ![Niestandardowy filtr grup](media/customer-group-numbers.png "Filtr grupy klienta")
@@ -64,9 +64,14 @@ Segmenty są zarządzane na stronie **Segmenty**.
    > [!div class="mx-imgBorder"]
    > ![Ścieżka relacji podczas tworzenia segmentu](media/segments-multiple-relationships.png "Ścieżka relacji podczas tworzenia segmentu")
 
-9. Wybierz **Zapisz**, aby zapisać segment. Segment zostanie zapisany i przetworzony po sprawdzeniu poprawności wszystkich wymagań. W przeciwnym razie zostanie zapisany jako wersja robocza.
+1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej.  
 
-10. Wybierz **Wróć do segmentów**, aby wrócić do strony **Segmenty**.
+   
+   Przykład: segment jest oparty na encji zawierającej dane działań klienta powiązane z encją *Klient*. Segment wyszukuje wszystkich klientów, którzy w ciągu ostatnich 60 dni dzwonili do działu pomocy technicznej. Można dodać czas trwania rozmowy oraz liczbę rozmów telefonicznych do wszystkich pasujących rekordów klientów w encji wyjściowej. Te informacje mogą być przydatne podczas wysyłania wiadomości e-mail z pomocnymi linków do artykułów pomocy online i często zadawanych pytań do klientów, którzy często dzwonili do działu pomocy.
+
+1. Wybierz **Zapisz**, aby zapisać segment. Segment zostanie zapisany i przetworzony po sprawdzeniu poprawności wszystkich wymagań. W przeciwnym razie zostanie zapisany jako wersja robocza.
+
+1. Wybierz **Wróć do segmentów**, aby wrócić do strony **Segmenty**.
 
 ## <a name="manage-existing-segments"></a>Zarządzanie istniejącymi segmentami
 
@@ -85,6 +90,7 @@ Po wybraniu segmentu są dostępne następujące akcje:
 
 - **Wyświetlanie** szczegółowych informacji o segmencie, w tym trendu liczby członków podgląd składników segmentu.
 - **Edytuj** segment, aby zmienić jego właściwości.
+- **Utwórz duplikat** segmentu. Można od razu edytować jego właściwości lub po prostu zapisać duplikat.
 - **Odśwież** segment, aby uwzględnić najnowsze dane.
 - **Aktywuj** lub **Dezaktywuj** segment. Segmenty mogą być w dwóch stanach — aktywnym lub nieaktywnym. Te stany są przydatne przy edytowaniu segmentu. W przypadku nieaktywnych segmentów definicja segmentu istnieje, ale nie zawiera jeszcze żadnych klientów. W przypadku aktywowania segmentu jego stan zmieni się z "nieaktywny" na "aktywny" i rozpocznie wyszukiwanie klientów zgodnych z definicją segmentu. Jeśli skonfigurowano [zaplanowane odświeżanie](system.md#schedule-tab), segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. W przypadku aktywowania nieaktywnego segmentu zostanie on odświeżony i będzie uwzględniony w zaplanowanych odświeżeniach.
   Alternatywnie można użyć funkcji **Zaplanuj później** na liście rozwijanej **Aktywuj/Zdezaktywuj**, aby określić przyszłą datę i godzinę aktywacji i dezaktywacji konkretnego segmentu.

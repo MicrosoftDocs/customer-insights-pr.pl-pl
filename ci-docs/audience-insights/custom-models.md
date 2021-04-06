@@ -1,19 +1,20 @@
 ---
 title: Niestandardowe modele Uczenie maszynowe | Microsoft Docs
 description: Praca z modelami niestandardowymi z Uczenie maszynowe Azure w Dynamics 365 Customer Insights.
-ms.date: 11/19/2020
-ms.reviewer: zacook
-ms.service: dynamics-365-ai
+ms.date: 03/22/2021
+ms.reviewer: mhart
+ms.service: customer-insights
+ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: zacookmsft
+ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
+ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267247"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "5700681"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -21,13 +22,18 @@ ms.locfileid: "5267247"
 
 ## <a name="responsible-ai"></a>Odopowiedzialne AI
 
-Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie funkcji biznesowych i strumienia przychodów. Stanowczo zaleca się, aby zrównoważyć wartość przewidywanie w stosunku do oddziaływania i skutków, które można wprowadzić w sposób etyczny. Dowiedz się więcej o tym, jak firma Microsoft [zajmuje się odpowiedzialną sztuczną inteligencją](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Użytkownik może również zapoznać się [z technikami i procesami dotyczącymi odpowiedzialności za uczenie maszynowe](https://docs.microsoft.com/azure/machine-learning/concept-responsible-ml) dotyczące usługi Azure Machine Learning.
+Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie funkcji biznesowych i strumienia przychodów. Stanowczo zaleca się, aby zrównoważyć wartość przewidywanie w stosunku do oddziaływania i skutków, które można wprowadzić w sposób etyczny. Dowiedz się więcej o tym, jak firma Microsoft [zajmuje się odpowiedzialną sztuczną inteligencją](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Użytkownik może również zapoznać się [z technikami i procesami dotyczącymi odpowiedzialności za uczenie maszynowe](/azure/machine-learning/concept-responsible-ml) dotyczące usługi Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Obecnie ta funkcja obsługuje usługi sieci Web opublikowane za pośrednictwem potoków wsadowych usługi [Machine Learning Studio (klasyczna)](https://studio.azureml.net) i [Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines).
+- Obecnie ta funkcja obsługuje usługi sieci Web opublikowane za pośrednictwem potoków wsadowych usługi [Machine Learning Studio (klasyczna)](https://studio.azureml.net) i [Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
 
-- Aby korzystać z tej funkcji, potrzebujesz konta magazynu Azure Data Lake Gen2 skojarzonego z wystąpieniem usługi Azure Studio. Aby uzyskać więcej informacji, zobacz [Tworzenie konta magazynu Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account)
+- Aby korzystać z tej funkcji, potrzebujesz konta magazynu Azure Data Lake Gen2 skojarzonego z wystąpieniem usługi Azure Studio. Aby uzyskać więcej informacji, zobacz [Tworzenie konta magazynu Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
+
+- W przypadku obszarów roboczych usługi Azure Machine Learning z potokami musisz mieć uprawnienia dostępu administratora typu Właściciel lub Użytkownik do obszaru roboczego usługi Azure Machine Learning.
+
+   > [!NOTE]
+   > Dane są przesyłane między wystąpieniami rozwiązania Customer Insights a wybranymi usługami internetowymi lub potokami platformy Azure w przepływie pracy. Podczas przesyłania danych do usługi platformy Azure upewnij się, że usługa jest skonfigurowana do przetwarzania danych w sposób (oraz w lokalizacji) umożliwiający zachowanie zgodności z wymaganiami prawnymi lub regulacyjnymi dotyczącymi danych Twojej organizacji.
 
 ## <a name="add-a-new-workflow"></a>Dodaj nowy przepływ pracy
 
@@ -45,8 +51,8 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 1. Wybierz **Obszary robocze** skojarzone z daną usługą sieci Web. Na liście znajdują się dwie sekcje, jedna dla Azure Machine Learning w wersji 1 (Machine Learning Studio (klasyczna)) i Azure Machine Learning w wersji 2 (Azure Machine Learning). Jeśli nie masz pewności, który obszar roboczy jest odpowiedni dla Twojej usługi internetowej Machine Learning Studio (klasycznej), wybierz opcję **Dowolny**.
 
 1. Wybierz usługę sieciową Machine Learning Studio (klasyczną) lub potok Azure Machine Learning na liście rozwijanej **Uslugi sieci Web, która zawiera model**. Następnie wybierz **Dalej**.
-   - Więcej informacji o [publikowaniu usługi sieci Web w Machine Learning Studio (klasyczny)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Potok musi zostać opublikowany w [punkcie końcowym potoku](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Więcej informacji o [publikowaniu usługi sieci Web w Machine Learning Studio (klasyczny)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
+   - Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Potok musi zostać opublikowany w [punkcie końcowym potoku](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. Dla **Dane wejściowe usług sieci Web**, wybierz pasującą **Encję** z analiz odbiorców i wybierz **Dalej**.
    > [!NOTE]
@@ -54,7 +60,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
    > [!div class="mx-imgBorder"]
    > ![Konfiguruj przepływ pracy](media/intelligence-screen2-updated.png "Konfiguruj przepływ pracy")
-   
+
 1. W kroku **Parametry wyjściowe modelu** ustaw następujące właściwości:
    - Machine Learning Studio (klasyczna)
       1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki usługi sieci Web.
@@ -62,12 +68,12 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
       1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki strumienia.
       1. Z listy rozwijanej wybierz **Nazwę parametru magazynu danych wyjściowych** potoku wsadowego.
       1. Z listy rozwijanej wybierz **Nazwę parametru ścieżki danych wyjściowych** potoku wsadowego.
-      
+
       > [!div class="mx-imgBorder"]
       > ![Panel parametrów wyjściowych modelu](media/intelligence-screen3-outputparameters.png "Panel parametrów wyjściowych modelu")
 
 1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, która identyfikuje klientów, i wybierz **Zapisz**.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Powiązanie wyników z okienkiem Dane klient](media/intelligence-screen4-relatetocustomer.png "Powiązanie wyników z okienkiem Dane klient")
 
@@ -95,7 +101,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
       1. Wybierz **Nazwa parametru ścieżki danych wyjściowych** dla planowanego strumienia testowego.
 
 1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, która identyfikuje klientów, i wybierz **Zapisz**.
-   Musisz wybrać atrybut z danych wyjściowych wnioskowania o wartościach podobnych do kolumny Identyfikator klienta encji Klient. Jeśli nie masz takiej kolumny w swoim zbiorze danych, wybierz atrybut, który jednoznacznie identyfikuje wiersz.
+   Wybierz atrybut z danych wyjściowych wnioskowania o wartościach podobnych do kolumny Identyfikator klienta encji Klient. Jeśli nie masz takiej kolumny w swoim zbiorze danych, wybierz atrybut, który jednoznacznie identyfikuje wiersz.
 
 ## <a name="run-a-workflow"></a>Uruchamianie przepływu pracy
 
@@ -113,5 +119,28 @@ Przepływ pracy jest również uruchamiany automatycznie przy każdym planowanym
 
 Przepływ pracy zostanie usunięty. [Encja](entities.md) utworzona w momencie utworzenia przepływu pracy pozostanie i będzie można ją wyświetlać na stronie **Encje**.
 
+## <a name="results"></a>Wyniki
+
+Wyniki z przepływu pracy są przechowywane w encji skonfigurowanej w fazie parametrów wyjściowych modelu. Dostęp do tych danych można uzyskać ze [strony encji](entities.md) lub za pomocą [dostępu za pośrednictwem interfejsów API](apis.md).
+
+### <a name="api-access"></a>Dostęp za pośrednictwem interfejsu API
+
+Aby określone zapytanie OData mogło uzyskać dane z encji modelu niestandardowego, użyj następującego formatu:
+
+`https://api.ci.ai.dynamics.com/v1/instances/<your instance id>/data/<custom model output entity name>%3Ffilter%3DCustomerId%20eq%20'<guid value>'`
+
+1. Zastąp identyfikator `<your instance id>` identyfikatorem środowiska Customer Insights, który można znaleźć na pasku adresu przeglądarki podczas uzyskiwania dostępu do aplikacji Customer Insights.
+
+1. Zastąp encję `<custom model output entity>` nazwą encji podaną w kroku parametrów wyjściowych modelu konfiguracji modelu niestandardowego.
+
+1. Zastąp wartość `<guid value>` identyfikatorem klienta, któremu chcesz przydzielić prawa dostępu do rekordu. Zazwyczaj identyfikator ten można znaleźć na [stronie profilów klientów](customer-profiles.md) w polu CustomerID.
+
+## <a name="frequently-asked-questions"></a>Często zadawane pytania
+
+- Dlaczego podczas konfigurowania przepływu pracy modelu niestandardowego nie jest widzę mojego potoku?    
+  Często przyczyną tego problemu jest błąd konfiguracji, który występuje w potoku. Upewnij się, że [parametr wejściowy został skonfigurowany](azure-machine-learning-experiments.md#dataset-configuration) i [parametry i magazynu danych wyjściowych również są skonfigurowane](azure-machine-learning-experiments.md#import-pipeline-data-into-customer-insights).
+
+- Co oznacza błąd „Nie można zapisać przepływu pracy analizy”?    
+  Użytkownicy zwykle widzą ten komunikat o błędzie, jeśli nie mają uprawnień administratora dostępu typu Właściciel lub Użytkownik w obszarze roboczym. Użytkownik potrzebuje wyższego poziomu uprawnień, aby umożliwić aplikacji Customer Insights przetwarzanie przepływu pracy jako usługi zamiast używania poświadczeń użytkownika do kolejnych uruchomień przepływu pracy.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

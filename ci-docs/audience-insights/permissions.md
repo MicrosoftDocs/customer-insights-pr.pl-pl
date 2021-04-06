@@ -2,19 +2,19 @@
 title: Zarządzanie uprawnieniami użytkowników
 description: Dowiedz się o uprawnieniach i rolach użytkowników.
 ms.date: 10/27/2020
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: f7fcecdea8dc49666dd5c45bf4109c205993f326
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268423"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595715"
 ---
 # <a name="user-permissions"></a>Uprawnienia użytkowników
 

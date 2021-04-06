@@ -2,19 +2,19 @@
 title: Spożycie i ograniczenia dotyczące danych w czasie rzeczywistym
 description: Ogólne informacje o możliwościach czasu rzeczywistego w statystykach odbiorców.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270293"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598582"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
@@ -54,7 +54,7 @@ Interfejs API czasu rzeczywistego umożliwia publikowanie nowej aktywności z sy
 
 Istnieją dwa sposoby łączenia się z interfejsem API w czasie rzeczywistym:
 
-- [pośrednio](#connect-via-the-dynamics-365-customer-insights-connector), za pomocą [łącznika Dynamics 365 Customer Insights](https://docs.microsoft.com/connectors/customerinsights/)
+- [pośrednio](#connect-via-the-dynamics-365-customer-insights-connector), za pomocą [łącznika Dynamics 365 Customer Insights](/connectors/customerinsights/)
 - [bezpośrednio](#connect-directly-to-the-real-time-api), przy użyciu kodu
 
 Oba sposoby wiążą się z poniższymi wymaganiami wstępnymi:
@@ -66,13 +66,13 @@ Oba sposoby wiążą się z poniższymi wymaganiami wstępnymi:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Połącz za pośrednictwem łącznika Dynamics 365 Customer Insights
 
-Interfejs API w czasie rzeczywistym może pobierać dane z dedykowanego łącznika Power Platform, [łącznik Dynamics 365 Customer Insights](https://docs.microsoft.com/connectors/customerinsights/), bez konieczności pisania i wdrażania kodu.    
-Łącznik może wykonywać te same akcje w czasie rzeczywistym, co interfejs API. Użytkownik musi mieć ważną licencję na łączniki Premium. Aby uzyskać więcej informacji, zobacz [Licencje na Power Apps i Power Automate, często zadawane pytania](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+Interfejs API w czasie rzeczywistym może pobierać dane z dedykowanego łącznika Power Platform, [łącznik Dynamics 365 Customer Insights](/connectors/customerinsights/), bez konieczności pisania i wdrażania kodu.    
+Łącznik może wykonywać te same akcje w czasie rzeczywistym, co interfejs API. Użytkownik musi mieć ważną licencję na łączniki Premium. Aby uzyskać więcej informacji, zobacz [Licencje na Power Apps i Power Automate, często zadawane pytania](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps i/lub Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps i/lub Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Szczegółowe informacje o tworzeniu przepływów można znaleźć w artykule [Dokumentacja Power Automate](https://docs.microsoft.com/power-automate/).
+Szczegółowe informacje o tworzeniu przepływów można znaleźć w artykule [Dokumentacja Power Automate](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Połącz bezpośrednio z interfejsem API w czasie rzeczywistym
 

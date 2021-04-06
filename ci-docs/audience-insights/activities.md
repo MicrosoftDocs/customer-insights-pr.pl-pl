@@ -4,17 +4,17 @@ description: Zdefiniować działania klienta i wyświetlić je na osiach czasu n
 ms.date: 10/13/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: fbfa9d7e00859cc80c24b98bd2dc806f1fda7803
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267445"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596742"
 ---
 # <a name="customer-activities"></a>Działania klienta
 

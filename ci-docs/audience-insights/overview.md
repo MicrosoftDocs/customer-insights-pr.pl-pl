@@ -2,19 +2,19 @@
 title: Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 description: Przegląd informacji o odbiorcach dla Dynamics 365 Customer Insights.
 ms.date: 01/18/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477008"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598643"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 
@@ -25,7 +25,7 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
 - **Eliminować silosy danych i ujednolicać dane klienta**
 
   - Łącz i ujednolicaj dane z łatwością — użyj danych transakcyjnych, obserwacyjnych i behawioralnych pochodzących z popularnych [źródeł danych przy użyciu wbudowanych łączników](data-sources.md).
-  - Przekształć dane klientów w sposób inteligentny — twórz ujednolicone profile klientów zgodne z [Common Data Model](https://docs.microsoft.com/common-data-model/). Rozpoznawać tożsamości klientów dzięki rekomendacjom opartym na dodatkach AI i ML.
+  - Przekształć dane klientów w sposób inteligentny — twórz ujednolicone profile klientów zgodne z [Common Data Model](/common-data-model/). Rozpoznawać tożsamości klientów dzięki rekomendacjom opartym na dodatkach AI i ML.
 
 - **Wzbogacenie dzięki analizom odbiorcy zawartym w Microsoft Graph**
 
@@ -42,7 +42,7 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
 - **Analitycy/administratorzy danych:**
 
   - Dostęp do bogatego zbioru łączników w celu przyjęcia wszystkich danych klientów.
-  - Możliwość ujednolicenia danych klienta i przekształcenia ich w format [Common Data Model](https://docs.microsoft.com/common-data-model/).
+  - Możliwość ujednolicenia danych klienta i przekształcenia ich w format [Common Data Model](/common-data-model/).
   - Wzbogacanie informacji o klientach wynikami analiz z analizy odbiorcy w Microsoft Graph, takimi jak koligacja marki i zainteresowania.
   - Konfiguracja i debugowanie typu „kliknięcia bez kodu” ułatwiające konfigurowanie statystyk odbiorców i identyfikowanie potencjalnych problemów.
   - Oczyść i normalizuj dane klientów w różnych źródłach dzięki rekomendacjom z użyciem AI.  
