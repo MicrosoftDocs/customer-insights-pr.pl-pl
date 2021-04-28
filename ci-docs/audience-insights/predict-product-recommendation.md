@@ -1,7 +1,7 @@
 ---
 title: Przewidywanie rekomendacji produktów
 description: Przewiduj produkty, które klient prawdopodobnie kupi lub z którymi będzie miał do czynienia.
-ms.date: 02/15/2021
+ms.date: 03/17/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,20 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 5ae78b6bbc51fd8a25bc408050a23479698a1414
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598076"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906777"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
 
 Model rekomendacji produktowych tworzy zestawy predykcyjnych rekomendacji produktowych. Rekomendacje opierają się na wcześniejszych zachowaniach zakupowych i klientach o podobnych wzorcach zakupowych. Możesz tworzyć nowe prognozy rekomendacji produktów na stronie **Analizy** > **Przewidywania**. Wybierz **Moje przewidywania**, aby wyświetlić inne utworzone przewidywania.
 
-Zalecenia dotyczące produktów mogą podlegać lokalnym prawom i regulacjom, a także oczekiwaniom klientów, których model nie jest specjalnie uwzględniany.  Jako użytkownik tej funkcji predykcyjnej **musisz zapoznać się z zaleceniami przed dostarczeniem ich klientom**, aby upewnić się, że przestrzegasz wszelkich obowiązujących przepisów i regulacji, a także oczekiwań klientów dotyczących tego, co możesz zalecić. 
+Polecane produkty mogą podlegać lokalnym przepisom i ustawom oraz oczekiwaniom klientów, których model nie bierze pod uwagę, gdyż nie jest do tego przeznaczony.  Użytkownik tej predykcyjnej funkcji **musi przejrzeć rekomendacje przed dostarczenia ich klientom**, aby upewnić się, że są zgodne z obowiązującymi przepisami i rozporządzeniami oraz oczekiwaniami klientów dotyczącymi produktów, które mogą być polecane. 
 
-Ponadto dane wyjściowe tego modelu przedstawi zalecenia na podstawie identyfikatora produktu. Twój mechanizm dostarczania będzie musiał uwzględniać przewidywane identyfikatory produktów i mapować je na odpowiednie treści, aby klienci mogli uwzględnić lokalizację, zawartość obrazu i inne specyficzne dla firmy treści lub zachowania.
+Ponadto dane wyjściowe tego modelu przedstawi zalecenia na podstawie identyfikatora produktu. Mechanizm dostawy będzie musiał zamapować przewidziane identyfikatory produktów na odpowiednią zawartość dla klientów, biorąc pod uwagę lokalizację, zawartość obrazów i inne specyficzne dla biznesu zawartości lub zachowanie.
 
 ## <a name="sample-guide"></a>Przykładowy przewodnik
 
@@ -31,19 +31,31 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Co najmniej [Uprawnienia współautora](permissions.md) w Customer Insights.
+
 - Wiedza biznesowa pozwalająca zrozumieć różne rodzaje produktów dla Twojej firmy i sposób interakcji z nimi klientów. Wspieramy polecanie produktów, które zostały wcześniej zakupione przez Państwa klientów lub rekomendacje nowych produktów.
+
 - Dane o transakcjach, zakupach oraz ich historii:
     - Identyfikatory transakcji w celu rozróżnienia zakupionych lub transakcji.
     - Identyfikatory klientów do mapowania transakcji na klientów.
     - Daty zdarzeń transakcji określające daty, w których doszło do transakcji.
-    - (Opcjonalnie) Informacje o identyfikatorze produktu dla transakcji.
+    - Informacje o identyfikatorze produktu dla transakcji.
+    - (Opcjonalnie) Encja danych katalogu produktów w celu użycia filtru produktów.
     - (opcjonalnie) Jeśli transakcja jest zwrotem, czy nie.
     - Schemat danych semantycznych wymaga następujących informacji:
         - **Identyfikator transakcji:** unikatowy identyfikator zakupu lub transakcji.
         - **Data transakcji:** Data zakupu lub transakcji.
         - **Wartość transakcji:** Wartość liczbowa zakupu lub transakcji.
         - **Unikatowy identyfikator produktu:** Identyfikator zakupionego produktu lub usługi, jeśli dane są na poziomie pozycji wiersza.
-        - (Opcjonalnie) **Zakup czy zwrot:** pole typu prawda/fałsz, które określa, czy transakcja była zwrotna, czy nie. Jeśli **Wartość transakcji** jest ujemna, Microsoft będzie również używać tych informacji do wywnioskowania, że nastąpił zwrot.
+        - (Opcjonalnie) **Zakup lub zwrot:** pole wartości logicznych, w którym wartość *true* określa, że transakcja była zwrotem. Jeśli dane dotyczące zakupu lub zwrotu nie zostaną podane w modelu, a **Wartość transakcji** jest ujemna, użyjemy tych informacji do założenia, że chodzi o zwrot.
+- Sugerowana charakterystyka danych:
+    - Wystarczające dane historyczne: co najmniej jeden rok danych transakcji, najlepiej dwa do trzech lat, aby uwzględnić pewną sezonowość.
+    - Wiele zakupów na klienta: trzy lub więcej transakcji na identyfikator klienta
+    - Liczba klientów: co najmniej 100 klientów, najlepiej więcej niż 10 000 klientów. Model zawiedzie w przypadku mniej niż 100 klientów.
+
+> [!NOTE]
+> - Model wymaga historii transakcji klientów. Definicja transakcji jest dosyć elastyczna. Wszystkie dane opisujące interakcję produktu z użytkownikiem mogą działać jako dane wejściowe. Może to być na przykład zakup produktu, udział w szkoleniu lub w wydarzeniu.
+> - Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu, zbierz je w Power Query przed pozyskaniem danych.
+> - Jeśli zamówienie i szczegóły zamówienia to różne encje, przed użyciem w modelu należy je połączyć. Model nie działa tylko z identyfikatorem zamówienia lub identyfikatorem odbioru w encji.
 
 
 ## <a name="create-a-product-recommendation-prediction"></a>Utwórz prognozę rekomendacji produktu
@@ -71,7 +83,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. Wybierz, jeśli chcesz **Sugerować produkty, które klienci kupili ostatnio**.
 
-1. Jeśli ostatnio *nie* poleca się zakupu produktów, należy ustawić **Okno wglądu w przeszłość**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Na przykład wskaż, że klient kupuje laptopa co 2 lata. To okno przejrzy historię zakupów z ostatnich 2 lat, a jeśli znajdą przedmiot, zostanie on odfiltrowany z rekomendacji.
+1. Jeśli ostatnio *nie* poleca się zakupu produktów, należy ustawić **Okno wglądu w przeszłość**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Można na przykład wskazać, że klient kupuje komputer przenośny co dwa lata. W tym oknie będzie widoczna historia zakupu za ostatnie dwa lata i po znalezienie pozycji, zostanie ona odfiltrowana z polecanych.
 
 1. Wybierz **Dalej**
 
@@ -95,7 +107,31 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. Wybierz **Dalej**.
 
-### <a name="set-schedule-and-review-configuration"></a>Konfigurowanie harmonogramu i przeglądu konfiguracji
+### <a name="configure-product-filters"></a>Konfiguruj filtry produktów
+
+Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego typu przewidywania. Filtry produktu pozwalają zidentyfikować podzbiór produktów o specyficznej charakterystyce, który jest polecany klientom. Model będzie używać wszystkich dostępnych produktów do poznania wzorców, ale do tworzenia wyniku będzie używać tylko produktów pasujących do filtru produktu.
+
+1. W kroku **Dodaj informacje o produkcie** dodaj katalog produktów z informacjami o każdym produkcie. Zmapuj informacje wymagane w opcji **Dalej**.
+
+3. W kroku **Filtry produktu** wybierz jedną z poniższych opcji.
+
+   * **Brak filtrów**: użyj wszystkich produktów w przewidywaniu polecanych.
+
+   * **Zdefiniuj określone filtry produktu**: użyj określonych produktów w przewidywaniu polecanych.
+
+1. Wybierz **Dalej**.
+
+1. Po wybraniu definiowania filtru produktu należy go teraz zdefiniować. W okienku **Atrybutów katalogu produktów** wybierz atrybuty z *Encji katalogu produktów*, które chcesz uwzględnić w filtrze.
+
+   :::image type="content" source="media/product-filters-sidepane.png" alt-text="Okienko boczne pokazujące trybuty w encji katalogu produktu w celu wybrania filtrów produktów.":::
+
+1. Określ, czy chcesz, by filtr produktów używał łączników **i** lub **lub**, by logicznie łączyć wybór atrybutów z katalogu produktów.
+   
+   :::image type="content" source="media/product-filters-sample.png" alt-text="Przykładowa konfiguracja filtrów produktu w połączeniu z łącznikami logicznymi AND.":::
+
+1. Wybierz **Dalej**.
+
+### <a name="set-update-schedule-and-review-configuration"></a>Ustaw harmonogram aktualizacji i konfigurację przeglądu
 
 1. Ustaw częstotliwość ponownego uczenia modelu. To ustawienie ma znaczenie dla aktualizowania dokładności przewidywań w czasie importowania nowych danych do Customer Insights. Większość firm może przeprowadzać ponowne szkolenia raz w miesiącu i uzyskać dobrą dokładność przewidywań.
 
@@ -114,8 +150,9 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 1. Wybierz przewidywania do przeglądu.
    - **Nazwa przewidywania:** Nazwa przewidywania podawana podczas jego tworzenia.
    - **Typ przewidywania:** Typ modelu używanego na potrzeby przewidywania
-   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.
-   - **Przewidywane pole:** To pole jest wypełniane tylko w przypadku niektórych typów przewidywań i nie jest używane w przewidywaniu rezygnacji.
+   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.    
+      *Wynik* w encji wyjściowej jest miarą ilościową rekomendacji. Model poleca produkty z wyższym wynikiem niż produkty z niższym.
+   - **Pole z prognozami:** to pole jest wypełniane tylko przez niektóre typy prognoz i nie jest używane w przewidywaniach rekomendacji produktu.
    - **Stan:** Bieżący stan uruchomienia przewidywania.
         - **W kolejce:** Przewidywanie oczekuje obecnie na uruchomienie innych procesów.
         - **Odświeżanie:** Przewidywanie ma obecnie w toku etap "ocena" przetwarzania, aby wyprodukować wyniki, które przepłyną do encji wyjściowej.
@@ -128,23 +165,43 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
    > [!div class="mx-imgBorder"]
    > ![Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie](media/product-recommendation-verticalellipses.PNG "Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie")
 
-1. Na stronie wyników wyszukiwania znajdują się trzy podstawowe sekcje danych:
+1. Na stronie wyników znajduje się pięć podstawowych sekcji danych:
     1. **Wydajność modelu szkoleniowego:** A, B i C są możliwymi wynikami. Ten wynik wskazuje wydajność przewidywania i może pomóc w podjęciu decyzji w zakresie korzystania z wyników przechowywanych w encji wyjściowej.
         - Wyniki są określane na podstawie następujących reguł:
             - **A** Model zostanie uznany za jakość **A**, jeśli wskaźnik „Success @ K” jest co najmniej o 10% wyższy od wartości bazowej. 
-            - **B** Model zostanie uznany za jakość **B**, jakość, jeśli wskaźnik „Success @ K” jest od 0 do 10% wyższy niż wartość bazowa.
-            - **C** Model zostanie uznany za jakość **C**, jakość, jeśli metryka „Success @ K” jest mniejsza niż wartość bazowa.
+            - **B** Model zostanie uznany jako jakości **B**, jeśli wskaźnik metryczny „Success @ K” jest od 0% do 10% wyższy niż wartość bazowa.
+            - **C** Model zostanie uznany jako jakości **C**, jeśli wskaźnik metryczny „Success @ K” jest niższy niż wartość bazowa.
                
                > [!div class="mx-imgBorder"]
                > ![Widok wyniku wydajności modelu](media/product-recommendation-modelperformance.PNG "Widok wyniku wydajności modelu")
             - **Model odniesienia**: Model bierze najczęściej polecane produkty według liczby zakupów wśród wszystkich klientów i wykorzystuje wyuczone reguły zidentyfikowane przez model, aby utworzyć zestaw rekomendacji dla klientów. Prognozy są następnie porównywane z najlepszymi produktami, obliczonymi na podstawie liczby klientów, którzy kupili produkt. Jeśli klient ma co najmniej jeden produkt w swoich polecanych produktach, który był również widoczny w najczęściej kupowanych produktach, jest on traktowany jako część linii bazowej. Gdyby było 10 z tych klientów, którzy zakupili zalecany produkt spośród 100 wszystkich klientów, wartość bazowa wyniosłaby 10%.
             - **Powodzenie @ K**: Korzystając z zestawu walidacyjnego okresów transakcji, tworzone są rekomendacje dla wszystkich klientów i porównywane z zestawem walidacyjnym transakcji. Na przykład, w okresie 12 miesięcy, miesiąc 12 może zostać odłożony jako zbiór danych do walidacji. Jeśli model przewiduje przynajmniej jedną rzecz, którą kupisz w 12 miesiącu na podstawie tego, czego nauczył się w ciągu ostatnich 11 miesięcy, klient zwiększy wskaźnik „Success @ K”.
     
-    1. **Najczęściej sugerowane produkty (z zestawieniem):** 5 najlepszych produktów przewidzianych dla Twoich klientów.
+    1. **Większość sugerowanych produktów (z zestawieniem):** pięć najlepszych produktów, które zostały przewidziane dla klientów.
        > [!div class="mx-imgBorder"]
        > ![Wykres przedstawiający 5 najbardziej zalecanych produktów](media/product-recommendation-topproducts.PNG "Wykres przedstawiający 5 najbardziej zalecanych produktów")
     
-    1. **Pewne rekomendacje dotyczące produktów**: Próbka zaleceń przekazanych klientom, które według modelu mogą zostać zakupione przez klienta.
+    1. **Kluczowe czynniki rekomendacji:** model korzysta z historii transakcji klientów w celu tworzenia rekomendacji produktów. Zawiera informacje o wzorcach opartych na wcześniejszych zakupach i znajduje podobieństwa między klientami a produktami. Te podobieństwa są następnie wykorzystywane do generowania rekomendacji produktów.
+    Poniżej przedstawiono czynniki, które mogą mieć wpływ na rekomendacje produktu generowane przez model. 
+        - **Transakcje z przeszłości:** wzorce zakupu w przeszłości zostały użyte przez model do wygenerowania rekomendacji produktów. Na przykład model może polecić _Mysz Surface Arc_, jeśli ktoś w ostatnim czasie kupił _Książka Surface 3_ i _Długopis Surface_. Model nauczył się, że w przeszłości wielu klientów kupiło _Mysz Surface Arc_ po kupieniu _Książki Surface 3_ i _Długopisu Surface_.
+        - **Podobieństwo klientów**: zalecany produkt został wcześniej zakupiony przez innych klientów, którzy wykazują podobne wzorce zakupu. Na przykład Janowi polecono _Słuchawki Surface 2_, ponieważ Joanna i Bartosz ostatnio kupili tablet _Słuchawki Surface 2_. Zdaniem modelu Jan jest podobny do Joanny i Bartosza, ponieważ w przeszłości miał podobne wzorce zakupu.
+        - **Podobieństwo produktu**: zalecany produkt jest podobny do produktów zakupionych wcześniej przez klienta. Model uznaje dwa produkty za podobne, jeśli były one kupowane łącznie lub przez podobnych klientów. Ktoś na przykład otrzymuje rekomendację dotyczącą _Napędu przenośnego USB_, ponieważ wcześniej zakupił kartę _Adapter USB-C do USB_. Model uzna, że _Napęd przenośny USB_ podobny do modelu _Adaptera USB-C do USB_ w oparciu o historyczne wzorce zakupu.
+
+        Każda rekomendacja produktu jest zależna od jednego lub większej liczby czynników. Wartość procentowa rekomendacji, w której każdy czynnik odegrał rolę, został zobrazowany za pomocą wykresu. W poniższym przykładzie na 100% rekomendacji miały wpływ transakcje z przeszłości, 60% według podobieństwa klienta i 22% według podobieństwa produktu. Przesuń kursor nad słupki na wykresie, aby zobaczyć dokładny procent wpływu czynników.
+
+        > [!div class="mx-imgBorder"]
+        > ![Kluczowe czynniki wpływające na rekomendacje](media/product-recommendation-keyrecommendationfactors.png "Kluczowe czynniki rekomendacji, których nauczyć się model do wygenerowania rekomendacji produktów")
+       
+     
+   1. **Dane statystyczne**: umożliwia przegląd liczby transakcji, klientów i produktów, które model wziął pod uwagę. Jest to oparte na danych wejściowych używanych do nauczenia się wzorców i generowania rekomendacji produktów.
+
+      > [!div class="mx-imgBorder"]
+      > ![Statystyki danych](media/product-recommendation-datastatistics.png "Dane statystyczne dotyczące wprowadzonych danych używanych przez model w celu uczenia się wzorców")
+
+      Ta sekcja przedstawia statystyki dotyczące punktów danych używanych przez model w celu nauczenia się wzorców i wygenerowania rekomendacji produktów. Filtrowanie, skonfigurowane w konfiguracji modelu, ma zastosowanie do danych wyjściowych wygenerowanych przez model. Jednak model wykorzystuje wszystkie dostępne dane do uczenia się wzorców. Dlatego jeśli w konfiguracji modelu używane jest filtrowanie produktu, ta sekcja pokaże łączną liczbę produktów przeanalizowanych w modelu w celu nauczenia się wzorców, która może się różnić od liczby produktów, które spełniają zdefiniowane kryteria filtrowania.
+
+   1. **Pewne rekomendacje dotyczące produktów**: Próbka zaleceń przekazanych klientom, które według modelu mogą zostać zakupione przez klienta.    
+      Po dodaniu katalogu produktów identyfikatory produktów są zastępowane nazwami produktów. Nazwy produktów zawierają bardziej intuicyjne i praktyczne informacje o przewidywaniu.
        > [!div class="mx-imgBorder"]
        > ![Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych](media/product-recommendation-highconfidence.PNG "Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych")
 
@@ -154,7 +211,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. Wybierz przewidywanie, dla którego chcesz wyświetlić dzienniki błędów i wybierz **Dzienniki**.
 
-1. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład błąd polegający na tym, że jest zbyt mało danych, aby dokładnie przeprowadzić przewidywanie, jest zwykle rozwiązywany dzięki załadowaniu dodatkowych danych do Customer Insights.
+1. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład komunikat o błędzie, informujący o niedostatecznej liczbie danych potrzebnych do dokładnego przewidywania jest zazwyczaj rozwiązany dzięki załadowaniu większej ilości danych do programu Customer Insights.
 
 ## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
 

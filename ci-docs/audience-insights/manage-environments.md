@@ -1,7 +1,7 @@
 ---
 title: Utwórz środowisko i zarządzaj nim.
 description: Dowiedz się, jak zapisać się w usłudze i zarządzać środowiskami.
-ms.date: 02/01/2021
+ms.date: 03/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1c2dfdd2889b5cb6c5285b4d7cc7f52a3d6de4d1
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598306"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887999"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -44,6 +44,9 @@ W tym artykule wyjaśniono, jak utworzyć nową organizację i zastrzec bezpiecz
 
 Istnieją dwa sposoby utworzenia nowego środowiska. Można określić zupełnie nową konfigurację lub skopiować niektóre ustawienia konfiguracji z istniejącego środowiska.
 
+> [!NOTE]
+> Organizacje mogą utworzyć *dwa* środowiska dla każdej licencji usługi Customer Insights. Jeśli organizacja kupuje więcej niż jedną licencję, [skontaktuj się z zespołem pomocy technicznej](https://go.microsoft.com/fwlink/?linkid=2079641) w celu zwiększenia liczby dostępnych środowisk. Aby uzyskać więcej informacji dotyczących pojemności i wydajności dodatku, pobierz [Przewodnik licencjonowania usługi Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 Aby utworzyć nowe środowisko:
 
 1. Wybierz selektor **Środowiska** w nagłówku aplikacji.
@@ -55,14 +58,14 @@ Aby utworzyć nowe środowisko:
 
 1. W oknie dialogowym **Tworzenie nowego środowiska** wybierz **Nowe środowisko**.
 
-   Jeśli chcesz [kopiować dane z bieżącego środowiska](#additional-considerations-for-copy-configuration-preview), wybierz **Kopiowanie z istniejącego środowiska**. Zobaczysz listę wszystkich dostępnych środowisk w organizacji, z których można kopiować dane.
+   Jeśli chcesz [kopiować dane z bieżącego środowiska](#considerations-for-copy-configuration-preview), wybierz **Kopiowanie z istniejącego środowiska**. Zobaczysz listę wszystkich dostępnych środowisk w organizacji, z których można kopiować dane.
 
 1. Podaj następujące szczegóły:
    - **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić.
    - **Region**: Region, w którym usługa jest wdrażana i hostowana.
    - **Wpisz**: Wybierz, czy chcesz utworzyć środowisko produkcyjne, czy też piaskownicę.
 
-2. Opcjonalnie możesz wybrać **Ustawienia zaawansowane**:
+1. Opcjonalnie możesz wybrać **Ustawienia zaawansowane**:
 
    - **Zapisz wszystkie dane do**: Określa miejsce, w którym mają być przechowywane dane wyjściowe uzyskane na podstawie danych dotyczących klienta. Dostępne będą dwie opcje: **Magazyn Customer Insights** (usługa Azure Data Lake zarządzana przez zespół Customer Insights) i **Azure Data Lake Storage Gen2** (Twój własny Azure Data Lake Storage). Domyślnie jest zaznaczona opcja magazyn Customer Insights.
 
@@ -75,20 +78,20 @@ Aby utworzyć nowe środowisko:
 
    - W przypadku opcji Azure Data Lake Storage Gen2 można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwa **Kontenera** nie może zostać zmieniona i będzie mieć wartość „customerinsights”.
    
-   - Jeśli chcesz używać [przewidywań](predictions.md) lub konfigurować udostępnianie danych z aplikacjami i rozwiązaniami opartymi na Microsoft Dataverse, podaj adres URL środowiska Microsoft Dataverse w sekcji **Konfiguruj udostępnianie danych z Microsoft Dataverse i włącz dodatkowe możliwości**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
+   - Jeśli chcesz używać [przewidywań](predictions.md), skonfiguruj udostępnianie danych w aplikacjach i rozwiązaniach na podstawie funkcji Microsoft Dataverse lub włącz pozyskiwanie danych z lokalnych źródeł danych, podaj adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych funkcji**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
 
      > [!NOTE]
      > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
      > - [Przewidywanie brakujących wartości w encji](predictions.md) nie są obecnie obsługiwane, jeśli w przypadku włączenia udostępniania danych w Microsoft Dataverse zarządzane są Data Lake.
 
      > [!div class="mx-imgBorder"]
-     > ![Opcje konfiguracji umożliwiające udostępnianie danych z Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
+     > ![Opcje konfiguracji umożliwiające udostępnianie danych z Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
    Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. Pliki danych i pliki model.json zostaną utworzone i dodane do odpowiednich podfolderów na podstawie uruchamianego procesu.
 
    Jeśli utworzysz wiele środowisk Customer Insights i zdecydujesz się zapisać encje wyjściowe z tych środowisk na koncie magazynu, dla każdego środowiska zostaną utworzone osobne foldery z ci_<environmentid> w kontenerze.
 
-### <a name="additional-considerations-for-copy-configuration-preview"></a>Uwagi dodatkowe dotyczące konfiguracji kopiowania (wersja zapoznawcza)
+### <a name="considerations-for-copy-configuration-preview"></a>Rozważania dotyczące konfiguracji kopiowania (wersja zapoznawcza)
 
 Kopiowane są następujące ustawienia konfiguracji:
 
@@ -136,6 +139,18 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 4. Jeśli środowisko jest skonfigurowane do przechowywania danych w Azure Data Lake Storage Gen2, można zaktualizować **Klucz konta**. Nie można jednak zmienić **Nazwy konta** lub nazwy **Kontener**.
 
 5. Opcjonalnie można zaktualizować połączenie oparte na kluczu konta do połączenia opartego na zasobach lub subskrypcji. Po uaktualnieniu nie można powrócić do klucza konta po aktualizacji. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Podczas aktualizowania połączenia nie można zmieniać informacji o **Kontenerze**.
+
+6. Opcjonalnie można podać adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych możliwości**. Funkcje te zawierają udostępnianie danych aplikacjom i rozwiązań opartych na Microsoft Dataverse, pozyskiwanie danych z lokalnych źródeł danych lub używanie [przewidywać](predictions.md). Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
+
+   > [!NOTE]
+   > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
+   > - [Przewidywanie brakujących wartości w encji](predictions.md) nie jest obecnie obsługiwane, jeśli włączone zostało udostępnianie danych zarządzanemu Data Lake Microsoft Dataverse.
+
+   Po włączeniu udostępniania danych funkcji Microsoft Dataverse zostanie wyzwolone pełne odświeżanie źródeł danych i innych procesów. Jeśli procesy są obecnie uruchomione i są w kolejce, nie będzie dostępna opcja włączenia udostępniania danych funkcji Microsoft Dataverse. Można poczekać na zakończenie tych procesów lub je anulować, aby włączyć udostępnianie danych. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
+   
+   Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. W zależności od uruchomionego procesu pliki danych i pliki model.json zostaną utworzone i dodane do odpowiednich podfolderów.
 
 ## <a name="reset-an-existing-environment"></a>Zresetuj istniejące środowisko
 

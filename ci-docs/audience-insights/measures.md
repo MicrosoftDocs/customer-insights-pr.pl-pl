@@ -1,7 +1,7 @@
 ---
 title: Tworzenie miar i zarządzanie nimi
 description: Zdefiniuj miary do analizy i odzwierciedlenia wyników Twojej firmy.
-ms.date: 02/02/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,28 +9,28 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
-ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
+ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "5654745"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887953"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
-Miary pomagają lepiej zrozumieć zachowania klientów i wyniki biznesowe poprzez pobieranie odpowiednich wartości z [ujednoliconych profili](data-unification.md). Na przykład firma chce zobaczyć *łączne wydatki na klienta*, aby poznać historię zakupów poszczególnych klientów. Lub zmierz *całkowitą sprzedaż firmy*, aby poznać łączne przychody z całej firmy.  
+Miary pomagają lepiej poznać zachowania klientów i wydajność biznesową. Analizują one odpowiednie wartości z [ujednoliconych profilów](data-unification.md). Na przykład firma chce wyświetlić *łączny przychód na klienta* w celu zrozumienia historii zakupów poszczególnych klientów lub pomiaru *łącznej sprzedaży firmy* w celu zrozumienia przychodu na poziomie zagregowanym dla całej firmy.  
 
 Miary są tworzone za pomocą konstruktora miar, platformy zapytań o dane z różnymi operatorami i prostymi opcjami mapowania. Umożliwia filtrowanie danych, grupowanie wyników, wykrywanie [ścieżek relacji między encjami](relationships.md) i wyświetlanie podglądu danych wyjściowych.
 
 Użyj konstruktora miar, aby zaplanować działania biznesowe, wykonując zapytania dotyczące danych klientów i wyodrębniając szczegółowe informacje. Na przykład utworzenie miary *całkowitych wydatków na klienta* i *całkowitego zwrotu na klienta* pomaga zidentyfikować grupę klientów z wysokimi wydatkami, ale z wysokim zwrotem. Możesz utworzyć [segment](segments.md), aby stworzyć najlepsze akcje. 
 
-## <a name="create-a-measure"></a>Utwórz miarę
+## <a name="build-your-own-measure-from-scratch"></a>Utwórz własną miarę od podstaw
 
 W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atrybutami danych z jednostek danych, które mają skonfigurowaną relację do łączenia się z encją Klient. 
 
 1. W analizach odbiorców przejdź do **Miary**.
 
-1. Wybierz **Nowy**.
+1. Wybierz opcję **Nowa** i wybierz pozycję **Utwórz własną**.
 
 1. Wybierz opcję **Edytuj** nazwę i podaj **Nazwa** miary. 
    > [!NOTE]
@@ -72,6 +72,8 @@ W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atryb
    1. Wybierz opcję **Edytuj rozmiary**, aby dodać atrybuty danych, według których chcesz grupować wartości miary. Na przykład miasto lub płeć. Domyślnie wymiar *CustomerID* jest wybrany do tworzenia *miar na poziomie klienta*. Do utworzenia *miar na poziomie firmy* można usunąć rozmiar domyślny.
    1. Wybierz opcję **Gotowe**, aby dodać do miary wybrany wymiar.
 
+1. Jeśli w danych są wartości, które trzeba zastąpić liczbą całkowitą, na przykład zastąp *null* wartością *0*, wybierz opcję **Reguły**. Skonfiguruj regułę i upewnij się, że jako zamienniki wybierane są tylko liczby całkowite.
+
 1. Jeśli istnieje wiele ścieżek między mapowaną encją danych a encją *Klient*, musisz wybrać jedną ze zidentyfikowanych [ścieżek relacji między encjami](relationships.md). Wyniki mogą się różnić w zależności od wybranej ścieżki. 
    1. Wybierz **preferencje dotyczące danych** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary. Jeśli do encji *Klient* jest dostępna tylko jedna ścieżka, ta kontrolka nie będzie wyświetlana.
    1. Wybierz opcję **Gotowe**, aby zastosować wybór. 
@@ -88,9 +90,57 @@ W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atryb
 
 1. Wybierz **Miary**, aby zobaczyć nowo utworzoną miarę na liście.
 
+## <a name="use-a-template-to-build-a-measure"></a>Tworzenie miary za pomocą szablonu
+
+Do ich utworzenia miar można użyć wstępnie zdefiniowanych szablonów najczęściej stosowanych miar. Szczegółowe opisy szablonów i działanie z przewodnikiem mogą ułatwić efektywne tworzenie miar. Szablony są budowane na podstawie zamapowanych danych z encji *Ujednolicone działanie*. Należy więc upewnić się, że skonfigurowano [działania klientów](activities.md) przed utworzeniem miary na podstawie szablonu.
+
+Dostępne szablony miar: 
+- Średnia wartość transakcji (ATV)
+- Łączna wartość transakcji
+- Średni przychód dzienny
+- Średni przychód roczny
+- Liczba transakcji
+- Zdobyte punkty lojalnościowe
+- Zrealizowane punkty lojalnościowe
+- Saldo punktów lojalnościowych
+- Okres istnienia aktywnego klienta
+- Czas trwania uczestnictwa w programie lojalnościowym
+- Czas od ostatniego zakupu
+
+W poniższej procedurze przedstawiono w zarysie kroki tworzenia nowej miary za pomocą szablonu.
+
+1. W analizach odbiorców przejdź do **Miary**.
+
+1. Wybierz **Nowy** i wybierz **Wybierz szablon**.
+
+   :::image type="content" source="media/measure-use-template.png" alt-text="Zrzut ekranu menu rozwijanego podczas tworzenia nowej miary z wyróżnieniem szablonu.":::
+
+1. Znajdź szablon odpowiedni do potrzeb i wybierz opcję **Wybierz szablon**.
+
+1. Przejrzyj wymagane dane i wybierz pozycję **Rozpocznij**, jeśli masz już wszystkie dane.
+
+1. W okienku **Edycja nazwy** ustaw nazwę miary i encji wyjściowej. 
+
+1. Wybierz pozycję **Gotowe**.
+
+1. W sekcji **Ustawianie okresu czasu** zdefiniuj horyzont czasowy danych, które mają być użyte. Określ, czy nowa miara ma obejmować całą zawartość zestawu danych, wybierając opcję **Cały czas**. Można też skupić się na **Określonym okresie czasu**.
+
+   :::image type="content" source="media/measure-set-time-period.png" alt-text="Zrzut ekranu przedstawiający sekcję okresu podczas konfigurowania miary z szablonu.":::
+
+1. W następnej sekcji wybierz pozycję **Dodaj dane**, aby wybrać działania i zmapować odpowiednie dane z encji *Ujednolicone działanie*.
+
+    1. Krok 1 z 2: w obszarze **Typ działania** wybierz typ encji, której chcesz użyć. W przypadku **Działań** wybierz encje, które chcesz zamapować.
+    1. Krok 2 z 2: wybierz atrybut z encji *Ujednolicone działanie* dla składnika wymaganego przez formułę. Na przykład w przypadku Średniej wartości transakcji jest to atrybut reprezentujący wartość Transakcji. W przypadku **Znacznika czasu działania** wybierz atrybut z encji Ujednolicone działanie reprezentujący datę i godzinę działania.
+   
+1. Po pomyślnym mapowaniu danych można zobaczyć stan jako **Zakończone** oraz nazwę zamapowanych działań i atrybutów.
+
+   :::image type="content" source="media/measure-template-configured.png" alt-text="Zrzut ekranu przedstawiający zakończoną konfigurację szablonu miary.":::
+
+1. Teraz można wybrać opcję **Uruchom**, aby obliczyć wyniki miary. Aby uściślić go później, wybierz opcję **Zapisz kopię roboczą**.
+
 ## <a name="manage-your-measures"></a>Zarządzanie miarami
 
-Po [utworzeniu jednej miary](#create-a-measure) zostanie wyświetlona lista miar na stronie **Miary**.
+Listę miar można znaleźć na stronie **Miary**.
 
 Znajdziesz informacje o rodzaju miary, twórcy, dacie utworzenia, stanie i stanie. Po wybraniu miary z listy można wyświetlić podgląd wyniku i pobrać plik .CSV.
 

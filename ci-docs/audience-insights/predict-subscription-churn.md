@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595669"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906915"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
 
@@ -49,6 +49,12 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
         - **Sygnatura czasowa:** Data i godzina zdarzenia identyfikowanego przez klucz podstawowy.
         - **Zdarzenie:** Określ nazwę zdarzenia, które chcesz użyć. Na przykład pole o nazwie "UserAction" w usłudze przesyłania strumieniowego wideo może mieć wartość "Obejrzany".
         - **Szczegóły:** Szczegółowe informacje o zdarzeniu. Na przykład pole o nazwie "ShowTitle" w usłudze przesyłania strumieniowego wideo może mieć wartość wideo obejrzanego przez klienta.
+- Sugerowana charakterystyka danych:
+    - Wystarczające dane historyczne: dane subskrypcji dla co najmniej podwójnego wybranego okna czasowego. Najlepiej dwa do trzech lat danych subskrypcji.
+    - Stan subskrypcji: dane obejmują aktywne i nieaktywne subskrypcje dla każdego klienta, więc dla każdego identyfikatora klienta jest wiele wpisów.
+    - Liczba klientów: co najmniej 10 profilów klientów, najlepiej ponad 1000 unikalnych klientów. Model zakończy z niepowodzeniem, jeśli będzie mniej niż 10 klientów oraz niewystarczające dane historycznych.
+    - Pełność danych: mniej niż 20% brakujących wartości w polu danych dostarczonej encji.
+   
    > [!NOTE]
    > Dla 50% klientów, dla których ma być obliczona wartość zmian, muszą być co najmniej dwa rekordy działań.
 
@@ -67,7 +73,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 ### <a name="define-customer-churn"></a>Definiuj rezygnację klienta
 
 1. Wprowadź liczbę **Dni od zakończenia subskrypcji**, przez które firma uważa, że klient jest w stanie rezygnacji. Ten okres zazwyczaj jest powiązany z działaniami biznesowymi, takimi jak oferty, lub inne działania marketingowe, które usiłują zapobiec utracie klienta.
-1. Wpisz w liczbę **Dni, które mają zostać przeanalizowane w przyszłości w celu przewidywania zmian**, aby ustawić okno przewidywania zmian. Na przykład w celu przewidywania ryzyka zmian w pracy z klientami w ciągu najbliższych 90 dni w celu dostosowania się do działań w zakresie przechowywania marketingu. Przewidywanie ryzyka zmian na okres dłuższy lub krótszy może utrudnić zapamiętanie czynników w profilu ryzyka wynikające z pracy, ale jest to bardzo zależne od konkretnych wymagań biznesowych. Wybierz **Dalej**, aby kontynuować
+1. Wpisz w liczbę **Dni, które mają zostać przeanalizowane w przyszłości w celu przewidywania zmian**, aby ustawić okno przewidywania zmian. Na przykład w celu przewidywania ryzyka zmian w pracy z klientami w ciągu najbliższych 90 dni w celu dostosowania się do działań w zakresie przechowywania marketingu. Przewidywanie ryzyka rezygnacji przez dłuższe lub krótsze okresy może jednak znacznie utrudnić branie pod uwagę czynników w profilu ryzyka rezygnacji w zależności od konkretnych wymagań biznesowych. Wybierz **Dalej**, aby kontynuować
    >[!TIP]
    > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
 
@@ -113,7 +119,8 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 1. Wybierz przewidywania do przeglądu.
    - **Nazwa przewidywania:** Nazwa przewidywania podawana podczas jego tworzenia.
    - **Typ przewidywania:** Typ modelu używanego na potrzeby przewidywania
-   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.
+   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.    
+     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-new-segment) z wybranym progiem.
    - **Pole przewidywane:** To pole jest wypełniane tylko w przypadku niektórych typów przewidywań, i nie jest używane w przewidywaniu rezygnacji z subskrypcji.
    - **Stan:** Bieżący stan uruchomienia przewidywania.
         - **W kolejce:** Przewidywanie oczekuje obecnie na uruchomienie innych procesów.

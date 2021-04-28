@@ -1,7 +1,7 @@
 ---
-title: Lokalizacje docelowe eksportu
-description: Eksportuj dane i zarządzaj miejscami docelowymi eksportu.
-ms.date: 07/21/2020
+title: Eksportowanie danych z usługi Customer Insights
+description: Zarządzaj eksportami do udostępniania danych.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596098"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896156"
 ---
-# <a name="export-destinations-preview-overview"></a>Omówienie miejsc docelowych eksportu (podgląd)
+# <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
-Strona **Lokalizacje docelowe eksportu** ukazuje wszystkie lokalizacje, w których skonfigurowano eksportowanie danych do programu. Można również dodać nowe miejsca docelowe dla eksportu. Dodatkowo pokazuje aktualnie dostępne opcje eksportu. Pobierz szybki przegląd, opis i dowiedz się, co możesz zrobić z poszczególnymi opcjami rozszerzania. Wyeksportuj zunifikowane profile, miary i segmenty do obsługiwanych aplikacji przydatnych w prowadzonej działalności.
+Na stronie **Eksporty** widać wszystkie skonfigurowane eksporty. Eksporty udostępniają konkretne dane różnym aplikacjom. Mogą one zawierać profile klientów lub encje, schematy i szczegóły mapowania. Każdy eksport wymaga [połączenia, skonfigurowanego przez administratora, do zarządzania uwierzytelnianiem i dostępem](connections.md).
 
-Przejdź do **Administracja** > **Lokalizacje docelowe eksportu**, aby znaleźć następujące opcje rozszerzania:
+> [!NOTE]
+> Do marca 2021 r. eksporty automatycznie tworzyły połączenie z odpowiednią usługą. Eksporty wymagają teraz [połączenia, utworzonego i udostępnionego przez administratora](connections.md), zanim będzie można je utworzyć.
 
-- [Adobe Campaign Standard](export-adobe-campaign-standard.md)
-- [Adobe Experience Platform](export-adobe-experience-platform.md)
-- [AdRoll](export-adroll.md)
-- [Autopilot](export-autopilot.md)
-- [Azure Blob Storage](export-azure-blob-storage.md)
-- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
-- [Bot dla Microsoft Teams](export-teams-bot.md)
-- [Customer Insights API](apis.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 Customer Service (dodatek kart klientów)](customer-card-add-in.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Dynamics 365 Sales](export-dynamics365-sales.md)
-- [Centrum sprzedaży Dynamics 365 (dodatek kart klientów)](customer-card-add-in.md)
-- [Menedżer reklam w serwisie Facebook](export-facebook.md)
-- [Google Ads](export-google-ads.md)
-- [LiveRamp&reg;](export-liveramp.md)
-- [Mailchimp](export-mailchimp.md)
-- [Marketo](export-marketo.md)
-- [Power Automate](export-power-automate.md)
-- [Power Apps](export-power-apps.md)
-- [Power BI](export-power-bi.md)
-- [SendGrid](export-sendgrid.md)
-- [SFTP](export-sftp.md)
+Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów. Wszystkie role użytkowników mają dostęp do wyświetlania skonfigurowanych eksportów. Użycie pola wyszukiwania na pasku poleceń w celu znalezienia eksportów według ich nazwy, nazwy połączenia lub typu połączenia.
 
-## <a name="add-a-new-export-destination"></a>Dodaj nową lokalizację docelową eksportu
+## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu
 
-Aby dodać docelowe lokalizacje eksportu, użytkownik musi mieć [uprawnienia administratora](permissions.md). W przypadku eksportu do usług Microsoft należy założyć, że obie usługi znajdują się w tej samej organizacji.
+Aby skonfigurować lub edytować eksport, potrzebne są dostępne dla użytkownika połączenia. Połączenia zależą od [roli użytkownika](permissions.md):
+- Administratorzy mają dostęp do wszystkich połączeń. Mogą oni także tworzyć nowe połączenia podczas konfigurowania eksportu.
+- Współautorzy mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Wyświetlający mogą tylko wyświetlać istniejące eksporty, ale nie mogą ich tworzyć.
 
-1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+1. Przejdź do **Dane** > **Eksporty**.
 
-1. Przejdź do karty **Moje lokalizacje docelowe eksportu**.
+1. Wybierz **Dodaj eksport**, aby utworzyć nowe miejsce docelowe eksportu.
 
-1. Wybierz **Dodaj lokalizację**, aby utworzyć nową lokalizację docelową eksportu.
+1. W okienku **Konfigurowanie eksportu** wybierz połączenie, które ma być użyte. [Połączenia](connections.md) są zarządzane przez administratorów. 
 
-1. W okienku **Dodawaj lokalizację** wybierz **Typ** lokalizacji docelowej eksportu z listy rozwijanej.
+1. Podaj wymagane szczegóły i wybierz opcję **Zapisz**, aby utworzyć eksport.
 
-1. Wprowadź wymagane informacje i wybierz **Dalej**, aby utworzyć lokalizację docelową eksportu.
-
-Możesz również wybrać **Konfiguruj** na kafelku na karcie **Odnajdź**.
-
-## <a name="view-export-destinations"></a>Wyświetl lokalizacje docelowe eksportu
-
-Po utworzeniu miejsc docelowych eksportowania można je znaleźć w tabeli na karcie **Moje lokalizacje docelowe eksportu**. Ta tabela zawiera trzy kolumny:
-
-- **Wyświetlana nazwa**: Nazwa wprowadzana podczas tworzenia lokalizacji docelowej.
-- **Typ**: Typ lokalizacji docelowej eksportu, który ustawisz podczas tworzenia lokalizacji docelowej.
-- **Utworzono**: Data utworzenia lokalizacji docelowej.
-
-## <a name="edit-an-export-destination"></a>Edytuj lokalizację docelową eksportu
+### <a name="edit-an-export"></a>Edytuj eksport
 
 1. Wybierz pionowy wielokropek dla lokalizacji docelowej eksportu, którą chcesz edytować.
 
-   > [!div class="mx-imgBorder"]
-   > ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
+1. Z menu rozwijanego wybierz polecenie **Edytuj**.
 
-1. Wybierz **Edytuj** z menu rozwijanego.
+1. Zmień wartości, które chcesz zaktualizować i wybierz **Zapisz**.
 
-1. Zmień wartości, które wymagają aktualizacji, i wybierz **Zapisz**.
+## <a name="view-exports-and-export-details"></a>Wyświetlanie eksportów i szczegółów eksportów
 
-## <a name="export-data-on-demand"></a>Eksportuj dane na żądanie
+Po utworzeniu miejsc docelowych eksportu są one wyświetlane w **Dane** > **Eksporty**. Wszyscy użytkownicy mogą zobaczyć, które dane są udostępniane oraz ich najaktualniejszy stan.
 
-Po skonfigurowaniu łącznika dla docelowej lokalizacji eksportu eksporty będą wykonywane podczas wszystkich [zaplanowanych odświeżeń](system.md#schedule-tab).
+1. Przejdź do **Dane** > **Eksporty**.
 
-Aby wyeksportować dane bez czekania na zaplanowane odświeżanie, przejdź do karty **Moje lokalizacje docelowe eksportowania** na **Administracja** > **Eksportowanie lokalizacji docelowych**.
+1. Użytkownicy bez uprawnień do edytowania mogą wybrać opcję **Wyświetl** zamiast opcji **Edytuj**, zobacz szczegółowe informacje o eksportowaniu.
 
-> [!div class="mx-imgBorder"]
-> ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
+1. W tym okienku bocznym jest pokazana konfiguracja tego eksportu. Bez uprawnień do edycji nie można zmienić wartości. Wybierz opcję **Zamknij**, aby powrócić do strony eksportowania.
 
-- Wybierz **Eksportuj** nad listą, aby uruchomić eksportowanie do wszystkich miejsc docelowych jednocześnie.
-- Wybierz wielokropek (...) przy pozycji na liście a następnie wybierz opcję **Eksportuj**, aby uruchomić eksportowanie dla pojedynczej lokalizacji docelowej eksportu.
+## <a name="run-exports-on-demand"></a>Uruchamianie eksportów na żądanie
 
-## <a name="remove-an-export-destination"></a>Usuń lokalizację docelową eksportu
+Po skonfigurowaniu eksportu będzie on uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab), o ile posiada działające połączenie.
 
-Aby usunąć lokalizację docelową eksportu, zacznij na stronie głównej **Lokalizacje docelowe eksportu**.
+Aby wyeksportować dane bez oczekiwania na zaplanowane odświeżenie, przejdź do strony **Dane** > **Eksporty**. Dostępne są dwie opcje:
 
-1. Wybierz pionowy wielokropek dla lokalizacji docelowej eksportu, którą chcesz usunąć.
+- Aby uruchomić wszystkie eksporty, wybierz polecenie **Uruchom wszystkie** na pasku poleceń. 
+- Aby uruchomić pojedynczy eksport, wybierz wielokropek (...) dla elementu listy, a następnie wybierz opcję **Uruchom**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
+## <a name="remove-an-export"></a>Usuwanie eksportu
 
-2. Wybierz **Usuń** z menu rozwijanego.
+1. Przejdź do **Dane** > **Eksporty**.
 
-3. Potwierdź usuwanie, zaznaczając pole **Usuń** na ekranie potwierdzenia.
+1. Wybierz pionowy wielokropek dla eksportu, który chcesz usunąć.
+
+1. Wybierz **Usuń** z menu rozwijanego.
+
+1. Potwierdź usuwanie, zaznaczając pole **Usuń** na ekranie potwierdzenia.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

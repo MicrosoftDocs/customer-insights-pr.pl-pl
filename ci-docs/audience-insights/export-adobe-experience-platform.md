@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych aplikacji Customer Insights do rozwiązania Adobe Experience Platform
 description: Dowiedz się, jak używać segmentów szczegółowych informacji o odbiorcach w rozwiązaniu Adobe Experience Platform.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: d1856861562be55c6d1d051050fe965560fa42f8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596282"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760114"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Korzystanie z segmentów aplikacji Customer Insights w rozwiązaniu Adobe Experience Platform (wersja zapoznawcza)
 
@@ -51,21 +51,36 @@ Wiadomość e-mail z ofertą, którą chcesz wysłać, będzie zawierać imię, 
 
 Po zidentyfikowaniu odbiorców docelowych można skonfigurować eksport ze szczegółowych informacji o odbiorcach do konta usługi Azure Blob Storage.
 
-1. W analizach odbiorców przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+### <a name="configure-a-connection"></a>Konfigurowanie połączenia
 
-1. Na kafelku **Azure Blob Storage** wybierz opcję **Konfiguruj**.
+1. Przejdź do **Admin** > **Połączenia**.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Kafelek konfiguracji dla usługi Azure Blob Storage.":::
+1. Wybierz **Dodaj połączenie** i wybierz **Azure Blob Storage** lub wybierz pozycję **Skonfiguruj** w kafelku **Azure Blob Storage**:
 
-1. Podaj **nazwę wyświetlaną** dla nowego miejsca docelowego eksportu, a następnie wprowadź **nazwę konta**, **klucz konta** i **kontener** konta usługi Azure Blob Storage, do którego chcesz wyeksportować segment.  
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Kafelek konfiguracji dla usługi Azure Blob Storage."::: aby skonfigurować połączenie.
+
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
+
+1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Wprowadź **Nazwę konta**, **Klucz konta** i **Kontener** dla konta magazynu Blob Storage, do którego chcesz wyeksportować segment.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Zrzut ekranu przedstawiający konfigurację konta magazynu. "::: 
+   
+    - Aby dowiedzieć się, jak znaleźć nazwę i klucz klienta konta Blob Storage, zobacz [Zarządzanie ustawieniami konta magazynu w portalu Azure Portal](/azure/storage/common/storage-account-manage).
+    - Aby dowiedzieć się, jak utworzyć kontener, zobacz [Tworzenie kontenera](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-   - Aby dowiedzieć się więcej o wyszukiwaniu klucza konta i nazwy konta magazynu Azure Blob, zobacz [Zarządzaj ustawieniami konta magazynu w portalu Azure](/azure/storage/common/storage-account-manage).
+1. Aby zakończyć połączenie, wybierz **Zapisz**. 
 
-   - Aby dowiedzieć się, jak utworzyć kontener, zobacz [Tworzenie kontenera](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
+### <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-1. Wybierz **Dalej**.
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz **Dodaj eksport**, aby utworzyć nowy eksport.
+
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Azure Blob Storage. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
 1. Wybierz segment, który chcesz wyeksportować. W tym przykładzie jest to segment **ChurnProneCustomers**.
 
@@ -73,11 +88,9 @@ Po zidentyfikowaniu odbiorców docelowych można skonfigurować eksport ze szcze
 
 1. Wybierz pozycję **Zapisz**.
 
-Zapisane miejsce docelowe eksportu można znaleźć w obszarze **Administrator** > **Eksporty** > **Moje lokalizacje docelowe eksportu**.
+Po zapisaniu docelowego eksportu znajdziesz go w **Dane** > **Eksporty**.
 
-:::image type="content" source="media/export-destination-azure-blob-storage.png" alt-text="Zrzut ekranu z listą eksportów i wyróżnionym przykładowym segmentem.":::
-
-Możesz teraz [wyeksportować na żądanie](export-destinations.md#export-data-on-demand). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md).
+Możesz teraz [wyeksportować na żądanie](export-destinations.md#run-exports-on-demand). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md).
 
 > [!NOTE]
 > Upewnij się, że liczba rekordów w wyeksportowanych segmentach znajduje się w ramach dozwolonego limitu licencji rozwiązania Adobe Campaign Standard.

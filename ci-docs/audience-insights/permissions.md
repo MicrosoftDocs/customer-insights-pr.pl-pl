@@ -1,7 +1,7 @@
 ---
 title: Zarządzanie uprawnieniami użytkowników
 description: Dowiedz się o uprawnieniach i rolach użytkowników.
-ms.date: 10/27/2020
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8638489dba908d4504278916d2c28454e3ea9e18
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595715"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760386"
 ---
 # <a name="user-permissions"></a>Uprawnienia użytkowników
 
@@ -31,7 +31,7 @@ Istnieją trzy typy ról:
 - Wyświetl stronę **Wzbogacanie** i zapoznaj się z nią.
 - Przeglądaj i eksportuj encje za pomocą strony **Encje**.
 - Wyświetl stan procesów systemowych przy użyciu strony **System**.
-- Wyeksportuj segmenty ze strony **Segmenty**.
+- Wyświetl eksporty na stronie **Eksporty**.
 - Zainstaluj i skorzystaj z pulpitu nawigacyjnego **Power BI Customer Insights**.
 
 ## <a name="contributor"></a>Współautor
@@ -43,6 +43,7 @@ Istnieją trzy typy ról:
 - Utwórz segmenty, korzystając ze strony **Segmenty**.
 - Utwórz miary za pomocą strony **Miary**.
 - Zarządzaj konfiguracją i wzbogacaj profile klientów ze strony **Wzbogacanie** (dotyczy tylko wzbogaceń własnych).
+- Zarządzanie i tworzenie eksportów na podstawie połączeń udostępnionych współautorom. [Dowiedz się więcej o tym, w jaki sposób administratorzy zezwalają współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Administrator
 
@@ -50,8 +51,9 @@ Istnieją trzy typy ról:
 - Zmień ustawienia na stronie **System**, w tym język roboczy i odśwież harmonogramy dla procesów systemowych.
 - Wyświetl i dodaj uprawnienia przy użyciu strony **Uprawnienia**.
 - Ustaw definicje Wyszukiwanie i Filtrowanie dla strony Klienci za pomocą strony **Wyszukiwanie i indeks filtrów** (dostępnej przez stronę **Klienci**).
-- Zdefiniuj miejsca docelowe segmentu Dynamics 365 Sales przy użyciu strony **Lokalizacje docelowe eksportu**.
+- Zarządzaj połączeniami i zezwalaj innym rolom użytkownika na dostęp do nich na stronie **Połączenia**.
 - Zarządzaj konfiguracją i wzbogacaj profile klientów ze strony **Wzbogacanie** (dotyczy wszystkich wzbogaceń).
+- Zarządzanie i tworzenie eksportów ich na stronie **Eksporty**.
 - Zainstaluj i użyj **Dodatek kart klientów**.
 - Dodanie **łącznika Power Apps** i korzystanie z niego.
 - Włącz korzystanie z [interfejsów API Customer Insights](apis.md).

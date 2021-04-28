@@ -9,12 +9,12 @@ ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8fdfe16d609fbebd53703b56f4e0252125bedf8f
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598643"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896478"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 
@@ -27,9 +27,9 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
   - Łącz i ujednolicaj dane z łatwością — użyj danych transakcyjnych, obserwacyjnych i behawioralnych pochodzących z popularnych [źródeł danych przy użyciu wbudowanych łączników](data-sources.md).
   - Przekształć dane klientów w sposób inteligentny — twórz ujednolicone profile klientów zgodne z [Common Data Model](/common-data-model/). Rozpoznawać tożsamości klientów dzięki rekomendacjom opartym na dodatkach AI i ML.
 
-- **Wzbogacenie dzięki analizom odbiorcy zawartym w Microsoft Graph**
+- **Wzbogacanie szczegółowymi danymi odbiorcy**
 
-  - Utwórz bogatsze profile klientów, [dołączając analizy odbiorcy zawarte w Microsoft Graph](enrichment-microsoft-graph.md).  
+  - Tworzenie bogatszych profili klientów przez [zastosowanie wzbogaconych danych](enrichment-hub.md).  
 
 - **Napędzaj procesy biznesowe i spersonalizowane środowiska dla klientów**
 
@@ -43,7 +43,7 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
 
   - Dostęp do bogatego zbioru łączników w celu przyjęcia wszystkich danych klientów.
   - Możliwość ujednolicenia danych klienta i przekształcenia ich w format [Common Data Model](/common-data-model/).
-  - Wzbogacanie informacji o klientach wynikami analiz z analizy odbiorcy w Microsoft Graph, takimi jak koligacja marki i zainteresowania.
+  - Wzbogacanie informacji o klientach wynikami analiz z analizy odbiorcy, takimi jak koligacja marki i zainteresowania.
   - Konfiguracja i debugowanie typu „kliknięcia bez kodu” ułatwiające konfigurowanie statystyk odbiorców i identyfikowanie potencjalnych problemów.
   - Oczyść i normalizuj dane klientów w różnych źródłach dzięki rekomendacjom z użyciem AI.  
 

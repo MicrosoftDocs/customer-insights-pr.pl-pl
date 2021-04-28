@@ -1,7 +1,7 @@
 ---
 title: Użyj źródeł danych do pozyskiwania danych
 description: Informacje na temat importowania danych z różnych źródeł.
-ms.date: 11/03/2020
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 780dc61a82d6ed9856a37dc8f164fa946d982bbe
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595960"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887907"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -32,8 +32,15 @@ Zapoznaj się ze szczegółowymi artykułami dotyczącymi sposobu dodawania źr�
 - [Z folderu Common Data Model](connect-common-data-model.md)
 - [Z własnego repozytorium tylu lake Common Data Service](connect-common-data-service-lake.md)
 
-> [!NOTE]
-> Nie można jeszcze dodawać danych z lokalny źródeł danych.
+## <a name="add-data-from-on-premises-data-sources"></a>Dodawanie danych z lokalnych źródeł danych
+
+Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Power Platform. Przepływy danych można włączyć w funkcji Customer Insights, [podając adres URL środowiska Microsoft Dataverse](manage-environments.md#create-an-environment-in-an-existing-organization) podczas konfigurowania środowiska.
+
+Źródła danych tworzone po skojarzeniu środowiska Dataverse z usługą Customer Insights domyślnie będą korzystać z [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bram danych. Należy usunąć i ponownie utworzyć źródła danych, które istniały, zanim środowisko Dataverse zostało skojarzone do użycia lokalnych bram danych.
+
+Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Strona źródła danych pokazuje łącza do środowiska Power Platform, w którym można wyświetlać i konfigurować lokalne bramy danych.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Zrzut ekranu strony źródeł danych przedstawiający łącza do środowiska Power Platform.":::
 
 ## <a name="review-ingested-data"></a>Przeglądanie pobranych danych
 
@@ -65,7 +72,7 @@ Aby odświeżyć źródło danych na żądanie, wykonaj następujące kroki:
 
 2. Zaznacz pionowy wielokropek obok źródło danych, który chcesz odświeżyć, i wybierz opcję **Odśwież** z listy rozwijanej.
 
-3. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie zarówno schematu jednostki, jak i danych dla wszystkich jednostek określonych w źródle danych.
+3. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie schematu encji i danych dla wszystkich encji określonych w źródle danych.
 
 4. Wybierz **Zatrzymaj odświeżanie**, aby anulować istniejące odświeżanie, a źródło danych przywróci do ostatniego stanu odświeżania.
 

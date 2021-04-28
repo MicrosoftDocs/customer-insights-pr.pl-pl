@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi DotDigital
-description: Dowiedz się, jak skonfigurować połączenie z DotDigital.
-ms.date: 11/14/2020
+description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi DotDigital.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,33 +9,40 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 51a28bdf0de34f0555d8ad7e3d13b2ef8911d417
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 235bcdfa4a7c4c1a382778bd4f66c1a9f5b7beb1
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598030"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759972"
 ---
-# <a name="connector-for-dotdigital-preview"></a>Łącznik dla usługi DotDigital (wersja zapoznawcza)
+# <a name="export-segment-lists-to-dotdigital-preview"></a>Eksportowanie list segmentów do usługi DotDigital (wersja zapoznawcza)
 
 Eksportuj segmenty ujednoliconych profili klientów do książek adresowych DotDigital i wykorzystuj je do prowadzenia kampanii, marketingu e-mailowego i budowania segmentów klientów za pomocą DotDigital. 
 
-## <a name="prerequisites"></a>Wymagania wstępne
+## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
 -   Użytkownik ma [konto usługi DotDigital](https://dotdigital.com/) i odpowiadające mu poświadczenia administratora.
 -   Istnieją książki adresowe w DotDigital i odpowiadające im identyfikatory. Identyfikator można znaleźć w adresie URL podczas wybierania i otwierania książki adresowej. Aby uzyskać więcej informacji, zobacz temat [Książka adresowa DotDigital](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Posiadasz [skonfigurowane segmenty](segments.md) w analizach odbiorców.
 -   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
-## <a name="connect-to-dotdigital"></a>Nawiązywanie połączenia z DotDigital
+## <a name="known-limitations"></a>Znane ograniczenia
 
-1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+- Do 1 miliona profili na eksport do DotDigital.
+- Eksport do DotDigital jest ograniczony do segmentów.
+- Eksportowanie segmentów zawierających łącznie 1 milion profili może zająć do 3 godzin ze względu na ograniczenia po stronie dostawcy. 
+- Liczba profilów, które można eksportować do DotDigital, jest zależna od kontraktu i ograniczona jego DotDigital.
 
-1. W **DotDigital** wybierz **Konfiguruj**.
+## <a name="set-up-connection-to-dotdigital"></a>Konfiguruj połączenie z usługą DotDigital
 
-1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej exportu rozpoznawalną nazwę.
+1. Przejdź do **Admin** > **Połączenia**.
 
-   :::image type="content" source="media/DotDigital_config.PNG" alt-text="Okienko konfiguracji dla eksportu DotDigital.":::
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **DotDigital**, aby skonfigurować połączenie.
+
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
+
+1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Wprowadź **Nazwę użytkownika i hasło DotDigital**.
 
@@ -47,9 +54,18 @@ Eksportuj segmenty ujednoliconych profili klientów do książek adresowych DotD
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
-1. Wybierz **Dalej**, aby skonfigurować eksport.
+1. Aby zakończyć połączenie, wybierz **Zapisz**. 
 
-## <a name="configure-the-connector"></a>Skonfiguruj łącznik
+## <a name="configure-an-export"></a>Konfigurowanie eksportu
+
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi DotDigital. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+
 
 1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**, **Imię i nazwisko**, **Płeć** i **Kod pocztowy**.
 
@@ -57,16 +73,12 @@ Eksportuj segmenty ujednoliconych profili klientów do książek adresowych DotD
 
 1. Wybierz pozycję **Zapisz**.
 
-## <a name="export-the-data"></a>Eksportowanie danych
+Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab). W DotDigital można teraz znaleźć segmenty w [książkach adresowych DotDigital](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+ 
+W DotDigital można teraz znaleźć segmenty w [książkach adresowych DotDigital](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 
-## <a name="known-limitations"></a>Znane ograniczenia
-
-- Do 1 miliona profili na eksport do DotDigital.
-- Eksport do DotDigital jest ograniczony do segmentów.
-- Eksportowanie segmentów zawierających łącznie 1 milion profili może zająć do 3 godzin ze względu na ograniczenia po stronie dostawcy. 
-- Liczba profilów, które można eksportować do DotDigital, jest zależna od kontraktu i ograniczona jego DotDigital.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

@@ -1,7 +1,7 @@
 ---
 title: Wzbogacanie danych za pomocą HERE Technologies innych firm
 description: Ogólne informacje o wzbogacaniu strony trzeciej HERE Technologies.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 8e8d6bfea4e0df54682501f60759c24c893444af
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597754"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896064"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Wzbogacenie profili klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
@@ -26,35 +26,54 @@ Aby skonfigurować wzbogacenia HERE Technologies, muszą zostać spełnione nast
 
 - Masz aktywną subskrypcję HERE Technologies. Aby uzyskać subskrypcję, możesz zasubskrybować [tutaj](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) lub [skontaktować się bezpośrednio z HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you). [Dowiedz się więcej o wzbogacaniu lokalizacji HERE Technologies.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Masz klucz API HERE Technologies.
+- Dostępne jest [połączenie](connections.md) HERE *lub* użytkownik ma uprawnienia [administratora](permissions.md#administrator) i klucz interfejsu API technologii HERE Technologies.
 
-- Masz uprawnienia [Administratora](permissions.md#administrator).
+## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
-## <a name="configuration"></a>Konfiguracja
+1. Przejdź do **Dane** > **Wzbogacanie**. 
 
-1. Przejdź do **Dane** > **Wzbogacanie**.
-
-1. Na kafelku importu niestandardowego HERE wybierz pozycję **Wzbogacanie danych**.
+1. Wybierz **Wzbogać moje dane** na kafelku HERE Technologies i wybierz **Rozpocznij**.
 
    > [!div class="mx-imgBorder"]
    > ![Kafelek HERE Technologies](media/HERE-tile.png "Kafelek HERE Technologies")
 
-1. Wprowadź aktywny **klucz interfejsu API HERE Technologies**. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**. 
+1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem, może on utworzyć połączenie, wybierając opcję **Dodaj połączenie**. Z listy rozwijanej wybierz pozycję **HERE Technologies**. 
 
-1. Potwierdzenie obydwu składników są wprowadzane po wybraniu opcji **Połącz z HERE**.
+1. Wybierz opcję **Połącz z HERE Technologies**, aby potwierdzić wybrane połączenie.
 
-1.  Wybierz opcję **Dodaj dane** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić o dane lokalizacyjne z firmy HERE Technologies. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+1.  Wybierz opcję **Dalej** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić danymi lokalizacji z HERE Technologies. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
     :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Zrzut ekranu podczas wybierania zestawu danych klienta.":::
 
-1. Wybierz, jeśli chcesz zmapować pola na adres podstawowy i/lub pomocniczy. Możesz określić mapowanie pól dla obu adresów (na przykład adresu domowego i adresu firmy) i wzbogacić profile dla obu adresów osobno. Wybierz **Dalej**.
+1. Wybierz, jeśli chcesz zmapować pola na adres podstawowy i/lub pomocniczy. Można oddzielnie określić mapowanie pól dla obu adresów i wzbogacić profile dla obu adresów. Na przykład jeśli istnieje adres domowy i służbowy. Wybierz **Dalej**.
 
 1. Zdefiniuj, które pola z ujednoliconych profili mają być używane do wyszukiwania pasujących danych o lokalizacji z HERE Technologies. Pola **Ulica 1** i **Kod pocztowy** są wymagane dla wybranego adresu głównego i / lub dodatkowego. Aby zwiększyć dokładność dopasowania, można dodać więcej pól.
 
    > [!div class="mx-imgBorder"]
    > ![Strona konfiguracji wzbogacenia HERE Technologies](media/enrichment-HERE-configuration.png "Strona konfiguracji wzbogacenia HERE Technologies")
 
-1. Wybierz opcję **Zastosuj**, aby zakończyć mapowanie pola.
+1. Wybierz **Dalej**, by zakończyć mapowanie pól.
+
+1. Podaj nazwę wzbogacenia. 
+
+1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
+
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurowanie połączenia dla HERE Technologies 
+
+Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania *lub* wybierz pozycję **Admin** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku HERE Technologies.
+
+1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
+
+1. Podaj prawidłowy klucz interfejsu API technologii HERE Technologies.
+
+1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**
+
+1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
+
+1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
+
+> [!div class="mx-imgBorder"]
+   > ![Strona konfiguracji połączenia HERE Technologies](media/enrichment-HERE-connection.png "Strona konfiguracji połączenia HERE Technologies")
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 

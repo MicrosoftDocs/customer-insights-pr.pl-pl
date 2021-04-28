@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597202"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906869"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)
 
@@ -46,6 +46,14 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
         - **Sygnatura czasowa:** Data i godzina zdarzenia identyfikowanego przez klucz podstawowy.
         - **Zdarzenie:** Określ nazwę zdarzenia, które chcesz użyć. Na przykład pole o nazwie „UserAction” w sklepie spożywczym może być kuponem używanym przez klienta.
         - **Szczegóły:** Szczegółowe informacje o zdarzeniu. Na przykład pole o nazwie „CouponValue” w sklepie spożywczym może zawierać walutę kuponu.
+- Sugerowana charakterystyka danych:
+    - Wystarczające dane historyczne: dane transakcji dla co najmniej podwójnego wybranego okna czasowego. Najlepiej dwa do trzech lat danych subskrypcji. 
+    - Wiele zakupów na klienta: idealnie przynajmniej dwie transakcje na klienta.
+    - Liczba klientów: co najmniej 10 profilów klientów, najlepiej ponad 1000 unikalnych klientów. Model zakończy z niepowodzeniem, jeśli będzie mniej niż 10 klientów oraz niewystarczające dane historycznych.
+    - Pełność danych: mniej niż 20% brakujących wartości w polu danych dostarczonej encji.
+
+> [!NOTE]
+> W przypadku działalności o wysokiej częstotliwości zakupów u klientów (co kilka tygodni) zaleca się wybranie krótszego okna przewidywania i definicji rezygnacji. W przypadku niskiej częstotliwości zakupu (co kilka miesięcy lub raz do roku), wybierz dłuższy przewidywania i definicji rezygnacji.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Utwórz prognozę rezygnacji z transakcji
 
@@ -129,7 +137,9 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
 1. Wybierz przewidywania do przeglądu.
    - **Nazwa przewidywania:** Nazwa przewidywania podana podczas jej tworzenia..
    - **Typ przewidywania:** typ modelu używanego przez przewidywanie
-   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.
+   - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.    
+     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-new-segment) z wybranym progiem.
+     Nie wszyscy klienci muszą być aktywnymi klientami. Niektórzy z nich mogą nie mieć żadnego działania przez dłuższy czas i są już traktowane jako rezygnacja na podstawie definicji rezygnacji. Przewidywanie ryzyka rezygnacji dla klientów, którzy już zrezygnowali, nie jest przydatne, ponieważ nie są oni odbiorcami stanowiącymi podmiot zainteresowania.
    - **Przewidywane pole:** To pole jest wypełniane tylko w przypadku niektórych typów przewidywań i nie jest używane w przewidywaniu rezygnacji.
    - **Stan:** Stan przebiegu przewidywania.
         - **W kolejce:** Przewidywanie oczekuje na uruchomienie innych procesów.

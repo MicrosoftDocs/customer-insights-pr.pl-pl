@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Menedżer reklam Facebook
-description: Informacje o konfigurowaniu połączenia z Menedżerem Facebook Ads.
-ms.date: 06/05/2020
+description: Dowiedz się, jak skonfigurować połączenie i eksport do Menedżera reklam na portalu Facebook.
+ms.date: 04/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,64 +9,83 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3e2b52fe743563e4bf61d870cbf1718e6c752a67
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ca32906a98bc734639fb369d6f5a92e8888fd850
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596696"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906823"
 ---
-# <a name="connector-for-facebook-ads-manager-preview"></a>Łącznik dla Menedżera Facebook Ads (wersja zapoznawcza)
+# <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Eksportowanie listy segmentów do Menedżera reklam na portalu Facebook (wersja zapoznawcza)
 
 Eksportuj segmenty zunifikowanych profilów klientów do Menedżera Facebook Ads, aby tworzyć kampanie Facebook i Instagram.
 
-## <a name="prerequisites"></a>Wymagania wstępne
+## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
 
-- Musisz posiadać [**konto reklam Facebook**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), obejmujące [**konto firmowe Facebook**](https://business.facebook.com/).
+- Musisz mieć [**konto reklamowe na portalu Facebook**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) zawierające [**konto firmowe na portalu Facebook**](https://business.facebook.com/).
 - Musisz być Administratorem [**konta reklam Facebook**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
 
-## <a name="connect-to-facebook-ads-manager"></a>Połącz z Menedżerem Facebook Ads
+## <a name="known-limitations"></a>Znane ograniczenia
 
-1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+- Do 10 milionów profili klientów na eksport do Menedżera reklam na portalu Facebook.
+- Eksport do Menedżera reklam na portalu Facebook jest ograniczony do segmentów.
+- Tworzenie lub aktualizowanie niestandardowych odbiorców na portalu Facebook tylko typu *lista klientów*.
+- Eksportowanie segmentów zawierających łącznie 10 milionów profili może zająć do 90 minut.
 
-1. W obszarze **Menedżer Facebook Ads** wybierz **Konfiguruj**.
+## <a name="set-up-connection-to-facebook-ads-manager"></a>Konfiguruj połączenie z Menedżerem reklam na portalu Facebook
 
-1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej exportu rozpoznawalną nazwę.
+Przed utworzeniem eksportu administrator musi skonfigurować połączenie z usługą i umożliwić współautorom korzystanie z połączenia.
 
-1. Wybierz **Kontynuuj z Facebook**, aby zalogować się do swojego konta Facebook Ad.
+1. Przejdź do **Admin** > **Połączenia**.
 
-1. Zezwalaj na uprawnienie **ads_management** po uwierzytelnieniu za pomocą Facebook.
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Menedżer reklam na portalu Facebook**, aby skonfigurować połączenie.
 
-1. Wybierz **Konto Facebook Ads**, z którym chcesz pracować.
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
 
-1. Wybierz **Istniejącego odbiorcę niestandardowego** z listy rozwijanej lub utwórz **Nowego odbiorcę niestandardowego**. Aby uzyskać więcej informacji, zobacz temat [**Odbiorcy w Menedżerze Facebook Ads**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą **Administratorzy**. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
+1. Uwierzytelnianie przy użyciu reklam na portalu Facebook: 
 
-1. Wybierz **Dalej**, aby skonfigurować eksport.
+   1. Wybierz **Kontynuuj z Facebook**, aby zalogować się do swojego konta Facebook Ad.
 
-## <a name="configure-the-connector"></a>Skonfiguruj łącznik
+   1. Zezwalaj na uprawnienie **ads_management** po uwierzytelnieniu za pomocą Facebook.
 
-1. W polu **Wybierz identyfikator klucza** wybierz **E-mail**, **Nazwisko i adres** lub **Telefon**, aby przesłać do Menedżera Facebook Ads.
+   1. Wybierz **Konto Facebook Ads**, z którym chcesz pracować.
+
+   1. Wybierz **Istniejącego odbiorcę niestandardowego** z listy rozwijanej lub utwórz **Nowego odbiorcę niestandardowego**. Aby uzyskać więcej informacji, zobacz temat [**Odbiorcy w Menedżerze Facebook Ads**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+      > [!NOTE]
+      > Za pomocą tego eksportu można tylko tworzyć lub aktualizować odbiorców na portalu Facebook typu *lista klientów*. W niektórych przypadkach na liście rozwijanej można zobaczyć niestandardowych odbiorców różnych typów. Wybranie innego typu danych niż *lista klientów* spowoduje niepowodzenie eksportu. 
+
+1. Przejrzyj zasady **Prywatność danych i zgodność z przepisami** i wybierz opcję **Wyrażam zgodę**.
+
+1. Aby zakończyć połączenie, wybierz **Zapisz**.
+
+## <a name="configure-an-export"></a>Konfigurowanie eksportu
+
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport. 
+
+1. W opcji **Połączenia dla eksportu** wybierz połączenie z sekcji Menedżer reklam na portalu **Facebook**. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+
+1. W polu **Wybierz identyfikator klucza** wybierz **E-mail**, **Nazwisko i adres** lub **Telefon**, aby przesłać do Menedżera Facebook Ads. 
+
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę.
 
 1. Mapowanie odpowiednich atrybutów ze swojej zunifikowanej encji klienta dla wybranego identyfikatora klucza.
    > [WSKAZÓWKA] Największa szansa dopasowania pojawia się w przypadku wybrania opcji **E-mail** jako identyfikatora klucza. Dodanie dodatkowych identyfikatorów może poprawić dopasowanie.
 
-1. Wybierz **Dodaj atrybut**, aby zamapować dodatkowe atrybuty na wysyłanie do Menedżera Facebook Ads. Atrybuty Menedżera Facebook Ads Ads są mapowane na poniższe przyjazne nazwy użytkowników: **FN** = **Imię**, **LN** = **Nazwisko**, **FI** = **Pierwszy inicjał**, **PHONE** = **Telefon**, **GEN** = **Płeć**, **DOB** = **Data urodzenia**, **ST** = **Stan**, **CT** = **Miasto**, **ZIP** = **Kod pocztowy**, **COUNTRY** = **Kraj / Region**
+1. Wybierz **Dodaj atrybut**, aby zamapować więcej atrybutów do Menedżera reklam na portalu Facebook. Atrybuty Menedżera Facebook Ads Ads są mapowane na poniższe przyjazne nazwy użytkowników: **FN** = **Imię**, **LN** = **Nazwisko**, **FI** = **Pierwszy inicjał**, **PHONE** = **Telefon**, **GEN** = **Płeć**, **DOB** = **Data urodzenia**, **ST** = **Stan**, **CT** = **Miasto**, **ZIP** = **Kod pocztowy**, **COUNTRY** = **Kraj / Region**
 
 1. Wybierz segmenty, które chcesz wyeksportować.
 
 1. Wybierz pozycję **Zapisz**.
 
-## <a name="export-the-data"></a>Eksportowanie danych
+Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).
-
-## <a name="known-limitations"></a>Znane ograniczenia
-
-- Do 10 milionów profili klientów na eksport do Menedżera reklam na Facebook 
-- Eksport do Menedżera reklam na Facebook jest ograniczony do segmentów
-- Eksportowanie segmentów zawierających łącznie 10 milionów profili może zająć do 90 minut
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596880"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896340"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
@@ -59,7 +59,7 @@ Szczegóły klienta zawierają:
 
 -   **Kafelek profil klienta:** na tym kafelku są wyświetlane różne wartości z obiektu profilu ujdenoliconego klienta. Informacje te mogą obejmować adresy e-mail, nazwy, miasta itp. 
 
--   **Potencjalne zainteresowania, potencjalne marki:** Pokazuje, czy skonfigurowano wzbogacenie własne. Reprezentuje potencjalne zainteresowania i podobieństwa do marek, które może mieć klient o profilu podobnym do tego klienta. Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów o koligacje marki i zainteresowania](enrichment-microsoft-graph.md).
+-   **Potencjalne zainteresowania, potencjalne marki:** Pokazuje, czy skonfigurowano wzbogacenie własne. Reprezentuje potencjalne zainteresowania i podobieństwa do marek, które może mieć klient o profilu podobnym do tego klienta. Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów o koligacje marki i zainteresowania](enrichment-microsoft.md).
 
 -   **Miary:** Pokazuje, czy skonfigurowano jedną lub więcej miar określonego typu: miary atrybutów klienta. Obejmują one obliczone KPI wokół Twoich klientów na poziomie klienta indywidualnego. Aby uzyskać więcej informacji, zobacz [Definiuj miary i zarządzaj nimi](measures.md).
 

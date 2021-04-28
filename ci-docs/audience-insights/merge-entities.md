@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 737c593353878a5e322488d00de5dc5db5befda9
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597846"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896524"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
@@ -83,7 +83,7 @@ Jeśli nie było to pierwsze pomyślnie uruchomienie scalania, wszystkie procesy
 
 ## <a name="next-step"></a>Następny krok
 
-Skonfiguruj [działania](activities.md), [wzbogacenie](enrichment-microsoft-graph.md) lub [relacje](relationships.md), aby uzyskać dokładniejsze informacje o klientach.
+Skonfiguruj [działania](activities.md), [wzbogacenie](enrichment-hub.md) lub [relacje](relationships.md), aby uzyskać dokładniejsze informacje o klientach.
 
 Jeśli zostały już skonfigurowane działania, wzbogacenia lub relacje lub jeśli segmenty są zdefiniowane, zostaną one automatycznie przetworzone w celu korzystania z najnowszych danych klienta.
 

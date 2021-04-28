@@ -1,7 +1,7 @@
 ---
 title: Działania klienta
 description: Zdefiniować działania klienta i wyświetlić je na osiach czasu na klientach.
-ms.date: 10/13/2020
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,79 +9,88 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: fbfa9d7e00859cc80c24b98bd2dc806f1fda7803
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
+ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596742"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "5866420"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
-Połącz działania klientów z [różnych źródeł danych](data-sources.md) w Dynamics 365 Customer Insights, aby utworzyć oś czasu klienta, która wymienia działania w porządku chronologicznym. Można umieścić oś czasu w aplikacjach dotyczących zaangażowania klientów w Dynamics 365 za pośrednictwem [dodatku Karta klienta](customer-card-add-in.md) lub na pulpicie nawigacyjnym Power BI.
+Łącząc działania klientów z [różnych źródeł danych](data-sources.md) w Dynamics 365 Customer Insights do tworzenia osi czasu, będącej listą działań Dodawaj oś czasu w aplikacjach usługi Dynamics 365 za pomocą rozwiązania [dodatku Customer Card](customer-card-add-in.md) lub pulpitu nawigacyjnego Power BI.
 
 ## <a name="define-an-activity"></a>Definiuj działanie
 
-Źródła danych zawierają encje z danymi transakcyjnymi i danymi działań z wielu źródeł danych. Zidentyfikuj te encje i wybierz działania, które mają być wyświetlane na osi czasu klienta. Wybierz encję zawierającą docelowe działanie lub działania.
+Źródła danych mogą zawierać encje z danymi transakcyjnymi i danymi działań z wielu źródeł danych. Zidentyfikuj te encje i wybierz działania, które mają być wyświetlane na osi czasu klienta. Wybierz encję zawierającą docelowe działanie lub działania.
+
+> [!NOTE]
+> Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać uwzględniony na osi czasu klienta, i nie można dodawać encji bez pól **Data**. Formant **Dodaj działanie** jest wyłączany jeśli nie zostanie znaleziona taka encja.
 
 1. W analizach odbiorców przejdź do **Dane** > **Działania**.
 
-1. Wybierz **Dodaj działanie**.
+1. Wybierz opcję **Dodaj działanie**, aby rozpocząć proces konfigurowania działania z przewodnikiem.
 
-   > [!NOTE]
-   > Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać uwzględniony na osi czasu klienta, i nie można dodawać encji bez pól **Data**. Formant **Dodaj działanie** jest wyłączany jeśli nie zostanie znaleziona taka encja.
+1. W kroku **Dane działania** ustaw wartości następujących pól:
 
-1. W okienku **Dodaj działanie** ustaw wartości dla następujących pól:
-
+   - **Nazwa działania**: wybierz nazwę działania.
    - **Encja**: Wybierz encję zawierającą dane transakcyjne lub działania.
    - **Klucz podstawowy**: Wybierz pole, które jednoznacznie identyfikuje rekord. Nie może ono zawierać żadnych powielonych wartości, pustych wartości ani brakujących wartości.
-   - **Sygnatura czasowa**: Wybierz pole reprezentujące godzinę rozpoczęcia działania.
-   - **Zdarzenie**: Zaznacz pole, które jest zdarzeniem dla działania.
-   - **Adres sieci Web**: Wybierz pole reprezentujące adres URL zawierający dodatkowe informacje o działaniu. Na przykład system transakcyjny, który zawiera źródło tego działania. Ten adres URL może być dowolnym polem ze źródła danych lub może być skonstruowany jako nowe pole przy użyciu przekształcenia Power Query. Te dane URL będą przechowywane w encji Działanie ujednolicone, która może być używana w programie przy użyciu interfejsów API.
-   - **Szczegóły**: Opcjonalnie wybierz pole, dodawane, aby uzyskać dodatkowe szczegóły.
-   - **Ikona**: Opcjonalnie wybierz ikonę reprezentującą to działanie.
-   - **Typ działania**: Zdefiniuj odwołanie typu działania do Common Data Model, który najlepiej opisuje definicję semantyczną działania.
 
-1. W sekcji **Konfigurowanie relacji** skonfiguruj szczegóły, aby połączyć dane działania z odpowiednim klientem.
+   :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Skonfiguruj dane działań za pomocą nazwy, encji i klucza podstawowego.":::
 
-    - **Pole encji działania**: Wybierz pole w encji działanie, które będzie używane do ustanawiania relacji z inną encją.
-    - **Encja klienta**: Wybierz odpowiednią encję źródłową klienta, z którą encja działania będzie w relacji. Relacje można powiązać tylko z encjami źródłowymi klienta używanymi w procesie zjednoczenia danych.
-    - **Pole encja klienta**: To pole zawiera klucz podstawowy źródłowej encji klienta wybrany w procesie mapowania. To pole klucz podstawowy w encji źródłowej klienta jest używane do ustanawiania relacji z encją działanie.
-    - **Nazwa**: Jeśli relacja między tą encją działania a wybraną encją źródłową klienta już istnieje, nazwa relacji zostanie wyświetlona w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym miejscu.
+1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku.
+
+1. W kroku **Relacja** skonfiguruj szczegóły, aby połączyć dane działań z odpowiednim klientem. Ten krok obrazuje połączenie między encjami.  
+
+   - **Pierwszy**: pole obce w encji działania, które będzie używane do ustanowienia relacji z inną encją.
+   - **Drugi**: odpowiadająca jej encja klienta źródłowego, z którą encja działania będzie w relacji. Można utworzyć relację tylko z encjami klienta źródłowego, które są używane w procesie ujednolicania danych.
+   - **Trzeci**: jeśli relacja między tą encją działania a wybraną encją klienta źródłowego już istnieje, nazwa relacji będzie w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym polu przez użytkownika.
+
+   :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiowanie relacji encji.":::
+
+1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
+
+1. W kroku **Ujednolicanie działania** wybierz zdarzenie działania i czas rozpoczęcia działania. 
+   - **Pola wymagane**
+      1. **Działanie zdarzenia**: pole, które jest zdarzeniem tego działania
+      2. **Sygnatura czasowa**: pole reprezentujące czas rozpoczęcia działania.
+
+   - **Pola opcjonalne**
+      1. **Dodatkowe szczegóły**: pole z odpowiednimi informacjami dla tego działania.
+      2. **Ikona**: ikona najlepiej reprezentująca ten typ działania.
+      3. **Adres internetowy**: pole zawierające adres URL z informacjami o tym działaniu. Na przykład system transakcyjny, który zawiera źródło tego działania. Ten adres URL może być dowolnym polem ze źródła danych lub może być skonstruowany jako nowe pole przy użyciu przekształcenia Power Query. Dane adresu URL będą przechowywane w encji *Ujednolicone działanie*, która może być konsumowana w dół przy użyciu [interfejsów API](apis.md).
    
-   > [!div class="mx-imgBorder"]
-   > ![Definiowanie relacji encji](media/activities-entities-define.png "Definiowanie relacji encji")
+   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Określ dane działań klienta w encji Ujednolicone działanie.":::
 
-1. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
+1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. Aby zapisać teraz działanie z typem działania ustawionym jako **Inne**, można wybrać opcję **Zakończ i przejrzyj**. 
 
-1. Na stronie **Działania** wybierz **Uruchom**.
+1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działania *Subskrypcja* & *SalesOrderLine* można etapami zamapować po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
+
+1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
+
+1. W kroku **Przegląd** sprawdź wybór. Należy wrócić do dowolnego z poprzednich kroków i w razie potrzeby zaktualizować te informacje.
+
+   :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Przeglądanie określonych pól dla działania.":::
+   
+1. Wybierz opcję **Zapisz działanie**, aby zastosować zmiany i wybierz opcję **Wykonane**, aby wrócić do **Dane** > **Działania**. Tutaj możesz zobaczyć, które działania mają być wyświetlane na osi czasu. 
+
+1. Na stronie **Działania** wybierz opcję **Uruchom**, aby przetworzyć działanie. 
 
 > [!TIP]
 > Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
 
-## <a name="edit-an-activity"></a>Edytuj działanie
 
-1. W analizach odbiorców przejdź do **Dane** > **Działania**.
+## <a name="manage-existing-activities"></a>Zarządzanie istniejącymi działaniami
 
-2. Wybierz encję działania, którą chcesz edytować i wybierz **Edytuj**. Możesz również umieścić kursor nad wierszem encji i wybrać ikonę **Edytuj**.
+W **Dane** > **Działania** można wyświetlić wszystkie zapisane działania i nimi zarządzać. Każde działanie jest reprezentowane przez wiersz, który zawiera także szczegółowe informacje o źródle, encji i typie działania.
 
-3. Kliknij ikonę **Edytuj**.
+Po wybraniu działania są dostępne następujące akcje. 
 
-4. W okienku **Edytuj działanie** zaktualizuj wartości i wybierz **Zapisz**.
+- **Edycja**: powoduje otwarcie konfiguratowa działania w kroku przeglądu. W tym kroku można zmienić dowolną lub całą bieżącą konfigurację. Po zmianie konfiguracji wybierz opcję **Zapisz działanie**, a następnie wybierz opcję **Uruchom**, aby przetworzyć zmiany.
 
-5. Na stronie **Działania** wybierz **Uruchom**.
+- **Zmień nazwę**: otwiera okno dialogowe, w którym należy wprowadzić inną nazwę dla wybranego działania. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
-## <a name="delete-an-activity"></a>Usuń działanie
-
-1. W analizach odbiorców przejdź do **Dane** > **Działania**.
-
-2. Wybierz encję działania, którą chcesz usunąć i wybierz **Usuń**. Możesz również umieścić kursor nad wierszem encji i wybrać ikonę **Usuń**. Oprócz tego można wybrać wiele encji działań, które mają zostać usunięte jednocześnie.
-   > [!div class="mx-imgBorder"]
-   > ![Edytuj lub usuń relację między encjami](media/activities-entities-edit-delete.png "Edytuj lub usuń relację między encjami")
-
-3. Wybierz ikonę **Usuń**.
-
-4. Potwierdź usunięcie.
-
+- **Usuń**: otwiera okno dialogowe w celu potwierdzenia usunięcia wybranego działania. Możesz także usunąć wiele działań jednocześnie, zaznaczając działania i wybierając ikonę usuwania. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

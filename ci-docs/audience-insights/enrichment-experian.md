@@ -1,7 +1,7 @@
 ---
 title: Wzbogacanie danych za pomocą Experian innych firm
 description: Ogólne informacje o wzbogacaniu strony trzeciej Experian.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597800"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896386"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Wzbogacanie profilów klientów za pomocą danych demograficznych z Experian (wersja zapoznawcza)
 
@@ -25,10 +25,10 @@ Experian jest globalnym liderem w zakresie sprawozdawczości kredytowej dla kons
 Aby skonfigurować Experian, należy spełnić następujące wymagania wstępne:
 
 - Użytkownik ma aktywną subskrypcję Experian. Aby uzyskać subskrypcję, [skontaktuj się z Experian](https://www.experian.com/marketing-services/contact) bezpośrednio. [Dowiedz się więcej na temat Experian Data Enrichment](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Użytkownik posiada Identyfikator użytkownika, Identyfikator jednostki i numer modelu dla konta usługi Secure Transport (ST) SSH, które Experian utworzył dla użytkownika.
-- Posiadasz uprawnienia [Administratora](permissions.md#administrator) w analizach odbiorców.
 
-## <a name="configuration"></a>Konfiguracja
+- Połączenie z programem Experian jest już skonfigurowane przez administratora *lub* użytkownik ma uprawnienia [administratora](permissions.md#administrator). Potrzebny jest także identyfikator użytkownika, identyfikator strony i numer modelu dla konta bezpiecznego transportu (ST) z włączoną usługą SSH, które utworzył dla użytkownika program Experian.
+
+## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
 1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
 
@@ -36,26 +36,46 @@ Aby skonfigurować Experian, należy spełnić następujące wymagania wstępne:
 
    > [!div class="mx-imgBorder"]
    > ![Kafelek Experian](media/experian-tile.png "Kafelek Experian")
+   > 
 
-1. Wybierz **Rozpocznij** i wprowadź identyfikator użytkownika, identyfikator jednostki i numer modelu dla Twojego konta Experian Secure Transport. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**. Aby potwierdzić wszystkie dane, należy wybrać opcję **Zastosuj**.
+1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem, może on utworzyć połączenie, wybierając opcję **Dodaj połączenie** i wybierając pozycję Experian z listy rozwijanej. 
 
-## <a name="map-your-fields"></a>Zamapuj swoje pola
+1. Wybierz opcję **Połącz z programem Experian**, aby potwierdzić wybrane połączenie.
 
-1.  Wybierz opcję **Dodaj dane** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić danymi demograficznymi z programu Experian. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+1.  Wybierz opcję **Dalej** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić danymi demograficznymi z programu Experian. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
-1. Wybierz swoje kluczowe identyfikatory z listy **Nazwa i Adres**, **Adres e-mail** lub **Telefon** do wysłania do Experian w celu rozwiązania problemu tożsamości.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Zrzut ekranu podczas wybierania zestawu danych klienta.":::
 
-   > [!TIP]
-   > Więcej atrybutów identyfikatorów kluczy wysłanych do Experian prawdopodobnie zapewni wyższy współczynnik zgodności.
+1. Wybierz opcję **Dalej** i zdefiniuj, jakiego typu pola z ujednoliconych profilów powinny być używane do wyszukiwania pasujących danych demograficznych z programu Experian. Wymagane jest co najmniej jedno z pól **Nazwa i adres**, **Telefon** lub **Wiadomość e-mail**. Aby dokładność dopasowania było lepsza, można dodać maksymalnie dwa inne pola. Ten wybór będzie miał wpływ na pola mapowania, do których użytkownik będzie miał dostęp w następnym kroku.
 
-1. Wybierz **Dalej** i zamapuj odpowiednie atrybuty z encji Unified Customer dla wybranych pól identyfikatorów kluczy.
+    > [!TIP]
+    > Więcej atrybutów identyfikatorów kluczy wysłanych do Experian prawdopodobnie zapewni wyższy współczynnik zgodności.
 
-1. Wybierz **Dodaj atrybut**, aby zamapować wszelkie dodatkowe atrybuty, które chcesz wysłać do Experian.
+1. Wybierz **Dalej**, by rozpocząć mapowanie.
 
-1.  Wybierz **Zapisz**, aby zakończyć mapowanie pola.
+1. Zdefiniuj, jakie pola z ujednoliconych profilów powinny być używane do wyszukiwania pasujących danych demograficznych z programu Experian. Zaznaczone pola są wymagane.
 
-    > [!div class="mx-imgBorder"]
-    > ![Mapowanie pól Experian](media/experian-field-mapping.png "Mapowanie pól Experian")
+1. Podaj nazwę dla wzbogacania oraz nazwę encji wyjściowej.
+
+1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
+
+## <a name="configure-the-connection-for-experian"></a>Konfigurowanie połączenia dla programu Experian 
+
+Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania *lub* wybierz pozycję **Admin** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku Experian.
+
+1. Wybierz **Rozpocznij**.
+
+1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
+
+1. Wprowadź prawidłowy identyfikator użytkownika, identyfikator strony i numer modelu dla swojego konta bezpiecznego transportu Experian.
+
+1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**
+
+1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
+
+1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Okienko konfiguracji połączenia programu Experian.":::
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
