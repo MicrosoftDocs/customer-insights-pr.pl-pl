@@ -1,7 +1,7 @@
 ---
 title: Scalanie encji w przypadku zjednoczenia danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 04/16/2020
+ms.date: 05/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,85 +9,121 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 2cab702509596dd87c0c9b9769d1af8ba8387f9d
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896524"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085589"
 ---
-# <a name="merge-entities"></a><span data-ttu-id="d8571-103">Scalanie encji</span><span class="sxs-lookup"><span data-stu-id="d8571-103">Merge entities</span></span>
+# <a name="merge-entities"></a><span data-ttu-id="03ba7-103">Scalanie encji</span><span class="sxs-lookup"><span data-stu-id="03ba7-103">Merge entities</span></span>
 
-<span data-ttu-id="d8571-104">Faza scalania jest ostatnią fazą procesu unifikacji danych.</span><span class="sxs-lookup"><span data-stu-id="d8571-104">The merge phase is the last phase in the data unification process.</span></span> <span data-ttu-id="d8571-105">Jego zastosowanie powoduje uzgadnianie danych powodujących konflikty.</span><span class="sxs-lookup"><span data-stu-id="d8571-105">Its purpose is reconciling conflicting data.</span></span> <span data-ttu-id="d8571-106">Przykłady danych powodujących konflikty mogą zawierać nazwy klientów znalezione w dwóch zestawach danych, które są wyświetlane w różny sposób w każdym miejscu („Grant Marshall” i „Grant Marshal”) lub numery telefoniczne, który różnią się formatem (617-803-091X a 617803091X).</span><span class="sxs-lookup"><span data-stu-id="d8571-106">Examples of conflicting data could include a customer name found in two of your datasets but that shows up a little differently in each ("Grant Marshall" versus "Grant Marshal"), or a phone number that differs in format (617-803-091X versus 617803091X).</span></span> <span data-ttu-id="d8571-107">Scalanie tych niezgodnych danych jest wykonywane na podstawie poszczególnych atrybutów.</span><span class="sxs-lookup"><span data-stu-id="d8571-107">Merging those conflicting data points is done on an attribute-by-attribute basis.</span></span>
+<span data-ttu-id="03ba7-104">Faza scalania jest ostatnią fazą procesu unifikacji danych.</span><span class="sxs-lookup"><span data-stu-id="03ba7-104">The merge phase is the last phase in the data unification process.</span></span> <span data-ttu-id="03ba7-105">Jego zastosowanie powoduje uzgadnianie danych powodujących konflikty.</span><span class="sxs-lookup"><span data-stu-id="03ba7-105">Its purpose is reconciling conflicting data.</span></span> <span data-ttu-id="03ba7-106">Przykłady danych powodujących konflikty mogą zawierać nazwy klientów znalezione w dwóch zestawach danych, które są wyświetlane w różny sposób w każdym miejscu („Grant Marshall” i „Grant Marshal”) lub numery telefoniczne, który różnią się formatem (617-803-091X a 617803091X).</span><span class="sxs-lookup"><span data-stu-id="03ba7-106">Examples of conflicting data could include a customer name found in two of your datasets but that shows up a little differently in each ("Grant Marshall" versus "Grant Marshal"), or a phone number that differs in format (617-803-091X versus 617803091X).</span></span> <span data-ttu-id="03ba7-107">Scalanie tych niezgodnych danych jest wykonywane na podstawie poszczególnych atrybutów.</span><span class="sxs-lookup"><span data-stu-id="03ba7-107">Merging those conflicting data points is done on an attribute-by-attribute basis.</span></span>
 
-<span data-ttu-id="d8571-108">Po zakończeniu [fazy dopasowania](match-entities.md) można rozpocząć fazę scalenia, zaznaczając kafelek **Scalanie** na stronie **Ujednolicanie**.</span><span class="sxs-lookup"><span data-stu-id="d8571-108">After completing the [match phase](match-entities.md), you start the merge phase by selecting the **Merge** tile on the **Unify** page.</span></span>
+:::image type="content" source="media/merge-fields-page.png" alt-text="Strona scalania w procesie ujednolicania danych pokazująca tabelę z połączonymi polami definiującymi ujednolicony profil klienta.":::
 
-## <a name="review-system-recommendations"></a><span data-ttu-id="d8571-109">Przejrzyj rekomendacje systemu</span><span class="sxs-lookup"><span data-stu-id="d8571-109">Review system recommendations</span></span>
+<span data-ttu-id="03ba7-109">Po zakończeniu [fazy dopasowania](match-entities.md) można rozpocząć fazę scalenia, zaznaczając kafelek **Scalanie** na stronie **Ujednolicanie**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-109">After completing the [match phase](match-entities.md), you start the merge phase by selecting the **Merge** tile on the **Unify** page.</span></span>
 
-<span data-ttu-id="d8571-110">Na stronie **Scalanie** można wybrać atrybuty do scalenia w encji ujednoliconego profilu klienta (wynik procesu konfiguracji).</span><span class="sxs-lookup"><span data-stu-id="d8571-110">On the **Merge** page, you choose and exclude attributes to merge within your unified customer profile entity (the result of the configuration process).</span></span> <span data-ttu-id="d8571-111">Niektóre atrybuty są automatycznie scalane przez system.</span><span class="sxs-lookup"><span data-stu-id="d8571-111">Some attributes are automatically merged by the system.</span></span>
+## <a name="review-system-recommendations"></a><span data-ttu-id="03ba7-110">Przejrzyj rekomendacje systemu</span><span class="sxs-lookup"><span data-stu-id="03ba7-110">Review system recommendations</span></span>
 
-### <a name="view-merged-attributes"></a><span data-ttu-id="d8571-112">Zobacz scalone atrybuty</span><span class="sxs-lookup"><span data-stu-id="d8571-112">View merged attributes</span></span>
+<span data-ttu-id="03ba7-111">W **Dane** > **Ujednolić** > **Scal** wybierasz i wykluczasz atrybuty do połączenia w ramach ujednoliconej jednostki profilu klienta.</span><span class="sxs-lookup"><span data-stu-id="03ba7-111">On **Data** > **Unify** > **Merge**, you choose and exclude attributes to merge within your unified customer profile entity.</span></span> <span data-ttu-id="03ba7-112">Ujednolicony profil klienta jest wynikiem procesu unifikacji danych.</span><span class="sxs-lookup"><span data-stu-id="03ba7-112">The unified customer profile is the result of the data unification process.</span></span> <span data-ttu-id="03ba7-113">Niektóre atrybuty są automatycznie scalane przez system.</span><span class="sxs-lookup"><span data-stu-id="03ba7-113">Some attributes are automatically merged by the system.</span></span>
 
-<span data-ttu-id="d8571-113">Aby wyświetlić atrybuty, które są uwzględnione w jednym z automatycznie scalanych atrybutów, wybierz atrybut, który ma zostać scalony.</span><span class="sxs-lookup"><span data-stu-id="d8571-113">To view the attributes that are included in one of your automatically merged attributes, select that merged attribute.</span></span> <span data-ttu-id="d8571-114">Dwa atrybuty składające się na ten scalony atrybut są wyświetlane w dwóch nowych wierszach pod atrybutem scalonym.</span><span class="sxs-lookup"><span data-stu-id="d8571-114">The two attributes that compose that merged attribute display in two new rows beneath the merged attribute.</span></span>
+<span data-ttu-id="03ba7-114">Aby zobaczyć atrybuty, które są zawarte w jednym z twoich automatycznie połączonych atrybutów, wybierz ten połączony atrybut **Pola klienta** na zakładce tabeli.</span><span class="sxs-lookup"><span data-stu-id="03ba7-114">To view the attributes that are included in one of your automatically merged attributes, select that merged attribute in the **Customer fields** tab of the table.</span></span> <span data-ttu-id="03ba7-115">Dwa nowe wiersze tworzące scalony atrybut będą wyświetlane w dwóch nowych wierszach pod atrybutem scalonym.</span><span class="sxs-lookup"><span data-stu-id="03ba7-115">The attributes that compose that merged attribute display in two new rows beneath the merged attribute.</span></span>
+
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a><span data-ttu-id="03ba7-116">Rozdzielanie, zmienianie nazw, wykluczanie i edytowanie pól scalonych</span><span class="sxs-lookup"><span data-stu-id="03ba7-116">Separate, rename, exclude, and edit merged fields</span></span>
+
+<span data-ttu-id="03ba7-117">W celu wygenerowania ujednoliconego profilu klienta można zmienić sposób przetwarzania przez system scalonych atrybutów.</span><span class="sxs-lookup"><span data-stu-id="03ba7-117">You can change how the system processes merged attributes to generate the unified customer profile.</span></span> <span data-ttu-id="03ba7-118">Wybierz opcję **Pokaż więcej** i wybierz, co chcesz zmienić.</span><span class="sxs-lookup"><span data-stu-id="03ba7-118">Select **Show more** and choose what you want to change.</span></span>
+
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Opcje menu rozwijanego Pokaż więcej opcji służące do zarządzania atrybutami scalonymi.":::
+
+<span data-ttu-id="03ba7-120">Aby uzyskać więcej informacji, zobacz następną sekcję.</span><span class="sxs-lookup"><span data-stu-id="03ba7-120">For more information, see the following sections.</span></span>
+
+## <a name="separate-merged-fields"></a><span data-ttu-id="03ba7-121">Oddzielenie połączonych pól</span><span class="sxs-lookup"><span data-stu-id="03ba7-121">Separate merged fields</span></span>
+
+<span data-ttu-id="03ba7-122">Aby oddzielić połączone pola, znajdź atrybut w tabeli.</span><span class="sxs-lookup"><span data-stu-id="03ba7-122">To separate merged fields, find the attribute in the table.</span></span> <span data-ttu-id="03ba7-123">Oddzielone pola są wyświetlane jako pojedyncze punkty danych na jednolitym profilu klienta.</span><span class="sxs-lookup"><span data-stu-id="03ba7-123">Separated fields show as individual data points on the unified customer profile.</span></span> 
+
+1. <span data-ttu-id="03ba7-124">Zaznacz scalone pole.</span><span class="sxs-lookup"><span data-stu-id="03ba7-124">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="03ba7-125">Wybierz opcję **Pokaż więcej** i wybierz pozycję **Rozdziel pola**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-125">Select **Show more** and choose **Separate fields**.</span></span>
+ 
+1. <span data-ttu-id="03ba7-126">Potwierdź rozdział.</span><span class="sxs-lookup"><span data-stu-id="03ba7-126">Confirm the separation.</span></span>
+
+1. <span data-ttu-id="03ba7-127">Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-127">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="rename-merged-fields"></a><span data-ttu-id="03ba7-128">Zmienianie nazw pól scalonych</span><span class="sxs-lookup"><span data-stu-id="03ba7-128">Rename merged fields</span></span>
+
+<span data-ttu-id="03ba7-129">Zmień wyświetlaną nazwę scalonych atrybutów.</span><span class="sxs-lookup"><span data-stu-id="03ba7-129">Change the display name of merged attributes.</span></span> <span data-ttu-id="03ba7-130">Nie można zmienić nazwy elementu wyjściowego.</span><span class="sxs-lookup"><span data-stu-id="03ba7-130">You can't change the name of the output entity.</span></span>
+
+1. <span data-ttu-id="03ba7-131">Zaznacz scalone pole.</span><span class="sxs-lookup"><span data-stu-id="03ba7-131">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="03ba7-132">Wybierz opcję **Pokaż więcej** i wybierz pozycję **Zmień nazwę**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-132">Select **Show more** and choose **Rename**.</span></span>
+
+1. <span data-ttu-id="03ba7-133">Potwierdź zmienioną nazwę wyświetlania.</span><span class="sxs-lookup"><span data-stu-id="03ba7-133">Confirm the changed display name.</span></span> 
+
+1. <span data-ttu-id="03ba7-134">Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-134">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="exclude-merged-fields"></a><span data-ttu-id="03ba7-135">Wykluczanie pól połączonych</span><span class="sxs-lookup"><span data-stu-id="03ba7-135">Exclude merged fields</span></span>
+
+<span data-ttu-id="03ba7-136">Wykluczenie atrybutu z ujednoliconego profilu klienta.</span><span class="sxs-lookup"><span data-stu-id="03ba7-136">Exclude an attribute from the unified customer profile.</span></span> <span data-ttu-id="03ba7-137">Jeśli pole jest wykorzystywane w innych procesach, np. w segmencie, usuń je z tych procesów, zanim wykluczysz je z profilu klienta.</span><span class="sxs-lookup"><span data-stu-id="03ba7-137">If the field is used in other processes, for example in a segment, remove it from these processes before excluding it from the customer profile.</span></span> 
+
+1. <span data-ttu-id="03ba7-138">Zaznacz scalone pole.</span><span class="sxs-lookup"><span data-stu-id="03ba7-138">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="03ba7-139">Wybierz opcję **Pokaż więcej** i wybierz pozycję **Wyklucz**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-139">Select **Show more** and choose **Exclude**.</span></span>
+
+1. <span data-ttu-id="03ba7-140">Potwierdź wykluczenie.</span><span class="sxs-lookup"><span data-stu-id="03ba7-140">Confirm the exclusion.</span></span>
+
+1. <span data-ttu-id="03ba7-141">Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-141">Select **Save** and **Run** to process the changes.</span></span> 
+
+<span data-ttu-id="03ba7-142">Na stronie **Scalanie** wybierz pozycję **Wykluczone pola**, aby wyświetlić listę wszystkich pól wykluczonych.</span><span class="sxs-lookup"><span data-stu-id="03ba7-142">On the **Merge** page, select **Excluded fields** to see the list of all excluded fields.</span></span> <span data-ttu-id="03ba7-143">To okienko umożliwia dodawanie z powrotem wykluczonych pól.</span><span class="sxs-lookup"><span data-stu-id="03ba7-143">This pane lets you add excluded fields back.</span></span>
+
+## <a name="manually-combine-fields"></a><span data-ttu-id="03ba7-144">Ręczne łączenie pól</span><span class="sxs-lookup"><span data-stu-id="03ba7-144">Manually combine fields</span></span>
+
+<span data-ttu-id="03ba7-145">Określ ręcznie łączony atrybut.</span><span class="sxs-lookup"><span data-stu-id="03ba7-145">Specify a merged attribute manually.</span></span> 
+
+1. <span data-ttu-id="03ba7-146">Na stronie **Scalanie** wybierz opcję **Połącz pola**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-146">On the **Merge** page, select **Combine fields**.</span></span>
+
+1. <span data-ttu-id="03ba7-147">Podaj **nazwę** i **nazwę pola wyjściowego**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-147">Provide a **Name** and an **Output field name**.</span></span>
+
+1. <span data-ttu-id="03ba7-148">Wybierz pole, które chcesz dodać.</span><span class="sxs-lookup"><span data-stu-id="03ba7-148">Choose a field to add.</span></span> <span data-ttu-id="03ba7-149">Wybierz **Dodaj pola**, aby połączyć więcej pól.</span><span class="sxs-lookup"><span data-stu-id="03ba7-149">Select **Add fields** to combine more fields.</span></span>
+
+1. <span data-ttu-id="03ba7-150">Potwierdź wykluczenie.</span><span class="sxs-lookup"><span data-stu-id="03ba7-150">Confirm the exclusion.</span></span>
+
+1. <span data-ttu-id="03ba7-151">Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-151">Select **Save** and **Run** to process the changes.</span></span> 
+
+## <a name="change-the-order-of-fields"></a><span data-ttu-id="03ba7-152">Zmiana kolejności pól</span><span class="sxs-lookup"><span data-stu-id="03ba7-152">Change the order of fields</span></span>
+
+<span data-ttu-id="03ba7-153">Niektóre encje zawierają więcej szczegółów niż inne.</span><span class="sxs-lookup"><span data-stu-id="03ba7-153">Some entities contain more details than others.</span></span> <span data-ttu-id="03ba7-154">Jeśli encja zawiera najnowsze dane o polu, możesz nadać jej priorytet nad innymi encjami podczas łączenia wartości.</span><span class="sxs-lookup"><span data-stu-id="03ba7-154">If an entity includes the latest data about a field, you can prioritize it over other entities when merging values.</span></span>
+
+1. <span data-ttu-id="03ba7-155">Zaznacz scalone pole.</span><span class="sxs-lookup"><span data-stu-id="03ba7-155">Select the merged field.</span></span>
+  
+1. <span data-ttu-id="03ba7-156">Wybierz opcję **Pokaż więcej** i wybierz pozycję **Edytuj**.</span><span class="sxs-lookup"><span data-stu-id="03ba7-156">Select **Show more** and choose **Edit**.</span></span>
+
+1. <span data-ttu-id="03ba7-157">W okienku **Łączenie pól** wybierz opcję **Przenieś w górę/w dół**, aby ustawić kolejność lub przeciągnij je i upuść w żądanym miejscu.</span><span class="sxs-lookup"><span data-stu-id="03ba7-157">In the **Combine fields** pane, select **Move up/down** to set the order or drag and drop them in the desired position.</span></span>
+
+1. <span data-ttu-id="03ba7-158">Potwierdź zmianę.</span><span class="sxs-lookup"><span data-stu-id="03ba7-158">Confirm the change.</span></span>
+
+1. <span data-ttu-id="03ba7-159">Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-159">Select **Save** and **Run** to process the changes.</span></span>
+
+## <a name="run-your-merge"></a><span data-ttu-id="03ba7-160">Uruchamianie scalania</span><span class="sxs-lookup"><span data-stu-id="03ba7-160">Run your merge</span></span>
+
+<span data-ttu-id="03ba7-161">Niezależnie od tego, czy ręcznie scalono atrybuty, czy pozwolono, aby system je scalił, zawsze można uruchomić scalanie.</span><span class="sxs-lookup"><span data-stu-id="03ba7-161">Whether you manually merge attributes or let the system merge them, you can always run your merge.</span></span> <span data-ttu-id="03ba7-162">Wybierz **Uruchom** na stronie **Scalanie**, aby zacząć proces.</span><span class="sxs-lookup"><span data-stu-id="03ba7-162">Select **Run** on the **Merge** page to start the process.</span></span>
 
 > [!div class="mx-imgBorder"]
-> <span data-ttu-id="d8571-115">![Wyszukaj scalony atrybut](media/configure-data-merge-profile-attributes.png "Wyszukaj scalony atrybut")</span><span class="sxs-lookup"><span data-stu-id="d8571-115">![Select merged attribute](media/configure-data-merge-profile-attributes.png "Select merged attribute")</span></span>
+> <span data-ttu-id="03ba7-163">![Zapis i uruchomienie scalania danych](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")</span><span class="sxs-lookup"><span data-stu-id="03ba7-163">![Data merge Save and Run](media/configure-data-merge-save-run.png "Data merge Save and Run")</span></span>
 
-### <a name="separate-merged-attributes"></a><span data-ttu-id="d8571-116">Oddziel scalone atrybuty</span><span class="sxs-lookup"><span data-stu-id="d8571-116">Separate merged attributes</span></span>
+<span data-ttu-id="03ba7-164">Wybierz opcję **Uruchom tylko scalanie**, jeśli chcesz, aby wyniki pracy zostały odzwierciedlone w ujednoliconej encji klienta.</span><span class="sxs-lookup"><span data-stu-id="03ba7-164">Choose **Run only Merge** if you only want to see the output reflected in the unified customer entity.</span></span> <span data-ttu-id="03ba7-165">Procesy niższego szczebla zostaną odświeżone zgodnie [z definicją w harmonogramie odświeżania](system.md#schedule-tab).</span><span class="sxs-lookup"><span data-stu-id="03ba7-165">Downstream processes will be refreshed as [defined in the refresh schedule](system.md#schedule-tab).</span></span>
 
-<span data-ttu-id="d8571-117">Aby wyodrębnić lub rozdzielić każdy z automatycznie scalonych atrybutów, znajdź atrybut w tabeli **Atrybuty profilu**.</span><span class="sxs-lookup"><span data-stu-id="d8571-117">To separate or unmerge any of the automatically merged attributes, find the attribute in the **Profile attributes** table.</span></span>
+<span data-ttu-id="03ba7-166">Wybierz **Uruchom procesy scalania i procesy niższego rzędu**, aby odświeżyć system przy użyciu zmian.</span><span class="sxs-lookup"><span data-stu-id="03ba7-166">Choose **Run Merge and downstream processes** to refresh the system with your changes.</span></span> <span data-ttu-id="03ba7-167">Wszystkie procesy, w tym wzbogacenie, segmenty i miary, zostaną automatycznie ponownie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="03ba7-167">All processes, including enrichment, segments, and measures will rerun automatically.</span></span> <span data-ttu-id="03ba7-168">Po zakończeniu wszystkich dalszych procesów, profile klientów odzwierciedlają wszystkie wprowadzone zmiany.</span><span class="sxs-lookup"><span data-stu-id="03ba7-168">After all downstream processes have completed, the customer profiles reflect any changes you made.</span></span>
 
-1. <span data-ttu-id="d8571-118">Wybierz przycisk wielokropka (...).</span><span class="sxs-lookup"><span data-stu-id="d8571-118">Select the ellipsis (...) button.</span></span>
-  
-2. <span data-ttu-id="d8571-119">Z listy rozwijanej wybierz **Rozdziel pola**.</span><span class="sxs-lookup"><span data-stu-id="d8571-119">In the dropdown list, select **Separate fields**.</span></span>
-
-### <a name="remove-merged-attributes"></a><span data-ttu-id="d8571-120">Usuwanie scalonych atrybutów</span><span class="sxs-lookup"><span data-stu-id="d8571-120">Remove merged attributes</span></span>
-
-<span data-ttu-id="d8571-121">Aby wykluczyć atrybut z ostatecznej encji profilu klienta, należy go znaleźć w tabeli **Atrybuty profilu**.</span><span class="sxs-lookup"><span data-stu-id="d8571-121">To exclude an attribute from the final customer profile entity, find it in the **Profile attributes** table.</span></span>
-
-1. <span data-ttu-id="d8571-122">Wybierz przycisk wielokropka (...).</span><span class="sxs-lookup"><span data-stu-id="d8571-122">Select the ellipsis (...) button.</span></span>
-  
-2. <span data-ttu-id="d8571-123">Z listy rozwijanej wybierz **Nie scalaj**.</span><span class="sxs-lookup"><span data-stu-id="d8571-123">In the dropdown list, select **Don't merge**.</span></span>
-
-   <span data-ttu-id="d8571-124">Atrybut zostanie przeniesiony do sekcji **Usunięto z rekordu klienta**.</span><span class="sxs-lookup"><span data-stu-id="d8571-124">The attribute is moved to the **Removed from customer record** section.</span></span>
-
-## <a name="manually-add-a-merged-attribute"></a><span data-ttu-id="d8571-125">Ręczne dodanie scalonego atrybutu</span><span class="sxs-lookup"><span data-stu-id="d8571-125">Manually add a merged attribute</span></span>
-
-<span data-ttu-id="d8571-126">Aby dodać scalony atrybut, przejdź na stronę **Scalanie**.</span><span class="sxs-lookup"><span data-stu-id="d8571-126">To add a merged attribute, go to the **Merge** page.</span></span>
-
-1. <span data-ttu-id="d8571-127">Wybierz **Dodaj scalony atrybut**.</span><span class="sxs-lookup"><span data-stu-id="d8571-127">Select **Add merged attribute**.</span></span>
-
-2. <span data-ttu-id="d8571-128">Podaj **Nazwę**, która będzie identyfikować go na stronie **Scalenie** później.</span><span class="sxs-lookup"><span data-stu-id="d8571-128">Provide a **Name** to identify it on the **Merge** page later.</span></span>
-
-3. <span data-ttu-id="d8571-129">Opcjonalnie wprowadź **Nazwę wyświetlaną**, która będzie widoczna w encji ujednoliconego profilu klienta.</span><span class="sxs-lookup"><span data-stu-id="d8571-129">Optionally, provide a **Display name** to appear in the unified Customer Profile entity.</span></span>
-
-4. <span data-ttu-id="d8571-130">Konfigurowanie **Wybierz zduplikowane atrybuty** w celu wybrania atrybutów, które mają być scalane z dopasowanych encji.</span><span class="sxs-lookup"><span data-stu-id="d8571-130">Configure **Select duplicate attributes** to select the attributes that you want to merge from the matched entities.</span></span> <span data-ttu-id="d8571-131">Istnieje również możliwość wyszukiwania atrybutów.</span><span class="sxs-lookup"><span data-stu-id="d8571-131">You can also search for attributes.</span></span>
-
-5. <span data-ttu-id="d8571-132">Ustaw **Klasyfikuj wg ważności**, aby nadać priorytety jednemu atrybutowi nad innym.</span><span class="sxs-lookup"><span data-stu-id="d8571-132">Set the **Rank by importance** to prioritize one attribute above the others.</span></span> <span data-ttu-id="d8571-133">Jeśli na przykład encja *WebAccountCSV* zawiera najbardziej dokładne dane o atrybucie *Pełna nazwa*, można przypisać tę encję ponad *ContactCSV*, wybierając pozycję *WebAccountCSV*.</span><span class="sxs-lookup"><span data-stu-id="d8571-133">For example, if the *WebAccountCSV* entity includes the most accurate data about the *Full Names* attribute, you could prioritize this entity over *ContactCSV* by selecting *WebAccountCSV*.</span></span> <span data-ttu-id="d8571-134">W efekcie *WebAccountCSV* przechodzi do pierwszego priorytetu, podczas gdy *ContactCSV* przechodzi do drugiego priorytetu podczas ściągania wartości atrybutu *Pełna nazwa*.</span><span class="sxs-lookup"><span data-stu-id="d8571-134">As a result, *WebAccountCSV* moves to first priority, while *ContactCSV* moves to second priority when pulling values for the *Full Name* attribute.</span></span>
-
-## <a name="run-your-merge"></a><span data-ttu-id="d8571-135">Uruchamianie scalania</span><span class="sxs-lookup"><span data-stu-id="d8571-135">Run your merge</span></span>
-
-<span data-ttu-id="d8571-136">Niezależnie od tego, czy ręcznie scalono atrybuty, czy pozwolono, aby system je scalił, zawsze można uruchomić scalanie.</span><span class="sxs-lookup"><span data-stu-id="d8571-136">Whether you manually merge attributes or let the system merge them, you can always run your merge.</span></span> <span data-ttu-id="d8571-137">Wybierz **Uruchom** na stronie **Scalanie**, aby zacząć proces.</span><span class="sxs-lookup"><span data-stu-id="d8571-137">Select **Run** on the **Merge** page to start the process.</span></span>
-
-> [!div class="mx-imgBorder"]
-> <span data-ttu-id="d8571-138">![Zapis i uruchomienie scalania danych](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")</span><span class="sxs-lookup"><span data-stu-id="d8571-138">![Data merge Save and Run](media/configure-data-merge-save-run.png "Data merge Save and Run")</span></span>
-
-<span data-ttu-id="d8571-139">Aby dokonać dodatkowych zmian i ponownie uruchomić krok, można anulować trwający proces scalania.</span><span class="sxs-lookup"><span data-stu-id="d8571-139">To make additional changes and rerun the step, you can cancel an in-progress merge.</span></span> <span data-ttu-id="d8571-140">Wybierz **Odświeżanie...** i wybierz **Anuluj zadanie**  w pojawiającym się okienku bocznym.</span><span class="sxs-lookup"><span data-stu-id="d8571-140">Select **Refreshing ...** and select **Cancel job**  in the side pane that appears.</span></span>
-
-<span data-ttu-id="d8571-141">Gdy tekst **Odświeżanie ...** zostanie zmieniony na **Pomyślne**, scalanie zakończyło się i rozwiązano sprzeczności w danych zgodnie z określonymi zasadami.</span><span class="sxs-lookup"><span data-stu-id="d8571-141">After the **Refreshing ...** text changes to **Successful**, merge has completed and resolved contradictions in your data according to the policies you defined.</span></span> <span data-ttu-id="d8571-142">Połączone i niepołączone atrybuty są zawarte w encji ujednolicony profil.</span><span class="sxs-lookup"><span data-stu-id="d8571-142">Merged and unmerged attributes are included in the unified profile entity.</span></span> <span data-ttu-id="d8571-143">Wykluczone atrybuty nie są zawarte w encji ujednolicony profil.</span><span class="sxs-lookup"><span data-stu-id="d8571-143">Excluded attributes aren't included in the unified profile entity.</span></span>
-
-<span data-ttu-id="d8571-144">Jeśli nie było to pierwsze pomyślnie uruchomienie scalania, wszystkie procesy podrzędne, w tym wzbogacanie, segmentacja i miary, zostaną automatycznie uruchomione ponownie.</span><span class="sxs-lookup"><span data-stu-id="d8571-144">If it wasn't the first time you ran a merge successfully, all downstream processes, including enrichment, segmentation, and measures will rerun automatically.</span></span> <span data-ttu-id="d8571-145">Po ponownym uruchomieniu wszystkich procesów podrzędnych profile klienta odzwierciedlają wszelkie wprowadzone zmiany.</span><span class="sxs-lookup"><span data-stu-id="d8571-145">After all downstream processes have been rerun, the customer profiles reflect any changes you made.</span></span>
+<span data-ttu-id="03ba7-169">Aby wprowadzić więcej zmian i ponownie uruchomić krok, można anulować trwające scalanie.</span><span class="sxs-lookup"><span data-stu-id="03ba7-169">To make more changes and rerun the step, you can cancel an in-progress merge.</span></span> <span data-ttu-id="03ba7-170">Wybierz **Odświeżanie...** i wybierz **Anuluj zadanie**  w pojawiającym się okienku bocznym.</span><span class="sxs-lookup"><span data-stu-id="03ba7-170">Select **Refreshing ...** and select **Cancel job**  in the side pane that appears.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="d8571-146">Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów.</span><span class="sxs-lookup"><span data-stu-id="d8571-146">There are [six types of status](system.md#status-types) for tasks/processes.</span></span> <span data-ttu-id="d8571-147">Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies).</span><span class="sxs-lookup"><span data-stu-id="d8571-147">Additionally, most processes [depend on other downstream processes](system.md#refresh-policies).</span></span> <span data-ttu-id="d8571-148">Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu.</span><span class="sxs-lookup"><span data-stu-id="d8571-148">You can select the status of a process to see details on the progress of the entire job.</span></span> <span data-ttu-id="d8571-149">Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.</span><span class="sxs-lookup"><span data-stu-id="d8571-149">After selecting **See details** for one of the job's tasks, you find additional information: processing time, the last processing date, and all errors and warnings associated with the task.</span></span>
+> <span data-ttu-id="03ba7-171">Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów.</span><span class="sxs-lookup"><span data-stu-id="03ba7-171">There are [six types of status](system.md#status-types) for tasks/processes.</span></span> <span data-ttu-id="03ba7-172">Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies).</span><span class="sxs-lookup"><span data-stu-id="03ba7-172">Additionally, most processes [depend on other downstream processes](system.md#refresh-policies).</span></span> <span data-ttu-id="03ba7-173">Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu.</span><span class="sxs-lookup"><span data-stu-id="03ba7-173">You can select the status of a process to see details on the progress of the entire job.</span></span> <span data-ttu-id="03ba7-174">Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.</span><span class="sxs-lookup"><span data-stu-id="03ba7-174">After selecting **See details** for one of the job's tasks, you find additional information: processing time, the last processing date, and all errors and warnings associated with the task.</span></span>
 
-## <a name="next-step"></a><span data-ttu-id="d8571-150">Następny krok</span><span class="sxs-lookup"><span data-stu-id="d8571-150">Next Step</span></span>
+## <a name="next-step"></a><span data-ttu-id="03ba7-175">Następny krok</span><span class="sxs-lookup"><span data-stu-id="03ba7-175">Next Step</span></span>
 
-<span data-ttu-id="d8571-151">Skonfiguruj [działania](activities.md), [wzbogacenie](enrichment-hub.md) lub [relacje](relationships.md), aby uzyskać dokładniejsze informacje o klientach.</span><span class="sxs-lookup"><span data-stu-id="d8571-151">Configure [activities](activities.md), [enrichment](enrichment-hub.md), or [relationships](relationships.md) to gain more insights about your customers.</span></span>
+<span data-ttu-id="03ba7-176">Skonfiguruj [działania](activities.md), [wzbogacenie](enrichment-hub.md) lub [relacje](relationships.md), aby uzyskać dokładniejsze informacje o klientach.</span><span class="sxs-lookup"><span data-stu-id="03ba7-176">Configure [activities](activities.md), [enrichment](enrichment-hub.md), or [relationships](relationships.md) to gain more insights about your customers.</span></span>
 
-<span data-ttu-id="d8571-152">Jeśli zostały już skonfigurowane działania, wzbogacenia lub relacje lub jeśli segmenty są zdefiniowane, zostaną one automatycznie przetworzone w celu korzystania z najnowszych danych klienta.</span><span class="sxs-lookup"><span data-stu-id="d8571-152">If you already configured activities, enrichment, or relationships, or if you defined segments, they'll be processed automatically to use the latest customer data.</span></span>
-
-
-
+<span data-ttu-id="03ba7-177">Jeśli już skonfigurowałeś działania, wzbogacenia lub segmenty, zostaną one przetworzone automatycznie, aby wykorzystać najnowsze dane o klientach.</span><span class="sxs-lookup"><span data-stu-id="03ba7-177">If you already configured activities, enrichment, or segments, they'll be processed automatically to use the latest customer data.</span></span>
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
