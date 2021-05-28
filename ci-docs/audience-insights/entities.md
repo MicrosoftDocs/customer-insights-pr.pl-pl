@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 383523bad5105e08e57758838e90a49e805b5f9b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
+ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596420"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049407"
 ---
 # <a name="entities-in-audience-insights"></a>Encje w analizach odbiorców
 
@@ -37,12 +37,12 @@ Wybierz encję, aby poznać różne pola i rekordy zawarte w tej encji.
 > [!div class="mx-imgBorder"]
 > ![Wybierz encję](media/data-manager-entities-data.png "Wybierz encję")
 
-- Karta **Dane** jest domyślnie zaznaczona i zawiera tabelę zawierającą szczegółowe informacje na temat poszczególnych rekordów encji.
+- Na karcie **Dane** jest pokazana tabela ze szczegółami poszczególnych rekordów obiektu.
 
 > [!div class="mx-imgBorder"]
 > ![Tabela pól](media/data-manager-entities-fields.PNG "Tabela pól")
 
-- Na karcie **Pola** jest wyświetlona tabela służąca do przejrzenia szczegółowych informacji o wybranej encji, takich jak nazwy pól, typy danych i typy. W kolumnie **Typ** są wyświetlane typy skojarzone z Common Data Model, które są automatycznie identyfikowane przez system lub [ręcznie mapowane](map-entities.md) przez użytkowników. Są to typy semantyczne, które mogą różnić się w zależności od typów danych atrybutów — na przykład pole *Poczta e-mail* poniżej zawiera typ danych *Tekst*, ale jego (semantycznym) typem Common Data Model może być *Email* lub *EmailAddress*.
+- Karta **Atrybuty** jest domyślnie wybrana i pokazuje tabelę przeglądania szczegółów wybranej encji, takich jak nazwy pól, typy danych i typy. W kolumnie **Typ** są wyświetlane typy skojarzone z Common Data Model, które są automatycznie identyfikowane przez system lub [ręcznie mapowane](map-entities.md) przez użytkowników. Są to typy semantyczne, które mogą różnić się w zależności od typów danych atrybutów — na przykład pole *Poczta e-mail* poniżej zawiera typ danych *Tekst*, ale jego (semantycznym) typem Common Data Model może być *Email* lub *EmailAddress*.
 
 > [!NOTE]
 > W obu tabelach przedstawiono tylko próbkę danych encji. Aby wyświetlić pełny zestaw danych, przejdź na stronę **Źródła danych**, wybierz encję, wybierz pozycję **Edytuj**, a następnie wyświetl dane tej encji przy użyciu edytora Power Query, jak wyjaśniono w [Źródła danych](data-sources.md).

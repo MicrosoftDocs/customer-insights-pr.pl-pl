@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887953"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049263"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
@@ -34,7 +34,7 @@ W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atryb
 
 1. Wybierz opcję **Edytuj** nazwę i podaj **Nazwa** miary. 
    > [!NOTE]
-   > Jeśli nowa konfiguracja miary ma tylko dwa pola, na przykład IDklienta i jedno obliczenie, dane wyjściowe zostaną dodane jako nowa kolumna do jednostki wygenerowanej przez system o nazwie Customer_Measure. Będziesz mógł zobaczyć wartość miary w ujednoliconym profilu klienta. Inne miary będą generować własne encje.
+   > Jeśli nowa konfiguracja miary ma tylko dwa pola, na przykład CustomerID i jedno wyliczenie, dane wyjściowe zostaną dodane jako nowa kolumna do wygenerowanej przez system encji o nazwie Customer_Measure. Będziesz mógł zobaczyć wartość miary w ujednoliconym profilu klienta. Inne miary będą generować własne encje.
 
 1. W obszarze konfiguracji wybierz funkcję agregowania z menu rozwijanego **Wybierz funkcję**. Funkcje agregowania obejmują: 
    - **Sum**

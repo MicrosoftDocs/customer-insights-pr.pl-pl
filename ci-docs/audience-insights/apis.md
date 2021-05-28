@@ -1,7 +1,7 @@
 ---
 title: Praca z API
 description: Korzystanie z interfejsów API i zrozumienie ograniczeń.
-ms.date: 03/10/2021
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 59161456914df84d7e72402ed1f5faf70a5119ba
-ms.sourcegitcommit: a39e00a50ad3eda820fd756c5611081f0ca04662
+ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
+ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "5873675"
+ms.lasthandoff: 05/10/2021
+ms.locfileid: "6016633"
 ---
 # <a name="work-with-customer-insights-apis"></a>Pracuj z interfejsami API Customer Insights
 
@@ -90,19 +90,13 @@ Informacje o korzystaniu z interfejsów API naszych bibliotek klientów znajduje
 
 1. W rejestracji aplikacji w portalu Azure Portal wybierz opcję **uprawnienia interfejsu API**.
 
-1. Zaznacz pole wyboru **Dodaj uprawnienie** i w okienku bocznym wybierz pozycję **Customer Insights**.
+1. Wybierz **Dodaj uprawnienie**. 
+
+1. Wybierz z listy **interfejsy API używane przez organizację** i wybierz pozycję **Dynamics 365 AI dla Customer Insights**. 
 
 1. W przypadku **Typu uprawnienia** Wybierz opcję **Uprawnienia do aplikacji** i wybierz uprawnienie **CustomerInsights.Api.All**.
 
 1. Wybierz **Przyznaj uprawnienia**.
-
-1. Aby przyznać administratorowi uprawnienie zgody na tę aplikację, należy dodać nazwę główną usługi.
-
-   1. Zainstaluj moduł Azure Active Directory (AD) PowerShell: `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Nawiąż połączenie ze swoim kontem AD: `Connect-AzureAD -TenantId <your tenant id>`. Identyfikator dzierżawy można znaleźć na ekranie **Omówienie** > **Azure Active Directory**.
-   1. Aby dodać nazwę główną usługi, należy uruchomić następujące polecenie Azure AD: `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"` parametr AppID jest związany z interfejsem API aplikacji Customer Insights.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Przykład głównej nazwy usługi":::
 
 1. Aby zobaczyć rejestrację aplikacji wróć do **uprawnienia interfejsu API**.
 

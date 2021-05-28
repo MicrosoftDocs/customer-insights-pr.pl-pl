@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595822"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954592"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Przewidywanie Wartości okresu istnienia klienta (wersja zapoznawcza)
 
@@ -38,11 +38,11 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
 - Identyfikator klienta: Unikalny identyfikator umożliwiający dopasowanie transakcji do indywidualnego klienta
 
 - Historia transakcji: Historyczny dziennik transakcji z poniższym semantycznym schematem danych
-    - Identyfikator transakcji: niepowtarzalny identyfikator każdej transakcji
-    - Data transakcji: data, najlepiej sygnatura czasowa każdej transakcji
-    - Kwota transakcji: wartość pieniężna (na przykład przychód lub marża zysku) każdej transakcji
-    - Etykieta przypisana do zwrotów (opcjonalnie): wartość logiczna wskazująca, czy transakcja jest zwrotem 
-    - Identyfikator produktu (opcjonalnie): Identyfikator produktu, którego dotyczy transakcja
+    - **Identyfikator transakcji**: niepowtarzalny identyfikator każdej transakcji
+    - **Data transakcji**: data, najlepiej sygnatura czasowa każdej transakcji
+    - **Kwota transakcji**: wartość pieniężna (na przykład przychód lub marża zysku) każdej transakcji
+    - **Etykieta przypisana do zwrotów** (opcjonalnie): wartość logiczna wskazująca, czy transakcja jest zwrotem 
+    - **Identyfikator produktu** (opcjonalnie): Identyfikator produktu, którego dotyczy transakcja
 
 - Dodatkowe dane (opcjonalnie), na przykład
     - Działania w sieci: historia odwiedzin na stronie, historia e-maili
@@ -53,10 +53,20 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
     - Identyfikatory klientów, umożliwiające mapowanie działań do klientów
     - Informacje o działaniu zawierające nazwę i datę działania
     - Semantyczny schemat danych dla działań obejmuje: 
-        - Klucz podstawowy: Unikatowy identyfikator działania
-        - Sygnatura czasowa: Data i godzina zdarzenia identyfikowanego przez klucz podstawowy
-        - Zdarzenie (nazwa działania): Nazwa wydarzenia, którego chcesz użyć
-        - Szczegóły (kwota lub wartość): Szczegółowe informacje dotyczące działania klienta
+        - **Klucz podstawowy**: Unikatowy identyfikator działania
+        - **Sygnatura czasowa**: Data i godzina zdarzenia identyfikowanego przez klucz podstawowy
+        - **Zdarzenie (nazwa działania)**: Nazwa wydarzenia, którego chcesz użyć
+        - **Szczegóły (kwota lub wartość)**: Szczegółowe informacje dotyczące działania klienta
+
+- Sugerowana charakterystyka danych:
+    - Wystarczające dane historyczne: co najmniej jeden rok danych transakcji. Najlepiej dwa do trzech lat danych transakcji, aby przeanalizować CLV przez jeden rok.
+    - Wiele zakupów na klienta: Idealnie, co najmniej dwie do trzech transakcji na identyfikator klienta, najlepiej w wielu datach.
+    - Liczba klientów: co najmniej 100 unikatowych klientów, najlepiej więcej niż 10 000 klientów. Model zakończy z niepowodzeniem, jeśli będzie mniej niż 100 klientów oraz niewystarczające dane historycznych
+    - Kompletność danych: Mniej niż 20% brakujących wartości w wymaganych polach w danych wejściowych   
+
+> [!NOTE]
+> - Model wymaga historii transakcji klientów. Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu/transakcji, możesz połączyć je w Power Query przed pozyskaniem danych.
+> - W przypadku dodatkowych danych dotyczących działań klienta (opcjonalnie) można jednak dodać tyle encji działań klienta, ile tylko będzie można uwzględnić w modelu.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Utwórz prognozę wartości okresu istnienia klienta
 
@@ -76,7 +86,7 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
    Domyślnie jednostka jest ustawiona na miesiące. Można zmienić go na lata, aby w przyszłości wyglądać dalej.
 
    > [!TIP]
-   > Aby dokładnie przewidzieć CLV dla ustawionego okresu, potrzebujesz porównywalnego okresu danych historycznych. Na przykład, jeśli chcesz prognozować na następne 12 miesięcy, zaleca się, aby mieć co najmniej 18-24 miesiące danych historycznych.
+   > Aby dokładnie przewidzieć CLV dla ustawionego okresu, potrzebujesz porównywalnego okresu danych historycznych. Na przykład, jeśli chcesz prognozować CLV na następne 12 miesięcy, zaleca się, aby mieć co najmniej 18-24 miesiące danych historycznych.
 
 1. Określ, co **Aktywni klienci** oznaczają dla firmy. Ustaw przedział czasu, w którym klient musiał mieć co najmniej jedną transakcję, aby zostać uznanym za aktywną. Model będzie przewidywał tylko CLV dla aktywnych klientów. 
    - **Zezwól modelowi na obliczenie interwału zakupów (zalecane)**: Model analizuje Twoje dane i określa okres na podstawie historycznych zakupów.
@@ -181,14 +191,14 @@ Na stronie wyników wyszukiwania znajdują się trzy podstawowe sekcje danych.
   Korzystając z definicji klientów o dużej wartości, podanej podczas konfigurowania prognozy, system ocenia, jak model sztucznej inteligencji radził sobie w przewidywaniu klientów o dużej wartości w porównaniu z modelem bazowym.    
 
   Oceny są określane na podstawie następujących reguł:
-  - A kiedy model dokładnie przewidział co najmniej 5% więcej wartościowych klientów w porównaniu z modelem bazowym.
-  - B gdy model dokładnie przewidział od 0 do 5% więcej klientów o wysokiej wartości w porównaniu z modelem bazowym.
-  - C, gdy model dokładnie przewidział mniej wartościowych klientów w porównaniu z modelem bazowym.
+  - **A** kiedy model dokładnie przewidział co najmniej 5% więcej wartościowych klientów w porównaniu z modelem bazowym.
+  - **B** gdy model dokładnie przewidział od 0 do 5% więcej klientów o wysokiej wartości w porównaniu z modelem bazowym.
+  - **C**, gdy model dokładnie przewidział mniej wartościowych klientów w porównaniu z modelem bazowym.
 
   W okienku **Klasyfikacji modelu** pokazuje dalsze szczegóły dotyczące wydajności modelu AI i modelu bazowego. Model bazowy wykorzystuje podejście nie oparte na sztucznej inteligencji do obliczania wartości klienta od początku śledzenia na podstawie historycznych zakupów dokonanych przez klientów.     
   Standardowa formuła używana do obliczania CLV według modelu bazowego:    
 
-  *CLV dla każdego klienta = Średni miesięczny zakup dokonany przez klienta w aktywnym oknie klienta * Liczba miesięcy w okresie prognozowania CLV * Ogólny wskaźnik utrzymania wszystkich klientów*
+  _**CLV dla każdego klienta** = Średni miesięczny zakup dokonany przez klienta w aktywnym oknie klienta * Liczba miesięcy w okresie prognozowania CLV * Ogólny wskaźnik utrzymania wszystkich klientów*_
 
   Model AI jest porównywany z modelem bazowym w oparciu o dwie metryki wydajności modelu.
   

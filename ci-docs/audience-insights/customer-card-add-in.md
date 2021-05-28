@@ -1,7 +1,7 @@
 ---
-title: Zainstaluj i skonfiguruj Dodatek kart klientów
-description: Zainstaluj i skonfiguruj dodatek kart klientów dla Dynamics 365 Customer Insights.
-ms.date: 01/20/2021
+title: Dodatek kart klientów w aplikacjach Dynamics 365
+description: Pokaż dane z analizy odbiorców w aplikacjach Dynamics 365 za pomocą tego dodatku.
+ms.date: 05/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,30 +9,31 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f3c4a01f9ce7749eeee72f7901620dae7cb9b8d3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
+ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597340"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059601"
 ---
 # <a name="customer-card-add-in-preview"></a>Dodatek kart klientów (wersja zapoznawcza)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Zobacz dane demograficzne, wyniki analiz, i osi czasu działania dzięki użyciu dodatku kart klientów.
+Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Po zainstalowaniu dodatku karta klienta w obsługiwanej aplikacji Dynamics 365 można wybrać opcję wyświetlania danych demograficznych, wglądów i osi czasu aktywności. Ten dodatek będzie pobierać dane z usługi Customer Insights, co nie ma wpływu na dane w połączonej aplikacji Dynamics 365. 
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Aplikacja Dynamics 365 (na przykład Centrum sprzedaży lub Centrum obsługi klienta) w wersji 9.0 lub nowszej z włączoną funkcją ujednolicony interfejs.
-- Profile klientów [pobierane z aplikacji Dynamics 365 z użyciem programu Common Data Service](connect-power-query.md).
-- Użytkownicy dodatku karty klienta muszą być [dodawani jako użytkownicy](permissions.md) w statystykach odbiorców.
-- [Skonfigurowane funkcje wyszukiwania i filtrowania](search-filter-index.md).
-- Kontrola demograficzna: pola demograficzne (takie jak wiek czy płeć) są dostępne w ujednoliconym profilu klienta.
-- Kontrola wzbogacenia: Wymaga czynnych [wzbogaceń](enrichment-hub.md) zastosowanych dla profilów klienta.
-- Kontrola analiz: Wymaga danych wygenerowanych przy użyciu usługi Azure Machine Learning ([przewidywania](predictions.md) lub [modele niestandardowe](custom-models.md))
-- Kontrola miar: wymagane są [skonfigurowane miary](measures.md).
-- Kontrolka osi czasu: wymagane są [skonfigurowane działania](activities.md).
+- Ten dodatek działa tylko w aplikacjach opartych na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
+- Aby dane usługi Dynamics 365 były mapowane do profili klientów w ramach analizy odbiorców, muszą być [pobierane z Dynamics 365 przy użyciu łącznika Common Data Service](connect-power-query.md).
+- Wszystkich użytkowników usługi Dynamics 365 z dodatku karta klienta należy [dodać jako użytkowników](permissions.md) w analizie odbiorców, aby dane stały się widoczne.
+- [Funkcje wyszukiwania i filtrowania skonfigurowane](search-filter-index.md) w analizie odbiorców są wymagane do wyszukiwania danych.
+- Każdy formant dodatku zależy od określonych danych w analizie odbiorców:
+  - Kontrola miar: wymagane są [skonfigurowane miary](measures.md).
+  - Kontrola danych: wymaga danych generowanych przy użyciu [prognoz](predictions.md) lub [niestandardowych modeli](custom-models.md).
+  - Kontrola demograficzna: pola demograficzne (takie jak wiek czy płeć) są dostępne w ujednoliconym profilu klienta.
+  - Kontrola wzbogacenia: Wymaga czynnych [wzbogaceń](enrichment-hub.md) zastosowanych dla profilów klienta.
+  - Kontrolka osi czasu: wymagane są [skonfigurowane działania](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Zainstaluj dodatek kart klientów
 
@@ -56,9 +57,9 @@ Może upłynąć trochę czasu zanim rozwiązanie zostanie zainstalowane w środ
    > [!NOTE]
    > Sprawdź, czy w przypadku wybrania przycisku **Zaloguj** nie jest blokowane okno uwierzytelniania w wyskakujących okienkach przeglądarki.
 
-1. Wybierz środowisko, z którego chcesz pobrać dane.
+1. Wybierz środowisko Customer Insights, z którego chcesz pobrać dane.
 
-1. Zdefiniuj, które pole jest mapowane na rekordy w aplikacji Dynamics 365.
+1. Zdefiniuj mapowanie pól na rekordy w aplikacji Dynamics 365. W zależności od danych w aplikacji Customer Insights można zamapować następujące opcje:
    - Aby zmapować z kontaktem, wybierz pole w encji Customer, które jest zgodne z identyfikatorem Twojej encji kontaktu.
    - Aby zmapować z kontem, wybierz pole w encji Customer, które jest zgodne z identyfikatorem Twojej encji konta.
 
