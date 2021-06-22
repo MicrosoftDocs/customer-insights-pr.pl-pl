@@ -1,74 +1,110 @@
 ---
 title: Relacje między encjami i ścieżkami encji
 description: Tworzenie relacji między encjami z wielu źródeł danych i zarządzanie nimi.
-ms.date: 04/14/2020
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: mukeshpo
-ms.author: mukeshpo
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: c25bfcb8e2a8223498dd1a5e8cfb3712a40ab85e
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595225"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171177"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
-Relacje ułatwiają łączenie encji i generowanie wykresu danych w przypadku, gdy encje mają wspólny identyfikator (klucz obcy), który może być przywoływany między encjami. Połączone encje umożliwiają zdefiniowanie segmentów i miar na podstawie wielu źródeł danych.
+Relacje łączą encje i definiują graf Twoich danych, gdy encje posiadają wspólny identyfikator, klucz obcy. Do tego klucza obcego można się odwoływać z jednej encji do drugiej. Połączone podmioty umożliwiają definiowanie segmentów i miar w oparciu o wiele źródeł danych.
 
-Istnieją dwa typy relacji: Relacje systemowe, których nie można edytować i które są tworzone automatycznie, oraz niestandardowe relacje utworzone i skonfigurowane przez użytkowników.
+Istnieją trzy typy relacje: 
+- Nieedytowalne relacje systemowe, tworzone przez system w ramach procesu ujednolicania danych
+- Nieedytowalne relacje dziedziczone, które są tworzone automatycznie na podstawie pobieranych źródeł danych 
+- Edytowalne relacje niestandardowe, tworzone i konfigurowane przez użytkowników
 
-Podczas procesów dopasowywania i scalania relacje systemu są tworzone w tle w zależności od inteligentnego dopasowania. Te relacje ułatwiają powiązanie rekordów Profilu klienta z innymi rekordami odpowiednich encji. Na poniższym diagramie pokazano, jak utworzyć trzy relacje systemowe w przypadku dopasowania obiektu klienta do dodatkowych encji w celu utworzenia ostatecznej encji Profilu klienta.
+## <a name="non-editable-system-relationships"></a>Nieedytowalne powiązania systemowe
 
-> [!div class="mx-imgBorder"]
-> ![Tworzenie relacji](media/relationships-entities-merge.png "Tworzenie relacji")
+Podczas ujednolicania danych relacje systemowe są tworzone automatycznie na podstawie inteligentnego dopasowania. Te relacje pomagają powiązać rekordy profilu klienta z odpowiadającymi im rekordami. Na poniższym diagramie przedstawiono tworzenie trzech baz danych opartych relacje. Encja klienta zostanie dopasowana do innych obiektów w celu uzyskania ujednoliconej encji *Klient*.
 
-- **Relacja *CustomerToContact*** jest utworzona między encją klienta i encją kontaktu. Encja klienta otrzymuje pole kluczowe **Contact_contactId** w celu powiązania jej z polem kluczowym encji kontaktu **contactId**.
-- **Relacja *CustomerToAccount*** jest utworzona między encją klienta i encją konta. Encja klienta otrzymuje pole kluczowe **Account_accountId** w celu powiązania jej z polem kluczowym encji konta **accountId**.
-- **Relacja *CustomerToWebAccount*** jest utworzona między encją klienta i encją konta sieci Web. Encja klienta otrzymuje pole kluczowe **WebAccount_webaccountId** w celu powiązania jej z polem kluczowym encji konta sieci Web **webaccountId**.
+:::image type="content" source="media/relationships-entities-merge.png" alt-text="Diagram ze ścieżkami relacji dla encji klient z trzema relacjami 1-n.":::
 
-## <a name="create-a-relationship"></a>Utwórz relację
+- **Relacja *CustomerToContact*** jest utworzona między encją *klienta* i encją *kontaktu*. Encja *klienta* otrzymuje pole kluczowe **Contact_contactID** w celu powiązania jej z polem kluczowym encji *kontaktu* **contactID**.
+- **Relacja *CustomerToAccount*** jest utworzona między encją *klienta* i encją *konta*. Encja *klienta* otrzymuje pole kluczowe **Account_accountID** w celu powiązania jej z polem kluczowym encji *konta* **accountID**.
+- **Relacja *CustomerToWebAccount*** jest utworzona między encją *klienta* i encją *WebAccount*. Encja *klienta* otrzymuje pole kluczowe **WebAccount_webaccountID** w celu powiązania jej z polem kluczowym **webaccountID** encji *WebAccount*.
 
-Relacje niestandardowe należy zdefiniować na stronie **Relacje**. Każda relacja składa się z encji źródłowej (encja przechowująca klucz obcy) i encji docelowej (encja, na którą wskazuje klucz obcy encji źródłowej).
+## <a name="non-editable-inherited-relationships"></a>Odziedziczone relacje nieedytowalne
+
+Podczas procesu pozyskiwania danych system sprawdza źródła danych pod kątem istniejących relacji. Jeśli nie istnieje żadna relacja, system automatycznie je tworzy. Relacje te są również wykorzystywane w dalszych procesach.
+
+## <a name="create-a-custom-relationship"></a>Utwórz niestandardową relację
+
+Relacja składa się z *encji źródłowej* zawierającej klucz obcy i *encję docelową*, na którą wskazuje klucz obcy encji źródłowej. 
 
 1. W analizach odbiorców przejdź do **Dane** > **Relacje**.
 
 2. Wybierz **Nowa relacja**.
 
-3. W okienku **Dodaj relację** podaj następujące informacje:
+3. W okienku **Nowa relacja** podaj następujące informacje:
 
-   > [!div class="mx-imgBorder"]
-   > ![Wprowadź szczegóły relacji](media/relationships-add.png "Wprowadź szczegóły relacji")
+   :::image type="content" source="media/relationship-add.png" alt-text="Nowy panel boczny relacji z pustymi polami wejściowymi.":::
 
-   - **Nazwa relacji**: nazwa, która odzwierciedla cel relacji (na przykład **AccountWebLogs**).
+   - **Nazwa relacji**: nazwa odzwierciedlająca cel relacji. Przykład: CustomerToSupportCase.
    - **Opis**: opis relacji.
-   - **Encja źródłowa**: należy wybrać encję używaną jako źródło w relacji (np. dziennik sieci Web).
-   - **Kardynalność**: wybierz kardynalność rekordów encji źródłowej. Na przykład „wiele” oznacza, że wiele rekordów dziennika sieci Web jest skojarzonych z jednym kontem sieci Web.
-   - **Pole klucza źródłowego**: to pole oznacza klucz obcy w encji źródłowej. Na przykład dziennik sieci Web zawiera pole klucza obcego **accountId**.
-   - **Encja docelowa**: należy wybrać encję używaną jako cel w relacji (np. konto sieci Web).
-   - **Kardynalność docelowa**: wybierz kardynalność rekordów encji docelowej. Na przykład „jeden” oznacza, że wiele rekordów dziennika sieci Web jest skojarzonych z jednym kontem sieci Web.
-   - **Pole klucza docelowego**: to pole reprezentuje pole klucza encji docelowej. Na przykład konto sieci Web zawiera pole klucza **accountId**.
+   - **Encja źródłowa**: Encja używana jako źródło w relacji. Przykład: SupportCase.
+   - **Encja docelowa**: Encja używana jako cel w relacji. Przykład: Klient.
+   - **Kardynalność źródła**: Określ kardynalność encji źródłowej. Podobieństwo opisuje liczbę możliwych elementów w zestawie. Zawsze odnosi się do kardynalności docelowej. Można wybrać **Jedna** lub **Wiele**. Relacje obsługują tylko wiele-do-jednego i jeden-do-jednego.  
+     - Wiele do jednego: wiele rekordów źródłowych może odnosić się do jednego rekordu docelowego. Przykład: wiele spraw pomocy technicznej od jednego klienta.
+     - Jeden-do-jednego: pojedynczy rekord źródłowy odnosi się do rekordu jednego docelowego. Przykład: jeden identyfikator lojalnościowy dla pojedynczego klienta.
 
-> [!NOTE]
-> Relacje obsługują tylko wiele-do-jednego i jeden-do-jednego. Relacje wiele-do-wielu można utworzyć przy użyciu dwóch relacji wiele-do-jednego i połączyć encje (encji, która jest używana do łączenia encji źródłowej i encji docelowej).
+     > [!NOTE]
+     > Relacje wiele-do-wielu można tworzyć przy użyciu dwóch relacji wiele-do-jednego i encji łączącej, która łączy encję źródłową i encję docelową.
 
-## <a name="delete-a-relationship"></a>Usuń relację
+   - **Kardynalność docelowa**: wybierz kardynalność rekordów encji docelowej. 
+   - **Pole klucza źródłowego**: pole klucza obcych w encji źródłowej. Przykład: SupportCase może użyć pola CaseID jako pola klucza obcych.
+   - **Pole klucza docelowego**: Pole kluczowe encji docelowej. Przykład klient może użyć pola klucza **CustomerID**.
 
-1. W analizach odbiorców przejdź do **Dane** > **Relacje**.
+4. Wybierz pozycję **ZApisz**, aby utworzyć niestandardową relację.
 
-2. Zaznacz pole wyboru dla relacji, którą chcesz usunąć.
+## <a name="view-relationships"></a>Widok relacji
 
-3. Wybierz **Usuń** na górze tabeli **Relacje**.
+Strona Relacje zawiera listę wszystkich utworzonych relacji. Każdy wiersz reprezentuje relację, która zawiera również szczegółowe informacje o encji źródłowej, encji docelowej i kardynalności. 
 
-4. Potwierdź usunięcie.
+:::image type="content" source="media/relationships-list.png" alt-text="Lista relacji i opcji na pasku akcji strony Relacje.":::
+
+Ta strona oferuje zestaw opcji dla istniejących i nowych relacji: 
+- **Nowa rezerwacji:** [Utwórz niestandardową relację](#create-a-custom-relationship).
+- **Wizualizacja**: [poznaj wizualizację relacji](#explore-the-relationship-visualizer) w celu odszukania diagramu sieciowego istniejącego relacje i ich podobieństwa.
+- **Filtruj według**: wybierz typ relacje, które mają być wyświetlane na liście.
+- **Wyszukiwanie relacje**: Użyj wyszukiwania tekstowego według właściwości relacji.
+
+### <a name="explore-the-relationship-visualizer"></a>Poznawanie wizualizacji relacji
+
+Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności.
+
+Aby dostosować widok, możesz zmienić położenie pól, przeciągając je na kanwę.
+
+:::image type="content" source="media/relationship-visualizer.png" alt-text="Zrzut ekranu diagramu sieci wizualizatora relacji z połączeniami między powiązanymi podmiotami.":::
+
+Dostępne opcje: 
+- **Eksportuj jako plik obrazu**: zapisz bieżący widok jako plik obrazu.
+- **Zmień na układ poziomy/pionowy**: zmień wyrównanie encji i relacji.
+- **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
+
+## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami 
+
+Na stronie Relacje każda relacja jest reprezentowana przez wiersz. 
+
+Wybierz relację i wybierz jedną z następujących opcji: 
+ 
+- **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
+- **Usuń**: usuń niestandardowe relacje.
+- **Widok**: Wyświetlanie utworzonych w systemie i dziedziczonych relacji. 
 
 ## <a name="next-step"></a>Następny krok
 
-System i relacje niestandardowe służą do tworzenia segmentów na podstawie wielu źródeł danych, które nie są już izolowane. Aby uzyskać więcej informacji, zobacz [Segmenty](segments.md).
-
+System i relacje niestandardowe służą do [tworzenia segmentów](segments.md) na podstawie wielu źródeł danych, które nie są już izolowane.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

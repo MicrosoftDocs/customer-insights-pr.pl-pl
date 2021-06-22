@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych z usługi Customer Insights
 description: Zarządzaj eksportami do udostępniania danych.
-ms.date: 03/25/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c1078ed0ba259a6e9cde3c7ede3570890ae48e67
-ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
+ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
+ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2021
-ms.locfileid: "6016649"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6253053"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
@@ -26,22 +26,36 @@ Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów.
 
 Aby skonfigurować lub edytować eksport, potrzebne są dostępne dla użytkownika połączenia. Połączenia zależą od [roli użytkownika](permissions.md):
 - Administratorzy mają dostęp do wszystkich połączeń. Mogą oni także tworzyć nowe połączenia podczas konfigurowania eksportu.
-- Współautorzy mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Współautorzy mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Na liście eksportowania są wyświetlani współautorzy, niezależnie od tego, czy mogą edytować lub wyświetlać tylko eksport w kolumnie **Uprawnienia użytkownika**. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 - Wyświetlający mogą tylko wyświetlać istniejące eksporty, ale nie mogą ich tworzyć.
+
+### <a name="define-a-new-export"></a>Definiowanie nowego eksportu
 
 1. Przejdź do **Dane** > **Eksporty**.
 
-1. Wybierz **Dodaj eksport**, aby utworzyć nowe miejsce docelowe eksportu.
+1. Wybierz **Dodaj eksport**, aby utworzyć nowy eksport.
 
 1. W okienku **Konfigurowanie eksportu** wybierz połączenie, które ma być użyte. [Połączenia](connections.md) są zarządzane przez administratorów. 
 
 1. Podaj wymagane szczegóły i wybierz opcję **Zapisz**, aby utworzyć eksport.
 
+### <a name="define-a-new-export-based-on-an-existing-export"></a>Definiowanie nowego eksportu na podstawie istniejącego eksportu
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Na liście eksportów wybierz eksport, który chcesz zduplikować.
+
+1. Wybierz opcję **Utwórz duplikat** na pasku poleceń, aby otworzyć okienko **Konfigurowanie eksportu** ze szczegółami wybranego eksportu.
+
+1. Przejrzyj i dostosuj eksport i wybierz opcję **Zapisz**, aby utworzyć nowy eksport.
+
 ### <a name="edit-an-export"></a>Edytuj eksport
 
-1. Wybierz pionowy wielokropek dla lokalizacji docelowej eksportu, którą chcesz edytować.
+1. Przejdź do **Dane** > **Eksporty**.
 
-1. Z menu rozwijanego wybierz polecenie **Edytuj**.
+1. Na liście eksportów wybierz eksport, który chcesz edytować.
+
+1. Na pasku poleceń wybierz **Edytuj**.
 
 1. Zmień wartości, które chcesz zaktualizować i wybierz **Zapisz**.
 
@@ -53,24 +67,48 @@ Po utworzeniu miejsc docelowych eksportu są one wyświetlane w **Dane** > **Eks
 
 1. Użytkownicy bez uprawnień do edytowania mogą wybrać opcję **Wyświetl** zamiast opcji **Edytuj**, zobacz szczegółowe informacje o eksportowaniu.
 
-1. W tym okienku bocznym jest pokazana konfiguracja tego eksportu. Bez uprawnień do edycji nie można zmienić wartości. Wybierz opcję **Zamknij**, aby powrócić do strony eksportowania.
+1. W okienku bocznym jest pokazana konfiguracja eksportu. Bez uprawnień do edycji nie można zmienić wartości. Wybierz opcję **Zamknij**, aby powrócić do strony eksportowania.
 
-## <a name="run-exports-on-demand"></a>Uruchamianie eksportów na żądanie
+## <a name="schedule-and-run-exports"></a>Zaplanuj i uruchom eksport
 
-Po skonfigurowaniu eksportu będzie on uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab), o ile posiada działające połączenie.
+Każdy skonfigurowany eksport ma harmonogram odświeżania. Podczas odświeżania system szuka nowych lub zaktualizowanych danych do uwzględnienia w eksporcie. Domyślnie eksport jest uruchamiany w ramach każdego [zaplanowanego odświeżania systemu](system.md#schedule-tab). Można dostosować harmonogram odświeżania lub wyłączyć go, aby eksporty były wykonywane ręcznie.
 
-Aby wyeksportować dane bez oczekiwania na zaplanowane odświeżenie, przejdź do strony **Dane** > **Eksporty**. Dostępne są dwie opcje:
+Harmonogramy eksportu zależą od stanu środowiska. Jeśli istnieją aktualizacje [zależności](system.md#refresh-policies), które są w trakcie uruchamiania zaplanowanego eksportu, system najpierw uzupełni zależności, a następnie uruchom eksport. W ostatniej kolumnie **Odświeżony** eksport można zobaczyć, kiedy został ostatnio odświeżony eksport.
 
-- Aby uruchomić wszystkie eksporty, wybierz polecenie **Uruchom wszystkie** na pasku poleceń. 
-- Aby uruchomić pojedynczy eksport, wybierz wielokropek (...) dla elementu listy, a następnie wybierz opcję **Uruchom**.
+### <a name="schedule-exports"></a>Harmonogram wywozu
+
+Można zdefiniować niestandardowe harmonogramy odświeżania dla pojedynczego eksportu lub kilku eksportów jednocześnie. Aktualnie zdefiniowany harmonogram jest wymieniony w kolumnie **Harmonogram** na liście eksportu. Uprawnienia do zmiany harmonogramu są takie same jak w przypadku [edytowania i definiowania eksportów](export-destinations.md#set-up-a-new-export). 
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz eksport, który chcesz zaplanować.
+
+1. Na pasku poleceń wybierz **Zaplanuj**.
+
+1. W okienku **Zaplanuj eksport** ustaw **Zaplanuj uruchomienie** na wartość **Wł.**, aby automatycznie uruchamiać eksportowanie. Ustaw wartość **Wyłącz**, aby odświeżyć go ręcznie.
+
+1. W przypadku automatycznie odświeżanego eksportu wybierz wartość **Cykl** i określ jej szczegóły. Zdefiniowany czas ma zastosowanie do wszystkich przypadków nawrotu. To czas, w którym eksportowanie powinno rozpocząć odświeżanie.
+
+1. Zastosuj i aktywuj zmiany, wybierając przycisk **Zapisz**.
+
+Podczas edytowania harmonogramu dla kilku eksportów należy dokonać wyboru w obszarze **Zachowaj lub zastępowanie harmonogramów**:
+- **Zachowaj poszczególne harmonogramy**: Zachowaj poprzednio zdefiniowany harmonogram dla wybranych eksportów i tylko je wyłączaj lub włączaj.
+- **Zdefiniuj nowy harmonogram dla wszystkich wybranych eksportów**: zastąp istniejące harmonogramy wybranych eksportów.
+
+### <a name="run-exports-on-demand"></a>Uruchamianie eksportów na żądanie
+
+Aby wyeksportować dane bez oczekiwania na zaplanowane odświeżenie, przejdź do strony **Dane** > **Eksporty**.
+
+- Aby uruchomić wszystkie eksporty, wybierz polecenie **Uruchom wszystkie** na pasku poleceń. Ta akcja uruchomi tylko eksporty, które mają aktywny harmonogram.
+- Aby uruchomić pojedynczy eksport, wybierz go z listy i wybierz przycisk **Uruchom** na pasku poleceń. Tak można uruchomić eksport bez aktywnego harmonogramu. 
 
 ## <a name="remove-an-export"></a>Usuwanie eksportu
 
 1. Przejdź do **Dane** > **Eksporty**.
 
-1. Wybierz pionowy wielokropek dla eksportu, który chcesz usunąć.
+1. Wybierz eksport, który chcesz usunąć.
 
-1. Wybierz **Usuń** z menu rozwijanego.
+1. Na pasku poleceń wybierz **Usuń**.
 
 1. Potwierdź usuwanie, zaznaczając pole **Usuń** na ekranie potwierdzenia.
 

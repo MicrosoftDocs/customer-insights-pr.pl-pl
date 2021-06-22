@@ -1,7 +1,7 @@
 ---
 title: Utwórz środowisko i zarządzaj nim.
 description: Dowiedz się, jak zapisać się w usłudze i zarządzać środowiskami.
-ms.date: 03/26/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
+ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887999"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6259112"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -76,9 +76,9 @@ Aby utworzyć nowe środowisko:
    > Obsługujemy tylko konta magazynu Azure Data Lake Gen2 z tego samego regionu Azure, który został wybrany podczas tworzenia środowiska.
    > Obsługujemy tylko konta magazynów włączone przez Hierarchiczny Obszar Nazw (HNS) Azure Data Lake Gen2.
 
-   - W przypadku opcji Azure Data Lake Storage Gen2 można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwa **Kontenera** nie może zostać zmieniona i będzie mieć wartość „customerinsights”.
+   - W przypadku opcji Azure Data Lake Storage Gen2 można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwy **Kontenerów** nie można zmienić i będzie można zmienić na `customerinsights`.
    
-   - Jeśli chcesz używać [przewidywań](predictions.md), skonfiguruj udostępnianie danych w aplikacjach i rozwiązaniach na podstawie funkcji Microsoft Dataverse lub włącz pozyskiwanie danych z lokalnych źródeł danych, podaj adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych funkcji**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
+   - Jeśli chcesz używać [przewidywań](predictions.md), skonfiguruj udostępnianie danych za pomocą Microsoft Dataverse lub włącz pozyskiwanie danych z lokalnych źródeł danych, podaj adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych funkcji**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
 
      > [!NOTE]
      > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
@@ -87,7 +87,7 @@ Aby utworzyć nowe środowisko:
      > [!div class="mx-imgBorder"]
      > ![Opcje konfiguracji umożliwiające udostępnianie danych z Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
-   Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. Pliki danych i pliki model.json zostaną utworzone i dodane do odpowiednich podfolderów na podstawie uruchamianego procesu.
+   Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. Pliki danych oraz pliki model.json zostaną utworzone i dodane do folderów w oparciu o nazwę procesu.
 
    Jeśli utworzysz wiele środowisk Customer Insights i zdecydujesz się zapisać encje wyjściowe z tych środowisk na koncie magazynu, dla każdego środowiska zostaną utworzone osobne foldery z ci_<environmentid> w kontenerze.
 
@@ -146,7 +146,7 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
    > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
    > - [Przewidywanie brakujących wartości w encji](predictions.md) nie jest obecnie obsługiwane, jeśli włączone zostało udostępnianie danych zarządzanemu Data Lake Microsoft Dataverse.
 
-   Po włączeniu udostępniania danych funkcji Microsoft Dataverse zostanie wyzwolone pełne odświeżanie źródeł danych i innych procesów. Jeśli procesy są obecnie uruchomione i są w kolejce, nie będzie dostępna opcja włączenia udostępniania danych funkcji Microsoft Dataverse. Można poczekać na zakończenie tych procesów lub je anulować, aby włączyć udostępnianie danych. 
+   Po włączeniu udostępniania danych funkcji Microsoft Dataverse zostanie rozpoczęte pełne odświeżanie źródeł danych i innych procesów. Jeśli procesy są obecnie uruchomione, nie będzie dostępna opcja włączenia udostępniania danych funkcji Microsoft Dataverse. Poczekaj na zakończenie tych procesów lub je anulować, aby włączyć udostępnianie danych. 
    
    :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
    

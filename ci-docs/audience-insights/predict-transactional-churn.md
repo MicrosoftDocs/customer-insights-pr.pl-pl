@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906869"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095615"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)
 
@@ -144,7 +144,7 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
    - **Stan:** Stan przebiegu przewidywania.
         - **W kolejce:** Przewidywanie oczekuje na uruchomienie innych procesów.
         - **Odświeżanie:** przewidywanie jest obecnie uruchomione w celu wyprodukowania wyników, które będą przepływać na encję wyjściową.
-        - **Niepowodzenie:** uruchomienie przewidywanie zakończyło się niepowodzeniem. Aby uzyskać więcej informacji, [przejrzyj dzienniki](#troubleshoot-a-failed-prediction).
+        - **Niepowodzenie:** uruchomienie przewidywanie zakończyło się niepowodzeniem. Aby uzyskać więcej informacji, [przejrzyj dzienniki](manage-predictions.md#troubleshoot-a-failed-prediction).
         - **Zakończono pomyślnie:** przewidywanie zakończyło się sukcesem. Wybierz **Widok** pod pionowymi wielokropkami, aby przejrzeć przewidywanie
    - **Edytowano:** Data konfiguracji dla przewidywania została zmieniona.
    - **Ostatnie odświeżenie:** Data odświeżonych wyników przewidywania w encji wyjściowej.
@@ -168,35 +168,9 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
        
     1. **Czynniki mające największy wpływ:** Istnieje wiele czynników branych pod uwagę podczas tworzenia przewidywania. Każdy z czynników ma swoją wagę obliczoną dla zagregowanych prognoz tworzonych przez model. Tych czynników można użyć w celu sprawdzenia poprawności wyników przewidywania. Można też użyć tych informacji później, aby [utworzyć segmenty](segments.md), które mogą wpłynąć na ryzyko rezygnacji dla klientów.
 
-## <a name="troubleshoot-a-failed-prediction"></a>Rozwiązywanie problemów dotyczących nieudanych przewidywań
+## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-
-1. Zaznacz wielokropek pionowy obok etykiety przewidywań, dla których chcesz wyświetlić dzienniki błędów.
-
-1. Wybierz **Dzienniki**.
-
-1. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład błąd polegający na tym, że jest zbyt mało danych, aby dokładnie przeprowadzić przewidywanie, jest zwykle rozwiązywany dzięki załadowaniu dodatkowych danych do Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
-
-Przewidywania będą odświeżane automatycznie w oparciu o ten sam [harmonogram odświeżania danych](system.md#schedule-tab) skonfigurowany w ustawieniach. Można je również ręcznie odświeżyć.
-
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz odświeżyć.
-
-1. Wybierz **Odśwież**.
-
-## <a name="delete-a-prediction"></a>Usuń przewidywanie
-
-Usunięcie przewidywanie usuwa również jej encję wyjściową.
-
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz usunąć.
-
-1. Wybierz **Usuń**.
+Można optymalizować, rozwiązywać problemy, odświeżać lub usuwać przewidywania. Zapoznaj się z raportem użyteczności danych wejściowych, aby dowiedzieć się, jak przyspieszyć przewidywanie i zwiększyć jego wiarygodność. Aby uzyskać więcej informacji, zobacz [Zarządzaj przewidywaniami](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

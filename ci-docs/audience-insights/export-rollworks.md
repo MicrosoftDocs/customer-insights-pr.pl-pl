@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4979f0147dea2270f11342c1bb6b0693f3c24aea
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: dce5d51ca4587b4d7a0644cc701c1826854882b5
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760603"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124102"
 ---
-# <a name="export-segment-lists-to-rollworks-preview"></a>Eksportowanie list segmentów do usługi RollWorks (wersja zapoznawcza)
+# <a name="export-segments-to-rollworks-preview"></a>Eksportowanie segmentów do usługi RollWorks (wersja zapoznawcza)
 
 Wyeksportuj segmenty ujednoliconych profilów klientów do usługi RollWorks i użyj ich w celach reklamowych. 
 

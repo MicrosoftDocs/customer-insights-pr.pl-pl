@@ -1,7 +1,7 @@
 ---
 title: Nowe i nadchodzące funkcje
 description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 05/06/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: c66b37d6e4d6ed830238566fbc09934832892b34
-ms.sourcegitcommit: 3f9981df97fa7b1f432a446d3f11936ea4cfbde5
+ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
+ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "5988933"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6263264"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
@@ -26,6 +26,37 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="may-2021-updates"></a>Aktualizacje z maja 2021 r.
+
+Aktualizacje z maja 2021 r. zawierają kilka funkcji, uaktualnień wydajności i poprawek usterek.
+
+### <a name="data-ingestion"></a>Pozyskiwanie danych
+
+- **Wyświetlanie lub modyfikowanie metadanych lub definicji encji podczas dołączania danych z magazynu Azure Data Lake Storage** Można teraz przeglądać i edytować metadane lub definicje encji w widowiskach podczas dołączania danych z folderu Common Data Model w magazynie Azure Data Lake Storage. Możliwość ta zapewnia informacje zwrotne w czasie rzeczywistym, walidację modelu i sprawdzanie błędów. Pozwala on na płynną edycję zarówno pliku model.json jak i manifest.json.
+
+### <a name="extensibility"></a>Rozszerzalność
+
+- **Ulepszony eksport segmentów, niestandardowy harmonogram i duplikaty** Na liście można teraz [zobaczyć wszystkie eksporty dla określonego segmentu](export-destinations.md#view-exports-and-export-details). Ten nowy widok pomaga zarządzać sposobem, w jaki dany segment jest wykorzystywany oraz dostosowywać istniejące lub tworzyć nowe eksporty.    
+  Można zdefiniować [niestandardowe harmonogramy odświeżania](export-destinations.md#schedule-and-run-exports) dla pojedynczego eksportu lub kilku eksportów jednocześnie. Do tej pory wszystkie eksporty były uruchamiane przy każdym odświeżeniu systemu.    
+  Zamiast tworzyć nowy eksport od podstaw, możesz zacząć od istniejącego, aby zaoszczędzić trochę czasu.
+
+- **Eksportowanie segmentów do usługi Microsoft Advertising** Rozszerzyliśmy lokalizacje eksportu o usługę Microsoft Advertising. Za pomocą funkcji dopasowywania klientów utwórz odbiorców w usłudze Microsoft Advertising, korzystając z danych ujednoliconych profilów klientów, a następnie używaj tych odbiorców na potrzeby kampanii reklamowych. Aby uzyskać więcej informacji, zobacz temat [Eksportowanie segmentów do usługi Microsoft Advertising](export-microsoft-advertising.md).
+
+- **Eksport segmentów do LinkedIn Ads** Rozszerzyliśmy nasze miejsca docelowe eksportu o LinkedIn Ads i umożliwiamy Ci odblokowanie Targetowania kontaktowego oraz Targetowania firmowego poprzez LinkedIn poprzez eksport Twoich ujednoliconych danych profilu klienta. Aby uzyskać więcej informacji, zobacz temat [Eksportowanie segmentów do usługi LinkedIn Ads](export-linkedin-ads.md).
+
+
+- **Eksportowanie segmentów do usługi Omnisend** Rozszerzyliśmy lokalizacje eksportu o usługę Omnisend. Używając segmentów utworzonych w Wyniki analiz odbiorców, możesz generować kampanie, prowadzić marketing za pomocą poczty e-mail oraz korzystać z zalet wybranych grup klientów w usłudze Omnisend. Aby uzyskać więcej informacji, zobacz temat [Eksportowanie segmentów do usługi Omnisend](export-omnisend.md)
+
+### <a name="predictions"></a>Przewidywania
+
+- **Raport dotyczący użyteczności danych wejściowych** Raport użyteczności danych wejściowych zapewnia skonsolidowany widok błędów i ostrzeżeń, które mogą być generowane przez Twoje przewidywania out-of-box. Podaje również zalecenia, jak poprawić wydajność modelu.    
+  Raport jest dostępny po zakończeniu procesu szkolenia modelu. Jest on tworzony dla każdego modelu osobno, niezależnie od tego czy zakończył się sukcesem czy nie.
+  Obecnie ta funkcja jest dostępna tylko w modelu Rezygnacja z transakcji. Aby uzyskać więcej informacji, zobacz [Raport dotyczący użyteczności danych wejściowych](manage-predictions.md#input-data-usability-report).
+
+### <a name="relationships"></a>Relacje
+
+- **Widok wizualizacji relacji** Widok wizualizacji relacji umożliwia zobaczenie wszystkich istniejących relacji między obiektami i ich podobieństwa. Relacje są teraz zorganizowane w grupy: relacje utworzone przez użytkownika, systemowe oraz dziedziczone. Można także wyeksportować widok jako obraz. Aby uzyskać więcej informacji, zobacz [Zobacz relacje](relationships.md#view-relationships). 
 
 ## <a name="april-2021-updates"></a>Aktualizacja z kwietnia 2021 r.
 

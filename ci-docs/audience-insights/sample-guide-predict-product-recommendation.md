@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595286"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129912"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rekomendacji produktów (podgląd)
 
@@ -22,7 +22,7 @@ Przeprowadzimy Cię przez cały przykład przewidywania rekomendacji produktów,
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma produkująca wysokiej jakości ekspresy do kawy i ekspresy do kawy, które sprzedają za pośrednictwem swojej witryny internetowej Contoso Coffee. Ich celem jest zrozumienie, które produkty powinni polecać swoim stałym klientom. Wiedza na temat tego, co **klienci prawdopodobnie kupią**, może pomóc im w zapisaniu działań marketingowych dzięki skupieniu się na określonych elementach.
+Contoso to firma produkująca wysokiej jakości maszyny do barów, które sprzedaje za pośrednictwem witryny sieci Web firmy Contoso Coffee. Ich celem jest zrozumienie, które produkty powinni polecać swoim stałym klientom. Wiedza na temat tego, co **klienci prawdopodobnie kupią**, może pomóc im w zapisaniu działań marketingowych dzięki skupieniu się na określonych elementach.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -65,7 +65,7 @@ Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md
 
 1. W polu **Nazwa** w panelu w okienku bocznym zmień nazwę źródła danych z **Query** na **eCommercePurchases**.
 
-1. Zapisz źródło danych.
+1. **Zapisz** źródło danych.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Przetwarzaj dane klientów ze schematu lojalnościowego
@@ -83,11 +83,11 @@ Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md
 
 1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **loyCustomers**.
 
-1. Zapisz źródło danych.
+1. **Zapisz** źródło danych.
 
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
-Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utworzyć ujednolicony profil klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
+Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzenia ujednoliconego profilu klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
 
 ### <a name="map"></a>Mapuj
 
@@ -156,7 +156,7 @@ Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie sub
 
    - **Liczba produktów**: ustaw tę wartość na **5**. To ustawienie określa, ile produktów ma być zalecane dla klientów.
 
-   - **Sugestie dotyczące produktów, które zostały ostatnio zakupione?**: Wybierz opcję **Tak**, aby wskazać, że produkty mają zostać zakupione wcześniej przez klientów.
+   - **Oczekiwane powtórzenie zakupu**: wybierz opcję **Tak**, aby wskazać, że produkty mają być dołączane do rekomendacji, które zostały zakupione przez klientów.
 
    - **Okno wglądu w przeszłość**: wybierz co najmniej **365 dni**. To ustawienie definiuje, jak daleko model spojrzy wstecz na aktywność klienta, aby użyć go jako danych wejściowych do jego zaleceń.
    

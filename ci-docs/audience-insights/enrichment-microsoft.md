@@ -1,7 +1,7 @@
 ---
 title: Wzbogać profile klientów danymi firmy Microsoft
 description: Użyj własnościowych danych firmy Microsoft, aby wzbogacić dane klientów o funkcje marek i zainteresowań.
-ms.date: 04/09/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: be042dd139607849b795c903fa58da2edb9ff589
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
+ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064904"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6245720"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Wzbogać profile klientów dzięki koligacjom marki i zainteresowań (wersja zapoznawcza)
 
@@ -69,12 +69,10 @@ Porady pomagają w konfigurowaniu wzbogacania.
 
 ### <a name="define-your-brands-or-interests"></a>Zdefiniuj swoje marki i zainteresowania
 
-Wybierz jedną z następujących opcji:
+Wybierz do pięciu marek lub zainteresowań, używając jednej lub obu tych opcji:
 
-- **Branża**: System identyfikuje najlepsze marki lub zainteresowania istotne dla Twojej branży i wzmacnia nimi dane klientów.
-- **Wybierz własne**: Wybierz maksymalnie pięć elementów z listy marek lub zainteresowań, które są najbardziej interesujące dla Twojej organizacji.
-
-Aby dodać markę lub zainteresowanie, wprowadź ją w obszarze wprowadzania, aby uzyskać sugestie na podstawie pasujących terminów. Jeśli nie ukazujemy szukanej marki lub zainteresowania, wyślij nam opinię przy użyciu łącza **Sugeruj**.
+- **Branża**: wybierz branżę z listy rozwijanej, a następnie wybierz jedną z najlepszych opcji lub zainteresowań branży.
+- **Wybierz swoją**: Wprowadź markę lub interes, który jest istotny dla Twojej organizacji, a następnie wybierz spośród pasujących propozycji. Jeśli nie ukazujemy szukanej marki lub zainteresowania, wyślij nam opinię przy użyciu łącza **Sugeruj**.
 
 ### <a name="review-enrichment-preferences"></a>Przejrzyj preferencje wzbogacania
 

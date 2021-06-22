@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906915"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095661"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
 
@@ -147,30 +147,9 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
        > [!div class="mx-imgBorder"]
        > ![Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji](media/subscription-churn-influentialfactors.PNG "Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji")
 
-## <a name="fix-a-failed-prediction"></a>Poprawianie nieudanego przewidywania
+## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-1. Wybierz przewidywanie, dla którego chcesz wyświetlić dzienniki błędów i wybierz **Dzienniki**.
-   > [!div class="mx-imgBorder"]
-   > ![Widok paska menu wyników, w tym przyciski Zamknij, Edytuj model i Dzienniki](media/subscription-churn-logsbutton.PNG "Widok paska menu wyników, w tym przyciski Zamknij, Edytuj model i Dzienniki")
-1. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład błąd, w przypadku którego nie ma wystarczającej ilości danych do dokładnego przewidzenia, jest zwykle usuwany przez załadowanie dodatkowych danych.
-
-## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
-
-Przewidywania będą odświeżane automatycznie w oparciu o ten sam [harmonogram odświeżania danych](system.md#schedule-tab) skonfigurowany w ustawieniach.
-
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz odświeżyć.
-1. Wybierz **Odśwież**.
-
-## <a name="delete-a-prediction"></a>Usuń przewidywanie
-
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz usunąć.
-1. Wybierz **Usuń**.
-
-> [!NOTE]
-> Usunięcie przewidywania spowoduje usunięcie jego encji wyjściowej.
+Można optymalizować, rozwiązywać problemy, odświeżać lub usuwać przewidywania. Zapoznaj się z raportem użyteczności danych wejściowych, aby dowiedzieć się, jak przyspieszyć przewidywanie i zwiększyć jego wiarygodność. Aby uzyskać więcej informacji, zobacz [Zarządzaj przewidywaniami](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

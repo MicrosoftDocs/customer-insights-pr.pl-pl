@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: e2f92a64d01a443bcf3c1605621abe045b93ee5e
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954592"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095523"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Przewidywanie Wartości okresu istnienia klienta (wersja zapoznawcza)
 
@@ -149,7 +149,6 @@ Dane odzwierciedlające kluczowe interakcje z klientami (takie jak internet, obs
 
 1. Wybierz **Dalej**.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>Przegląd i uruchamianie konfiguracji modelu
 
 1. W kroku **Przegląd szczegółów modelu** sprawdź poprawność konfiguracji przewidywania. Aby powrócić do dowolnej części konfiguracji przewidywania wybierz **Edytuj** w obszarze ukazanej wartości. Możesz także wybrać krok konfiguracji ze wskaźnika postępu.
@@ -170,11 +169,10 @@ Dane odzwierciedlające kluczowe interakcje z klientami (takie jak internet, obs
 - **Stan**: Stan przebiegu przewidywania.
     - **W kolejce**: Prognoza czeka na zakończenie innych procesów.
     - **Odświeżanie**: przewidywanie jest obecnie uruchomione w celu utworzenia wyników, które będą przepływać na encję wyjściową.
-    - **Niepowodzenie**: uruchomienie przewidywanie zakończyło się niepowodzeniem. Aby uzyskać więcej informacji, [przejrzyj dzienniki](#troubleshoot-a-failed-prediction).
+    - **Niepowodzenie**: uruchomienie przewidywanie zakończyło się niepowodzeniem. Aby uzyskać więcej informacji, [przejrzyj dzienniki](manage-predictions.md#troubleshoot-a-failed-prediction).
     - **Zakończono pomyślnie**: przewidywanie zakończyło się sukcesem. Wybierz **Wyświetl** pod elipsami pionowymi, aby przewidzieć wyniki.
 - **Edytowano**: Data konfiguracji dla przewidywania została zmieniona.
 - **Ostatnie odświeżenie**: Data odświeżonych wyników przewidywania w encji wyjściowej.
-
 
 ### <a name="review-prediction-results"></a>Przeglądanie wyników przewidywania
 
@@ -216,28 +214,8 @@ Na stronie wyników wyszukiwania znajdują się trzy podstawowe sekcje danych.
 
 - **Czynniki mające największy wpływ**: Podczas tworzenia prognozy CLV na podstawie danych wejściowych dostarczonych do modelu AI brane są pod uwagę różne czynniki. Każdy z czynników ma swoje znaczenie obliczane dla zagregowanych przewidywań tworzonych przez model. Tych czynników można użyć w celu sprawdzenia poprawności wyników przewidywania. Czynniki te zapewniają również lepszy wgląd w najbardziej wpływowe czynniki, które przyczyniły się do przewidywania CLV u wszystkich klientów.
 
-## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
+## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
-Prognozy są automatycznie odświeżane według [harmonogramu odświeżania danych](system.md#schedule-tab) zgodnie z stawieniami skonfigurowanymi w ustawieniach. Można je również ręcznie odświeżyć.
-
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-2. Wybierz pionowy wielokropek obok przewidywania, które chcesz odświeżyć.
-3. Wybierz **Odśwież**.
-
-## <a name="delete-a-prediction"></a>Usuń przewidywanie
-
-Usunięcie przewidywanie usuwa również jej encję wyjściową.
-
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-2. Wybierz pionowy wielokropek obok przewidywania, które chcesz usunąć.
-3. Wybierz **Usuń**.
-
-## <a name="troubleshoot-a-failed-prediction"></a>Rozwiązywanie problemów dotyczących nieudanych przewidywań
-
-1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
-2. Zaznacz wielokropek pionowy obok etykiety przewidywań, dla których chcesz wyświetlić dzienniki błędów.
-3. Wybierz **Dzienniki**.
-4. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład błąd, w przypadku którego nie ma wystarczającej ilości danych do dokładnego przewidzenia, jest zwykle usuwany przez załadowanie większej ilości danych do statystyk odbiorców.
-
+Można optymalizować, rozwiązywać problemy, odświeżać lub usuwać przewidywania. Zapoznaj się z raportem użyteczności danych wejściowych, aby dowiedzieć się, jak przyspieszyć przewidywanie i zwiększyć jego wiarygodność. Aby uzyskać więcej informacji, zobacz [Zarządzaj przewidywaniami](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

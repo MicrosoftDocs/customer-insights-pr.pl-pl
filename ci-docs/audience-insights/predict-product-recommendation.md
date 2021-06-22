@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906777"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095569"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
 
@@ -205,33 +205,9 @@ Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego ty
        > [!div class="mx-imgBorder"]
        > ![Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych](media/product-recommendation-highconfidence.PNG "Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych")
 
-## <a name="fix-a-failed-prediction"></a>Poprawianie nieudanego przewidywania
+## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-
-1. Wybierz przewidywanie, dla którego chcesz wyświetlić dzienniki błędów i wybierz **Dzienniki**.
-
-1. Przejrzyj wszystkie błędy. Istnieje kilka typów błędów, które mogą wystąpić, i opisują one jaki warunek spowodował błąd. Na przykład komunikat o błędzie, informujący o niedostatecznej liczbie danych potrzebnych do dokładnego przewidywania jest zazwyczaj rozwiązany dzięki załadowaniu większej ilości danych do programu Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
-
-Prognozy są automatycznie odświeżane według [harmonogramu odświeżania danych](system.md#schedule-tab) zgodnie z stawieniami skonfigurowanymi w ustawieniach.
-
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz odświeżyć.
-
-1. Wybierz **Odśwież**.
-
-## <a name="delete-a-prediction"></a>Usuń przewidywanie
-
-Usunięcie prognozy spowoduje również usunięcie jej jednostki wyjściowej.
-
-1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
-
-1. Wybierz pionowy wielokropek obok przewidywania, które chcesz usunąć.
-
-1. Wybierz **Usuń**.
+Można optymalizować, rozwiązywać problemy, odświeżać lub usuwać przewidywania. Zapoznaj się z raportem użyteczności danych wejściowych, aby dowiedzieć się, jak przyspieszyć przewidywanie i zwiększyć jego wiarygodność. Aby uzyskać więcej informacji, zobacz [Zarządzaj przewidywaniami](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
