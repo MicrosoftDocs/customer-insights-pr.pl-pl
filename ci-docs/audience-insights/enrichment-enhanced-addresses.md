@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 07271d491460764f2c738e760e41c3492f2b6de9
-ms.sourcegitcommit: 27f9dd837304ef9fc00f055a6e900fbf6fce1429
+ms.openlocfilehash: e0ca731f944da9a7eaae7c2dc2d7568b6386089f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "5965591"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305445"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Wzbogacenie profili klientów za pomocą ulepszonych adresów
 
@@ -22,11 +22,11 @@ Adresy w Twoich danych mogą być nieustrukturyzowane, niekompletne lub nieprawi
 
 ## <a name="how-we-enhance-addresses"></a>Jak wzbogacamy adresy
 
-Nasz model jest procesem dwuetapowym, który wzbogaca adres. Najpierw analizuje adres, aby zidentyfikować jego składniki i umieszcza je w formacie ustrukturyzowanym. Następnie używamy sztucznej inteligencji do poprawienia, ukończenia i ustandardyzowania wartości adresu.
+Nasz model jest procesem dwuetapowym, który wzbogaca adres. Najpierw analizuje adres, aby zidentyfikować jego składniki i umieszcza je w formacie ustrukturyzowanym. Następnie użyjemy interfejsu AI do poprawiania, ukończenia i standardyzacji wartości adresu.
 
 ### <a name="example"></a>Przykład
 
-Informacje o adresie mogą mieć format niestandardowy i zawierać błędy pisowni. Model może rozwiązać te problemy i utworzyć spójne adresy w ujednoliconych profilach klientów.
+Informacje o adresie mogą mieć niestandardowy format i zawierać błędy pisowni. Model może rozwiązać te problemy i utworzyć spójne adresy w ujednoliconych profilach klientów.
 
 ```Input
 4567 w main stret californa missouri 54321 us
@@ -50,7 +50,7 @@ Funkcja ulepszania adresów współpracuje tylko z wartościami, które już ist
 2. Sprawdzić, czy któraś z wartości, na przykład kodów pocztowy lub nazwa ulicy, jest prawidłowa.
 3. Zmienić wartości, które nie są przez niego rozpoznawane.
 
-W modelu do poprawiania adresów są używane techniki oparte na uczeniu maszynowym. Stosujemy wysoki próg ufności, gdy model zmienia wartość wejściową, jak w przypadku każdego modelu opartego na ML, ale 100% dokładność nie jest gwarantowana.
+W modelu do poprawiania adresów są używane techniki oparte na uczeniu maszynowym. Chociaż stosujemy wysoki próg ufności, kiedy model zmienia wartość wejściową, jak w przypadku każdego modelu opartego na uczeniu maszynowym, 100-procentowa dokładność nie jest gwarantowana.
 
 ## <a name="supported-countries-or-regions"></a>Obsługiwane kraje lub regiony
 
@@ -76,7 +76,7 @@ Adresy muszą zawierać wartość kraju/regionu. Nie są przetwarzane adresy kra
 1. Wybierz sposób formatowania adresów w Twoich zestawach danych. Wybierz **Adres z pojedynczym atrybutem**, jeśli adresy w Twoich danych zawierają tylko jedno pole. Wybierz **Adres z wieloma atrybutami**, jeśli adresy w Twoich danych zawierają więcej niż jedno pole.
 
    > [!NOTE]
-   > Kraj/Region to pole obowiązkowe — zarówno w przypadku adresu o pojedynczym atrybucie, jak i adresu z wieloma atrybutami. Adresy nie zawierające prawidłowych lub obsługiwanych wartości kraju/regionu nie zostaną wzbogacone
+   > Kraj/region jest obowiązkowy zarówno w adresach jednoatrybutowych, jak i wieloatrybutowych. Adresy nie zawierające prawidłowych lub obsługiwanych wartości kraju/regionu nie zostaną wzbogacone.
 
 1.  Zamapuj pola adresu z ujednoliconej encji klienta.
 
@@ -98,6 +98,6 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.md), [miary](measures.md), a nawet [eksportuj dane](export-destinations.md), aby zapewnić klientom spersonalizowane rozwiązania.
+Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
-ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
+ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6253053"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305491"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
 Na stronie **Eksporty** widać wszystkie skonfigurowane eksporty. Eksporty udostępniają konkretne dane różnym aplikacjom. Mogą one zawierać profile klientów lub encje, schematy i szczegóły mapowania. Każdy eksport wymaga [połączenia, skonfigurowanego przez administratora, do zarządzania uwierzytelnianiem i dostępem](connections.md).
 
-Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów. Wszystkie role użytkowników mają dostęp do wyświetlania skonfigurowanych eksportów. Użycie pola wyszukiwania na pasku poleceń w celu znalezienia eksportów według ich nazwy, nazwy połączenia lub typu połączenia.
+Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów. Wszystkie role użytkowników mogą przeglądać skonfigurowane eksporty. Użyj pola wyszukiwania na pasku poleceń, aby znaleźć eksporty według ich nazwy, nazwy połączenia lub typu połączenia.
 
 ## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu
 
@@ -65,7 +65,7 @@ Po utworzeniu miejsc docelowych eksportu są one wyświetlane w **Dane** > **Eks
 
 1. Przejdź do **Dane** > **Eksporty**.
 
-1. Użytkownicy bez uprawnień do edytowania mogą wybrać opcję **Wyświetl** zamiast opcji **Edytuj**, zobacz szczegółowe informacje o eksportowaniu.
+1. Użytkownicy bez edytowania uprawnień wybrać opcję **Wyświetl** zamiast opcji **Edycja**, aby wyświetlić szczegóły eksportowania.
 
 1. W okienku bocznym jest pokazana konfiguracja eksportu. Bez uprawnień do edycji nie można zmienić wartości. Wybierz opcję **Zamknij**, aby powrócić do strony eksportowania.
 
@@ -73,7 +73,7 @@ Po utworzeniu miejsc docelowych eksportu są one wyświetlane w **Dane** > **Eks
 
 Każdy skonfigurowany eksport ma harmonogram odświeżania. Podczas odświeżania system szuka nowych lub zaktualizowanych danych do uwzględnienia w eksporcie. Domyślnie eksport jest uruchamiany w ramach każdego [zaplanowanego odświeżania systemu](system.md#schedule-tab). Można dostosować harmonogram odświeżania lub wyłączyć go, aby eksporty były wykonywane ręcznie.
 
-Harmonogramy eksportu zależą od stanu środowiska. Jeśli istnieją aktualizacje [zależności](system.md#refresh-policies), które są w trakcie uruchamiania zaplanowanego eksportu, system najpierw uzupełni zależności, a następnie uruchom eksport. W ostatniej kolumnie **Odświeżony** eksport można zobaczyć, kiedy został ostatnio odświeżony eksport.
+Harmonogramy eksportu zależą od stanu środowiska. Jeśli istnieją aktualizacje dotyczące [zależności](system.md#refresh-policies) po uruchomieniu zaplanowanego eksportu, system najpierw je uzupełni, a następnie uruchomi eksport. W ostatniej kolumnie **Odświeżony** eksport można zobaczyć, kiedy został ostatnio odświeżony eksport.
 
 ### <a name="schedule-exports"></a>Harmonogram wywozu
 

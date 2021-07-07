@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 0496d10c994cd077a778a6e745e3774e316765ae
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895926"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305215"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Wzbogacanie profili firm z Leadspace (wersja zapoznawcza)
 
@@ -57,13 +57,13 @@ Aby skonfigurować Leadspce muszą być spełnione następujące wymagania wstę
 
 Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania *lub* wybierz pozycję **Admin** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku Leadspace.
 
-1. Wybierz **Rozpocznij** 
+1. Wybierz **Rozpocznij**. 
 
 1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
 
 1. Podaj prawidłowy token rozwiązania firmy Leadspace.
 
-1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**
+1. Przejrzyj i wyraź zgodę na **Zasady ochrony prywatności danych**, wybierając przycisk **I agree (Wyrażam zgodę)**.
 
 1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
 
@@ -81,7 +81,7 @@ Aby uzyskać więcej informacji, zobacz [Interfejsy API Leadspace](https://suppo
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.md), [miary](measures.md), a nawet [eksportuj dane](export-destinations.md), aby zapewnić klientom spersonalizowane rozwiązania.
+Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

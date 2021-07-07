@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2cab702509596dd87c0c9b9769d1af8ba8387f9d
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085589"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305664"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
@@ -34,7 +34,7 @@ Aby zobaczyć atrybuty, które są zawarte w jednym z twoich automatycznie poł�
 
 W celu wygenerowania ujednoliconego profilu klienta można zmienić sposób przetwarzania przez system scalonych atrybutów. Wybierz opcję **Pokaż więcej** i wybierz, co chcesz zmienić.
 
-:::image type="content" source="media/manage-merged-attributes.png" alt-text="Opcje menu rozwijanego Pokaż więcej opcji służące do zarządzania atrybutami scalonymi.":::
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Opcje w menu rozwijanym Pokaż więcej, aby zarządzać połączonymi atrybutami.":::
 
 Aby uzyskać więcej informacji, zobacz następną sekcję.
 

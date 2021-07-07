@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595531"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306316"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z subskrypcji (wersja zapozawcza)
 
@@ -22,7 +22,7 @@ Przeprowadzimy Cię przez cały przewodnik przewidywania rezygnacji z subskrypcj
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma produkująca wysokiej jakości ekspresy do kawy i ekspresy do kawy, które sprzedają za pośrednictwem swojej witryny internetowej Contoso Coffee. Ostatnio rozpoczęły działalność subskrypcyjną, aby klienci regularnie otrzymywali kawę. Ich celem jest zrozumienie, którzy subskrybenci mogą anulować subskrypcję w ciągu najbliższych kilku miesięcy. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
+Contoso to firma produkująca wysokiej jakości maszyny do barów, które sprzedaje za pośrednictwem witryny sieci Web firmy Contoso Coffee. Ostatnio rozpoczęły działalność subskrypcyjną, aby klienci regularnie otrzymywali kawę. Ich celem jest zrozumienie, którzy subskrybenci mogą anulować subskrypcję w ciągu najbliższych kilku miesięcy. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -128,9 +128,9 @@ Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utwor
 
 1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
 
-1. Z listy rozwijanej **Głównej** wybierz pozycję **eCommerceContacts: eCommerce** jako źródło podstawowe i dołącz wszystkie rekordy.
+1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
 
-1. Z listy rozwijanej **Encja 2** wybierz **loyCustomers : LoyaltyScheme** i uwzględnij wszystkie rekordy.
+1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Ujednolicenie dopasowania eCommerce i lojalności.":::
 
@@ -138,16 +138,16 @@ Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utwor
 
 1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
 
-   * Dla elementu eCommerceContacts wybierz pozycję **FullName** z listy rozwijanej.
-   * Dla elementu loyCustomers wybierz pozycję **FullName** z listy rozwijanej.
+   * W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
+   * W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
    * Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
    * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 
 1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
 
    * Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   * W przypadku encji eCommerceContacts wybierz opcję **E-mail** w polu listy rozwijanej.
-   * W przypadku encji loyCustomers wybierz opcję **E-mail** w polu listy rozwijanej. 
+   * W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
+   * W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej. 
    * Pozostaw puste pole Normalizuj. 
    * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 

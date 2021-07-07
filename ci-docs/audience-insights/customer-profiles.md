@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896340"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304617"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
@@ -57,13 +57,13 @@ Wybierz dowolną tabliczkę z klientami, aby otworzyć **Stronę szczegółów k
 
 Szczegóły klienta zawierają:
 
--   **Kafelek profil klienta:** na tym kafelku są wyświetlane różne wartości z obiektu profilu ujdenoliconego klienta. Informacje te mogą obejmować adresy e-mail, nazwy, miasta itp. 
+-   **Kafelek profil klienta**: na tym kafelku są wyświetlane różne wartości z obiektu profilu ujdenoliconego klienta. Informacje te mogą obejmować adresy e-mail, nazwy, miasta itp. 
 
--   **Potencjalne zainteresowania, potencjalne marki:** Pokazuje, czy skonfigurowano wzbogacenie własne. Reprezentuje potencjalne zainteresowania i podobieństwa do marek, które może mieć klient o profilu podobnym do tego klienta. Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów o koligacje marki i zainteresowania](enrichment-microsoft.md).
+-   **Potencjalne zainteresowania, potencjalne marki**: Pokazuje, czy skonfigurowano wzbogacenie własne. Reprezentuje potencjalne zainteresowania i podobieństwa do marek, które może mieć klient o profilu podobnym do tego klienta. Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów o koligacje marki i zainteresowania](enrichment-microsoft.md).
 
--   **Miary:** Pokazuje, czy skonfigurowano jedną lub więcej miar określonego typu: miary atrybutów klienta. Obejmują one obliczone KPI wokół Twoich klientów na poziomie klienta indywidualnego. Aby uzyskać więcej informacji, zobacz [Definiuj miary i zarządzaj nimi](measures.md).
+-   **Miary**: Pokazuje, czy skonfigurowano jedną lub więcej miar określonego typu: miary atrybutów klienta. Obejmują one obliczone KPI wokół Twoich klientów na poziomie klienta indywidualnego. Aby uzyskać więcej informacji, zobacz [Definiuj miary i zarządzaj nimi](measures.md).
 
--   **Oś czasu działania:** pokazuje, czy są skonfigurowane działania. Widok osi czasu zawiera chronologicznie posortowane działania tego klienta, zaczynając od ostatniej aktywności. Aby uzyskać więcej informacji, zobacz [Działania klientów](activities.md).
+-   **Oś czasu działania**: pokazuje, czy są skonfigurowane działania. Widok osi czasu zawiera chronologicznie posortowane działania tego klienta, zaczynając od ostatniej aktywności. Aby uzyskać więcej informacji, zobacz [Działania klientów](activities.md).
 
 Wybierz **Powrót do klienta**, aby powrócić do strony wyszukiwania klienta.
 

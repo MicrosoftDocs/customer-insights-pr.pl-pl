@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085635"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306041"
 ---
 # <a name="match-entities"></a>Dopasowywanie encji
 
@@ -209,7 +209,7 @@ W celu znalezienia wartości optymalnej należy wypróbować różne progi dokł
 
 Większość parametrów dopasowania można ponownie skonfigurować i odpowiednio dostosować.
 
-:::image type="content" source="media/match-rules-management.png" alt-text="Zrzut ekranu przedstawiający menu rozwijane z opcjami reguł dopasowania.":::
+:::image type="content" source="media/match-rules-management.png" alt-text="Zrzut ekranu menu rozwijanego z opcjami reguł dopasowania.":::
 
 - **Zmień kolejność reguł** w przypadku zdefiniowania wielu reguł. Kolejność reguł dopasowania można zmienić, wybierając opcje **Przenieś w górę** i **Przenieś w dół** lub korzystając z metody przeciągania i upuszczania.
 
@@ -247,7 +247,7 @@ Możesz określić warunki, według których określone rekordy powinny zawsze p
 
 1. Wybierz **Dane** > **Źródła danych** i pobierz pliki szablonów jako nowe encje. Po pobraniu można za ich pomocą określić konfigurację dopasowania.
 
-1. Po przekazaniu plików, a kiedy encje są dostępne, należy ponownie wybrać opcję **Dopasowanie niestandardowe**. Zobaczysz opcje służące do określenia encji, które mają zostać uwzględnione. Wybierz wymagane elementy z menu rozwijanego.
+1. Po przekazaniu plików, a kiedy encje są dostępne, należy ponownie wybrać opcję **Dopasowanie niestandardowe**. Zobaczysz opcje służące do określenia encji, które mają zostać uwzględnione. Wybierz wymagane encje z menu rozwijanego.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Zrzut ekranu z oknem dialogowym umożliwiającym wybranie opcji zastępowania scenariusza dopasowania niestandardowego.":::
 

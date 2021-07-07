@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
-ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
+ms.openlocfilehash: a83caf2428f3dbd9791b9f746d00d370362a508c
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049263"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304815"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
-Miary pomagają lepiej poznać zachowania klientów i wydajność biznesową. Analizują one odpowiednie wartości z [ujednoliconych profilów](data-unification.md). Na przykład firma chce wyświetlić *łączny przychód na klienta* w celu zrozumienia historii zakupów poszczególnych klientów lub pomiaru *łącznej sprzedaży firmy* w celu zrozumienia przychodu na poziomie zagregowanym dla całej firmy.  
+Miary pomagają lepiej poznać zachowania klientów i wydajność biznesową. Analizują one odpowiednie wartości z [ujednoliconych profilów](data-unification.md). Na przykład, firma chce zobaczyć *całkowite wydatki na klienta*, aby zrozumieć historię zakupów poszczególnych klientów lub zmierzyć *całkowitą sprzedaż firmy*, aby zrozumieć zagregowany poziom przychodów w całej firmie.  
 
 Miary są tworzone za pomocą konstruktora miar, platformy zapytań o dane z różnymi operatorami i prostymi opcjami mapowania. Umożliwia filtrowanie danych, grupowanie wyników, wykrywanie [ścieżek relacji między encjami](relationships.md) i wyświetlanie podglądu danych wyjściowych.
 
@@ -64,17 +64,19 @@ W tej sekcji otworzymy nową miarę od podstaw. Możesz zbudować miarę z atryb
 
 1. Aby dodać filtry, wybierz **Filtr** w obszarze konfiguracji. 
   
-   1. W sekcji **Dodawanie atrybutu** w okienku **Filtry** wybierz atrybut, którego chcesz użyć do tworzenia filtrów.
+   1. W sekcji **Dodawanie atrybutu** okienka **Filtry** wybierz atrybut, którego chcesz użyć do tworzenia filtrów.
    1. Ustaw operatory filtru, aby zdefiniować filtr dla każdego wybranego atrybutu.
    1. Wybierz opcję **Zastosuj**, aby dodać do miary wybrany filtr.
 
 1. Aby dodać wymiary, wybierz **Wymiar** w obszarze konfiguracji. Wymiary będą wyświetlane jako kolumny w encji wyjściowej miary.
+ 
    1. Wybierz opcję **Edytuj rozmiary**, aby dodać atrybuty danych, według których chcesz grupować wartości miary. Na przykład miasto lub płeć. Domyślnie wymiar *CustomerID* jest wybrany do tworzenia *miar na poziomie klienta*. Do utworzenia *miar na poziomie firmy* można usunąć rozmiar domyślny.
    1. Wybierz opcję **Gotowe**, aby dodać do miary wybrany wymiar.
 
 1. Jeśli w danych są wartości, które trzeba zastąpić liczbą całkowitą, na przykład zastąp *null* wartością *0*, wybierz opcję **Reguły**. Skonfiguruj regułę i upewnij się, że jako zamienniki wybierane są tylko liczby całkowite.
 
 1. Jeśli istnieje wiele ścieżek między mapowaną encją danych a encją *Klient*, musisz wybrać jedną ze zidentyfikowanych [ścieżek relacji między encjami](relationships.md). Wyniki mogą się różnić w zależności od wybranej ścieżki. 
+   
    1. Wybierz **preferencje dotyczące danych** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary. Jeśli do encji *Klient* jest dostępna tylko jedna ścieżka, ta kontrolka nie będzie wyświetlana.
    1. Wybierz opcję **Gotowe**, aby zastosować wybór. 
 
@@ -123,7 +125,7 @@ W poniższej procedurze przedstawiono w zarysie kroki tworzenia nowej miary za p
 
 1. Wybierz pozycję **Gotowe**.
 
-1. W sekcji **Ustawianie okresu czasu** zdefiniuj horyzont czasowy danych, które mają być użyte. Określ, czy nowa miara ma obejmować całą zawartość zestawu danych, wybierając opcję **Cały czas**. Można też skupić się na **Określonym okresie czasu**.
+1. W sekcji **Ustawianie okresu czasu** zdefiniuj horyzont czasowy danych, które mają być użyte. Określ, czy nowa miara ma obejmować cały zestaw danych, wybierając opcję **Ogółem** lub jeśli chcesz skupić się na **określonym okresie**.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Zrzut ekranu przedstawiający sekcję okresu podczas konfigurowania miary z szablonu.":::
 
@@ -142,12 +144,12 @@ W poniższej procedurze przedstawiono w zarysie kroki tworzenia nowej miary za p
 
 Listę miar można znaleźć na stronie **Miary**.
 
-Znajdziesz informacje o rodzaju miary, twórcy, dacie utworzenia, stanie i stanie. Po wybraniu miary z listy można wyświetlić podgląd wyniku i pobrać plik .CSV.
+Znajdziesz informacje o rodzaju miary, twórcy, dacie utworzenia, stanie i stanie. Po wybraniu miary z listy można wyświetlić podgląd danych wyjściowych i pobrać plik CSV.
 
 Aby odświeżyć wszystkie miary w tym samym czasie, wybierz **Odśwież wszystko** bez wybierania określonej miary.
 
 > [!div class="mx-imgBorder"]
-> ![Akcje służące do zarządzania pojedynczymi miarami](media/measure-actions.png "Akcje służące do zarządzania pojedynczymi miarami")
+> ![Akcje służące do zarządzania pojedynczymi miarami.](media/measure-actions.png "Akcje służące do zarządzania pojedynczymi miarami.")
 
 Wybierz z listy miarę dla następujących opcji:
 
@@ -159,11 +161,11 @@ Wybierz z listy miarę dla następujących opcji:
 - **Aktywuj** lub **Dezaktywuj**. Nieaktywne miary nie będą odświeżane podczas [zaplanowanego odświeżania](system.md#schedule-tab).
 
 > [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegóły** dla jednego z zadań, zobaczysz dodatkowe informacje: czas przetwarzania, data ostatniego przetwarzania i wszystkie błędy i ostrzeżenia związane z zadaniem.
 
 ## <a name="next-step"></a>Następny krok
 
-Zastosowanie istniejących miar umożliwia utworzenie [segmentu klienta](segments.md).
+Istniejące miary można wykorzystać do utworzenia [segmentu klienta](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

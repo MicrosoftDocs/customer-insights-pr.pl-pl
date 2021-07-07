@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 904ce68336cba4b7a4d5a37692b72d091400559d
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259112"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304893"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -54,29 +54,32 @@ Aby utworzyć nowe środowisko:
 1. Wybierz **Nowy**.
 
    > [!div class="mx-imgBorder"]
-   > ![Ustawienia środowiska](media/environment-settings-dialog.png)
+   > ![Ustawienia środowiska.](media/environment-settings-dialog.png)
 
-1. W oknie dialogowym **Tworzenie nowego środowiska** wybierz **Nowe środowisko**.
+1. W oknie dialogowym **Tworzenie środowiska** wybierz **nowe środowisko**.
 
    Jeśli chcesz [kopiować dane z bieżącego środowiska](#considerations-for-copy-configuration-preview), wybierz **Kopiowanie z istniejącego środowiska**. Zobaczysz listę wszystkich dostępnych środowisk w organizacji, z których można kopiować dane.
 
 1. Podaj następujące szczegóły:
    - **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić.
-   - **Region**: Region, w którym usługa jest wdrażana i hostowana.
    - **Wpisz**: Wybierz, czy chcesz utworzyć środowisko produkcyjne, czy też piaskownicę.
-
+   - **Region**: Region, w którym usługa jest wdrażana i hostowana.
+   
 1. Opcjonalnie możesz wybrać **Ustawienia zaawansowane**:
 
-   - **Zapisz wszystkie dane do**: Określa miejsce, w którym mają być przechowywane dane wyjściowe uzyskane na podstawie danych dotyczących klienta. Dostępne będą dwie opcje: **Magazyn Customer Insights** (usługa Azure Data Lake zarządzana przez zespół Customer Insights) i **Azure Data Lake Storage Gen2** (Twój własny Azure Data Lake Storage). Domyślnie jest zaznaczona opcja magazyn Customer Insights.
+   - **Zapisz wszystkie dane do**: Określa miejsce, w którym mają być przechowywane dane wyjściowe uzyskane na podstawie danych dotyczących klienta. Dostępne są dwie opcje: **Magazyn rozwiązania Customer Insights** (magazyn Azure Data Lake, którym zarządza zespół rozwiązania Customer Insights) oraz **Azure Data Lake Storage** (własne Azure Data Lake Storage). Domyślnie jest zaznaczona opcja magazyn Customer Insights.
 
-   > [!NOTE]
-   > Zapisując dane w usłudze Azure Data Lake Storage, zgadzasz się na przenoszenie danych do lokalizacji geograficznej odpowiedniej dla danego konta usługi Azure Storage i przechowywanie ich w tej lokalizacji, która może być inna niż lokalizacja, w której są przechowywane dane w Dynamics 365 Customer Insights. [Więcej informacji znajduje się w centrum zaufania Microsoft.](https://www.microsoft.com/trust-center)
-   >
-   > Obecnie pozyskiwane encje są zawsze przechowywane w data lake obsługiwanym przez Customer Insights..
-   > Obsługujemy tylko konta magazynu Azure Data Lake Gen2 z tego samego regionu Azure, który został wybrany podczas tworzenia środowiska.
-   > Obsługujemy tylko konta magazynów włączone przez Hierarchiczny Obszar Nazw (HNS) Azure Data Lake Gen2.
+     > [!NOTE]
+     > Zapisując dane w usłudze Azure Data Lake Storage, zgadzasz się na przenoszenie danych do lokalizacji geograficznej odpowiedniej dla danego konta usługi Azure Storage i przechowywanie ich w tej lokalizacji, która może być inna niż lokalizacja, w której są przechowywane dane w Dynamics 365 Customer Insights. [Więcej informacji znajduje się w centrum zaufania Microsoft.](https://www.microsoft.com/trust-center)
+     >
+     > Obecnie pozyskiwane encje są zawsze przechowywane w data lake obsługiwanym przez Customer Insights. 
+     > 
+     > Obsługujemy tylko konta Azure Data Lake Storage z tego samego regionu Azure, który został wybrany podczas tworzenia środowiska. 
+     > 
+     > Obsługujemy tylko te konta Azure Data Lake Storage, w których włączono hierarchiczny obszar nazw.
 
-   - W przypadku opcji Azure Data Lake Storage Gen2 można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwy **Kontenerów** nie można zmienić i będzie można zmienić na `customerinsights`.
+
+   - W przypadku Azure Data Lake Storage można wybrać opcję opartą na zasobach i opartą na subskrypcji opcję uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwy **Kontenerów** nie można zmienić i będzie można zmienić na `customerinsights`.
    
    - Jeśli chcesz używać [przewidywań](predictions.md), skonfiguruj udostępnianie danych za pomocą Microsoft Dataverse lub włącz pozyskiwanie danych z lokalnych źródeł danych, podaj adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych funkcji**. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
 
@@ -85,7 +88,7 @@ Aby utworzyć nowe środowisko:
      > - [Przewidywanie brakujących wartości w encji](predictions.md) nie są obecnie obsługiwane, jeśli w przypadku włączenia udostępniania danych w Microsoft Dataverse zarządzane są Data Lake.
 
      > [!div class="mx-imgBorder"]
-     > ![Opcje konfiguracji umożliwiające udostępnianie danych z Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
+     > ![Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.](media/datasharing-with-DataverseMDL.png)
 
    Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. Pliki danych oraz pliki model.json zostaną utworzone i dodane do folderów w oparciu o nazwę procesu.
 
@@ -113,14 +116,14 @@ Poniższe ustawienia *nie są* kopiowane:
 
 - Profile klientów.
 - Poświadczenia źródła danych. Konieczne będzie podanie poświadczeń dla każdego źródła danych i ręczne odświeżenie źródeł danych.
-- Źródła danych z folderu Common Data Model i zarządzanego repozytorium danych typu lake Common Data Service. Konieczne będzie ręczne utworzenie tych źródeł danych pod tą samą nazwą jak w środowisku źródłowym.
+- Źródła danych z folderu Common Data Model oraz Data Lake zarządzanego przez Dataverse. Konieczne będzie ręczne utworzenie tych źródeł danych pod tą samą nazwą jak w środowisku źródłowym.
 
 Podczas kopiowania środowiska zostanie wyświetlony komunikat z potwierdzeniem, że utworzono nowe środowisko. Wybierz **Przejdź do źródeł danych**, aby wyświetlić listę źródeł danych.
 
 Wszystkie źródła danych ukażą stan **Wymagane poświadczenia**. Dokonaj edycji źródeł danych i wprowadź poświadczenia, aby je odświeżyć.
 
 > [!div class="mx-imgBorder"]
-> ![Skopiowane źródła danych](media/data-sources-copied.png)
+> ![Skopiowane źródła danych.](media/data-sources-copied.png)
 
 Po odświeżeniu źródeł danych przejdź do **Dane** > **Ujednolicanie**. W tym miejscu można znaleźć ustawienia z poziomu środowiska źródłowego. Edytuj je zgodnie z wymaganiami lub wybierz **Uruchom**, aby rozpocząć proces ujednolicania danych i utworzyć zunifikowaną encję klienta.
 
@@ -136,7 +139,7 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 
 3. W polu **Edytuj środowisko** można zaktualizować pole **Wyświetlana nazwa**, ale nie można zmienić **Regionu** lub **Typu**.
 
-4. Jeśli środowisko jest skonfigurowane do przechowywania danych w Azure Data Lake Storage Gen2, można zaktualizować **Klucz konta**. Nie można jednak zmienić **Nazwy konta** lub nazwy **Kontener**.
+4. Jeśli w środowisku skonfigurowano przechowywanie danych w Azure Data Lake Storage, można zaktualizować **Klucz konta**. Nie można jednak zmienić **Nazwy konta** lub nazwy **Kontener**.
 
 5. Opcjonalnie można zaktualizować połączenie oparte na kluczu konta do połączenia opartego na zasobach lub subskrypcji. Po uaktualnieniu nie można powrócić do klucza konta po aktualizacji. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Podczas aktualizowania połączenia nie można zmieniać informacji o **Kontenerze**.
 
@@ -158,19 +161,19 @@ Jako administrator jeśli chcesz usunąć wszystkie konfiguracje i przetworzone 
 
 1.  Wybierz selektor **Środowiska** w nagłówku aplikacji. 
 
-2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek **...**. 
+2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek (**...**). 
 
 3. Wybierz opcję **Reset**. 
 
 4.  Aby potwierdzić usunięcie, wprowadź nazwę środowiska i wybierz pozycję **Zresetuj**.
 
-## <a name="delete-an-existing-environment-available-only-for-admins"></a>Usuwanie istniejącego środowiska (dostępnego tylko dla administratorów)
+## <a name="delete-an-existing-environment"></a>Usuń istniejące środowisko
 
 Jako Administrator użytkownik możesz usunąć administrowane środowisko.
 
 1.  Wybierz selektor **Środowiska** w nagłówku aplikacji.
 
-2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek **...**. 
+2.  Wybierz środowisko, które chcesz zresetować, i wybierz wielokropek (**...**). 
 
 3. Wybierz opcję **Usuń**. 
 

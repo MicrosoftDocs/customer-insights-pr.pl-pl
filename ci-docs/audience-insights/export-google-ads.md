@@ -9,27 +9,26 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 73f3257a3ae6e8423f45410546535df5e3b400ce
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: c23c8b4e6758df08e04bf1e3ae0cba4dee06fe2b
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976331"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305353"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 
-Eksportuj segmenty ujednoliconych profili klientów na listę odbiorców Google Ads i używaj ich do reklamowania się w wyszukiwarce Google, Gmailu, YouTube i sieci reklamowej Google. 
+Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
 
 ## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
 
 -   Użytkownik ma [konto usługi Google Ads](https://ads.google.com/) i odpowiadające mu poświadczenia administratora.
--   Masz [zatwierdzony token dewelopera Google Ads](https://developers.google.com/google-ads/api/docs/first-call/dev-token) 
--   Spełniasz wymagania [zasad dopasowania do klienta](https://support.google.com/adspolicy/answer/6299717)
--   Spełniasz wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048) 
-
+-   Masz [zatwierdzony token dewelopera Google Ads](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
+-   Spełniasz wymagania [zasad dopasowania do klienta](https://support.google.com/adspolicy/answer/6299717).
+-   Spełniasz wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048).
 -   W Google Ads istnieją już odbiorcy i odpowiadające im identyfikatory. Aby uzyskać więcej informacji, zobacz temat [Odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   Posiadasz [skonfigurowane segmenty](segments.md)
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adresy e-mail, imię i nazwisko
+-   Posiadasz [skonfigurowane segmenty](segments.md).
+-   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adresy e-mail, imię i nazwisko.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
@@ -68,7 +67,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
 
 1. Wprowadź **[identyfikator odbiorcy usługi Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** i wybierz pozycję **Połącz**, aby zainicjować połączenie z usługą Google Ads.
 
@@ -78,7 +77,9 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). 
+
+Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

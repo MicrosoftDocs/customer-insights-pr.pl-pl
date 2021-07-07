@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866420"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304939"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
@@ -45,7 +45,7 @@ ms.locfileid: "5866420"
 
    - **Pierwszy**: pole obce w encji działania, które będzie używane do ustanowienia relacji z inną encją.
    - **Drugi**: odpowiadająca jej encja klienta źródłowego, z którą encja działania będzie w relacji. Można utworzyć relację tylko z encjami klienta źródłowego, które są używane w procesie ujednolicania danych.
-   - **Trzeci**: jeśli relacja między tą encją działania a wybraną encją klienta źródłowego już istnieje, nazwa relacji będzie w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym polu przez użytkownika.
+   - **Trzeci**: jeśli relacja między tą encją działania a wybraną encją klienta źródłowego już istnieje, nazwa relacji będzie w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym polu.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiowanie relacji encji.":::
 
@@ -53,23 +53,23 @@ ms.locfileid: "5866420"
 
 1. W kroku **Ujednolicanie działania** wybierz zdarzenie działania i czas rozpoczęcia działania. 
    - **Pola wymagane**
-      1. **Działanie zdarzenia**: pole, które jest zdarzeniem tego działania
-      2. **Sygnatura czasowa**: pole reprezentujące czas rozpoczęcia działania.
+      - **Działanie zdarzenia**: pole, które jest zdarzeniem tego działania.
+      - **Sygnatura czasowa**: pole reprezentujące czas rozpoczęcia działania.
 
    - **Pola opcjonalne**
-      1. **Dodatkowe szczegóły**: pole z odpowiednimi informacjami dla tego działania.
-      2. **Ikona**: ikona najlepiej reprezentująca ten typ działania.
-      3. **Adres internetowy**: pole zawierające adres URL z informacjami o tym działaniu. Na przykład system transakcyjny, który zawiera źródło tego działania. Ten adres URL może być dowolnym polem ze źródła danych lub może być skonstruowany jako nowe pole przy użyciu przekształcenia Power Query. Dane adresu URL będą przechowywane w encji *Ujednolicone działanie*, która może być konsumowana w dół przy użyciu [interfejsów API](apis.md).
+      - **Dodatkowe szczegóły**: pole z odpowiednimi informacjami dla tego działania.
+      - **Ikona**: ikona najlepiej reprezentująca ten typ działania.
+      - **Adres internetowy**: pole zawierające adres URL z informacjami o tym działaniu. Na przykład system transakcyjny, który zawiera źródło tego działania. Ten adres URL może być dowolnym polem ze źródła danych lub może być skonstruowany jako nowe pole przy użyciu przekształcenia Power Query. Dane adresu URL będą przechowywane w encji *Ujednolicone działanie*, która może być konsumowana w dół przy użyciu [interfejsów API](apis.md).
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Określ dane działań klienta w encji Ujednolicone działanie.":::
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. Aby zapisać teraz działanie z typem działania ustawionym jako **Inne**, można wybrać opcję **Zakończ i przejrzyj**. 
 
-1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działania *Subskrypcja* & *SalesOrderLine* można etapami zamapować po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
+1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działań *Subskrypcja* i *SalesOrderLine* mogą być mapowane semantycznie po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
 
-1. W kroku **Przegląd** sprawdź wybór. Należy wrócić do dowolnego z poprzednich kroków i w razie potrzeby zaktualizować te informacje.
+1. W kroku **Przegląd** sprawdź wybór. Wróć do każdego z poprzednich kroków i w razie potrzeby zaktualizuj informacje.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Przeglądanie określonych pól dla działania.":::
    
@@ -89,7 +89,7 @@ Po wybraniu działania są dostępne następujące akcje.
 
 - **Edycja**: powoduje otwarcie konfiguratowa działania w kroku przeglądu. W tym kroku można zmienić dowolną lub całą bieżącą konfigurację. Po zmianie konfiguracji wybierz opcję **Zapisz działanie**, a następnie wybierz opcję **Uruchom**, aby przetworzyć zmiany.
 
-- **Zmień nazwę**: otwiera okno dialogowe, w którym należy wprowadzić inną nazwę dla wybranego działania. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
+- **Zmień nazwę**: Otwiera okno dialogowe, w którym można wprowadzić inną nazwę wybranego działania. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
 - **Usuń**: otwiera okno dialogowe w celu potwierdzenia usunięcia wybranego działania. Możesz także usunąć wiele działań jednocześnie, zaznaczając działania i wybierając ikonę usuwania. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 

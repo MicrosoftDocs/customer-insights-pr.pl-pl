@@ -9,20 +9,20 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 251bc26246cee16952e8e4cb08e2ed7aa4d18488
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595439"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306133"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji (wersja zapozawcza)
 
-Ten przewodnik przeprowadzi Cię przez kompleksowy przykład prognozowania rezygnacji z transakcji w usłudze Customer Insights przy użyciu danych podanych poniżej. Wszystkie dane użyte w tym przewodniku nie są prawdziwymi danymi klientów i są częścią zestawu danych Contoso znajdującego się w środowisku *Wersja demonstracyjna* w ramach subskrypcji Customer Insights.
+Ten przewodnik przeprowadzi Cię przez kompleksowy przykład prognozowania rezygnacji z transakcji w usłudze Customer Insights przy użyciu danych podanych poniżej. Żadne dane użyte w tym przewodniku nie są prawdziwymi danymi klientów i są częścią zbioru danych Contoso znajdującego się w środowisku *Demo* w ramach subskrypcji Customer Insights.
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma produkująca wysokiej jakości ekspresy do kawy i ekspresy do kawy, które sprzedają za pośrednictwem swojej witryny internetowej Contoso Coffee. Ich celem jest wiedzieć, którzy klienci, którzy zazwyczaj kupują ich produkty regularnie, przestaną być aktywnymi klientami w ciągu najbliższych 60 dni. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
+Contoso to firma produkująca wysokiej jakości maszyny do barów, które sprzedaje za pośrednictwem witryny sieci Web firmy Contoso Coffee. Ich celem jest wiedzieć, którzy klienci, którzy zazwyczaj kupują ich produkty regularnie, przestaną być aktywnymi klientami w ciągu najbliższych 60 dni. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -109,9 +109,9 @@ Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utwor
 
 1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
 
-1. Z listy rozwijanej **Głównej** wybierz pozycję **eCommerceContacts: eCommerce** jako źródło podstawowe i dołącz wszystkie rekordy.
+1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
 
-1. Z listy rozwijanej **Encja 2** wybierz **loyCustomers : LoyaltyScheme** i uwzględnij wszystkie rekordy.
+1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Ujednolicenie dopasowania eCommerce i lojalności.":::
 
@@ -119,16 +119,16 @@ Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utwor
 
 1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
 
-   * Dla elementu eCommerceContacts wybierz pozycję **FullName** z listy rozwijanej.
-   * Dla elementu loyCustomers wybierz pozycję **FullName** z listy rozwijanej.
+   * W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
+   * W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
    * Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
    * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 
 1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
 
    * Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   * W przypadku encji eCommerceContacts wybierz opcję **E-mail** w polu listy rozwijanej.
-   * W przypadku encji loyCustomers wybierz opcję **E-mail** w polu listy rozwijanej. 
+   * W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
+   * W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej. 
    * Pozostaw puste pole Normalizuj. 
    * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 

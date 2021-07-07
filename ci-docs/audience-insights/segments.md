@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
-ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
+ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2021
-ms.locfileid: "6111400"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306270"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -68,7 +68,7 @@ Segment można wyeksportować ze strony segmentów lub ze [strony eksportowania]
 
 1. Wybierz **Pokaż więcej [...]** dla segmentu, który chcesz wyeksportować.
 
-1. Wybierz **Zarządzaj eksportami** z listy rozwijanej akacji.
+1. Z listy rozwijanej akcji wybierz opcję **Zarządzanie eksportami**.
 
 1. Zostanie otwarta strona **Eksportty (wersja zapoznawcza) dla segmentu**. Możesz zobaczyć wszystkie skonfigurowane eksporty pogrupowane według eksportów, które zawierają bieżący segment lub go nie zawierają.
 

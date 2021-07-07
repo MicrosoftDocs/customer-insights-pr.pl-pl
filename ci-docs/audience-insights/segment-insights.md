@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 90ebcaab896c628b04e751ad9857e924749895e7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595347"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306087"
 ---
 # <a name="segment-insights-preview"></a>Informacje o segmentach (wersja zapoznawcza)
 
@@ -50,7 +50,7 @@ Aby wyświetlić wyniki analizy, należy wybrać szczegółowe informacje:
 
 - Liczba członków nakładających się na segmenty wybrane do analizy.
 - Liczba członków zawartych w jednym z segmentów, ale nie w pozostałych segmentach.
-- Jeśli podczas konfigurowania analizy nakładania się wybrano pola, pozostaną one na odpowiednich kartach. Można użyć listy rozwijanej filtrów w celu wybrania dowolnego poziomu atrybutów, a w tabeli znajdującej się u dołu zostaną wyświetlone odpowiednie dane.
+- Jeśli podczas konfigurowania analizy nakładania się wybrano pola, pozostaną one na odpowiednich kartach. Możesz użyć rozwijanego filtra, aby wybrać dowolny interesujący Cię poziom atrybutu, a tabela na dole wyświetli odpowiednie dane.
 
 ## <a name="segment-differentiators"></a>Wyróżniki segmentów
 

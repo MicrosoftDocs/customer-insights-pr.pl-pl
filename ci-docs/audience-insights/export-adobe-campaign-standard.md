@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760294"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305399"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Korzystanie z segmentów aplikacji Customer Insights w rozwiązaniu Adobe Campaign Standard (wersja zapoznawcza)
 
-Jako użytkownik szczegółowych informacji o odbiorcach dla aplikacji Dynamics 365 Customer Insights być może masz już segmenty utworzone po to, aby kampanie marketingowe były efektywniejsze dzięki możliwości łatwiejszego ukierunkowania ich na odpowiednich odbiorców. Aby korzystać z segmentu szczegółowych o odbiorcach w rozwiązaniu Adobe Experience Platform i aplikacjach, takich jak Adobe Campaign Standard, należy wykonać kilka kroków opisanych w tym artykule.
+Jako użytkownik funkcji analizy odbiorców w Dynamics 365 Customer Insights, być może tworzyłeś segmenty, aby zwiększyć skuteczność kampanii marketingowych poprzez kierowanie ich do odpowiednich odbiorców. Aby korzystać z segmentu szczegółowych o odbiorcach w rozwiązaniu Adobe Experience Platform i aplikacjach, takich jak Adobe Campaign Standard, należy wykonać kilka kroków opisanych w tym artykule.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Diagram procesu przedstawiający kroki opisane w tym artykule.":::
 
@@ -54,7 +54,7 @@ Po zidentyfikowaniu odbiorców docelowych można skonfigurować eksport ze szcze
 
 1. W analizie odbiorcy przejdź do pozycji **Admin** > **Połączenia**.
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Adobe Campaign**, aby skonfigurować połączenie, lub wybierz opcję **Konfiguruj** w kafelku **Adobe Campaign**
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Adobe Campaign**, aby skonfigurować połączenie, lub wybierz opcję **Konfiguruj** w kafelku **Adobe Campaign**.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Kafelek konfiguracji dla rozwiązania Adobe Campaign Standard.":::
 
@@ -80,7 +80,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wybierz **Dodaj eksport**, aby utworzyć nowy eksport.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Adobe Campaign. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Adobe Campaign. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
 
 1. Wybierz segment, który chcesz wyeksportować. W tym przykładzie jest to segment **ChurnProneCustomers**.
 
@@ -118,7 +118,7 @@ W przypadku eksportowania segmentu ze szczegółowych informacji o odbiorcach se
 
 Aby korzystać z segmentu w rozwiązaniu Adobe Campaign Standard, musimy rozszerzyć schemat profilu w rozwiązaniu Adobe Campaign Standard o dwa dodatkowe pola. Dowiedz się, jak [rozszerzyć zasób profilu](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) o nowe pola w rozwiązaniu Adobe Campaign Standard.
 
-W naszym przykładzie te pola to *Nazwa segmentu i Data segmentu (opcjonalnie).*
+W naszym przykładzie te pola to *Nazwa segmentu i Data segmentu (opcjonalnie)*.
 
 Użyjemy tych pól do zidentyfikowania w rozwiązaniu Adobe Campaign Standard profilów, na które chcemy ukierunkować tę kampanię.
 
@@ -128,7 +128,7 @@ Jeśli w rozwiązaniu Adobe Campaign Standard nie ma innych rekordów niż impor
 
 Gdy wszystko jest już gotowe, należy zaimportować przygotowane dane odbiorców ze szczegółowych informacji o odbiorcach do rozwiązania Adobe Campaign Standard w celu utworzenia profilów. Dowiedz się, [jak importować profile w rozwiązaniu Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) przy użyciu przepływu pracy.
 
-Przepływ pracy importu na poniższej ilustracji został skonfigurowany tak, aby był uruchamiamy co 8 godzin i szukał wyeksportowanych segmentów szczegółowych informacji o odbiorcach (plik CSV w usłudze Azure Blob Storage). Przepływ pracy wyodrębnia zawartość pliku CSV w kolumnach w określonej kolejności. Ten przepływ pracy został zbudowany tak, aby wykonywać podstawową obsługę błędów i zapewniać, że każdy rekord ma adres e-mail przed rozpoczęciem przetwarzania danych w rozwiązaniu Adobe Campaign Standard. Przepływ pracy wyodrębnia też nazwę segmentu z nazwy pliku przed przejściem do trybu upsert dla danych profilu usługi ACS.
+Przepływ importu na poniższym obrazku został skonfigurowany tak, aby uruchamiał się co osiem godzin i szukał wyeksportowanych segmentów analizy odbiorców (plik .csv w Azure Blob Storage). Przepływ pracy wyodrębnia zawartość pliku CSV w kolumnach w określonej kolejności. Ten przepływ pracy został zbudowany tak, aby wykonywać podstawową obsługę błędów i zapewniać, że każdy rekord ma adres e-mail przed rozpoczęciem przetwarzania danych w rozwiązaniu Adobe Campaign Standard. Przepływ pracy wyodrębnia również nazwę segmentu z nazwy pliku przed wstawieniem jej do danych profilu Adobe Campaign Standard.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Zrzut ekranu przedstawiający przepływ pracy importu w interfejsie użytkownika rozwiązania Adobe Campaign Standard.":::
 

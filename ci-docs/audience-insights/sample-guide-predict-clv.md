@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129958"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306362"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta (CLV)
 
@@ -123,9 +123,9 @@ Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzeni
 
 1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
 
-1. Z listy rozwijanej **Głównej** wybierz pozycję **eCommerceContacts: eCommerce** jako źródło podstawowe i dołącz wszystkie rekordy.
+1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
 
-1. Z listy rozwijanej **Encja 2** wybierz **loyCustomers : LoyaltyScheme** i uwzględnij wszystkie rekordy.
+1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
 
    ![Ujednolicenie dopasowania eCommerce i lojalności.](media/unify-match-order.png)
 
@@ -133,16 +133,16 @@ Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzeni
 
 1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
 
-   - Dla elementu eCommerceContacts wybierz pozycję **FullName** z listy rozwijanej.
-   - Dla elementu loyCustomers wybierz pozycję **FullName** z listy rozwijanej.
-   - Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
+   - W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
+   - W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
+   - Wybierz rozwijaną opcję **Normalizowanie** i wybierz opcję **Typ (Telefon, Nazwa, Adres, ...)**.
    - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 
 1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
 
    - Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   - W przypadku encji eCommerceContacts wybierz opcję **E-mail** w polu listy rozwijanej.
-   - W przypadku encji loyCustomers wybierz opcję **E-mail** w polu listy rozwijanej.
+   - W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
+   - W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej.
    - Pozostaw puste pole Normalizuj.
    - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
 

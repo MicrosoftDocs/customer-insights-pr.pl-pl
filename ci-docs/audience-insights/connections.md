@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896110"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304985"
 ---
 # <a name="connections-preview-overview"></a>Omówienie (podgląd) połączeń
 
@@ -42,7 +42,7 @@ Aby dodawać połączenia, trzeba mieć [uprawnienia administratora](permissions
 
 1. Przejdź do karty **Połączenia**.
 
-1. Wybrać **Dodaj połączenie**, aby utworzyć nowe połączenie. Z menu rozwijanego wybierz typ połączenia, które chcesz utworzyć.
+1. Wybrać **Dodaj połączenie**, aby utworzyć nowe połączenie. Wybierz z menu rozwijanego typ połączenia, które chcesz utworzyć.
 
 1. Podaj wymagane szczegóły w okienku **Konfigurowanie połączenia**. 
    1. **Wyświetlana nazwa** i typ połączenia opisują połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe tego połączenia.
@@ -74,7 +74,9 @@ Podczas konfigurowania lub edytowania połączenia eksportowania należy wybrać
 
 ## <a name="remove-a-connection"></a>Usuwanie połączenia
 
-Jeśli usuwane połączenie jest używane przez wzbogacanie lub eksportowanie, należy je najpierw odłączyć lub usunąć. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu. Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie aktywować, dodając do nich inne połączenie na stronie [Wzbogacenia](enrichment-hub.md) lub [Eksporty](export-destinations.md).
+Jeśli usuwane połączenie jest używane przez wzbogacanie lub eksportowanie, należy je najpierw odłączyć lub usunąć. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu. 
+
+Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie aktywować, dodając do nich inne połączenie na stronie [Wzbogacenia](enrichment-hub.md) lub [Eksporty](export-destinations.md).
 
 1. Przejdź do **Admin** > **Połączenia (wersja zapoznawcza)**.
 

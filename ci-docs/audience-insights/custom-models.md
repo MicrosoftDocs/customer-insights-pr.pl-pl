@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700681"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305657"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -72,7 +72,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
       > [!div class="mx-imgBorder"]
       > ![Panel parametrów wyjściowych modelu](media/intelligence-screen3-outputparameters.png "Panel parametrów wyjściowych modelu")
 
-1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, która identyfikuje klientów, i wybierz **Zapisz**.
+1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, który identyfikuje klientów i wybierz **Zapisz**.
 
    > [!div class="mx-imgBorder"]
    > ![Powiązanie wyników z okienkiem Dane klient](media/intelligence-screen4-relatetocustomer.png "Powiązanie wyników z okienkiem Dane klient")
@@ -100,7 +100,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
       1. Wybierz **Nazwa parametru magazynu danych wyjściowych** dla planowanego strumienia testowego.
       1. Wybierz **Nazwa parametru ścieżki danych wyjściowych** dla planowanego strumienia testowego.
 
-1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, która identyfikuje klientów, i wybierz **Zapisz**.
+1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, który identyfikuje klientów i wybierz **Zapisz**.
    Wybierz atrybut z danych wyjściowych wnioskowania o wartościach podobnych do kolumny Identyfikator klienta encji Klient. Jeśli nie masz takiej kolumny w swoim zbiorze danych, wybierz atrybut, który jednoznacznie identyfikuje wiersz.
 
 ## <a name="run-a-workflow"></a>Uruchamianie przepływu pracy

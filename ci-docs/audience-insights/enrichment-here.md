@@ -1,5 +1,5 @@
 ---
-title: Wzbogacanie danych za pomocą HERE Technologies innych firm
+title: Wzbogacanie za pomocą strony trzeciej – HERE Technologies
 description: Ogólne informacje o wzbogacaniu strony trzeciej HERE Technologies.
 ms.date: 04/09/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896064"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305307"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Wzbogacenie profili klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
@@ -26,7 +26,7 @@ Aby skonfigurować wzbogacenia HERE Technologies, muszą zostać spełnione nast
 
 - Masz aktywną subskrypcję HERE Technologies. Aby uzyskać subskrypcję, możesz zasubskrybować [tutaj](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) lub [skontaktować się bezpośrednio z HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you). [Dowiedz się więcej o wzbogacaniu lokalizacji HERE Technologies.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Dostępne jest [połączenie](connections.md) HERE *lub* użytkownik ma uprawnienia [administratora](permissions.md#administrator) i klucz interfejsu API technologii HERE Technologies.
+- [Połączenie](connections.md) HERE jest dostępne *lub* jeśli masz uprawnienia[administratora](permissions.md#administrator) i klucz interfejsu API HERE.
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
@@ -66,13 +66,13 @@ Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz 
 
 1. Podaj prawidłowy klucz interfejsu API technologii HERE Technologies.
 
-1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**
+1. Przejrzyj i wyraź zgodę na **Zasady ochrony prywatności danych**, wybierając przycisk **I agree (Wyrażam zgodę)**.
 
 1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
 
 1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![Strona konfiguracji połączenia HERE Technologies](media/enrichment-HERE-connection.png "Strona konfiguracji połączenia HERE Technologies")
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
@@ -85,7 +85,7 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.md), [miary](measures.md), a nawet [eksportuj dane](export-destinations.md), aby zapewnić klientom spersonalizowane rozwiązania.
+Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954500"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305261"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -22,7 +22,8 @@ Aby wzbogacić dane klientów, należy użyć danych pochodzących ze źródeł,
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Strona centrum wzbogacania":::
 
-W statystykach odbiorców przejdź do **Dane** > **Wzbogacenie**, aby pracować z opcjami wzbogacania.    
+W statystykach odbiorców przejdź do **Dane** > **Wzbogacenie**, aby pracować z opcjami wzbogacania.  
+
 Aby tworzyć lub edytować wzbogacenia, trzeba mieć uprawnienia Współautor lub Administrator. Aby uzyskać więcej informacji, zobacz [Uprawnienia](permissions.md).
 
 Na karcie **Odkryj** znajdziesz następujące wzbogacenia:
@@ -31,7 +32,7 @@ Na karcie **Odkryj** znajdziesz następujące wzbogacenia:
 - [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
 - [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
 - [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
-- [Dane demograficzne](enrichment-experian.md) zapewniane przez Experian
+- [Dane demograficzne](enrichment-experian.md) dostarczane przez usługę Experian
 - [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies
 - [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol)
 
@@ -39,7 +40,7 @@ Na karcie **Moje wzbogacenia** użytkownik może zobaczyć skonfigurowane przez 
 
 ## <a name="manage-existing-enrichments"></a>Zarządzanie istniejącymi wzbogaceniami
 
-Przejdź do **Moje wzbogacenia**, aby wyświetlić wszystkie skonfigurowane wzbogacenia. Każde wzbogacenie jest reprezentowane jako wiersz zawierający dodatkowe informacje na temat wzbogacenia.
+Przejdź do karty **Moje wzbogacenia**, aby zobaczyć wszystkie skonfigurowane wzbogacania. Każde wzbogacenie jest reprezentowane jako wiersz zawierający dodatkowe informacje na temat wzbogacenia.
 
 Wybierz wzbogacenie, aby wyświetlić dostępne opcje. Aby wyświetlić opcje, wybierz wielokropek (...) na elemencie listy.
 
@@ -59,6 +60,6 @@ Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Wiele wzbogaceń tego samego typu
 
-Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogacenie danych tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na stronie **Wzbogacanie**.
+Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogać dane tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na stronie **Wzbogacanie**.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

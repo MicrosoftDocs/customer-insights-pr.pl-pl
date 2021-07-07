@@ -9,22 +9,22 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896294"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304663"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
 
-Import niestandardowy za pomocą bezpiecznego protokołu transferu plików (SFTP) umożliwia zaimportowanie danych, które nie muszą przejść przez proces ich ujednolicenia. To elastyczny, bezpieczny i łatwy sposób podawania danych. Niestandardowy import SFTP może być używany w połączeniu z [eksportem SFTP](export-sftp.md), który umożliwia wyeksportowanie danych profilu klienta potrzebnych do wzbogacenia. Dane mogą być następnie przetwarzane, wzbogacane, a niestandardowy import SFTP może służyć do przywrócenia wzbogaconych danych do funkcji analiz odbiorców w Dynamics 365 Customer Insights.
+Niestandardowy import protokołu Secure File Transfer Protocol (SFTP) umożliwia importowanie danych, które nie muszą przechodzić przez proces ujednolicania danych. To elastyczny, bezpieczny i łatwy sposób podawania danych. Niestandardowy import SFTP może być używany w połączeniu z [eksportem SFTP](export-sftp.md), który umożliwia wyeksportowanie danych profilu klienta potrzebnych do wzbogacenia. Dane mogą być następnie przetwarzane i wzbogacane, a import SFTP może być użyty do sprowadzenia wzbogaconych danych z powrotem do analizy odbiorców w Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 Aby skonfigurować niestandardowy import SFTP, muszą być spełnione następujące wymagania wstępne:
 
-- Użytkownik ma nazwę pliku i lokalizację (ścieżkę) pliku, który ma zostać zaimportowany na hoście SFTP.
+- Masz nazwę pliku i lokalizację (ścieżkę) pliku, który ma być importowany na hosta SFTP.
 - Istnieje plik *model.json* określający [schemat Common Data Model](/common-data-model/) dla danych, które mają być importowane. Plik ten musi znajdować się w tym samym katalogu, co plik przeznaczony do zaimportowania.
 - Połączenie z usługą SFTP jest już skonfigurowane przez administratora *lub* użytkownik ma uprawnienia [administratora](permissions.md#administrator). Potrzebne będą poświadczenia użytkownika, adres URL i numer portu dla lokalizacji SFTP, z której chcesz zaimportować dane.
 
@@ -37,11 +37,11 @@ Aby skonfigurować niestandardowy import SFTP, muszą być spełnione następuj�
 
    :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Kafelek niestandardowego importu SFTP.":::
 
-1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem, może on utworzyć połączenie, wybierając z listy rozwijanej opcję **Dodaj połączenie** i wybierając pozycję **Import niestandardowy SFTP**.
+1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli jesteś administratorem, możesz utworzyć połączenie, wybierając **Dodaj połączenie** i wybierając **SFTP Custom Import** z listy rozwijanej.
 
 1. Wybierz opcję **Połącz z importem niestandardowym**, aby potwierdzić wybrane połączenie.
 
-1.  Wybierz opcję **Dalej** i wprowadź **Nazwę pliku** oraz **Ścieżkę** pliku danych, który chcesz zaimportować.
+1.  Wybierz opcję **Dalej** i wprowadź **ścieżkę** i **nazwę pliku** dla danych, które chcesz zaimportować.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Zrzut ekranu przedstawiający wprowadzenie lokalizacji danych.":::
 
@@ -55,21 +55,21 @@ Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz 
 
 1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
 
-1. Wprowadź prawidłową nazwę użytkownika, hasło i adres URL hosta dla serwera SFTP, na którym znajdują się dane do zaimportowania.
+1. Wprowadź prawidłową nazwę użytkownika, hasło i adres URL hosta serwera SFTP, na którym znajdują się dane do zaimportowania.
 
 1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**.
 
 1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
 
-1. Po zakończeniu weryfikacji połączenie można zapisać, klikając przycisk **Zapisz**.
+1. Po zakończeniu weryfikacji połączenie można zapisać, wybierając opcję **Zapisz**.
 
-> [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji połączenia programu Experian](media/enrichment-SFTP-connection.png "Strona konfiguracji połączenia programu Experian")
+   > [!div class="mx-imgBorder"]
+   > ![Strona konfiguracji łączności Experian](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
 
 
 ## <a name="defining-field-mappings"></a>Definiowanie mapowań pól 
 
-Katalog zawierający plik, który ma zostać zaimportowany na serwerze SFTP, musi również zawierać plik typu *model.JSON*. Ten plik definiuje schemat, który ma być używany do importowania danych. Schemat musi mieć [Common Data Model](/common-data-model/), aby określać mapowanie pól. Prosty przykład pliku model.json wygląda następująco:
+Katalog zawierający plik, który ma zostać zaimportowany na serwerze SFTP, musi również zawierać plik typu *model.JSON*. Ten plik definiuje schemat, który ma być używany do importowania danych. Do określenia mapowania pól schemat musi używać modelu [Common Data Model](/common-data-model/). Prosty przykład pliku model.json wygląda następująco:
 
 ```
 {
@@ -123,6 +123,6 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Można tworzyć [segmenty](segments.md), [miary](measures.md) i [eksportować dane](export-destinations.md), aby zapewnić klientom spersonalizowane doświadczenia.
+Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

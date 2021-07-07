@@ -136,6 +136,8 @@
           items:
             - name: Omówienie eksportu
               href: audience-insights/export-destinations.md
+            - name: Aktywne kampanie
+              href: audience-insights/export-active-campaign.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
             - name: Autopilot
@@ -144,7 +146,7 @@
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Analizy w usłudze Azure Synapse
+            - name: Azure Synapse Analytics
               href: audience-insights/export-azure-synapse-analytics.md
             - name: Adobe Campaign Standard
               href: audience-insights/export-adobe-campaign-standard.md
@@ -178,8 +180,12 @@
               href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
+            - name: Salesforce Marketing Cloud
+              href: audience-insights/export-salesforce.md
             - name: SendGrid
               href: audience-insights/export-sendgrid.md
+            - name: SendInBlue
+              href: audience-insights/export-sendinblue.md
             - name: Snapchat
               href: audience-insights/export-snapchat.md
             - name: SFTP
@@ -234,21 +240,21 @@
       href: engagement-insights/overview.md
     - name: Bezpłatna wersja próbna
       href: 'https://pi.dynamics.com/'
-    - name: Rozpocznij pracę
+    - name: Rozpoczynanie pracy
       items:
-        - name: Rozpocznij pracę
+        - name: Rozpoczynanie pracy
           href: engagement-insights/get-started.md
-        - name: Tworzenie obszaru roboczego
+        - name: Utwórz obszar roboczy
           href: engagement-insights/create-workspace.md
-        - name: Instrumentuj swoją witrynę
-          href: engagement-insights/instrument-website.md
+        - name: Zapisywanie zdarzeń z aplikacji mobilnych i witryn
+          href: engagement-insights/developer-resources.md
         - name: Pojęcia i terminologia
           href: engagement-insights/glossary.md
     - name: Wydarzenia
       items:
         - name: Tworzenie i modyfikowanie zdarzeń
           href: engagement-insights/refined-events.md
-        - name: Eksportowanie zdarzeń
+        - name: Eksportuj zdarzenia
           href: engagement-insights/export-events.md
     - name: Raporty
       items:
@@ -272,10 +278,18 @@
       items:
         - name: Omówienie zasobów dla deweloperów
           href: engagement-insights/developer-resources.md
-        - name: Samouczek Web SDK
+        - name: Samouczek zestawu SDK dla sieci web
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Przykład internetowego interfejsu SDK
           href: engagement-insights/websdk-sample.md
+        - name: Samouczek Android SDK
+          href: engagement-insights/get-started-android.md
+        - name: Przykład SDK Android
+          href: engagement-insights/androidsdk-sample.md
+        - name: Samouczek zestawu iOS SDK
+          href: engagement-insights/get-started-ios.md
+        - name: Przykład SDK iOS
+          href: engagement-insights/iossdk-sample.md
     - name: Administracja
       items:
         - name: Uprawnienia i role

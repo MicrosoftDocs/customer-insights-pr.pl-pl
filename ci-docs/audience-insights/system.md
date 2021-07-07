@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 87bf8d7b9c23633ebdc929e15ac645c55cc21e4a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 09d449e51a3a47ec916ab3d017419c9d9be1ffcf
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595393"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305723"
 ---
 # <a name="system-configuration"></a>Konfiguracja systemu
 
@@ -94,7 +94,7 @@ Kliknij przycisk **Zapisz** i potwierdź wybór.
 
 ## <a name="api-usage-tab"></a>Karta użycia interfejsu API
 
-Znajdź szczegółowe informacje na temat wykorzystania interfejsu API w czasie rzeczywistym i zobacz, które zdarzenia miały miejsce w danym przedziale czasowym. Pozycje, horyzont czasowy menu rozwijanego **Wybierz horyzont czasowy** listy rozwijanej. 
+Znajdź szczegółowe informacje na temat wykorzystania interfejsu API w czasie rzeczywistym i zobacz, które zdarzenia miały miejsce w danym przedziale czasowym. Wybierz przedział czasowy w menu rozwijanym **Wybierz przedział czasowy**. 
 
 **Użycie interfejsu API** zawiera trzy sekcje: 
 - **Wywołania interfejsu API** — wykres, który wizualizuje zagregowaną liczbę wywołań interfejsu API w wybranym przedziale czasu.

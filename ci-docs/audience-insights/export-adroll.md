@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dbebc3ee3978ca6ee9d1ad1c15c226479876709f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 67bfa23d56b26ae592efa4d7197713664bb02623
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124378"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304846"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Eksportowanie segmentów do usługi AdRoll (wersja zapoznawcza)
 
@@ -28,11 +28,11 @@ Eksportuj segmenty ujednoliconych profilów klientów do rozwiązania AdRoll i u
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do rozwiązania AdRoll możesz wyeksportować łącznie do 250 000 profilów na operację eksportu.
+- Jednocześnie do AdRoll można eksportować maksymalnie 250 000 profili.
 - Nie można eksportować segmentów obejmujących mniej niż 100 profilów do rozwiązania AdRoll. 
 - Eksport do rozwiązania AdRoll jest ograniczony do segmentów.
-- Wyeksportowanie do 250 000 profilów do rozwiązania AdRoll może potrwać do 10 minut. 
-- Liczba profilów, które można eksportować do rozwiązania AdRoll, jest zależna od kontraktu z rozwiązaniem AdRoll i ograniczana na jego podstawie.
+- Wyeksportowanie do 250 000 profili do rozwiązania AdRoll może potrwać do 10 minut. 
+- Liczba profili, które możesz wyeksportować do AdRoll jest zależna od Twojej umowy z AdRoll.
 
 ## <a name="set-up-connection-to-adroll"></a>Skonfiguruj połączenie z usługą AdRoll
 
@@ -62,9 +62,9 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi AdRoll. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi AdRoll. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
 
-1. Aby uzyskać więcej informacji, wprowadź **identyfikator reklamodawcy AdRoll**. Więcej informacji znajdziesz w [profilach reklamodawcy AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Wprowadź identyfikator **Reklamodawcy AdRoll**. Aby uzyskać więcej informacji, zobacz [Profile reklamodawców AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
 3. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wyeksportowanie segmentów do rozwiązania AdRoll jest wymagane.
 
@@ -74,7 +74,9 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). 
+
+Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
