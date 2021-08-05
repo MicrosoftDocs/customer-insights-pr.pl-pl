@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f588f45ed11efffbb335003642a4b92810153017
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96fbd18a20e0df7abd4e79ff77e2c3a396e33ccc
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596788"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554218"
 ---
 # <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
 
@@ -50,7 +50,7 @@ Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korz
 Po przetworzeniu podobnego segmentu znajdziesz nowy segment na stronie **Segmenty**.
 
 > [!div class="mx-imgBorder"]
-> ![Segment Podobni klienci](media/expanded-segment.png "Segment Podobni klienci")
+> ![Segment Podobni klienci.](media/expanded-segment.png "Segment Podobni klienci")
 
 Wybierz **Widok** na pasku akcji, aby otworzyć Szczegóły segmentu. Ten widok zawiera informacje na temat rozkładu wyniku dla [wyników podobieństwa](#about-similarity-scores). Wartości wyników podobieństwa są również dostępne w **Podglądzie elementów członkowskich segmentu**.
 

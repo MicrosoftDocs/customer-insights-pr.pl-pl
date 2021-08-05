@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095615"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559418"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)
 
@@ -47,7 +47,7 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
         - **Zdarzenie:** Określ nazwę zdarzenia, które chcesz użyć. Na przykład pole o nazwie „UserAction” w sklepie spożywczym może być kuponem używanym przez klienta.
         - **Szczegóły:** Szczegółowe informacje o zdarzeniu. Na przykład pole o nazwie „CouponValue” w sklepie spożywczym może zawierać walutę kuponu.
 - Sugerowana charakterystyka danych:
-    - Wystarczające dane historyczne: dane transakcji dla co najmniej podwójnego wybranego okna czasowego. Najlepiej dwa do trzech lat danych subskrypcji. 
+    - Wystarczające dane historyczne: dane transakcji dla co najmniej podwójnego wybranego okna czasowego. Najlepiej, dwa do trzech lat historii transakcji. 
     - Wiele zakupów na klienta: idealnie przynajmniej dwie transakcje na klienta.
     - Liczba klientów: co najmniej 10 profilów klientów, najlepiej ponad 1000 unikalnych klientów. Model zakończy z niepowodzeniem, jeśli będzie mniej niż 10 klientów oraz niewystarczające dane historycznych.
     - Pełność danych: mniej niż 20% brakujących wartości w polu danych dostarczonej encji.

@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306087"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554998"
 ---
 # <a name="segment-insights-preview"></a>Informacje o segmentach (wersja zapoznawcza)
 
@@ -44,7 +44,7 @@ Można również przeanalizować sposób zmiany nakładania się dla poszczegól
 Po zakończeniu analizy znajdź szczegółowe informacje w **Segmenty** > **Insights (wersja zapoznawcza)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Informacje szczegółowe dotyczące nakładania się na siebie segmentów":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Informacje szczegółowe dotyczące nakładania się na siebie segmentów.":::
 
 Aby wyświetlić wyniki analizy, należy wybrać szczegółowe informacje:
 
@@ -77,7 +77,7 @@ Elementy odróżniające segmenty pomagają dowiedzieć się, co odróżnia segm
 Po zakończeniu analizy znajdź szczegółowe informacje w **Segmenty** > **Insights (wersja zapoznawcza)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Informacje szczegółowe dotyczące elementów odróżniających segmenty":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Informacje szczegółowe dotyczące elementów odróżniających segmenty.":::
 
 Aby wyświetlić wyniki analizy, należy wybrać szczegółowe informacje. Analiza elementów odróżniających zawiera dwie karty. Karta **Atrybuty** wyświetla atrybuty profilu, które są uważane za elementy odróżniające. Karta **Miary** wyświetla elementy odróżniające. Na każdej karcie znajdują się następujące informacje:
 

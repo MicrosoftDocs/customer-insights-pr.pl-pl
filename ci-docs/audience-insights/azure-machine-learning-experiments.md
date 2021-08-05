@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597432"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554448"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Użyj modeli opartych na usłudze Azure Machine Learning
 
@@ -52,7 +52,7 @@ Musisz utworzyć zestawy danych, aby używać danych encji z Customer Insights d
      W projektancie otwórz **Wybierz kolumny w zestawie danych** i wybierz polecenie **Ustaw jako parametr potoku**, gdzie jest określona nazwa parametru.
 
      > [!div class="mx-imgBorder"]
-     > ![Parametry zestawu danych w projektancie](media/intelligence-designer-dataset-parameters.png "Parametry zestawu danych w projektancie")
+     > ![Parametry zestawu danych w projektancie.](media/intelligence-designer-dataset-parameters.png "Parametry zestawu danych w projektancie")
    
 * Parametr zestawu danych w SDK (Python)
    
@@ -78,7 +78,7 @@ Musisz utworzyć zestawy danych, aby używać danych encji z Customer Insights d
 
 * Projektant dostarcza [moduł eksportowania danych](/azure/machine-learning/algorithm-module-reference/export-data), który umożliwia wyeksportowanie danych wyjściowych z potoku do usługi Azure Storage. Obecnie moduł musi używać typu magazynu danych **Azure Blob Storage** i sparametryzować **Magazyn danych** i względną **Ścieżkę**. Customer Insights zastępuje oba te parametry podczas wykonywania potoku magazynem danych i ścieżką dostępną dla produktu.
    > [!div class="mx-imgBorder"]
-   > ![Eksportuj konfigurację modułu danych](media/intelligence-designer-importdata.png "Eksportuj konfigurację modułu danych")
+   > ![Eksportuj konfigurację modułu danych.](media/intelligence-designer-importdata.png "Eksportuj konfigurację modułu danych")
    
 * Przy tworzeniu danych wyjściowych dotyczących wnioskowania przy użyciu kodu można przekazać wyniki na ścieżkę z *zarejestrowanego magazynu danych* w obszarze roboczym. Jeśli ścieżka i magazyn danych są sparametryzowane w potoku, Customer Insights będzie mógł odczytywać i importować dane wyjściowe wnioskowania. Obecnie obsługiwany jest tylko jeden format danych wyjściowych w formacie CSV. Ścieżka musi zawierać katalog i nazwę pliku.
 

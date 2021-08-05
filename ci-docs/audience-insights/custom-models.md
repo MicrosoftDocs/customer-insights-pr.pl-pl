@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72ccb2d86c698939d0ff018b4d36203e793df9ae
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305657"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554861"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -42,7 +42,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 1. W polu **Nazwa** nadaj modelowi niestandardowemu rozpoznawalną nazwę.
 
    > [!div class="mx-imgBorder"]
-   > ![Zrzut ekranu okienka Nowy przepływ pracy](media/new-workflowv2.png "Zrzut ekranu okienka Nowy przepływ pracy")
+   > ![Zrzut ekranu okienka Nowy przepływ pracy.](media/new-workflowv2.png "Zrzut ekranu okienka Nowy przepływ pracy")
 
 1. Wybierz organizację zawierającą usługę sieci Web w **Dzierżawa zawierająca usługę sieci Web**.
 
@@ -59,7 +59,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
    > Przepływ pracy modelu niestandardowego zastosuje heurystykę do mapowania pól wejściowych usługi sieci Web do atrybutów encji na podstawie nazwy i typu danych pola. Jeśli nie można zamapować pola usługi sieci Web na jednostkę, pojawi się błąd.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfiguruj przepływ pracy](media/intelligence-screen2-updated.png "Konfiguruj przepływ pracy")
+   > ![Konfiguruj przepływ pracy.](media/intelligence-screen2-updated.png "Konfiguruj przepływ pracy")
 
 1. W kroku **Parametry wyjściowe modelu** ustaw następujące właściwości:
    - Machine Learning Studio (klasyczna)
@@ -70,12 +70,12 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
       1. Z listy rozwijanej wybierz **Nazwę parametru ścieżki danych wyjściowych** potoku wsadowego.
 
       > [!div class="mx-imgBorder"]
-      > ![Panel parametrów wyjściowych modelu](media/intelligence-screen3-outputparameters.png "Panel parametrów wyjściowych modelu")
+      > ![Panel parametrów wyjściowych modelu.](media/intelligence-screen3-outputparameters.png "Panel parametrów wyjściowych modelu")
 
 1. Wybierz pasujący atrybut z listy rozwijanej **Identyfikator klienta w wynikach**, który identyfikuje klientów i wybierz **Zapisz**.
 
    > [!div class="mx-imgBorder"]
-   > ![Powiązanie wyników z okienkiem Dane klient](media/intelligence-screen4-relatetocustomer.png "Powiązanie wyników z okienkiem Dane klient")
+   > ![Powiązanie wyników z okienkiem Dane klient.](media/intelligence-screen4-relatetocustomer.png "Powiązanie wyników z okienkiem Dane klient")
 
 1. Zostanie wyświetlony ekran **Zapisany przepływ pracy** ze szczegółowymi informacjami na temat przepływu pracy.    
    Jeśli skonfigurowano przepływ pracy dla potoku Azure Machine Learning, szczegółowe informacje o odbiorcach zostaną dołączone do obszaru roboczego zawierającego potok. Usługa analizy odbiorców będzie mieć rolę **Współautora** w obszarze roboczym Azure.

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 8ab55d101f98169b8f794ce580ddd0a71ede6642
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304617"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554631"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
@@ -23,11 +23,11 @@ Na stronie **Klienci** jest wyświetlany połączony widok klientów na podstawi
 Klienci mogą być osobami lub organizacjami (wersja zapoznawcza). Każdy profil klienta lub organizacji jest reprezentowany przez kafelek. Wybierz kafelek, aby wyświetlić dodatkowe informacje o danym kliencie lub organizacji. Aby wyświetlić dodatkowe rekordy, należy użyć formantów podziału na strony u dołu strony.
 
 > [!div class="mx-imgBorder"] 
-> ![Profile klientów B2C](media/profiles-customers.png "Profile klientów B2C")
+> ![Profile klientów B2C.](media/profiles-customers.png "Profile klientów B2C")
 
 Organizacje (Wersja zapoznawcza)
 > [!div class="mx-imgBorder"] 
-> ![Profile klientów B2B](media/profile-customers-b2b.png "Profile klientów B2B")
+> ![Profile klientów B2B.](media/profile-customers-b2b.png "Profile klientów B2B")
 
 > [!NOTE]
 > Jeśli nie widzisz kafelków po wybraniu **Klienci** w nawigacji, Administrator musi [zdefiniować co najmniej jeden atrybut z możliwością wyszukiwania](search-filter-index.md) w **Wyszukiwanie i indeks filtrów**.
@@ -47,7 +47,7 @@ Klientów można przyfiltrować według pól encji profilu klienta. Podobnie jak
 2. Zaznacz pola wyboru obok atrybutów, według których chcesz filtrować klientów.
 
    > [!div class="mx-imgBorder"] 
-   > ![Profile klientów](media/profiles-customers3.png "Profile klientów")
+   > ![Profile klientów.](media/profiles-customers3.png "Profile klientów")
 
 3. Aby usunąć filtry, wybierz pozycję **Wyczyść filtry** na stronie **Klienci**.
 

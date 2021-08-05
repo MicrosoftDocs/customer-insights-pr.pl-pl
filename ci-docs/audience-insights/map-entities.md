@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 36b7f7b2fac9497245cf6759506c53753972f173
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 7fc05aca61d1136f620019ee82dc6937ea39d8e5
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596006"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555136"
 ---
 # <a name="map-entities-and-attributes"></a>Mapowanie encji i atrybutów
 
@@ -35,14 +35,14 @@ Aby uzyskać więcej informacji na temat ogólnego przebiegu zjednoczenia danych
 3. W fazach *dopasuj* i *scal* wybierz encje i atrybuty, które mają być używane. Wymagane atrybuty można wybrać z encji oddzielnie lub dodać wszystkie atrybuty z encji, zaznaczając pole wyboru **Dołącz wszystkie pola** na poziomie encji. Zalecamy wybranie co najmniej dwóch encji, które mają być korzystne w procesie zjednoczenia danych.
 
    > [!div class="mx-imgBorder"]
-   > ![Dodaj encje przykład](media/data-manager-configure-map-add-entities-example.png "Dodaj encje przykład")
+   > ![Dodaj encje przykład.](media/data-manager-configure-map-add-entities-example.png "Dodaj encje przykład")
 
    W tym przykładzie dodajemy encje **eCommerceContacts** i **loyCustomers**. Wybierając te encje, można uzyskać wgląd w informacje o tym, których użytkownicy biznesowi w trybie online są członkami programu lojalnościowego.
    
    Korzystając z słów kluczowych można przeszukiwać atrybuty i encje, aby wybrać wymagane, które mają zostać zamapowane.
    
      > [!div class="mx-imgBorder"]
-   > ![Przykład przeszukiwanych pól](media/data-manager-configure-map-search-fields-example.png "Przykład przeszukiwanych pól")
+   > ![Przykład przeszukiwanych pól.](media/data-manager-configure-map-search-fields-example.png "Przykład przeszukiwanych pól")
 
 4. Wybierz **Zastosuj**, aby potwierdzić wybrane opcje.
 
@@ -55,7 +55,7 @@ Po wybraniu encji strona **Mapa** wymienia wybrane encje do przejrzenia. Zdefini
 - **Typ semantyczny atrybutu**: Kategorie atrybutów, takie jak adres e-mail lub nazwa. Aby używać modeli AI do inteligentnego przewidywania semantyki, zaoszczędzić czas i poprawić dokładność, ustaw **Inteligentne mapowanie** na **Włączone**. Inteligentne mapowanie podświetla rekomendacje semantyki w oparciu o AI w polu **Typ**. Po ustawieniu na **Wyłączone**, zobaczysz nasze zwykłe rekomendacje dotyczące mapowania. Dowolny typ semantyczny można wybrać z listy dostępnych opcji i zastąpić sugerowany wybór.
 
 > [!div class="mx-imgBorder"]
-> ![Typ atrybutu i przewidywanie semantyczne](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Typ atrybutu i przewidywanie semantyczne")
+> ![Typ atrybutu i przewidywanie semantyczne.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Typ atrybutu i przewidywanie semantyczne")
 
 Możliwe jest również dodanie niestandardowego typu semantycznego. Zaznacz pole typu dla atrybutu i wpisz nazwę niestandardowego typu semantycznego. Użytkownik może w ten sposób również zmieniać typy atrybutów, które były identyfikowane przez system.
 
@@ -64,7 +64,7 @@ Wszystkie atrybuty, w przypadku których typ semantyczny jest identyfikowany aut
 Atrybuty, które nie są automatycznie mapowane na typ semantyczny, są zgrupowane w sekcji **Definiuj dane w niezamapowanych polach**. Zaznacz pole typu semantycznego dla niezamapowanych atrybutów, lub wprowadź niestandardową nazwę typu atrybutu.
 
 > [!div class="mx-imgBorder"]
-> ![Klucz podstawowy i typ atrybutu](media/data-manager-configure-map-add-attributes.png "Klucz podstawowy i typ atrybutu")
+> ![Klucz podstawowy i typ atrybutu.](media/data-manager-configure-map-add-attributes.png "Klucz podstawowy i typ atrybutu")
 
 > [!NOTE]
 > Jedno pole powinno być zamapowane na typ semantyczny Person.FullName, aby wypełnić nazwę klienta na karcie klienta. W przeciwnym razie karty klientów nie będą posiadały nazw. 
@@ -76,7 +76,7 @@ Atrybuty, które nie są automatycznie mapowane na typ semantyczny, są zgrupowa
 2. W okienku **Edytuj pola** dodaj lub usuń atrybuty i encje. Aby znaleźć i wybrać swoje atrybuty i encje, należy użyć narzędzia Wyszukaj lub przewinąć. Nie można usunąć atrybutu lub encji, jeśli zostały już dopasowane.
 
    > [!div class="mx-imgBorder"]
-   > ![Dodawanie lub usuwanie atrybutów](media/configure-data-map-edit.png "Dodawanie lub usuwanie atrybutów")
+   > ![Dodawanie lub usuwanie atrybutów.](media/configure-data-map-edit.png "Dodawanie lub usuwanie atrybutów")
 
 3. Wybierz **Zastosuj**.
 

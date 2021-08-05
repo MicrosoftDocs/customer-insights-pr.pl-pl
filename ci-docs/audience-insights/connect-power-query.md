@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: b37bb5dfeed2326784ef276a93a04bec626aaf6e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305904"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554698"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Nawiązywanie połączenia ze źródłem danych Power Query
 
@@ -42,7 +42,7 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 1. Dialog **Power Query — edytuj zapytania** pozwala na przejrzenie i uściślenie danych. Encje, które zostały określone przez systemy w wybranych źródłach danych, są wyświetlane w lewym okienku.
 
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe Edytuj zapytania](media/data-manager-configure-edit-queries.png "Okno dialogowe Edytuj zapytania")
+   > ![Okno dialogowe Edytuj zapytania.](media/data-manager-configure-edit-queries.png "Okno dialogowe Edytuj zapytania")
 
 1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Korzystając z opcji dostępnych w oknie Power Query, można stosować przekształcenia. Każde przekształcenie jest wyświetlane w obszarze **Zastosowane kroki**. Power Query oferuje wiele wstępnie wbudowanych opcji transformacji. Aby uzyskać więcej informacji, zobacz [Transformacje Power Query](/power-query/power-query-what-is-power-query#transformations).
 
@@ -75,7 +75,7 @@ Sprawdź [Informacje na temat łączników Power Query](/power-query/connectors/
 2. Wybierz wielokropek pionowy obok źródła danych, które chcesz zmienić, i z menu rozwijanego wybierz pozycję **Edytuj**.
 
    > [!div class="mx-imgBorder"]
-   > ![Opcja Edytuj](media/edit-option-data-sources.png "Opcja Edytuj")
+   > ![Opcja Edytuj.](media/edit-option-data-sources.png "Opcja Edytuj")
 
 3. Zastosuj zmiany i przekształcenia w oknie dialogowym **Power Query - edytuj zapytania**, jak to opisano w sekcji [Tworzenie nowego źródła danych](#create-a-new-data-source).
 

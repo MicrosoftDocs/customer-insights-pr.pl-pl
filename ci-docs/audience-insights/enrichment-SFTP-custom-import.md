@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 9331cf8057850e2fbe03622831f388e73056d938
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304663"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555412"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
 
@@ -64,7 +64,7 @@ Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz 
 1. Po zakończeniu weryfikacji połączenie można zapisać, wybierając opcję **Zapisz**.
 
    > [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji łączności Experian](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
+   > ![Strona konfiguracji łączności Experian.](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
 
 
 ## <a name="defining-field-mappings"></a>Definiowanie mapowań pól 

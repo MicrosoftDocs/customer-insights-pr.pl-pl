@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 6e2080b4ad19f6f57f60da591345e80ce9083e8a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306270"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554080"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -89,7 +89,7 @@ W górnej części strony znajduje się wykres trendów zawierający wizualizacj
 Użytkownik może aktualizować horyzont czasowy wizualizacji.
 
 > [!div class="mx-imgBorder"]
-> ![Zakres czasu segmentu](media/segment-time-range.png "Zakres czasu segmentu")
+> ![Zakres czasu segmentu.](media/segment-time-range.png "Zakres czasu segmentu")
 
 W dolnej części znajduje się lista członków segmentu.
 

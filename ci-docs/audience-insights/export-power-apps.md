@@ -9,12 +9,12 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 3fa91553fd50a22ab62b5a2b1e3f13b9483776a8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2ab5a9059991611a2959a19cc688d232ec782e1e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598168"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554126"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Łącznik Microsoft Power Apps (wersja zapoznawcza)
 
@@ -56,12 +56,12 @@ Można na przykład dodać profile klientów do [kontrolki galerii](/powerapps/m
 1. Dodaj formant **Galeria** do konstruowanej aplikacji.
 
 > [!div class="mx-imgBorder"]
-> ![Dodawanie elementu galerii](media/connector-powerapps9.png "Dodawanie elementu galerii")
+> ![Dodawanie elementu galerii.](media/connector-powerapps9.png "Dodawanie elementu galerii")
 
 1. Wybierz **Klienta** jako źródło danych dla elementów.
 
     > [!div class="mx-imgBorder"]
-    > ![Wybierz źródło danych](media/choose-datasource-powerapps.png "Wybierz źródło danych")
+    > ![Wybierz źródło danych.](media/choose-datasource-powerapps.png "Wybierz źródło danych")
 
 1. Możesz zmienić panel danych po prawej stronie, aby wybrać pole, które encja klienta ma wyświetlać w galerii.
 

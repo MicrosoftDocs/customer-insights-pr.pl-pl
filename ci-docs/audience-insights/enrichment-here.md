@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 00be15367001a5f4342d60bb284726ef7154d05c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305307"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555320"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Wzbogacenie profili klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
@@ -35,7 +35,7 @@ Aby skonfigurować wzbogacenia HERE Technologies, muszą zostać spełnione nast
 1. Wybierz **Wzbogać moje dane** na kafelku HERE Technologies i wybierz **Rozpocznij**.
 
    > [!div class="mx-imgBorder"]
-   > ![Kafelek HERE Technologies](media/HERE-tile.png "Kafelek HERE Technologies")
+   > ![Kafelek HERE Technologies.](media/HERE-tile.png "Kafelek HERE Technologies")
 
 1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem, może on utworzyć połączenie, wybierając opcję **Dodaj połączenie**. Z listy rozwijanej wybierz pozycję **HERE Technologies**. 
 
@@ -50,7 +50,7 @@ Aby skonfigurować wzbogacenia HERE Technologies, muszą zostać spełnione nast
 1. Zdefiniuj, które pola z ujednoliconych profili mają być używane do wyszukiwania pasujących danych o lokalizacji z HERE Technologies. Pola **Ulica 1** i **Kod pocztowy** są wymagane dla wybranego adresu głównego i / lub dodatkowego. Aby zwiększyć dokładność dopasowania, można dodać więcej pól.
 
    > [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji wzbogacenia HERE Technologies](media/enrichment-HERE-configuration.png "Strona konfiguracji wzbogacenia HERE Technologies")
+   > ![Strona konfiguracji wzbogacenia HERE Technologies.](media/enrichment-HERE-configuration.png "Strona konfiguracji wzbogacenia HERE Technologies")
 
 1. Wybierz **Dalej**, by zakończyć mapowanie pól.
 
@@ -73,7 +73,7 @@ Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz 
 1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
 
    > [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji połączenia HERE Technologies](media/enrichment-HERE-connection.png "Strona konfiguracji połączenia HERE Technologies")
+   > ![Strona konfiguracji połączenia HERE Technologies.](media/enrichment-HERE-connection.png "Strona konfiguracji połączenia HERE Technologies")
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 

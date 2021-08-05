@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: ameetj
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2eb44604e72b32292f971754d4f8c4fd1988c697
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598352"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555182"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Użyj modeli opartych na Azure Machine Learning Studio (klasyczna)
 
@@ -41,7 +41,7 @@ W pierwszym kroku musimy utworzyć obszar roboczy i otworzyć Machine Learning S
 
 1. Po utworzeniu zasobu zostanie wyświetlony pulpit nawigacyjny Obszar roboczy Machine Learning Studio. Wybierz **Uruchom Machine Learning Studio**.
 
-   ![Interfejs użytkownika Azure Machine Learning Studio](media/azure-machine-learning-studio.png)
+   ![Interfejs użytkownika Azure Machine Learning Studio.](media/azure-machine-learning-studio.png)
 
 ## <a name="work-with-azure-machine-learning-studio"></a>Praca z Azure Machine Learning Studio
 
@@ -55,7 +55,7 @@ Teraz możesz utworzyć nowy eksperyment lub zaimportować istniejący szablon e
 
 1. W przypadku tworzenia nowego eksperymentu lub korzystania z szablonu eksperymentu z galerii należy skonfigurować właściwości **Importuj dane**. Skorzystaj z przewodnika lub bezpośrednio podaj szczegóły, aby uzyskać dostęp do usługi Azure Blob Storage, która zawiera Twoje dane.  
 
-   ![Eksperyment Azure Machine Learning Studio](media/azure-machine-learning-studio-experiment.png)
+   ![Eksperyment Azure Machine Learning Studio.](media/azure-machine-learning-studio-experiment.png)
 
 1. Teraz można utworzyć dostosowany potok przetwarzania w celu oczyszczenia i wstępnego przetworzenia danych, wyodrębnienia funkcji i wyuczenia odpowiedniego modelu.
 
@@ -63,15 +63,15 @@ Teraz możesz utworzyć nowy eksperyment lub zaimportować istniejący szablon e
 
 1. Jeśli jakość modelu jest zadowalająca, wybierz **Konfigurowanie usługi sieci Web** > **Predykcyjna usługa sieci Web**. Ta opcja powoduje zaimportowanie wyszkolonych modeli i potoku funkcji z eksperymentu szkoleniowego do usługi predykcyjnej. Usługa predykcyjna może wziąć kolejny zestaw danych wejściowych ze schematem użytym w doświadczeniu szkoleniowym w celu sporządzenia przewidywań.
 
-   ![Konfigurowanie predykcyjnej usługi sieci Web](media/predictive-webservice-control.png)
+   ![Konfigurowanie predykcyjnej usługi sieci Web.](media/predictive-webservice-control.png)
 
 1. Po pomyślnym wyniku predykcyjnej usługi sieci Web można ją wdrożyć na potrzeby automatycznego planowania. Aby usługa sieci Web działała z Customer Insights, wybierz **Wdróż usługę sieci Web** > **Wdróż usługę sieci Web [Nowa] Wersja zapoznawcza**. [Więcej informacji na temat wdrażania usługi sieci Web](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
-   ![Wdrażania predykcyjnej usługi sieci Web](media/predictive-webservice-deploy.png)
+   ![Wdrażania predykcyjnej usługi sieci Web.](media/predictive-webservice-deploy.png)
 
 ## <a name="sample-models-from-the-gallery"></a>Przykładowe modele z galerii
 
-Będziemy używać fikcyjnego scenariusza hotelu Contoso dla modeli w niniejszym artykule. Hotel Contoso gromadzi następujące dane:
+Dla modeli w tym artykule użyjemy fikcyjnego scenariusza Contoso Hotel. Contoso Hotel gromadzi następujące dane:
 
 - Dane CRM złożone z działania Pobyty w hotelu. Zestaw danych zawiera informacje o datach pobytu każdego zarejestrowanego klienta. Zawiera także informacje o rezerwacji, typach pokojów, szczegółach wydatków itp. Dane obejmują cztery lata, od stycznia 2014 do stycznia 2018.
 - Profile klientów gości hotelu. Te profile zawierają informacje o każdym kliencie, takie jak imię i nazwisko, data urodzenia, adres pocztowy, płeć i numer telefonu.
@@ -87,13 +87,13 @@ Definicja zmian może się różnić w zależności od scenariusza. W tym przyk�
 
 Szablon eksperymentu może zostać zaimportowany z galerii. W pierwszej kolejności upewnij się, że importujesz dane dotyczące **Działanie Pobyt w hotelu**, **Dane klienta** i **Dane dotyczące użytkowania usługi** z magazynu obiektów Blob Azure.
 
-   ![Importowanie danych dla modelu zmian](media/import-data-azure-blob-storage.png)
+   ![Importowanie danych dla modelu zmian.](media/import-data-azure-blob-storage.png)
 
 ### <a name="featurization"></a>Funkcje
 
 W zależności od definicji zmian, w pierwszej kolejności identyfikujemy surowe funkcje, które będą miały wpływ na etykietę. Następnie przetwarzamy te surowe funkcje na funkcje liczbowe, które mogą być używane z modelami Uczenie maszynowe. Integracja danych jest wykonywana w programie Customer Insights, dzięki czemu można przyłączyć się do tych tabel przy użyciu *Identyfikatora klienta*.
 
-   ![Dołącz zaimportowane dane](media/join-imported-data.png)
+   ![Dołącz zaimportowane dane.](media/join-imported-data.png)
 
 Zapewnienie funkcji dla konstruowania modelu dla analizy zmian może być nieco trudne. Dane są funkcją czasu z nowym działaniem hotelu odnotowywanym codziennie. Podczas zapewniania funkcji chcemy wygenerować statyczne funkcje z danych dynamicznych. W tym przypadku generujemy wiele funkcji z działania w hotelu z oknem przesuwanym obejmującym jeden rok. Ponadto rozwijamy funkcje kategorii, takie jak typ pokoju lub typ rezerwacji, na różne funkcje, korzystając z kodowania jednokrotnego.  
 
@@ -114,7 +114,7 @@ Teraz musimy wybrać optymalny algorytm. W tym przypadku większość funkcji op
 
 Na następującym rysunku przedstawiono model szkoleń i potok oceny z Azure Machine Learning Studio:
 
-![Model zmian w Azure Machine Learning Studio](media/azure-machine-learning-model.png)
+![Model zmian w Azure Machine Learning Studio.](media/azure-machine-learning-model.png)
 
 Stosujemy również technikę o nazwie **Ważność funkcji Permutacja**, ważny aspekt optymalizacyjny modelu. Wbudowane modele mają znikomy wgląd we wpływ konkretnej funkcji na końcowe przewidywanie. Kalkulator ważności funkcji używa niestandardowego algorytmu w celu obliczenia wpływu poszczególnych funkcji na wyniki dla określonego modelu. Ważność funkcji jest znormalizowana w zakresie od +1 do -1. Negatywny wpływ oznacza, że odpowiednia funkcja ma szkodliwy wpływ na wyniki i powinna zostać usunięta z modelu. Dodatni wpływ oznacza, że funkcja jest znacząco przyczynia się do przewidywania. Te wartości nie są współczynnikami korelacji, ponieważ są różnymi metrykami. Aby uzyskać więcej informacji, zobacz [Ważność funkcji Permutacja](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
@@ -148,7 +148,7 @@ Cel jest definiowany jako maksymalizacja kwoty w dolarach za skorzystanie z usł
 
 Podobnie jak w przypadku modelu zmiany, dołączamy ServiceCustomerID hotelu z CustomerID, aby zbudować rekomendacje w sposób konsekwentny dla CustomerID.
 
-![Funkcje modelu rekomendacji](media/azure-machine-learning-model-featurization.png)
+![Funkcje modelu rekomendacji.](media/azure-machine-learning-model-featurization.png)
 
 Dane pochodzą z trzech różnych encji a funkcje się od nich wywodzą. Zapewnienie funkcji dla problemu rekomendacji jest inne niż scenariusze zmian lub CLTV. Model rekomendacji wymaga danych wejściowych w formie trzech zestawów funkcji.
 
@@ -156,13 +156,13 @@ Dane pochodzą z trzech różnych encji a funkcje się od nich wywodzą. Zapewni
 
 Przewidujemy produkty lub usługi, korzystając z algorytmu o nazwie **Trenowanie modułu rekomendowania Matchbox**, aby przeszkolić model rekomendacji.
 
-![Algorytm rekomendacji produktów](media/azure-machine-learning-model-recommendation-algorithm.png)
+![Algorytm rekomendacji produktów.](media/azure-machine-learning-model-recommendation-algorithm.png)
 
 Trzy porty wejściowe dotyczące modelu **Trenowanie modułu rekomendowania Matchbox** bierze dane dotyczące użytkowania usługi szkoleń, opis klienta (opcjonalnie) i opis usługi. Istnieją trzy różne sposoby oceniania modelu. Jeden jest dla oceny modelu, gdzie wynik Znormalizowany skumulowany zysk rabatowy (NDCG) jest obliczany w celu nadania rangi ocenionym elementom. W tym doświadczeniu wynik NDCG wynosi 0,97. Pozostałe dwie opcje to ocenianie modelu ba całym zalecanym katalogu usług lub ocenianie tylko na podstawie elementów, z których użytkownicy nie korzystali wcześniej.
 
 Przyglądając się bliżej dystrybucji rekomendacji w odniesieniu do całego katalogu usług zauważyliśmy, że telefon, Sieć Wi-Fi i kurier są najpopularniejszymi usługami, jakie można zarekomendować. Jest to zgodne z tym, czego dowiedzieliśmy się z rozkładu danych korzystania z usług:
 
-![Wynik modelu rekomendacji](media/azure-machine-learning-model-output.png)
+![Wynik modelu rekomendacji.](media/azure-machine-learning-model-output.png)
 
 Cały [eksperyment rekomendacji produktów można zobaczyć w Galerii sztucznej inteligencji platformy Azure.](https://gallery.azure.ai/Experiment/Recommendation-4)
 

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306041"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650331"
 ---
 # <a name="match-entities"></a>Dopasowywanie encji
 
@@ -138,7 +138,7 @@ Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie
    - **Najstarsze**: Identyfikuje rekord zwycięzcy na podstawie najmniejszej aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
  
    > [!div class="mx-imgBorder"]
-   > ![Reguły deduplikacji krok 1](media/match-selfconflation.png "Reguły deduplikacji krok 1")
+   > ![Reguły deduplikacji krok 1.](media/match-selfconflation.png "Reguły deduplikacji krok 1")
  
 1. Po wybraniu encji i ustawieniu ich preferencji scalania wybierz opcję **Dodaj regułę** w celu zdefiniowania reguł deduplikacji na poziomie encji.
    - Opcja **Wybierz pole** powoduje wyświetlenie listy wszystkich dostępnych pól z tej encji. Wybierz pole, które ma być sprawdzane pod kątem duplikatów. Wybierz pola, które będą unikatowe dla każdego pojedynczego klienta. Może to być na przykład adres e-mail lub kombinacja imienia i nazwiska, miasta oraz numeru telefonu.
@@ -146,7 +146,7 @@ Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie
    - Zdefiniuj dalsze warunki, wybierając opcję **Dodaj warunek**.
  
    > [!div class="mx-imgBorder"]
-   > ![Reguły deduplikacji krok 2](media/match-selfconflation-rules.png "Reguły deduplikacji krok 2")
+   > ![Reguły deduplikacji krok 2.](media/match-selfconflation-rules.png "Reguły deduplikacji krok 2")
 
   Dla encji można utworzyć wiele reguł deduplikacji. 
 
@@ -179,7 +179,9 @@ Przejdź do sekcji **Dane** > **Ujednolicanie** > **Dopasuj** i wybierz opcję *
 Wynik pomyślnego uruchomienia, czyli ujednolicona encja profilu klienta, będzie widoczny na stronie **Encje**. Ujednolicona encja klienta nosi nazwę **Klienci** w sekcji **Profile**. Pierwsze udane uruchomienie dopasowania powoduje utworzenie ujednoliconej encji *Klient*. Wszystkie kolejne uruchomienia dopasowania rozszerzają tę encję.
 
 > [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+> Po uruchomieniu procesu dopasowywania wybierz stan procesu, aby otworzyć okienko **Szczegóły zadania**. Zawiera przegląd czasu przetwarzania, daty ostatniego przetwarzania i wszystkich błędów i ostrzeżeń skojarzonych z zadaniem. Wybierz **Zobacz szczegóły**, aby zobaczyć, które jednostki uczestniczyły w procesie dopasowania, które reguły zostały do nich zastosowane i czy aktualizacje zostały pomyślnie opublikowane.  
+> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Ścieżka przechodzenia do szczegółów, aby uzyskać szczegółowe informacje z łącza stanu zadania.":::
 
 ## <a name="review-and-validate-your-matches"></a>Przejrzyj i zweryfikuj swoje dopasowania
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095661"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556320"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
 
@@ -63,7 +63,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 1. W analizach odbiorców przejdź do **Analizy** > **Przewidywania**.
 1. Zaznacz kafelek **Model rezygnacji z subskrypcji (wersja zapoznawcza)** i wybierz **Użyj tego modelu**.
    > [!div class="mx-imgBorder"]
-   > ![Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu](media/subscription-churn-usethismodel.PNG "Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu")
+   > ![Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu.](media/subscription-churn-usethismodel.PNG "Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu")
 
 ### <a name="name-model"></a>Nadaj nazwę modelowi
 
@@ -86,11 +86,11 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
     1. Wybierz **encję Klient** pasującą do podstawowej encji klienta.
     1. Wprowadź nazwę, która opisuje relację.
        > [!div class="mx-imgBorder"]
-       > ![Strona historii subskrypcji prezentująca utworzenie relacji z klientem](media/subscription-churn-subscriptionhistoryrelationship.PNG "Strona historii subskrypcji prezentująca utworzenie relacji z klientem")
+       > ![Strona historii subskrypcji prezentująca utworzenie relacji z klientem.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Strona historii subskrypcji prezentująca utworzenie relacji z klientem")
 1. Wybierz **Dalej**.
 1. Zmapuj pola semantyczne na atrybuty w encji historii subskrypcji i wybierz **Zapisz**. Aby zapoznać się z opisami pól, należy zapoznać się z [wymaganiami wstępnymi](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Strona historii subskrypcji prezentująca atrybuty semantyczne, które są mapowane na pola wybranej encji historii subskrypcji](media/subscription-churn-subscriptionhistorymapping.PNG "Strona historii subskrypcji prezentująca atrybuty semantyczne, które są mapowane na pola wybranej encji historii subskrypcji")
+   > ![Strona historii subskrypcji prezentująca atrybuty semantyczne, które są mapowane na pola wybranej encji historii subskrypcji.](media/subscription-churn-subscriptionhistorymapping.PNG "Strona historii subskrypcji prezentująca atrybuty semantyczne, które są mapowane na pola wybranej encji historii subskrypcji")
 1. Wybierz **Dodaj dane** dla **Działania klienta** i wybierz encję, która dostarcza informacje o działania klienta, jak to opisano w wymaganiach wstępnych.
 1. Wybierz typ działania odpowiadający typowi działania klienta, które konfigurujesz.  Wybierz **Utwórz nowy** i podaj nazwę, jeśli nie widzisz opcji odpowiadającej potrzebnemu typowi działania.
 1. Należy skonfigurować relację od encji działania klienta do encji Klient.
@@ -101,7 +101,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 1. Zmapuj pola semantyczne na atrybuty w encji działania klienta i wybierz **Zapisz**. Aby zapoznać się z opisami pól, należy zapoznać się z [wymaganiami wstępnymi](#prerequisites).
 1. (Opcjonalnie) Jeśli istnieją inne działania klientów, które mają zostać uwzględnione, powtórz powyższe kroki.
    > [!div class="mx-imgBorder"]
-   > ![Definiowanie relacji encji](media/subscription-churn-customeractivitiesmapping.PNG "Strona działań klienta prezentująca atrybuty semantyczne, które są mapowane na pola w wybranej encji działań klienta")
+   > ![Definiowanie relacji encji.](media/subscription-churn-customeractivitiesmapping.PNG "Strona działań klienta prezentująca atrybuty semantyczne, które są mapowane na pola w wybranej encji działań klienta")
 1. Wybierz **Dalej**.
 
 ### <a name="set-schedule-and-review-configuration"></a>Konfigurowanie harmonogramu i przeglądu konfiguracji
@@ -115,7 +115,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 
 1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
    > [!div class="mx-imgBorder"]
-   > ![Wyświetl na stronie Moje przewidywania](media/subscription-churn-mypredictions.PNG "Wyświetl na stronie Moje przewidywania")
+   > ![Wyświetl na stronie Moje przewidywania.](media/subscription-churn-mypredictions.PNG "Wyświetl na stronie Moje przewidywania")
 1. Wybierz przewidywania do przeglądu.
    - **Nazwa przewidywania:** Nazwa przewidywania podawana podczas jego tworzenia.
    - **Typ przewidywania:** Typ modelu używanego na potrzeby przewidywania
@@ -131,7 +131,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
    - **Ostatnie odświeżenie:** Data odświeżonych wyników przewidywania w encji wyjściowej.
 1. Zaznacz pionowy wielokropek obok przewidywania, dla którego chcesz przejrzeć wyniki, i wybierz **Widok**.
    > [!div class="mx-imgBorder"]
-   > ![Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie](media/subscription-churn-verticalellipses.PNG "Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie")
+   > ![Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie.](media/subscription-churn-verticalellipses.PNG "Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie")
 1. Na stronie wyników wyszukiwania znajdują się trzy podstawowe sekcje danych:
     1. **Wydajność modelu szkoleniowego:** A, B i C są możliwymi wynikami. Ten wynik wskazuje wydajność przewidywania i może pomóc w podjęciu decyzji w zakresie korzystania z wyników przechowywanych w encji wyjściowej.
         - Wyniki są określane na podstawie następujących reguł:
@@ -139,13 +139,13 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
             - **B** Kiedy model precyzyjnie przewidział co najmniej 50% łącznych przewidywań, i kiedy procent dokładnych prognoz dla klientów, którzy zrezygnowali jest do 10% większy niż historyczny średni współczynnik rezygnacji średniego współczynnika rezygnacji.
             - **C**, kiedy model precyzyjnie przewidział mniej niż 50% łącznych przewidywań, lub kiedy procent dokładnych prognoz dla klientów, którzy zrezygnowali jest mniejszy niż historyczny średni współczynnik rezygnacji.
                > [!div class="mx-imgBorder"]
-               > ![Widok wyniku wydajności modelu](media/subscription-churn-modelperformance.PNG "Widok wyniku wydajności modelu")
+               > ![Widok wyniku wydajności modelu.](media/subscription-churn-modelperformance.PNG "Widok wyniku wydajności modelu")
     1. **Prawdopodobieństwo rezygnacji (liczba klientów):** Grupy klientów na podstawie ich przewidywanego ryzyka rezygnacji. Te dane mogą pomóc później, jeśli chcesz utworzyć segment klientów z dużym ryzykiem rezygnacji. Takie segmenty ułatwiają zrozumienie tego, w którym miejscu powinien się znaleźć próg dla członkostwa w segmencie.
        > [!div class="mx-imgBorder"]
-       > ![Wykres przedstawiający rozkład wyników rezygnacji, podzielony na zakresy z 0-100%](media/subscription-churn-resultdistribution.PNG "Wykres przedstawiający rozkład wyników rezygnacji, podzielony na zakresy z 0-100%")
+       > ![Wykres przedstawiający rozkład wyników rezygnacji, podzielony na zakresy z 0–100%.](media/subscription-churn-resultdistribution.PNG "Wykres przedstawiający rozkład wyników rezygnacji, podzielony na zakresy z 0-100%")
     1. **Czynniki mające największy wpływ:** Istnieje wiele czynników branych pod uwagę podczas tworzenia przewidywania. Każdy z czynników ma swoje znaczenie obliczane dla zagregowanych przewidywań tworzonych przez model. Tych czynników można użyć w celu sprawdzenia poprawności wyników przewidywania. Można też użyć tych informacji później, aby [utworzyć segmenty](segments.md), które mogą wpłynąć na ryzyko rezygnacji dla klientów.
        > [!div class="mx-imgBorder"]
-       > ![Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji](media/subscription-churn-influentialfactors.PNG "Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji")
+       > ![Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji.](media/subscription-churn-influentialfactors.PNG "Lista prezentująca czynniki wywierające wpływ i ich znaczenie przy przewidywaniu wyniku rezygnacji")
 
 ## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 

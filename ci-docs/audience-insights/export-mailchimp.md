@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7922a6a69f863caae5401549ed6f88a61aa77d39
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: ac6642c0ce02f1a92458a16250fd3b4cdef5fd1c
+ms.sourcegitcommit: adb9c43ddaba25e511535d78a4bcf8815f154a7b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124240"
+ms.lasthandoff: 07/06/2021
+ms.locfileid: "6362522"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Eksportowanie segmentów do usługi Mailchimp (wersja zapoznawcza)
 
@@ -38,7 +38,7 @@ Wyeksportowane segmenty zunifikowanych profilów klientów umożliwiają MailChi
 
 1. Przejdź do **Admin** > **Połączenia**.
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Autopilot**, aby skonfigurować połączenie.
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Mailchimp**, aby skonfigurować połączenie.
 
 1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
 

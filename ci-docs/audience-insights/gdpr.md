@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9c453c9b416bff0e6362a8ccf7ff534f4efa1e00
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e832fbbdfb59cb06d98715223edca438d2c3a7f2
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597524"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554352"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -40,7 +40,7 @@ Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia
    2. Sprawdź status źródła danych w **Stan**. Znacznik wyboru oznacza, że odświeżanie zakończyło się powodzeniem. Trójkąt ostrzegawczy oznacza, że wystąpił problem. Jeśli zostanie wyświetlony trójkąt ostrzegawczy, skontaktuj się z D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
-> ![Zarządzanie żądaniami usunięcia danych klienta według RODO](media/gdpr-data-sources.png "Zarządzanie żądaniami usunięcia danych klienta według RODO")
+> ![Zarządzanie żądaniami usunięcia danych klienta według RODO.](media/gdpr-data-sources.png "Zarządzanie żądaniami usunięcia danych klienta według RODO")
 
 #### <a name="manage-delete-requests-for-user-data"></a>Zarządzanie żądaniami usunięcia danych użytkownika
 
@@ -52,7 +52,7 @@ Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia
 4. Wybierz **Usuń**.
 
 > [!div class="mx-imgBorder"]
-> ![Obsługa żądań usunięcia RODO dotyczących danych użytkownika](media/gdpr-permissions.png "Obsługa żądań usunięcia RODO dotyczących danych użytkownika")
+> ![Obsługa żądań usunięcia RODO dotyczących danych użytkownika.](media/gdpr-permissions.png "Obsługa żądań usunięcia RODO dotyczących danych użytkownika")
 
 ## <a name="responding-to-gdpr-data-subject-export-requests"></a>Odpowiadanie na żądania podmiotów o eksport danych osobowych zgodnie z RODO
 

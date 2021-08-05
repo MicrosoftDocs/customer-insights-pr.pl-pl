@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596558"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554907"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 
@@ -45,7 +45,7 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 
 1. Można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Wprowadź informacje o **Kontenerze** i wybierz opcję **Dalej**.
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe umożliwiające wprowadzenie nowych szczegółów połączenia dla usługi Azure Data Lake](media/enter-new-storage-details.png)
+   > ![Okno dialogowe umożliwiające wprowadzenie nowych szczegółów połączenia dla usługi Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Potrzebujesz jednej z następujących ról do kontenera lub konta magazynu, o którym mowa powyżej, aby móc nawiązać połączenie i utworzyć źródło danych:
    >  - Czytnik danych Storage Blob
@@ -58,11 +58,11 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 
 1. Otrzymasz listę dostępnych encji w wybranym pliku model.json lub manifest.json. Możesz przeanalizować i wybrać z listy dostępnych encji i wybrać **Zapisz**. Wszystkie wybrane encje zostaną pozyskane z nowego źródła danych.
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe pokazujące listę encji z pliku model.json](media/review-entities.png)
+   > ![Okno dialogowe pokazujące listę encji z pliku model.json.](media/review-entities.png)
 
 8. Określ, dla których encji danych chcesz włączyć profilowanie danych i wybierz **Zapisz**. Dzięki profilowaniu danych można korzystać z analiz i innych możliwości. Możesz wybrać całą encję, która wybiera wszystkie atrybuty z encji lub wybrane atrybuty. Domyślnie żadne encje nie są włączone do profilowania danych.
    > [!div class="mx-imgBorder"]
-   > ![Okno dialogowe pokazujące Profilowanie danych](media/dataprofiling-entities.png)
+   > ![Okno dialogowe pokazujące Profilowanie danych.](media/dataprofiling-entities.png)
 
 9. Po zapisaniu wybranych opcji zostanie otwarta strona **Źródła danych**. Łącze do folderu Common Data Model powinno być teraz widoczne jako źródło danych.
 
@@ -81,12 +81,12 @@ Możesz zaktualizować klucz dostępu dla konta magazynu zawierającego folder C
 
 4. Opcjonalnie zaktualizuj **Klucz dostępu** i wybierz **Dalej**.
 
-   ![Dialog pozwalający edytować i aktualizować klucz dostępu dla istniejącego źródła danych](media/edit-access-key.png)
+   ![Dialog pozwalający edytować i aktualizować klucz dostępu dla istniejącego źródła danych.](media/edit-access-key.png)
 
 5. Opcjonalnie można zaktualizować połączenie z klucza konta do połączenia opartego na zasobach lub subskrypcji. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Podczas aktualizowania połączenia nie można zmieniać informacji o **Kontenerze**.
    > [!div class="mx-imgBorder"]
 
-   > ![Okno dialogowe wprowadzania szczegółów połączenia dla danych Azure Data Lake do istniejącego konta magazynu](media/enter-existing-storage-details.png)
+   > ![Okno dialogowe wprowadzania szczegółów połączenia dla danych Azure Data Lake do istniejącego konta magazynu.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Potrzebujesz jednej z następujących ról do kontenera lub konta magazynu, o którym mowa powyżej, aby móc nawiązać połączenie i utworzyć źródło danych:

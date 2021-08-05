@@ -9,18 +9,18 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: cc94ad49f12067d513db4663bff60620d6501eb0
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596512"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692126"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure
 
 Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Czytaj dalej, aby dowiedzieć się, jak połączyć szczegółowe informacje o odbiorcach z kontem Azure Data Lake Storage Gen2 przy użyciu nazwy głównej usługi usługi platformy Azure zamiast kluczy konta magazynu. 
 
-Możesz użyć nazwy głównej usługi, aby bezpiecznie [dodać lub edytować folder Common Data Model](connect-common-data-model.md) jako źródło danych lub [utworzyć nowe lub zaktualizować istniejące środowisko](manage-environments.md#create-an-environment-in-an-existing-organization).
+Możesz użyć nazwy głównej usługi, aby bezpiecznie [dodać lub edytować folder Common Data Model](connect-common-data-model.md) jako źródło danych lub [utworzyć nowe lub zaktualizować istniejące środowisko](get-started-paid.md).
 
 > [!IMPORTANT]
 > - Konto magazynu Azure Data Lake Gen2, które ma używać jednostki usługi, musi mieć [włączoną funkcję Hierarchiczna przestrzeń nazw (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
@@ -81,7 +81,7 @@ Rozpowszechnienie zmian może zająć do 15 minut.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Wprowadź identyfikator zasobu platformy Azure lub szczegóły subskrypcji platformy Azure w załączniku konta magazynu do usługi analiz odbiorców.
 
-Dołącz konto magazynowe Azure Data Lake w analizach odbiorców do [przechowywania danych wyjściowych](manage-environments.md) lub [używania jako źródła danych](connect-common-data-service-lake.md). Wybranie opcji Azure Data Lake umożliwia wybranie podejścia opartego na zasobach lub subskrypcji.
+Dołącz konto magazynowe Azure Data Lake w analizach odbiorców do [przechowywania danych wyjściowych](manage-environments.md) lub [używania jako źródła danych](connect-dataverse-managed-lake.md). Wybranie opcji Azure Data Lake umożliwia wybranie podejścia opartego na zasobach lub subskrypcji.
 
 Wykonaj poniższe czynności, aby podać wymagane informacje na temat wybranego podejścia.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
-ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
+ms.openlocfilehash: 6a7137730ab8cc43bc93daf647d9d55d02d96cd8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/18/2021
-ms.locfileid: "6059601"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692218"
 ---
 # <a name="customer-card-add-in-preview"></a>Dodatek kart klientów (wersja zapoznawcza)
 
@@ -25,7 +25,7 @@ Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Po zains
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Ten dodatek działa tylko w aplikacjach opartych na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
-- Aby dane usługi Dynamics 365 były mapowane do profili klientów w ramach analizy odbiorców, muszą być [pobierane z Dynamics 365 przy użyciu łącznika Common Data Service](connect-power-query.md).
+- Aby dane usługi Dynamics 365 były mapowane do profili klientów w ramach analizy odbiorców, muszą być [pobierane z Dynamics 365 przy użyciu łącznika Microsoft Dataverse](connect-power-query.md).
 - Wszystkich użytkowników usługi Dynamics 365 z dodatku karta klienta należy [dodać jako użytkowników](permissions.md) w analizie odbiorców, aby dane stały się widoczne.
 - [Funkcje wyszukiwania i filtrowania skonfigurowane](search-filter-index.md) w analizie odbiorców są wymagane do wyszukiwania danych.
 - Każdy formant dodatku zależy od określonych danych w analizie odbiorców:
@@ -50,7 +50,7 @@ Może upłynąć trochę czasu zanim rozwiązanie zostanie zainstalowane w środ
 1. Wybierz łącze **Wyświetlana nazwa** dla rozwiązania **Dynamics 365 Customer Insights, Dodatek kart klientów (wersja zapoznawcza)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Wybierz nazwę wyświetlaną](media/select-display-name.png "Wybierz nazwę wyświetlaną")
+   > ![Wybierz nazwę wyświetlaną.](media/select-display-name.png "Wybierz nazwę wyświetlaną")
 
 1. Wybierz **Zaloguj** i wprowadź poświadczenia dla konta administracyjnego używanego do konfigurowania Customer Insights.
 
@@ -64,7 +64,7 @@ Może upłynąć trochę czasu zanim rozwiązanie zostanie zainstalowane w środ
    - Aby zmapować z kontem, wybierz pole w encji Customer, które jest zgodne z identyfikatorem Twojej encji konta.
 
    > [!div class="mx-imgBorder"]
-   > ![Pole identyfikatora kontaktu](media/contact-id-field.png "Pole identyfikatora kontaktu")
+   > ![Pole identyfikatora kontaktu.](media/contact-id-field.png "Pole identyfikatora kontaktu")
 
 1. Wybierz **Zapisz konfigurację**, aby zapisać ustawienia.
 
@@ -83,7 +83,7 @@ Może upłynąć trochę czasu zanim rozwiązanie zostanie zainstalowane w środ
 1. Wybierz formularz kontaktu, do którego chcesz dodać formanty karty klienta.
 
     > [!div class="mx-imgBorder"]
-    > ![Wybierz formularz Kontaktu](media/contact-active-forms.png "Wybierz formularz Kontaktu")
+    > ![Wybierz formularz Kontaktu.](media/contact-active-forms.png "Wybierz formularz Kontaktu")
 
 1. Aby dodać formant, w edytorze formularzy przeciągnij dowolne pole z **Eksplorator pól** do miejsca, gdzie ma się pojawić formant.
 
@@ -110,7 +110,7 @@ Dodatek karty klienta nie aktualizuje się automatycznie. Aby uaktualnić do naj
 
 1. Na pasku akcji wybierz opcję **Zastosuj uaktualnienie rozwiązania**.
 
-   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Uaktualnianie rozwiązania w obszarze Dostosowywanie aplikacji Dynamics 365":::
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Uaktualnianie rozwiązania w obszarze Dostosowywanie aplikacji Dynamics 365.":::
 
 1. Po rozpoczęciu procesu uaktualniania będzie widzieć wskaźnik ładowania do momentu ukończenia uaktualniania. Jeśli nie ma nowszej wersji, aktualizacja wyświetli komunikat o błędzie.
 

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 24b523786158ff36c314601846ee25ea64cfabbe
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305664"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650239"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
@@ -109,7 +109,7 @@ Niektóre encje zawierają więcej szczegółów niż inne. Jeśli encja zawiera
 Niezależnie od tego, czy ręcznie scalono atrybuty, czy pozwolono, aby system je scalił, zawsze można uruchomić scalanie. Wybierz **Uruchom** na stronie **Scalanie**, aby zacząć proces.
 
 > [!div class="mx-imgBorder"]
-> ![Zapis i uruchomienie scalania danych](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")
+> ![Zapis i uruchomienie scalania danych.](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")
 
 Wybierz opcję **Uruchom tylko scalanie**, jeśli chcesz, aby wyniki pracy zostały odzwierciedlone w ujednoliconej encji klienta. Procesy niższego szczebla zostaną odświeżone zgodnie [z definicją w harmonogramie odświeżania](system.md#schedule-tab).
 
@@ -118,7 +118,9 @@ Wybierz **Uruchom procesy scalania i procesy niższego rzędu**, aby odświeży�
 Aby wprowadzić więcej zmian i ponownie uruchomić krok, można anulować trwające scalanie. Wybierz **Odświeżanie...** i wybierz **Anuluj zadanie**  w pojawiającym się okienku bocznym.
 
 > [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+> Po uruchomieniu procesu scalania wybierz stan procesu, aby otworzyć okienko **Szczegóły zadania**. Zawiera przegląd czasu przetwarzania, daty ostatniego przetwarzania i wszystkich błędów i ostrzeżeń skojarzonych z zadaniem. Wybierz **Zobacz szczegóły**, aby zobaczyć, które jednostki uczestniczyły w procesie dopasowania, czy rozwiązanie konfliktu zakończyło się pomyślnie i czy aktualizacje zostały pomyślnie opublikowane.  
+> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Ścieżka przechodzenia do szczegółów, aby uzyskać szczegółowe informacje z łącza stanu zadania.":::
 
 ## <a name="next-step"></a>Następny krok
 

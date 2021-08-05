@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: bcbafa513c2c61b0280c91aa7ed71e211c32c35c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095569"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556137"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
 
@@ -64,7 +64,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. Wybierz kafelek **Model rekomendacji produktów (wersja zapoznawcza)** i wybierz opcję **Użyj tego modelu**.
    > [!div class="mx-imgBorder"]
-   > ![Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu](media/product-recommendation-usethismodel.PNG "Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu")
+   > ![Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu.](media/product-recommendation-usethismodel.PNG "Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu")
 
 1. Przejrzyj informacje dotyczące wymagań modelu. Jeśli masz wymagane dane, wybierz opcję **Wprowadzenie**.
 
@@ -93,7 +93,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. Zmapuj pola semantyczne na atrybuty w encji historii zakupu i wybierz przycisk **Dalej**. Aby zapoznać się z opisami pól, należy zapoznać się z [wymaganiami wstępnymi](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Definiowanie relacji encji](media/product-recommendation-purchasehistorymapping.PNG "Strona historii zakupów pokazująca atrybuty semantyczne, które są mapowane na pola w wybranej encji historii zakupów")
+   > ![Definiowanie relacji encji.](media/product-recommendation-purchasehistorymapping.PNG "Strona historii zakupów pokazująca atrybuty semantyczne, które są mapowane na pola w wybranej encji historii zakupów")
 
 1. Jeśli pola nie są wypełnione, skonfiguruj relację między jednostką historii zakupów a jednostką *Klient*.
     1. Wybierz **Encja historii zakupów**.
@@ -101,7 +101,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
     1. Wybierz **encję Klient** pasującą do podstawowej encji klienta.
     1. Wprowadź nazwę, która opisuje relację.
        > [!div class="mx-imgBorder"]
-       > ![Strona historii zakupów pokazująca tworzenie relacji z klientem](media/model-purchase-join.png "Strona historii zakupów pokazująca tworzenie relacji z klientem")
+       > ![Strona historii zakupów pokazująca tworzenie relacji z klientem.](media/model-purchase-join.png "Strona historii zakupów pokazująca tworzenie relacji z klientem")
 
 1. Wybierz pozycję **Zapisz**.
 
@@ -145,7 +145,7 @@ Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego ty
 
 1. Przejdź do karty **Moje przewidywania** w **Analiza** > **Przewidywania**.
    > [!div class="mx-imgBorder"]
-   > ![Wyświetl na stronie Moje przewidywania](media/product-recommendation-mypredictions.PNG "Wyświetl na stronie Moje przewidywania")
+   > ![Wyświetl na stronie Moje przewidywania.](media/product-recommendation-mypredictions.PNG "Wyświetl na stronie Moje przewidywania")
 
 1. Wybierz przewidywania do przeglądu.
    - **Nazwa przewidywania:** Nazwa przewidywania podawana podczas jego tworzenia.
@@ -163,7 +163,7 @@ Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego ty
 
 1. Zaznacz pionowy wielokropek obok przewidywania, dla którego chcesz przejrzeć wyniki, i wybierz **Widok**.
    > [!div class="mx-imgBorder"]
-   > ![Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie](media/product-recommendation-verticalellipses.PNG "Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie")
+   > ![Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie.](media/product-recommendation-verticalellipses.PNG "Widok opcji w menu pionowych wielokropków dla przewidywania, w tym edytowanie, odświeżanie, wyświetlanie, dzienniki i usuwanie")
 
 1. Na stronie wyników znajduje się pięć podstawowych sekcji danych:
     1. **Wydajność modelu szkoleniowego:** A, B i C są możliwymi wynikami. Ten wynik wskazuje wydajność przewidywania i może pomóc w podjęciu decyzji w zakresie korzystania z wyników przechowywanych w encji wyjściowej.
@@ -173,13 +173,13 @@ Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego ty
             - **C** Model zostanie uznany jako jakości **C**, jeśli wskaźnik metryczny „Success @ K” jest niższy niż wartość bazowa.
                
                > [!div class="mx-imgBorder"]
-               > ![Widok wyniku wydajności modelu](media/product-recommendation-modelperformance.PNG "Widok wyniku wydajności modelu")
+               > ![Widok wyniku wydajności modelu.](media/product-recommendation-modelperformance.PNG "Widok wyniku wydajności modelu")
             - **Model odniesienia**: Model bierze najczęściej polecane produkty według liczby zakupów wśród wszystkich klientów i wykorzystuje wyuczone reguły zidentyfikowane przez model, aby utworzyć zestaw rekomendacji dla klientów. Prognozy są następnie porównywane z najlepszymi produktami, obliczonymi na podstawie liczby klientów, którzy kupili produkt. Jeśli klient ma co najmniej jeden produkt w swoich polecanych produktach, który był również widoczny w najczęściej kupowanych produktach, jest on traktowany jako część linii bazowej. Gdyby było 10 z tych klientów, którzy zakupili zalecany produkt spośród 100 wszystkich klientów, wartość bazowa wyniosłaby 10%.
             - **Powodzenie @ K**: Korzystając z zestawu walidacyjnego okresów transakcji, tworzone są rekomendacje dla wszystkich klientów i porównywane z zestawem walidacyjnym transakcji. Na przykład, w okresie 12 miesięcy, miesiąc 12 może zostać odłożony jako zbiór danych do walidacji. Jeśli model przewiduje przynajmniej jedną rzecz, którą kupisz w 12 miesiącu na podstawie tego, czego nauczył się w ciągu ostatnich 11 miesięcy, klient zwiększy wskaźnik „Success @ K”.
     
     1. **Większość sugerowanych produktów (z zestawieniem):** pięć najlepszych produktów, które zostały przewidziane dla klientów.
        > [!div class="mx-imgBorder"]
-       > ![Wykres przedstawiający 5 najbardziej zalecanych produktów](media/product-recommendation-topproducts.PNG "Wykres przedstawiający 5 najbardziej zalecanych produktów")
+       > ![Wykres przedstawiający 5 najbardziej zalecanych produktów.](media/product-recommendation-topproducts.PNG "Wykres przedstawiający 5 najbardziej zalecanych produktów")
     
     1. **Kluczowe czynniki rekomendacji:** model korzysta z historii transakcji klientów w celu tworzenia rekomendacji produktów. Zawiera informacje o wzorcach opartych na wcześniejszych zakupach i znajduje podobieństwa między klientami a produktami. Te podobieństwa są następnie wykorzystywane do generowania rekomendacji produktów.
     Poniżej przedstawiono czynniki, które mogą mieć wpływ na rekomendacje produktu generowane przez model. 
@@ -190,20 +190,20 @@ Czasami tylko niektóre produkty są korzystne lub odpowiednie dla tworzonego ty
         Każda rekomendacja produktu jest zależna od jednego lub większej liczby czynników. Wartość procentowa rekomendacji, w której każdy czynnik odegrał rolę, został zobrazowany za pomocą wykresu. W poniższym przykładzie na 100% rekomendacji miały wpływ transakcje z przeszłości, 60% według podobieństwa klienta i 22% według podobieństwa produktu. Przesuń kursor nad słupki na wykresie, aby zobaczyć dokładny procent wpływu czynników.
 
         > [!div class="mx-imgBorder"]
-        > ![Kluczowe czynniki wpływające na rekomendacje](media/product-recommendation-keyrecommendationfactors.png "Kluczowe czynniki rekomendacji, których nauczyć się model do wygenerowania rekomendacji produktów")
+        > ![Kluczowe czynniki wpływające na rekomendacje.](media/product-recommendation-keyrecommendationfactors.png "Kluczowe czynniki rekomendacji, których nauczyć się model do wygenerowania rekomendacji produktów")
        
      
    1. **Dane statystyczne**: umożliwia przegląd liczby transakcji, klientów i produktów, które model wziął pod uwagę. Jest to oparte na danych wejściowych używanych do nauczenia się wzorców i generowania rekomendacji produktów.
 
       > [!div class="mx-imgBorder"]
-      > ![Statystyki danych](media/product-recommendation-datastatistics.png "Dane statystyczne dotyczące wprowadzonych danych używanych przez model w celu uczenia się wzorców")
+      > ![Statystyki danych.](media/product-recommendation-datastatistics.png "Dane statystyczne dotyczące wprowadzonych danych używanych przez model w celu uczenia się wzorców")
 
       Ta sekcja przedstawia statystyki dotyczące punktów danych używanych przez model w celu nauczenia się wzorców i wygenerowania rekomendacji produktów. Filtrowanie, skonfigurowane w konfiguracji modelu, ma zastosowanie do danych wyjściowych wygenerowanych przez model. Jednak model wykorzystuje wszystkie dostępne dane do uczenia się wzorców. Dlatego jeśli w konfiguracji modelu używane jest filtrowanie produktu, ta sekcja pokaże łączną liczbę produktów przeanalizowanych w modelu w celu nauczenia się wzorców, która może się różnić od liczby produktów, które spełniają zdefiniowane kryteria filtrowania.
 
    1. **Pewne rekomendacje dotyczące produktów**: Próbka zaleceń przekazanych klientom, które według modelu mogą zostać zakupione przez klienta.    
       Po dodaniu katalogu produktów identyfikatory produktów są zastępowane nazwami produktów. Nazwy produktów zawierają bardziej intuicyjne i praktyczne informacje o przewidywaniu.
        > [!div class="mx-imgBorder"]
-       > ![Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych](media/product-recommendation-highconfidence.PNG "Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych")
+       > ![Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych.](media/product-recommendation-highconfidence.PNG "Lista przedstawiająca sugestie o wysokim poziomie zaufania dla wybranej grupy klientów indywidualnych")
 
 ## <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 

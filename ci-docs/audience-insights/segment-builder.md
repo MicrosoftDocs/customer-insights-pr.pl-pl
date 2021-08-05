@@ -1,7 +1,7 @@
 ---
 title: Tworzenie segmentów i zarządzanie nimi
 description: W celu pogrupowania klientów na podstawie różnych atrybutów można utworzyć ich segmenty.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064950"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685475"
 ---
 # <a name="create-and-manage-segments"></a>Tworzenie segmentów i zarządzanie nimi
+
+> [!IMPORTANT]
+> We wrześniu 2021 r. wprowadzono kilka zmian w tworzeniu segmentu: 
+> - Konstruktor segmentów będzie wyglądał nieco inaczej, ponieważ zmieniono styl elementów i ulepszono przepływ użytkowników.
+> - W Konstruktorze segmentów są dostępne nowe operatory daty i godziny oraz ulepszony selektor daty.
+> - Będziesz mieć możliwość dodawania warunków i reguł do segmentów oraz usuwania ich z segmentów. 
+> - Będą dostępne zagnieżdżone reguły rozpoczynające się od warunku LUB. Nie musisz już używać warunku ORAZ w najbardziej zewnętrznej warstwie.
+> - Służące do wybierania atrybutów okienko boczne będzie ciągle dostępne.
+> - Opcja wybierania ścieżek relacji encji.
+> Aby wypróbować nowego konstruktora segmentów, wyślij wiadomość e-mail z tematem „Żądanie włączenia nowego konstruktora segmentów”, na adres cihelp [at] microsoft.com. Podaj nazwę swojej organizacji i identyfikator środowiska piaskownicy.
 
 Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje. Segmenty są zarządzane na stronie **Segmenty**. 
 
@@ -50,14 +60,14 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Zostanie on zapi
 1. Wybierz operatora i wartość dla zaznaczonego atrybutu.
 
    > [!div class="mx-imgBorder"]
-   > ![Niestandardowy filtr grup](media/customer-group-numbers.png "Filtr grupy klienta")
+   > ![Niestandardowy filtr grup.](media/customer-group-numbers.png "Filtr grupy klienta")
 
    |Liczba |Definicja  |
    |---------|---------|
    |1     |Entity          |
    |2     |Atrybut          |
    |3    |Operator         |
-   |4    |Wartość         |
+   |100    |Wartość         |
 
    1. Aby dodać do grupy więcej warunków, można użyć dwóch operatorów logicznych:
 
@@ -66,7 +76,7 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Zostanie on zapi
       - **OR** operator: jeden z warunków musi zostać osiągnięty jako część procesu segmentacji. Ta opcja jest najbardziej przydatna podczas definiowania wielu warunków dla tej samej encji.
 
       > [!div class="mx-imgBorder"]
-      > ![OR operator, w którym oba warunki muszą zostać spełnione](media/segmentation-either-condition.png "OR operator, w którym oba warunki muszą zostać spełnione")
+      > ![OR operator, w którym oba warunki muszą zostać spełnione.](media/segmentation-either-condition.png "OR operator, w którym oba warunki muszą zostać spełnione")
 
       Obecnie istnieje możliwość zawinięcia operatora **OR** pod operatorem **AND**, ale nie na odwrót.
 
@@ -74,12 +84,12 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Zostanie on zapi
    Wybierz **Dodaj grupę**.
 
       > [!div class="mx-imgBorder"]
-      > ![Grupa klientów, Dodawanie grupy](media/customer-group-add-group.png "Grupa klientów, Dodawanie grupy")
+      > ![Grupa klientów, Dodawanie grupy.](media/customer-group-add-group.png "Grupa klientów, Dodawanie grupy")
 
    1. Wybierz jeden z operatorów: **Związek**, **Część wspólna** lub **Z wyjątkiem**.
 
    > [!div class="mx-imgBorder"]
-   > ![Grupa klientów, Dodawanie związku](media/customer-group-union.png "Grupa klientów, Dodawanie związku")
+   > ![Grupa klientów, Dodawanie związku.](media/customer-group-union.png "Grupa klientów, Dodawanie związku")
 
    - **Związek** łączy dwie grupy.
 
@@ -90,7 +100,7 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Zostanie on zapi
 1. Jeśli encja jest połączona z zunifikowaną encją klient za pośrednictwem [relacji](relationships.md), należy zdefiniować ścieżkę relacji, aby utworzyć prawidłowy segment. Dodaj encje ze ścieżki relacji, aż będzie można wybrać encję **Klient : CustomerInsights** z listy rozwijanej. Następnie dla każdego kroku wybierz opcję **Wszystkie rekordy**.
 
    > [!div class="mx-imgBorder"]
-   > ![Ścieżka relacji podczas tworzenia segmentu](media/segments-multiple-relationships.png "Ścieżka relacji podczas tworzenia segmentu")
+   > ![Ścieżka relacji podczas tworzenia segmentu.](media/segments-multiple-relationships.png "Ścieżka relacji podczas tworzenia segmentu")
 
 1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej.  
   
@@ -127,7 +137,7 @@ Szybkie segmenty umożliwiają tworzenie prostych segmentów z jednym operatorem
 4. System zaproponuje opcje **Szacowany rozmiar segmentu**. Użytkownik może wybrać, czy ma zostać wyświetlona definicja segmentu, czy też najpierw ją ponownie przejrzeć w celu uzyskania innego rozmiaru segmentu.
 
     > [!div class="mx-imgBorder"]
-    > ![Nazwa i oszacowanie szybkiego segmentu](media/quick-segment-name.png "Nazwa i oszacowanie szybkiego segmentu")
+    > ![Nazwa i oszacowanie szybkiego segmentu.](media/quick-segment-name.png "Nazwa i oszacowanie szybkiego segmentu")
 
 5. Podaj **Nazwę** segmentu. Opcjonalnie, podaj **Nazwę wyświetlaną**.
 

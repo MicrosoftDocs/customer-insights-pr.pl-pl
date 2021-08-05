@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595914"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692540"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Uzupełnij częściowe dane przy użyciu przewidywań
 
@@ -31,11 +31,11 @@ Przewidywania umożliwiają łatwe tworzenie prognozowanych wartości, które mo
 
 Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić, że są spełnione następujące wymagania wstępne:
 
-1. W organizacji jest używane wystąpienie [skonfigurowane w Common Data Service](/ai-builder/build-model#prerequisites) i znajduje się on w tej samej organizacji, w której znajduje się klient Customer Insights.
+1. Organizacja ma [skonfigurowane wystąpienie w Microsoft Dataverse](/ai-builder/build-model#prerequisites) i znajduje się w tej samej organizacji co Customer Insights.
 
-2. Środowisko użytkownika jest dołączone do wystąpienia Common Data Service.
+2. Środowisko szczegółowych informacji odbiorcy jest dołączone do wystąpienia Dataverse.
 
-W przypadku [tworzenia nowego środowiska](manage-environments.md) należy je skonfigurować w oknie dialogowym **Tworzenie środowiska** i wybrać opcję **Zaawansowane**. Jeśli środowisko zostało już utworzone, przejdź do jego ustawień i wybierz **Zaawansowane**. W obszarze w sekcji **Korzystanie z przewidywania** wprowadź adres URL wystąpienia Common Data Service, do którego chcesz dodać środowisko.
+W przypadku [tworzenia nowego środowiska](get-started-paid.md) należy je skonfigurować w oknie dialogowym **Tworzenie środowiska** i wybrać opcję **Zaawansowane**. Jeśli środowisko zostało już utworzone, przejdź do jego ustawień i wybierz **Zaawansowane**. W obszarze w sekcji **Korzystanie z przewidywania** wprowadź adres URL wystąpienia Dataverse, do którego chcesz dodać środowisko.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Tworzenie przewidywania w encji Klienta
 
@@ -47,17 +47,17 @@ W przypadku [tworzenia nowego środowiska](manage-environments.md) należy je sk
 
 4. Znajdź nazwę atrybutu, dla którego chcesz prognozować wartości, a następnie wybierz ikonę **przegląd** w kolumnie **podsumowanie**.
    > [!div class="mx-imgBorder"]
-   > ![Ikona przegląd](media/intelligence-overviewicon.png "Ikona przegląd")
+   > ![Ikona przeglądu.](media/intelligence-overviewicon.png "Ikona przegląd")
 
 5. Jeśli istnieje duża liczba brakujących wartości atrybutu, wybierz **Przewiduj brakujące wartości**, aby kontynuować przewidywanie.
    > [!div class="mx-imgBorder"]
-   > ![Status przeglądu z pokazanym przyciskiem przewidywania brakujących wartości](media/intelligence-overviewpredictmissingvalues.png "Status przeglądu z pokazanym przyciskiem przewidywania brakujących wartości")
+   > ![Status przeglądu z pokazanym przyciskiem przewidywania brakujących wartości.](media/intelligence-overviewpredictmissingvalues.png "Status przeglądu z pokazanym przyciskiem przewidywania brakujących wartości")
 
 6. Uzupełnij pola **Wyświetlana nazwa** i **Nazwa encji wyjściowej** dla wyników przewidywania.
 
 7. Wstępnie wypełniona lista opcji będzie wskazywać miejsce, w którym można zamapować wartości na kategorię przewidywaną. W tym przypadku tylko te opcje kategorii będą miały wartość 0 lub 1, ponieważ są one mapowane na wartość prawda/fałsz lub na dwójkową naturę przewidywania. W kolumnie Kategoria zamapuj wartości pól, które mają być klasyfikowane jako „0”, w końcowym przewidywaniu na „0”, a pozycje, które mają być klasyfikowane jako „1”, w końcowym przewidywaniu na „1”.
    > [!div class="mx-imgBorder"]
-   > ![Przykład przedstawiający mapowane wartości pól w kategoriach](media/intelligence-categorymapping.png "Przykład przedstawiający mapowane wartości pól w kategoriach")
+   > ![Przykład przedstawiający mapowane wartości pól w kategoriach.](media/intelligence-categorymapping.png "Przykład przedstawiający mapowane wartości pól w kategoriach")
 
 8. Wybierz **Gotowe**, a prognoza zostanie przetworzona. Przetwarzanie zajmie trochę czasu w zależności od rozmiaru i stopnia złożoności danych. Wyniki będą dostępne w nowej encji na podstawie **Nazwa encji wyjściowej** utworzonego przewidywania.
 
@@ -77,7 +77,7 @@ W ramach tego przepływu użytkownik powinien wybrać konkretny atrybut, który 
 
 5. Jeśli utworzony segment zawiera niekompletne dane w polu źródłowym, można wybrać opcję przewidywania brakujących wartości.
    > [!div class="mx-imgBorder"]
-   > ![Przycisk przewidywania](media/segments-predictoption.png "Przycisk przewidywania")
+   > ![Przycisk przewidywania.](media/segments-predictoption.png "Przycisk przewidywania")
 
 6. Uzupełnij pola **Wyświetlana nazwa** i **Nazwa encji wyjściowej** dla wyników przewidywania.
 
@@ -93,7 +93,7 @@ W ramach tego przepływu użytkownik powinien wybrać konkretny atrybut, który 
 
 4. W widoku przewidywania będzie widoczna liczba punktów danych.
    > [!div class="mx-imgBorder"]
-   > ![Strona przewidywań](media/intelligence-predictionsviewpage.png "Strona przewidywań")
+   > ![Strona przewidywań.](media/intelligence-predictionsviewpage.png "Strona przewidywań")
 
    - **Wartości przewidywane** pokazują mapowanie utworzone podczas fazy mapowania według wartości pola do kategorii. Są to wartości w zestawie danych, które zostały zamapowane na określoną kategorię.
    -**Pola mające największy wpływ** są to czynniki w zestawie danych, które mogą mieć wpływ na wiarygodność prognozowanej wartości pola, które jest mapowane na określoną kategorię.
@@ -139,7 +139,7 @@ Następne uruchomienie funkcji przewidywania będzie mieć zaktualizowany utworz
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
-Jeśli użytkownik nie może zakończyć procesu dołączania Common Data Service z powodu błędu, może podjąć próbę ręcznego ukończenia procesu. Istnieją dwa znane problemy, które mogą wystąpić podczas procesu dołączania:
+Jeśli użytkownik nie może zakończyć procesu dołączania Dataverse z powodu błędu, może podjąć próbę ręcznego ukończenia procesu. Istnieją dwa znane problemy, które mogą wystąpić podczas procesu dołączania:
 
 - Rozwiązanie dodatku karty klienta nie jest zainstalowane.
     1. Wykonaj instrukcje, aby [zainstalować i skonfigurować rozwiązanie](customer-card-add-in.md).
