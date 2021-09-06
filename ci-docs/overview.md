@@ -3,21 +3,21 @@ title: Przegląd produktu
 author: m-hartmann
 description: Uzyskaj przegląd Dynamics 365 Customer Insights i jego możliwości.
 ms.author: mhart
-ms.date: 02/16/2021
+ms.date: 07/30/2021
 ms.service: customer-insights
 ms.topic: overview
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 1bc75959229fd2ffef9a5fd5617889888eb72e55
-ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
+ms.openlocfilehash: 651bd151a77b9d7f44d5fcca15da0f131b9fb3f07ffc89bfac9c0aa6f799e9b1
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "6539402"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036524"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Przegląd produktu dla Dynamics 365 Customer Insights
 
-Dynamics 365 Customer Insights to część platformy danych klienta (customer data platform - CDP) firmy Microsoft, która pomaga w dostarczaniu spersonalizowanych rozwiązań klienta. Możliwości platformy zawierają szczegółowe informacje o tym, kim są klienci, i ich interakcja z platformą. Ujednolicaj dane klientów z wielu źródeł, aby uzyskać jeden widok klientów.
+[Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) to część platformy danych klienta (CDP) firmy Microsoft, która pomaga w dostarczaniu spersonalizowanych rozwiązań klienta. Możliwości platformy zawierają szczegółowe informacje o tym, kim są klienci, i ich interakcja z platformą. Ujednolicaj dane klientów z wielu źródeł, aby uzyskać jeden widok klientów.
 
 
 - [Odbiorcy dane pomagają](audience-insights/overview.md) przekształcić firmę w organizację cenną dla klienta. Specjaliści ds. marketingu, sprzedaży i obsługi klienta mają wgląd w dane potrzebne do personalizowania działań. Połącz dane ze źródeł transakcyjnych, behawioralnych i obserwacyjnych, aby stworzyć 360-stopniowy widok klienta. Szybsze wyświetlanie wyników dzięki protokołowi CDP zaprojektowanemu w celu dostarczania informacji, na których można działać. 

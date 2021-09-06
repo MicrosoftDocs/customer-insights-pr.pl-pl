@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171177"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035244"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
@@ -32,8 +32,8 @@ Podczas ujednolicania danych relacje systemowe są tworzone automatycznie na pod
 :::image type="content" source="media/relationships-entities-merge.png" alt-text="Diagram ze ścieżkami relacji dla encji klient z trzema relacjami 1-n.":::
 
 - **Relacja *CustomerToContact*** jest utworzona między encją *klienta* i encją *kontaktu*. Encja *klienta* otrzymuje pole kluczowe **Contact_contactID** w celu powiązania jej z polem kluczowym encji *kontaktu* **contactID**.
-- **Relacja *CustomerToAccount*** jest utworzona między encją *klienta* i encją *konta*. Encja *klienta* otrzymuje pole kluczowe **Account_accountID** w celu powiązania jej z polem kluczowym encji *konta* **accountID**.
-- **Relacja *CustomerToWebAccount*** jest utworzona między encją *klienta* i encją *WebAccount*. Encja *klienta* otrzymuje pole kluczowe **WebAccount_webaccountID** w celu powiązania jej z polem kluczowym **webaccountID** encji *WebAccount*.
+- ***Relacja CustomerToAccount*** jest utworzona między encją *klienta* i encją *konta*. Encja *klienta* otrzymuje pole kluczowe **Account_accountID** w celu powiązania jej z polem kluczowym encji *konta* **accountID**.
+- ***Relacja CustomerToWebAccount*** jest utworzona między encją *klienta* i encją *WebAccount*. Encja *klienta* otrzymuje pole kluczowe **WebAccount_webaccountID** w celu powiązania jej z polem kluczowym **webaccountID** encji *WebAccount*.
 
 ## <a name="non-editable-inherited-relationships"></a>Odziedziczone relacje nieedytowalne
 
@@ -82,7 +82,7 @@ Ta strona oferuje zestaw opcji dla istniejących i nowych relacji:
 
 ### <a name="explore-the-relationship-visualizer"></a>Poznawanie wizualizacji relacji
 
-Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności.
+Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności. Także wizualizuje ścieżkę relacji.
 
 Aby dostosować widok, możesz zmienić położenie pól, przeciągając je na kanwę.
 
@@ -92,6 +92,20 @@ Dostępne opcje:
 - **Eksportuj jako plik obrazu**: zapisz bieżący widok jako plik obrazu.
 - **Zmień na układ poziomy/pionowy**: zmień wyrównanie encji i relacji.
 - **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
+
+### <a name="relationship-path"></a>Ścieżka relacji
+
+Ścieżka relacji opisuje encje, które są połączone z relacją między encją źródłową a encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu.
+
+Ścieżka relacji informuje system, które relacja mają uzyskać dostęp do encji ujednoliconego profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
+
+Na przykład obiekt, *eCommerce_eCommercePurchases* ma następujące relacje do encji ujednoliconego profilu *Klient*:
+
+- eCommerce_eCommercePurchases > klient
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > klient 
+
+Ścieżka relacji określa, których encji można używać podczas tworzenia reguł dla miar lub segmentów. Wybranie opcji z najdłuższa ścieżką relacji najprawdopodobniej dostarczy mniejszą liczbę wyników, ponieważ dopasowane rekordy muszą być częścią wszystkich encji. W tym przykładzie klient musi mieć zakupione towary za pośrednictwem handlu elektronicznego (eCommerce_eCommercePurchases) w punkcie sprzedaży (POS_posPurchases) i uczestniczyć w naszym programie lojalnościowym (loyaltyScheme_loyCustomers). Wybór pierwszej opcji spowoduje prawdopodobnie dodatkowe rezultaty, ponieważ klienci muszą istnieć tylko w jednej dodatkowej encji.
 
 ## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami 
 
@@ -105,6 +119,6 @@ Wybierz relację i wybierz jedną z następujących opcji:
 
 ## <a name="next-step"></a>Następny krok
 
-System i relacje niestandardowe służą do [tworzenia segmentów](segments.md) na podstawie wielu źródeł danych, które nie są już izolowane.
+Relacje systemowe i niestandardowe są używane do [tworzenia segmentów](segments.md) i [miar](measures.md) opartych na wielu źródłach danych, które nie są już w silosach.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

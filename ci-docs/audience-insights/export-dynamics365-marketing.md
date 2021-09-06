@@ -1,7 +1,7 @@
 ---
 title: Eksport danych z Customer Insights do Dynamics 365 Marketing
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Dynamics 365 Marketing.
-ms.date: 03/03/2021
+ms.date: 08/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
+ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692494"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "7417218"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Używanie segmentów w usłudze Dynamics 365 Marketing (wersja zapoznawcza)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Za pomocą [segmentów](segments.md) utworzonych w aplikacji Customer Insights możesz generować kampanie oraz nawiązać kontakt z wybranymi grupami klientów w rozwiązaniu Dynamics 365 Marketing. Aby uzyskać więcej informacji, zobacz [Korzystanie z segmentów w Dynamics 365 Customer Insights z Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments)
+Za pomocą [segmentów](segments.md) utworzonych w aplikacji Customer Insights możesz generować kampanie oraz nawiązać kontakt z wybranymi grupami klientów w rozwiązaniu Dynamics 365 Marketing. Aby uzyskać więcej informacji, zobacz [Korzystanie z segmentów w Dynamics 365 Customer Insights z Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
+
+Jeśli używasz nowych funkcji usługi Dynamics 365 Marketing w celu aranżacji pozyskiwanie klientów w organizacji Dataverse, nie trzeba tworzyć standardowych eksportów do usługi Dynamics 365 Marketing. Kontakty i segmenty wyników analiz odbiorców są dostępne bezpośrednio w usłudze Dynamics 365 Marketing po połączeniu z programem Marketing i Customer Insights. Przed usunięciem istniejących eksportów należy zapoznać się z dokumentacją dotyczącą [łączenia wyników analiz odbiorców i aranżacji pozyskiwania klientów usługi Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Wymaganie wstępne dla połączenia
 

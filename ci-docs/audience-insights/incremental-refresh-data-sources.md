@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 1af2e4c42dc5890556c90bb3e5ef1aeb0621fda0
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554172"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377847"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Odświeżanie przyrostowe dla źródeł danych opartych na Power Query
 
@@ -44,8 +44,7 @@ Informacje o odbiorcach umożliwiają przyrostowe odświeżanie źródeł danych
 
 1. W **Ustawienia odświeżania przyrostowego** skonfigurujesz odświeżanie przyrostowe dla wszystkich encji wybranych podczas tworzenia źródła danych.
 
-   > [!div class="mx-imgBorder"]
-   > ![Konfigurowanie encji w źródle danych dla odświeżania przyrostowego.](media/incremental-refresh-settings.png "Konfigurowanie encji w źródle danych dla odświeżania przyrostowego")
+   :::image type="content" source="media/incremental-refresh-settings.png" alt-text="Konfigurowanie encji w źródle danych dla odświeżania przyrostowego.":::
 
 1. Wybierz encję i wprowadź następujące informacje szczegółowe:
 

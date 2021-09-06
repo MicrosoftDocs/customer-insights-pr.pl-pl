@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685475"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377801"
 ---
 # <a name="create-and-manage-segments"></a>Tworzenie segmentów i zarządzanie nimi
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685475"
 > - Służące do wybierania atrybutów okienko boczne będzie ciągle dostępne.
 > - Opcja wybierania ścieżek relacji encji.
 > Aby wypróbować nowego konstruktora segmentów, wyślij wiadomość e-mail z tematem „Żądanie włączenia nowego konstruktora segmentów”, na adres cihelp [at] microsoft.com. Podaj nazwę swojej organizacji i identyfikator środowiska piaskownicy.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementy konstruktora segmentów." lightbox="media/segment-builder-overview.png":::
+>
+> 1 — organizuj segmenty za pomocą reguł i reguł podrzędnych. Każda reguła lub reguła podrzędna składa się z warunków. Łączenie warunków z operatorami logicznymi
+>
+> 2 — wybierz [ścieżkę relacji](relationships.md) między jednostkami, która dotyczy reguły. Ścieżka relacji określa, które atrybuty mogą być używane w warunku.
+>
+> 3 — zarządzaj regułami i regułami podrzędnymi. Zmień pozycję reguły lub ją usuń.
+>
+> 4 — dodaj warunki i skonstruuj odpowiedni poziom zagnieżdżania przy użyciu reguł podrzędnych.
+>
+> 5 — zastosuj operacje zestawów do połączonych reguł.
+>
+> 6 — użyj okienka atrybutów do dodania dostępnych atrybutów encji lub utworzenia warunków na podstawie atrybutów. W okienku jest wyświetlona lista encji i atrybutów na podstawie wybranej ścieżki reguły, która jest dostępna dla wybranej reguły.
+>
+> 7 — dodaj warunki na podstawie atrybutów do istniejących reguł i reguł podrzędnych lub dodaj je do nowej reguły.
+>
+> 8 — cofnij i ponownie zastosuj zmiany podczas konstruowania segmentu.
 
 Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje. Segmenty są zarządzane na stronie **Segmenty**. 
 
@@ -147,6 +164,6 @@ Szybkie segmenty umożliwiają tworzenie prostych segmentów z jednym operatorem
 
 ## <a name="next-steps"></a>Następne kroki
 
-[Wyeksportuj segment](export-destinations.md) i zapoznaj się z [kartą klienta](customer-card-add-in.md) i [łącznikami](export-power-bi.md), aby zdobyć informacje na poziomie klienta.
+[Wyeksportuj segment](export-destinations.md) i zapoznaj się z [integracją karty klienta](customer-card-add-in.md), aby używać segmentów w innych aplikacjach.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

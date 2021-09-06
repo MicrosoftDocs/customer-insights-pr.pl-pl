@@ -1,7 +1,7 @@
 ---
 title: Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 description: Przegląd informacji o odbiorcach dla Dynamics 365 Customer Insights.
-ms.date: 01/18/2021
+ms.date: 08/04/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,16 +10,16 @@ author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 19fc79873d32f268e194c4ebac4cf469a8b9b09f
-ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
+ms.openlocfilehash: 15cc495359af1faefe32225ae490fd7e7b6b08cc7a411e0a9804da6ec704099c
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "6539128"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034373"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 
-Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy. Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.
+[Wyniki analiz odbiorców, możliwości rozwiązania Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/audience-insights-capability/) pomaga w lepszym zrozumieniu swoich klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy. Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.
 
 ## <a name="main-benefits"></a>Główne korzyści 
 
@@ -34,9 +34,9 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
 
 - **Napędzaj procesy biznesowe i spersonalizowane środowiska dla klientów**
 
-  - Angażuj się osobiście w różne kanały — zapewniaj specjalistom do spraw marketingu, sprzedaży i obsługi klienta standardowe, kontekstowe informacje o kliencie i dostosowane karty profili klientów, używane we wszystkich używanych przez nich codziennie aplikacjach biznesowych
-  - Automatyzacja zorientowanych na klientach środowisk i procesów opartych na dostosowywanych profilach, działaniach biznesowych i segmentach.
-  - Włącz i rozszerz środowiska biznesowe na bazie [Microsoft Power Platform](https://powerplatform.microsoft.com/). Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu PowerApps.  
+  - Napędzaj spersonalizowane zaangażowanie między kanałami — daj więcej możliwości specjalistom ds. marketingu, sprzedaży i obsługi klienta. Korzystaj z gotowych, szczegółowych i dostosowanych kart profili klienta zintegrowanych z aplikacjami biznesowymi, których już używasz.
+  - Automatyzacja środowisk i procesów opartych na dostosowywanych profilach, działaniach biznesowych i segmentach.
+  - Włącz i rozszerz środowiska biznesowe na bazie [Microsoft Power Platform](https://powerplatform.microsoft.com/). Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu Power Apps.  
 
 ## <a name="key-audiences"></a>Kluczowi odbiorcy
 
@@ -50,13 +50,18 @@ Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych ź
 
 - **Użytkownicy biznesowi:**
 
-  - Wgląd w pełne profile klientów i kompleksowe widoki pozyskiwania klientów.
-  - Wyświetlanie pełnych danych klientów w ramach procesach biznesowych Dynamics 365 z wstępnie utworzonymi pakietami.
+  - Wgląd w pełne profile klientów i pozyskiwania klientów.
+  - Wyświetlanie pełnych danych klientów w ramach procesach biznesowych Dynamics 365 z pakietami.
 
 - **Analitycy biznesowi:**
 
   - Twórz konfigurowalne profile, definiuj miary, twórz segmenty i korzystaj z analiz predykcyjnych, aby uzyskać 360-stopniowy widok klienta, specyficzny dla Twojej organizacji.  
-  - Użyj gotowych łączników dla kilku aplikacji lub interfejsów API firmy Microsoft i innych firm, aby dalej przetwarzać szczegółowe informacje.
+  - Używanie gotowych łączników do kilku aplikacji Microsoft i innych firm lub interfejsów API w celu przetwarzania szczegółowych informacji.
 
+## <a name="pricing-and-licensing"></a>Ceny i licencjonowanie
+
+Aplikacja Customer Insights ma licencję na każdego dzierżawcę i zawiera wiele możliwości. Do uprawnionych wydajności należą zestaw profilów, codzienne odświeżanie systemu, żądania platformy Power Platform i dwa środowiska. Aby zwiększyć domyślny limit, można zakupić dodatkową pojemność i licencję. 
+- Szczegółowe informacje o pojemności i uprawnieniach: [Przewodnik po licencjonowaniu usługi Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
+- Omówienie kalkulacji cen: [Kalkulacja cen usługi Dynamics 365](https://dynamics.microsoft.com/pricing/#CustomerDataPlatform)
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

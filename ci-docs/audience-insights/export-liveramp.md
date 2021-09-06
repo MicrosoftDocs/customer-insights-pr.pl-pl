@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: b377a3500c5d91962e59d46fbc259db5cc8fa7d0
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: 7940db3efacad62ba16099849b3e3ca00d2a5cc1ed31e15a34209c0797e6ae13
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6555458"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035658"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Eksportowanie segmentów do usługi LiveRamp&reg; (wersja zapoznawcza)
 

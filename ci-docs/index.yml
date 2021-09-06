@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: Znajdź odpowiednie artykuły, aby rozpocząć pracę z zawartością pomocy.
   ms.author: mhart
-  ms.date: 10/29/2020
+  ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
-  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 03/15/2021
-  ms.locfileid: "5598478"
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036570"
 title: Dokumentacja usługi Dynamics 365 Customer Insights
-summary: Znajdź pomocne zasoby, aby rozpocząć i poznać funkcje i możliwości Customer Insights.
+summary: Znajdź pomocne zasoby, by rozpocząć i dowiedz się więcej o funkcjach i możliwościach rozwiązania Customer Insights.
 landingContent:
 - title: Poznaj Customer Insights
   linkLists:
@@ -23,9 +23,9 @@ landingContent:
     - text: Omówienie Customer Insights
       url: overview.md
     - text: Plany wydań
-      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
-    - text: Dostęp do środowiska
-      url: https://home.ci.ai.dynamics.com/
+      url: /dynamics365-release-plan/
+    - text: Odkryj CDP
+      url: https://dynamics.microsoft.com/ai/customer-insights/
 - title: Zacznij od statystyk odbiorców
   linkLists:
   - linkListType: get-started
