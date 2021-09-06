@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: e53d87c4f633cba09fecbc1c219f0ac2ec6bb5598a7902cbcf7398d26d6d7c6b
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554034"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7029412"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Profile klientów: Wyszukiwanie i indeks filtrów
 
@@ -60,7 +60,7 @@ Menu **Filtruj** na stronie **Klienci** może zawierać różną liczbę poziom�
 
 ## <a name="next-steps"></a>Następne kroki
 
-Przejdź na stronę **Klienci**, aby wyszukać profile klientów lub użyj pól indeksowanych, aby wyświetlić podzbiór wszystkich profilów klientów.
+Przejrzyj [stronę ujednoliconych profilów](customer-profiles.md), aby wyszukać profile lub użyj pól indeksowanych, aby wyświetlić podzbiór wszystkich ujednoliconych profilów.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

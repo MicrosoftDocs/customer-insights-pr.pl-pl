@@ -1,6 +1,6 @@
 ---
-title: Eksportowanie danych aplikacji Customer Insights do rozwiązania Adobe Experience Platform
-description: Dowiedz się, jak korzystać z analizy segmentów odbiorców w Adobe Experience Platform.
+title: Eksportowanie danych usługi Customer Insights do Adobe Experience Platform
+description: Dowiedz się, jak używać segmentów wyników analiz odbiorców w standardzie Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,31 +9,31 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: fac976a49b1b5c5485b75e1262135738c913bd2230be7df8aa0ec12c59734053
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305537"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032130"
 ---
-# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Korzystanie z segmentów aplikacji Customer Insights w rozwiązaniu Adobe Experience Platform (wersja zapoznawcza)
+# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Korzystanie z segmentów Customer Insights w aplikacji Adobe Experience Platform (wersja zapoznawcza)
 
-Jako użytkownik funkcji analizy odbiorców w Dynamics 365 Customer Insights, być może tworzyłeś segmenty, aby zwiększyć skuteczność kampanii marketingowych poprzez kierowanie ich do odpowiednich odbiorców. Aby korzystać z segmentu szczegółowych o odbiorcach w rozwiązaniu Adobe Experience Platform i aplikacjach, takich jak Adobe Campaign Standard, należy wykonać kilka kroków opisanych w tym artykule.
+Jako użytkownik funkcji analizy odbiorców w Dynamics 365 Customer Insights, być może tworzyłeś segmenty, aby zwiększyć skuteczność kampanii marketingowych poprzez kierowanie ich do odpowiednich odbiorców. Aby używać segmentu z wyników analiz odbiorców w programie Adobe Experience Platform i takich aplikacjach, jak Adobe Campaign Standard, należy wykonać kilka kroków opisanych w tym artykule.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Diagram procesu przedstawiający kroki opisane w tym artykule.":::
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 -   Licencja Dynamics 365 Customer Insights
--   Licencja rozwiązania Adobe Experience Platform
--   Licencja rozwiązania Adobe Campaign Standard
+-   Licencja Adobe Experience Platform
+-   Licencja Adobe Campaign Standard
 -   Konto usługi Azure Blob Storage
 
 ## <a name="campaign-overview"></a>Podgląd kampanii
 
-Aby lepiej zrozumieć, jak można używać segmentów szczegółowych informacji o odbiorcach w rozwiązaniu Adobe Experience Platform, przyjrzyjmy się przykładowej fikcyjnej kampanii.
+Aby lepiej zrozumieć, jak można używać segmentów z wyników analiz odbiorców w Adobe Experience Platform, zapoznajmy się z przykładową fikcyjną kampanią.
 
-Załóżmy, że firma oferuje swoim klientom w Stanach Zjednoczonych usługę opartą na comiesięcznej subskrypcji. Chcemy zidentyfikować klientów, których subskrypcje mają zostać odnowione w ciągu najbliższych ośmiu dni, ale którzy nie odnowili jeszcze tych subskrypcji. Aby utrzymać tych klientów, należy przesłać im ofertę promocyjną pocztą e-mail, używając platformy Adobe Experience Platform.
+Załóżmy, że firma oferuje swoim klientom w Stanach Zjednoczonych usługę opartą na comiesięcznej subskrypcji. Chcemy zidentyfikować klientów, których subskrypcje mają zostać odnowione w ciągu najbliższych ośmiu dni, ale którzy nie odnowili jeszcze tych subskrypcji. Aby zachować tych klientów, należy wysłać im ofertę promocyjną pocztą e-mail, używając Adobe Experience Platform.
 
 W tym przykładzie chcemy raz uruchomić promocyjną kampanię e-mail. Ten artykuł nie dotyczy przypadku użycia polegającego na uruchamianiu kampanii więcej niż raz.
 
@@ -93,7 +93,7 @@ Po zapisaniu docelowego eksportu znajdziesz go w **Dane** > **Eksporty**.
 Możesz teraz [wyeksportować na żądanie](export-destinations.md#run-exports-on-demand). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md).
 
 > [!NOTE]
-> Upewnij się, że liczba rekordów w wyeksportowanych segmentach znajduje się w ramach dozwolonego limitu licencji rozwiązania Adobe Campaign Standard.
+> Upewnij się, że liczba rekordów w wyeksportowanym segmencie znajduje się w dozwolonym limicie licencji Adobe Campaign Standard.
 
 Wyeksportowane dane są przechowywane w skonfigurowanym powyżej kontenerze usługi Azure Blob Storage. W kontenerze jest automatycznie tworzona następująca ścieżka do folderu:
 
@@ -105,29 +105,29 @@ Element *model.json* dla eksportowanych encji znajduje się na poziomie *%Export
 
 Przykład: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
 
-## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Definiowanie modelu danych środowiska (XDM) w rozwiązaniu Adobe Experience Platform
+## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Definiowanie modelu danych środowiska (XDM) w programie Adobe Experience Platform
 
-Aby można było korzystać z wyeksportowanych danych ze szczegółowych informacji o odbiorcach w rozwiązaniu Adobe Experience Platform, należy zdefiniować schemat modelu danych środowiska i [skonfigurować dane dla profilu klienta w czasie rzeczywistym](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Aby można było korzystać z wyeksportowanych danych z wyników analiz odbiorców w programie Adobe Experience Platform, należy zdefiniować schemat modelu danych środowiska i [skonfigurować dane dla profilu klienta w czasie rzeczywistym](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Dowiedz się, [co to jest XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) oraz zapoznaj się z [podstawami kompozycji schematu](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
-## <a name="import-data-into-adobe-experience-platform"></a>Importowanie danych do rozwiązania Adobe Experience Platform
+## <a name="import-data-into-adobe-experience-platform"></a>Importowanie danych do Adobe Experience Platform
 
-Gdy wszystko jest już gotowe, należy zaimportować przygotowane dane odbiorców ze szczegółowych informacji o odbiorcach do rozwiązania Adobe Experience Platform.
+Gdy wszystko jest już na swoim miejscu, musisz zaimportować przygotowane dane odbiorców z wyników analiz odbiorców do programu Adobe Experience Platform.
 
 Najpierw [utwórz połączenie źródłowe z usługą Azure Blob Storage](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-Po zdefiniowaniu połączenia źródłowego [skonfiguruj przepływ danych](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) dla połączenia wsadowego magazynu w chmurze, aby zaimportować dane wyjściowe segmentu ze szczegółowych informacjach o odbiorcach do rozwiązania Adobe Experience Platform.
+Po zdefiniowaniu połączenia źródłowego [skonfiguruj przepływ danych](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) dla połączenia partii przestrzeni dyskowej w chmurze, aby zaimportować dane wyjściowe segmentu z wyników analiz odbiorców do programu Adobe Experience Platform.
 
-## <a name="create-an-audience-in-adobe-campaign-standard"></a>Tworzenie odbiorców w rozwiązaniu Adobe Campaign Standard
+## <a name="create-an-audience-in-adobe-campaign-standard"></a>Tworzenie odbiorcy w standardzie Adobe Campaign Standard
 
-Aby wysłać e-mail dla tej kampanii, użyjemy Adobe Campaign Standard. Po zaimportowaniu danych do platformy Adobe Experience Platform należy [utworzyć odbiorców](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) w rozwiązaniu Adobe Campaign Standard przy użyciu danych z rozwiązania Adobe Experience Platform.
+Aby wysłać wiadomość e-mail dla tej kampanii, użyjemy standardu Adobe Campaign Standard. Po zaimportowaniu danych do programu Adobe Experience Platform, należy [utworzyć odbiorcę](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) w standardzie Adobe Campaign Standard, używając danych w programie Adobe Experience Platform.
 
 
-Dowiedz się, jak [używać konstruktora segmentów](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) w rozwiązaniu Adobe Campaign Standard do definiowania odbiorców na podstawie danych z rozwiązania Adobe Experience Platform.
+Dowiedz się, jak [używać konstruktora segmentów](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) w standardzie Adobe Campaign Standard w celu definiowania odbiorcy na podstawie danych z funkcji Adobe Experience Platform.
 
-## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Tworzenie i wysyłanie wiadomości e-mail przy użyciu rozwiązania Adobe Campaign Standard
+## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Tworzenie i wysyłanie wiadomości e-mail przy użyciu standardu Adobe Campaign Standard
 
 Utwórz zawartość wiadomości e-mail, a następnie [przetestuj i wyślij](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) wiadomość e-mail.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Przykładowa wiadomość e-mail z ofertą odnowienia z rozwiązania Adobe Campaign Standard.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Przykładowa wiadomość e-mail od Adobe Campaign Standard z ofertą odnowienia.":::
