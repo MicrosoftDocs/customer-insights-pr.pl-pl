@@ -1,20 +1,20 @@
 ---
 title: Przewidywanie rekomendacji produktów
 description: Przewiduj produkty, które klient prawdopodobnie kupi lub z którymi będzie miał do czynienia.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034969"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494552"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
 
@@ -89,23 +89,24 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 ### <a name="add-required-data"></a>Dodaj wymagane dane
 
-1. Wybierz opcję **Dodaj dane** do **Historia transakcji klienta** i wybierz encję, która dostarcza informacje historyczne dotyczące transakcji i zakupu, jak to opisano w sekcji [wymagania wstępne](#prerequisites).
+1. Wybierz opcję **Dodaj dane** i wybierz typ działania w okienku bocznym zawierającym wymagane informacje o historii transakcji lub zakupów.
 
-1. Zmapuj pola semantyczne na atrybuty w encji historii zakupu i wybierz przycisk **Dalej**. Aby zapoznać się z opisami pól, należy zapoznać się z [wymaganiami wstępnymi](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Definiowanie relacji encji.](media/product-recommendation-purchasehistorymapping.PNG "Strona historii zakupów pokazująca atrybuty semantyczne, które są mapowane na pola w wybranej encji historii zakupów")
+1. W obszarze **Wybierz działania** wybierz określone działania z wybranego działania, na których chcesz skupić się podczas obliczania.
 
-1. Jeśli pola nie są wypełnione, skonfiguruj relację między jednostką historii zakupów a jednostką *Klient*.
-    1. Wybierz **Encja historii zakupów**.
-    1. Wybierz **Pole**, które identyfikuje klienta w encji historii zakupu. Musi ono być powiązane z podstawowym identyfikatorem *Klienta* encji Klient.
-    1. Wybierz **encję Klient** pasującą do podstawowej encji klienta.
-    1. Wprowadź nazwę, która opisuje relację.
-       > [!div class="mx-imgBorder"]
-       > ![Strona historii zakupów pokazująca tworzenie relacji z klientem.](media/model-purchase-join.png "Strona historii zakupów pokazująca tworzenie relacji z klientem")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Okienko boczne po stronie przedstawiające wybranie określone działania w ramach typu semantycznego.":::
+
+1. Jeśli działanie nie zostało jeszcze zamapowane na typ semantyczny, wybierz opcję **Edytuj**, aby to zrobić. Zostanie otwarte środowisko nadzorowane służące do mapowania działań semantycznych. Zamapuj swoje dane na odpowiednie pola w wybranym typie działania.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Typ działania ustawienia strony.":::
+
+1. Po zamapowaniu działania na odpowiedni typ semantyczny, wybierz opcję **Dalej**, aby kontynuować 
+ 
+1. Zamapuj atrybuty semantyczne na pola wymagane do uruchomienia modelu.
 
 1. Wybierz pozycję **Zapisz**.
 
 1. Wybierz **Dalej**.
+
 
 ### <a name="configure-product-filters"></a>Konfiguruj filtry produktów
 

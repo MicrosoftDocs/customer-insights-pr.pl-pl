@@ -4,17 +4,17 @@ description: Sposób korzystania z raportów dot. lejka w celu zrozumienia, jak 
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032268"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498655"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Tworzenie i zarządzanie raportami lejkowymi
 
@@ -158,4 +158,21 @@ Można zmienić nazwę raportu dot. lejka, usunąć go lub zmodyfikować kroki r
 1. Wybierz nazwę raportu, aby go otworzyć.
 
 1. Wybierz krok, który chcesz usunąć, a następnie wybierz opcję **Usuń**.
+
+## <a name="funnel-insights"></a>Szczegółowe informacje dotyczące lejka 
+
+Szczegółowe informacje o klientach oferują obecnie szczegółowe informacje dotyczące lejka dla klientów. Dzięki funkcji szczegółowych informacji dotyczących lejka można uzyskać głębsze dane na temat zachowań klientów w ramach kroków raportu lejka. Podczas tworzenia i zapisywania nowego raportu dotyczące lejka szczegółowe informacje o lejku są automatycznie generowane dla raportu. 
+
+Szczegółowe informacje dotyczące lejka można wyświetlać w następujących kategoriach na poziomie głównym i kroku: 
+
+ - Współczynnik konwersji 
+ - Czas przejścia 
+ - Czas ukończenia 
+
+Dzięki szczegółowym informacjom można poznać sposób zachowania klientów oraz lepiej poznać punkty zwrotu i konwersje dla raportu lejka. 
+
+Szczegółowe informacje dotyczące lejka są ponownie przeliczane co 24 godziny lub podczas **zapisywania** raportu lejka. 
+
+> [!NOTE]
+> Aby wyświetlić szczegółowe informacje dotyczące lejka, należy zapisać raport przy każdym wprowadzeniu zmian. 
 

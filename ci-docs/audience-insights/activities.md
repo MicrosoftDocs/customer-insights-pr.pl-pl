@@ -1,20 +1,20 @@
 ---
 title: Działania klienta
-description: Zdefiniować działania klienta i wyświetlić je na osiach czasu na klientach.
-ms.date: 04/07/2021
+description: Definiowanie działań klientów i wyświetlanie ich na osi czasu w profilach klientów.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033644"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494424"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
@@ -60,12 +60,15 @@ ms.locfileid: "7033644"
       - **Dodatkowe szczegóły**: pole z odpowiednimi informacjami dla tego działania.
       - **Ikona**: ikona najlepiej reprezentująca ten typ działania.
       - **Adres internetowy**: pole zawierające adres URL z informacjami o tym działaniu. Na przykład system transakcyjny, który zawiera źródło tego działania. Ten adres URL może być dowolnym polem ze źródła danych lub może być skonstruowany jako nowe pole przy użyciu przekształcenia Power Query. Dane adresu URL będą przechowywane w encji *Ujednolicone działanie*, która może być konsumowana w dół przy użyciu [interfejsów API](apis.md).
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Określ dane działań klienta w encji Ujednolicone działanie.":::
+
+   - **Pokaż na osi czasu**
+      - Wybierz, czy chcesz pokazywać to działanie w widoku osi czasu profilów Twoich klientów. Wybierz opcję **Tak**, aby pokazać działanie na osi czasu, lub opcję **Nie**, aby je ukryć.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Określ dane działań klienta w encji Ujednolicone działanie.":::
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. Aby zapisać teraz działanie z typem działania ustawionym jako **Inne**, można wybrać opcję **Zakończ i przejrzyj**. 
 
-1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działań *Subskrypcja* i *SalesOrderLine* mogą być mapowane semantycznie po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
+1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działań *Opinia*, *Lojalność*, *SalesOrder*, *SalesOrderLine* i *Subskrypcja* mogą być mapowane semantycznie po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
 

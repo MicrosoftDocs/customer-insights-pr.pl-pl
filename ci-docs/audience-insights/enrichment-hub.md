@@ -1,7 +1,7 @@
 ---
 title: Wzbogać ujednolicone profile klientów
 description: Korzystanie z funkcji w celu wzbogacenia danych klienta.
-ms.date: 07/01/2021
+ms.date: 08/31/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: a64bbd754d4013d0a6243074ac9f55991547be82b269047a9937b583baf98697
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032541"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7470015"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -29,6 +29,7 @@ Aby tworzyć lub edytować wzbogacenia, trzeba mieć uprawnienia Współautor lu
 
 Na karcie **Odkryj** znajdziesz następujące wzbogacenia:
 
+- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
 - [Marki](enrichment-microsoft.md) dostarczone przez Microsoft
 - [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
 - [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
@@ -62,5 +63,17 @@ Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.
 ## <a name="multiple-enrichments-of-the-same-type"></a>Wiele wzbogaceń tego samego typu
 
 Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogać dane tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na stronie **Wzbogacanie**.
+
+## <a name="see-the-progress-of-the-enrichment-process"></a>Wyświetlanie postępu procesu wzbogacania
+
+Można tu znaleźć szczegółowe informacje o przetwarzaniu wzbogacania, w tym informacje o stanie i potencjalnych problemach podczas odświeżania lub po zakończeniu odświeżania. Zidentyfikuj procesy związane z odświeżaniem wzbogacania i dowiedz się, ile trwa ich działanie. Stan wzbogacenia jest obsługiwany w przypadku usług Experian, Leadspace, HERE Technologies, SFTP Import i Azure Maps.
+
+Aby wyświetlić stan wzbogacania
+
+1. Przejdź do **Dane** > **Wzbogacanie**. 
+1. Na karcie **Moje wzbogacenia** wybierz stan wzbogacania, aby otworzyć okienko boczne. 
+1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**. 
+1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**. 
+1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

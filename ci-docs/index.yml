@@ -7,12 +7,12 @@ metadata:
   ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.openlocfilehash: e6a658f43b382934ee9b9b55c54fc1dff3f4df72
+  ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036570"
+  ms.lasthandoff: 09/17/2021
+  ms.locfileid: "7498610"
 title: Dokumentacja usługi Dynamics 365 Customer Insights
 summary: Znajdź pomocne zasoby, by rozpocząć i dowiedz się więcej o funkcjach i możliwościach rozwiązania Customer Insights.
 landingContent:
@@ -26,16 +26,16 @@ landingContent:
       url: /dynamics365-release-plan/
     - text: Odkryj CDP
       url: https://dynamics.microsoft.com/ai/customer-insights/
-- title: Zacznij od statystyk odbiorców
+- title: Rozpoczynanie pracy z aplikacją Customer Insights
   linkLists:
   - linkListType: get-started
     links:
     - text: Zarejestruj się w celu skorzystania z wersji próbnej
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Co nowego
+    - text: Co nowego w funkcji szczegółowych informacji o odbiorcach
       url: audience-insights/whats-new-audience-insights.md
-    - text: Dokumentacja analiz odbiorców
-      url: audience-insights/index.yml
+    - text: Co nowego w funkcji szczegółowych informacji o zaangażowaniu
+      url: https://docs.microsoft.com/dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Skontaktuj się
   linkLists:
   - linkListType: overview
@@ -46,16 +46,16 @@ landingContent:
       url: https://go.microsoft.com/fwlink/?linkid=2074172
     - text: Zgłoś problem
       url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Samouczki analiz odbiorców
+- title: Udostępnianie danych między funkcjami
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
-    - text: Utwórz nowe środowisko
-      url: audience-insights/home.md
-    - text: Utwórz ujednolicony profil klienta
-      url: /learn/modules/unified-customer-profile/
-    - text: Praca z aplikacją
-      url: /learn/modules/working-with-customer-insights/
+    - text: Tworzenie połączenia między funkcjami
+      url: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - text: Tworzenie segmentów do użycia w raportach
+      url: engagement-insights/integrate-audience-insights-segments.md
+    - text: Używanie właściwości profilu w analizie interaktywnej
+      url: engagement-insights/curate-dimensions.md
 - title: Eksportowanie danych analiz odbiorców
   linkLists:
   - linkListType: how-to-guide

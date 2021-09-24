@@ -4,17 +4,17 @@ description: Tworzenie, zmienianie nazw obszarów roboczych i środowisk oraz ic
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 07/01/2021
+ms.date: 09/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: bf310b1a50ba7baac5d11d5f22ff42003fbba516efd7d165c00b59adc958da2e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034055"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486048"
 ---
 # <a name="manage-environments-and-workspaces"></a>Zarządzaj środowiskami i obszarami roboczymi
 
@@ -85,13 +85,11 @@ Usunięcie obszaru roboczego spowoduje trwałe usunięcie całej jego zawartośc
 
 1. Wybierz opcję **Dodaj członków**, aby nadać dostęp i [przypisać role](user-roles.md). Obecnie jedyny dostępny wybór to **Administrator obszaru roboczego**.
 
-1. Jeśli skonfigurujesz [połączenie z analizą odbiorców](configure-connections.md), możesz wybrać opcję **Zezwalaj na dostęp do danych profilu**, aby umożliwić członkowi wyświetlanie raportów na podstawie [profilów użytkownika](profile-reports.md).
-
 1. Wybierz opcję **Dodaj członków**, aby dodać ich do obszaru roboczego.
 
 ## <a name="manage-an-environment"></a>Zarządzaj środowiskiem
 
-Administrator środowiska może uzyskać dostęp do środowiska z lewego okienka nawigacji. Użytkownik może konfigurować ustawienia środowiska, innych administratorów, obszarów roboczych i [połączeń z analizą odbiorców](configure-connections.md). Wybierz karty, aby przechodzić między różnymi obszarami centrum administracyjnego.
+Administrator środowiska może uzyskać dostęp do środowiska z lewego okienka nawigacji. Możesz skonfigurować ustawienia środowiska, innych administratorów środowiska oraz obszary robocze. Wybierz karty, aby przechodzić między różnymi obszarami centrum administracyjnego.
 
 :::image type="content" source="media/New-environment.png" alt-text="Centrum administracyjne środowiska.":::
 
@@ -123,8 +121,6 @@ Administrator środowiska może uzyskać dostęp do środowiska z lewego okienka
 
 1. Wybierz opcję **Dodaj członków**, aby zaktualizować członków i [przypisać role](user-roles.md). Obecnie jedyny dostępny wybór to **Administrator środowiska**.
 
-1. Jeśli skonfigurujesz [połączenie z analizą odbiorców](configure-connections.md), możesz wybrać opcję **Zezwalaj na dostęp do danych profilu**, aby umożliwić członkowi wyświetlanie raportów na podstawie [profilów użytkownika](profile-reports.md).
-
 1. Wybierz opcję **Dodaj członków**, aby dodać ich do środowiska.
 
 ### <a name="delete-an-environment"></a>Usuwanie środowiska
@@ -143,7 +139,7 @@ Administratorzy środowiska mogą usuwać środowiska. Aby można było usunąć
 
 Tworzenie połączeń z analizą odbiorców umożliwia wyświetlanie raportów z wglądu w zaangażowanie na podstawie ujednoliconych profili klientów. 
 
-Aby uzyskać więcej informacji, zobacz [Konfigurowanie połączeń](configure-connections.md).
+Aby uzyskać informacji, zobacz [Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="manage-personal-data"></a>Zarządzanie danymi osobowymi
 

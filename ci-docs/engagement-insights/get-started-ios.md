@@ -4,17 +4,17 @@ description: Dowiedz się, jak wdrażać i personalizować SDK iOS
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
+ms.date: 09/15/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: de8291fc429ae6433301a47bfdf9a3271b1b77294fd58448c7aa6bd0783edc97
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f05929435eeee9cf3f891ab18842c5861e39d5ba
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036886"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494243"
 ---
 # <a name="get-started-with-the-ios-sdk"></a>Rozpoczynanie pracy z SDK iOS
 
@@ -45,11 +45,36 @@ Rozpocznij proces, wybierając przestrzeń roboczą, platformę mobilną iOS i p
 
 - Jeśli nie masz istniejącego obszaru roboczego, wybierz opcję **Nowy obszar roboczy** i wykonaj kroki tworzenia [nowego obszaru](create-workspace.md).
 
+- Po utworzeniu obszaru roboczego przejdź do **Administracja** > **Obszar roboczy** i wybierz **przewodnik instalacji**.
+
 ## <a name="configure-the-sdk"></a>Skonfigurowanie SDK
 
-Po pobraniu SDK, możesz pracować z nim w Xcode, aby włączyć i zdefiniować zdarzenia.
+Po pobraniu SDK, możesz pracować z nim w Xcode, aby włączyć i zdefiniować zdarzenia. Istnieją dwa sposoby wykonania tej czynności
 
-1. Po utworzeniu obszaru roboczego przejdź do **Administracja** > **Obszar roboczy** i wybierz **przewodnik instalacji**.
+### <a name="option-1-using-cocoapods-recommended"></a>Opcja 1. Użycie CocoaPods (zalecane)
+CocoaPods to menedżer zależności dla projektów Swift i Objective-C Cocoa. Jego użycie ułatwia integrację zestawu SDK szczegółowych informacji o zaangażowaniu dla systemu iOS. CocoaPods umożliwia również uaktualnienie do najnowszej wersji zestawu SDK szczegółowych informacji o zaangażowaniu. Oto sposób integrowania zestawu SDK szczegółowych informacji o zaangażowaniu z programem CocoaPods w projekcie Xcode. 
+
+1. Zainstaluj program CocoaPods. 
+
+1. Utwórz nowy plik o nazwie Podfile w katalogu głównym projektu i dodaj do niego następujące instrukcje. Zastąp YOUR_TARGET_PROJECT_NAME nazwą projektu Xcode. 
+```objectivec
+platform :ios, '9.0'  
+
+ target '${YOUR_TARGET_PROJECT_NAME}' do 
+
+     use_frameworks!   
+
+     pod 'EIObjC.framework.debug' 
+
+     pod 'EIObjC.framework.release' 
+
+ end 
+```
+Powyższy zestaw zasobników zawiera wersje debugowania i wydania zestawu SDK. Wybierz jedną z najlepszych opcji projektu.
+
+1. Zainstaluj zasobnik, wykonując następujące polecenie:  `pod install --repo-update `
+
+### <a name="option-2-using-download-link"></a>Opcja 2. Użycie linku do pobierania
 
 1. Pobierz [SDK iOS analizy interakcji](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-ios-sdk.zip) i umieść plik `EIObjC.xcframework` w folderze `Frameworks`.
 

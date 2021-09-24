@@ -1,31 +1,34 @@
 ---
-title: Regiony dostępności analiz zaangażowania
+title: Regiony dostępności aplikacji Dynamics 365 Customer Insights
 description: Dowiedz się więcej o regionach i lokalizacjach geograficznych, w których usługa jest wdrażana.
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 07/15/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
-ms.subservice: engagement-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: ca7a921e1ea2f612949c1243a3dc5ee0f4f3c3974305af344c77b870db3e00a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036206"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483310"
 ---
-# <a name="regional-availability-for-engagement-insights"></a>Regiony dostępności dla analiz zaangażowania
+# <a name="regional-availability-for-dynamics-365-customer-insights"></a>Dostępność regionalna dla aplikacji Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Informacje o zaangażowaniu, możliwość Dynamics 365 Customer Insights, która jest stopniowo wprowadzana do większej liczby regionów, w których klienci mogą zdecydować się na przechowywanie swoich danych. Administratorzy mogą wybrać region podczas [tworzenia nowego środowiska](manage-environments-workspaces.md#create-an-environment). Jeśli organizacja po raz pierwszy konfiguruje szczegółowe informacje o zaangażowaniu, wybierze region podczas przechodzenia przez [środowisko pierwszego uruchomienia z przewodnikiem](quickstart.md). Później każde nowe środowisko umożliwia wybranie regionu, w którym będą przechowywane dane.
+Szczegółowe informacje o zaangażowaniu, funkcja aplikacji Dynamics 365 Customer Insights, stopniowo wprowadza coraz więcej regionów, w których klienci mogą zdecydować się na przechowywanie swoich danych. Administratorzy mogą wybrać region podczas [tworzenia nowego środowiska](manage-environments-workspaces.md#create-an-environment). 
 
-Podczas publicznej wersji zapoznawczej istnieją dwie lokalizacje geograficzne: USA i Europa. Użytkownicy mogą wybierać między regionem Zachodnie stany USA a regionem Europy Północnej.
+Jeśli po raz pierwszy konfigurujesz szczegółowe informacje o zaangażowaniu, możesz wybrać region podczas przechodzenia przez [środowisko pierwszego uruchomienia z przewodnikiem](quickstart.md). Później każde nowe środowisko umożliwia Ci wybranie regionu, w którym będą przechowywane dane.
+
+Obecnie istnieją dwie lokalizacje geograficzne: USA i Europa. Użytkownicy mogą wybierać między regionem Zachodnie stany USA a regionem Europy Północnej.
 
 Organizacja może utrzymywać środowiska w różnych regionach. Na przykład środowisko A przechowuje dane w Zachodnich stanach USA, a środowisko B w Europie Północnej.
 
-> [!TIP]
+> [!NOTE]
 > Po wybraniu regionu podczas tworzenia środowiska nie będzie można tego ustawienia zmienić. Aby zmienić region, administrator środowiska musi [usunąć środowisko](manage-environments-workspaces.md#delete-an-environment) i utworzyć nowe środowisko ze zaktualizowanym ustawieniem regionu.
 
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

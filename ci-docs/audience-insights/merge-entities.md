@@ -1,7 +1,7 @@
 ---
 title: Scalanie encji w przypadku zjednoczenia danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 05/10/2021
+ms.date: 09/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6e64154dc58f679d13033fa55a60cd0c306f62f31548b8ce98ea1ed5f423b3e9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035015"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494332"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
@@ -66,7 +66,7 @@ Zmień wyświetlaną nazwę scalonych atrybutów. Nie można zmienić nazwy elem
 
 Wykluczenie atrybutu z ujednoliconego profilu klienta. Jeśli pole jest wykorzystywane w innych procesach, np. w segmencie, usuń je z tych procesów, zanim wykluczysz je z profilu klienta. 
 
-1. Zaznacz scalone pole.
+1. Wybierz scalone pole.
   
 1. Wybierz opcję **Pokaż więcej** i wybierz pozycję **Wyklucz**.
 
@@ -76,17 +76,40 @@ Wykluczenie atrybutu z ujednoliconego profilu klienta. Jeśli pole jest wykorzys
 
 Na stronie **Scalanie** wybierz pozycję **Wykluczone pola**, aby wyświetlić listę wszystkich pól wykluczonych. To okienko umożliwia dodawanie z powrotem wykluczonych pól.
 
+## <a name="edit-a-merged-field"></a>Edytuj scalone pole
+
+1.  Wybierz scalone pole.
+
+1.  Wybierz opcję **Pokaż więcej** i wybierz pozycję **Edytuj**.
+
+1.  Określ, jak połączyć lub scalić pola z jednej z trzech opcji:
+    - **Ważność**: identyfikuje zwycięską wartość na podstawie klasyfikacji ważności określonej dla uczestniczących pól. Jest to opcja domyślna scalania. Wybierz pozycję **Przenieś w górę/w dół**, aby ustawić ranking ważności.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Opcja Ważność w oknie dialogowym scalania pól."::: 
+    - **Najnowsze**: identyfikuje zwycięską wartość jako wartość najnowszą. Wymaga pola daty lub pola liczbowego dla każdej encji uczestniczącej w zakresie scalania pól w celu zdefiniowania niedawności.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Opcja Niedawność w oknie dialogowym scalania pól.":::
+    - **Najstarsze**: identyfikuje zwycięską wartość jako wartość najstarszą. Wymaga pola daty lub pola liczbowego dla każdej encji uczestniczącej w zakresie scalania pól w celu zdefiniowania niedawności.
+
+1.  Do procesu scalania można dodać inne uczestniczące pola.
+
+1.  Można zmienić nazwę scalonego pola.
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
+
 ## <a name="manually-combine-fields"></a>Ręczne łączenie pól
 
 Określ ręcznie łączony atrybut. 
 
 1. Na stronie **Scalanie** wybierz opcję **Połącz pola**.
 
-1. Podaj **nazwę** i **nazwę pola wyjściowego**.
+1. Zwycięskie zasady scalania można określić na liście rozwijanej **Połącz pola wg**.
 
 1. Wybierz pole, które chcesz dodać. Wybierz **Dodaj pola**, aby połączyć więcej pól.
 
-1. Potwierdź wykluczenie.
+1. Podaj **nazwę** i **nazwę pola wyjściowego**.
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
 
 1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
 
@@ -103,6 +126,27 @@ Niektóre encje zawierają więcej szczegółów niż inne. Jeśli encja zawiera
 1. Potwierdź zmianę.
 
 1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
+
+## <a name="configure-customer-id-generation"></a>Konfigurowanie generowania identyfikatora klienta 
+
+Po skonfigurowaniu scalania pól można zdefiniować sposób generowania wartości CustomerId, czyli unikatowych identyfikatorów profilu klienta. Krok scalania w procesie ujednolicania danych generuje unikatowy identyfikator profilu klienta. Identyfikator to CustomerId w encji *Klient*, który wynika z procesu ujednolicania danych. 
+
+Identyfikator CustomerId w encji Klient jest oparty na wartości skrótu pierwszej wartości podstawowych kluczy innych niż null. Klucze pochodzą z encji używanych na etapie dopasowania i scalania i wpływa na nie kolejność dopasowywania. Dlatego wygenerowany identyfikator CustomerID może ulec zmianie w przypadku zmiany wartości klucza podstawowego w encji podstawowej kolejności dopasowania. W konsekwencji wartość klucza podstawowego może nie zawsze reprezentować tego samego klienta.
+
+Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego zachowania.
+
+**Konfiguruj unikatowy identyfikator klienta**
+
+1. Przejdź do opcji **Ujednolicanie** > **Scal**.
+
+1. Na stronie **Scalanie** wybierz kartę **Klucz**. 
+
+1. Zatrzymaj kursor w wierszu **CustomerId** i wybierz opcję **Skonfiguruj**.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Kontrolka do dostosowywania generowania identyfikatora.":::
+
+1. Wybierz do pięciu pól wchodzących w skład unikatowego identyfikatora klienta i bardziej stabilnych. Rekordy, które nie pasują do konfiguracji, używają identyfikatora skonfigurowanego w systemie.  
+
+1. Wybierz opcję **Gotowe** i uruchom proces scalania w celu zastosowania zmian.
 
 ## <a name="run-your-merge"></a>Uruchamianie scalania
 

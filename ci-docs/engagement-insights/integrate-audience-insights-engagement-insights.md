@@ -1,19 +1,19 @@
 ---
 title: Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 description: Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji, by umożliwić dwukierunkowe udostępnianie danych.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461026"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487120"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 
@@ -26,14 +26,14 @@ Użyj ujednoliconych profilów i segmentów z wyników analiz odbiorców, by uzy
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Wyniki analiz odbiorców muszą być przechowywane w kontach usługi Azure Data Lake Storage, których użytkownik jest właścicielem, lub w [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md) — zarządzanym repozytorium data lake. 
-
+- Ponadto środowisko szczegółowych informacji o odbiorcach powinno mieć skojarzone środowisko Dataverse. Jeśli w tym środowisku jest również wykorzystywane miejsce do magazynowania danych w usłudze Dataverse, należy sprawdzić opcję **Włącz udostępnianie danych** w szczegółowych informacjach o odbiorcach. Aby uzyskać informacji, zobacz [Tworzenie i konfigurowanie płatnego środowiska w funkcji szczegółowych informacji o odbiorcach](../audience-insights/get-started-paid.md).
 - Musisz mieć uprawnienia administratora zarówno w wynikach analiz interakcji, jak i wynikach analiz odbiorców.
-
 - Połączone środowiska muszą znajdować się w tym samym regionie geograficznym.
 
 > [!NOTE]
-> - Jeśli subskrypcja wyników analiz odbiorcy, która używa wyników analiz odbiorców wewnętrznie zarządzanych przez repozytorium data lake, jest próbna, skontaktuj się z [pirequest@microsoft.com](mailto:pirequest@microsoft.com) w celu uzyskania pomocy. 
-> - Jeśli środowisko wyników analiz odbiorcy do przechowywania danych używa własnej usługi Azure Data Lake Storage, musisz dodać główną usługę Azure wyników analiz interakcji do swojego konta magazynu. Aby uzyskać szczegółowe informacje, przejdź do strony [Łączenie się z kontem Azure Data Lake Storage przy użyciu głównej usługi Azure dla wyników analiz odbiorców](../audience-insights/connect-service-principal.md). Ponadto środowisko wyników analiz odbiorców powinno mieć skojarzone [środowisko Dataverse](../audience-insights/get-started-paid.md). 
+> - Jeśli subskrypcja szczegółowych informacji o odbiorcach to wersja próbna, która używa szczegółowych informacji o odbiorcach wewnętrznie zarządzanych przez repozytorium data lake, skontaktuj się z [pirequest@microsoft.com](mailto:pirequest@microsoft.com) w celu uzyskania pomocy. 
+> - Jeśli środowisko wyników analiz odbiorcy do przechowywania danych używa własnej usługi Azure Data Lake Storage, musisz dodać główną usługę Azure wyników analiz interakcji do swojego konta magazynu. Aby uzyskać szczegółowe informacje, przejdź do strony [Łączenie się z kontem Azure Data Lake Storage przy użyciu głównej usługi Azure dla wyników analiz odbiorców](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Utwórz łącze środowiska
 
@@ -75,6 +75,7 @@ Po połączeniu środowisk możesz wybrać funkcje opcjonalne dla połączonych 
 
    > [!IMPORTANT]
    > Jeśli jawnie nie dodasz użytkowników w tym kroku, dane zostaną ukryte przed użytkownikami w wynikach analiz interakcji.
+   > Aby segmenty wyników analiz odbiorców wyświetlały się w wynikach analiz interakcji, należy [Uruchomić scalanie i procesy podrzędne](../audience-insights/merge-entities.md). Procesy podrzędne są ważne, ponieważ generują unikatową tabelę przygotowującą segmenty wyników analiz odbiorcy, które będą udostępniane wynikom analiz interakcji. (Jeśli zaplanowano odświeżanie sytemu, spowoduje to automatyczne uwzględnienie procesów podrzędnych.)
 
 1. Sprawdź wybraną opcję, a następnie kliknij przycisk **Zakończ**.
 

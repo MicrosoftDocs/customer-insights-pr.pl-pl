@@ -6,7 +6,7 @@
   href: audience-insights/get-started-trial.md
 - name: Dostęp do środowiska
   href: 'https://home.ci.ai.dynamics.com/'
-- name: Audience Insights
+- name: Wyniki analiz odbiorców
   items:
     - name: Centrum pomocy
       href: audience-insights/index.yml
@@ -14,8 +14,14 @@
       href: audience-insights/overview.md
     - name: Nowe i zaktualizowane funkcje
       href: audience-insights/whats-new-audience-insights.md
-    - name: Utwórz nowe środowisko
-      href: audience-insights/get-started-paid.md
+    - name: Rozpoczynanie pracy
+      items:
+        - name: Przewodnik Szybki start
+          href: audience-insights/get-started.md
+        - name: Utwórz nowe środowisko
+          href: audience-insights/get-started-paid.md
+        - name: Eksplorowanie szczegółowych informacji o odbiorcach
+          href: audience-insights/home.md
     - name: Zapoznaj się z modułami
       items:
         - name: Pozyskiwanie danych
@@ -68,6 +74,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Rozszerzone adresy
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Wzbogacanie przy użyciu usługi Azure Maps
+          href: audience-insights/enrichment-azure-maps.md
         - name: 'Wzbogać dane, korzystając z rozwiązania firmy HERE Technologies'
           href: audience-insights/enrichment-here.md
         - name: Wzbogacanie przy użyciu programu Leadspace
@@ -230,21 +238,15 @@
           href: audience-insights/apis.md
         - name: Odwołania API
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-    - name: Limity usługi
-      href: audience-insights/service-limits.md
-    - name: Żądania DSR w kontekście RODO
-      href: audience-insights/gdpr.md
 - name: Wyniki analiz interakcji (wersja zapoznawcza)
   items:
     - name: Centrum pomocy
       href: engagement-insights/index.yml
     - name: Omówienie funkcji
       href: engagement-insights/overview.md
-    - name: Bezpłatna wersja próbna
-      href: 'https://pi.dynamics.com/'
     - name: Rozpoczynanie pracy
       items:
-        - name: Rozpoczynanie pracy
+        - name: Przewodnik Szybki start
           href: engagement-insights/get-started.md
         - name: Utwórz obszar roboczy
           href: engagement-insights/create-workspace.md
@@ -300,18 +302,10 @@
           href: engagement-insights/user-roles.md
         - name: Zarządzaj środowiskami i obszarami roboczymi
           href: engagement-insights/manage-environments-workspaces.md
-        - name: Konfiguruj łączniki
-          href: engagement-insights/configure-connections.md
         - name: Zarządzanie plikami cookie i zgodą użytkownika
           href: engagement-insights/user-consent-storage.md
-    - name: GDPR
-      items:
-        - name: Usuwanie i eksportowanie danych osobowych
-          href: engagement-insights/delete-export-personal-data.md
     - name: Dostępność regionalna
       href: engagement-insights/regional-availability.md
-    - name: Limity usługi
-      href: engagement-insights/quotas.md
 - name: Integruj wyniki analiz odbiorców i interakcji
   items:
     - name: Połącz wyniki analiz odbiorców i interakcji
@@ -320,5 +314,9 @@
       href: engagement-insights/integrate-audience-insights-segments.md
     - name: Użycie wymiarów demograficznych do podziału danych behawioralnych
       href: engagement-insights/curate-dimensions.md
+- name: Limity usługi
+  href: service-limits.md
+- name: Uprawnienia i żądania usługi DSR
+  href: dsr-rights-requests.md
 - name: Uzyskiwanie pomocy technicznej
-  href: 'https://dynamics.microsoft.com/en-us/support/'
+  href: 'https://dynamics.microsoft.com/support/'

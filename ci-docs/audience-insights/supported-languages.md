@@ -1,24 +1,23 @@
 ---
-title: Obsługiwane języki w analizach odbiorców
+title: Obsługiwane języki dla Dynamics 365 Customer Insights
 description: Rozumienie i konfigurowanie obsługi języka.
-ms.date: 02/26/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
-ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e9161ebbfdf3ae6c48c12cdf7515b77ca49ae8055ae9a69f9ec314bc1247aeaf
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f80c3019df9b5d82273842ca6f6f18bef0239687
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035152"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483355"
 ---
-# <a name="supported-languages-for-audience-insights-capability"></a>Obsługiwane języki w funkcjach w analizach odbiorców
+# <a name="supported-languages-for-dynamics-365-customer-insights"></a>Obsługiwane języki dla Dynamics 365 Customer Insights
 
-Szczegółowe informacje o odbiorcach na potrzeby aplikacji Dynamics 365 Customer Insights są tłumaczone na wiele języków. Poniższa lista zawiera dostępne języki i informacje dotyczące tego, co jest przetłumaczone. Możesz również dowiedzieć się więcej na temat sposobu zmieniania ustawień językowych. 
+Aplikacja Dynamics 365 Customer Insights została przetłumaczona na wiele języków. Poniższa lista zawiera dostępne języki i informacje dotyczące tego, co jest przetłumaczone. Możesz również dowiedzieć się więcej na temat sposobu zmieniania ustawień językowych. 
 
 ## <a name="languages"></a>Języki
 
@@ -64,12 +63,12 @@ Szczegółowe informacje o odbiorcach na potrzeby aplikacji Dynamics 365 Custome
 | szwedzki, | svenska |
 | Tajski | ไทย |
 | turecki, | Türkçe |
-| ukraiński | українська |
+| Ukraiński | українська |
 | Wietnamski | Tiếng Việt |
 
 ## <a name="whats-translated"></a>Co jest tłumaczone
 
-Aplikacja wykorzystuje preferencje językowe do wyświetlania elementów, takich jak menu, tekst etykiety i komunikaty systemowe w preferowanym języku.
+Aplikacja Customer Insights używa Twoich preferencji językowych do wyświetlania elementów, takich jak menu, tekst etykiet i wiadomości systemowe, w preferowanym języku.
 
 Ponieważ większość funkcji opiera się na danych użytkownika, niektóre elementy pozostają w oryginalnym języku. Na przykład:
 

@@ -1,7 +1,7 @@
 ---
 title: Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi
 description: Do łączenia się z własnym repozytorium data lake użyj nazwy głównej usługi Azure.
-ms.date: 07/23/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,21 +9,21 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 845d1f55eb99f2adf9b437124addec4f6d016fec
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: b96c7f580b4067e059e00a9cdb4e872e9acd4a5c
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461161"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483538"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
-<!--note from editor: The Cloud Style Guide would have us just use "Azure Data Lake Storage" to mean the current version, unless the old version (Gen1) is mentioned. I've followed this guidance, even though it seems that our docs and Azure docs are all over the map on this.-->
+
 Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Przeczytaj, jak połączyć konto Dynamics 365 Customer Insights z kontem Azure Data Lake Storage za pomocą nazwy głównej usługi Azure zamiast kluczy konta magazynu. 
 
-Można użyć nazwy głównej usługi, by bezpiecznie [dodać lub edytować folder Common Data Model jako źródło danych](connect-common-data-model.md) lub [utworzyć lub zaktualizować środowisko](get-started-paid.md).<!--note from editor: Suggested. Or it could be ", or create a new environment or update an existing one". I think "new" is implied with "create". The comma is necessary.-->
+Można użyć nazwy głównej usługi, by bezpiecznie [dodać lub edytować folder Common Data Model jako źródło danych](connect-common-data-model.md) lub [utworzyć lub zaktualizować środowisko](get-started-paid.md).
 
 > [!IMPORTANT]
-> - Konto usługi Stora Data Lake, które będzie korzystać z<!--note from editor: Suggested. Or perhaps it could be "The Data Lake Storage account to which you want to give access to the service principal..."--> nazwy głównej usługi musi mieć [włączony hierarchiczny obszar nazw](/azure/storage/blobs/data-lake-storage-namespace).
+> - Konto usługi Data Lake Storage, które będzie korzystać z głównej usługi, musi mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace).
 > - Aby utworzyć nazwę główną usługi, trzeba mieć uprawnienia administratora w ramach Twojej subskrypcji platformy Azure.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Utwórz nazwę główną usługi Azure dla rozwiązania Customer Insights
@@ -38,7 +38,7 @@ Przed utworzeniem nowej nazwy głównej usługi dla wyników analiz odbiorców l
 
 3. W obszarze **Zarządzanie** wybierz pozycję **Aplikacje korporacyjne**.
 
-4. Wyszukaj identyfikator<!--note from editor: Via Microsoft Writing Style Guide.--> aplikacji Microsoft:
+4. Wyszukaj identyfikator aplikacji Microsoft:
    - Wyniki analiz odbiorców: `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` o nazwie `Dynamics 365 AI for Customer Insights`
    - Wyniki analiz interakcji: `ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd` o nazwie `Dynamics 365 AI for Customer Insights engagement insights`
 
@@ -49,23 +49,23 @@ Przed utworzeniem nowej nazwy głównej usługi dla wyników analiz odbiorców l
 6. Jeśli nie są zwracane żadne wyniki, utwórz nową nazwę główną.
 
 >[!NOTE]
->Aby korzystać z pełnej możliwości usługi Dynamics 365 Customer Insights, zalecamy dodanie obu aplikacji do nazwy głównej usługi.<!--note from editor: Using the note format is suggested, just so this doesn't get lost by being tucked up in the step.-->
+>Aby korzystać z pełnej możliwości usługi Dynamics 365 Customer Insights, zalecamy dodanie obu aplikacji do nazwy głównej usługi.
 
 ### <a name="create-a-new-service-principal"></a>Utwórz nową nazwę główną usługi
-<!--note from editor: Some general formatting notes: The MWSG wants bold for text the user enters (in addition to UI strings and the settings users select), but there's plenty of precedent for using code format for entering text in PowerShell so I didn't change that. Note that italic should be used for placeholders, but not much else.-->
+
 1. Zainstaluj najnowszą wersję programu Azure Active Directory PowerShell dla programu Graph. Aby uzyskać więcej informacji, przejdź do [instalacji programu Azure Active Directory PowerShell dla programu Graph](/powershell/azure/active-directory/install-adv2).
 
-   1. Na komputerze wybierz klawisz Windows i wyszukaj program **Windows PowerShell** i wybierz opcję **Uruchom jako Administrator**.<!--note from editor: Or should this be something like "search for **Windows PowerShell** and, if asked, select **Run as administrator**."?-->
+   1. Na komputerze wybierz klawisz Windows i wyszukaj program **Windows PowerShell** i wybierz opcję **Uruchom jako Administrator**.
    
    1. W wyświetlonym oknie PowerShell wprowadź polecenie `Install-Module AzureAD`.
 
 2. Utwórz nazwę główną usługi dla usługi Customer Insights przy użyciu modułu Azure AD PowerShell.
 
-   1. W oknie PowerShell wprowadź polecenie `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Zamień *„[swój identyfikator dzierżawcy]”*<!--note from editor: Edit okay? Or should the quotation marks stay in the command line, in which case it would be "Replace *[your tenant ID]* --> na rzeczywisty identyfikator dzierżawcy, w którym ma zostać utworzyć główna nazwa usługi. Parametr nazwy środowiska, `AzureEnvironmentName`, jest opcjonalny.
+   1. W oknie PowerShell wprowadź polecenie `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Zastąp *[identyfikator dzierżawcy]* rzeczywistym identyfikatorem dzierżawcy, w którym chcesz utworzyć jednostkę usługi. Parametr nazwy środowiska, `AzureEnvironmentName`, jest opcjonalny.
   
    1. Wprowadź `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. To polecenie tworzy nazwę główną usługi dla analiz odbiorcy w wybranej dzierżawie. 
 
-   1. Wprowadź `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. To polecenie tworzy nazwę główną usługi dla wyników analiz interakcji<!--note from editor: Edit okay?--> w wybranym dzierżawcy.
+   1. Wprowadź `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. To polecenie tworzy nazwę główną usługi dla szczegółowych informacji o odbiorcach w ramach wybranego dzierżawcy.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Udziel uprawnień do nazwy głównej usługi, aby uzyskać dostęp do konta magazynu
 
@@ -90,7 +90,7 @@ Rozpowszechnienie zmian może zająć do 15 minut.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Wprowadź identyfikator zasobu platformy Azure lub szczegóły subskrypcji platformy Azure w załączniku konta magazynu do wyników analiz odbiorców
 
-Możesz<!--note from editor: Edit suggested only if this section is optional.--> dołączyć konto Data Lake Storage do wyników analiz odbiorców w celu [przechowywania danych wyjściowych](manage-environments.md) lub [użycia ich jako źródła danych](connect-common-data-service-lake.md). Ta opcja umożliwia wybór podejścia opartego na zasobach lub subskrypcji. W zależności od wybranego podejścia postępuj zgodnie z procedurą podaną w jednej z poniższych sekcji.<!--note from editor: Suggested.-->
+Możesz dołączyć konto Data Lake Storage do szczegółowych informacji o odbiorcach w celu [przechowywania danych wyjściowych](manage-environments.md) lub [użycia ich jako źródła danych](connect-common-data-service-lake.md). Ta opcja umożliwia wybór podejścia opartego na zasobach lub subskrypcji. W zależności od wybranego podejścia postępuj zgodnie z procedurą podaną w jednej z poniższych sekcji.
 
 ### <a name="resource-based-storage-account-connection"></a>Połączenie z kontem magazynu oparte na zasobach
 
