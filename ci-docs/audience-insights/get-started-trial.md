@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: f038dedd369ac9e623146b66528efa87c47a8c23769037d8709fa9b804a0b723
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3a235e924395a606b9332de3d205289288a597a9
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035428"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558836"
 ---
 # <a name="set-up-a-trial-environment"></a>Konfigurowanie wersji próbnej środowiska 
 
@@ -95,7 +95,7 @@ Teraz można użyć pozyskanych danych, aby dostosować Customer Insights do sce
 
 - Wersje próbne są domyślnie aktywne przez 30 dni. Możesz je jednak przedłużyć po 23 dniu po zalogowaniu się do wersji próbnej.
 - Nie można użyć własnego konta usługi Azure Data Lake Storage do przechowywania danych wyjściowych podczas wersji próbnej. Można jednak pozyskać dane z konta Data Lake Storage.
-- Można przechowywać do 3 GB danych w środowisku Dataverse, które pobiera aprowizacje automatycznie po uruchomieniu wersji próbnej Customer Insights.
+- W środowisku usługi Dataverse można przechowywać maksymalnie 3 GB danych, które są automatycznie aprowizowane po rozpoczęciu wersji próbnej aplikacji Customer Insights.
 
 ## <a name="copy-data-from-a-trial-to-a-paid-subscription"></a>Kopiowanie danych z wersji próbnej do płatnej subskrypcji
 

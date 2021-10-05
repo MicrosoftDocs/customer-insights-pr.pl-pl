@@ -242,7 +242,7 @@
   items:
     - name: Centrum pomocy
       href: engagement-insights/index.yml
-    - name: Omówienie funkcji
+    - name: Wyniki analiz interakcji — informacje
       href: engagement-insights/overview.md
     - name: Rozpoczynanie pracy
       items:
@@ -306,7 +306,7 @@
           href: engagement-insights/user-consent-storage.md
     - name: Dostępność regionalna
       href: engagement-insights/regional-availability.md
-- name: Integruj wyniki analiz odbiorców i interakcji
+- name: Udostępnianie danych między funkcjami
   items:
     - name: Połącz wyniki analiz odbiorców i interakcji
       href: engagement-insights/integrate-audience-insights-engagement-insights.md
@@ -318,5 +318,3 @@
   href: service-limits.md
 - name: Uprawnienia i żądania usługi DSR
   href: dsr-rights-requests.md
-- name: Uzyskiwanie pomocy technicznej
-  href: 'https://dynamics.microsoft.com/support/'

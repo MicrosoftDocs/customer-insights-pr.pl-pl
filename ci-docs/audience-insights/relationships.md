@@ -1,20 +1,20 @@
 ---
 title: Relacje między encjami i ścieżkami encji
 description: Tworzenie relacji między encjami z wielu źródeł danych i zarządzanie nimi.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
+ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035244"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7557365"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
@@ -93,11 +93,11 @@ Dostępne opcje:
 - **Zmień na układ poziomy/pionowy**: zmień wyrównanie encji i relacji.
 - **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
 
-### <a name="relationship-path"></a>Ścieżka relacji
+## <a name="relationship-paths"></a>Ścieżki relacji
 
-Ścieżka relacji opisuje encje, które są połączone z relacją między encją źródłową a encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu.
+Ścieżka relacji opisuje encje, które są połączone z relacjami między encją źródłową i encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu. 
 
-Ścieżka relacji informuje system, które relacja mają uzyskać dostęp do encji ujednoliconego profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
+Ścieżka relacji informuje system, które relacje mają uzyskiwać dostęp do encji ujednoliconego profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
 
 Na przykład obiekt, *eCommerce_eCommercePurchases* ma następujące relacje do encji ujednoliconego profilu *Klient*:
 
@@ -105,7 +105,43 @@ Na przykład obiekt, *eCommerce_eCommercePurchases* ma następujące relacje do 
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > klient 
 
-Ścieżka relacji określa, których encji można używać podczas tworzenia reguł dla miar lub segmentów. Wybranie opcji z najdłuższa ścieżką relacji najprawdopodobniej dostarczy mniejszą liczbę wyników, ponieważ dopasowane rekordy muszą być częścią wszystkich encji. W tym przykładzie klient musi mieć zakupione towary za pośrednictwem handlu elektronicznego (eCommerce_eCommercePurchases) w punkcie sprzedaży (POS_posPurchases) i uczestniczyć w naszym programie lojalnościowym (loyaltyScheme_loyCustomers). Wybór pierwszej opcji spowoduje prawdopodobnie dodatkowe rezultaty, ponieważ klienci muszą istnieć tylko w jednej dodatkowej encji.
+Ścieżka relacji określa encje, których można używać podczas tworzenia reguł dla miar lub segmentów. Wybranie opcji z najdłuższa ścieżką relacji najprawdopodobniej dostarczy mniejszą liczbę wyników, ponieważ dopasowane rekordy muszą być częścią wszystkich encji. W tym przykładzie klient musi mieć zakupione towary za pośrednictwem handlu elektronicznego (eCommerce_eCommercePurchases) w punkcie sprzedaży (POS_posPurchases) i uczestniczyć w naszym programie lojalnościowym (loyaltyScheme_loyCustomers). Wybór pierwszej opcji spowoduje prawdopodobnie dodatkowe rezultaty, ponieważ klienci muszą istnieć tylko w jednej dodatkowej encji.
+
+### <a name="direct-relationship"></a>Relacja bezpośrednia
+
+Relacja jest klasyfikowana jako **relacja bezpośrednia**, gdy encja źródłowa jest powiązana z encją docelową przy użyciu tylko jednej relacji.
+
+Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchases* łączy się z encją docelową *eCommerce_eCommerceContacts* tylko za pośrednictwem elementu *ContactId*, jest to relacja bezpośrednia.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z encją docelową.":::
+
+#### <a name="multi-path-relationship"></a>Relacja z wieloma ścieżkami
+
+**Relacja z wieloma ścieżkami** jest specjalnym typem relacji bezpośredniej łączącej encję źródłową z więcej niż jedną encją docelową.
+
+Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchases* jest powiązana z dwiema encjami docelowymi *eCommerce_eCommerceContacts* i *loyaltyScheme_loyCustomers*, jest to relacja z wieloma ścieżkami.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z więcej niż jedną encją docelową za pośrednictwem relacji z wieloma ścieżkami.":::
+
+### <a name="indirect-relationship"></a>Relacja pośrednia
+
+Relacja jest klasyfikowana jako **relacja pośrednia**, gdy encja źródłowa jest powiązana z co najmniej jedną encją dodatkową przed powiązaniem z encją docelową.
+
+#### <a name="multi-hop-relationship"></a>Relacja z wieloma przeskokami
+
+*Relacja z wieloma przeskokami* to *relacja pośrednia*, która umożliwia połączenie encji źródłowej z encją docelową za pośrednictwem co najmniej jednej encji pośredniczącej.
+
+Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z encją docelową o nazwie *eCommerce_eCommerceContacts*, jest to relacja z wieloma przeskokami.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z encją docelową z użyciem encji pośredniczącej.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Relacja z wieloma przeskokami i wieloma ścieżkami
+
+Relacji z wieloma przeskokami i wieloma ścieżkami można używać razem do tworzenia **relacji z wieloma przeskokami i wieloma ścieżkami**. Ten typ specjalny obejmuje funkcje **relacji z wieloma przeskokami** i **relacji z wieloma ścieżkami**. Umożliwia on nawiązywanie połączenia z więcej niż jedną encją docelową dzięki użyciu encji pośredniczących.
+
+Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z dwiema encjami docelowymi *eCommerce_eCommerceContacts* i *loyaltyScheme_loyCustomers*, jest to relacja z wieloma przeskokami i wieloma ścieżkami.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z jedną encją docelową, a następnie łączy się z inną encją docelową z użyciem encji pośredniczącej.":::
 
 ## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami 
 

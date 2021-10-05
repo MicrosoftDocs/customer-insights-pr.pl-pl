@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
-ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
+ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2021
-ms.locfileid: "7487120"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7559031"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 
@@ -54,6 +54,9 @@ Użyj ujednoliconych profilów i segmentów z wyników analiz odbiorców, by uzy
 ## <a name="enable-audience-insights-unified-profiles-attributes-and-segments"></a>Włącz wyniki analiz odbiorcy ujednoliconych atrybutów i segmentów profilów
 
 Po połączeniu środowisk możesz wybrać funkcje opcjonalne dla połączonych środowisk. Funkcje te umożliwiają ujednolicone atrybuty i segmenty profilu z wyników analiz odbiorcy dla interaktywnych analiz przeprowadzanych na danych klienta.
+
+> [!IMPORTANT]
+> Aby segmenty wyników analiz odbiorców wyświetlały się w wynikach analiz interakcji, należy [Uruchomić scalanie i procesy podrzędne](../audience-insights/merge-entities.md). Procesy podrzędne są ważne, ponieważ generują unikatową tabelę przygotowującą segmenty wyników analiz odbiorcy, które będą udostępniane wynikom analiz interakcji. (Jeśli zaplanowano odświeżanie sytemu, spowoduje to automatyczne uwzględnienie procesów podrzędnych.)
 
 **Do analizowania danych internetowych w wynikach analiz interakcji**
 

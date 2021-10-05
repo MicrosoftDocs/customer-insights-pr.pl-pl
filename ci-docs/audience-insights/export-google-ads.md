@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Google ads
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Google Ads.
-ms.date: 03/03/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,16 +9,19 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5977b3de9fbb0d97c0912e2ada6a313b0ab92498adf9cdbed48191c0e5143567
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c958f58c927b76364f305dad8f524dde29b2a638
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031670"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558985"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 
 Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
+
+> [!IMPORTANT]
+> Obecnie można tylko utworzyć nowe połączenie i wyeksportować dane do usługi Google Ads, jeśli masz już zatwierdzony token dewelopera usługi Google Ads. W związku ze zmianami wprowadzonymi w zasadach eksport usługi Google Ads zostanie wkrótce zaktualizowany. Będzie dostępna opcja eksportu, która nie będzie wymagała tokenu dla deweloperów, aby zapewnić ciągłość pracy i uprościć eksportowanie do Google Ads. Zaleca się rezygnację z konfigurowania większej liczby połączeń z usługą Google Ads, aby ułatwić przejście do nowej opcji eksportowania.
 
 ## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
 
