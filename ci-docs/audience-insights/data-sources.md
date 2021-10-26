@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 75d597158233f75f0eb5f94389f9dba199d81719f2bbe4e5cc58d2a3afc7dcf8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032863"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645368"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -35,7 +35,7 @@ Zapoznaj się ze szczegółowymi artykułami dotyczącymi sposobu dodawania źr�
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Dodawanie danych z lokalnych źródeł danych
 
-Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Microsoft Power Platform. Przepływy danych można włączyć w funkcji Customer Insights, [podając adres URL środowiska Microsoft Dataverse](get-started-paid.md) podczas konfigurowania środowiska.
+Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Microsoft Power Platform. Przepływy danych można włączyć w funkcji Customer Insights, [podając adres URL środowiska Microsoft Dataverse](create-environment.md) podczas konfigurowania środowiska.
 
 Źródła danych tworzone po skojarzeniu środowiska Dataverse z usługą Customer Insights domyślnie będą korzystać z [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bramy danych. Należy usunąć i ponownie utworzyć źródła danych, które istniały, zanim środowisko Dataverse zostało skojarzone do użycia [lokalnych bram danych](/data-integration/gateway/service-gateway-app).
 

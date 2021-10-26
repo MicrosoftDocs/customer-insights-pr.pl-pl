@@ -1,7 +1,7 @@
 ---
 title: Bot dla Microsoft Teams
 description: Wyszukaj ujednolicone profile klientów w Microsoft Teams za pomocą bota.
-ms.date: 04/21/2020
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 9bf401124b0ffb21b046954056141e7703386d4911f89f34ffc0fcb84bf0f4be
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: cff696834e3dad00ce5b0f1b5bcb13d86354a4e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032495"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617614"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Bot Teams dla Dynamics 365 Customer Insights (wersja zapoznawcza)
 
@@ -31,6 +31,7 @@ Aby można było skonfigurować program bot muszą zostać spełnione następuj�
 - Zakończono [proces unifikacji](data-unification.md).
 - Pola są dodawane do [indeksu wyszukiwania i filtru](search-filter-index.md).
 - Customer Insights i Teams są w tej samej organizacji.
+- Środowisko ma podstawowych odbiorców docelowych ustawionych na indywidualnych klientów. Klienci biznesowi nie są obsługiwani.
 
 ## <a name="configure-the-bot"></a>Skonfiguruj program bot
 

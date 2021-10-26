@@ -1,7 +1,7 @@
 ---
 title: Utwórz środowisko i zarządzaj nim.
 description: Dowiedz się, jak zapisać się w usłudze i zarządzać środowiskami.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034190"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645139"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -26,7 +26,7 @@ Wybierz kontrolkę **Środowiska** w prawym górnym rogu strony, aby zmienić ś
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Zrzut ekranu przedstawiający formant do przełączania środowisk.":::
 
-Administratorzy mogą [tworzyć](get-started-paid.md) i zarządzać środowiskami.
+Administratorzy mogą [tworzyć](create-environment.md) i zarządzać środowiskami.
 
 ## <a name="edit-an-existing-environment"></a>Edytuj istniejące środowisko
 
@@ -36,23 +36,9 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 
 2.  Wybierz ikonę **Edytuj**.
 
-3. W polu **Edytuj środowisko** można zaktualizować pole **Wyświetlana nazwa**, ale nie można zmienić **Regionu** lub **Typu**.
+3. W polu **Edytuj środowisko** można zaktualizować ustawienia środowiska.
 
-4. Jeśli w środowisku skonfigurowano przechowywanie danych w Azure Data Lake Storage, można zaktualizować **Klucz konta**. Nie można jednak zmienić **Nazwy konta** lub nazwy **Kontener**.
-
-5. Opcjonalnie można zaktualizować połączenie oparte na kluczu konta do połączenia opartego na zasobach lub subskrypcji. Po uaktualnieniu nie można powrócić do klucza konta po aktualizacji. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Podczas aktualizowania połączenia nie można zmieniać informacji o **Kontenerze**.
-
-6. Opcjonalnie można podać adres URL środowiska Microsoft Dataverse w obszarze **Konfigurowanie udostępniania danych funkcji Microsoft Dataverse i włączanie dodatkowych możliwości**. Funkcje te zawierają udostępnianie danych aplikacjom i rozwiązań opartych na Microsoft Dataverse, pozyskiwanie danych z lokalnych źródeł danych lub używanie [przewidywać](predictions.md). Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Microsoft Dataverse.
-
-   > [!NOTE]
-   > - Udostępnianie danych za pomocą usługi Microsoft Dataverse Zarządzanego Data Lake nie jest obecnie obsługiwane w przypadku zapisywania wszystkich danych we własnym Azure Data Lake Storage.
-   > - [Przewidywanie brakujących wartości w encji](predictions.md) i raportów osadzonych w usłudze Power BI w szczegółowych informacjach odbiorcy (jeśli jest włączone w danym środowisku) nie są obecnie obsługiwane po włączeniu udostępniania danych za pomocą zarządzanego data lake Microsoft Dataverse.
-
-   Po włączeniu udostępniania danych funkcji Microsoft Dataverse zostanie rozpoczęte pełne odświeżanie źródeł danych i innych procesów. Jeśli procesy są obecnie uruchomione, nie będzie dostępna opcja włączenia udostępniania danych funkcji Microsoft Dataverse. Poczekaj na zakończenie tych procesów lub je anulować, aby włączyć udostępnianie danych. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
-   
-   Podczas uruchamiania procesów, takich jak pozyskiwanie danych lub tworzenie segmentów, odpowiednie foldery zostaną utworzone na koncie magazynu określonym powyżej. W zależności od uruchomionego procesu pliki danych i pliki model.json zostaną utworzone i dodane do odpowiednich podfolderów.
+Aby uzyskać więcej informacji o ustawieniach środowiska, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopiowanie konfiguracji środowiska
 

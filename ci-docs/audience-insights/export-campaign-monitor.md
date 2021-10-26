@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Campaign Monitor
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Campaign Monitor.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d2cc3ec944faa1d77ffb44e8abb422d753c5625d0ccef75cbb7efb14cb7c3741
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031900"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618994"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Eksportowanie segmentów do usługi Campaign Monitor (wersja zapoznawcza)
 
@@ -28,10 +28,10 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Campaign Moni
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do usługi Campaign Monitor można wyeksportować do 1 miliona profili.
+- W ramach każdego eksportu do usługi Campaign Monitor można wyeksportować maksymalnie 1 mln profilów klientów.
 - Eksportowanie do usługi Campaign Monitor jest ograniczone do segmentów.
-- Wyeksportowanie do 1 miliona profilów do usługi Campaign Monitor może potrwać do 20 minut. 
-- Liczba profilów, które można eksportować usługi Campaign Monitor, jest ograniczona i zależy od kontraktu użytkownika z usługą Campaign Monitor.
+- Eksportowanie do 1 mln profilów klientów do usługi Campaign Monitor może zająć do 20 minut. 
+- Liczba profilów klientów, które można eksportować do usługi Campaign Monitor, zależy od kontraktu z usługą Campaign Monitor i jest ograniczona.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Konfiguracja połączenia z usługą Campaign Monitor
 
@@ -66,7 +66,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 1. Wprowadź swój [**Identyfikator listy usługi Campaign Monitor**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
    Najpierw [Wygeneruj klucz interfejsu API](https://www.campaignmonitor.com/api/getting-started/) na podstawie **Ustawień klienta** w usłudze Campaign Monitor, aby wyświetlić identyfikator listy interfejsów API.  
 
-3. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Campaign Monitor.
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Campaign Monitor.
 
 1. Wybierz pozycję **Zapisz**.
 

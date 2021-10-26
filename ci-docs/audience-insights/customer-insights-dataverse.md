@@ -1,7 +1,7 @@
 ---
 title: Dane aplikacji Customer Insights w Microsoft Dataverse
 description: Korzystanie z encji funkcji Customer Insights jako tabel w Microsoft Dataverse.
-ms.date: 06/15/2021
+ms.date: 10/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 45535a7368b89e19a91f08fcd825bda9d57a8709653104bf4043c29ffa14d0b8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032909"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645231"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Praca z danymi aplikacji Customer Insights w Microsoft Dataverse
 
@@ -24,11 +24,7 @@ Customer Insights udostępnia opcję udostępniania encji wyjściowych w [Micros
 
 **Organizacje z istniejącymi środowiskami Dataverse**
 
-Organizacje, które już korzystają z Dataverse, mogą [używać jednego z istniejących środowisk Dataverse](get-started-paid.md), podczas gdy Administrator konfiguruje Wyniki analiz odbiorców. Podając adres URL do środowiska Dataverse, dołącza się do ich nowego środowiska wyników analiz odbiorców. Aby zapewnić wysoką wydajność, środowiska Customer Insights i Dataverse muszą być hostowane w tym samym regionie.
-
-Aby dołączyć środowisko Dataverse, rozwiń **ustawienia zaawansowane** podczas tworzenia środowiska Wyniki analiz odbiorców. Podaj adres **URL środowiska Microsoft Dataverse** i zaznacz pole wyboru, aby **Włączyć udostępnianie danych**.
-
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
+Organizacje, które już korzystają z Dataverse, mogą [używać jednego z istniejących środowisk Dataverse](create-environment.md), podczas gdy Administrator konfiguruje Wyniki analiz odbiorców. Podając adres URL do środowiska Dataverse, dołącza się do ich nowego środowiska wyników analiz odbiorców. Aby zapewnić wysoką wydajność, środowiska Customer Insights i Dataverse muszą być hostowane w tym samym regionie.
 
 **Nowa organizacja**
 

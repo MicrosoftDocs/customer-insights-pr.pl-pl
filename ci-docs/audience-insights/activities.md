@@ -1,7 +1,7 @@
 ---
 title: Działania klienta
 description: Definiowanie działań klientów i wyświetlanie ich na osi czasu w profilach klientów.
-ms.date: 09/12/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c250efcd54ec126c0726b22a971cdedd89760d6b
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494424"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617982"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
@@ -24,8 +24,7 @@ ms.locfileid: "7494424"
 
 Źródła danych mogą zawierać encje z danymi transakcyjnymi i danymi działań z wielu źródeł danych. Zidentyfikuj te encje i wybierz działania, które mają być wyświetlane na osi czasu klienta. Wybierz encję zawierającą docelowe działanie lub działania.
 
-> [!NOTE]
-> Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać uwzględniony na osi czasu klienta, i nie można dodawać encji bez pól **Data**. Formant **Dodaj działanie** jest wyłączany jeśli nie zostanie znaleziona taka encja.
+Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać uwzględniony na osi czasu klienta, i nie można dodawać encji bez pól **Data**. Formant **Dodaj działanie** jest wyłączany jeśli nie zostanie znaleziona taka encja.
 
 1. W analizach odbiorców przejdź do **Dane** > **Działania**.
 
@@ -41,13 +40,16 @@ ms.locfileid: "7494424"
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku.
 
-1. W kroku **Relacja** skonfiguruj szczegóły, aby połączyć dane działań z odpowiednim klientem. Ten krok obrazuje połączenie między encjami.  
+1. W kroku **Relacja** skonfiguruj szczegóły, aby łączyć dane działania z odpowiadającym im rekordem klienta. Ten krok obrazuje połączenie między encjami.  
 
    - **Pierwszy**: pole obce w encji działania, które będzie używane do ustanowienia relacji z inną encją.
    - **Drugi**: odpowiadająca jej encja klienta źródłowego, z którą encja działania będzie w relacji. Można utworzyć relację tylko z encjami klienta źródłowego, które są używane w procesie ujednolicania danych.
    - **Trzeci**: jeśli relacja między tą encją działania a wybraną encją klienta źródłowego już istnieje, nazwa relacji będzie w trybie tylko do odczytu. Jeśli taka relacja nie istnieje, zostanie utworzona nowa relacja z nazwą podaną w tym polu.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiowanie relacji encji.":::
+
+   > [!TIP]
+   > W środowiskach B2B można wybrać między encją kont a innymi encjami. Po wybraniu encji konta ścieżka relacji jest ustawiana automatycznie. W przypadku innych encji należy zdefiniować ścieżkę relacji dla jednej lub większej liczby encji pośrednich do momentu osiągnięcia encji klienta.
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
 
@@ -95,5 +97,34 @@ Po wybraniu działania są dostępne następujące akcje.
 - **Zmień nazwę**: Otwiera okno dialogowe, w którym można wprowadzić inną nazwę wybranego działania. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
 - **Usuń**: otwiera okno dialogowe w celu potwierdzenia usunięcia wybranego działania. Możesz także usunąć wiele działań jednocześnie, zaznaczając działania i wybierając ikonę usuwania. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
+
+## <a name="view-activity-timelines-on-customer-profiles"></a>Wyświetlanie osi czasu działań w profilach klientów
+
+Po skonfigurowaniu działań klienta wybierz opcję **Pokaż na osi czasu działań** w konfiguracji działania, aby znaleźć wszystkie działania klienta w jego profilu klienta.
+
+Aby otworzyć oś czasu dla klienta, wybierz pozycję **Klienci** i wybierz profil klienta, który chcesz wyświetlić.
+
+Jeśli klient uczestniczy w skonfigurowanym działaniu, znajdziesz je w sekcji **Oś czasu działania**.
+
+:::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Wyświetlanie skonfigurowanych działań w profilach klientów.":::
+
+Istnieje kilka sposobów filtrowania działań na osi czasu działań:
+
+- Aby uściślić wyniki i uwzględnić tylko wybrane typy, można wybrać jedną lub wiele ikon działań.
+
+  :::image type="content" source="media/Activity_Timeline2.PNG" alt-text="Filtrowanie działań według typów przy użyciu ikon.":::
+
+- Możesz wybrać opcję **Filtruj**, aby otworzyć panel filtrów w celu skonfigurowania filtrów osi czasu.
+
+   1. Można filtrować według *typu działania* i *daty*
+   1. Wybierz opcję **Zastosuj**, aby używać filtrów na osi czasu działania.
+
+   :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="Używanie panelu filtrów do konfigurowania warunków filtrowania.":::
+
+Aby usunąć filtry, wybierz **x** obok każdego filtru zastosowanego do osi czasu lub wybierz opcję **Wyczyść filtry**.
+
+
+> [!NOTE]
+> Filtry działań są usuwane po opuszczeniu profilu klienta. Należy je stosować po każdym otwarciu ich w profilu klienta.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

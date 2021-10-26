@@ -1,7 +1,7 @@
 ---
 title: Wzbogać ujednolicone profile klientów
 description: Korzystanie z funkcji w celu wzbogacenia danych klienta.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7470015"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617568"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -27,16 +27,26 @@ W statystykach odbiorców przejdź do **Dane** > **Wzbogacenie**, aby pracować 
 
 Aby tworzyć lub edytować wzbogacenia, trzeba mieć uprawnienia Współautor lub Administrator. Aby uzyskać więcej informacji, zobacz [Uprawnienia](permissions.md).
 
-Na karcie **Odkryj** znajdziesz następujące wzbogacenia:
+Na karcie **Odnajdowanie** znajdziesz wszystkie obsługiwane opcje wzbogacania.
 
-- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
+# <a name="individual-customers-b2c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
+
 - [Marki](enrichment-microsoft.md) dostarczone przez Microsoft
 - [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
-- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
-- [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
+- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
 - [Dane demograficzne](enrichment-experian.md) dostarczane przez usługę Experian
-- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies
-- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol)
+- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
+- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
+
+# <a name="business-accounts-b2b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
+
+- [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
+- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
+- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies 
+- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
+- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
+
+---
 
 Na karcie **Moje wzbogacenia** użytkownik może zobaczyć skonfigurowane przez siebie wzbogacenia i edytować ich właściwości.
 
@@ -58,7 +68,7 @@ Uruchom lub dezaktywuj wiele wzbogaceń jednocześnie, zaznaczając je na liści
 
 ## <a name="enrichments-and-connections"></a>Wzbogacenia i połączenia
 
-Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.md), które administrator konfiguruje się z poświadczeniami i wyraża zgodę na przesyłanie danych. Połączenie może być następnie używane do konfiguracji wzbogaceń przez administratorów i współautorów.  
+Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.md), które administrator konfiguruje się z poświadczeniami i wyraża zgodę na przesyłanie danych. Połączenia mogą być używane przez administratorów i współautorów do konfigurowania wzbogaceń.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Wiele wzbogaceń tego samego typu
 

@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi LinkedIn Ads
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi LinkedIn Ads.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2cfaa37fd0ac697f29665792bab27a925d8ea1eede0519d424524a7e5accbfeb
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034236"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618304"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportowanie segmentów do usługi LinkedIn Ads (wersja zapoznawcza)
 
@@ -28,9 +28,9 @@ Eksportuj segmenty ujednoliconych profili klientów do LinkedIn Ads, aby tworzy�
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do usługi LinkedIn Ads można wyeksportować do 100 000 profili.
+- W ramach każdego eksportu do usługi LinkedIn Ads można wyeksportować maksymalnie 100 000 profilów klientów.
 - Eksportowanie do usługi LinkedIn Ads jest ograniczone do segmentów.
-- Wyeksportowanie do 100 tysięcy profilów do usługi LinkedIn Ads może potrwać do 10 minut. 
+- Eksportowanie do 100 000 profilów klientów do usługi LinkedIn Ads może zająć do 10 minut. 
 
 ## <a name="set-up-the-connection-to-linkedin-ads"></a>Skonfiguruj połączenie z usługą LinkedIn Ads
 
@@ -66,7 +66,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Możesz określić, czy chcesz eksportować dane, aby [ukierunkowywać kontakty](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting), czy [ukierunkowywać przedsiębiorstwa](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) w usłudze LinkedIn. 
 
-1. W sekcji **Dopasowywanie danych** wybierz pole w ujednoliconym profilu klienta reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi LinkedIn Ads.
+1. W sekcji **Dopasowywanie danych**, aby ukierunkowywać kontakty, wybierz co najmniej jedno pole reprezentujące adres e-mail klienta, identyfikator Apple Ad ID, identyfikator Google Ad ID, identyfikator użytkownika Google lub imię i nazwisko. Jeśli wybierzesz kierowanie do firm, wybierz co najmniej jedno pole reprezentujące nazwę firmy, domenę poczty e-mail, adres URL strony LinkedIn, symbol giełdowy lub witrynę internetową. W celu dalszego zdefiniowania eksportu można wybrać pola dodatkowe. 
 
 1. Wybierz segmenty, które chcesz wyeksportować. Matched Audiences w LinkedIn Campaign Manager zostaną automatycznie utworzone z nazwą segmentów, które wybrałeś do eksportu. W przypadku każdego z segmentów będzie to oddzielne dopasowanie odbiorcy. 
 

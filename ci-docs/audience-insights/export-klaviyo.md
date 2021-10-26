@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do Klaviyo
 description: Dowiedz się, jak skonfigurować połączenie i wyeksportować je do usługi Klaviyo.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 5f7c91afed8eeb1f767f1efc58dceb7782c37bb4
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385801"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619086"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Eksportowanie list segmentów do Klaviyo (wersja zapoznawcza)
 
@@ -28,10 +28,10 @@ Eksportuj segmenty ujednoliconych profili klientów do Klaviyo i wykorzystaj je 
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Można wyeksportować do 100 000 profilów na każdy eksport do Klaviyo.
+- W ramach każdego eksportu do usługi Klaviyo można wyeksportować maksymalnie 100 000 profilów klientów.
 - Eksport do Klaviyo jest ograniczony do segmentów.
-- Wyeksportowanie do 1 miliona profili do rozwiązania Klaviyo może potrwać do 20 minut. 
-- Liczba profili, które możesz eksportować do Klaviyo, jest zależna i ograniczona od Twojej umowy z Klaviyo.
+- Eksportowanie do 1 mln profilów klientów do usługi Klaviyo może zająć do 20 minut. 
+- Liczba profilów klientów, które można eksportować do usługi Klaviyo, zależy od kontraktu z usługą Klaviyo i jest ograniczona.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Skonfiguruj połączenie z usługą Klaviyo
 
@@ -67,7 +67,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź [**Identyfikator listy usługi Klaviyo**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Jest on niezbędny do eksportu segmentów do Klaviyo.
+3. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Jest on niezbędny do eksportu segmentów do Klaviyo.
 
 1. Wybierz pozycję **Zapisz**.
 

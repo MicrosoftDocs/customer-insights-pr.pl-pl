@@ -1,72 +1,97 @@
 ---
-title: Utwórz i zmodyfikuj ulepszone zdarzenia
-description: Jak tworzyć i modyfikować opracowane zdarzenia.
+title: Tworzenie i modyfikowanie zdarzeń
+description: Jak tworzyć i modyfikować zdarzenia.
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 04/30/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 0344bac5f4d43df853309f43c94d95f962937f77c936ed7305c5de4a08835f04
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 935dc4cd41218842e8406b747daef47de04e337a
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034787"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606250"
 ---
-# <a name="create-and-modify-refined-events"></a>Utwórz i zmodyfikuj ulepszone zdarzenia
+# <a name="create-and-modify-events"></a>Tworzenie i modyfikowanie zdarzeń
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
-
 
 Zdarzenie to dane reprezentujące zachowanie użytkownika, takie jak działanie w witrynie sieci Web.
 
 - Zdarzenie *podstawowe* staje się rekordem w momencie, gdy użytkownik wyświetla stronę (działanie Wyświetlanie) lub wchodzi w interakcję z treścią (działanie Akcja).
 - Zdarzenie *opracowane* jest wirtualnym widokiem zdarzenia podstawowego. Zdarzenia opracowane można określać, usuwając i dodając właściwości lub filtrując zdarzenia na podstawie wartości właściwości.
 
+## <a name="prerequisites"></a>Wymagania wstępne
+
+Aby pobrać zdarzenia, połącz najpierw dane ze swojej witryny internetowej z aplikacją Wyniki analiz interakcji, używając prostej wstawki kodu. Aby uzyskać więcej informacji, zobacz temat [Instalowanie internetowego zestawu SDK w witrynie internetowej](instrument-website.md).
+
+ :::image type="content" source="media/new-events-connect-data.png" alt-text="Połącz najpierw swoje dane.":::
+
+## <a name="create-refined-events"></a>Utwórz ulepszone zdarzenia
+
 Użycie zdarzeń opracowanych w celu uproszczenia zdarzenia podstawowego podczas [eksportu](export-events.md) lub usunięcia właściwości ze zdarzenia, które nie jest niezbędne do wyeksportowania lub usunięcia.
 
-## <a name="create-refined-events"></a>Tworzenie wyrafinowanych zdarzeń
+> [!NOTE]
+> Po dodaniu internetowego zestawu SDK w witrynie internetowej można wyświetlać zdarzenia podstawowe i tworzyć zdarzenia ulepszone. 
 
-Istnieją trzy sposoby utworzenia zdarzenia opracowanego ze zdarzenia podstawowego. 
+Aby wyświetlić zdarzenia podstawowe:
 
-1. Przejdź do **Dane**> **Zdarzenia** i wybierz jedną z następujących opcji:
-    - Wybierz opcję **Nowe zdarzenia** i wybierz opcję **Tworzenie zdarzeń opracowanych**.
-    - Wybierz zdarzenie podstawowe w celu otwarcia widoku szczegółowego i z menu głównego wybierz opcję **Utwórz zdarzenia opracowane**.
-    - Wybierz opcję **Więcej [...]** podczas otwierania menu skrótu dla zdarzenia podstawowego. Następnie wybierz opcję **Utwórz zdarzenia opracowane**.
-    
-    :::image type="content" source="media/create-refined-events-options.png" alt-text="Opcje tworzenia zdarzeń opracowanych.":::
+1. Przejdź do **Dane** lewym okienku nawigacji.
 
-1. W oknie dialogowym **Utwórz zdarzenie opracowane** wprowadź następujące informacje:
+1. Wybierz pozycję **Zdarzenia**, aby wyświetlić listę wszystkich zdarzeń w obszarze roboczym.
 
-- Wybierz zdarzenie z listy rozwijanej **Zdarzenia podstawowe**, jeśli tworzysz nowe zdarzenie.
-- Wprowadź nazwę w polu **Wyświetlana nazwa zdarzenia opracowanego**.
-- Opcjonalnie można zaktualizować sugerowaną **nazwę rzeczywistą** bez używania spacji.
+    :::image type="content" source="media/data-events.png" alt-text="Wyświetl zdarzenia.":::
 
-3. Wybierz opcję **Utwórz**, aby zastosować ustawienia.
+Aby utworzyć zdarzenie ulepszone na podstawie zdarzenia podstawowego: 
 
-1. W widoku szczegółowym zdarzenia opracowanego wybierz opcję **Dodaj i usuń właściwości**, aby otworzyć okienko **Edycji właściwości**. 
+1. Przejdź do obszaru **Dane** > **Zdarzenia** i wybierz **+ Nowe zdarzenia** w górnej części ekranu.
 
-1. Pola wyboru zaznacz właściwości, które chcesz pokazywać, oraz te, które chcesz ukryć. 
-   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Edytowanie właściwości zdarzeń opracowanych.":::
+1. W sesji dialogowej **Nowe zdarzenie** wybierz opcję **Utwórz zdarzenia ulepszone**, a następnie wybierz opcję **Dalej**.
+   
+     :::image type="content" source="media/new-events-wizard.png" alt-text="Kreator nowych zdarzeń.":::
+     
+1. W sesji dialogowej **Nowe zdarzenia** wprowadź następujące informacje:
 
-1. Wybierz opcję **Potwierdź**, aby zastosować wybór.
+   - Wybierz zdarzenie z listy rozwijanej **Zdarzenia podstawowe**.
+   - Wprowadź nazwę w polu **Wyświetlana nazwa zdarzenia opracowanego**.
+   - Opcjonalnie można zaktualizować sugerowaną **nazwę rzeczywistą** bez używania spacji.
 
-1. Wybierz **Zapisz**, aby zapisać konfigurację.
+1. Wybierz opcję **Utwórz**, aby zastosować ustawienia.
 
-## <a name="edit-refined-events"></a>Edytowanie opracowanych zdarzeń
-
-Można zmienić nazwę i właściwości zdarzenia.
+Zdarzenie ulepszone zostanie teraz wyświetlone na liście **Zdarzenia**.
 
 ### <a name="edit-event-name"></a>Edytuj nazwę zdarzenia
 
-1. Przejdź do **Dane** > **Wydarzenia**. 
-1. Wybierz opcję **Więcej [...]** dla wydarzenia i wybierz opcję **Edytuj nazwę**.
-1. Zaktualizuj nazwę zdarzenia i wybierz opcję **Zmień nazwę**.
+Można zmienić nazwę i właściwości zdarzenia podstawowego lub zdarzenia ulepszonego.
 
-### <a name="edit-selected-properties"></a>Edytowanie wybranych właściwości
+1. Przejdź do **Dane** > **Wydarzenia**. 
+
+1. Wybierz opcję **Więcej [...]** dla wydarzenia i wybierz opcję **Edytuj nazwę**.
+    
+     :::image type="content" source="media/create-refined-events-options.png" alt-text="Opcje tworzenia zdarzeń opracowanych.":::
+
+3. Zaktualizuj nazwę zdarzenia i wybierz opcję **Zmień nazwę**.
+
+### <a name="view-the-details-of-a-refined-event"></a>Wyświetl szczegółowe informacje o zdarzeniu ulepszonym:
+
+1. Z listy **Zdarzenia** wybierz zdarzenie podstawowe lub ulepszone. 
+
+1. Wybierz opcję **Dodaj lub usuń właściwości** u góry ekranu, aby otworzyć okienko **Edytuj właściwości**. 
+
+     :::image type="content" source="media/add-remove-properties.png" alt-text="Dodaj lub usuń właściwości.":::
+
+1. Pola wyboru zaznacz właściwości, które chcesz pokazywać, oraz te, które chcesz ukryć. 
+
+   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Edytowanie właściwości zdarzeń opracowanych.":::
+
+1. Wybierz opcję **Potwierdź**, aby zastosować wybór, a następnie wybierz opcję **Zapisz**.
+
+
+### <a name="edit-selected-properties-for-a-refined-event"></a>Edytowanie wybranych właściwości zdarzenia ulepszonego
 
 1. Przejdź do widoku **Dane** > **Zdarzenia** i wybierz zdarzenia opracowane, aby otworzyć widok szczegółowy.
 1. Wybierz opcję **Dodaj i usuń właściwości**. 

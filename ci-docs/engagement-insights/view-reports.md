@@ -4,17 +4,17 @@ description: Użyj dostępnych raportów, aby zobaczyć aktywność w czasie rze
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 06/18/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5ccdcb47db597154cf79b9f2e8fc238ab75dfde9
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036661"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582935"
 ---
 # <a name="view-reports"></a>Wyświetl raporty
 
@@ -92,12 +92,18 @@ Raporty mobilne są pogrupowane w kategoriach użytkowania w czasie rzeczywistym
 
 - **Lokalizacje** pokazują informacje o użytkownikach aplikacji według kraju, regionu i miasta.
 
-## <a name="filter-by-time-or-value"></a>Filtrowanie według czasu lub wartości
+## <a name="filter-by-time-or-date-range"></a>Filtrowanie według czasu lub zakresów dat
 
-Można wybrać przedział czasowy lub wartość w raporcie internetowym lub mobilnym, aby skupić się na wartości lub przedziale czasowym. 
+W celu skoncentrowania się na zakresie dat lub wartości można wybrać horyzont czasowy lub zakres dat w raporcie dla urządzeń przenośnych. 
 
-- Aby wybrać horyzont czasowy w celu wybrania opcji **Więcej [...]** z listy rozwijanej raportu. Wybór zakresu czasu jest wyłączony w raporcie użycia w czasie rzeczywistym. Zakres czasu dla raportu użycia w czasie rzeczywistym to „tu i teraz”.
+- Aby wybrać horyzont czasowy, w prawym górnym rogu widoku raportu wybierz wartość z listy rozwijanej raportu. Można również wybrać **Stały zakres dat**. 
 
-- W większości raportów wybierz wartość na wykresie lub liście w celu odfiltrowania raportu dla wybranej wartości.
+  :::image type="content" source="media/filter-by-time.png" alt-text="Filtruj według czasu lub zakresów dat.":::   
+
+- W przypadku większości raportów wybierz wartość na wykresie lub liście w celu filtrowania raportu.
+
+> [!NOTE]
+> Wybór zakresu czasu jest wyłączony w raporcie użycia w czasie rzeczywistym. Zakres czasu dla raportu użycia w czasie rzeczywistym to „tu i teraz”.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

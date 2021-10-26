@@ -1,7 +1,7 @@
 ---
 title: Scalanie encji w przypadku zjednoczenia danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494332"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648267"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
@@ -89,7 +91,7 @@ Na stronie **Scalanie** wybierz pozycję **Wykluczone pola**, aby wyświetlić l
     :::image type="content" source="media/recency-merge-option.png" alt-text="Opcja Niedawność w oknie dialogowym scalania pól.":::
     - **Najstarsze**: identyfikuje zwycięską wartość jako wartość najstarszą. Wymaga pola daty lub pola liczbowego dla każdej encji uczestniczącej w zakresie scalania pól w celu zdefiniowania niedawności.
 
-1.  Do procesu scalania można dodać inne uczestniczące pola.
+1.  Aby uczestniczyć w procesie scalania, można dodać więcej pól.
 
 1.  Można zmienić nazwę scalonego pola.
 
@@ -131,7 +133,7 @@ Niektóre encje zawierają więcej szczegółów niż inne. Jeśli encja zawiera
 
 Po skonfigurowaniu scalania pól można zdefiniować sposób generowania wartości CustomerId, czyli unikatowych identyfikatorów profilu klienta. Krok scalania w procesie ujednolicania danych generuje unikatowy identyfikator profilu klienta. Identyfikator to CustomerId w encji *Klient*, który wynika z procesu ujednolicania danych. 
 
-Identyfikator CustomerId w encji Klient jest oparty na wartości skrótu pierwszej wartości podstawowych kluczy innych niż null. Klucze pochodzą z encji używanych na etapie dopasowania i scalania i wpływa na nie kolejność dopasowywania. Dlatego wygenerowany identyfikator CustomerID może ulec zmianie w przypadku zmiany wartości klucza podstawowego w encji podstawowej kolejności dopasowania. W konsekwencji wartość klucza podstawowego może nie zawsze reprezentować tego samego klienta.
+Identyfikator CustomerId w encji Klient jest oparty na wartości skrótu pierwszej wartości podstawowych kluczy innych niż null. Klucze pochodzą z encji używanych na etapie dopasowania i scalania i wpływa na nie kolejność dopasowywania. Dlatego wygenerowany identyfikator CustomerID może ulec zmianie w przypadku zmiany wartości klucza podstawowego w encji podstawowej kolejności dopasowania. Wartość klucza podstawowego może więc nie zawsze reprezentować tego samego klienta.
 
 Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego zachowania.
 
@@ -139,7 +141,7 @@ Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego za
 
 1. Przejdź do opcji **Ujednolicanie** > **Scal**.
 
-1. Na stronie **Scalanie** wybierz kartę **Klucz**. 
+1. Wybierz kartę **Klucze**. 
 
 1. Zatrzymaj kursor w wierszu **CustomerId** i wybierz opcję **Skonfiguruj**.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Kontrolka do dostosowywania generowania identyfikatora.":::
@@ -147,6 +149,30 @@ Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego za
 1. Wybierz do pięciu pól wchodzących w skład unikatowego identyfikatora klienta i bardziej stabilnych. Rekordy, które nie pasują do konfiguracji, używają identyfikatora skonfigurowanego w systemie.  
 
 1. Wybierz opcję **Gotowe** i uruchom proces scalania w celu zastosowania zmian.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Grupowanie profilów w gospodarstwa domowe lub klastry
+
+W procesie konfigurowania generowania profilu klienta można zdefiniować reguły grupowania profilów pokrewnych w klaster. Obecnie są dostępne dwa typy klastrów — gospodarstwa domowe i klastry niestandardowe. System automatycznie wybiera gospodarstwa domowe ze wstępnie zdefiniowanymi regułami, jeśli encja *Klient* zawiera pola semantyczne *Person.LastName* i *Location.Address*. Można też utworzyć klaster z własnymi regułami i warunkami, podobnie do [reguł dopasowania](match-entities.md#define-rules-for-match-pairs).
+
+**Definiowanie gospodarstwa domowego lub klastra**
+
+1. Przejdź do opcji **Ujednolicanie** > **Scal**.
+
+1. Na karcie **Scalanie** wybierz pozycję **Zaawansowane** > **Utwórz klaster**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Kontrolka do tworzenia nowego klastra.":::
+
+1. Wybierz klaster typu **Gospodarstwo domowe** lub **Niestandardowy**. Jeśli pola semantyczne *Person.LastName* i *Location.Address* znajdują się w encji *Klient*, zostanie automatycznie wybrane gospodarstwo domowe.
+
+1. Podaj nazwę klastra i wybierz opcję **Gotowe**.
+
+1. Wybierz kartę **Klastry**, aby znaleźć utworzony klaster.
+
+1. Określ reguły i warunki definiujące klaster.
+
+1. Wybierz opcję **Uruchom**, aby uruchomić proces scalania i utworzyć klaster.
+
+Po uruchomieniu procesu scalania identyfikatory klastra są dodawane jako nowe pola do encji *Klient*.
 
 ## <a name="run-your-merge"></a>Uruchamianie scalania
 

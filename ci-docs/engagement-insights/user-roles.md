@@ -4,27 +4,33 @@ description: Omówienie dostępnych ról i uprawnień członków obszaru robocze
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 07/06/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 6d7f4db4a130fc15a69b380c892538db5492d96d8e13f3c070c6a6b9bd098371
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 68e28caf1c14c23acd506da5f7b441f1e3b72e8b
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036706"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645550"
 ---
 # <a name="roles-and-permissions"></a>Uprawnienia i role
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Obszar roboczy to miejsce do przechowywania zdarzeń i raportów oraz zarządzania nimi. Członek obszaru roboczego to użytkownik, który ma dostęp do obszaru roboczego. Członków można przypisać do obszaru roboczego oraz zdefiniować ich role i uprawnienia. Role administratora zarządzają obszarami roboczymi i środowiskami i konfigurują szczegółowe informacje o zaangażowaniu dla innych użytkowników. Role współautora są skierowane do analityków, którzy nie muszą konfigurować szczegółowych informacji o zaangażowaniu, ale chcą tworzyć własne raporty, ścieżki lub segmenty.
+Obszar roboczy to miejsce do przechowywania zdarzeń i raportów oraz zarządzania nimi. Aby uzyskać więcej informacji, zobacz temat [Tworzenie obszaru roboczego i dodawanie członków](create-workspace.md). 
+
+Obszar roboczy może zawierać następujące role i uprawnienia:
+
+- Role *Członek* to użytkownicy, którzy mają dostęp do obszaru roboczego. Członków można przypisać do obszaru roboczego oraz zdefiniować ich role i uprawnienia. 
+- Role *Administrator* zarządzają obszarami roboczymi i środowiskami i konfigurują szczegółowe informacje o zaangażowaniu dla innych użytkowników. 
+- Role *Współautor* zabezpieczeń są nakierowane na analityków, którzy nie muszą konfigurować wyników analiz interakcji, ale chcą tworzyć własne raporty, lejki lub segmenty.
 
 ## <a name="permissions"></a>Uprawnienia
   
-Na poniższym wykresie podano uprawnienia każdej roli. 
+W poniższej tabeli zidentyfikowano uprawnienia dla każdej roli. 
 
 | Uprawnienie | Administrator środowiska | Administrator obszaru roboczego | Współautor środowiska | Współautor obszaru roboczego | 
 |--|--|--|--|--|

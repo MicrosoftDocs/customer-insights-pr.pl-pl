@@ -1,39 +1,34 @@
 ---
-title: Włączanie gotowych raportów profili
-description: Jak tworzyć gotowe raporty profilowe pogrupowane według płci, wieku oraz hrabstwa lub regionu pochodzenia.
+title: Włączanie gotowych (OOB) raportów profili
+description: Jak tworzyć gotowe raporty (OOB) profilowe pogrupowane według płci, wieku oraz hrabstwa lub regionu pochodzenia.
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 05/03/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: bf2ec67c9fb99918b87841d3c0b131934e31b58b
-ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
+ms.openlocfilehash: cba2c112e9e475ceb047fe627fb41e6c8a27e1e7
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "7486133"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582799"
 ---
-# <a name="out-of-box-profile-reports"></a>Gotowe raporty profili
+# <a name="out-of-box-oob-unified-profile-reports"></a>Gotowe (OOB) ujednolicone raporty profilów
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Raport jest zbiorem wizualizacji danych, które ułatwiają oceny i zrozumienia zachowania użytkownika. Dzięki połączeniu z usługą analizy odbiorców Customer Insights, analiza interakcji może pokazywać raporty z informacjami o ujednoliconych profilach klientów. Ten raport zawiera liczbę posiadanych profilów pogrupowane według wieku, wieku i położenia geograficznego.
+Ujednolicony raport profilów to kolekcja wizualizacji danych, które ułatwiają zrozumienie zachowania użytkowników. Dzięki połączeniu z funkcją wyników analiz odbiorców w aplikacji Customer Insights funkcja interakcji może wyświetlać raporty OOB z informacjami o ujednoliconych profilach klientów. Ten raport zawiera liczbę posiadanych profilów pogrupowane według wieku, wieku i położenia geograficznego. Informacje na temat profilów klientów można znaleźć w temacie [Profile klientów](../audience-insights/customer-profiles.md).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Środowisko analizy odbiorców musi przechowywać dane w koncie zarządzanym przez konto Azure Data Lake Storage.
-
-W przypadku korzystania z wersji próbnej oprogramowania analizy odbiorców lub środowiska z Customer Insights zarządzanym przez data lake [skontaktuj się z nami](https://go.microsoft.com/fwlink/?linkid=2145734), aby uzyskać pomoc.  
-
+Administrator środowiska musi utworzyć [połączenie między wynikami analiz interakcji i odbiorców](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="enable-the-customer-profile-report"></a>Włączanie raportu o profilu klienta
 
-Administrator środowiska musi [połączyć szczegółowe informacje o zaangażowaniu i szczegółowe informacje o odbiorcach](integrate-audience-insights-engagement-insights.md).
-
-Po określeniu szczegółów połączenia administrator może przyznać dostęp do innych osób w organizacji, aby zobaczyć raport. Administrator środowiska konfigurujący połączenie ma automatycznie dostęp do raportu profilu klienta. 
+Po określeniu połączenia między wynikami analiz interakcji i odbiorców administrator może następnie przyznać dostęp do innych osób w organizacji, aby zobaczyć raport. Administrator środowiska konfigurujący połączenie ma automatycznie dostęp do raportu profilu klienta. 
 
 Po zakończeniu połączenia funkcja **Profile** będzie dostępna w lewym okienku nawigacji. 
 

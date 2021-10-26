@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6ce72486faa97e6f630a991044ca5e6d4714d0b8b8395a60fad12f3e3a49fa29
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032448"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645047"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Uzupełnij częściowe dane przy użyciu przewidywań
 
@@ -35,7 +35,7 @@ Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić
 
 2. Środowisko szczegółowych informacji odbiorcy jest dołączone do wystąpienia Dataverse.
 
-W przypadku [tworzenia nowego środowiska](get-started-paid.md) należy je skonfigurować w oknie dialogowym **Tworzenie środowiska** i wybrać opcję **Zaawansowane**. Jeśli środowisko zostało już utworzone, przejdź do jego ustawień i wybierz **Zaawansowane**. W obszarze w sekcji **Korzystanie z przewidywania** wprowadź adres URL wystąpienia Dataverse, do którego chcesz dodać środowisko.
+Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Tworzenie przewidywania w encji Klienta
 

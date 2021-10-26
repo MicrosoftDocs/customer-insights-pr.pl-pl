@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do ActiveCampaign
 description: Dowiedz się, jak skonfigurować połączenie i wyeksportować je do usługi ActiveCampaign.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 14d420205a5c60d471ef21a04ab6d02295a65ca8fd5205ba782a300703b06102
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4fbdd5a51a3df35d31ad072eef64d20ee967d7ee
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032222"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618166"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksportowanie segmentów do ActiveCampaign (wersja zapoznawcza)
 
@@ -28,9 +28,9 @@ Eksportuj segmenty ujednoliconych profili klientów do ActiveCampaign i wykorzys
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Podczas jednego eksportu do ActiveCampaign możesz wyeksportować do 1 miliona profili, a cały proces może trwać do 90 minut.
+- W przypadku eksportu do usługi ActiveCampaign można wyeksportować do 1 mln profilów klientów, co może potrwać do 90 minut.
 - Eksportowanie do usługi ActiveCampaign jest ograniczone do segmentów.
-- Liczba profili, które możesz wyeksportować do ActiveCampaign, zależy od Twojej umowy z ActiveCampaign.
+- Liczba profilów klientów, które można eksportować do usługi ActiveCampaign, zależy od kontraktu z usługą ActiveCampaign i jest ograniczona.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Skonfiguruj połączenie z aplikacjami usługi ActiveCampaign
 
@@ -64,7 +64,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź [**Identyfikator listy usługi ActiveCampaign**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
 
-3. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Jest on niezbędny do eksportu segmentów do ActiveCampaign. Opcjonalnie możesz wyeksportować Imię, Nazwisko i Telefon, aby stworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję Dodaj atrybut, aby zamapować te pola.
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Jest on niezbędny do eksportu segmentów do ActiveCampaign. Opcjonalnie możesz wyeksportować Imię, Nazwisko i Telefon, aby stworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję Dodaj atrybut, aby zamapować te pola.
 
 1. Wybierz pozycję **Zapisz**.
 

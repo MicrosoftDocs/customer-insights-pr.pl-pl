@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych z usługi Customer Insights
 description: Zarządzaj eksportami do udostępniania danych.
-ms.date: 06/14/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,25 +10,48 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: be4d142e0f9f422cac459f603aa5dd8bb490321cfe1b2de58f4a128ae56f4ba3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034695"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623146"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
-Na stronie **Eksporty** widać wszystkie skonfigurowane eksporty. Eksporty udostępniają konkretne dane różnym aplikacjom. Mogą one zawierać profile klientów lub encje, schematy i szczegóły mapowania. Każdy eksport wymaga [połączenia, skonfigurowanego przez administratora, do zarządzania uwierzytelnianiem i dostępem](connections.md).
+Na stronie **Eksporty** widać wszystkie skonfigurowane eksporty. Eksporty udostępniają konkretne dane różnym aplikacjom. Mogą one zawierać profile klientów, encje, schematy i szczegóły mapowania. Każdy eksport wymaga [połączenia, skonfigurowanego przez administratora, do zarządzania uwierzytelnianiem i dostępem](connections.md).
 
 Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów. Wszystkie role użytkowników mogą przeglądać skonfigurowane eksporty. Użyj pola wyszukiwania na pasku poleceń, aby znaleźć eksporty według ich nazwy, nazwy połączenia lub typu połączenia.
 
-## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu
+## <a name="export-types"></a>Typy eksportów
 
+Istnieją dwa główne typy eksportów:  
+
+- **Eksportowanie danych wyjściowych** umożliwia wyeksportowanie dowolnego typu encji dostępnych w aplikacji Wyniki analiz odbiorców. Encje wybrane do wyeksportowania są eksportowane ze wszystkimi polami danych, metadanymi, schematami i szczegółami mapowania. 
+- **Eksporty segmentów** umożliwiają eksportowanie encji segmentów z aplikacji Wyniki analiz odbiorców. Segmenty reprezentują listę profilów klientów. Podczas konfigurowania eksportu należy wybrać uwzględnione pola danych, w zależności od systemu docelowego, do którego są eksportowane dane. 
+
+### <a name="export-segments"></a>Eksportowanie segmentów
+
+**Eksportowanie segmentów w środowiskach dla kont biznesowych (B2B) lub indywidualnych klientów (B2C)**  
+W większości przypadków opcja eksportu obsługuje oba typy środowisk. Eksportowanie segmentów do różnych systemów docelowych ma specyficzne wymagania. Generalnie rzecz biorąc, element członkowski segmentu, profil klienta, zawiera informacje kontaktowe. Tak się zwykle dzieje w przypadku segmentów opartych na indywidualnych klientach (B2C), ale nie musi to być prawda w przypadku segmentów opartych na kontach biznesowych (B2B). 
+
+**Środowiska eksportowania segmentów dla kont biznesowych (B2B)**  
+- Segmenty w kontekście środowisk kont biznesowych są wbudowane w encji *klienta*. Aby wyeksportować segmenty kont w stanie takim, jak są, system docelowy musi obsługiwać czyste segmenty klientów. Ta opcja ma miejsce w przypadku serwisu [LinkedIn](export-linkedin-ads.md), gdy podczas definiowania eksportu zostanie wybrania opcja **firma**.
+- Wszystkie inne systemy docelowe wymagają pól z encji kontaktu. Aby segmenty klientów mogą pobierać dane z kontaktów pokrewnych, definicja segmentu musi mieć atrybuty projektu encji kontaktu. Dowiedz się więcej o [konfigurowaniu segmentów i atrybutów projektu](segment-builder.md).
+
+**Eksporty segmentów w środowiskach dla klientów indywidualnych (B2C)**  
+- Segmenty w kontekście środowisk indywidualnych klientów są wbudowane w encji *ujednoliconego profilu klienta*. Każdy segment spełniający wymagania systemów docelowych (na przykład adres e-mail) może zostać wyeksportowany.
+
+**Limity dotyczące eksportów segmentu**  
+- Docelowe systemy innych firm mogą ograniczyć liczbę profilów klientów, które można eksportować. 
+- W przypadku poszczególnych klientów po wybraniu segmentu eksportu zobaczysz rzeczywistą liczbę elementów członkowskich segmentu. Pojawi się ostrzeżenie, jeśli segment jest zbyt duży. 
+- W przypadku kont biznesowych zobaczysz liczbę kont w segmencie; jednak liczba kontaktów, które mogą być projektowane, nie jest pokazywana. W niektórych przypadkach może to doprowadzić do tego, że wyeksportowany segment będzie zawierać więcej profilów klientów niż jest w stanie zaakceptować system docelowy. Przekroczenie limitów wyników w systemach docelowych spowoduje pominięcie eksportu. 
+
+## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu  
 Aby skonfigurować lub edytować eksport, potrzebne są dostępne dla użytkownika połączenia. Połączenia zależą od [roli użytkownika](permissions.md):
-- Administratorzy mają dostęp do wszystkich połączeń. Mogą oni także tworzyć nowe połączenia podczas konfigurowania eksportu.
-- Współautorzy mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Na liście eksportowania są wyświetlani współautorzy, niezależnie od tego, czy mogą edytować lub wyświetlać tylko eksport w kolumnie **Uprawnienia użytkownika**. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- Wyświetlający mogą tylko wyświetlać istniejące eksporty, ale nie mogą ich tworzyć.
+- **Administratorzy** mają dostęp do wszystkich połączeń. Mogą oni także tworzyć nowe połączenia podczas konfigurowania eksportu.
+- **Współautorzy** mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Na liście eksportowania są wyświetlani współautorzy, niezależnie od tego, czy mogą edytować lub wyświetlać tylko eksport w kolumnie **Uprawnienia użytkownika**. Aby uzyskać więcej informacji, przejdź do tematu [Zezwalanie współautorom na używanie połączenia do eksportów](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- **Osoby przeglądające** mogą tylko wyświetlać istniejące raporty — a nie je tworzyć.
 
 ### <a name="define-a-new-export"></a>Definiowanie nowego eksportu
 

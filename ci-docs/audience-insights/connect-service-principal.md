@@ -9,18 +9,18 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b96c7f580b4067e059e00a9cdb4e872e9acd4a5c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483538"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645185"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
 
 Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Przeczytaj, jak połączyć konto Dynamics 365 Customer Insights z kontem Azure Data Lake Storage za pomocą nazwy głównej usługi Azure zamiast kluczy konta magazynu. 
 
-Można użyć nazwy głównej usługi, by bezpiecznie [dodać lub edytować folder Common Data Model jako źródło danych](connect-common-data-model.md) lub [utworzyć lub zaktualizować środowisko](get-started-paid.md).
+Można użyć nazwy głównej usługi, by bezpiecznie [dodać lub edytować folder Common Data Model jako źródło danych](connect-common-data-model.md) lub [utworzyć lub zaktualizować środowisko](create-environment.md).
 
 > [!IMPORTANT]
 > - Konto usługi Data Lake Storage, które będzie korzystać z głównej usługi, musi mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace).

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 45c81a037258e42d8975e0372c104865a9d4cbfe
-ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
+ms.openlocfilehash: 51b150cbf5d9cfb3a5df42e680bcfa57ec5496cb
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2021
-ms.locfileid: "7466637"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617891"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Wzbogać profile klientów dzięki koligacjom marki i zainteresowań (wersja zapoznawcza)
 
@@ -137,7 +137,7 @@ Koligacje marki i zainteresowań można również wyświetlać na kartach poszcz
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [Segmenty](segments.md) i [Miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

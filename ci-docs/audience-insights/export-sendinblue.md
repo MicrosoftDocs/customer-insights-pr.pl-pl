@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do Sendinblue
 description: Dowiedz się, jak skonfigurować połączenie i wyeksportować je do usługi Sendinblue.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b5924b2d4e7f0b11ce6478a31015fcbaaf44ff93
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036068"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617798"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Eksportowanie segmentów do Sendinblue (wersja zapoznawcza)
 
@@ -29,10 +29,10 @@ Eksportuj segmenty ujednoliconych profili klientów, aby generować kampanie, pr
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 miliona profili podczas eksportu do Sendinblue.
+- Do 1 mln profilów klientów na eksport do usługi Sendinblue.
 - Eksport do Sendinblue jest ograniczony do segmentów.
-- Eksport segmentów o łącznej liczbie 1 miliona profili może trwać do 90 minut. 
-- Liczba profili, które możesz eksportować do Sendinblue, jest zależna i ograniczona od Twojej umowy z Sendinblue.
+- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 90 minut. 
+- Liczba profilów klientów, które można eksportować do usługi Sendinblue, zależy od kontraktu z usługą Sendinblue i jest ograniczona.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Konfiguruj połączenie z Sendinblue
 
@@ -64,7 +64,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź **Identyfikator listy usługi** 
 
-1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. 
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. 
 
 1. Opcjonalnie możesz wyeksportować **Imię**, **Nazwisko** i **Telefon**, aby stworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 

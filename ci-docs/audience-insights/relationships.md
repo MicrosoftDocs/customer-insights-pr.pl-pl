@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557365"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623182"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
@@ -67,6 +67,20 @@ Relacja składa się z *encji źródłowej* zawierającej klucz obcy i *encję d
    - **Pole klucza docelowego**: Pole kluczowe encji docelowej. Przykład klient może użyć pola klucza **CustomerID**.
 
 4. Wybierz pozycję **ZApisz**, aby utworzyć niestandardową relację.
+
+## <a name="set-up-account-hierarchies"></a>Konfigurowanie hierarchii klientów
+
+Środowiska, w których skonfigurowano używanie kont biznesowych jako podstawowych docelowych odbiorców, mogą konfigurować hierarchie kont dla pokrewnych kont biznesowych. Może to być na przykład firma z oddzielnymi jednostkami biznesowymi. 
+
+Organizacje tworzą hierarchie kont, aby lepiej zarządzać kontami i ich relacjami. Funkcja wyników analiz odbiorców obsługuje hierarchie kont nadrzędnych i podrzędnych, które już istnieją w pozyskanych danych klientów. Na przykład konta z aplikacji Dynamics 365 Sales. Hierarchie te można skonfigurować na stronie **Relacje** w funkcji Wyniki analiz odbiorców, na karcie hierarchii kont.
+
+1. Przejdź do pozycji **Dane** > **Relacje**.
+1. Wybierz kartę **Hierarchia klientów**.
+1. Wybierz pozycję **Nowa hierarchia klientów**. 
+1. W okienku **Hierarchia klientów** podaj nazwę hierarchii. System tworzy nazwę encji wyjściowej. Można zmienić nazwę encji wyjściowej.
+1. Wybierz encję zawierającą hierarchię klientów. Zazwyczaj znajduje się ona w tej samej encji, która zawiera klientów.
+1. Wybierz **identyfikator klienta** i **nadrzędny identyfikator klienta** z wybranej encji 
+1. Wybierz opcję **Zapisz**, aby zastosować ustawienia i sfinalizować hierarchię klientów.
 
 ## <a name="view-relationships"></a>Widok relacji
 

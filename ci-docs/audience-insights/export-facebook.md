@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 34dc753aa9d2420ef8780d436e14c3c27377e4779eda0f83ca6b5424f2328f22
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4403c6f535f5dc60919be3717073d52640bbe61a
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031447"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619224"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Eksportowanie listy segmentów do Menedżera reklam na portalu Facebook (wersja zapoznawcza)
 
@@ -30,7 +30,7 @@ Eksportuj segmenty zunifikowanych profilów klientów do Menedżera Facebook Ads
 - Do 10 milionów profili klientów na eksport do Menedżera reklam Facebook.
 - Eksport do Menedżera reklam na portalu Facebook jest ograniczony do segmentów.
 - Tworzenie lub aktualizowanie niestandardowych odbiorców na portalu Facebook tylko typu *lista klientów*.
-- Eksportowanie segmentów zawierających łącznie 10 milionów profili może zająć do 90 minut.
+- Eksportowanie segmentów z łącznie 10 mln profilów klientów może zająć do 90 minut.
 
 ## <a name="set-up-connection-to-facebook-ads-manager"></a>Konfiguruj połączenie z Menedżerem reklam na portalu Facebook
 

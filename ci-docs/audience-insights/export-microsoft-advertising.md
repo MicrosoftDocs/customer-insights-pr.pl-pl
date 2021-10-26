@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie Customer Insights do magazynu obiektów Microsoft Advertising
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Microsoft Advertising.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8f8a4cbb9590f9c5311789154319283530e0a10343cccbe9c7aec99765b4fbf2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 12fd221acb7c0eed443c9b860aca42dcb2b3788c
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031485"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618074"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Eksportowanie segmentów do programu Microsoft Advertising (wersja zapoznawcza)
 
@@ -29,9 +29,9 @@ Eksport segmentów Customer Insights do Microsoft Advertising w celu stworzenia 
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do programu Microsoft Advertising można wyeksportować maksymalnie 500 tysięcy profili.
+- W ramach każdego eksportu do usługi Microsoft Advertising można wyeksportować maksymalnie 500 000 profilów klientów.
 - Eksportowanie do usługi Microsoft Advertising jest ograniczone do segmentów.
-- Wyeksportowanie do 500 tysięcy profilów do usługi Microsoft Advertising może potrwać do 10 minut. 
+- Eksportowanie do 500 000 profilów klientów do usługi Microsoft Advertising może zająć do 10 minut. 
 
 
 ## <a name="set-up-the-connection-to-microsoft-advertising"></a>Skonfiguruj połączenie z usługą Microsoft Advertising
@@ -68,7 +68,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź swój **Identyfikator klienta i konta Microsoft Advertising**. Możesz znaleźć ID klienta (`cid`) i ID konta (`aid`) w parametrach adresu URL po zalogowaniu w Microsoft Advertising.
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole w ujednoliconym profilu klienta z adresem e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Microsoft Advertising.
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole z adresem e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Microsoft Advertising.
 
 1. Wybierz pozycję **Zapisz**.
 

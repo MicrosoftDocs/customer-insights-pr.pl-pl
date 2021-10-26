@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465218"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606113"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
@@ -26,6 +26,20 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>Aktualizacje z września 2021
+
+Aktualizacje we wrześniu 2021 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="activities"></a>Działania
+
+- **Udoskonalenia osi czasu działań** Rozszerzyliśmy filtry osi czasu działań w profilach klientów. Dodatkowo można użyć nowego filtru do filtrowania według typu działania i daty. Daty można filtrować w innych warunkach. Aby uzyskać więcej informacji, zobacz temat [Wyświetlanie osi czasu działań w profilach klientów](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Relacje
+
+- **Obsługa relacji z wieloma przeskokami** Używaj relacji z wieloma przeskokami podczas konfigurowania działań i definiowania relacji między encjami. Relacje z wieloma przeskokami używają encji pośredniej w celu połączenia dwóch encji. Podczas konfigurowania działania można użyć relacji z wieloma przeskokami w celu połączenia encji działania z encją pośrednią, a następnie z encją klienta. Można łączyć relacje z wieloma przeskokami z relacjami z wieloma ścieżkami. Aby uzyskać więcej informacji, zobacz temat [Relacja z wieloma przeskokami](relationships.md#multi-hop-relationship).
+
+- **Obsługa relacji z wieloma ścieżkami** Używaj relacji z wieloma ścieżkami podczas konfigurowania działań i definiowania relacji między encjami. Relacje z wieloma ścieżkami wiążą encję źródłową z więcej niż jedną encją. Podczas konfigurowania działania można użyć relacji z wieloma ścieżkami w celu połączenia encji działania z więcej niż jedną encją klienta. Można łączyć relacje z wieloma ścieżkami z relacjami z wieloma przeskokami. Aby uzyskać więcej informacji, zobacz temat [Relacja z wieloma ścieżkami](relationships.md#multi-path-relationship).
 
 ## <a name="august-2021-updates"></a>Aktualizacje z sierpnia 2021 r.
 

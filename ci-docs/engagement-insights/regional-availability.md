@@ -8,18 +8,18 @@ ms.date: 09/28/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
-ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
+ms.openlocfilehash: 82591919b44eaac8a251d7fdb148253d5cac23c3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "7564607"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645414"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Dostępność regionalna dla aplikacji Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Szczegółowe informacje o zaangażowaniu, funkcja aplikacji Dynamics 365 Customer Insights, stopniowo wprowadza coraz więcej regionów, w których klienci mogą zdecydować się na przechowywanie swoich danych. Administratorzy mogą wybrać region podczas [tworzenia nowego środowiska](manage-environments-workspaces.md#create-an-environment). 
+Szczegółowe informacje o zaangażowaniu, funkcja aplikacji Dynamics 365 Customer Insights, stopniowo wprowadza coraz więcej regionów, w których klienci mogą zdecydować się na przechowywanie swoich danych. Administratorzy mogą wybrać region podczas [tworzenia nowego środowiska](create-new-environment.md). 
 
 Jeśli po raz pierwszy konfigurujesz szczegółowe informacje o zaangażowaniu, możesz wybrać region podczas przechodzenia przez [środowisko pierwszego uruchomienia z przewodnikiem](quickstart.md). Później każde nowe środowisko pozwala wybrać region, w którym będą przechowywane dane.
 
