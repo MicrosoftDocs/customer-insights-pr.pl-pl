@@ -1,7 +1,7 @@
 ---
 title: Konfiguracja systemu w statystykach odbiorców
 description: Dowiedz się o ustawieniach systemu w możliwości analiz odbiorców w Dynamics 365 Customer Insights.
-ms.date: 02/12/2021
+ms.date: 10/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
+ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035929"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7651853"
 ---
 # <a name="system-configuration"></a>Konfiguracja systemu
 
@@ -24,9 +24,9 @@ Strona **System** zawiera następujące karty:
 - [Użycie interfejsu API](#api-usage-tab)
 - [Informacje](#about-tab)
 - [Ogólne](#general-tab)
+- [Zabezpieczenia](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Strona systemowa.](media/system-tabs.png "Strona systemowa")
+:::image type="content" source="media/system-tabs.png" alt-text="Karty Ustawienia na stronie systemowej.":::
 
 ## <a name="status-tab"></a>Karta Stan
 
@@ -84,9 +84,15 @@ Karta **Informacje** zawiera **Wyświetlaną nazwę** organizacji, aktywny **Ide
 
 ## <a name="general-tab"></a>Karta Ogólne
 
-Na karcie **Ogólne** są dostępne dwie opcje, **Język** i **Format kraju/regionu**.
+Na karcie **Ogólne** można zmienić język i format kraju/regionu.
 
-Aplikacja [obsługuje szereg języków](supported-languages.md). Aby zmienić preferowany język, wybierz **Język** z listy rozwijanej.
+Rozwiązanie Customer Insights [obsługuje wiele języków](/dynamics365/get-started/availability). Aplikacja wykorzystuje preferencje językowe do wyświetlania elementów, takich jak menu, tekst etykiety i komunikaty systemowe w preferowanym języku.
+
+Zaimportowane dane i informacje wprowadzone ręcznie nie są przetłumaczone.
+
+### <a name="update-the-settings"></a>Aktualizuj ustawienia
+
+Aby zmienić preferowany język, wybierz **Język** z listy rozwijanej.
 
 Aby zmienić preferowany format dat, godzin i liczb, użyj listy rozwijanej **Format kraju/regionu**. W obszarze tego pola jest wyświetlany podgląd formatowania. System automatycznie zasugeruje wybór, gdy wybierzesz nowy język.
 
@@ -105,6 +111,13 @@ Znajdź szczegółowe informacje na temat wykorzystania interfejsu API w czasie 
 
    Operacje korzystające z [pozyskiwania danych w czasie rzeczywistym](real-time-data-ingestion.md) zawierają przycisk z symbolem lornetki do wyświetlania użycia interfejsu API w czasie rzeczywistym. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.   
    Pole **Grupuj według** w okienku **Użycia interfejsu API w czasie rzeczywistym** umożliwia wybranie sposobu najlepszego prezentowania interakcji w czasie rzeczywistym. Dane można pogrupować według metody interfejsu API, kwalifikowanej nazwy encji (pobranej encji), utworzone przez (źródło zdarzenia), wyniku (powodzenie lub niepowodzenie) lub kodów błędów. Dane są dostępne jako wykres chronologiczny i jako tabela.
+
+## <a name="security-tab"></a>Karta Zabezpieczenia
+
+Karta **Zabezpieczenia** umożliwia łączenie i zarządzanie własnym magazynem [key vault Azure](/azure/key-vault/general/basic-concepts) w środowisku.
+Dedykowanego magazynu kluczy można używać do tworzenia etapów i używania wpisów danych w granicach zgodności organizacji. Odbiorcy mogą użyć wpisów tajnych w usłudze Azure Key Vault, aby [skonfigurować połączenia](connections.md) z platformami innych firm.
+
+Aby uzyskać więcej informacji, przejrzyj temat [Użyj własnego magazynu Azure Key Vault](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

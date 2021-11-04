@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 95afd1fedb98a451e4978ee66be2ea98ad7a4a76
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645716"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673404"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Tworzenie środowiska w aplikacji Wyniki analiz odbiorców
 
@@ -46,7 +46,7 @@ W kroku **Podstawowe informacje** wybierz, czy chcesz utworzyć środowisko od p
 
 Podaj następujące szczegóły:
    - **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić.
-   - **Wybierz firmę**: wybierz podstawowych odbiorców dla nowego środowiska. Możesz pracować z poszczególnymi klientami (B2C) lub [klientami biznesowymi](work-with-business-accounts.md) (B2B).
+   - **Wybierz swoją firmę**: wybierz podstawowych odbiorców dla nowego środowiska. Można pracować z poszczególnymi konsumentami (B2C) lub [kontami biznesowymi (B2B)](work-with-business-accounts.md).
    - **Wpisz**: Wybierz, czy chcesz utworzyć środowisko produkcyjne, czy piaskownicę. Środowiska piaskownicy nie zezwalają na zaplanowane odświeżanie danych i są przeznaczone do wstępnej implementacji i testowania. Środowiska piaskownicy używają tych samych podstawowych odbiorców co aktualnie wybrane środowisko produkcyjne.
    - **Region**: Region, w którym usługa jest wdrażana i hostowana.
 
@@ -54,7 +54,7 @@ Podaj następujące szczegóły:
 
 W kroku **Magazyn danych** wybierz miejsce przechowywania danych z funkcji Wyniki analiz odbiorców.
 
-Dostępne są dwie opcje: **Magazyn rozwiązania Customer Insights** (magazyn Azure Data Lake, którym zarządza zespół rozwiązania Customer Insights) oraz **Azure Data Lake Storage** (własne Azure Data Lake Storage). Domyślnie jest zaznaczona opcja magazyn Customer Insights.
+Dostępne są dwie opcje: **Magazyn rozwiązania Customer Insights** (magazyn data lake usługi Azure, którym zarządza zespół rozwiązania Customer Insights) oraz **Azure Data Lake Storage** (własne Azure Data Lake Storage). Domyślnie jest zaznaczona opcja magazyn Customer Insights.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Wybierz pozycję Azure Data Lake Storage, aby przechowywać w niej dane funkcji Wyniki analiz odbiorców.":::
 
@@ -66,7 +66,7 @@ Zapisując dane w usłudze Azure Data Lake Storage, wyrażasz zgodę na to, że 
 > - Konta usługi Azure Data Lake Storage z tego samego regionu platformy Azure, który został wybrany podczas tworzenia środowiska.
 > - Konta usługi Azure Data Lake Storage z włączonymi *hierarchicznymi obszarami nazw*.
 
-W przypadku Azure Data Lake Storage można wybrać opcję opartą na zasobach i opartą na subskrypcji opcję uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Nazwą **kontenera** będzie `customerinsights` i nie będzie można jej zmienić.
+W przypadku Azure Data Lake Storage można wybrać opcję opartą na zasobach i opartą na subskrypcji opcję uwierzytelniania. Aby uzyskać więcej informacji, zobacz [Łączenie z kontem Azure Data Lake Storage przy użyciu głównej usługi Azure](connect-service-principal.md). Nazwą **kontenera** będzie `customerinsights` i nie będzie można jej zmienić.
 
 Po zakończeniu procesów systemowych, takich jak pozyskiwanie danych, system tworzy odpowiednie foldery w określonym koncie magazynu. Pliki danych i pliki *model.json* są tworzone i dodawane do folderów na podstawie nazwy procesu.
 
@@ -76,14 +76,14 @@ W przypadku utworzenia kilku środowisk usługi Customer Insights i zapisania en
    
 Krok **Microsoft Dataverse** umożliwia połączenie aplikacji Customer Insights ze środowiskiem Dataverse.
 
-Aby używać [gotowych modeli przewidywania](predictions-overview.md#out-of-box-models), skonfiguruj udostępnianie danych w funkcji Dataverse. Można też włączyć pozyskiwanie danych z lokalnych źródeł danych, udostępniając adres URL środowiska funkcji Microsoft Dataverse, którym administruje Twoja organizacja. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights daneom wyjściowym z zarządzanego Data Lake Dataverse.
+Aby używać [gotowych modeli przewidywania](predictions-overview.md#out-of-box-models), skonfiguruj udostępnianie danych w funkcji Dataverse. Można też włączyć pozyskiwanie danych z lokalnych źródeł danych, udostępniając adres URL środowiska funkcji Microsoft Dataverse, którym administruje Twoja organizacja. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights danym data lake zarządzanym przez usługę Dataverse.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
 
 > [!NOTE]
 > Aplikacja Customer Insights nie obsługuje następujących scenariuszy udostępniania danych:
-> - Jeśli zapiszesz wszystkie dane we własnej usłudze Azure Data Lake Storage, nie będzie mógł włączyć udostępniania danych przy użyciu usługi Data Lake zarządzanej przez funkcję Microsoft Dataverse.
-> - W przypadku włączenia udostępniania danych przy użyciu usługi Data Lake zarządzanej przez funkcję Microsoft Dataverse nie będzie można [tworzyć przewidywanych lub brakujących wartości w encji](predictions.md).
+> - Po zapisaniu wszystkich danych we własnej usłudze Azure Data Lake Storage nie będzie można włączyć udostępniania danych danym data lake zarządzanym przez funkcję Dataverse.
+> - W przypadku włączenia udostępniania usłudze Dataverse, nie będzie można [tworzyć przewidywanych lub brakujących wartości w encji](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Krok 4. Sfinalizuj ustawienia
 
@@ -93,10 +93,10 @@ Większość ustawień można też zmienić później. Aby uzyskać więcej info
 
 ## <a name="work-with-your-new-environment"></a>Praca z nowym środowiskiem
 
-Zapoznaj się z poniższymi artykułami, aby ułatwić sobie rozpoczęcie konfigurowania usługi Customer Insights. 
+Przejrzyj poniższe artykuły, aby ułatwić sobie pracę z konfigurowaniem aplikacji Customer Insights: 
 
 - [Dodawanie więcej użytkowników i przypisywanie uprawnień](permissions.md).
 - [Pozyskuj źródła danych](data-sources.md) i uruchamiaj je w [procesie ujednolicenia danych](data-unification.md), aby uzyskać [ujednolicone profile klientów](customer-profiles.md).
 - [Wzbogać ujednolicone profile klientów](enrichment-hub.md) lub [uruchom modele predykcyjne](predictions-overview.md).
-- [Utwórz segmenty](segments.md) w celu grupowania klientów i [mierzenia](measures.md) wskaźników KPI przeglądu.
+- [Utwórz segmenty](segments.md) w celu grupowania klientów i [miary](measures.md) w celu przeglądania wskaźników KPI.
 - [Konfiguruj połączenia](connections.md) i [eksporty](export-destinations.md) w celu przetwarzania podzbiorów danych w innych aplikacjach.

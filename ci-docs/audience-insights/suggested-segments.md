@@ -1,7 +1,7 @@
 ---
 title: Sugerowane segmenty oparte na uczeniu maszynowym
 description: Pozwól, aby uczenie maszynowe pomogło Ci znaleźć nowe i interesujące segmenty na podstawie atrybutów klientów.
-ms.date: 02/01/2021
+ms.date: 10/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: f743853826cee0427618abccfba27f10016a0f05cc674f5f7da2210366d60305
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 44e46bb650b6f090afcab3bc940d03a304e9c375
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028373"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673196"
 ---
 # <a name="suggested-segments-preview"></a>Sugerowane segmenty (wersja zapoznawcza)
 
@@ -23,7 +23,7 @@ Odkryj interesujące segmenty swoich klientów za pomocą modelu AI. Ta funkcja 
 > [!NOTE]
 > Funkcja sugerowanych segmentów wykorzystuje zautomatyzowane środki do oceny danych i prognozowania na podstawie tych danych, a zatem może być stosowana jako metoda profilowania, zgodnie z definicją tego terminu w ogólnym rozporządzeniu o ochronie danych („RODO”). Korzystanie z tej funkcji do przetwarzania danych może podlegać RODO lub innym prawom lub regulacjom. Użytkownik ma obowiązek zagwarantować, że użytkowanie Dynamics 365 Customer Insights wraz z tą funkcją jest zgodne ze wszystkimi obowiązującymi przepisami prawnymi i wykonawczymi, w tym prawa związane z ochroną prywatności, danymi osobowymi, danymi biometrycznymi, ochroną danych i poufność informacji.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Strona Sugerowane segmenty w Customer Insights pokazująca szczegóły sugestii w bocznym panelu.":::
+:::image type="content" source="media/suggested-segments.png" alt-text="Strona sugerowanych segmentów, która zawiera szczegółowe sugestie w okienku bocznym.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Sugerowane segmenty w celu poprawy wskaźników KPI
 
@@ -49,7 +49,7 @@ Sugestie dotyczące segmentów są inne, jeśli jako atrybut podstawowy wybierze
 
 Z atrybutem liczbowym, takim jak *roczny dochód* lub *okres członkostwa*, jako atrybutem podstawowym, system sugeruje segmenty, które mają wyższą lub niższą średnią wartość atrybutu liczbowego w porównaniu ze wszystkimi klientami.
 
-Atrybut kategoryczny, taki jak *zadowolenie klienta* jako atrybut podstawowy, daje w wyniku sugerowane segmenty, które mają wyższy lub niższy odsetek klientów należących do określonej kategorii w porównaniu z odsetkiem wszystkich klientów należących do tej samej kategorii. Na przykład jako atrybut podstawowy wybierane jest *zadowolenie klienta* i składa się z trzech kategorii (*Niskie*, *Średnie* i *Wysokie*). Dla każdej kategorii zostaną zasugerowane segmenty, które mają znacznie wyższy lub niższy odsetek klientów należących do tej kategorii w porównaniu z odsetkiem wszystkich klientów w tej samej kategorii. Jeśli 22% wszystkich klientów ma zadowolenie jako *Wysokie*, wówczas dla tej kategorii zasugerowane zostaną tylko segmenty, które mają znacznie wyższy lub niższy odsetek klientów o *Wysokiej* satysfakcji w porównaniu z 22%. W podobny sposób sugerowane są segmenty dla każdej z innych kategorii (*Niskie* i *Średnie*), jeśli są one istotne ze względu na dane statystyczne.
+Atrybut kategoryczny, taki jak *zadowolenie klienta* jako atrybut podstawowy, daje w wyniku sugerowane segmenty, które mają wyższy lub niższy odsetek klientów należących do określonej kategorii w porównaniu z odsetkiem wszystkich klientów należących do tej samej kategorii. Na przykład jako atrybut podstawowy wybierane jest *zadowolenie klienta* i składa się z trzech kategorii (*Niskie*, *Średnie* i *Wysokie*). W przypadku każdej będą sugerowane segmenty, które mają wyższy lub niższy procent klientów należących do tej kategorii w porównaniu do całkowitej liczby wszystkich klientów w tej samej kategorii. Jeśli 22% klientów ma *duże* zadowolenie, sugerowane są dla tej kategorii tylko segmenty, które mają wyższy lub niższy odsetek klientów z *dużym* zadowoleniem w porównaniu z 22%. W podobny sposób sugerowane są segmenty dla każdej z innych kategorii (*Niskie* i *Średnie*), jeśli są one istotne ze względu na dane statystyczne.
 
 > [!NOTE]
 > Obecnie obsługujemy tylko podstawowe atrybuty kategorialne, które mają maksymalnie 10 kategorii. Jeśli chcesz zobaczyć sugestie dotyczące segmentów oparte na podstawowym atrybucie zawierającym więcej niż 10 kategorii, zalecamy zgrupowanie niektórych kategorii w celu zmniejszenia liczby kategorii do 10 lub mniej. To ograniczenie dotyczy tylko atrybutów podstawowych. Obecnie obsługujemy maksymalnie 100 kategorii, aby wpływać na atrybuty kategorialne.
@@ -77,7 +77,7 @@ Atrybut kategoryczny, taki jak *zadowolenie klienta* jako atrybut podstawowy, da
 
 Gdy model sztucznej inteligencji wygeneruje sugestie, znajdziesz je pod **Segmenty** > **Sugestie (wersja zapoznawcza)**.
  
-Wybierz sugerowany segment, aby przejrzeć szczegóły tej sugestii, w tym porównanie średniej wartości i liczby członków segmentu. Możesz również przejrzeć wartości atrybutów lub reguły, których nauczył się model AI, aby zasugerować wybrany segment.
+Wybierz sugerowany segment, aby przejrzeć szczegóły tej sugestii. Możesz również przejrzeć wartości atrybutów lub reguły, których nauczył się model AI, aby zasugerować wybrany segment.
 
 ## <a name="save-a-suggestion-as-a-segment"></a>Zapisz sugestię jako segment
 

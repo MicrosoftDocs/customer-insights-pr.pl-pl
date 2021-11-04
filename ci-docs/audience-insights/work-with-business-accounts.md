@@ -1,7 +1,7 @@
 ---
 title: Rozpoczynanie pracy z kontami biznesowymi jako podstawowymi odbiorcami docelowymi
 description: Dowiedz się więcej o kontach biznesowych jako podstawowych odbiorcach docelowych w aplikacji Dynamics 365 Customer Insights.
-ms.date: 09/30/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wimohabb
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea036cf3a3623a314a6d0d7da85b2c30c030ccea
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ac5ae950a44f7f32e3cb9fdc0ffad05b78fddef0
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645001"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673700"
 ---
 # <a name="work-with-business-accounts-in-audience-insights"></a>Praca z kontami biznesowymi w funkcji Wyniki analiz odbiorców
 
-Funkcja Wyniki analiz odbiorców w aplikacji Dynamics 365 Customer Insights umożliwia skonfigurowanie środowiska dla różnych podstawowych odbiorców docelowych: indywidualnych klientów (B2C) i kont biznesowych (B2B). W scenariuszach B2C dane są skoncentrowane wokół poszczególnych osób. W przypadku B2B głównymi odbiorcami docelowymi są konta — organizacje lub firmy — i kontakty. W tym artykule ułatwiamy rozpoczynanie pracy ze środowiskiem klientów biznesowych. Zawiera on listę różnic między obszarami funkcji w aplikacji Wyniki analiz odbiorców w zależności od fokusu środowiska. Aby uzyskać więcej informacji na temat różnic, przejrzyj dokumenty obszarów funkcji. 
+Funkcja Wyniki analiz odbiorców w aplikacji Dynamics 365 Customer Insights umożliwia skonfigurowanie środowiska dla różnych podstawowych odbiorców docelowych: indywidualnych konsumentów (B2C) i kont biznesowych (B2B). W scenariuszach B2C dane są skoncentrowane wokół poszczególnych osób. W przypadku B2B głównymi odbiorcami docelowymi są konta — organizacje lub firmy — i kontakty. W tym artykule ułatwiamy rozpoczynanie pracy ze środowiskiem klientów biznesowych. Zawiera on listę różnic między obszarami funkcji w aplikacji Wyniki analiz odbiorców w zależności od fokusu środowiska. Aby uzyskać więcej informacji na temat różnic, przejrzyj dokumenty obszarów funkcji. 
 
 ## <a name="create-an-environment-for-business-accounts"></a>Tworzenie środowiska dla klientów biznesowych
 
@@ -32,7 +32,7 @@ Po ujednoliceniu danych [określ hierarchię kont](relationships.md#set-up-accou
 
 Jeśli organizacja obsługuje środowiska dla pojedynczych klientów i kont biznesowych, można użyć przełącznika w lewym okienku, aby wybrać podstawowych odbiorców docelowych.
 
-:::image type="content" source="media/switch-primary-target-audience.PNG" alt-text="Przełącznik umożliwiający zmianę podstawowych odbiorców docelowych między poszczególnymi klientami i kontami biznesowymi.":::
+:::image type="content" source="media/switch-primary-target-audience.png" alt-text="Przełącznik umożliwiający zmianę podstawowych odbiorców docelowych między poszczególnymi klientami i kontami biznesowymi.":::
 
 ## <a name="supported-feature-areas"></a>Obsługiwane obszary funkcji
 

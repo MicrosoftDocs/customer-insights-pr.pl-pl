@@ -1,7 +1,7 @@
 ---
 title: Tworzenie segmentów przy użyciu konstruktora segmentów
 description: W celu pogrupowania klientów na podstawie różnych atrybutów można utworzyć ich segmenty.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623042"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673563"
 ---
 # <a name="create-segments"></a>Utwórz segmenty
 
@@ -23,6 +23,7 @@ Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrew
 > [!TIP]
 > - Szybkie segmenty są obsługiwane tylko w środowiskach dla **poszczególnych klientów**.    
 > - Segmenty oparte na **poszczególnych klientach** automatycznie zawierają dostępne informacje kontaktowe dla elementów członkowskich segmentu. W środowiskach **kont biznesowych** segmenty są oparte na kontach (firmach lub filiach). Aby uwzględnić informacje kontaktowe w segmencie, użyj funkcji **Atrybuty projektu** w konstruktorze segmentów.
+>    - Upewnij się, że źródła danych kontaktów są [semantycznie mapowane do encji ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Konstruktor segmentów
 
@@ -52,7 +53,7 @@ W tym przykładzie przedstawiono możliwości w zakresie segmentacji. Definiujem
 
 Istnieje wiele sposobów utworzenia nowego segmentu. W tej sekcji opisano sposób tworzenia własnego segmentu od podstaw. Można również utworzyć *krótki segment* na podstawie istniejących obiektów lub skorzystać z uczenia maszynowego, aby uzyskać *sugerowane segmenty*. Aby uzyskać więcej informacji, przejdź do tematu [Omówienie segmentów](segments.md).
 
-Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji roboczej segment jest zapisywany jako nieaktywny segment. Po zakończeniu konfiguracji segmentu uruchom ją, aby aktywować segment. Możesz również użyć funkcji ***Aktywuj** _ segmentu na stronie _ *Wszystkie segmenty**.
+Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji roboczej segment jest zapisywany jako nieaktywny segment. Po zakończeniu konfiguracji segmentu uruchom ją, aby aktywować segment. Można również użyć funkcji **Aktywuj** segment na stronie **Wszystkie segmenty**.
 
 1. Przejdź do strony **Segmenty**.
 
@@ -86,17 +87,25 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 
    Podczas używania operatora LUB wszystkie warunki muszą być oparte na encji w ścieżki relacji.
 
-   - Można utworzyć wiele reguł w celu utworzenia różnych zestawów rekordów klientów. Można łączyć grupy w celu uwzględnienia klientów wymaganych dla danego przypadku biznesowego. Aby utworzyć nową regułę, wybierz **Dodaj regułę**. W szczególności jeśli nie można uwzględnić encji w regule z powodu określonej ścieżki relacji, należy utworzyć nową regułę, aby wybrać wchodzące w jej skład atrybuty.
+   - Można utworzyć wiele reguł w celu utworzenia różnych zestawów rekordów klientów. Można łączyć grupy w celu uwzględnienia klientów wymaganych dla danego przypadku biznesowego. Aby utworzyć nową regułę, wybierz **Dodaj regułę**. W szczególności jeśli nie można uwzględnić encji w regule z powodu określonej ścieżki relacji, należy utworzyć nową regułę, aby wybrać z niej formularz atrybutów.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Dodaj nową regułę do segmentu i wybierz operator zestawu.":::
 
    - Wybierz jeden z operatorów: **Związek**, **Część wspólna** lub **Z wyjątkiem**.
 
       - **Związek** łączy dwie grupy.
-      - **Część wspólna** pokrywa się z dwiema grupami. Tylko dane, które *są wspólne* dla obu grup, są zachowywane w ujednoliconej grupie.
-      - **Z wyjątkiem** łączy dwie grupy. Tylko dane w grupie A, które *nie są wspólne* dla grupy B, są zachowywane w ujednoliconej grupie.
+      - **Część wspólna** pokrywa się z dwiema grupami. W ujednoliconej grupie pozostają tylko dane *wspólne* dla obu grup.
+      - **Z wyjątkiem** łączy dwie grupy. W grupie A przechowywane są tylko te dane, które *nie są wspólne* z grupą B.
 
-1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej.  
+1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej. 
+
+   > [!IMPORTANT]
+   > W przypadku segmentów opartych na kontach biznesowych szczegółowe informacje dotyczące jednego lub większej liczby kontaktów każdego klienta z encji *ContactProfile* muszą zostać uwzględnione w tym segmencie, aby umożliwić uaktywnienie lub wyeksportowanie tego segmentu do miejsc, w których są wymagane informacje kontaktowe. Aby uzyskać więcej informacji o encji *ContactProfile*, zobacz [mapowanie semantyczne](semantic-mappings.md).
+   > Przykładowe dane wyjściowe dla segmentu oparte na kontach biznesowych z projektowanych atrybutów kontaktów mogą wyglądać tak: 
+   >
+   > |ID  |Nazwa klienta  |Przychód  |Nazwa kontaktu  | Rola kontaktu|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100 tys. | [Abbie Moss, Ruth Soto]  | [Dyrektor generalny, kierownik zaopatrzenia]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Przykład projektowanych atrybutów wybranych w okienku bocznym, które mają zostać dodane do encji wyjściowej.":::
   
@@ -107,13 +116,14 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
    > - Jeśli atrybut, który ma być projektowany, jest więcej niż jeden przeskok od encji *Klient*, zgodnie z definicją relacji, powinien być używany we wszystkich regułach definiowanego zapytania segmentu. 
    > - Jeśli atrybut, który ma być projektowany, jest tylko jeden przeskok od encji *Klient*, nie musi być obecny we wszystkich regułach definiowanego zapytania segmentu. 
    > - **Atrybuty rzutowane** są uwzględniane podczas używania operatorów zestawów.
-   > - W przypadku segmentów opartych na kontach biznesowych szczegółowe informacje dotyczące jednego lub większej liczby kontaktów każdego klienta muszą zostać uwzględnione w tym segmencie, aby umożliwić uaktywnienie lub wyeksportowanie tego segmentu do miejsc, w których są wymagane informacje kontaktowe.
 
 1. Przed zapisaniem i uruchomieniem segmentu wybierz opcję **Edytuj szczegóły** obok nazwy segmentu. Podaj nazwę swojego segmentu i zaktualizuj sugerowaną **nazwę encji wyjściowej** dla tego segmentu. Można również dodać opis dla segmentu.
 
 1. Wybierz opcję **Uruchom**, aby zapisać segment, aktywować go i rozpocząć przetwarzanie swojego segmentu na podstawie wszystkich reguł i warunków. W przeciwnym razie będzie on zapisywany jako nieaktywny segment.
-
+   
 1. Wybierz **Wróć do segmentów**, aby wrócić do strony **Segmenty**.
+
+1. Domyślnie segment jest tworzony jako segment dynamiczny. Oznacza to, że segment jest odświeżany podczas odświeżania systemu. Aby [zatrzymać automatyczne odświeżanie](segments.md#manage-existing-segments), wybierz segment, wybierz opcję **Ustaw statyczny**. Segmenty statyczne można w dowolnej chwili [odświeżać ręcznie](segments.md#refresh-segments).
 
 > [!TIP]
 > - Konstruktor segmentów nie zasugeruje prawidłowych wartości z encji podczas ustawiania operatorów na określonych warunkach. Można przejść do obszaru **Dane** > **Encje** i pobrać dane encji, aby sprawdzić, które wartości są dostępne.

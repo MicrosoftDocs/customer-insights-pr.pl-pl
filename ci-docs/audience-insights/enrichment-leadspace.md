@@ -9,16 +9,16 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 685b1683b0c90eab04b130552d2cb23a8ab7a235
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617414"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673245"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Wzbogacanie profili firm z Leadspace (wersja zapoznawcza)
 
-Leadspace jest firmą badawczą, która dostarcza platformę danych klientów typu B2B. Umożliwia ona środowiskom, które mają ujednolicone profile klientów oparte na klientach, wzbogacanie swoich danych. Wzbogać *profile klientów* o atrybuty, takie jak wielkość firmy, lokalizacja lub sektor. Wzbogać *profile kontaktów* o atrybuty, takie jak tytuł, osoba lub weryfikacja wiadomości e-mail.
+Leadspace to firma zajmującą się nauką o danych, która oferuje platformę danych dla klienta typu B2B. Umożliwia ona środowiskom, które mają ujednolicone profile klientów oparte na klientach, wzbogacanie swoich danych. Wzbogać *profile klientów* o atrybuty, takie jak wielkość firmy, lokalizacja lub sektor. Wzbogać *profile kontaktów* o atrybuty, takie jak tytuł, osoba lub weryfikacja wiadomości e-mail.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 

@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623146"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673336"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
@@ -32,14 +32,14 @@ Istnieją dwa główne typy eksportów:
 
 ### <a name="export-segments"></a>Eksportowanie segmentów
 
-**Eksportowanie segmentów w środowiskach dla kont biznesowych (B2B) lub indywidualnych klientów (B2C)**  
-W większości przypadków opcja eksportu obsługuje oba typy środowisk. Eksportowanie segmentów do różnych systemów docelowych ma specyficzne wymagania. Generalnie rzecz biorąc, element członkowski segmentu, profil klienta, zawiera informacje kontaktowe. Tak się zwykle dzieje w przypadku segmentów opartych na indywidualnych klientach (B2C), ale nie musi to być prawda w przypadku segmentów opartych na kontach biznesowych (B2B). 
+**Eksportowanie segmentów w środowiskach dla kont biznesowych (B2B) lub indywidualnych konsumentów (B2C)**  
+W większości przypadków opcja eksportu obsługuje oba typy środowisk. Eksportowanie segmentów do różnych systemów docelowych ma specyficzne wymagania. Generalnie rzecz biorąc, element członkowski segmentu, profil klienta, zawiera informacje kontaktowe. Tak się zwykle dzieje w przypadku segmentów opartych na indywidualnych konsumentach (B2C), ale nie musi to być prawda w przypadku segmentów opartych na kontach biznesowych (B2B). 
 
 **Środowiska eksportowania segmentów dla kont biznesowych (B2B)**  
 - Segmenty w kontekście środowisk kont biznesowych są wbudowane w encji *klienta*. Aby wyeksportować segmenty kont w stanie takim, jak są, system docelowy musi obsługiwać czyste segmenty klientów. Ta opcja ma miejsce w przypadku serwisu [LinkedIn](export-linkedin-ads.md), gdy podczas definiowania eksportu zostanie wybrania opcja **firma**.
 - Wszystkie inne systemy docelowe wymagają pól z encji kontaktu. Aby segmenty klientów mogą pobierać dane z kontaktów pokrewnych, definicja segmentu musi mieć atrybuty projektu encji kontaktu. Dowiedz się więcej o [konfigurowaniu segmentów i atrybutów projektu](segment-builder.md).
 
-**Eksporty segmentów w środowiskach dla klientów indywidualnych (B2C)**  
+**Eksporty segmentów w środowiskach dla konsumentów indywidualnych (B2C)**  
 - Segmenty w kontekście środowisk indywidualnych klientów są wbudowane w encji *ujednoliconego profilu klienta*. Każdy segment spełniający wymagania systemów docelowych (na przykład adres e-mail) może zostać wyeksportowany.
 
 **Limity dotyczące eksportów segmentu**  

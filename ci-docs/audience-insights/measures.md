@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622983"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673482"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
@@ -28,7 +28,7 @@ Użyj konstruktora miar, aby zaplanować działania biznesowe, wykonując zapyta
 
 W tej sekcji otworzymy nową miarę od podstaw. Można utworzyć miarę z atrybutami danych z encji danych, które mają relację ustawioną w celu połączenia z encją ujednoliconego profilu klienta.
 
-# <a name="individual-customers-b2c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
 1. W analizach odbiorców przejdź do **Miary**.
 
@@ -92,7 +92,7 @@ W tej sekcji otworzymy nową miarę od podstaw. Można utworzyć miarę z atrybu
 
 1. Wybierz **Miary**, aby zobaczyć nowo utworzoną miarę na liście.
 
-# <a name="business-accounts-b2b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
 1. W analizach odbiorców przejdź do **Miary**.
 
@@ -164,7 +164,7 @@ W tej sekcji otworzymy nową miarę od podstaw. Można utworzyć miarę z atrybu
 
 Do ich utworzenia miar można użyć wstępnie zdefiniowanych szablonów najczęściej stosowanych miar. Szczegółowe opisy szablonów i działanie z przewodnikiem mogą ułatwić efektywne tworzenie miar. Szablony są budowane na podstawie zamapowanych danych z encji *Ujednolicone działanie*. Należy więc upewnić się, że skonfigurowano [działania klientów](activities.md) przed utworzeniem miary na podstawie szablonu.
 
-# <a name="individual-customers-b2c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
 Do ich utworzenia miar można użyć wstępnie zdefiniowanych szablonów najczęściej stosowanych miar. Szczegółowe opisy szablonów i działanie z przewodnikiem mogą ułatwić efektywne tworzenie miar. Szablony są budowane na podstawie zamapowanych danych z encji *Ujednolicone działanie*. Należy więc upewnić się, że skonfigurowano [działania klientów](activities.md) przed utworzeniem miary na podstawie szablonu.
 
@@ -212,7 +212,7 @@ W poniższej procedurze przedstawiono w zarysie kroki tworzenia nowej miary za p
 
 1. Teraz można wybrać opcję **Uruchom**, aby obliczyć wyniki miary. Aby uściślić go później, wybierz opcję **Zapisz kopię roboczą**.
 
-# <a name="business-accounts-b2b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
 Ta funkcja jest dostępna tylko dla działań utworzonych w środowiskach, w których klienci indywidualni są podstawowymi odbiorcami docelowymi.
 
