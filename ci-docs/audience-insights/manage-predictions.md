@@ -1,7 +1,7 @@
 ---
 title: Wspólne zadania dla scenariuszy przewidywania
 description: Dowiedz się, jak zarządzać, rozwiązywać problemy i udoskonalać prognozy.
-ms.date: 05/17/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: eaccf23a81ca4de19763b761cc5a27c14515fe522ee36dc78f294208b681966e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4e7e21a610564b30463b27ab703c291275725895
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036478"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732001"
 ---
 # <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
@@ -50,12 +50,12 @@ Poniższe kolumny w raporcie zawierają informacje pomocne do poprawy danych dla
 
 :::image type="content" source="media/input-data-usability-report.png" alt-text="Przykład raportu użyteczności danych wejściowych zawierającego tabelę z błędami, ostrzeżeniami i zaleceniami.":::
 
-- Nazwa: Opisowa nazwa błędu, ostrzeżenia lub zalecenia.
-- Krok: Faza modelu, trenuj lub punktuj, informacje dotyczą.
-- Stan: Poziom istotności informacji (błąd, ostrzeżenie, zalecenie).
-- Nazwa kolumny: Kolumna w encji, która musi zostać zmodyfikowana, aby poprawić wydajność modelu.
-- Nazwa encji: Nazwa encji, którą należy zmodyfikować, aby poprawić wydajność modelu.
-- Szczegóły: szczegółowe informacje o błędzie, ostrzeżenie lub zalecenia.
+- **Nazwa**: opisowa nazwa błędu, ostrzeżenia lub rekomendacji.
+- **Krok**: faza modelowania, trenowania lub oceny, której dotyczą informacje.
+- **Stan**: poziom istotności informacji (błąd, ostrzeżenie, rekomendacja).
+- **Nazwa kolumny**: kolumna w encji, którą należy zmodyfikować, aby poprawić wydajność modelu.
+- **Nazwa encji**: nazwa encji, którą należy zmodyfikować, aby poprawić wydajność modelu.
+- **Szczegóły**: szczegółowe informacje o błędzie, ostrzeżeniu lub rekomendacji.
 
 ## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
 
@@ -66,6 +66,8 @@ Przewidywania będą odświeżane automatycznie w oparciu o ten sam [harmonogram
 1. Wybierz pionowy wielokropek obok przewidywania, które chcesz odświeżyć.
 
 1. Wybierz **Odśwież**.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="delete-a-prediction"></a>Usuń przewidywanie
 

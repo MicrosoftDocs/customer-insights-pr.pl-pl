@@ -9,12 +9,12 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 09cb3ddf0f8b4507b7eae6668ea3dad08cfcea29
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645459"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673810"
 ---
 # <a name="manage-environments-and-workspaces"></a>Zarządzaj środowiskami i obszarami roboczymi
 
@@ -24,7 +24,7 @@ ms.locfileid: "7645459"
 
 W tym temacie opisano sposób zarządzania obszarami roboczymi i środowiskami po ich utworzeniu. 
 
-- *Obszar roboczy* to miejsce do przechowywania zdarzeń i raportów oraz zarządzania nimi. W tym miejscu można wyświetlać działania użytkownika w czasie rzeczywistym. Podczas tworzenia obszaru roboczego wybierasz typ danych przesyłanych do obszaru. Obecnie są obsługiwane dane sieci Web i aplikacje mobilne. Aby uzyskać więcej informacji, zobacz temat [Tworzenie obszaru roboczego i dodawanie członków](create-workspace.md).
+- *Obszar roboczy* to miejsce do przechowywania zdarzeń i raportów oraz zarządzania nimi. W tym miejscu można wyświetlać działania użytkownika w czasie rzeczywistym. Podczas tworzenia obszaru roboczego wybierasz typ danych przesyłanych do obszaru. Obecnie są obsługiwane dane sieci Web i aplikacje mobilne. Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego obszaru roboczego i dodawanie członków](create-workspace.md).
 
 - *Środowisko* to miejsce służące do zarządzania obszarami roboczymi i połączeniami. Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](create-new-environment.md).
 
@@ -47,7 +47,7 @@ Jednocześnie w środowisku można utrzymywać wiele obszarów roboczych. Twoja 
 
 ### <a name="delete-a-workspace"></a>Usuwanie obszaru roboczego
 
-Usunięcie obszaru roboczego spowoduje trwałe usunięcie całej jego zawartości, danych, ustawień i uprawnień. Tej akcji nie można cofnąć.
+Usunięcie obszaru roboczego powoduje trwałe usunięcie całej jego zawartości, danych, ustawień i uprawnień. Tej akcji nie można cofnąć.
 
 1. Przejdź do **Administrowania** > **Obszar roboczy** i wybierz **Ustawienia**.
 
@@ -71,19 +71,11 @@ Administrator środowiska może uzyskać dostęp do środowiska z lewego okienka
 
 :::image type="content" source="media/environment-edit.png" alt-text="Centrum administracyjne środowiska.":::
 
-### <a name="rename-an-environment"></a>Zmiana nazwy środowiska
+### <a name="edit-an-environment-name"></a>Edytowanie nazwy środowiska
 
 1. Przejdź do **Administrowania** > **Środowisko** i wybierz **Ustawienia**.
 
 1. Wybierz **Nazwa środowiska**, wprowadź zmiany i wybierz **Zapisz**.
-
-### <a name="manage-environment-members"></a>Zarządzanie członkami środowiska
-
-1. Przejdź do **Administrowania** > **Środowisko** i wybierz **Członkowie**.
-
-1. Wybierz opcję **Dodaj członków**, aby zaktualizować członków i [przypisać role](user-roles.md). Obecnie jedyny dostępny wybór to **Administrator środowiska**.
-
-1. Wybierz opcję **Dodaj członków**, aby dodać ich do środowiska.
 
 ### <a name="delete-an-environment"></a>Usuwanie środowiska
 
@@ -97,6 +89,14 @@ Administratorzy środowiska mogą usuwać środowiska. Aby można było usunąć
 
 1. Wybierz **Usuń**, aby trwale usunąć środowisko.
 
+### <a name="manage-environment-members"></a>Zarządzanie członkami środowiska
+
+1. Przejdź do **Administrowania** > **Środowisko** i wybierz **Członkowie**.
+
+1. Wybierz opcję **Dodaj członków**, aby zaktualizować członków i [przypisać role](user-roles.md). Obecnie jedyny dostępny wybór to **Administrator środowiska**.
+
+1. Wybierz opcję **Dodaj członków**, aby dodać ich do środowiska.
+
 ## <a name="manage-connections"></a>Zarządzaj połączeniami
 
 Tworzenie połączeń z analizą odbiorców umożliwia wyświetlanie raportów z wglądu w zaangażowanie na podstawie ujednoliconych profili klientów. 
@@ -107,7 +107,6 @@ Aby uzyskać informacji, zobacz [Utwórz łącze między wynikami analiz odbiorc
 
 W celu ochrony danych osobowych klienta można usunąć lub wyeksportować dane umożliwiające identyfikację użytkownika końcowego.
 
-Dowiedz się jak [Usuwać i eksportować dane zdarzeń zawierających dane osobowe](delete-export-personal-data.md).
-
+Dowiedz się jak [Usuwać i eksportować dane zdarzeń zawierających dane osobowe](../dsr-rights-requests.md#deleting-and-exporting-event-data-containing-end-user-identifiable-information).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

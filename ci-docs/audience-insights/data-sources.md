@@ -1,7 +1,7 @@
 ---
 title: Użyj źródeł danych do pozyskiwania danych
 description: Informacje na temat importowania danych z różnych źródeł.
-ms.date: 04/12/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645368"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732168"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -48,14 +48,7 @@ Zostanie wyświetlona nazwa każdego pozyskanego źródła danych, jego stan i d
 > [!div class="mx-imgBorder"]
 > ![Dodano źródło danych.](media/configure-data-datasource-added.png "Dodano źródło danych")
 
-|Status  |Opis  |
-|---------|---------|
-|Zakończone powodzeniem   |Źródło danych zostało pomyślnie przetworzone, jeśli w kolumnie **Odświeżono** podano godzinę.
-|Nie rozpoczęto   |Źródło danych nie ma jeszcze pozyskanych danych lub nadal jest w trybie roboczym.         |
-|Odświeżanie    |Pobieranie danych jest w toku. Aby anulować operację, można wybrać opcję **Zatrzymaj odświeżanie** w kolumnie **Czynności**. Zatrzymanie odświeżania źródła danych spowoduje przywrócenie jego ostatniego stanu odświeżania.       |
-|Zakończone niepowodzeniem     |Pobieranie danych zostało napotkało błędy.         |
-
-Wybierz wartość w kolumnie **Stan** dowolnego pola źródło danych, aby przejrzeć więcej szczegółów. W okienku **Szczegółów postępu** rozwiń pozycję **Źródła danych**. Wybierz opcję **Zobacz szczegółowe informacje**, aby uzyskać więcej informacji na temat stanu odświeżania, w tym szczegóły błędów i aktualizacje procesów podrzędnych.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie **Encji**. Aby uzyskać więcej informacji, zobacz [Encje](entities.md).
 

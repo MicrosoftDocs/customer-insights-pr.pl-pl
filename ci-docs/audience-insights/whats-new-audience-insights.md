@@ -1,7 +1,7 @@
 ---
 title: Nowe i nadchodzące funkcje
 description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 08/31/2021
+ms.date: 11/04/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
+ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673870"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "7753130"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
@@ -26,6 +26,41 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="october-2021-updates"></a>Aktualizacje z października 2021
+
+Aktualizacje w październiku 2021 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="b-to-b"></a>B-do-B
+
+Od października 2021 r. będzie można pracować z klientami biznesowymi i powiązanymi z nimi kontaktami w aplikacji Customer Insights. Wcześniej aplikacja była w większości dostosowana do danego klienta. Zaktualizowano kilka obszarów funkcji w celu obsługi scenariuszy typu B-do-B jako dodatek do nowego typu środowiska. Aby uzyskać omówienie obsługiwanych funkcji typu B-do-B, zobacz temat [Praca z kontami biznesowymi w funkcji Wyniki analiz odbiorców](work-with-business-accounts.md).
+
+W poniższych sekcjach przedstawiono niektóre kluczowe obszary, które zostały dostosowane do obsługi klientów biznesowych i indywidualnych osób.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Eksportowanie segmentów na podstawie klientów biznesowych
+
+Wszystkie operacje eksportu segmentów w funkcji Wyniki analiz odbiorców są dostępne w kontekście klientów biznesowych. Większość eksportów segmentów wymaga dodatkowej konfiguracji i [informacji kontaktowych przewidywanych](segment-builder.md#create-a-new-segment) w segmentach bazowych, aby były prawidłowe dla klientów biznesowych. Aby uzyskać więcej informacji, zobacz temat [Eksportowanie segmentów](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>Używanie funkcji eksportu usługi LinkedIn Ads do klientów biznesowych
+
+Eksportowanie ogłoszeń LinkedIn Ads jest teraz dostępne do grup docelowych kontaktów i firm w kontekście klientów biznesowych. Wybierając grupy odbiorców docelowych firm jako główny cel eksportu z usługi LinkedIn, można eksportować segmenty zbudowane na podstawie kont biznesowych bez konieczności przewidywania informacji kontaktowych. Aby uzyskać więcej informacji, przejdź do dokumentów dotyczących [eksportu z usługi LinkedIn Ads](export-linkedin-ads.md) i różnicy między [określaniem kontaktów docelowych](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) i [określaniem firm docelowych](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Tworzenie miar na podstawie klientów biznesowych i ich hierarchii
+
+Kreator miar umożliwia tworzenie miar dotyczących klientów biznesowych i — opcjonalnie — korzystania z informacji o hierarchii. Informacje o hierarchii służą do zestawiania obliczeń miary dla klienta i wszystkich powiązanych z nim klientów podrzędnych. Można na przykład utworzyć miarę, taką jak łączny przychód, dla każdej grupy klientów biznesowych zidentyfikowanych według hierarchii. Aby uzyskać więcej informacji, zobacz [Definiuj miary i zarządzaj nimi](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Tworzenie segmentów na podstawie klientów biznesowych i ich hierarchii
+
+Kreator segmentów umożliwia tworzenie segmentów klientów biznesowych, które opcjonalnie zawierają informacje kontaktowe dla każdego klienta w segmencie. Jeśli jest skonfigurowana hierarchia klientów, informacje o hierarchii klientów można wykorzystać do tworzenia segmentów. Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego segmentu](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Utrzymywanie klientów biznesowych dzięki szczegółowej analizie ich tendencji do rezygnacji
+
+Model przewidywania rezygnacji klientów obsługuje teraz także klientów biznesowych. Ryzyko rezygnacji można oceniać nie tylko dla klienta, ale także dla kombinacji klientów i kategorii produktów lub usług, które klienci kupują od Ciebie. Ten dodatek ułatwia zrozumienie, czy istnieje prawdopodobieństwo, że klient ogólnie przestanie kupować towary lub usługi od Ciebie czy tylko określoną kategorię towarów lub usług. Aby ułatwić dalsze korzystanie z tego modelu AI, wymieniono w nim również prawdopodobne powody rezygnacji klienta. Aby uzyskać więcej informacji, zobacz temat [Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Wyświetlanie kontaktów klienta biznesowego w widoku Klient
+
+Jeśli klienci biznesowi są mapowani na powiązanych klientów, aplikacja Customer Insights pokazuje te powiązane kontakty w widoku szczegółów klienta. Aby uzyskać więcej informacji, zobacz temat [Profile klientów](customer-profiles.md).
+
 
 ## <a name="september-2021-updates"></a>Aktualizacje z września 2021
 

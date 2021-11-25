@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 8404515a20529c00708d84813f3a022ad98c45362a2f1e68d7aa890d085071a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033598"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732277"
 ---
 # <a name="work-with-customer-insights-apis"></a>Pracuj z interfejsami API Customer Insights
 
@@ -135,7 +135,7 @@ Dowiedz się jak rozpocząć pracę za pomocą klienta C# bibliotek z NuGet.org.
 
 1. Użyj [biblioteki uwierzytelniania firmy Microsoft (MSAL)](/azure/active-directory/develop/msal-overview), aby uzyskać możliwość `AccessToken` za pomocą istniejącej [rejestracji aplikacji Azure](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Po pomyślnym uwierzytelnieniu i uzyskaniu tokena utwórz nowy lub użyj istniejącego `HttpClient` z dodatkowym **DefaultRequestHeaders "Authorization"** ustawionym na **Element nośny <access token>** i **Ocp-Apim-Subscription-Key** ustawiony na [**klucz subskrypcji** ze środowiska Customer Insights](#get-started-trying-the-customer-insights-apis).   
+1. Po pomyślnym uwierzytelnieniu i pobraniu tokenu można utworzyć nowy lub użyć istniejącego elementu `HttpClient` z dodatkowym elementem **„Autoryzacja” DefaultRequestHeaders** ustawionym na **„Token dostępu” elementu nośnego** i elementem **Ocp-Apim-Subscription-Key** ustawionym na [**klucz subskrypcji** ze środowiska aplikacji Customer Insights](#get-started-trying-the-customer-insights-apis).   
  
    Nagłówek **Autoryzacji** jest resetowany w zależności od potrzeb. Na przykład ważność tokenu wygasła.
 

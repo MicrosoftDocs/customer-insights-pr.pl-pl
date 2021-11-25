@@ -4,17 +4,17 @@ description: Dowiedz się, jak wdrażać i personalizować SDK Android
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/15/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: a060ac60db71a7b0fb8c0d7a3b0e266004fbee6a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494288"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655355"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Rozpoczynanie pracy z SDK Android
 
@@ -42,12 +42,12 @@ Rozpocznij proces, wybierając przestrzeń roboczą, platformę mobilną Android
 
 - Jeśli nie masz istniejącego obszaru roboczego, wybierz opcję **Nowy obszar roboczy** i wykonaj kroki tworzenia [nowego obszaru](create-workspace.md).
 
-- Po utworzeniu obszaru roboczego przejdź do **Administracja** > **Obszar roboczy** i wybierz **przewodnik instalacji**. 
+- Po utworzeniu obszaru roboczego przejdź do **Administracja** > **Obszar roboczy** i wybierz **przewodnik instalacji**.
 
 ## <a name="configure-the-sdk"></a>Skonfigurowanie SDK
 
 Po pobraniu zestawu SDK możesz pracować z nim w Android Studio, aby włączyć i zdefiniować zdarzenia. Istnieją dwa sposoby wykonania tej czynności:
-### <a name="option-1-using-jitpack-recommended"></a>Opcja 1. Użycie JitPack (zalecane)
+### <a name="option-1-use-jitpack-recommended"></a>Opcja 1: instalacja repozytorium JitPack (zalecana)
 1. Dodaj repozytorium JitPack do katalogu głównego `build.gradle`:
     ```gradle
     allprojects {
@@ -61,12 +61,12 @@ Po pobraniu zestawu SDK możesz pracować z nim w Android Studio, aby włączyć
 1. Dodaj zależność:
     ```gradle
     dependencies {
-        implementation 'com.github.microsoft:engagementinsights-sdk-android:1.0.0'
+        implementation 'com.github.microsoft:engagementinsights-sdk-android:v1.0.0'
         api 'com.google.code.gson:gson:2.8.1'
     }
     ```
 
-### <a name="option-2-using-download-link"></a>Opcja 2. Użycie linku do pobierania
+### <a name="option-2-use-download-link"></a>Opcja 2: użycie linku pobierania
 1. Pobierz [zestaw SDK Android analizy odbiorców](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip) i umieść plik `eiandroidsdk-debug.aar` w folderze `libs`.
 
 1. Otwórz plik `build.gradle` na poziomie projektu i dodaj wymienione poniżej wstawki:
@@ -83,22 +83,23 @@ Po pobraniu zestawu SDK możesz pracować z nim w Android Studio, aby włączyć
     }
     ```
 
-1. Dodaj uprawnienie do sieci i Internetu w pliku `AndroidManifest.xml` umieszczonym w folderze `manifests`. 
+## <a name="enable-auto-instrumentation"></a>Włączanie automatycznej instrumentacji
+
+1. Dodaj uprawnienie do sieci i Internetu w pliku `AndroidManifest.xml` umieszczonym w folderze `manifests`.
     ```xml
     <manifest>
         ...
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
-    
-1. Skonfiguruj konfigurację zestawu SDK szczegółowych informacji o odbiorcach za pośrednictwem pliku `AndroidManifest.xml`. 
 
-## <a name="enable-auto-instrumentation"></a>Włączanie automatycznej instrumentacji
+1. Skonfiguruj konfigurację zestawu SDK szczegółowych informacji o odbiorcach za pośrednictwem pliku `AndroidManifest.xml`.
+
 1. Skopiuj wstawkę XML z **Przewodnika po instalacji**. Pole `Your-Ingestion-Key` powinno być wypełniane automatycznie.
 
    > [!NOTE]
    > Nie ma potrzeby zastępowania sekcji `${applicationId}`. Jest wypełniane automatycznie.
-   
+
 
    ```xml
    <application>
@@ -116,20 +117,24 @@ Po pobraniu zestawu SDK możesz pracować z nim w Android Studio, aby włączyć
    </application>
    ```
 
-1. Włącz lub wyłącz automatyczne przechwytywanie zdarzeń `View`, ustawiając w powyższym polu `autoCapture` wartość `true` lub `false`. Obecnie zdarzenia typu `Action` należy dodać ręcznie.
+1. Włącz lub wyłącz automatyczne przechwytywanie zdarzeń `View`, ustawiając w powyższym polu `autoCapture` wartość `true` lub `false`. 
 
-1. (Opcjonalnie) Inne konfiguracje obejmują ustawienie adresu URL kolektora punktów końcowych. Można je dodać w obszarze metadanych klucza pozyskiwania w `AndroidManifest.xml`:
-    ```xml
+   >[!NOTE]
+   >Zdarzenia `Action` należy dodać ręcznie.
+
+1. (Opcjonalnie) Inne konfiguracje obejmują ustawienie adresu URL kolektora punktów końcowych. Można je dodać w obszarze metadanych klucza pozyskiwania w `AndroidManifest.xml`.
+
+   ```xml
         <meta-data
             android:name="com.microsoft.engagementinsights.endpointUrl"
             android:value="https://some-endpoint-url.com" />
-    ```
+   ```
 
 ## <a name="implement-custom-events"></a>Implementowanie niestandardowych zdarzeń
 
 Po zainicjowaniu zestawu SDK można pracować ze zdarzeniami i ich właściwościami w środowisku `MainActivity`.
 
-    
+
 Java:
 ```java
 Analytics analytics = new Analytics();
@@ -141,7 +146,7 @@ var analytics = Analytics()
 ```
 
 ### <a name="set-property-for-all-events-optional"></a>Ustawienie właściwości dla wszystkich zdarzeń (opcjonalne)
-    
+
 Java:
 ```java
 analytics.setProperty("year", 2021);

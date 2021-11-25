@@ -1,7 +1,7 @@
 ---
 title: Encje i zestawy danych
 description: Wyświetlanie danych na stronie Encji.
-ms.date: 04/16/2020
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 137de726b243b501491fcbe7866820aaee26097fcf379270c423c277374ae9a4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033828"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732094"
 ---
 # <a name="entities-in-audience-insights"></a>Encje w analizach odbiorców
 
@@ -26,9 +26,10 @@ Na stronie **Encje** znajduje się lista encji i zawiera kilka kolumn:
 - **Źródło**: Typ źródła danych, które pobrało encję
 - **Autor**: Imię i nazwisko osoby, która utworzyła encję
 - **Utworzono**: Data i godzina utworzenia encji
-- **Zaktualizowane przez**: Imię i nazwisko osoby, która zaktualizowała encję
-- **Ostatnia aktualizacja**: Data i godzina ostatniej aktualizacji encji
-- **Ostatnie odświeżenie**: Data i godzina ostatniego odświeżenia danych
+- **Zaktualizowano**: imię i nazwisko osoby, która zaktualizowała encję
+- **Stan**: szczegółowe informacje o ostatniej aktualizacji encji
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Eksploruj dane określonej encji
 

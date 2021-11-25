@@ -1,7 +1,7 @@
 ---
 title: Mapowania semantyczne (wersja zapoznawcza)
 description: Omówienie mapowań semantycznych i sposobu ich używania.
-ms.date: 09/28/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622948"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7731956"
 ---
 # <a name="semantic-mappings"></a>Mapowania semantyczne
 
@@ -75,8 +75,7 @@ Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniam
 
 1. Aby uruchomić mapowanie semantyczne, wybierz mapowanie semantyczne i wybierz opcję **Odśwież**.
 
-> [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Zarządzanie istniejącymi mapowaniami semantycznymi
 
@@ -91,5 +90,6 @@ W obszarze **Dane** > **Mapowania semantyczne (wersja zapoznawcza)** można wyś
 - **Zmień nazwę**: otwiera sesję dialogową, w której można wprowadzić inną nazwę wybranego mapowania semantycznego. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
 - **Usuń**: otwiera sesję dialogową, aby potwierdzić usunięcie wybranego mapowania. Wybierając mapowania semantyczne i ikonę usuwania, można także usunąć kilka mapowań semantycznych jednocześnie. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

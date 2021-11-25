@@ -1,7 +1,7 @@
 ---
 title: Utwórz środowisko i zarządzaj nim.
 description: Dowiedz się, jak zapisać się w usłudze i zarządzać środowiskami.
-ms.date: 10/14/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673757"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799649"
 ---
 # <a name="manage-environments"></a>Zarządzaj środowiskami
 
@@ -39,6 +39,19 @@ Użytkownik może edytować niektóre szczegóły istniejących środowisk.
 3. W polu **Edytuj środowisko** można zaktualizować ustawienia środowiska.
 
 Aby uzyskać więcej informacji o ustawieniach środowiska, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Nawiązywanie połączenia z usługą Microsoft Dataverse
+   
+Krok **Microsoft Dataverse** umożliwia połączenie aplikacji Customer Insights ze środowiskiem Dataverse.
+
+Aby używać [gotowych modeli przewidywania](predictions-overview.md#out-of-box-models), skonfiguruj udostępnianie danych w funkcji Dataverse. Można też włączyć pozyskiwanie danych z lokalnych źródeł danych, udostępniając adres URL środowiska funkcji Microsoft Dataverse, którym administruje Twoja organizacja. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights danym data lake zarządzanym przez usługę Dataverse.
+
+:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
+
+> [!NOTE]
+> Aplikacja Customer Insights nie obsługuje następujących scenariuszy udostępniania danych:
+> - Po zapisaniu wszystkich danych we własnej usłudze Azure Data Lake Storage nie będzie można włączyć udostępniania danych danym data lake zarządzanym przez funkcję Dataverse.
+> - W przypadku włączenia udostępniania usłudze Dataverse, nie będzie można [tworzyć przewidywanych lub brakujących wartości w encji](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopiowanie konfiguracji środowiska
 

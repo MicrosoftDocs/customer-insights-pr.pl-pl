@@ -1,7 +1,7 @@
 ---
 title: Tworzenie miar i zarządzanie nimi
 description: Zdefiniuj miary do analizy i odzwierciedlenia wyników Twojej firmy.
-ms.date: 09/30/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f6be11bd97be71bc0c3a58eaee4d8ed45f535877
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673482"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732739"
 ---
 # <a name="define-and-manage-measures"></a>Definiowanie miar i zarządzanie nimi
 
@@ -238,8 +238,7 @@ Wybierz z listy miarę dla następujących opcji:
 - **Usuń** miarę.
 - **Aktywuj** lub **Dezaktywuj**. Nieaktywne miary nie będą odświeżane podczas [zaplanowanego odświeżania](system.md#schedule-tab).
 
-> [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegóły** dla jednego z zadań, zobaczysz dodatkowe informacje: czas przetwarzania, data ostatniego przetwarzania i wszystkie błędy i ostrzeżenia związane z zadaniem.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="next-step"></a>Następny krok
 

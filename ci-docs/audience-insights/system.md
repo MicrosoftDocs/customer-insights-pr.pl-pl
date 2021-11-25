@@ -1,7 +1,7 @@
 ---
 title: Konfiguracja systemu w statystykach odbiorców
 description: Dowiedz się o ustawieniach systemu w możliwości analiz odbiorców w Dynamics 365 Customer Insights.
-ms.date: 10/15/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,14 +9,16 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
-ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
+ms.openlocfilehash: 1b790106f8b9617d0c1f244e1d15a74c7ef9a82b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7651853"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732383"
 ---
 # <a name="system-configuration"></a>Konfiguracja systemu
+
+Aby uzyskać dostęp do konfiguracji systemu w funkcji Wyniki analiz odbiorców, z lewego paska nawigacji wybierz pozycję **Administrator** > **System**, aby wyświetlić listę zadań i procesów systemowych.
 
 Strona **System** zawiera następujące karty:
 - [Status](#status-tab)
@@ -30,39 +32,55 @@ Strona **System** zawiera następujące karty:
 
 ## <a name="status-tab"></a>Karta Stan
 
-Na **Karta Stan** można śledzić postęp przetwarzania danych, eksportowania danych i wielu innych ważnych procesów produktu. Przejrzyj informacje na tej karcie, aby zapewnić kompletność aktywnych procesów.
+Na **karcie Stan** można śledzić postęp zadań, pozyskiwanie danych, eksportowanie danych i kilka innych ważnych procesów produktu. Przejrzyj informacje na tej karcie, aby zapewnić pełne wykonywanie aktywnych zadań i procesów.
 
-Ta karta zawiera tabele ze statusem i informacjami o przetwarzaniu dla różnych procesów. Każda tabela śledzi **Nazwę** zadania, odpowiadającą mu encję, **Stan** ostatniego uruchomienia oraz datę **Ostatniej aktualizacji**.
+Ta karta zawiera tabele ze statusem i informacjami o przetwarzaniu dla różnych procesów. Każda tabela śledzi **Nazwę** zadania, odpowiadającą mu encję, **Stan** ostatniego uruchomienia oraz datę **Ostatniej aktualizacji**. Szczegółowe informacje dotyczące ostatnich uruchomionych zadań można wyświetlić, wybierając nazwę zadania lub procesu. 
 
-Wyświetl szczegółowe informacje na temat kilku ostatnich uruchomień zadania wybierajac jego nazwę.
+Wybierz stan obok zadania lub procesu w kolumnie **Stan**, aby otworzyć okienko **szczegółów postępu**.
 
-### <a name="status-types"></a>Typy stanu
+   :::image type="content" source="media/system-progress-details.png" alt-text="Okienko szczegółów postępu systemu":::
 
-Istnieje sześć typów stanu zadań. Poniższe typy stanów są również widoczne na stronach *Dopasuj*, *Scal*, *Źródła danych*, *Segmenty*, *Miary*, *Wzbogacenie*, *Działania* i *Przewidywania*:
+### <a name="status-definitions"></a>Definicje stanów
 
-- **Przetwarzanie:** Zadanie jest w toku. Stan może zmienić się na Powodzenie lub Niepowodzenie.
-- **Powodzenie:** Zadanie zostało ukończone pomyślnie.
-- **Pominięto:** Zadanie zostało pominięte. Co najmniej jeden z procesów podrzędnych, od którego zależy to zadanie, zakończył się niepowodzeniem lub został pominięty.
-- **Niepowodzenie:** Przetwarzanie zadania nie powiodło się.
-- **Anulowano:** Przetwarzanie zostało anulowane przez użytkownika przed jego zakończeniem.
-- **Kolejka**: przetwarzanie jest ustawiane w kolejce i rozpoczyna się po zakończeniu wszystkich zadań. Aby uzyskać więcej informacji, zobacz [Zasady odświeżania](#refresh-policies).
+W przypadku zadań i procesów system używa następujących stanów:
 
-### <a name="refresh-policies"></a>Zasady odświeżania
+|Status  |Definicja  |
+|---------|---------|
+|Anulowane |Przed zakończeniem przetwarzanie zostało anulowane przez użytkownika.   |
+|Zakończone niepowodzeniem   |Pobieranie danych zostało napotkało błędy.         |
+|Błąd  |Przetwarzanie nie powiodło się.  |
+|Nie rozpoczęto   |Źródło danych nie ma jeszcze pozyskanych danych lub nadal jest w trybie roboczym.         |
+|Trwa przetwarzanie  |Zadanie lub proces jest w toku.  |
+|Odświeżanie    |Pobieranie danych jest w toku. Aby anulować operację, można wybrać opcję **Zatrzymaj odświeżanie** w kolumnie **Czynności**. Zatrzymanie odświeżania źródła danych spowoduje przywrócenie jego ostatniego stanu odświeżania.       |
+|Pominięty  |Zadanie lub proces został pominięty. Co najmniej jeden z procesów podrzędnych, od którego zależy to zadanie, zakończył się niepowodzeniem lub został pominięty.|
+|Zakończone powodzeniem  |Zadanie lub proces zostało zakończony pomyślnie. W przypadku źródeł danych oznacza, że dane zostały pomyślnie pozyskane, jeśli w kolumnie **Odświeżono** zostanie podana godzina.|
+|W kolejce | Przetwarzanie znajduje się w kolejce i rozpocznie się po zakończeniu wszystkich zadań i procesów. Aby uzyskać więcej informacji zobacz temat [Odświeżanie procesów](#refresh-processes).|
 
-Ta lista przedstawia zasady odświeżania dla każdego z głównych procesów:
+### <a name="refresh-processes"></a>Odświeżanie procesów
 
-- **Źródła danych:** Działają zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Nie jest uzależniony od innych procesów. Dopasowanie zależy od pomyślnego zakończenia tego procesu.
-- **Dopasowanie:** Działa zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od sposobu przetwarzania źródeł danych użytych w definicji dopasowania. Scalanie zależy od pomyślnego zakończenia tego procesu.
-- **Scalanie:** Działa zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od pomyślnego zakończenia tego procesu dopasowywania. Segmenty, miary, wzbogacenia, wyszukiwania, działania, przewidywania i przygotowanie danych zależą od pomyślnego zakończenia procesu.
-- **Segmenty**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie. Wyniki analiz od jego przetwarzania.
-- **Miary**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie.
-- **Działania**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie.
-- **Wzbogacanie**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie.
-- **Wyszukaj**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie.
-- **Przygotowanie danych:** Działa zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od procesu Scalanie.
-- **Wyniki analiz**: Ręczne uruchamiane (jednorazowe odświeżanie) i zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). Zależy od segmentów.
+Odświeżanie zadań i procesów jest wykonywane zgodnie ze [skonfigurowanym harmonogramem](#schedule-tab). 
 
-Wybierz stan zadania, aby zobaczyć szczegółowe informacje o postępie w całego zadania. Powyższe zasady odświeżenia mogą pomóc w zrozumieniu, które można zrobić, aby zająć się zadaniem **Pominięte** lub **W kolejce**.
+|Przetwarzanie  |Opis  |
+|---------|---------|
+|Aktywność  |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania. Wyniki analiz od jego przetwarzania.|
+|Łączenie analizy |Uruchamianie ręczne (pojedyncze odświeżanie). Zależy od segmentów.  |
+|Przygotowywanie analizy |Uruchamianie ręczne (pojedyncze odświeżanie). Zależy od segmentów.  |
+|Przygotowywanie danych   |Zależy od scalania.   |
+|Źródła danych   |Nie jest uzależniony od innych procesów. Dopasowanie zależy od pomyślnego zakończenia tego procesu.  |
+|Wzbogacenia   |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania. |
+|Lokalizacje docelowe eksportów |Uruchamianie ręczne (pojedyncze odświeżanie). Zależy od segmentów.  |
+|Wyniki analiz |Uruchamianie ręczne (pojedyncze odświeżanie). Zależy od segmentów.  |
+|Analizy   |Zależy od scalania.   |
+|Dopasowywanie |Zależy od sposobu przetwarzania źródeł danych użytych w definicji dopasowania.      |
+|Miary  |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania.  |
+|Scalanie   |Zależy od pomyślnego zakończenia tego procesu dopasowywania. Segmenty, miary, wzbogacenia, wyszukiwania, działania, przewidywania i przygotowanie danych zależą od pomyślnego zakończenia procesu.   |
+|Profile   |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania. |
+|Wyszukiw.   |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania. |
+|Segmenty  |Uruchamianie ręczne (pojedyncze odświeżanie). W zależności od procesu scalania. Wyniki analiz od jego przetwarzania.|
+|Zadania systemowe   |Zależy od pomyślnego zakończenia tego procesu dopasowywania. Segmenty, miary, wzbogacenia, wyszukiwania, działania, przewidywania i przygotowanie danych zależą od pomyślnego zakończenia procesu.   |
+|Użytkownika  |Uruchamianie ręczne (pojedyncze odświeżanie). Zależy od encji.  |
+
+Wybierz stan procesu, aby wyświetlić szczegóły postępu dotyczące całego zadania, do którego należy proces. Powyższe procesy odświeżania mogą pomóc w zrozumieniu, co można zrobić w celu rozwiązania problemu z zadaniem lub procesem typu **Pominięto** lub **W kolejce**.
 
 ## <a name="schedule-tab"></a>Karta Harmonogram
 
@@ -86,7 +104,7 @@ Karta **Informacje** zawiera **Wyświetlaną nazwę** organizacji, aktywny **Ide
 
 Na karcie **Ogólne** można zmienić język i format kraju/regionu.
 
-Rozwiązanie Customer Insights [obsługuje wiele języków](/dynamics365/get-started/availability). Aplikacja wykorzystuje preferencje językowe do wyświetlania elementów, takich jak menu, tekst etykiety i komunikaty systemowe w preferowanym języku.
+Aplikacja Customer Insights [obsługuje wiele języków](/dynamics365/get-started/availability). Aplikacja wykorzystuje preferencje językowe do wyświetlania elementów, takich jak menu, tekst etykiety i komunikaty systemowe w preferowanym języku.
 
 Zaimportowane dane i informacje wprowadzone ręcznie nie są przetłumaczone.
 
@@ -109,7 +127,7 @@ Znajdź szczegółowe informacje na temat wykorzystania interfejsu API w czasie 
 
 -  **Operacje** — tabelę z wierszami dla każdej dostępnej operacji API i szczegółami użycia tych operacji. Możesz wybrać nazwę operacji, aby przejść do odwołania [do interfejsu API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
-   Operacje korzystające z [pozyskiwania danych w czasie rzeczywistym](real-time-data-ingestion.md) zawierają przycisk z symbolem lornetki do wyświetlania użycia interfejsu API w czasie rzeczywistym. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.   
+   Operacje, które korzystają z [pozyskiwania danych w czasie rzeczywistym](real-time-data-ingestion.md), zawierają przycisk z symbolem lornetki, który umożliwia wyświetlanie informacji o użyciu interfejsów API w czasie rzeczywistym. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.   
    Pole **Grupuj według** w okienku **Użycia interfejsu API w czasie rzeczywistym** umożliwia wybranie sposobu najlepszego prezentowania interakcji w czasie rzeczywistym. Dane można pogrupować według metody interfejsu API, kwalifikowanej nazwy encji (pobranej encji), utworzone przez (źródło zdarzenia), wyniku (powodzenie lub niepowodzenie) lub kodów błędów. Dane są dostępne jako wykres chronologiczny i jako tabela.
 
 ## <a name="security-tab"></a>Karta Zabezpieczenia
