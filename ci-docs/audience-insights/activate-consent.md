@@ -1,6 +1,6 @@
 ---
-title: Aktywowanie reguł zgody w poszczególnych segmentach w funkcji Wyniki analiz odbiorców
-description: Kroki służące do łączenia danych zgody i aktywowania kontroli zgody w funkcji Wyniki analiz odbiorców.
+title: Aktywowanie reguł wyrażania zgody dla segmentów
+description: Wykonaj poniższej kroki, aby połączyć dane zgody i aktywować testy zgody w funkcji Wyniki analiz odbiorców. Administrator może także wyłączyć testy zgody.
 ms.date: 11/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,20 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 33ec3a684c2ca47badb4e5461f069d1b2e4a4f3d
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
+ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753074"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7790789"
 ---
 # <a name="activate-consent-rules"></a>Aktywowanie reguł zgody
 
-[Centrum zgody (wersja zapoznawcza)](../consent-management/overview.md) ułatwia grupowanie danych zgody z różnych źródeł. Użyj ujednoliconej encji *Zgoda* do stosowania domyślnych testów zgody. Po zaimportowaniu danych zgody w Centrum zgody i skonfigurowaniu reguł dla zaimportowanych danych zgody encja *Zgoda* jest automatycznie synchronizowana z funkcją Wyniki analiz odbiorców.
+[Centrum zgody (wersja zapoznawcza)](../consent-management/overview.md) ułatwia grupowanie danych zgody z różnych źródeł. Użyj ujednoliconej encji *Zgoda* do stosowania domyślnych testów zgody. Po zaimportowaniu danych zgody do Centrum zgody i skonfigurowaniu reguł dotyczących danych encja *Zgoda* jest automatycznie synchronizowana z funkcją Wyniki analiz odbiorców.
 
 ## <a name="enable-consent-checks"></a>Włącz sprawdzanie zgody
 
-Jeśli dane zgody są importowane do Centrum zgody (wersja zapoznawcza) i ustawiono reguły, można włączyć sprawdzanie zgody w funkcji Wyniki analiz odbiorców. 
+Jeśli dane zgody są importowane do Centrum zgody (wersja zapoznawcza) i skonfigurowano reguły, można włączyć testy zgody. 
 
 :::image type="content" source="../consent-management/media/enable-consent-checks-audience-insights.png" alt-text="Karta Zgoda w funkcji Wyniki analiz odbiorców z aktywowanymi danymi zgody.":::
 
@@ -30,13 +30,13 @@ Jeśli dane zgody są importowane do Centrum zgody (wersja zapoznawcza) i ustawi
 
 1. Wybierz kartę **Zgoda (wersja zapoznawcza)**.
 
-1. W sekcji **Włącz sprawdzanie zgody** ustaw przełącznik na obszar, który chcesz **włączyć**.
+1. W sekcji **Włącz sprawdzanie zgody** ustaw przełącznik na **Wł.** dla wszystkich obszarów do włączenia.
 
 1. Zaznacz pole wyboru **Zezwalaj na zastępowanie domyślnych reguł wyrażania zgody**, aby usunąć domyślne sprawdzanie zgody wymuszane w określonym segmencie. 
 
 1. W menu rozwijanym wybierz miejsce, w którym chcesz zezwalać na zastępowanie danych.     
 
-1. W sekcji **Połącz zgodę z profilami klientów** wybierz atrybut używany jako identyfikator w celu łączenia danych zgody z danymi klienta. Najprawdopodobniej jest to numer telefonu lub adres e-mail. 
+1. W sekcji **Połącz zgodę z profilami klientów** wybierz atrybut używany jako identyfikator w celu łączenia danych zgody z danymi klienta. Będzie to prawdopodobnie numer telefonu lub adres e-mail. 
 
 1. Wybierz pozycję **Zapisz**, aby zastosować swoje ustawienia.
 
@@ -48,4 +48,4 @@ Aby zatrzymać korzystanie z danych dotyczących zgody w funkcji Wyniki analiz o
 
 1. Wybierz kartę **Zgoda (wersja zapoznawcza)**.
 
-1. W sekcji **Włącz sprawdzanie zgody** ustaw przełącznik się na **wyłączony**.
+1. W sekcji **Włącz sprawdzanie zgody** ustaw przełącznik na **Wył**.

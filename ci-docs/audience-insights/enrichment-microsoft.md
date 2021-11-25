@@ -1,7 +1,7 @@
 ---
 title: Wzbogać profile klientów danymi firmy Microsoft
-description: Użyj własnościowych danych firmy Microsoft, aby wzbogacić dane klientów o funkcje marek i zainteresowań.
-ms.date: 11/01/2021
+description: Używanie danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu koligacji i wskaźnika Share of Voice.
+ms.date: 11/11/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,29 +9,33 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: c25dbb7a877da2d3fccc1a4e5b219b9792bc6402
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 346c79d0a4d5cd5c47e91c195a48d3a153db0dc0
+ms.sourcegitcommit: 9d3c9e4eb2ce20996a4f4fb44c42e3fe020c5b48
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732555"
+ms.lasthandoff: 11/11/2021
+ms.locfileid: "7793717"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Wzbogać profile klientów dzięki koligacjom marki i zainteresowań (wersja zapoznawcza)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Wzbogacanie profilów klientów przy użyciu koligacji i wskaźnika Share of Voice (wersja zapoznawcza)
 
-Użyj własnościowych danych firmy Microsoft, aby wzbogacić dane klientów o sympatie do marek i zainteresowania. Te sympatie są oparte na danych pochodzących od osób o demografii podobnej do Twoich klientów. Informacje te ułatwiają zrozumienie i segmentację klientów na podstawie ich koligacji z określonymi markami i zainteresowaniami.
+Użyj danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu sympatii do marki, sympatii do zainteresowań i wskaźnika Share of Voice (SoV). Sympatie te oraz wskaźnik SoV opierają się na danych od osób, które mają cechy demograficzne podobne do Twoich klientów. Te informacje pomogą Ci lepiej zrozumieć i segmentować klientów na podstawie ich sympatii do poszczególnych marek i zainteresowań lub odpowiednich wskaźników SoV.
 
 W statystykach odbiorców przejdź do **Dane** > **Wzbogacanie** do [konfiguruj i wyświetl wzbogacenia](enrichment-hub.md).
 
-Aby skonfigurować wzbogacanie koligacji marki, przejdź do karty **Odkryj** i wybierz **Wzbogacaj dane** na kafelku **Marki**.
+Aby skonfigurować wzbogacanie za pomocą sympatii do marki i wskaźnika SoV, przejdź na kartę **Odnajdowanie** i wybierz opcję **Wzbogać moje dane** na kafelku **Marki**.
 
-Aby skonfigurować wzbogacanie koligacji zainteresowań, przejdź do karty **Odkryj** i wybierz **Wzbogacaj dane** na kafelku **Zainteresowania**.
+Aby skonfigurować wzbogacanie za pomocą sympatii do zainteresowań i wskaźnika SoV, przejdź na kartę **Odnajdowanie** i wybierz opcję **Wzbogać moje dane** na kafelku **Zainteresowania**.
 
    > [!div class="mx-imgBorder"]
    > ![Kafelki marek i zainteresowań.](media/BrandsInterest-tile-Hub.png "Kafelki marek i zainteresowań")
 
-## <a name="how-we-determine-affinities"></a>Jak określa się sympatie
+## <a name="how-we-determine-affinities-and-sov"></a>Jak określamy sympatie i wskaźnik SoV
 
-Microsoft korzysta z danych wyszukiwania dostępnych w trybie online w celu sympatii dla marek i zainteresowań w różnych segmentach demograficznych (zdefiniowanych według wieku, płci lub lokalizacji). Wielkość wyszukiwania online dla marki lub zainteresowań określa stopień sympatii ze strony segmentu demograficznego, w porównaniu z innymi segmentami, dla tej marki lub zainteresowania.
+Używamy udostępnianych przez Microsoft danych wyszukiwania online do wyszukiwania sympatii i wskaźnika SoV w różnych segmentach danych demograficznych (zdefiniowanych według wieku, płci lub lokalizacji). Wolumin wyszukiwania online dotyczącego marki lub zainteresowania stanowi podstawę do określenia wskaźnika sympatii lub SoV. Każdy z nich udostępnia jednak inną perspektywę interpretacji informacji o klientach.
+
+- Sympatia to wskaźnik porównawczy między segmentami danych demograficznych. Tych informacji można użyć w celu zidentyfikowania segmentów demograficznych o najwyższym poziomie sympatii do danej marki lub zainteresowania w porównaniu z innymi segmentami.
+
+- Share of Voice to wskaźnik porównawczy w obrębie wybranych marek lub zainteresowań. Tych informacji można użyć w celu zidentyfikowania marki lub zainteresowania, które w danym segmencie demograficznym ma najwyższy wskaźnik Share of Voice w porównaniu z innymi wybranymi markami lub zainteresowaniami.
 
 ## <a name="affinity-level-and-score"></a>Poziom sympatii i wynik
 
@@ -48,6 +52,10 @@ Na każdym wzbogaconym profilu klienta podajemy dwie powiązane wartości - pozi
 |Niska     | 1–34        |
 
 W zależności od stopnia szczegółowości pomiaru podobieństwa można użyć poziomu sympatii lub wyniku. Wynik a ponadto pozwala na dokładniejsze kontrolowanie danych.
+
+## <a name="share-of-voice-sov"></a>Wskaźnik Share of Voice (SoV)
+
+Wskaźnik SoV jest obliczany na 100-punktowej skali. Suma wskaźników SoV dla wszystkich marek lub zainteresowań w każdym wzbogaconym profilu klienta wynosi 100. W przeciwieństwie do sympatii wskaźnik SoV jest względny w stosunku do wybranego przez Ciebie marek i zainteresowań. Na przykład wartości SoV dla pozycji „Microsoft” mogą być inne, jeśli wybrano marki („Microsoft”, „GitHub”) w porównaniu z („Microsoft”, „LinkedIn”).
 
 ## <a name="supported-countriesregions"></a>Obsługiwane kraje/regiony
 
@@ -82,7 +90,7 @@ Przejrzyj domyślne preferencje wzbogacania i zaktualizuj je w razie potrzeby.
 
 ### <a name="select-entity-to-enrich"></a>Wybierz encję do wzbogacenia
 
-Wybierz **Obiekt wzbogacany** i wybierz zestaw danych, który chcesz wzbogacić danymi firmy z firmy Microsoft. Można wybrać encję Klient, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+Wybierz pozycję **Wzbogacona encja** i wybierz zestaw danych, który chcesz wzbogacić danymi od Microsoft. Można wybrać encję Klient, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
 ### <a name="map-your-fields"></a>Zamapuj swoje pola
 
@@ -124,13 +132,11 @@ Po uruchomieniu procesu wzbogacenia przejdź do **Moje wzbogacenia**, aby przejr
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Podgląd wyników po uruchomieniu procesu wzbogacania.":::
 
-Przejrz wzbogacone dane, zaznaczając **Przejrzyj wzbogacone dane** na wykresie. Wzbogacone dane dla marki przechodzą do encji **BrandAffinityFromMicrosoft**. Dane dotyczące zainteresowań znajdują się w encji **InterestAffinityFromMicrosoft**. Te encje są również wymienione w grupie **Wzbogacanie** w **Dane** > **Encje**.
-
-W tym celu zostanie wyświetlony wykres z liczbą wzbogaconych profilów klientów w czasie oraz podglądem wzbogaconej encji. Wybierz opcję **Pokaż więcej** na kafelku podglądu, aby otworzyć encję wzbogaconą.
+Skorzystaj z wykresu z liczbą wzbogaconych profilów klientów w czasie oraz podglądami wzbogaconych encji. Przejrzyj wzbogacone dane, wybierając pozycję **Zobacz więcej** na wykresach **Poziom sympatii** lub **Wskaźnik Share of Voice**. Wzbogacone dane dotyczące marek trafiają do encji **BrandAffinityFromMicrosoft** i **BrandShareOfVoiceFromMicrosoft**. Dane dotyczące zainteresowań znajdują się w encjach **InterestAffinityFromMicrosoft** i **InterestShareOfVoiceFromMicrosoft**. Te encje są również wymienione w grupie **Wzbogacanie** w **Dane** > **Encje**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Zobacz dane dotyczące wzbogacenia na karcie klienta
 
-Koligacje marki i zainteresowań można również wyświetlać na kartach poszczególnych klientów. Przejdź do **Klienci** i wybierz profil klienta. Na karcie klienta znajdziesz wykresy dotyczące marek lub zainteresowań, z którymi ludzie z danego profilu demograficznego mogą mieć powiązania.
+Wskaźnik SoV marek i zainteresowań można wyświetlać na kartach poszczególnych klientów. Przejdź do **Klienci** i wybierz profil klienta. Na karcie klienta znajdziesz wykresy dotyczące wskaźników SoV marek lub zainteresowań oparte na osobach z profilu demograficznego klienta.
 
 :::image type="content" source="media/enrichment-customer-card.png" alt-text="Karta klienta ze wzbogaconymi danymi.":::
 

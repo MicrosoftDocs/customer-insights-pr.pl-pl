@@ -1,7 +1,7 @@
 ---
 title: Rozszerzanie danych firmowych
 description: Wzbogać i normalizuj dane firmy za pomocą modeli Microsoft.
-ms.date: 11/05/2021
+ms.date: 11/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 9bfb96d47de4ec98325e644c60752fc7cab2706c
-ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
+ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "7770183"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "7813931"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Wzbogacanie profilów firmy o ulepszone dane firmowe
 
@@ -51,7 +51,8 @@ Istnieje kilka ograniczeń dotyczących rozszerzonych danych. Pozycje na poniżs
 
 1.  Potwierdź tożsamość firmy. Nie sprawdzamy, czy informacją wejściową jest istniejąca organizacja, czy też firma używa jako danych wyjściowych jako nazwy standardowej.
 2.  Kompleksowo obejmuje firmy w skali globalnej. Skompilowane przez Microsoft dane firmy mają zasięg globalny, ale oferują większość usług w Australii, Kanadzie, Wielkiej Brytanii i Stanach Zjednoczonych.
-3.  Gwarantowana dokładność lub odświeżenie danych. Jako że informacje biznesowe często się zmieniają, nie możemy zagwarantować, że podane ulepszone dane firmy są zawsze dokładne lub aktualne.
+3.  Globalne standaryzowanie adresów firmowych. Obecnie obsługujemy standaryzowanie adresów w następujących krajach lub regionach: Australia, Kanada, Francja, Niemcy, Włochy, Japonia, Wielka Brytania i Stany Zjednoczone.
+4.  Gwarantowana dokładność lub odświeżenie danych. Jako że informacje biznesowe często się zmieniają, nie możemy zagwarantować, że podane ulepszone dane firmy są zawsze dokładne lub aktualne.
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
