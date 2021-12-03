@@ -1,7 +1,7 @@
 ---
 title: Dopasuj encji do ujednolicenia danych
-description: Dopasuj encje, aby łączyć zestawy danych i tworzyć ujednolicone profile klientów.
-ms.date: 11/01/2021
+description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientów.
+ms.date: 11/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
+ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732647"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "7863824"
 ---
 # <a name="match-entities"></a>Dopasowywanie encji
 
@@ -224,17 +224,24 @@ Większość parametrów dopasowania można ponownie skonfigurować i odpowiedni
 
 ## <a name="specify-custom-match-conditions"></a>Określanie niestandardowych warunków dopasowania
 
-Możesz określić warunki, według których określone rekordy powinny zawsze pasować lub nigdy nie pasować. Te reguły można przekazać w celu zastąpienia standardowego procesu dopasowania. Jeśli na przykład w rekordach znajdują się Jan Kowalski I i Jan Kowalski II, system może je dopasować jako jedną osobę. Niestandardowe reguły dopasowania pozwalają określić, że ich profile odwołują się do różnych osób. 
+Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne są cztery opcje: 
+
+|Opcja  |Description |Przykład  |
+|---------|---------|---------|
+|Zawsze pasują     | Określa wartości, które są zawsze dopasowane.         |  Zawsze dopasowuje *Mike* i *MikeR*.       |
+|Nigdy nie pasują     | Określa wartości, które nigdy nie są dopasowane.        | Nie dopasuje *John* i *Jonathan*.        |
+|Obejście niestandardowe     | Określa wartości, które system powinien zawsze ignorować na etapie dopasowania. |  Podczas dopasowania ignoruj wartości *11111* i *Nieznane*.        |
+|Mapowanie aliasu    | Zdefiniowanie wartości, które system powinien rozważyć jako tę samą wartość.         | Załóż, że *Joe* jest równe *Joseph*.        |
 
 1. Przejdź do obszaru **Dane** > **Ujednolicanie** > **Dopasuj** i wybierz opcję **Dopasowanie niestandardowe w sekcji** w sekcji **Szczegóły dopasowanych rekordów**.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Zrzut ekranu sekcji reguł dopasowania z wyróżnioną kontrolką dopasowania niestandardowego.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Zrzut ekranu sekcji reguł dopasowania z wyróżnioną kontrolką dopasowania niestandardowego.":::
 
-1. Jeśli nie masz ustawionych niestandardowych reguł dopasowania, zobaczysz nowe niestandardowe okienko dopasowania **Dopasowanie niestandardowe** z większą liczbą pól szczegółów.
+1. W okienku **Niestandardowe** przejdź do karty **Rekordy**.
 
-1. Zaznacz **Wypełnij szablon**, aby uzyskać plik szablonu, który określa, które rekordy z których encji powinny zawsze pasować lub nigdy nie pasować. Konieczne będzie oddzielne wypełnienie rekordów „zawsze pasuje” i „nigdy nie pasuje” w dwóch różnych plikach.
+1. Z listy rozwijanej **Typ niestandardowy** wybierz opcję dopasowania niestandardowego i wybierz opcję **Pobierz szablon**. Dla każdej opcji dopasowania trzeba mieć osobny szablon.
 
-1. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
+1. Pobrania pliku szablonu. Otwórz go i wprowadź szczegóły. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
     - Entity1: Sprzedaż
     - Entity1Key: 12345
     - Encja2: Kontakt
@@ -244,26 +251,32 @@ Możesz określić warunki, według których określone rekordy powinny zawsze p
    
    Jeśli chcesz określić niestandardowe dopasowanie do deduplikacji w encji, podaj tę samą jednostkę, co Entity1 i Entity2, i ustaw różne wartości klucza podstawowego.
 
-1. Po dodaniu wszystkich zastąpień, które chcesz zastosować, zapisz plik szablonu.
+1. Po dodaniu wszystkich zastąpień zapisz plik szablonu.
 
-1. Wybierz **Dane** > **Źródła danych** i pobierz pliki szablonów jako nowe encje. Po pobraniu można za ich pomocą określić konfigurację dopasowania.
+1. Wybierz **Dane** > **Źródła danych** i pobierz pliki szablonów jako nowe encje.
 
-1. Po przekazaniu plików, a kiedy encje są dostępne, należy ponownie wybrać opcję **Dopasowanie niestandardowe**. Zobaczysz opcje służące do określenia encji, które mają zostać uwzględnione. Wybierz wymagane encje z menu rozwijanego.
+1. Po przekazaniu plików, a kiedy encje są dostępne, należy ponownie wybrać opcję **Dopasowanie niestandardowe**. Zobaczysz opcje służące do określenia encji, które mają zostać uwzględnione. Z menu rozwijanego wybierz wymagane encje i wybierz polecenie **Wykonane**.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Zrzut ekranu z oknem dialogowym umożliwiającym wybranie opcji zastępowania scenariusza dopasowania niestandardowego.":::
 
-1. Wybierz encje, które mają być używane do **Zawsze pasują** i **Nigdy nie pasują**, wybierz **Gotowe**.
+1. Zastosowanie dopasowania niestandardowego zależy od opcji dopasowania, której chcesz użyć. 
+
+   - W przypadku opcji **Zawsze dopasuj** lub **Nigdy nie dopasuj** przejdź do następnego kroku.
+   - W przypadku **Pominięcia niestandardowego** lub **Mapowania aliasu** wybierz **Edytuj** w istniejącej regule dopasowania lub utwórz nową regułę. W liście rozwijanej Normalizacje wybierz opcję **Pominięcie niestandardowe** lub **Mapowanie aliasu** i wybierz **Wykonano**.
 
 1. Wybierz opcję **Zapisz** na stronie **Dopasowanie**, aby zastosować konfigurację dopasowania niestandardowego.
 
 1. Wybierz opcję **Uruchom** na stronie **Dopasowanie**, aby rozpocząć proces dopasowywania. Inne określone reguły dopasowania zostaną zastąpione przez konfigurację dopasowania niestandardowego.
 
-> [!TIP]
-> Przejdź do obszaru **Dane** > **Encje** i przejrzyj encję **ConflationMatchPair**, aby potwierdzić zastosowanie operacji zastępowania.
+### <a name="known-issues"></a>Znane problemy
+
+- Samołączenie nie zawiera znormalizowanych danych w jednostkach deduplikacji. Stosuje jednak normalizację wewnętrznie podczas deduplikacji. Jest to normalne i prawidłowe dla wszystkich normalizacji. 
+- Jeśli ustawienie typu semantycznego zostanie usunięte na etapie **Mapa** w przypadku, gdy reguła dopasowania używa mapowania aliasu lub niestandardowego pominięcia, normalizacja nie zostanie zastosowana. Dzieje się tak tylko w przypadku, gdy po skonfigurowaniu normalizacji w regule dopasowania zostanie wyczyszczony typ semantyczny, ponieważ będzie on nieznany.
+
 
 ## <a name="next-step"></a>Następny krok
 
-Po zakończeniu procesu dopasowania dla co najmniej jednej pary dopasowań może dojść do rozstrzygnięcia możliwych zachodzących sprzeczności w danych za pośrednictwem tematu [**Scal**](merge-entities.md).
+Po zakończeniu procesu dopasowania dla co najmniej jednej pary dopasowania przejdź do kroku [**Scal**](merge-entities.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

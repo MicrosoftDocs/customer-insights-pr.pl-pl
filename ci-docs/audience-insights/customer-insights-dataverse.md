@@ -1,7 +1,7 @@
 ---
 title: Dane aplikacji Customer Insights w Microsoft Dataverse
 description: Korzystanie z encji funkcji Customer Insights jako tabel w Microsoft Dataverse.
-ms.date: 10/14/2021
+ms.date: 11/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 6f74559b34a95ed976a4e353c2dbabe59e1a8839
+ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645231"
+ms.lasthandoff: 11/29/2021
+ms.locfileid: "7866947"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Praca z danymi aplikacji Customer Insights w Microsoft Dataverse
 
@@ -45,6 +45,7 @@ Niektóre encje wyjściowe z odbiorcy danych są dostępne jako tabele w tabeli 
 - [CustomerMeasure](#customermeasure)
 - [Wzbogacenie](#enrichment)
 - [Przewidywanie](#prediction)
+- [Członkostwo segmentu](#segment-membership)
 
 
 ### <a name="customerprofile"></a>CustomerProfile
@@ -121,3 +122,16 @@ Ta tabela zawiera dane wyjściowe prognoz modelu.
 | Wartości               | Ciąg JSON | Lista atrybutów wytwarzanych przez model |
 | msdynci_predictionid | Identyfikator GUID        | Różnych identyfikatorów GUID wygenerowanych na podstawie msdynci_identifier | 
 | msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
+
+### <a name="segment-membership"></a>Członkostwo segmentu
+
+Ta tabela zawiera informacje o członkostwie segmentu profilów klientów.
+
+| Column        | Type | Description                        |
+|--------------------|--------------|-----------------------------|
+| Identyfikator klienta        | String       | Identyfikator profilu klienta        |
+| SegmentProvider      | String       | Aplikacja, która publikuje segmenty. Domyślnie: Wyniki analiz odbiorców         |
+| SegmentMembershipType | String       | Typ klienta, w tym rekordzie członkostwa segmentu. Obsługuje wiele typów, takich jak Klient, Kontakt lub Konto. Domyślnie: Klient  |
+| Segmenty       | Ciąg JSON  | Lista unikatowych segmentów, których członkiem jest profil klienta      |
+| msdynci_identifier  | String   | Unikatowy identyfikator rekordu członkostwa segmentu. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| msdynci_segmentmembershipid | Identyfikator GUID      | Deterministyczny identyfikator GUID wygenerowany z poziomu `msdynci_identifier`          |
