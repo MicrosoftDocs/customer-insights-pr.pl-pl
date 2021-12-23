@@ -1,7 +1,7 @@
 ---
 title: Niestandardowe modele Uczenie maszynowe | Microsoft Docs
 description: Praca z modelami niestandardowymi z Uczenie maszynowe Azure w Dynamics 365 Customer Insights.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032955"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881797"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
+
+> [!NOTE]
+> Wsparcie dla Machine Learning Studio (classic) zakończy się 31 sierpnia 2024 roku. Zalecamy przejście na [Azure Machine Learning](/azure/machine-learning/overview-what-is-azure-machine-learning) do tej daty.
+>
+> Od 1 grudnia 2021 roku nie będzie można tworzyć nowych zasobów Machine Learning Studio (klasycznego). Do 31 sierpnia 2024 roku możecie nadal korzystać z istniejących zasobów Machine Learning Studio (classic). Aby uzyskać więcej informacji, zobacz [Migracja do Azure Machine Learning](/azure/machine-learning/migrate-overview).
+
 
 **Analizy** > **Modele niestandardowe** umożliwia zarządzanie przepływami pracy na podstawie modeli Uczenie maszynowe platformy Azure. Przepływy pracy pomagają wybrać dane, z których chcesz generować szczegółowe informacje, i odwzorować wyniki na ujednolicone dane klientów. Aby uzyskać więcej informacji na temat budowania niestandardowych modeli ML, zobacz [Korzystanie z modeli opartych na Azure Machine Learning](azure-machine-learning-experiments.md).
 
@@ -26,7 +32,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Obecnie ta funkcja obsługuje usługi sieci Web opublikowane za pośrednictwem potoków wsadowych usługi [Machine Learning Studio (klasyczna)](https://studio.azureml.net) i [Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
+- Ta funkcja wspiera usługi webowe publikowane przez [partie w potoku Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
 
 - Aby korzystać z tej funkcji, potrzebujesz konta magazynu Azure Data Lake Gen2 skojarzonego z wystąpieniem usługi Azure Studio. Aby uzyskać więcej informacji, zobacz [Tworzenie konta magazynu Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
 1. Jeśli subskrypcja Uczenie maszynowe Azure znajduje się w innej dzierżawie niż usługa Customer Insights, wybierz **Zaloguj się**, używając swoich poświadczeń dla wybranej organizacji.
 
-1. Wybierz **Obszary robocze** skojarzone z daną usługą sieci Web. Na liście znajdują się dwie sekcje, jedna dla Azure Machine Learning w wersji 1 (Machine Learning Studio (klasyczna)) i Azure Machine Learning w wersji 2 (Azure Machine Learning). Jeśli nie masz pewności, który obszar roboczy jest odpowiedni dla Twojej usługi internetowej Machine Learning Studio (klasycznej), wybierz opcję **Dowolny**.
+1. Wybierz **Obszary robocze** skojarzone z daną usługą sieci Web. 
 
-1. Wybierz usługę sieciową Machine Learning Studio (klasyczną) lub potok Azure Machine Learning na liście rozwijanej **Uslugi sieci Web, która zawiera model**. Następnie wybierz **Dalej**.
-   - Więcej informacji o [publikowaniu usługi sieci Web w Machine Learning Studio (klasyczny)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Potok musi zostać opublikowany w [punkcie końcowym potoku](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Wybierz potok Azure Machine Learning z rozwijanej listy **Serwis internetowy, który zawiera twój model** rozwijany. Następnie wybierz **Dalej**.    
+   Dowiedz się więcej o [publikowaniu potoku w usłudze Azure Machine Learning przy użyciu projektanta](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) lub [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Potok musi zostać opublikowany w [punkcie końcowym potoku](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. Dla **Dane wejściowe usług sieci Web**, wybierz pasującą **Encję** z analiz odbiorców i wybierz **Dalej**.
    > [!NOTE]
@@ -62,9 +67,6 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
    > ![Konfiguruj przepływ pracy.](media/intelligence-screen2-updated.png "Konfiguruj przepływ pracy")
 
 1. W kroku **Parametry wyjściowe modelu** ustaw następujące właściwości:
-   - Machine Learning Studio (klasyczna)
-      1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki usługi sieci Web.
-   - Uczenie maszynowe Azure
       1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki strumienia.
       1. Z listy rozwijanej wybierz **Nazwę parametru magazynu danych wyjściowych** potoku wsadowego.
       1. Z listy rozwijanej wybierz **Nazwę parametru ścieżki danych wyjściowych** potoku wsadowego.
@@ -93,9 +95,6 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 1. Dla **Dane wejściowe usług sieci Web**, można aktualizować pasującą **Encję** z analiz odbiorców. Następnie wybierz **Dalej**.
 
 1. W kroku **Parametry wyjściowe modelu** ustaw następujące właściwości:
-   - Machine Learning Studio (klasyczna)
-      1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki usługi sieci Web.
-   - Uczenie maszynowe Azure
       1. Wprowadź nazwę **Encji wyjściowej**, do którego ma zostać wlany wyniki strumienia.
       1. Wybierz **Nazwa parametru magazynu danych wyjściowych** dla planowanego strumienia testowego.
       1. Wybierz **Nazwa parametru ścieżki danych wyjściowych** dla planowanego strumienia testowego.

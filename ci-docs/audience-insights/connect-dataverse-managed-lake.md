@@ -1,7 +1,7 @@
 ---
 title: Tworzenie połączenia z tabelami w programie Microsoft Dataverse
 description: Zaimportuj dane z zarządzanego przez Microsoft Dataverse repozytorium typu data lake.
-ms.date: 07/23/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,22 +9,25 @@ author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-ms.openlocfilehash: ffeccffd0e353cb5490b537552d585c184ad672f9c806e673bd04743214ad068
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fecf3e33b5bc1eec17006fc196004be902c03b40
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033093"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900164"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Łączenie się z danymi w repozytorium typu data lake, którym zarządza Microsoft Dataverse
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Ten artykuł zawiera informacje o tym, jak użytkownicy Dataverse mogą szybko łączyć się ze swoimi jednostkami analitycznymi w zarządzanym lake Dataverse. Aby kontynuować pracę i zobaczyć listę encji dostępnych w zarządzany repozytorium typu lake należy mieć uprawnienia administratora w organizacji Dataverse.
+Ten artykuł dostarcza informacji o tym, jak użytkownicy Dataverse mogą szybko połączyć się z jednostkami analitycznymi w zarządzanym jeziorze Microsoft Dataverse. 
+
+> [!NOTE]
+> Musisz być administratorem organizacji Dataverse, aby przejść dalej i wyświetlić listę encji dostępnych w zarządzanym jeziorze.
 
 ## <a name="important-considerations"></a>Ważne uwagi
 
-Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być przechowywane w innej lokalizacji niż miejsce przetwarzania danych lub przechowywanie ich w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft.](https://www.microsoft.com/trust-center)
+Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być przechowywane w innej lokalizacji niż miejsce przetwarzania danych lub przechowywanie ich w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Nawiązywanie połączenia z zarządzanym przez Dataverse repozytorium typu lake
 
@@ -32,12 +35,9 @@ Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być p
 
 2. Wybierz **Dodaj źródła danych**.
 
-3. Wybierz pozycję **Połącz z zarządzanym lake Microsoft Dataverse** i wybierz pozycję **Dalej**.
+3. Wybierz **Microsoft Dataverse**, a następnie wybierz **Dalej**.
 
-4. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**. Wytyczne dotyczące nazw: 
-   - Rozpocznij od litery.
-   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
-   - Użyj między 3 do 64 znaków.
+4. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**. 
 
 5. Podaj **Adres serwera** dla organizacji Dataverse i wybierz pozycję **Zaloguj się**.
 

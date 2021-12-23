@@ -1,7 +1,7 @@
 ---
 title: Eksperymenty usługi Azure Machine Learning
 description: Użyj modeli opartych na usłudze Azure Machine Learning w Dynamics 365 Customer Insights.
-ms.date: 11/30/2020
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,16 +9,16 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4c04a1d08aba152ce91d452ae2300c1ce0fc79e5d6980ac506dc40d9914c9fca
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e37eec503c9df83ef72497e22afa1266296e642c
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033185"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881751"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Użyj modeli opartych na usłudze Azure Machine Learning
 
-Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania modeli uczenia maszynowego, które mogą generować dodatkowe informacje o firmie. Customer Insights integruje się z Machine Learning Studio (klasycznym) i Azure Machine Learning, aby używać własnych modeli niestandardowych. Zobacz, jak [Eksperymenty Machine Learning Studio (klasyczne)](machine-learning-studio-experiments.md), aby zapoznać się z przykładami eksperymentów opracowanych w Machine Learning Studio (wersja klasyczna). 
+Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania modeli uczenia maszynowego, które mogą generować dodatkowe informacje o firmie. Customer Insights integruje się z platformą Uczenie maszynowe Azure w celu korzystania z własnych modeli niestandardowych.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -35,7 +35,7 @@ Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania mode
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Praca z projektantem Azure Machine Learning
 
-Projektant usługi Azure Machine Learning zapewnia wizualną kanwę, w której można przeciągać i upuszczać zestawy danych i moduły, podobnie jak w usłudze Machine Learning Studio (wersja klasyczna). Potok wsadowy utworzony przez projektanta można zintegrować z Customer Insights, jeśli są odpowiednio skonfigurowane. 
+Projektant Azure Machine Learning dostarcza wizualną kanwę, na której możesz przeciągać i upuszczać zestawy danych i moduły. Potok wsadowy utworzony przez projektanta można zintegrować z Customer Insights, jeśli są odpowiednio skonfigurowane. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Praca z Azure Machine Learning SDK
 

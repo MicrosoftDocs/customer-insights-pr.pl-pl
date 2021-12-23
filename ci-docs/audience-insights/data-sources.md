@@ -1,7 +1,7 @@
 ---
 title: Użyj źródeł danych do pozyskiwania danych
 description: Informacje na temat importowania danych z różnych źródeł.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6846c73cb156aaa049e2656c8e327bcba1f73abc
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732168"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900392"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -25,19 +25,22 @@ Funkcja wglądu w odbiorców w Dynamics 365 Customer Insights łączy się z dan
 
 ## <a name="add-a-data-source"></a>Dodaj źródło danych
 
-Zapoznaj się ze szczegółowymi artykułami dotyczącymi sposobu dodawania źródła danych w zależności od wybranej opcji.
+Zapoznaj się ze szczegółowymi artykułami, aby dowiedzieć się, jak dodać źródło danych, w zależności od wybranej opcji.
 
-Źródło danych można dodać na trzy podstawowe sposoby:
+Możesz dodać następujące źródła danych:
 
-- [Za pomocą licznych łączników Power Query](connect-power-query.md)
-- [Z folderu Common Data Model](connect-common-data-model.md)
-- [Z własnego repozytorium tylu lake Microsoft Dataverse](connect-dataverse-managed-lake.md)
+- [Łączniki Power Query](connect-power-query.md)
+- [Common Data Model](connect-common-data-model.md)
+- [Microsoft Dataverse lake](connect-dataverse-managed-lake.md)
+
+> [!NOTE]
+> Jeśli korzystasz z wersji testowej, w sekcji Metody importu znajdziesz opcję **Biblioteka danych Customer Insights**. Wybierz tę opcję, aby wybrać przykładowy zbiór danych dostępny dla różnych branż. Aby uzyskać więcej informacji, zobacz [Wersja próbna Dynamics 365 Customer Insights](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Dodawanie danych z lokalnych źródeł danych
 
-Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Microsoft Power Platform. Przepływy danych można włączyć w funkcji Customer Insights, [podając adres URL środowiska Microsoft Dataverse](create-environment.md) podczas konfigurowania środowiska.
+Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Microsoft Power Platform. Możesz włączyć przepływy danych w Customer Insights poprzez [podanie adresu URL środowiska Microsoft Dataverse](create-environment.md) podczas konfigurowania środowiska.
 
-Źródła danych tworzone po skojarzeniu środowiska Dataverse z usługą Customer Insights domyślnie będą korzystać z [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bramy danych. Należy usunąć i ponownie utworzyć źródła danych, które istniały, zanim środowisko Dataverse zostało skojarzone do użycia [lokalnych bram danych](/data-integration/gateway/service-gateway-app).
+Źródła danych, które są tworzone po powiązaniu środowiska Dataverse z Customer Insights domyślnie używają [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bramy danych. Możesz usunąć i odtworzyć źródła danych, które istniały przed powiązaniem środowiska Dataverse [używając lokalnych bram danych](/data-integration/gateway/service-gateway-app).
 
 Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Na stronie źródeł danych znajdują się łącza umożliwiające przejście do środowiska Microsoft Power Platform, w którym można wyświetlić i skonfigurować lokalne bramy danych.
 

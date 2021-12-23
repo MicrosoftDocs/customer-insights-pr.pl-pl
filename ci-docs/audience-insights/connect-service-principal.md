@@ -1,7 +1,7 @@
 ---
 title: Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi
 description: Do łączenia się z własnym repozytorium data lake użyj nazwy głównej usługi Azure.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645185"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900288"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
 
-Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Przeczytaj, jak połączyć konto Dynamics 365 Customer Insights z kontem Azure Data Lake Storage za pomocą nazwy głównej usługi Azure zamiast kluczy konta magazynu. 
+Ten artykuł omawia, jak połączyć Dynamics 365 Customer Insights z kontem Azure Data Lake Storage, używając nazwy głównej usługi Azure zamiast kluczy konta przechowywania. 
 
-Można użyć nazwy głównej usługi, by bezpiecznie [dodać lub edytować folder Common Data Model jako źródło danych](connect-common-data-model.md) lub [utworzyć lub zaktualizować środowisko](create-environment.md).
+Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Możesz użyć nazwy głównej usługi do bezpiecznego [dodania lub edycji folderu Common Data Model jako źródła danych](connect-common-data-model.md) lub [utworzenia lub aktualizacji środowiska](create-environment.md).
 
 > [!IMPORTANT]
 > - Konto usługi Data Lake Storage, które będzie korzystać z głównej usługi, musi mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace).
-> - Aby utworzyć nazwę główną usługi, trzeba mieć uprawnienia administratora w ramach Twojej subskrypcji platformy Azure.
+> - Aby utworzyć nazwę główną usługi, potrzebujesz uprawnień administratora dla swojej subskrypcji Azure.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Utwórz nazwę główną usługi Azure dla rozwiązania Customer Insights
 
-Przed utworzeniem nowej nazwy głównej usługi dla wyników analiz odbiorców lub interakcji sprawdź, czy istnieje ona już w organizacji.
+Przed utworzeniem nowej nazwy głównej usługi dla Customer Insights sprawdź, czy istnieje on już w twojej organizacji.
 
 ### <a name="look-for-an-existing-service-principal"></a>Poszukaj istniejącej nazwy głownej usługi
 

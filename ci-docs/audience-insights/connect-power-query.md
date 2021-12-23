@@ -1,7 +1,7 @@
 ---
-title: Spożycie danych za pośrednictwem łącznika Power Query
+title: Pozyskiwanie danych poprzez konektor Power Query (Wideo)
 description: Łączniki źródeł danych oparte na Power Query.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732231"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903853"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Nawiązywanie połączenia ze źródłem danych Power Query
 
-Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. Dodawanie źródeł danych na podstawie łączników Power Query zazwyczaj przebiega zgodnie z krokami opisanymi w następnej sekcji. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby uzyskać więcej informacji, zobacz dokumentację dla poszczególnych łączników w [Informacje na temat łączników Power Query](/power-query/connectors/).
+Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. 
+
+Dodawanie źródeł danych opartych na łącznikach Power Query zasadniczo przebiega zgodnie z krokami opisanymi w tej sekcji. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby dowiedzieć się więcej, zobacz dokumentację na temat poszczególnych łączników w [Referencje łączników Power Query](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,14 +30,11 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 1. Wybierz **Dodaj źródła danych**.
 
-1. Wybierz metodę **importu danych** i wybierz **Dalej**.
+1. Wybierz **Microsoft Power Query**, a następnie wybierz **Następny**.
 
-1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych. Wytyczne dotyczące nazw: 
-   - Rozpocznij od litery.
-   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
-   - Użyj między 3 do 64 znaków.
+1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych.
 
-1. Wybierz jeden z [dostępnych łączników](#available-power-query-data-sources). W tym przykładzie wybraliśmy łącznik **Tekst/CSV**.
+1. Wybierz jeden z [dostępnych łączników](#available-power-query-data-sources). W tym przykładzie wybieramy łącznik **Text/CSV**.
 
 1. Wprowadź wymagane informacje szczegółowe w **Ustawienia połączenia** dla wybranego łącznika i wybierz **Dalej**, aby wyświetlić podgląd danych.
 
@@ -50,7 +49,7 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 1. Kolejne encje można dodać do źródła danych, wybierając polecenie **Pobierz dane** w oknie dialogowym **Edytuj zapytania**.
 
-   Te przekształcenia są zdecydowanie zalecane:
+   Zalecamy używanie następujących transformacji:
 
    - Jeśli pozyskujesz dane z pliku CSV, pierwszy wiersz często zawiera nagłówki. Przejdź do **Przekształć tabelę** i wybierz **Użyj nagłówków jako pierwszego wiersza**.
    - Upewnij się, że typ danych jest odpowiednio ustawiony.
@@ -61,7 +60,7 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 ## <a name="available-power-query-data-sources"></a>Dostępne źródła danych Power Query
 
-Sprawdź [Informacje na temat łączników Power Query](/power-query/connectors/), aby otrzymać aktualną listę łączników, które można wybrać w celu zaimportowania danych do usługi Customer Insights. 
+Zobacz [odnośnik do łączników Power Query](/power-query/connectors/), aby poznać listę łączników, których możesz użyć do importu danych do Customer Insights. 
 
 Łączniki ze znacznikiem wyboru w kolumnie **Customer Insights (Przepływy danych)** są dostępne w celu utworzenia nowych źródeł danych na podstawie Power Query. Przejrzyj dokumentację określonego łącznika, aby dowiedzieć się więcej o jego wymaganiach wstępnych, ograniczeniach i innych szczegółach.
 

@@ -1,7 +1,7 @@
 ---
 title: Mapowania semantyczne (wersja zapoznawcza)
 description: Omówienie mapowań semantycznych i sposobu ich używania.
-ms.date: 11/01/2021
+ms.date: 12/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 08b257b97704b219bb3277042516e00deb886a49
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7731956"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881843"
 ---
-# <a name="semantic-mappings"></a>Mapowania semantyczne
+# <a name="semantic-mappings-preview"></a>Mapowania semantyczne (wersja zapoznawcza)
 
 Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniami, na wstępnie zdefiniowane schematy. Te schematy ułatwiają funkcji szczegółowych informacji o odbiorcach lepsze zrozumienie atrybutów danych. Mapowanie semantyczne i dostarczone dane włączają nowe szczegółowe informacje i funkcje w obszarze szczegółowych informacji o odbiorcach. Aby mapować dane działań na schematy, należy zapoznać się z dokumentacją dotyczącą [działań](activities.md).
 
@@ -91,5 +91,40 @@ W obszarze **Dane** > **Mapowania semantyczne (wersja zapoznawcza)** można wyś
 
 - **Usuń**: otwiera sesję dialogową, aby potwierdzić usunięcie wybranego mapowania. Wybierając mapowania semantyczne i ikonę usuwania, można także usunąć kilka mapowań semantycznych jednocześnie. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Użyj semantycznego mapowania encji ContactProfile do tworzenia aktywności na poziomie kontaktu
+
+Po utworzeniu semantycznego mapowania encji *ContactProfile* możesz przechwytywać aktywności kontaktów. Dzięki temu możesz zobaczyć na osi czasu aktywności na koncie, który kontakt był odpowiedzialny za poszczególne aktywności. Większość kroków jest zgodna z typową konfiguracją mapowania aktywności.
+
+   > [!NOTE]
+   > Aby aktywność na poziomie kontaktu działała, musisz posiadać oba atrybuty **AccountID** i **ContactID** dla każdego rekordu w danych aktywności.
+
+1. [Definiowanie mapowania semantycznego encji *ContactProfile*.](#define-a-contactprofile-semantic-entity-mapping) i uruchomić mapowanie semantyczne.
+
+1. W analizach odbiorców przejdź do **Dane** > **Działania**.
+
+1. Aby utworzyć nowe działanie, wybierz pozycję **Dodaj działanie**.
+
+1. Nazwij aktywność, wybierz źródłową encję aktywności i wybierz klucz główny encji aktywności.
+
+1. W kroku **Relacje** utwórz pośrednią relację między danymi źródłowymi aktywności a kontami, używając danych kontaktowych jako jednostki pośredniczącej. Aby uzyskać więcej informacji, przejdź do [ścieżek relacji bezpośredniej i pośredni](relationships.md#relationship-paths).
+   - Przykładowa relacja dla działania o nazwie *Zakupy*:
+      - **Dane aktywności Źródła Zakupów** > **Dane kontaktowe** na atrybucie **ContactID**
+      - **Dane kontaktu** > **Dane konta** na atrybucie **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Przykładowa konfiguracja relacji.":::
+
+1. Po ustawieniu relacji wybierz **Dalej** i zakończ konfigurację mapowania aktywności. Szczegółowe kroki dotyczące tworzenia aktywności znajdziesz w dziale [definiowanie aktywności](activities.md).
+
+1. Uruchom swoje mapowania aktywności.
+
+1. Twoje działania na poziomie kontaktu będą teraz widoczne na Twojej osi czasu klienta.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Wynik końcowy po skonfigurowaniu działań kontaktowych":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Filtrowanie osi czasu aktywności na poziomie kontaktu
+
+Po skonfigurowaniu mapowania aktywności na poziomie kontaktu i uruchomieniu go, oś czasu aktywności dla twoich klientów zostanie zaktualizowana. Zawiera ich identyfikatory lub imiona, w zależności od konfiguracji twojego *ContactProfile*, dla działań, które podjęli. Możesz filtrować aktywności według kontaktów na osi czasu, aby zobaczyć konkretne kontakty, które Cię interesują. Dodatkowo możesz zobaczyć wszystkie aktywności, które nie są przypisane do konkretnego kontaktu, wybierając **Aktywności nieprzypisane do kontaktu**.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Opcje filtrowania dostępne dla aktywności na poziomie kontaktu.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

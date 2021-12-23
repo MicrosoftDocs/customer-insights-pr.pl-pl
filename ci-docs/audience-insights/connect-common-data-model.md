@@ -1,7 +1,7 @@
 ---
 title: Połącz dane Common Data Model z kontem Azure Data Lake
 description: Pracuj z danymi Common Data Model przy użyciu usługi Azure Data Lake Storage.
-ms.date: 05/29/2020
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 93871f8029053d4ed4a116d3af3550b7684ee11ea8633e937138245e193a44e6
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033139"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900210"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 
@@ -30,7 +30,7 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 
 - Usługa Azure Data Lake, z którą chcesz się łączyć i pozyskiwać dane, musi znajdować się w tym samym regionie Azure, co środowisko Dynamics 365 Customer Insights. Połączenia z folderem Common Data Model z data lake w innym regionie świadczenia usługi Azure nie są obsługiwane. Aby sprawdzić, jaki jest obszar Azure środowiska, przejdź do **Administrator** > **System** > **Informacje** w analizach odbiorców.
 
-- Dane przechowywane w usługach online mogą być przechowywane w innej lokalizacji niż ta, w której dane są przetwarzane lub przechowywane w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft.](https://www.microsoft.com/trust-center)
+- Dane przechowywane w usługach online mogą być przechowywane w innej lokalizacji niż ta, w której dane są przetwarzane lub przechowywane w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-common-data-model-folder"></a>Połącz z folderem modelu Common Data Model
 
@@ -38,12 +38,11 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 
 1. Wybierz **Dodaj źródła danych**.
 
-1. Wybierz opcję **Połącz z folderem Common Data Model**, wprowadź **Nazwę** źródła danych i wybierz przycisk **Dalej**. Wytyczne dotyczące nazw: 
-   - Rozpocznij od litery.
-   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
-   - Użyj między 3 do 64 znaków.
+1. Wybierz **Azure data lake storage**, wprowadź **Nazwę** źródła danych, a następnie wybierz **Następny**.
 
-1. Można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Wprowadź informacje o **Kontenerze** i wybierz opcję **Dalej**.
+   - Jeśli zostaniesz o to poproszony, wybierz jeden z przykładowych zestawów danych, który dotyczy Twojej branży, a następnie wybierz **Dalej**. 
+
+1. Można wybrać między opcją opartą na zasobach a opcją opartą na subskrypcji na potrzeby uwierzytelniania. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md). Wpisz **Adres serwera**, wybierz **Zaloguj się**, a następnie wybierz **Następny**.
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe umożliwiające wprowadzenie nowych szczegółów połączenia dla usługi Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
@@ -56,11 +55,11 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
    > [!NOTE]
    > Żaden plik model.json lub manifest.json powiązany z innym źródłem danych w środowisku nie zostanie wyświetlony na liście.
 
-1. Otrzymasz listę dostępnych encji w wybranym pliku model.json lub manifest.json. Możesz przeanalizować i wybrać z listy dostępnych encji i wybrać **Zapisz**. Wszystkie wybrane encje zostaną pozyskane z nowego źródła danych.
+1. Zobaczysz listę dostępnych encji w wybranym pliku model.json lub manifest.json. Przejrzyj i wybierz z listy dostępnych podmiotów, a następnie wybierz **Zapisz**. Wszystkie wybrane encje zostaną pozyskane z nowego źródła danych.
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe pokazujące listę encji z pliku model.json.](media/review-entities.png)
 
-8. Określ, dla których encji danych chcesz włączyć profilowanie danych i wybierz **Zapisz**. Dzięki profilowaniu danych można korzystać z analiz i innych możliwości. Możesz wybrać całą encję, która wybiera wszystkie atrybuty z encji lub wybrane atrybuty. Domyślnie żadne encje nie są włączone do profilowania danych.
+8. Określ, dla których encji danych chcesz włączyć profilowanie danych, następnie wybierz **Zapisz**. Dzięki profilowaniu danych można korzystać z analiz i innych możliwości. Możesz wybrać całą encję, która wybiera wszystkie atrybuty z encji lub wybrane atrybuty. Domyślnie żadne encje nie są włączone do profilowania danych.
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe pokazujące Profilowanie danych.](media/dataprofiling-entities.png)
 
