@@ -1,7 +1,7 @@
 ---
-title: Dodatek do kart klienta dla aplikacji Dynamics 365 (wideo)
+title: Dodatek do kart klienta dla aplikacji Dynamics 365 (zawiera wideo)
 description: Pokaż dane z analizy odbiorców w aplikacjach Dynamics 365 za pomocą tego dodatku.
-ms.date: 12/07/2021
+ms.date: 12/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
+ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904026"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "7945440"
 ---
 # <a name="customer-card-add-in-preview"></a>Dodatek kart klientów (wersja zapoznawcza)
 
@@ -27,12 +27,12 @@ Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Mając z
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Ten dodatek działa tylko w aplikacjach opartych na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
-- Aby dane usługi Dynamics 365 były mapowane do profilów klientów w ramach wyników analiz odbiorców, muszą być [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md).
+- Aby dane usługi Dynamics 365 były mapowane do profilów klientów w ramach wyników analiz odbiorców, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w kroku mapy proces ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Wszystkich użytkowników usługi Dynamics 365 z dodatku karta klienta należy [dodać jako użytkowników](permissions.md) w analizie odbiorców, aby dane stały się widoczne.
 - [Funkcje wyszukiwania i filtrowania skonfigurowane](search-filter-index.md) w analizie odbiorców są wymagane do wyszukiwania danych.
 - Każda kontrolka dodatku zależy od określonych danych w wynikach analiz odbiorców. Niektóre dane i kontrolki są dostępne tylko w środowiskach określonych typów. W konfiguracji dodatku zostanie podana informacja o tym, czy ze względu na wybrany typ środowiska kontrolka jest niedostępna. Dowiedz się więcej o [przypadkach użycia środowisk](work-with-business-accounts.md).
   - **Kontrola miary**: wymaga [skonfigurowanych miar](measures.md) typu atrybutów klienta.
-  - **Kontrola danych**: wymaga danych generowanych przy użyciu [przewidywań](predictions.md) lub [niestandardowych modeli](custom-models.md).
+  - **Kontrola danych**: wymaga danych generowanych przy użyciu [prognoz lub niestandardowych modeli](predictions-overview.md).
   - **Kontrola szczegółów klienta**: wszystkie pola z profilu są dostępne w ujednoliconym profilu klienta.
   - **Kontrola wzbogacenia**: wymaga czynnych [wzbogaceń](enrichment-hub.md) zastosowanych dla profilów klienta. Dodatek do karty obsługuje te elementy wzbogacające: [Marki](enrichment-microsoft.md) dostarczane przez Microsoft, [Zainteresowania](enrichment-microsoft.md) dostarczane przez Microsoft oraz [Dane dot. interakcji Office](enrichment-office.md) dostarczane przez Microsoft.
   - **Kontrola kontaktów**: wymaga definicji encji semantycznej typu Kontakty.

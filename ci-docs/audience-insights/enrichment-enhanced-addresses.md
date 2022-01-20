@@ -1,7 +1,7 @@
 ---
-title: Ulepszenia wzbogacania adresu (wideo)
+title: Ulepszenia wzbogacania adresu (zawiera wideo)
 description: Wzbogacaj i normalizuj informacje adresowe z profili klientów za pomocą modeli firmy Microsoft.
-ms.date: 07/25/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 2158d80aa088c5bf8589fb7d23586496e2d8b855
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7903963"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934936"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Wzbogacenie profili klientów za pomocą ulepszonych adresów
 
@@ -101,6 +101,16 @@ Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Możn
 Po zakończeniu procesu wzbogacania można przejrzeć dane nowo wzbogacone profile klientów w **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
 
 Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
+
+### <a name="overview-card"></a>Karta przeglądowa
+
+Na karcie przeglądowej są szczegółowe informacje dotyczące zakresu wzbogacania. 
+
+* **Klienci przetwarzani i zmieniani**: Liczba profili klientów, które zostały pomyślnie wzbogacone.
+
+* **Klienci przetwarzani i niezmieniani**: Liczba profili klientów, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
+
+* **Klienci nieprzetwarzani i niezmieniani**: Liczba profili, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
 
 ## <a name="next-steps"></a>Następne kroki
 

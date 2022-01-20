@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Azure Synapse Analytics
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Azure Synapse Analytics.
-ms.date: 04/12/2021
+ms.date: 01/05/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f206043298bdbf8a84b0ef37b47a43290653beba7d3d0e8b807ec74513614aa8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 6f630b8fb03bf615ada6d40fe27a91975d0c856e
+ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031946"
+ms.lasthandoff: 01/10/2022
+ms.locfileid: "7951055"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportuj dane do Azure Synapse Analytics
 
@@ -49,6 +49,8 @@ W Azure:
 
 ### <a name="configure-a-connection"></a>Konfigurowanie połączenia
 
+Aby utworzyć połączenie, jednostka usługi i konto użytkownika w Customer Insights muszą mieć uprawnienia **Czytelnik** w *grupie zasobów*, w której znajduje się obszar roboczy Synapse Analytics. Ponadto jednostka usługi i użytkownik w obszarze roboczym Synapse Analytics potrzebują uprawnień **Administrator Synapse**. 
+
 1. Przejdź do **Admin** > **Połączenia**.
 
 1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Azure Synapse Analytics**, aby skonfigurować połączenie, lub wybierz opcję **Konfiguruj** w kafelku **Azure Synapse Analytics**, aby skonfigurować połączenie.
@@ -63,7 +65,7 @@ W Azure:
 
 ### <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby skonfigurować eksport z udostępnionym połączeniem, potrzebujesz co najmniej uprawnień **Współautor** w Customer Insights. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
 
 1. Przejdź do **Dane** > **Eksporty**.
 
@@ -82,6 +84,8 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
 Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand).
+
+Aby wysyłać zapytania do danych, które zostały wyeksportowane do Synapse Analytics, musisz mieć dostęp do **Czytelnik danych obiektów blob magazynu** do docelowego magazynu w obszarze roboczym eksportu. 
 
 ### <a name="update-an-export"></a>Aktualizowanie eksportu
 

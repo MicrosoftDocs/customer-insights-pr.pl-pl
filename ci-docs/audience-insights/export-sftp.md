@@ -1,5 +1,5 @@
 ---
-title: Eksportuj dane Customer Insights na serwer SFTP (Video)
+title: Eksportuj dane Customer Insights na serwer SFTP (zawiera wideo)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do lokalizacji SFTP.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904142"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934900"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportowanie segmentów i innych danych do SFTP (wersja zapoznawcza)
 
@@ -28,6 +28,7 @@ Danych klientów można używać w aplikacjach innych firm, eksportując je do l
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
+- Miejsca docelowe SFTP za zaporami nie są obecnie obsługiwane. 
 - Czas wykonania eksportu zależy od wydajności systemu. Zalecamy dwa rdzenie procesora i 1 GB pamięci jako minimalną konfigurację serwera. 
 - Eksportowanie jednostek z maksymalnie 100 milionami profili klientów może zająć 90 minut przy użyciu zalecanej minimalnej konfiguracji dwóch rdzeni procesora i 1 Gb pamięci. 
 

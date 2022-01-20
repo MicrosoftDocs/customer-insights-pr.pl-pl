@@ -80,7 +80,7 @@
       items:
         - name: Wzbogacanie profilów klientów
           href: audience-insights/enrichment-hub.md
-        - name: Koligacje marki i zainteresowania
+        - name: Marki i zainteresowania
           href: audience-insights/enrichment-microsoft.md
         - name: Rozszerzone adresy
           href: audience-insights/enrichment-enhanced-addresses.md
@@ -130,6 +130,8 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Przewidywanie rezygnacji z transakcji
               href: audience-insights/predict-transactional-churn.md
+            - name: Analizowanie opinii klienta
+              href: audience-insights/sentiment-analysis.md
             - name: Używanie modeli niestandardowych z usługi Uczenie maszynowe Azure
               href: audience-insights/custom-models.md
             - name: Uzupełnij częściowo brakujące dane

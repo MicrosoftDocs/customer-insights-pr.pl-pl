@@ -1,7 +1,7 @@
 ---
 title: Rozszerzanie danych firmowych
 description: Wzbogać i normalizuj dane firmy za pomocą modeli Microsoft.
-ms.date: 11/15/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
-ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
+ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "7813931"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927595"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Wzbogacanie profilów firmy o ulepszone dane firmowe
 
@@ -83,6 +83,16 @@ Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Możn
 Po zakończeniu procesu wzbogacania można przejrzeć dane nowo wzbogacone profile klientów w **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
 
 Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
+
+### <a name="overview-card"></a>Karta przeglądowa
+
+Na karcie przeglądowej są szczegółowe informacje dotyczące zakresu wzbogacania. 
+
+* **Klienci przetwarzani i zmieniani**: Liczba profili klientów, które zostały pomyślnie wzbogacone.
+
+* **Klienci przetwarzani i niezmieniani**: Liczba profili klientów, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
+
+* **Klienci nieprzetwarzani i niezmieniani**: Liczba profili, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
 
 ## <a name="next-steps"></a>Następne kroki
 
