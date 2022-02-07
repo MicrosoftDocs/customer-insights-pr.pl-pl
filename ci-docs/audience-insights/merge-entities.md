@@ -1,7 +1,7 @@
 ---
 title: Scalanie encji w przypadku zjednoczenia danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732785"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Scalanie encji
 
 Faza scalania jest ostatnią fazą procesu unifikacji danych. Jego zastosowanie powoduje uzgadnianie danych powodujących konflikty. Przykłady danych powodujących konflikty mogą zawierać nazwy klientów znalezione w dwóch zestawach danych, które są wyświetlane w różny sposób w każdym miejscu („Grant Marshall” i „Grant Marshal”) lub numery telefoniczne, który różnią się formatem (617-803-091X a 617803091X). Scalanie tych niezgodnych danych jest wykonywane na podstawie poszczególnych atrybutów.
@@ -99,11 +94,13 @@ Na stronie **Scalanie** wybierz pozycję **Wykluczone pola**, aby wyświetlić l
 
 1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
 
-## <a name="manually-combine-fields"></a>Ręczne łączenie pól
+## <a name="combine-fields-manually"></a>Ręcznie połącz grupę pól
 
-Określ ręcznie łączony atrybut. 
+Określ ręcznie łączony atrybut.
 
-1. Na stronie **Scalanie** wybierz opcję **Połącz pola**.
+1. Na stronie **Scal** wybierz opcję **Połącz**.
+
+1. Wybierz opcję **Pola**.
 
 1. Zwycięskie zasady scalania można określić na liście rozwijanej **Połącz pola wg**.
 
@@ -114,6 +111,26 @@ Określ ręcznie łączony atrybut.
 1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
 
 1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
+
+## <a name="combine-a-group-of-fields"></a>Połącz grupę pól
+
+Traktuj zgrupowane grupy pól jako jedną jednostkę. Na przykład jeśli nasze rekordy zawierają pola Address1, Address2, miejscowość, województwo i kod pocztowy. Prawdopodobnie nie chcemy scalać w innym rekordzie z adresem Address2, myśląc, że dane będą pełniejsze
+
+1. Na stronie **Scal** wybierz opcję **Połącz**.
+
+1. Wybierz opcję **Grupa pól**.
+
+1. Zwycięskie zasady scalania można określić na liście rozwijanej **Ustaw kolejność grup według**.
+
+1. Wybierz opcję **Dodaj** i określ, czy do pól chcesz dodać więcej pól, czy dodatkowe grupy.
+
+1. Podaj **Nazwę** i **Nazwę wyjściową** dla każdego połączonego pola.
+
+1. Podaj **Nazwę** grupy pól. 
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
 
 ## <a name="change-the-order-of-fields"></a>Zmiana kolejności pól
 

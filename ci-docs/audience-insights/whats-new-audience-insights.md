@@ -1,7 +1,7 @@
 ---
 title: Nowe i nadchodzące funkcje
-description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 12/02/2021
+description: 'Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,11 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884275"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Z przyjemnością informujemy o najnowszych aktualizacjach! W tym artykule podsumowano publiczne wersje zapoznawcze, ulepszenia ogólnej dostępności oraz aktualizacje funkcji. Aby zobaczyć długofalowe plany dotyczące funkcji, zapoznaj się z [planami wydań rozwiązań Dynamics 365 i Power Platform](/dynamics365/release-plans/).
 
@@ -27,7 +22,51 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
-## <a name="november-2021-updates"></a>Aktualizacje z listopada 2021
+
+## <a name="december-2021-updates"></a>Aktualizacje z grudnia 2021 r.
+
+Aktualizacje w grudniu 2021 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Dzienniki rozwiązania Customer Insights do usługi Azure Monitor
+
+Customer Insights zapewnia bezpośrednią integrację z Azure Monitor. Ta funkcja obejmuje zdarzenia inspekcji i zdarzenia operacyjne. Logi zasobów Azure Monitor pozwalają monitorować i wysyłać logi do Azure Storage, Azure Log Analytics lub strumieniować je do Azure Event Hubs.
+
+Aby uzyskać więcej informacji, zobacz [Przesyłanie dalej dzienników w rozwiązaniu Dynamics 365 Customer Insights za pomocą usługi Azure Monitor (wersja zapoznawcza)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Wzbogać profile klientów o dane dotyczące zaangażowania
+
+Wykorzystaj dane z usługi Microsoft Office 365, aby wzbogacić profile kont klientów o spostrzeżenia dotyczące zaangażowania za pośrednictwem aplikacji Office 365. Dane dotyczące zaangażowania składają się z aktywności e-mailowej i aktywności na spotkaniach, które są agregowane na poziomie konta. Na przykład liczba maili z konta biznesowego lub liczba spotkań z tego konta. Żadne dane dotyczące poszczególnych użytkowników nie są udostępniane. To wzbogacenie jest dostępne w następujących regionach: Wielka Brytania, Europa, Ameryka Północna.
+
+Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów przy użyciu danych zaangażowania (wersja zapoznawcza)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Zaawansowane funkcje ujednolicania danych
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Włączanie zasad rozwiązywania konfliktów na poziomie poszczególnych atrybutów
+
+W przypadku deduplikowania rekordów klientów w ramach encji może nie być potrzeby wybrania pełnego rekordu jako zwycięzcy. Teraz można scalać najlepsze pola z różnych rekordów na podstawie reguł dla każdego atrybutu. Można na przykład zachować najnowszą wiadomość e-mail ORAZ najbardziej pełny adres z różnych rekordów. 
+
+Obecnie użytkownik może definiować oddzielne reguły scalania dla poszczególnych atrybutów podczas deduplikowania i scalania rekordów w obrębie jednej encji. Wcześniej można było wybrać tylko jedną regułę scalania (zachowanie rekordów na podstawie pełnych najnowszych danych), która była stosowana na poziomie rekordu do wszystkich atrybutów. Nie jest to idealne, jeśli niektóre dane do przechowywania znajdują się w rekordzie A, a inne dobre dane znajdują się w rekordzie B.
+
+Aby uzyskać więcej informacji, zobacz [Definiowanie deduplikacji dla encji dopasowania](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Reguły niestandardowe do dopasowania
+
+Czasami należy określić wyjątek do ogólnych reguł, by rekordy NIE zostały dopasowane. Tak się może zdarzyć, jeśli wiele osób udostępnia wystarczającą ilość informacji, aby system dopasował je do jednej osoby. Można na przykład udostępnić to samo nazwisko, adres zamieszkania w tej samej miejscowości i udostępnić datę urodzenia.
+
+Wyjątki zastosowane do reguł ujednolicania pomogą w uniknięciu nieprawidłowego ujednolicania danych. Do reguły można dodać kilka wyjątków.
+
+Aby uzyskać więcej informacji, zobacz [Dodawanie wyjątku do reguły](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Podawanie dodatkowych zasad rozwiązywania konfliktów i włączanie grupowania atrybutów
+
+Ta funkcja umożliwia traktowania grup pól jako jednej jednostki. Na przykład jeśli nasze rekordy zawierają pola Address1, Address2, miejscowość, województwo i kod pocztowy. Prawdopodobnie nie chcemy scalać w innym rekordzie z adresem Address2, myśląc, że dane będą pełniejsze.
+
+Teraz można połączyć grupę pokrewnych pól i zastosować do grupy jedną zasadę scalania. 
+
+Aby uzyskać więcej informacji, zobacz temat [Łączenie grupy pól](merge-entities.md#combine-a-group-of-fields).
+
+
+## <a name="november-2021-updates"></a>Aktualizacje z listopada 2021 r.
 
 Aktualizacje w listopadzie 2021 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
 

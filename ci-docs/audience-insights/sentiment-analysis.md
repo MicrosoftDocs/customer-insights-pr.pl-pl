@@ -1,6 +1,6 @@
 ---
-title: Analiza semantyczna dla opinii klientów
-description: Dowiedz się, jak użyć modelu analizy opinii na podstawie opinii klientów w programie Dynamics 365 Customer Insights.
+title: Analiza opinii dla opinii klientów
+description: 'Dowiedz się, jak użyć modelu analizy opinii na podstawie opinii klientów w programie Dynamics 365 Customer Insights.'
 ms.date: 12/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 05e530a1bc96c5fd9c7a3bc0197563d8fe330387
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951087"
 ---
+
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analizowanie opinii klienta (wersja zapoznawcza)
 
 W dzisiejszych czasach klienci oczekują wysokiej jakości produktów, usług i doświadczeń. Szczególnie klienci, którzy dzielą się swoimi opiniami. Analizowanie coraz większej ilości danych bez obniżania dokładności i wyższych kosztów pracy jest bardzo trudne dla organizacji. Dynamics 365 Customer Insights oferuje model analizy opinii klientów umożliwiający organizacjom analizowanie ich danych dokładniej i przy niższej cenie.
@@ -38,7 +33,7 @@ Aby upewnić się, że możesz zaufać wynikom modeli, zapewniamy przejrzyste in
 
 Używamy dwóch **modeli przetwarzania języka naturalnego (NLP)**: pierwszy przypisuje każdemu komentarzowi opinii ocenę tonacji. Drugi model wiąże każdą informację zwrotną ze wszystkimi mającymi zastosowanie aspektami biznesowymi. Modele są szkolone na danych publicznych ze źródeł w mediach społecznościowych, handlu detalicznym, restauracjach, produktach konsumenckich i branży motoryzacyjnej.    
   
-- Wstępnie zdefiniowane aspekty biznesowe modelu do powiązania z danymi zwrotnymi obejmują:
+Wstępnie zdefiniowane aspekty biznesowe modelu do powiązania z danymi zwrotnymi obejmują:
 -   Zarządzanie klientami
 -   Finalizacja zakupu i płatność
 -   Obsługa klienta

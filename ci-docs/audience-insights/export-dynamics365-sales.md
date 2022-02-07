@@ -1,6 +1,6 @@
 ---
 title: Eksport danych z Customer Insights do Dynamics 365 Sales
-description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Dynamics 365 Sales.
+description: 'Dowiedz się, jak skonfigurować połączenie i eksport do usługi Dynamics 365 Sales.'
 ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,11 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8a0654ac062e41ef7eb52a34b1ae169e28b389f86875eead774422fef60f2232
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031550"
 ---
+
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Używanie segmentów w usłudze Dynamics 365 Sales (wersja zapoznawcza)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Używając danych klientów, możesz tworzyć listy marketingowe oraz przepływy pracy kolejnych czynności, a także wysyłać materiały promocyjne z poziomu rozwiązania Dynamics 365 Sales.
 

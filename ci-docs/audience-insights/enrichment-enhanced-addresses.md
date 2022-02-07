@@ -1,7 +1,7 @@
 ---
 title: Ulepszenia wzbogacania adresu (zawiera wideo)
 description: Wzbogacaj i normalizuj informacje adresowe z profili klientów za pomocą modeli firmy Microsoft.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934936"
 ---
+
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Wzbogacenie profili klientów za pomocą ulepszonych adresów
 
 Adresy w Twoich danych mogą być nieustrukturyzowane, niekompletne lub nieprawidłowe. Użyj modeli firmy Microsoft do normalizacji i wzbogacenia adresów do [formatu Common Data Model](/common-data-model/schema/core/applicationcommon/address) w celu lepszej dokładności i głębszej analizy.
@@ -100,17 +95,17 @@ Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Możn
 
 Po zakończeniu procesu wzbogacania można przejrzeć dane nowo wzbogacone profile klientów w **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
 
-Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
+Możesz zobaczyć przykładowe dane wzbogacone w kafelku **Podglądu wzbogaconych klientów**. Wybierz opcję **Zobacz więcej** i wybierz kartę **Dane**, aby uzyskać dostęp do szczegółowego widoku każdego z wzbogaconych profilów.
 
 ### <a name="overview-card"></a>Karta przeglądowa
 
 Na karcie przeglądowej są szczegółowe informacje dotyczące zakresu wzbogacania. 
 
-* **Klienci przetwarzani i zmieniani**: Liczba profili klientów, które zostały pomyślnie wzbogacone.
+* **Adresy przetwarzane i zmieniane**: Liczba profili klientów z adresami, które zostały pomyślnie wzbogacone.
 
-* **Klienci przetwarzani i niezmieniani**: Liczba profili klientów, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
+* **Adresy przetwarzane i niezmieniane**: Liczba profili klientów z adresami, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
 
-* **Klienci nieprzetwarzani i niezmieniani**: Liczba profili, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
+* **Adresy nieprzetworzone i niezmienione**: Liczba profili klientów z adresami, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
 
 ## <a name="next-steps"></a>Następne kroki
 

@@ -1,7 +1,7 @@
 ---
 title: Dopasuj encji do ujednolicenia danych
 description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 11/24/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-match
-ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
-ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "7863824"
+  - ci-match
 ---
+
 # <a name="match-entities"></a>Dopasowywanie encji
 
 Faza dopasowania określa sposób łączenia zestawów danych w ujednolicony zestaw danych profilu klienta. Po zakończeniu [kroku mapowania](map-entities.md) w procesie ujednolicania danych można dopasować je do swoich encji. Faza dopasowania wymaga co najmniej dwóch zamapowanych encji.
@@ -35,7 +30,7 @@ Każde dopasowanie ujednolica co najmniej dwie encje w postaci jednej skonsolido
 
 :::image type="content" source="media/match-page.png" alt-text="Zrzut ekranu przedstawiający stronę dopasowania w obszarze ujednolicania w procesie ujednolicania danych.":::
   
-Encja podstawowa *eCommerce:eCommerceContacts* jest dopasowywana do następnej encji *LoyaltyScheme:loyCustomers*. Zestaw danych powstający jako wynik pierwszego kroku dopasowania jest dopasowany do następującej encji, jeśli istnieją więcej niż dwie encje.
+Encja podstawowa *eCommerce:eCommerceContacts* jest dopasowywana do następnej encji *LoyaltyScheme:loyCustomers*. Zestaw danych będący wynikiem pierwszego kroku dopasowania jest dopasowany do następującej encji, jeśli użytkownik ma ponad dwie encje.
 
 > [!IMPORTANT]
 > Encja wybrana jako encja podstawowa będzie służyć jako podstawa dla ujednoliconego zestawu danych profilów. Do tej encji zostaną dodane dodatkowe encje wybrane podczas fazy dopasowania. Nie oznacza to, że encja ujednolicona będzie zawierać *wszystkie* dane zawarte w tej encji.
@@ -108,7 +103,7 @@ Reguły dopasowania reprezentują zestawy warunków. Aby dopasować encje wedłu
 
 ### <a name="change-the-entity-order-in-match-rules"></a>Zmienianie kolejności encji w regułach dopasowania
 
-Istnieje możliwość zmiany kolejności encji dla reguł dopasowania w celu zmiany kolejności ich przetwarzania. Reguły kolidujące ze zmienioną kolejnością zostaną usunięte. Trzeba ponownie utworzyć usunięte reguły przy użyciu zaktualizowanej konfiguracji.
+Można zmienić kolejność encji dla reguł dopasowania, aby zmienić kolejność, w jakiej są przetwarzane. Reguły kolidujące ze zmienioną kolejnością zostaną usunięte. Trzeba ponownie utworzyć usunięte reguły przy użyciu zaktualizowanej konfiguracji.
 
 1. Przejdź do **Dane** > **Unifikuj** > **Dopasuj** i wybierz opcję **Edytuj**.
 
@@ -130,17 +125,21 @@ Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie
 
 1. Przejdź do sekcji **Dane** > **Ujednolicanie** > **Dopasuj**.
 
-1. W sekcji **Scal duplikaty** wybierz opcję **Ustaw encje**. Jeśli reguły deduplikacji zostały już utworzone, wybierz opcję **Edytuj**.
+1. W sekcji **Szczegółowe informacje o deduplikowanych rekordach** zaznacz opcję **Ustawianie encji**. Jeśli reguły deduplikacji zostały już utworzone, wybierz opcję **Edytuj**.
 
 1. W okienku **Preferencje scalania** wybierz encje, dla których chcesz uruchomić deduplikację.
 
-1. Określ sposób łączenia zduplikowanych rekordów i wybierz jedną z trzech opcji:
-   - **Najbardziej wypełnione**: identyfikuje rekord z największą liczbą wypełnionych pól atrybutów jako rekord zwycięzcy. Jest to opcja domyślna scalania.
-   - **Najnowsze**: Identyfikuje rekord zwycięzcy na podstawie aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
-   - **Najstarsze**: Identyfikuje rekord zwycięzcy na podstawie najmniejszej aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
+   1. Określ sposób łączenia zduplikowanych rekordów i wybierz jedną z trzech opcji:
+      - **Najbardziej wypełnione**: identyfikuje rekord z największą liczbą wypełnionych pól atrybutów jako rekord zwycięzcy. Jest to opcja domyślna scalania.
+      - **Najnowsze**: Identyfikuje rekord zwycięzcy na podstawie aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
+      - **Najstarsze**: Identyfikuje rekord zwycięzcy na podstawie najmniejszej aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
+
+   1. Opcjonalnie wybierz opcję **Zaawansowane**, aby zdefiniować reguły deduplikacji dla poszczególnych atrybutów obiektu. Można na przykład zachować najnowszą wiadomość e-mail ORAZ najbardziej pełny adres z różnych rekordów. Rozwiń encję, aby wyświetlić wszystkie jej atrybuty i zdefiniuj opcję używaną dla poszczególnych atrybutów. Jeśli wybierzesz opcję opartą na niedawności, musisz również określić pole daty/czasu definiujące niedawność. 
  
-   > [!div class="mx-imgBorder"]
-   > ![Reguły deduplikacji krok 1.](media/match-selfconflation.png "Reguły deduplikacji krok 1")
+      > [!div class="mx-imgBorder"]
+      > ![Reguły deduplikacji krok 1.](media/match-selfconflation.png "Reguły deduplikacji krok 1")
+
+   1. Wybierz opcję **Wykonane**, aby zastosować preferencje dotyczące korespondencji seryjnej w celu powielania.
  
 1. Po wybraniu encji i ustawieniu ich preferencji scalania wybierz opcję **Dodaj regułę** w celu zdefiniowania reguł deduplikacji na poziomie encji.
    - Opcja **Wybierz pole** powoduje wyświetlenie listy wszystkich dostępnych pól z tej encji. Wybierz pole, które ma być sprawdzane pod kątem duplikatów. Wybierz pola, które będą unikatowe dla każdego pojedynczego klienta. Może to być na przykład adres e-mail lub kombinacja imienia i nazwiska, miasta oraz numeru telefonu.
@@ -158,7 +157,7 @@ Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie
 
 1. Wszystkie niestandardowe reguły dopasowania zdefiniowane w te sposób zastępują reguły deduplikacji. Jeśli reguła deduplikacji identyfikuje pasujące rekordy, a niestandardowa reguła dopasowania jest ustawiona tak, aby nigdy nie pasować do tych rekordów, te dwa rekordy nie zostaną dopasowane.
 
-1. Po [uruchomieniu procesu dopasowywania](#run-the-match-process) na kafelkach kluczowych metryk zostaną wyświetlone dane statystyczne deduplikacji.
+1. Po [zakończeniu procesu dopasowania](#run-the-match-process) statystyki deduplikacji są dostępne w kluczowych kafelkach metryk.
 
 ### <a name="deduplication-output-as-an-entity"></a>Deduplikacja wyjściowa jako encja
 
@@ -222,7 +221,23 @@ Większość parametrów dopasowania można ponownie skonfigurować i odpowiedni
 
 - **Usuń regułę**, wybierając symbol **Usuń**.
 
-## <a name="specify-custom-match-conditions"></a>Określanie niestandardowych warunków dopasowania
+## <a name="advanced-options"></a>Opcje zaawansowane
+
+### <a name="add-exceptions-to-a-rule"></a>Dodawanie wyjątków do reguły
+
+W większości przypadków encja dopasowania potencjalnych klientów do unikatowych profilów użytkowników ze skonsolidowanych danymi. Aby dynamicznie rozwiązać rzadkie przypadki wyników fałszywie dodatnich i fałszywie ujemnych, można zdefiniować wyjątki dla reguły dopasowania. Wyjątki są stosowanie po przetworzeniu reguł dopasowania w celu uniknięcia dopasowania wszystkich rekordów, które spełniają kryteria wyjątków.
+
+Jeśli na przykład reguła dopasowania zawiera nazwisko, miejscowość i datę urodzenia, system będzie identyfikować bliźniacze wpisy z tym samym nazwiskiem, zamieszkałe w tej samej miejscowości, jako ten sam profil. Można określić wyjątek, który nie pasuje do profilów, jeśli imiona w encji, które są łączone, nie są takie same.
+
+1. Przejdź do obszaru **Dane** > **Ujednolicanie** > **Dopasuj** i wybierz pozycję **Edytuj** w regule, do której chcesz dodać warunki.
+
+1. W okienku **Edytuj regułę** wybierz opcję **Dodaj wyjątek**.
+
+1. Określ kryteria wyjątków. 
+
+1. Wybierz **Gotowe**, aby zapisać zasadę.
+
+### <a name="specify-custom-match-conditions"></a>Określanie niestandardowych warunków dopasowania
 
 Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne są cztery opcje: 
 
@@ -241,7 +256,7 @@ Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne
 
 1. Z listy rozwijanej **Typ niestandardowy** wybierz opcję dopasowania niestandardowego i wybierz opcję **Pobierz szablon**. Dla każdej opcji dopasowania trzeba mieć osobny szablon.
 
-1. Pobrania pliku szablonu. Otwórz go i wprowadź szczegóły. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
+1. Otwórz pobrany plik szablonu i wypełnij szczegóły. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
     - Entity1: Sprzedaż
     - Entity1Key: 12345
     - Encja2: Kontakt
@@ -268,7 +283,7 @@ Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne
 
 1. Wybierz opcję **Uruchom** na stronie **Dopasowanie**, aby rozpocząć proces dopasowywania. Inne określone reguły dopasowania zostaną zastąpione przez konfigurację dopasowania niestandardowego.
 
-### <a name="known-issues"></a>Znane problemy
+#### <a name="known-issues"></a>Znane problemy
 
 - Samołączenie nie zawiera znormalizowanych danych w jednostkach deduplikacji. Stosuje jednak normalizację wewnętrznie podczas deduplikacji. Jest to normalne i prawidłowe dla wszystkich normalizacji. 
 - Jeśli ustawienie typu semantycznego zostanie usunięte na etapie **Mapa** w przypadku, gdy reguła dopasowania używa mapowania aliasu lub niestandardowego pominięcia, normalizacja nie zostanie zastosowana. Dzieje się tak tylko w przypadku, gdy po skonfigurowaniu normalizacji w regule dopasowania zostanie wyczyszczony typ semantyczny, ponieważ będzie on nieznany.

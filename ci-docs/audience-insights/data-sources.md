@@ -9,16 +9,11 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977842"
 ---
+
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Funkcja wglądu w odbiorców w Dynamics 365 Customer Insights łączy się z danymi z szerokiego zestawu źródeł. Łączenie się ze źródłem danych jest często określane jako proces *pozyskiwania danych*. Po pozyskaniu danych można je [ujednolicić](data-unification.md) i podejmować na nich akcje.
 
@@ -28,7 +23,7 @@ Zapoznaj się ze szczegółowymi artykułami, aby dowiedzieć się, jak dodać �
 
 Możesz dodać następujące źródła danych:
 
-- [Łączniki Power Query](connect-power-query.md)
+- [Łączniki usługi Power Query](connect-power-query.md)
 - [Common Data Model](connect-common-data-model.md)
 - [Microsoft Dataverse lake](connect-dataverse-managed-lake.md)
 

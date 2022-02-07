@@ -9,16 +9,11 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 66d846c3e9404ca7993cae742ea6e16833233fba
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7380756"
 ---
+
 # <a name="entity-schemas-in-common-data-model"></a>Schematy encji w Common Data Model
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 [Common Data Model](/common-data-model/) to deklaratywna specyfikacja, i definicja standardowych encji reprezentujących powszechne koncepcje i działania stosowane w działalności biznesowej i aplikacjach dotyczących wydajności. Ten model jest rozszerzany również na dane z obserwacji i analiz. Common Data Model zawiera dobrze zdefiniowane, modułowe i rozszerzalne jednostki biznesowe, takie jak Konto, Jednostka, Sprawa, Kontakt, Potencjalny Klient, Szansa, czy Produkt, a także interakcje z dostawcami, pracownikami i klientami, na przykład działania i umowy dotyczące poziomu usług. Każdy użytkownik może tworzyć i rozszerzać definicje Common Data Model, aby zbierać dodatkowe pomysły dotyczące prowadzonej działalności.
 
