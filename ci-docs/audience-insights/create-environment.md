@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
-ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
+ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2021
-ms.locfileid: "7892351"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088126"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Tworzenie środowiska w aplikacji Wyniki analiz odbiorców
 
@@ -28,7 +28,7 @@ Organizacje mogą utworzyć *dwa* środowiska dla każdej licencji usługi Custo
 
 ## <a name="create-a-new-environment"></a>Utwórz nowe środowisko
 
-Po zakupie licencji subskrypcyjnej dla usługi Customer Insights administrator globalny dzierżawcy usługi Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. Przejdź do [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start), aby rozpocząć. 
+Po zakupieniu licencji subskrypcji aplikacji Customer Insights administrator globalny dzierżawcy platformy Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. Przejdź do [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start), aby rozpocząć. 
 
 Środowisko nadzorowane pomaga w zbieraniu wszystkich wymaganych informacji na temat nowego środowiska. Aby tworzyć środowiska i zarządzać nimi, musisz mieć [uprawnienia administratora](permissions.md) w aplikacji Wyniki analiz odbiorców.
 
@@ -64,7 +64,7 @@ Zapisując dane w usłudze Azure Data Lake Storage, wyrażasz zgodę na to, że 
 > Obecnie program Customer Insights obsługuje następujące elementy:
 > - Pozyskane encje z przepływów danych usługi Power BI przechowywane usłudze Data Lake zarządzanej przez funkcję Microsoft Dataverse.  
 > - Konta usługi Azure Data Lake Storage z tego samego regionu platformy Azure, który został wybrany podczas tworzenia środowiska.
-> - Konta usługi Azure Data Lake Storage z włączonymi *hierarchicznymi obszarami nazw*.
+> - Konta usługi Azure Data Lake Storage Gen2 z włączoną *hierarchiczną przestrzenią nazw*. Konta magazynu usługi Azure Data Lake Gen1 nie są obsługiwane.
 
 W przypadku Azure Data Lake Storage można wybrać opcję opartą na zasobach i opartą na subskrypcji opcję uwierzytelniania. Aby uzyskać więcej informacji, zobacz [Łączenie z kontem Azure Data Lake Storage przy użyciu głównej usługi Azure](connect-service-principal.md). Nazwą **kontenera** będzie `customerinsights` i nie będzie można jej zmienić.
 

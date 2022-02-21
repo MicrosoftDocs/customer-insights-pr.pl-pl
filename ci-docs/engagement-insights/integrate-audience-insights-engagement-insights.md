@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: db38778c0da862e119f9b374e07c82ead0d3a4f2
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 6aadd6b5018f63362f86c0e3e3ce085e94c47391
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645595"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8116027"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 
@@ -25,7 +25,7 @@ Użyj ujednoliconych profilów i segmentów z wyników analiz odbiorców, by uzy
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Wyniki analiz odbiorców muszą być przechowywane w kontach usługi Azure Data Lake Storage, których użytkownik jest właścicielem, lub w [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md) — zarządzanym repozytorium data lake. 
+- Wyniki analiz odbiorców muszą być przechowywane na kontach usługi Azure Data Lake Storage, których jesteś właścicielem, lub w usłudze [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro) &ndash; zarządzanym repozytorium typu data lake. 
 - Ponadto środowisko szczegółowych informacji o odbiorcach powinno mieć skojarzone środowisko Dataverse. Jeśli w tym środowisku jest również wykorzystywane miejsce do magazynowania danych w usłudze Dataverse, należy sprawdzić opcję **Włącz udostępnianie danych** w szczegółowych informacjach o odbiorcach. Aby uzyskać więcej informacji, zobacz temat [Tworzenie i konfigurowanie środowiska w aplikacji Wyniki analiz odbiorców](../audience-insights/create-environment.md).
 - Musisz mieć uprawnienia administratora zarówno w wynikach analiz interakcji, jak i wynikach analiz odbiorców.
 - Połączone środowiska muszą znajdować się w tym samym regionie geograficznym.

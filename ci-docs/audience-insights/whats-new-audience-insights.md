@@ -1,7 +1,7 @@
 ---
 title: Nowe i nadchodzące funkcje
-description: 'Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.'
-ms.date: 01/27/2022
+description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
+ms.date: 03/02/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,8 +9,13 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
+ms.openlocfilehash: 0e25ed4e4e25b130fda410d4ba1c78caded7f0f9
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088298"
 ---
-
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
 
 
@@ -21,6 +26,17 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="january-2022-updates"></a>Aktualizacje ze stycznia 2022
+
+Aktualizacje w styczniu 2022 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="sentiment-analysis-of-your-customers-feedback"></a>Analiza opinii dla opinii klienta
+
+Aplikacja Customer Insights udostępnia nową funkcję wykorzystującą technologią, która umożliwia syntetyzowanie opinii klientów i identyfikowanie określonych aspektów działalności jako szans sprzedaży na potrzeby ukierunkowanych ulepszeń. Analizując pisemne opinie klientów, można uzyskać dokładne szczegółowe informacje przy stosunkowo niewielkim koszcie. Analizy opinii obsługiwane przez modele przetwarzania języka naturalnego (NLP), które generują dwa typy pochodnych szczegółowych informacji dla każdego identyfikatora klienta. Wynik opinii (od –5 do 5) i lista odpowiednich aspektów biznesowych. 
+
+Aby uzyskać więcej informacji, zobacz [Analizowanie opinii klienta (wersja zapoznawcza)](sentiment-analysis.md).
 
 
 ## <a name="december-2021-updates"></a>Aktualizacje z grudnia 2021 r.
@@ -37,7 +53,7 @@ Aby uzyskać więcej informacji, zobacz [Przesyłanie dalej dzienników w rozwi�
 
 Wykorzystaj dane z usługi Microsoft Office 365, aby wzbogacić profile kont klientów o spostrzeżenia dotyczące zaangażowania za pośrednictwem aplikacji Office 365. Dane dotyczące zaangażowania składają się z aktywności e-mailowej i aktywności na spotkaniach, które są agregowane na poziomie konta. Na przykład liczba maili z konta biznesowego lub liczba spotkań z tego konta. Żadne dane dotyczące poszczególnych użytkowników nie są udostępniane. To wzbogacenie jest dostępne w następujących regionach: Wielka Brytania, Europa, Ameryka Północna.
 
-Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów przy użyciu danych zaangażowania (wersja zapoznawcza)](enrichment-office.md)
+Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów przy użyciu danych zaangażowania (wersja zapoznawcza)](enrichment-office.md).
 
 ### <a name="advanced-data-unification-features"></a>Zaawansowane funkcje ujednolicania danych
 

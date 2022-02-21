@@ -2,6 +2,22 @@
   href: index.yml
 - name: Przegląd produktu
   href: overview.md
+- name: Katalog szkoleń
+  items:
+    - name: Rozpoczynanie pracy
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Pozyskiwanie danych
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Utwórz ujednolicony profil klienta
+      href: /learn/modules/unified-customer-profile/
+    - name: Praca z wynikami analiz odbiorców
+      href: /learn/modules/working-with-customer-insights/
+    - name: Wzbogacanie danych i tworzenie przewidywań
+      href: /learn/modules/enrich-data/
+    - name: Zarządzanie połączeniami zewnętrznymi
+      href: /learn/modules/configure-third-party-connections/
+    - name: Administrowanie Customer Insights
+      href: /learn/modules/administer-customer-data-platform/
 - name: Bezpłatna wersja próbna
   items:
     - name: Rejestracja w celu uzyskania wersji próbnej
@@ -30,21 +46,11 @@
           href: audience-insights/home.md
     - name: Praca z klientami biznesowymi
       href: audience-insights/work-with-business-accounts.md
-    - name: Zapoznaj się z modułami
-      items:
-        - name: Pozyskiwanie danych
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Utwórz ujednolicony profil klienta
-          href: /learn/modules/unified-customer-profile/
-        - name: Praca z aplikacją
-          href: /learn/modules/working-with-customer-insights/
-        - name: Wzbogacanie danych i prognoz
-          href: /learn/modules/enrich-data/
     - name: Źródła danych
       items:
         - name: Omówienie źródeł danych
           href: audience-insights/data-sources.md
-        - name: Dodawanie źródeł danych za pomocą łączników Power Query
+        - name: Dodawanie źródeł danych za pośrednictwem edytora Power Query
           href: audience-insights/connect-power-query.md
         - name: Dodaj folder Common Data Model jako źródło danych
           href: audience-insights/connect-common-data-model.md
@@ -164,7 +170,7 @@
               href: audience-insights/export-adroll.md
             - name: Autopilot
               href: audience-insights/export-autopilot.md
-            - name: Azure Blob Storage
+            - name: Magazyn obiektów blob Azure
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
@@ -372,3 +378,5 @@
   href: service-limits.md
 - name: Uprawnienia i żądania usługi DSR
   href: dsr-rights-requests.md
+- name: Uzyskiwanie pomocy technicznej
+  href: /power-platform/admin/get-help-support

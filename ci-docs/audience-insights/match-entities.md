@@ -1,7 +1,7 @@
 ---
 title: Dopasuj encji do ujednolicenia danych
 description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 01/28/2022
+ms.date: 02/07/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-match
+- ci-match
+ms.openlocfilehash: 20f21a6601a1a6f13d076878b10c15be947dac9f
+ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/07/2022
+ms.locfileid: "8098848"
 ---
-
 # <a name="match-entities"></a>Dopasowywanie encji
 
 Faza dopasowania określa sposób łączenia zestawów danych w ujednolicony zestaw danych profilu klienta. Po zakończeniu [kroku mapowania](map-entities.md) w procesie ujednolicania danych można dopasować je do swoich encji. Faza dopasowania wymaga co najmniej dwóch zamapowanych encji.
@@ -24,13 +29,7 @@ Strona dopasowania składa się z trzech sekcji:
 
 ## <a name="specify-the-match-order"></a>Określ kolejność dopasowywania.
 
-Przejdź do opcji **Dane** > **Ujednolicanie** > **Dopasowywanie** i wybierz **Ustaw kolejność** , aby rozpocząć etap dopasowania.
-
-Każde dopasowanie ujednolica co najmniej dwie encje w postaci jednej skonsolidowanej encji. Jednocześnie są w nim zachowywane unikatowe rekordy klientów. Na przykład jako encję podstawową wybrano dwie encje: **eCommerce:eCommerceContacts**, a jako drugą encję wybrano encję **LoyaltyScheme:loyCustomers**. Kolejność encji określa, w jakiej kolejności system będzie próbował dopasować rekordy.
-
-:::image type="content" source="media/match-page.png" alt-text="Zrzut ekranu przedstawiający stronę dopasowania w obszarze ujednolicania w procesie ujednolicania danych.":::
-  
-Encja podstawowa *eCommerce:eCommerceContacts* jest dopasowywana do następnej encji *LoyaltyScheme:loyCustomers*. Zestaw danych będący wynikiem pierwszego kroku dopasowania jest dopasowany do następującej encji, jeśli użytkownik ma ponad dwie encje.
+Każde dopasowanie ujednolica co najmniej dwie encje w postaci jednej skonsolidowanej encji. Jednocześnie są w nim zachowywane unikatowe rekordy klientów. Kolejność dopasowania wskazuje kolejność, w jakiej system próbuje dopasować rekordy.
 
 > [!IMPORTANT]
 > Encja wybrana jako encja podstawowa będzie służyć jako podstawa dla ujednoliconego zestawu danych profilów. Do tej encji zostaną dodane dodatkowe encje wybrane podczas fazy dopasowania. Nie oznacza to, że encja ujednolicona będzie zawierać *wszystkie* dane zawarte w tej encji.
@@ -38,9 +37,18 @@ Encja podstawowa *eCommerce:eCommerceContacts* jest dopasowywana do następnej e
 > Istnieją dwa kwestie, które mogą pomóc w wyborze hierarchii encji:
 >
 > - Jako encję podstawową należy wybrać encję o najbardziej kompletnych i wiarygodnych danych profilów dotyczących klientów.
-> - Jako encję podstawową należy wybrać encję z kilkoma atrybutami powiązanymi z innymi encjami (np. imię i nazwisko, numer telefonu lub adres e-mail).
+> - Wybierz encję, która kilka atrybutów wspólnych z innymi encjami (np. imię i nazwisko, numer telefonu lub adres e-mail), jako encję podstawową.
 
-Po określeniu kolejności dopasowania zobaczysz zdefiniowane pary dopasowania w sekcji **Szczegóły dopasowanych rekordów** w obszarze **Dane** > **Ujednolicanie** > **Dopasuj**. Kluczowe metryki będą puste do momentu zakończenia procesu dopasowania.
+1. Przejdź do opcji **Dane** > **Ujednolicanie** > **Dopasowywanie** i wybierz **Ustaw kolejność** , aby rozpocząć etap dopasowania.
+1. Wybierz pozycję **Kolejność encji**. Na przykład wybierz element **eCommerce:eCommerceContacts** jako encję podstawową i element **LoyaltyScheme:loyCustomers** jako drugą encję. 
+1. Aby uwzględnić każdy rekordy w encji jako unikatowego klienta oraz dopasowywać go do każdej kolejnej encji, wybierz pozycję **Uwzględnij wszystkie**.
+1. Wybierz pozycję **Gotowe**. 
+
+Po określeniu kolejności dopasowywania zdefiniowane pary dopasowań zostaną wyświetlone w obszarze **Szczegóły dopasowanych rekordów** w sekcji **Dane** > **Ujednolicanie** > **Dopasuj**. Kluczowe metryki są puste do momentu zakończenia procesu dopasowywania.
+
+:::image type="content" source="media/match-page.png" alt-text="Zrzut ekranu przedstawiający stronę dopasowania w obszarze ujednolicania w procesie ujednolicania danych.":::
+  
+Encja podstawowa *eCommerce:eCommerceContacts* jest dopasowywana do następnej encji *LoyaltyScheme:loyCustomers*. Zestaw danych będący wynikiem pierwszego kroku dopasowania jest dopasowany do następującej encji, jeśli użytkownik ma ponad dwie encje.
 
 ## <a name="define-rules-for-match-pairs"></a>Definiowanie reguł dla par dopasowania
 
@@ -50,7 +58,7 @@ Ostrzeżenie **Wymaga reguł** obok nazwy encji sugeruje, że dla pary dopasowan
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Zrzut ekranu sekcji Szczegóły dopasowanych rekordów z wyróżnioną kontrolką służącą do dodawania reguł.":::
 
-1. Wybierz opcję **Dodaj reguły** w obszarze encji w sekcji **Szczegóły dopasowanych rekordów**, aby zdefiniować reguły dopasowania.
+1. Wybierz pozycję **Dodaj regułę** dla encji w obszarze **Szczegóły dopasowanych rekordów**, aby zdefiniować reguły dopasowania.
 
 1. W okienku **Tworzenie reguły** skonfiguruj warunki reguły.
 
@@ -61,15 +69,15 @@ Ostrzeżenie **Wymaga reguł** obok nazwy encji sugeruje, że dla pary dopasowan
    - **Encja/pole (drugi wiersz)**: wybierz atrybut powiązany z atrybutem encji określonym w pierwszym wierszu.
 
    - **Normalizuj**: wybierz opcję spośród następujących opcji normalizowania wybranych atrybutów. 
-     - Biały znak: usuwa wszystkie spacje. Ciąg *Hello   World* staje się ciągiem *HelloWorld*.
+     - Cyfry: konwertuje cyfry z innych systemów numerycznych, takie jak cyfry rzymskie, na cyfry arabskie. Ciąg *VIII* staje się ciągiem *8*.
      - Symbole: usuwa wszystkie symbole i znaki specjalne. Ciąg *Head&Shoulder* staje się ciągiem *HeadShoulder*.
      - Tekst na małe litery: konwertuje wszystkie znaki na małe litery. Ciąg *ALL CAPS and Title Case* staje się ciągiem *all caps and title case*.
+     - Typ (telefon, nazwa, adres, organizacja): standaryzuje nazwy, tytuły, numery telefonów, adresy itp. 
      - Unicode na ASCII: konwertuje znaki notacje unicode na znaki ASCII. Ciąg */u00B2* staje się ciągiem *2*.
-     - Cyfry: konwertuje cyfry z innych systemów numerycznych, takie jak cyfry rzymskie, na cyfry arabskie. Ciąg *VIII* staje się ciągiem *8*.
-     - Typy semantyczne: standaryzuje nazwy, tytuły, numery telefonów, adresy itp. 
+     - Biały znak: usuwa wszystkie spacje. Ciąg *Hello   World* staje się ciągiem *HelloWorld*.
 
    - **Dokładność**: ustaw poziom dokładności, która ma być ustawiona dla tego warunku. 
-     - **Podstawowa:** wybierz opcję *Niska*, *Średnia*, *Wysoka* i *Dokładnie*. Wybierz **Dokładny**, aby dopasować tylko te rekordy, które odpowiadają wartościom w 100 procentach. Wybierz jeden z pozostałych poziomów w celu dopasowania do rekordów, które nie są w 100 procentach identyczne.
+     - **Podstawowa:** wybierz opcję *Niska*, *Średnia*, *Wysoka* i *Dokładnie*. Wybierz opcję **Dokładnie**, aby dopasować tylko rekordy zgodne w 100 procentach. Wybierz jeden z pozostałych poziomów w celu dopasowania do rekordów, które nie są w 100 procentach identyczne.
      - **Niestandardowa**: ustaw procent, do którego należy dopasować rekordy. System będzie dopasowywać tylko rekordy przekraczające ten próg.
 
 1. W polu **Nazwa** podaj nazwę reguły.
@@ -92,7 +100,7 @@ Aby dopasować encje tylko wtedy, gdy atrybuty spełniają kilka warunków, doda
 
 ### <a name="add-rules-to-a-match-pair"></a>Dodawanie reguł do pary dopasowania
 
-Reguły dopasowania reprezentują zestawy warunków. Aby dopasować encje według warunków na podstawie wielu atrybutów, dodaj więcej reguł
+Reguły dopasowania reprezentują zestawy warunków. Aby dopasować encje według warunków na podstawie wielu atrybutów, dodaj więcej reguł.
 
 1.  Przejdź do obszaru **Dane** > **Ujednolicanie** > **Dopasuj** i wybierz pozycję **Dodaj regułę** w encji, do której chcesz dodać reguły.
 
@@ -117,7 +125,7 @@ Można zmienić kolejność encji dla reguł dopasowania, aby zmienić kolejnoś
 
 Oprócz [reguł dopasowania między encjami](#define-rules-for-match-pairs) można również określić reguły deduplikacji. *Deduplikacja* to kolejny proces wykonywany podczas dopasowywania rekordów. Identyfikuje on zduplikowane rekordy i scala je w jeden rekord. Rekordy źródłowe są łączone ze scalanym rekordem z innymi identyfikatorami.
 
-Rekordy po deduplikacji zostaną użyte w procesie dopasowywania między encjami. Deduplikacja odbywa się w przypadku poszczególnych obiektów i można ją skonfigurować dla każdej encji używanej w parach dopasowania.
+Rekordy po deduplikacji są używane w procesie dopasowywania między encjami. Deduplikacja odbywa zdarza się w przypadku poszczególnych encji i można ją skonfigurować dla każdej encji używanej w parach dopasowania.
 
 Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie są skonfigurowane, stosowane są reguły zdefiniowane w systemie. Łączą one wszystkie rekordy w jeden rekord przed przekazaniem danych encji do dopasowania między encjami w celu zwiększenia wydajności.
 
@@ -134,7 +142,7 @@ Określenie reguł deduplikacji nie jest obowiązkowe. Jeśli żadne reguły nie
       - **Najnowsze**: Identyfikuje rekord zwycięzcy na podstawie aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
       - **Najstarsze**: Identyfikuje rekord zwycięzcy na podstawie najmniejszej aktualności. Wymaga daty lub pola liczbowego do zdefiniowania aktualności.
 
-   1. Opcjonalnie wybierz opcję **Zaawansowane**, aby zdefiniować reguły deduplikacji dla poszczególnych atrybutów obiektu. Można na przykład zachować najnowszą wiadomość e-mail ORAZ najbardziej pełny adres z różnych rekordów. Rozwiń encję, aby wyświetlić wszystkie jej atrybuty i zdefiniuj opcję używaną dla poszczególnych atrybutów. Jeśli wybierzesz opcję opartą na niedawności, musisz również określić pole daty/czasu definiujące niedawność. 
+   1. Opcjonalnie, aby zdefiniować reguły deduplikacji dla poszczególnych atrybutów encji, wybierz opcję **Zaawansowane**. Można na przykład zachować najnowszą wiadomość e-mail ORAZ najbardziej pełny adres z różnych rekordów. Rozwiń encję, aby wyświetlić wszystkie jej atrybuty i zdefiniuj opcję używaną dla poszczególnych atrybutów. Jeśli wybierzesz opcję opartą na niedawności, musisz również określić pole daty/czasu definiujące niedawność. 
  
       > [!div class="mx-imgBorder"]
       > ![Reguły deduplikacji krok 1.](media/match-selfconflation.png "Reguły deduplikacji krok 1")
