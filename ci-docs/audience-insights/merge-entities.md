@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-merge
+- ci-merge
+ms.openlocfilehash: eb08ab38d23bf22a17896b63c93e6821431b002a
+ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "8046611"
 ---
-
 # <a name="merge-entities"></a>Scalanie encji
 
 Faza scalania jest ostatnią fazą procesu unifikacji danych. Jego zastosowanie powoduje uzgadnianie danych powodujących konflikty. Przykłady danych powodujących konflikty mogą zawierać nazwy klientów znalezione w dwóch zestawach danych, które są wyświetlane w różny sposób w każdym miejscu („Grant Marshall” i „Grant Marshal”) lub numery telefoniczne, który różnią się formatem (617-803-091X a 617803091X). Scalanie tych niezgodnych danych jest wykonywane na podstawie poszczególnych atrybutów.
