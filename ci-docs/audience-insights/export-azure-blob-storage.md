@@ -1,75 +1,50 @@
 ---
-title: Eksportowanie Customer Insights do magazynu obiektów Azure Blob Storage
-description: Dowiedz się, jak skonfigurować połączenie i eksport do magazynu Blob Storage.
-ms.date: 10/06/2021
-ms.reviewer: mhart
+title: Eksportowanie Customer Insights do magazynu obiektów Azure Blob
+description: Informacje o konfigurowaniu połączenia z magazynem obiektów Blob Azure.
+ms.date: 09/18/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d02c09a1869d0099db4861b65ac8ff006914873e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: 925b53260e7c633e17d7f172d2dd2d581e982e10
+ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7605863"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4667152"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksportowanie listy segmentów i innych danych do magazynu Azure Blob Storage (wersja zapoznawcza)
+# <a name="connector-for-azure-blob-storage-preview"></a>Łącznik dla magazynu obiektów Blob Azure (wersja zapoznawcza)
 
-Przechowuj dane aplikacji Customer Insights w usłudze Blob Storage lub korzystaj z niej, aby przenosić swoje dane do innych aplikacji.
+Przechowuj dane aplikacji Customer Insights w usłudze Azure Blob storage lub korzystaj z niej, aby transferować swoje dane do innych aplikacji.
 
-## <a name="known-limitations"></a>Znane ograniczenia
+## <a name="configure-the-connector-for-azure-blob-storage"></a>Konfigurowanie łącznika dla magazynu obiektów Blob Azure
 
-1. W przypadku usługi Azure Blob Storage można wybrać [warstwę wydajności Standardowa lub Premium](/azure/storage/blobs/storage-blob-performance-tiers). Jeśli wybierzesz warstwę wydajności Premium, wybierz [jako typ konta blokowe obiekty blob typu premium](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
+1. W analizach odbiorców przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
 
-## <a name="set-up-the-connection-to-blob-storage"></a>Skonfiguruj połączenie z usługą Blob Storage
+1. W obszarze **Magazyn obiektów Blob Azure** wybierz **Konfiguruj**.
 
-1. Przejdź do **Admin** > **Połączenia**.
+1. Wprowadź **Nazwę konta**, **Klucz konta** i **Kontener** dla konta magazynu obiektów Blob Azure.
+    - Aby dowiedzieć się więcej o wyszukiwaniu klucza konta i nazwy konta magazynu Azure Blob, zobacz [Zarządzaj ustawieniami konta magazynu w portalu Azure](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - Aby dowiedzieć się, jak utworzyć kontener, zobacz [Tworzenie kontenera](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Azure Blob Storage**, aby skonfigurować połączenie.
+1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej rozpoznawalną nazwę.
 
-1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
-
-1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
-
-1. Wprowadź **Nazwę konta**, **Klucz klienta** i **Kontener** dla konta Blob Storage.
-    - Aby dowiedzieć się, jak znaleźć nazwę i klucz klienta konta Blob Storage, zobacz [Zarządzanie ustawieniami konta magazynu w portalu Azure Portal](/azure/storage/common/storage-account-manage).
-    - Aby dowiedzieć się, jak utworzyć kontener, zobacz [Tworzenie kontenera](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
-
-1. Aby zakończyć połączenie, wybierz **Zapisz**. 
-
-## <a name="configure-an-export"></a>Konfigurowanie eksportu
-
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
-
-> [!IMPORTANT]
-> Jeśli włączone jest ustawienie usuwania nietrwałego dla konta usługi Azure Blob Storage, eksportowanie zakończy się niepowodzeniem. Wyłącz usuwanie nietrwałe, aby wyeksportować dane do obiektów blob. Aby uzyskać więcej informacji, zobacz [Włączanie usuwania nietrwałego obiektu blob](/azure/storage/blobs/soft-delete-blob-enable.md)
-
-1. Przejdź do **Dane** > **Eksporty**.
-
-1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
-
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Azure Blob Storage. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
+1. Wybierz **Dalej**.
 
 1. Zaznacz pole wyboru obok każdej encji, która ma zostać wyeksportowana do tej lokalizacji docelowej.
 
 1. Wybierz pozycję **Zapisz**.
 
-Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
+Eksportowane dane są przechowywane w skonfigurowanym kontenerze magazynu obiektów Blob Azure. W kontenerze są automatycznie tworzone następujące ścieżki folderów:
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab).     
-
-Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
-
-Wyeksportowane dane są przechowywane w skonfigurowanym kontenerze Blob Storage. W kontenerze są automatycznie tworzone następujące ścieżki folderów:
-
-- Dla encji źródłowych i encji wygenerowanych przez system:   
-  `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
+- Dla encji źródłowych i encji wygenerowanych przez system: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
   - Przykład: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
- 
-- Element model.json dla eksportowanych encji będzie na poziomie %ExportDestinationName%.  
+- Element model.json dla eksportowanych encji będzie przechowywany na poziomie% ExportDestinationName%
   - Przykład: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+## <a name="export-the-data"></a>Eksportowanie danych
+
+Możesz [eksportować dane na żądanie](/export-destinations.md#export-data-on-demand). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).

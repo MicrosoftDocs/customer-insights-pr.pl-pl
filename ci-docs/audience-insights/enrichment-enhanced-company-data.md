@@ -1,7 +1,7 @@
 ---
 title: Rozszerzanie danych firmowych
 description: Wzbogać i normalizuj dane firmy za pomocą modeli Microsoft.
-ms.date: 01/19/2022
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 693e2f410a77cbf2e87ff0132ce963aab7e8e3e4
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010942"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927595"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Wzbogacanie profilów firmy o ulepszone dane firmowe
 
@@ -82,17 +82,17 @@ Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Możn
 
 Po zakończeniu procesu wzbogacania można przejrzeć dane nowo wzbogacone profile klientów w **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
 
-Możesz zobaczyć przykładowe dane wzbogacone w kafelku **Podglądu wzbogaconych klientów**. Wybierz opcję **Zobacz więcej** i wybierz kartę **Dane**, aby uzyskać dostęp do szczegółowego widoku każdego z wzbogaconych profilów.
+Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
 
 ### <a name="overview-card"></a>Karta przeglądowa
 
 Na karcie przeglądowej są szczegółowe informacje dotyczące zakresu wzbogacania. 
 
-* **Firmy przetwarzane i zmieniane**: Liczba profili firm klientów, które zostały pomyślnie wzbogacone.
+* **Klienci przetwarzani i zmieniani**: Liczba profili klientów, które zostały pomyślnie wzbogacone.
 
-* **Firmy przetwarzane i niezmienianie**: Liczba profili firm klientów, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
+* **Klienci przetwarzani i niezmieniani**: Liczba profili klientów, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
 
-* **Firmy nieprzetworzone i niezmienione**: Liczba profili firm klientów, które nie zostały rozpoznane. Jest tak zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
+* **Klienci nieprzetwarzani i niezmieniani**: Liczba profili, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
 
 ## <a name="next-steps"></a>Następne kroki
 

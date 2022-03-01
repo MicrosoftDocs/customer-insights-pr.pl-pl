@@ -1,141 +1,97 @@
 ---
-title: Eksportowanie danych z usługi Customer Insights
-description: Zarządzaj eksportami do udostępniania danych.
-ms.date: 11/01/2021
-ms.reviewer: mhart
+title: Lokalizacje docelowe eksportu
+description: Eksportuj dane i zarządzaj miejscami docelowymi eksportu.
+ms.date: 07/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05485fc7def3d699d5179bcaa005ceb57024f840
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977980"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643876"
 ---
-# <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
+# <a name="export-destinations-preview"></a>Lokalizacje docelowe eksportu (wersja zapoznawcza)
 
-Na stronie **Eksporty** widać wszystkie skonfigurowane eksporty. Eksporty udostępniają konkretne dane różnym aplikacjom. Mogą one zawierać profile klientów, encje, schematy i szczegóły mapowania. Każdy eksport wymaga [połączenia, skonfigurowanego przez administratora, do zarządzania uwierzytelnianiem i dostępem](connections.md).
+Strona **Lokalizacje docelowe eksportu** ukazuje wszystkie lokalizacje, w których skonfigurowano eksportowanie danych do programu. Można również dodać nowe miejsca docelowe dla eksportu. Dodatkowo pokazuje aktualnie dostępne opcje eksportu. Pobierz szybki przegląd, opis i dowiedz się, co możesz zrobić z poszczególnymi opcjami rozszerzania. Wyeksportuj zunifikowane profile, miary i segmenty do obsługiwanych aplikacji przydatnych w prowadzonej działalności.
 
-Przejdź do strony **Dane** > **Eksporty**, aby wyświetlić stronę eksportów. Wszystkie role użytkowników mogą przeglądać skonfigurowane eksporty. Użyj pola wyszukiwania na pasku poleceń, aby znaleźć eksporty według ich nazwy, nazwy połączenia lub typu połączenia.
+Przejdź do **Administracja** > **Lokalizacje docelowe eksportu**, aby znaleźć następujące opcje rozszerzania:
 
-## <a name="export-types"></a>Typy eksportów
+- [Dodatek Karta klienta Dynamics 365](customer-card-add-in.md)
+- [Łącznik Managera Facebook Ads](export-facebook.md)
+- [Łącznik Power Automate](export-power-automate.md)
+- [Łącznik Power Apps](export-power-apps.md)
+- [Łącznik Power BI](export-power-bi.md)
+- [DotDigital](export-dotdigital.md)
+- [Dynamics 365 — sprzedaż](export-dynamics365-sales.md)
+- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
+- [Azure Blob Storage](export-azure-blob-storage.md)
+- [Łącznik LiveRamp&reg;](export-liveramp.md)
+- [Bot dla Microsoft Teams](export-teams-bot.md)
+- [Mailchimp](export-mailchimp.md)
+- [Customer Insights API](apis.md)
 
-Istnieją dwa główne typy eksportów:  
+## <a name="add-a-new-export-destination"></a>Dodaj nową lokalizację docelową eksportu
 
-- **Eksportowanie danych wyjściowych** umożliwia wyeksportowanie dowolnego typu encji dostępnych w aplikacji Wyniki analiz odbiorców. Encje wybrane do wyeksportowania są eksportowane ze wszystkimi polami danych, metadanymi, schematami i szczegółami mapowania. 
-- **Eksporty segmentów** umożliwiają eksportowanie encji segmentów z aplikacji Wyniki analiz odbiorców. Segmenty reprezentują listę profilów klientów. Podczas konfigurowania eksportu należy wybrać uwzględnione pola danych, w zależności od systemu docelowego, do którego są eksportowane dane. 
+Aby dodać docelowe lokalizacje eksportu, użytkownik musi mieć [uprawnienia administratora](permissions.md). W przypadku eksportu do usług Microsoft należy założyć, że obie usługi znajdują się w tej samej organizacji.
 
-### <a name="export-segments"></a>Eksportowanie segmentów
+1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
 
-**Eksportowanie segmentów w środowiskach dla kont biznesowych (B2B) lub indywidualnych konsumentów (B2C)**  
-W większości przypadków opcja eksportu obsługuje oba typy środowisk. Eksportowanie segmentów do różnych systemów docelowych ma specyficzne wymagania. Generalnie rzecz biorąc, element członkowski segmentu, profil klienta, zawiera informacje kontaktowe. Tak się zwykle dzieje w przypadku segmentów opartych na indywidualnych konsumentach (B2C), ale nie musi to być prawda w przypadku segmentów opartych na kontach biznesowych (B2B). 
+1. Przejdź do karty **Moje lokalizacje docelowe eksportu**.
 
-**Środowiska eksportowania segmentów dla kont biznesowych (B2B)**  
-- Segmenty w kontekście środowisk kont biznesowych są wbudowane w encji *klienta*. Aby wyeksportować segmenty kont w stanie takim, jak są, system docelowy musi obsługiwać czyste segmenty klientów. Ta opcja ma miejsce w przypadku serwisu [LinkedIn](export-linkedin-ads.md), gdy podczas definiowania eksportu zostanie wybrania opcja **firma**.
-- Wszystkie inne systemy docelowe wymagają pól z encji kontaktu. Aby segmenty klientów mogą pobierać dane z kontaktów pokrewnych, definicja segmentu musi mieć atrybuty projektu encji kontaktu. Dowiedz się więcej o [konfigurowaniu segmentów i atrybutów projektu](segment-builder.md).
+1. Wybierz **Dodaj lokalizację**, aby utworzyć nową lokalizację docelową eksportu.
 
-**Eksporty segmentów w środowiskach dla konsumentów indywidualnych (B2C)**  
-- Segmenty w kontekście środowisk indywidualnych klientów są wbudowane w encji *ujednoliconego profilu klienta*. Każdy segment spełniający wymagania systemów docelowych (na przykład adres e-mail) może zostać wyeksportowany.
+1. W okienku **Dodawaj lokalizację** wybierz **Typ** lokalizacji docelowej eksportu z listy rozwijanej.
 
-**Limity dotyczące eksportów segmentu**  
-- Docelowe systemy innych firm mogą ograniczyć liczbę profilów klientów, które można eksportować. 
-- W przypadku poszczególnych klientów po wybraniu segmentu eksportu zobaczysz rzeczywistą liczbę elementów członkowskich segmentu. Pojawi się ostrzeżenie, jeśli segment jest zbyt duży. 
-- W przypadku kont biznesowych zobaczysz liczbę kont w segmencie; jednak liczba kontaktów, które mogą być projektowane, nie jest pokazywana. W niektórych przypadkach może to doprowadzić do tego, że wyeksportowany segment będzie zawierać więcej profilów klientów niż jest w stanie zaakceptować system docelowy. Przekroczenie limitów wyników w systemach docelowych spowoduje pominięcie eksportu. 
+1. Wprowadź wymagane informacje i wybierz **Dalej**, aby utworzyć lokalizację docelową eksportu.
 
-## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu  
-Aby skonfigurować lub edytować eksport, potrzebne są dostępne dla użytkownika połączenia. Połączenia zależą od [roli użytkownika](permissions.md):
-- **Administratorzy** mają dostęp do wszystkich połączeń. Mogą oni także tworzyć nowe połączenia podczas konfigurowania eksportu.
-- **Współautorzy** mogą mieć dostęp do określonych połączeń. Zależą od administratorów, którzy muszą konfigurować i udostępniać połączenia. Na liście eksportowania są wyświetlani współautorzy, niezależnie od tego, czy mogą edytować lub wyświetlać tylko eksport w kolumnie **Uprawnienia użytkownika**. Aby uzyskać więcej informacji, przejdź do tematu [Zezwalanie współautorom na używanie połączenia do eksportów](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- **Osoby przeglądające** mogą tylko wyświetlać istniejące raporty — a nie je tworzyć.
+Możesz również wybrać **Konfiguruj** na kafelku na karcie **Odnajdź**.
 
-### <a name="define-a-new-export"></a>Definiowanie nowego eksportu
+## <a name="view-export-destinations"></a>Wyświetl lokalizacje docelowe eksportu
 
-1. Przejdź do **Dane** > **Eksporty**.
+Po utworzeniu miejsc docelowych eksportowania można je znaleźć w tabeli na karcie **Moje lokalizacje docelowe eksportu**. Ta tabela zawiera trzy kolumny:
 
-1. Wybierz **Dodaj eksport**, aby utworzyć nowy eksport.
+- **Wyświetlana nazwa**: Nazwa wprowadzana podczas tworzenia lokalizacji docelowej.
+- **Typ**: Typ lokalizacji docelowej eksportu, który ustawisz podczas tworzenia lokalizacji docelowej.
+- **Utworzono**: Data utworzenia lokalizacji docelowej.
 
-1. W okienku **Konfigurowanie eksportu** wybierz połączenie, które ma być użyte. [Połączenia](connections.md) są zarządzane przez administratorów. 
+## <a name="edit-an-export-destination"></a>Edytuj lokalizację docelową eksportu
 
-1. Podaj wymagane szczegóły i wybierz opcję **Zapisz**, aby utworzyć eksport.
+1. Wybierz pionowy wielokropek dla lokalizacji docelowej eksportu, którą chcesz edytować.
 
-### <a name="define-a-new-export-based-on-an-existing-export"></a>Definiowanie nowego eksportu na podstawie istniejącego eksportu
+   > [!div class="mx-imgBorder"]
+   > ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
 
-1. Przejdź do **Dane** > **Eksporty**.
+1. Wybierz **Edytuj** z menu rozwijanego.
 
-1. Na liście eksportów wybierz eksport, który chcesz zduplikować.
+1. Zmień wartości, które wymagają aktualizacji, i wybierz **Zapisz**.
 
-1. Wybierz opcję **Utwórz duplikat** na pasku poleceń, aby otworzyć okienko **Konfigurowanie eksportu** ze szczegółami wybranego eksportu.
+## <a name="export-data-on-demand"></a>Eksportuj dane na żądanie
 
-1. Przejrzyj i dostosuj eksport i wybierz opcję **Zapisz**, aby utworzyć nowy eksport.
+Po skonfigurowaniu łącznika dla docelowej lokalizacji eksportu eksporty będą wykonywane podczas wszystkich [zaplanowanych odświeżeń](system.md#schedule-tab).
 
-### <a name="edit-an-export"></a>Edytuj eksport
+Aby wyeksportować dane bez czekania na zaplanowane odświeżanie, przejdź do karty **Moje lokalizacje docelowe eksportowania** na **Administracja** > **Eksportowanie lokalizacji docelowych**.
 
-1. Przejdź do **Dane** > **Eksporty**.
+> [!div class="mx-imgBorder"]
+> ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
 
-1. Na liście eksportów wybierz eksport, który chcesz edytować.
+- Wybierz **Eksportuj** nad listą, aby uruchomić eksportowanie do wszystkich miejsc docelowych jednocześnie.
+- Wybierz wielokropek (...) przy pozycji na liście a następnie wybierz opcję **Eksportuj**, aby uruchomić eksportowanie dla pojedynczej lokalizacji docelowej eksportu.
 
-1. Na pasku poleceń wybierz **Edytuj**.
+## <a name="remove-an-export-destination"></a>Usuń lokalizację docelową eksportu
 
-1. Zmień wartości, które chcesz zaktualizować i wybierz **Zapisz**.
+Aby usunąć lokalizację docelową eksportu, zacznij na stronie głównej **Lokalizacje docelowe eksportu**.
 
-## <a name="view-exports-and-export-details"></a>Wyświetlanie eksportów i szczegółów eksportów
+1. Wybierz pionowy wielokropek dla lokalizacji docelowej eksportu, którą chcesz usunąć.
 
-Po utworzeniu miejsc docelowych eksportu są one wyświetlane w **Dane** > **Eksporty**. Wszyscy użytkownicy mogą zobaczyć, które dane są udostępniane oraz ich najaktualniejszy stan.
+   > [!div class="mx-imgBorder"]
+   > ![Wielokropek pionowy](media/export-destinations-page-ellipsis.png "Wielokropek pionowy")
 
-1. Przejdź do **Dane** > **Eksporty**.
+2. Wybierz **Usuń** z menu rozwijanego.
 
-1. Użytkownicy bez edytowania uprawnień wybrać opcję **Wyświetl** zamiast opcji **Edycja**, aby wyświetlić szczegóły eksportowania.
-
-1. W okienku bocznym jest pokazana konfiguracja eksportu. Bez uprawnień do edycji nie można zmienić wartości. Wybierz opcję **Zamknij**, aby powrócić do strony eksportowania.
-
-## <a name="schedule-and-run-exports"></a>Zaplanuj i uruchom eksport
-
-Każdy skonfigurowany eksport ma harmonogram odświeżania. Podczas odświeżania system szuka nowych lub zaktualizowanych danych do uwzględnienia w eksporcie. Domyślnie eksport jest uruchamiany w ramach każdego [zaplanowanego odświeżania systemu](system.md#schedule-tab). Można dostosować harmonogram odświeżania lub wyłączyć go, aby eksporty były wykonywane ręcznie.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
-
-Harmonogramy eksportu zależą od stanu środowiska. Jeśli istnieją aktualizacje dotyczące [zależności](system.md#refresh-processes) po uruchomieniu zaplanowanego eksportu, system najpierw je uzupełni, a następnie uruchomi eksport. W ostatniej kolumnie **Odświeżony** eksport można zobaczyć, kiedy został ostatnio odświeżony eksport.
-
-### <a name="schedule-exports"></a>Harmonogram wywozu
-
-Można zdefiniować niestandardowe harmonogramy odświeżania dla pojedynczego eksportu lub kilku eksportów jednocześnie. Aktualnie zdefiniowany harmonogram jest wymieniony w kolumnie **Harmonogram** na liście eksportu. Uprawnienia do zmiany harmonogramu są takie same jak w przypadku [edytowania i definiowania eksportów](export-destinations.md#set-up-a-new-export). 
-
-1. Przejdź do **Dane** > **Eksporty**.
-
-1. Wybierz eksport, który chcesz zaplanować.
-
-1. Na pasku poleceń wybierz **Zaplanuj**.
-
-1. W okienku **Zaplanuj eksport** ustaw **Zaplanuj uruchomienie** na wartość **Wł.**, aby automatycznie uruchamiać eksportowanie. Ustaw wartość **Wyłącz**, aby odświeżyć go ręcznie.
-
-1. W przypadku automatycznie odświeżanego eksportu wybierz wartość **Cykl** i określ jej szczegóły. Zdefiniowany czas ma zastosowanie do wszystkich przypadków nawrotu. To czas, w którym eksportowanie powinno rozpocząć odświeżanie.
-
-1. Zastosuj i aktywuj zmiany, wybierając przycisk **Zapisz**.
-
-Podczas edytowania harmonogramu dla kilku eksportów należy dokonać wyboru w obszarze **Zachowaj lub zastępowanie harmonogramów**:
-- **Zachowaj poszczególne harmonogramy**: Zachowaj poprzednio zdefiniowany harmonogram dla wybranych eksportów i tylko je wyłączaj lub włączaj.
-- **Zdefiniuj nowy harmonogram dla wszystkich wybranych eksportów**: zastąp istniejące harmonogramy wybranych eksportów.
-
-### <a name="run-exports-on-demand"></a>Uruchamianie eksportów na żądanie
-
-Aby wyeksportować dane bez oczekiwania na zaplanowane odświeżenie, przejdź do strony **Dane** > **Eksporty**.
-
-- Aby uruchomić wszystkie eksporty, wybierz polecenie **Uruchom wszystkie** na pasku poleceń. Ta akcja uruchomi tylko eksporty, które mają aktywny harmonogram.
-- Aby uruchomić pojedynczy eksport, wybierz go z listy i wybierz przycisk **Uruchom** na pasku poleceń. Tak można uruchomić eksport bez aktywnego harmonogramu. 
-
-## <a name="remove-an-export"></a>Usuwanie eksportu
-
-1. Przejdź do **Dane** > **Eksporty**.
-
-1. Wybierz eksport, który chcesz usunąć.
-
-1. Na pasku poleceń wybierz **Usuń**.
-
-1. Potwierdź usuwanie, zaznaczając pole **Usuń** na ekranie potwierdzenia.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+3. Potwierdź usuwanie, zaznaczając pole **Usuń** na ekranie potwierdzenia.

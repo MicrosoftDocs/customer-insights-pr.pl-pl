@@ -1,71 +1,75 @@
 ---
 title: Wyświetlaj profile klientów
 description: Umożliwia uzyskanie połączonego widoku ujednoliconych danych klienta.
-ms.date: 09/30/2021
+ms.date: 12/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 07d2206372f89cd7dcd9df84c87024a6f87d5eac
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623282"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896340"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
-Na stronie **Klienci** jest wyświetlany połączony widok ujednoliconych profilów klientów. Profile klientów są dostępne po [utworzeniu ujednoliconej encji Klient](data-unification.md). Strona umożliwia wyszukiwanie klientów i definiowanie indeksu służącego do tego wyszukiwania.
+Na stronie **Klienci** jest wyświetlany połączony widok klientów na podstawie danych z profilu zgromadzonych na podstawie [wszystkich źródeł danych](data-sources.md). Profile klientów są dostępne po [utworzeniu ujednoliconej encji klienta](data-unification.md). Należy się upewnić, że użytkownik zakończy proces ujednolicania danych w celu uzyskania bogatszych widoków klientów. Strona umożliwia również wyszukiwanie klientów.
 
-Klientami mogą być pojedyncze osoby lub organizacje. Każdy profil klienta jest reprezentowany przez kafelek. Aby uzyskać więcej rekordów, użyj kontrolek stronicowania. Na karcie są wyświetlane pola encji *Klient* zgodnie z **Indeksem wyszukiwania i filtrowania**. Wybierz kafelek, aby zobaczyć dane wybranego klienta na dedykowanej stronie o nazwie [Strona szczegółów klienta](customer-profiles.md#customer-details-page).
+Klienci mogą być osobami lub organizacjami (wersja zapoznawcza). Każdy profil klienta lub organizacji jest reprezentowany przez kafelek. Wybierz kafelek, aby wyświetlić dodatkowe informacje o danym kliencie lub organizacji. Aby wyświetlić dodatkowe rekordy, należy użyć formantów podziału na strony u dołu strony.
 
 > [!div class="mx-imgBorder"] 
-> ![Strona Klienci z kafelkami wyników](media/customers-page-result-tiles-B2C.png "Strona Klienci z kafelkami wyników")
+> ![Profile klientów B2C](media/profiles-customers.png "Profile klientów B2C")
+
+Organizacje (Wersja zapoznawcza)
+> [!div class="mx-imgBorder"] 
+> ![Profile klientów B2B](media/profile-customers-b2b.png "Profile klientów B2B")
 
 > [!NOTE]
-> Jeśli kafelki nie są widoczne po wybraniu opcji **Klienci** w nawigacji, administrator musi [zdefiniować co najmniej jeden atrybut, który można wyszukać](search-filter-index.md) w **indeksie wyszukiwania i filtrowania**.
+> Jeśli nie widzisz kafelków po wybraniu **Klienci** w nawigacji, Administrator musi [zdefiniować co najmniej jeden atrybut z możliwością wyszukiwania](search-filter-index.md) w **Wyszukiwanie i indeks filtrów**.
 
 ## <a name="search-for-customers"></a>Wyszukaj klientów
 
-Wyszukaj klientów, wprowadzając nazwę lub inny atrybut w polu wyszukiwania. Wyszukiwanie działa tylko w encji _Klient_ utworzonej podczas procesu ujednolicania danych.
+Wyszukaj klientów, wprowadzając nazwę lub inny atrybut w polu wyszukiwania. Wyszukiwanie działa tylko w encji profilu klienta utworzonej podczas procesu zjednoczenia danych.
 
-Administrator może skonfigurować atrybuty, które można przeszukiwać, korzystając ze strony **Wyszukiwanie i indeks filtrów**. Aby uzyskać więcej informacji, przejdź do tematu [Zarządzanie indeksem wyszukiwania i filtrowania](search-filter-index.md).
+Administrator może skonfigurować atrybuty, które można przeszukiwać, korzystając ze strony **Wyszukiwanie i indeks filtrów**. Aby uzyskać więcej informacji, zobacz [zarządzanie wyszukiwaniem i indeksem filtrów](search-filter-index.md).
 
 ## <a name="filter-customers"></a>Filtrowanie klientów
 
-Klientów można filtrować według pól encji _Klient_. Podobnie jak w przypadku funkcji wyszukiwania administrator będzie musiał zdefiniować pola jako filtrowane przy użyciu strony **Wyszukiwanie i indeks filtrów**.
+Klientów można przyfiltrować według pól encji profilu klienta. Podobnie jak w przypadku funkcji wyszukiwania administrator będzie musiał zdefiniować pola jako filtrowane przy użyciu strony **Wyszukiwanie i indeks filtrów**.
 
-1. Wybierz opcję **Pokaż filtry** na stronie **Klienci**.
+1. Wybierz **Filtruj** na stronie **Klienci**.
 
-1. Zaznacz pola wyboru obok atrybutów, według których chcesz filtrować klientów.
+2. Zaznacz pola wyboru obok atrybutów, według których chcesz filtrować klientów.
 
-1. Aby usunąć filtry, wybierz pozycję **Wyczyść filtry** na stronie **Klienci**.
+   > [!div class="mx-imgBorder"] 
+   > ![Profile klientów](media/profiles-customers3.png "Profile klientów")
 
-## <a name="customer-details-page"></a>Strona Szczegóły klienta
+3. Aby usunąć filtry, wybierz pozycję **Wyczyść filtry** na stronie **Klienci**.
 
-Wybierz dowolną tabliczkę z klientami, aby otworzyć **Stronę szczegółów klienta**. Ten widok zawiera zunifikowane informacje dotyczące wybranego klienta. Szczegóły klienta zawierają następujące informacje:
+##  <a name="customer-details-page"></a>Strona Szczegóły klienta
 
-**Kafelek profilu klienta**: ten kafelek przedstawia różne wartości w ujednoliconej encji _Klient_. Jeśli pole nie ma wartości dla wybranego profilu klienta, nie będzie ono wyświetlane. Kafelek jest uporządkowany na sekcje:  
-  - W pierwszej sekcji przedstawiono wstępnie zdefiniowany zestaw pól, a po nich wszystkie pola w indeksie wyszukiwania i filtrowania. Wszystkie pola związane z adresami są połączone w jeden wiersz, jeśli profil zawiera takie pola. 
-  - **Kontakty tego klienta**: w środowiskach dotyczących kont biznesowych w drugiej sekcji będą widoczne wszystkie kontakty pokrewne dotyczące tego klienta. Każdy kontakt jest wyświetlany z ich polami. Puste pola są ukryte.
-  - **Pola dodatkowe**: pokazuje pozostałe pola wybranego klienta z wyjątkiem identyfikatorów. 
-  - **Identyfikatory**: zawiera listę wszystkich identyfikatorów pod ich nazwą encji. Pola są identyfikowane jako identyfikatory według semantyki kategoryzującej je w odpowiedni sposób.
+Wybierz dowolną tabliczkę z klientami, aby otworzyć **Stronę szczegółów klienta**. Ten widok zawiera zunifikowane informacje dotyczące wybranego klienta.
 
-**Oś czasu działania**: pokazuje dane, jeśli skonfigurowano działania. Widok osi czasu zawiera chronologiczne działania wybranego klienta, zaczynając od najnowszego działania. Aby uzyskać więcej informacji, przejdź do tematu [Działania klienta](activities.md).
+Szczegóły klienta zawierają:
 
-**Szczegółowe informacje**:  
-  - **Miary**: wskazuje, czy skonfigurowano jedną lub więcej miar atrybutów klienta. Obejmują one obliczone KPI wokół Twoich klientów na poziomie klienta indywidualnego. Aby uzyskać więcej informacji, przejdź do tematu [Definiowanie miar i zarządzanie nimi](measures.md).
+-   **Kafelek profil klienta:** na tym kafelku są wyświetlane różne wartości z obiektu profilu ujdenoliconego klienta. Informacje te mogą obejmować adresy e-mail, nazwy, miasta itp. 
 
-  - **Potencjalne zainteresowania, potencjalne marki**: wskazuje, czy skonfigurowano wzbogacenie marki lub zainteresowania. Reprezentuje potencjalne interesy i możliwości dla miar na podstawie innych klientów, których profil jest podobny do wybranego profilu klienta. Aby uzyskać więcej informacji, przejdź do strony [Wzbogacanie profilów klientów o sympatie do marki i zainteresowań](enrichment-microsoft.md).
+-   **Potencjalne zainteresowania, potencjalne marki:** Pokazuje, czy skonfigurowano wzbogacenie własne. Reprezentuje potencjalne zainteresowania i podobieństwa do marek, które może mieć klient o profilu podobnym do tego klienta. Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów o koligacje marki i zainteresowania](enrichment-microsoft.md).
 
-Aby powrócić do strony wyszukiwania klientów, wybierz opcję **Wróć do klientów**.
+-   **Miary:** Pokazuje, czy skonfigurowano jedną lub więcej miar określonego typu: miary atrybutów klienta. Obejmują one obliczone KPI wokół Twoich klientów na poziomie klienta indywidualnego. Aby uzyskać więcej informacji, zobacz [Definiuj miary i zarządzaj nimi](measures.md).
+
+-   **Oś czasu działania:** pokazuje, czy są skonfigurowane działania. Widok osi czasu zawiera chronologicznie posortowane działania tego klienta, zaczynając od ostatniej aktywności. Aby uzyskać więcej informacji, zobacz [Działania klientów](activities.md).
+
+Wybierz **Powrót do klienta**, aby powrócić do strony wyszukiwania klienta.
 
 ## <a name="next-steps"></a>Następne kroki
 
-[Dodaj więcej źródeł danych](data-sources.md), [wzbogać ujednolicone profile](enrichment-hub.md) lub [utwórz segmenty](segments.md), aby pracować z ujednoliconym profilami klientów w innych aplikacjach.
+[Dodawanie większej liczby źródeł danych](data-sources.md) lub [tworzenie segmentów klientów](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

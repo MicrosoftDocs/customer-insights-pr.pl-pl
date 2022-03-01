@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Omnisend
 description: Dowiedz się, jak skonfigurować połączenie i eksport do programu Omnisend.
-ms.date: 10/08/2021
+ms.date: 05/21/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5496efa075fa3474c579366d143ea55e86ec3995
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 8bd692819fa8451ded5e74191ee717f81f87425d
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619041"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124532"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Eksportowanie segmentów do programu Omnisend (wersja zapoznawcza)
 
@@ -28,9 +28,9 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Omnisend i u�
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- W przypadku eksportu do usługi Omnisend można wyeksportować do 1 mln profilów klientów, co może potrwać do 4 godzin.
+- Możesz wyeksportować do 1 miliona profili na jeden eksport do Omnisend i może to zająć do 4 godzin.
 - Eksportowanie do usługi Omnisend jest ograniczone do segmentów.
-- Liczba profilów klientów, które można eksportować do usługi Omnisend, zależy od kontraktu z usługą Omnisend i jest ograniczona.
+- Liczba profili, które możesz eksportować do Omnisend zależy od Twojej umowy z Omnisend.
 
 ## <a name="set-up-connection-to-omnisend"></a>Skonfiguruj połączenie z usługą Omnisend
 
@@ -62,7 +62,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Omnisend. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Omnisend. Opcjonalnie możesz wyeksportować Imię, Nazwisko, Adres, Kraj/region, Województwo, Miasto i Kod pocztowy aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
+1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Omnisend. Opcjonalnie możesz wyeksportować Imię, Nazwisko, Adres, Kraj/region, Województwo, Miasto i Kod pocztowy aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 
 1. Wybierz pozycję **Zapisz**.
 

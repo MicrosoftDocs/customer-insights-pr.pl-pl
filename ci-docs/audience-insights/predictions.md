@@ -1,7 +1,7 @@
 ---
 title: Uzupełnij częściowe dane za pomocą przewidywania
 description: Aby wypełnić niekompletne dane klientów, należy użyć przewidywania.
-ms.date: 11/01/2021
+ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,17 +9,16 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732436"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692540"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Uzupełnianie częściowych danych przy użyciu przewidywań (przestarzałe)
+# <a name="complete-your-partial-data-with-predictions"></a>Uzupełnij częściowe dane przy użyciu przewidywań
 
-> [!IMPORTANT]
-> Ta funkcja zostanie uznana za **przestarzałą** w dniu **5 listopada 2021 r.** Bieżące implementacje będą działać do momentu usunięcia tej funkcji, ale nie będzie można tworzyć nowych integracji, korzystając z poniższych instrukcji.
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Przewidywania umożliwiają łatwe tworzenie prognozowanych wartości, które mogą poprawić zrozumienie klienta. Na stronie **Analizy** > **Przewidywania** można wybrać pozycję **Moje przewidywania**, aby wyświetlić obszary, które zostały skonfigurowane w innych częściach analiz odbiorców, oraz umożliwić dalsze dostosowanie ich.
 
@@ -36,7 +35,7 @@ Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić
 
 2. Środowisko szczegółowych informacji odbiorcy jest dołączone do wystąpienia Dataverse.
 
-Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
+W przypadku [tworzenia nowego środowiska](get-started-paid.md) należy je skonfigurować w oknie dialogowym **Tworzenie środowiska** i wybrać opcję **Zaawansowane**. Jeśli środowisko zostało już utworzone, przejdź do jego ustawień i wybierz **Zaawansowane**. W obszarze w sekcji **Korzystanie z przewidywania** wprowadź adres URL wystąpienia Dataverse, do którego chcesz dodać środowisko.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Tworzenie przewidywania w encji Klienta
 
@@ -61,8 +60,6 @@ Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](cre
    > ![Przykład przedstawiający mapowane wartości pól w kategoriach.](media/intelligence-categorymapping.png "Przykład przedstawiający mapowane wartości pól w kategoriach")
 
 8. Wybierz **Gotowe**, a prognoza zostanie przetworzona. Przetwarzanie zajmie trochę czasu w zależności od rozmiaru i stopnia złożoności danych. Wyniki będą dostępne w nowej encji na podstawie **Nazwa encji wyjściowej** utworzonego przewidywania.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Tworzenie przewidywania podczas tworzenia segmentu
 

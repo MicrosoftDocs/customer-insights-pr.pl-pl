@@ -1,7 +1,7 @@
 ---
 title: Schematy encji Customer Insights w Common Data Model
 description: Praca z encjami w Common Data Model.
-ms.date: 08/13/2021
+ms.date: 04/17/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2cdbe11a1c0cc5d65434fb2ae3a3f38c18f31cf4
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046529"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692318"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Schematy encji w Common Data Model
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 [Common Data Model](/common-data-model/) to deklaratywna specyfikacja, i definicja standardowych encji reprezentujących powszechne koncepcje i działania stosowane w działalności biznesowej i aplikacjach dotyczących wydajności. Ten model jest rozszerzany również na dane z obserwacji i analiz. Common Data Model zawiera dobrze zdefiniowane, modułowe i rozszerzalne jednostki biznesowe, takie jak Konto, Jednostka, Sprawa, Kontakt, Potencjalny Klient, Szansa, czy Produkt, a także interakcje z dostawcami, pracownikami i klientami, na przykład działania i umowy dotyczące poziomu usług. Każdy użytkownik może tworzyć i rozszerzać definicje Common Data Model, aby zbierać dodatkowe pomysły dotyczące prowadzonej działalności.
 
@@ -42,7 +42,7 @@ Więcej informacji można znaleźć w dokumentacji na temat [Schemat encji Custo
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Wyświetlanie encji przy użyciu nawigatora encji Common Data Model
 
-Encje można wyświetlać w [Nawigatorze encji Common Data Model](https://microsoft.github.io/CDM/). Wybierz encję z sekcji aplikacji szczegółowych informacji, aby uzyskać listę encji rozwiązania Customer Insights i ich definicje.
+Encje można wyświetlać w [Nawigatorze encji Common Data Model](https://microsoft.github.io/CDM/). Wybierz **Załaduj z GitHub!** i przejdź do **foundationCommon** > **crmCommon** > **rozwiązania** > **customerInsights**, gdzie znajdziesz listę encji Customer Insights i ich definicje.
 > [!div class="mx-imgBorder"]
 > ![Nawigator encji CDM pokazujący encję CustomerActivity.](media/CDM-entity-navigator.png "Nawigator encji CDM pokazujący encję CustomerActivity")
 

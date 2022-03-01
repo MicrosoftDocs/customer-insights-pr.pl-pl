@@ -1,20 +1,20 @@
 ---
 title: Łącznik usługi Power Apps
 description: Połącz z Power Apps i Power Automate.
-ms.date: 10/01/2021
-ms.reviewer: mhart
+ms.date: 08/21/2020
+ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: Nils-2m
-ms.author: nikeller
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 985e6c85795fba8ca3063cdffc7f9012e798856a
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623236"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406550"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Łącznik Microsoft Power Apps (wersja zapoznawcza)
 
@@ -22,55 +22,53 @@ Przenieś ujednolicone profile klientów do spersonalizowanych aplikacji za pomo
 
 ## <a name="connect-power-apps-and-dynamics-365-customer-insights"></a>Tworzenie połączenia rozwiązania Power Apps z usługą Dynamics 365 Customer Insights
 
-Funkcja Customer Insights jest jednym z wielu [dostępnych źródeł danych w Power Apps](/powerapps/maker/canvas-apps/working-with-data-sources).
+Funkcja Customer Insights jest jednym z wielu [dostępnych źródeł danych w Power Apps](https://docs.microsoft.com/powerapps/maker/canvas-apps/working-with-data-sources).
 
-Zapoznaj się z dokumentacją Power Apps, aby dowiedzieć się, jak [dodać połączenie danych z aplikacją](/powerapps/maker/canvas-apps/add-data-connection). Zaleca się również zapoznanie się z artykułem [jak Power Apps używają delegowania w celu obsługi dużych zestawów danych w aplikacjach kanwy](/powerapps/maker/canvas-apps/delegation-overview).
+Zapoznaj się z dokumentacją Power Apps, aby dowiedzieć się, jak [dodać połączenie danych z aplikacją](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-data-connection). Zaleca się również zapoznanie się z artykułem [jak Power Apps używają delegowania w celu obsługi dużych zestawów danych w aplikacjach kanwy](https://docs.microsoft.com/powerapps/maker/canvas-apps/delegation-overview).
 
 ## <a name="available-entities"></a>Dostępne encje
 
 Po dodaniu Customer Insights jako połączenia danych można wybrać następujące encje w Power Apps:
 
-- **Klient**: aby korzystać z danych z [ujednoliconego profilu klienta](customer-profiles.md).
-- **UnifiedActivity**: aby wyświetlić [oś czasu działań](activities.md) w aplikacji.
-- **ContactProfile**: w celu wyświetlenia kontaktów klienta. Ta encja jest tylko dostępna w środowiskach aplikacji Wyniki analiz odbiorców dla klientów biznesowych.
+- Klient: aby korzystać z danych z [ujednoliconego profilu klienta](customer-profiles.md).
+- Działanie ujednoliconego klienta: aby wyświetlić [oś czasu działania](activities.md) w aplikacji.
 
 ## <a name="limitations"></a>Ograniczenia
 
 ### <a name="retrievable-entities"></a>Encje, które można odzyskać
 
-Można pobierać wyłącznie encje **Klient**, **UnifiedActivity**, **Segmenty** i **ContactProfile** za pośrednictwem konektora Power Apps. Encja ContactProfile jest tylko dostępna w wystąpieniu Wyniki analiz odbiorców dla klientów biznesowych. Pozostałe encje są widoczne, ponieważ związany z nimi łącznik obsługuje je za pomocą wyzwalaczy w Power Automate.
+Można odzyskać tylko encje **Klient**, **UnifiedActivity**, i **Segmenty** za pośrednictwem łącznika Power Apps. Pozostałe encje są widoczne, ponieważ związany z nimi łącznik obsługuje je za pomocą wyzwalaczy w Power Automate.  
 
 ### <a name="delegation"></a>Delegowanie
 
-Delegowanie działa w przypadku encji **Klient** i **UnifiedActivity**. 
+Delegacja działa w przypadku encji Klient i UnifiedActivity. 
 
 - Delegowanie dla encji **Klient**: Aby używać delegowania dla tej encji, pola muszą zostać zindeksowane w [Indeks wyszukiwania i filtrów](search-filter-index.md).  
-- Delegowanie dla **UnifiedActivity**: Delegacja dla tej encji działa tylko dla pól **ActivityId** i **CustomerID**.  
-- Delegowanie dla encji **ContactProfile**: delegowanie dla tej encji działa tylko dla pól **ContactId** i **CustomerId**. Encja ContactProfile jest tylko dostępna w środowiskach Wyniki analiz odbiorców dla klientów biznesowych.
 
-Aby uzyskać więcej informacji na temat delegowania, przejdź do tematu [Funkcje i operacje usługi Power Apps z możliwością delegowania](/powerapps/maker/canvas-apps/delegation-overview). 
+- Delegowanie dla **UnifiedActivity**: Delegacja dla tej encji działa tylko dla pól **ActivityId** i **CustomerID**.  
+
+- Więcej informacji na temat delegowania znajduje się w artykule [Delegowalne funkcje i operacje w Power Apps](https://docs.microsoft.com/connectors/commondataservice/#power-apps-delegable-functions-and-operations-for-the-cds-for-apps). 
 
 ## <a name="example-gallery-control"></a>Przykładowy formant galerii
 
-Możesz dodawać profile klienta do [kontrolki galerii](/powerapps/maker/canvas-apps/add-gallery).
+Można na przykład dodać profile klientów do [kontrolki galerii](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-gallery).
 
-1. Dodaj kontrolkę **galerii** do konstruowanej aplikacji.
+1. Dodaj formant **Galeria** do konstruowanej aplikacji.
+
+> [!div class="mx-imgBorder"]
+> ![Dodawanie elementu galerii](media/connector-powerapps9.png "Dodawanie elementu galerii")
+
+1. Wybierz **Klienta** jako źródło danych dla elementów.
 
     > [!div class="mx-imgBorder"]
-    > ![Dodawanie elementu galerii.](media/connector-powerapps9.png "Dodaj element galerii.")
+    > ![Wybierz źródło danych](media/choose-datasource-powerapps.png "Wybierz źródło danych")
 
-2. Wybierz **Klienta** jako źródło danych dla elementów.
+1. Możesz zmienić panel danych po prawej stronie, aby wybrać pole, które encja klienta ma wyświetlać w galerii.
 
-    > [!div class="mx-imgBorder"]
-    > ![Wybierz źródło danych.](media/choose-datasource-powerapps.png "Wybierz źródło danych.")
+1. Aby wyświetlić dowolne pole z wybranego klienta w galerii, wypełnij właściwość tekstu etykiety:  **{Name_of_the_gallery}.Selected.{property_name}**
 
-3. Możesz zmienić panel danych po prawej stronie, aby wybrać pole, które encja klienta ma wyświetlać w galerii.
+    Przykład: Gallery1.Selected.address1_city
 
-4. Aby wyświetlić dowolne pole z wybranego klienta w galerii, wypełnij właściwość **tekstu** etykiety przy użyciu elementu **{Name_of_the_gallery}.Selected.{property_name}**  
-    - Na przykład: _Gallery1.Selected.address1_city_
+1. Aby wyświetlić ujednoliconą oś czasu dla klienta, należy dodać element galerii i dodać właściwość elementu: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
-5. Aby wyświetlić ujednoliconą oś czasu dla klienta, należy dodać element galerii i dodać właściwość **Elementy** przy użyciu elementu **Filter('UnifiedActivity', CustomerId = {Customer_Id})**  
-    - Na przykład: _Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)_
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+    Przykład: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)

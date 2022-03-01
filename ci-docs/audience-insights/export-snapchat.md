@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Snapchat
 description: Dowiedz się, jak skonfigurować połączenie i eksport do programu Snapchat.
-ms.date: 10/08/2021
+ms.date: 03/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b7a929d65a730b60e77ae111b458c68d3cce2020
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: d3dae7f0fef1fc3792c90c8ac0d3b037f5c0923d
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618696"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760600"
 ---
-# <a name="export-segments-to-snapchat-preview"></a>Eksportowanie segmentów do usługi Snapchat (wersja zapoznawcza)
+# <a name="export-segment-lists-to-snapchat-preview"></a>Eksportowanie list segmentów do usługi Snapchat (wersja zapoznawcza)
 
 Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Snapchat i użyj ich w celach reklamowych. 
 
@@ -29,7 +29,7 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Snapchat i u�
 ## <a name="known-limitations"></a>Znane ograniczenia
 
 - Eksportowanie do usługi Snapchat jest ograniczone do segmentów.
-- Eksportowanie do 1 mln profilów klientów do usługi Snapchat może zająć do 15 minut. 
+- Wyeksportowanie do 1 miliona profilów do usługi Snapchat może potrwać do 15 minut. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Skonfiguruj połączenie z usługą Snapchat
 
@@ -63,7 +63,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź [**identyfikator odbiorcy usługi Snapchat**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Snapchat.
+1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Snapchat.
 
 1. Wybierz segmenty, które chcesz wyeksportować. 
 

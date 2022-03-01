@@ -1,20 +1,20 @@
 ---
 title: Łącznik Power Automate | Microsoft Docs
-description: Tworzenie przepływów w usłudze Microsoft Power Automate z poziomu aplikacji Dynamics 365 Customer Insights.
-ms.date: 06/24/2021
-ms.reviewer: mhart
+description: Utwórz przepływy w Microsoft Power Automate z poziomu Dynamics 365 Customer Insights.
+ms.date: 08/03/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: philk
 manager: shellyha
-ms.openlocfilehash: 95e0fcbfb43f2b3e7e2d0e8a1690dc7ff5a44433402b7ef3d437710eb0efff15
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ffe92414365b0b777691a4a2d585100e4fbea591
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035612"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406548"
 ---
 # <a name="power-automate-connector-preview"></a>Łącznik Power Automate (wersja zapoznawcza)
 
@@ -22,35 +22,28 @@ Wyzwalaj automatyczne występowanie określonych zdarzeń przy zmianie danych i 
 
 ## <a name="power-automate-triggers"></a>Wyzwalacze Power Automate
 
-Użyj wyzwalaczy do tworzenia przepływów w chmurze i automatyzacji powtarzalnych zadań, takich jak powiadomienia lub bardziej zaawansowane akcje. 
+Użytkownik może korzystać z różnorodnych wyzwalaczy, które umożliwiają tworzenie przepływów w celu automatyzacji powtarzalnych zadań, takich jak powiadomienia lub bardziej zaawansowane akcje. 
 
 - Wyzwól, kiedy odświeżanie źródła danych zakończy się niepowodzeniem. 
 - Wyzwól, kiedy odświeżanie źródła danych zakończy się sukcesem.
 - Wyzwól, kiedy w segmencie nastąpi przekroczenie progu. Wyzwalacz jest ograniczony do przekraczania progu.
-- Wyzwól, kiedy w miarze biznesowej nastąpi przekroczenie progu. Obsługiwane są tylko miary biznesowe bez wymiaru. Wyzwalacz jest ograniczony do przekraczania progu.
-- Wyzwalaj, gdy zostanie ukończone pełne odświeżanie (źródła danych, segmenty, miary, ...).
+- Wyzwól, kiedy w miarze biznesowej nastąpi przekroczenie progu. Wyzwalacz jest ograniczony do przekraczania progu.
+- Wyzwalaj, gdy zostanie ukończone pełne odświeżanie (źródła danych, segmenty, miary,...).
 - Wyzwalaj po zakończeniu odświeżania procesu unifikacji (mapowanie, dopasowanie, scalanie).
 
-[Skonfiguruj wyzwalacze w Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
+[Skonfiguruj wyzwalacze w Power Automate](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
 
 ## <a name="power-automate-actions"></a>Akcje Power Automate
+Łącznik Power Automate dostarcza innych akcji niż dostępne wyzwalacze. Aby uzyskać więcej informacji, zobacz [Dynamics 365 Customer Insights Connector](https://docs.microsoft.com/connectors/customerinsights/).
 
-Łącznik Power Automate dostarcza innych akcji niż dostępne wyzwalacze. Aby uzyskać więcej informacji, zobacz [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/).
+## <a name="create-a-power-automate-flow-in-audience-insights"></a>Tworzenie przepływu Power Automate w statystykach odbiorców
 
-## <a name="create-a-power-automate-flow"></a>Utwórz przepływ Power Automate
+1. W analizach odbiorców przejdź do **Administrator** > **System**.
 
-1. W analizach odbiorców przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+1. Na stronie **System** wybierz kartę **Status**.
 
-1. Na kafelku **Power Automate** wybierz **Konfiguracja**.
+1. W sekcji **Źródła danych** wybierz **Przepływy** i wybierz **Utwórz przepływ** z listy rozwijanej.
+   > [!div class="mx-imgBorder"]
+   > ![Łącznik Power Automate pokazujący akcję utworzenia przepływu](media/power-automate-connector-create-flow.png "Łącznik Power Automate pokazujący akcję utworzenia przepływu")
 
-1. Zostanie otwarty łącznik Customer Insights (wersja zapoznawcza) w usłudze Power Automate. **Zaloguj się** do Power Automate.
-
-1. Wybierz jeden z dostępnych przycisków i dodaj kolejne kroki do nowego przepływu. Aby uzyskać więcej informacji, zobacz temat [Tworzenie przepływu w chmurze w Power Automate](/power-automate/get-started-logic-flow).
-
-Przykłady korzystania z przepływów: 
-- Opublikuj wiadomość w kanale Microsoft Teams, jeśli odświeżanie źródła danych nie powiedzie się. 
-- Wyślij wiadomość e-mail do właścicieli danych, gdy zostanie przekroczony próg w segmencie.
-
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+1. W Power Automate wybierz jeden z dostępnych wyzwalaczy, aby utworzyć preferowany przepływ. W przypadku tworzenia pierwszego przepływu należy najpierw uwierzytelnić się przy użyciu łącznika Power Automate.

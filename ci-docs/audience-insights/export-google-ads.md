@@ -1,7 +1,7 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Google ads
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Google Ads.
-ms.date: 09/27/2021
+ms.date: 03/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,19 +9,16 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ce9579f3d31207e666665237fd8935bb86889f8d
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: c16967bf8ea1fd02b3f991d7b7d3715a71fa8681
+ms.sourcegitcommit: 9a99e48e96dfb3d895db428f37c30ae55eea66b7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617936"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6604290"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 
 Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
-
-> [!IMPORTANT]
-> Obecnie można tylko utworzyć nowe połączenie i wyeksportować dane do usługi Google Ads, jeśli masz już zatwierdzony token dewelopera usługi Google Ads. W związku ze zmianami wprowadzonymi w zasadach eksport usługi Google Ads zostanie wkrótce zaktualizowany. Będzie dostępna opcja eksportu, która nie będzie wymagała tokenu dla deweloperów, aby zapewnić ciągłość pracy i uprościć eksportowanie do Google Ads. Zaleca się rezygnację z konfigurowania większej liczby połączeń z usługą Google Ads, aby ułatwić przejście do nowej opcji eksportowania.
 
 ## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
 
@@ -35,9 +32,9 @@ Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 mln profilów klientów na eksport do usługi Google Ads.
+- Do 1 miliona profili na eksport do Google Ads.
 - Eksport do Google Ads jest ograniczony do segmentów.
-- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 5 minut z powodu ograniczeń po stronie dostawcy. 
+- Eksportowanie segmentów zawierających łącznie 1 milion profili może zająć do 5 minut ze względu na ograniczenia po stronie dostawcy. 
 - Dopasowanie w usłudze Google Ads może potrwać do 48 godzin.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfiguruj połączenie z usługą Google Ads
@@ -74,7 +71,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź **[identyfikator odbiorcy usługi Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** i wybierz pozycję **Połącz**, aby zainicjować połączenie z usługą Google Ads.
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta.
+1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta.
 
 1. Wybierz segmenty, które chcesz wyeksportować. W sumie do maksymalnie 1 000 000 profilów klientów można wyeksportować do Google Ads.
 

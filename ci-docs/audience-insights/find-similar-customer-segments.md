@@ -1,5 +1,5 @@
 ---
-title: Znajdź podobnych klientów za pomocą AI (zawiera wideo)
+title: Znajdź podobnych klientów z AI
 description: Znajdź segmenty podobnych klientów za pomocą sztucznej inteligencji.
 ms.date: 06/25/2020
 ms.service: customer-insights
@@ -9,18 +9,16 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: de337ae989558c81fff25a6ff7cca01890ed306b
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+ms.openlocfilehash: ee4d24ae0ae39c689956f70efe46c4226876484e6da6282dc874cec37bd287e2
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934853"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034556"
 ---
 # <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
 
 Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korzystając z sztucznej inteligencji. Aby można było korzystać z tej funkcji, musi być utworzony co najmniej jeden segment. Rozwijanie kryteriów istniejącego segmentu ułatwia znajdowanie klientów podobnych do tego segmentu.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
 > *Znajdź podobnych klientów* używa zautomatyzowanego narzędzia do oceniania danych i tworzenia prognoz na podstawie tych danych i w może służyć jako metoda profilowania, ponieważ ten termin jest definiowany przez Ogólne rozporządzenie o ochronie danych ("GDPR"). Korzystanie z tej funkcji przez klienta do przetwarzania danych może podlegać RODO lub innym prawom lub rozporządzeniom. Użytkownik ma obowiązek zagwarantować, że użytkowanie Dynamics 365 Customer Insights wraz z przewidywaniami jest zgodne ze wszystkimi obowiązującymi przepisami prawnymi i wykonawczymi, w tym prawa związane z ochroną prywatności, danymi osobowymi, danymi biometrycznymi, ochroną danych i poufność informacji.

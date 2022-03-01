@@ -1,7 +1,7 @@
 ---
 title: Przewidywanie rekomendacji produktów
 description: Przewiduj produkty, które klient prawdopodobnie kupi lub z którymi będzie miał do czynienia.
-ms.date: 01/13/2022
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967852"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494552"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
 
@@ -79,11 +79,11 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 1. Ustaw **Liczba produktów**, które mają być zalecane dla klienta. Ta wartość zależy od tego, jak Twoja metoda dostawy wypełnia dane. Jeśli możesz polecić trzy produkty, ustaw odpowiednio tę wartość.
    
    >[!TIP]
-   > W dowolnym momencie można wybrać opcję **Zapisz roboczą**, aby zapisać przewidywanie jako roboczą. Wersja robocza tego przewidywanie się na karcie **Moje prognozy**.
+   > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Wersja robocza tego przewidywanie się na karcie **Moje prognozy**.
 
-1. Wybierz, czy chcesz uwzględnić produkty, które ostatnio kupili klienci, w polu **Oczekiwane powtórzenie zakupów**.
+1. Wybierz, jeśli chcesz **Sugerować produkty, które klienci kupili ostatnio**.
 
-1. Konfiguracja **Spójrz wstecz**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Można na przykład wskazać, że klient kupuje komputer przenośny co dwa lata. W tym oknie będzie widoczna historia zakupu za ostatnie dwa lata i po znalezienie pozycji, zostanie ona odfiltrowana z polecanych.
+1. Jeśli ostatnio *nie* poleca się zakupu produktów, należy ustawić **Okno wglądu w przeszłość**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Można na przykład wskazać, że klient kupuje komputer przenośny co dwa lata. W tym oknie będzie widoczna historia zakupu za ostatnie dwa lata i po znalezienie pozycji, zostanie ona odfiltrowana z polecanych.
 
 1. Wybierz **Dalej**
 

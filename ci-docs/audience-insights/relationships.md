@@ -1,20 +1,20 @@
 ---
 title: Relacje między encjami i ścieżkami encji
 description: Tworzenie relacji między encjami z wielu źródeł danych i zarządzanie nimi.
-ms.date: 09/27/2021
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623182"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171177"
 ---
 # <a name="relationships-between-entities"></a>Relacje między encjami
 
@@ -32,8 +32,8 @@ Podczas ujednolicania danych relacje systemowe są tworzone automatycznie na pod
 :::image type="content" source="media/relationships-entities-merge.png" alt-text="Diagram ze ścieżkami relacji dla encji klient z trzema relacjami 1-n.":::
 
 - **Relacja *CustomerToContact*** jest utworzona między encją *klienta* i encją *kontaktu*. Encja *klienta* otrzymuje pole kluczowe **Contact_contactID** w celu powiązania jej z polem kluczowym encji *kontaktu* **contactID**.
-- ***Relacja CustomerToAccount*** jest utworzona między encją *klienta* i encją *konta*. Encja *klienta* otrzymuje pole kluczowe **Account_accountID** w celu powiązania jej z polem kluczowym encji *konta* **accountID**.
-- ***Relacja CustomerToWebAccount*** jest utworzona między encją *klienta* i encją *WebAccount*. Encja *klienta* otrzymuje pole kluczowe **WebAccount_webaccountID** w celu powiązania jej z polem kluczowym **webaccountID** encji *WebAccount*.
+- **Relacja *CustomerToAccount*** jest utworzona między encją *klienta* i encją *konta*. Encja *klienta* otrzymuje pole kluczowe **Account_accountID** w celu powiązania jej z polem kluczowym encji *konta* **accountID**.
+- **Relacja *CustomerToWebAccount*** jest utworzona między encją *klienta* i encją *WebAccount*. Encja *klienta* otrzymuje pole kluczowe **WebAccount_webaccountID** w celu powiązania jej z polem kluczowym **webaccountID** encji *WebAccount*.
 
 ## <a name="non-editable-inherited-relationships"></a>Odziedziczone relacje nieedytowalne
 
@@ -68,20 +68,6 @@ Relacja składa się z *encji źródłowej* zawierającej klucz obcy i *encję d
 
 4. Wybierz pozycję **ZApisz**, aby utworzyć niestandardową relację.
 
-## <a name="set-up-account-hierarchies"></a>Konfigurowanie hierarchii klientów
-
-Środowiska, w których skonfigurowano używanie kont biznesowych jako podstawowych docelowych odbiorców, mogą konfigurować hierarchie kont dla pokrewnych kont biznesowych. Może to być na przykład firma z oddzielnymi jednostkami biznesowymi. 
-
-Organizacje tworzą hierarchie kont, aby lepiej zarządzać kontami i ich relacjami. Funkcja wyników analiz odbiorców obsługuje hierarchie kont nadrzędnych i podrzędnych, które już istnieją w pozyskanych danych klientów. Na przykład konta z aplikacji Dynamics 365 Sales. Hierarchie te można skonfigurować na stronie **Relacje** w funkcji Wyniki analiz odbiorców, na karcie hierarchii kont.
-
-1. Przejdź do pozycji **Dane** > **Relacje**.
-1. Wybierz kartę **Hierarchia klientów**.
-1. Wybierz pozycję **Nowa hierarchia klientów**. 
-1. W okienku **Hierarchia klientów** podaj nazwę hierarchii. System tworzy nazwę encji wyjściowej. Można zmienić nazwę encji wyjściowej.
-1. Wybierz encję zawierającą hierarchię klientów. Zazwyczaj znajduje się ona w tej samej encji, która zawiera klientów.
-1. Wybierz **identyfikator klienta** i **nadrzędny identyfikator klienta** z wybranej encji 
-1. Wybierz opcję **Zapisz**, aby zastosować ustawienia i sfinalizować hierarchię klientów.
-
 ## <a name="view-relationships"></a>Widok relacji
 
 Strona Relacje zawiera listę wszystkich utworzonych relacji. Każdy wiersz reprezentuje relację, która zawiera również szczegółowe informacje o encji źródłowej, encji docelowej i kardynalności. 
@@ -96,7 +82,7 @@ Ta strona oferuje zestaw opcji dla istniejących i nowych relacji:
 
 ### <a name="explore-the-relationship-visualizer"></a>Poznawanie wizualizacji relacji
 
-Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności. Także wizualizuje ścieżkę relacji.
+Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności.
 
 Aby dostosować widok, możesz zmienić położenie pól, przeciągając je na kanwę.
 
@@ -106,56 +92,6 @@ Dostępne opcje:
 - **Eksportuj jako plik obrazu**: zapisz bieżący widok jako plik obrazu.
 - **Zmień na układ poziomy/pionowy**: zmień wyrównanie encji i relacji.
 - **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
-
-## <a name="relationship-paths"></a>Ścieżki relacji
-
-Ścieżka relacji opisuje encje, które są połączone z relacjami między encją źródłową i encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu. 
-
-Ścieżka relacji informuje system, które relacje mają uzyskiwać dostęp do encji ujednoliconego profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
-
-Na przykład obiekt, *eCommerce_eCommercePurchases* ma następujące relacje do encji ujednoliconego profilu *Klient*:
-
-- eCommerce_eCommercePurchases > klient
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > klient 
-
-Ścieżka relacji określa encje, których można używać podczas tworzenia reguł dla miar lub segmentów. Wybranie opcji z najdłuższa ścieżką relacji najprawdopodobniej dostarczy mniejszą liczbę wyników, ponieważ dopasowane rekordy muszą być częścią wszystkich encji. W tym przykładzie klient musi mieć zakupione towary za pośrednictwem handlu elektronicznego (eCommerce_eCommercePurchases) w punkcie sprzedaży (POS_posPurchases) i uczestniczyć w naszym programie lojalnościowym (loyaltyScheme_loyCustomers). Wybór pierwszej opcji spowoduje prawdopodobnie dodatkowe rezultaty, ponieważ klienci muszą istnieć tylko w jednej dodatkowej encji.
-
-### <a name="direct-relationship"></a>Relacja bezpośrednia
-
-Relacja jest klasyfikowana jako **relacja bezpośrednia**, gdy encja źródłowa jest powiązana z encją docelową przy użyciu tylko jednej relacji.
-
-Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchases* łączy się z encją docelową *eCommerce_eCommerceContacts* tylko za pośrednictwem elementu *ContactId*, jest to relacja bezpośrednia.
-
-:::image type="content" source="media/direct_Relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z encją docelową.":::
-
-#### <a name="multi-path-relationship"></a>Relacja z wieloma ścieżkami
-
-**Relacja z wieloma ścieżkami** jest specjalnym typem relacji bezpośredniej łączącej encję źródłową z więcej niż jedną encją docelową.
-
-Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchases* jest powiązana z dwiema encjami docelowymi *eCommerce_eCommerceContacts* i *loyaltyScheme_loyCustomers*, jest to relacja z wieloma ścieżkami.
-
-:::image type="content" source="media/multi-path_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z więcej niż jedną encją docelową za pośrednictwem relacji z wieloma ścieżkami.":::
-
-### <a name="indirect-relationship"></a>Relacja pośrednia
-
-Relacja jest klasyfikowana jako **relacja pośrednia**, gdy encja źródłowa jest powiązana z co najmniej jedną encją dodatkową przed powiązaniem z encją docelową.
-
-#### <a name="multi-hop-relationship"></a>Relacja z wieloma przeskokami
-
-*Relacja z wieloma przeskokami* to *relacja pośrednia*, która umożliwia połączenie encji źródłowej z encją docelową za pośrednictwem co najmniej jednej encji pośredniczącej.
-
-Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z encją docelową o nazwie *eCommerce_eCommerceContacts*, jest to relacja z wieloma przeskokami.
-
-:::image type="content" source="media/multi-hop_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z encją docelową z użyciem encji pośredniczącej.":::
-
-### <a name="multi-hop-multi-path-relationship"></a>Relacja z wieloma przeskokami i wieloma ścieżkami
-
-Relacji z wieloma przeskokami i wieloma ścieżkami można używać razem do tworzenia **relacji z wieloma przeskokami i wieloma ścieżkami**. Ten typ specjalny obejmuje funkcje **relacji z wieloma przeskokami** i **relacji z wieloma ścieżkami**. Umożliwia on nawiązywanie połączenia z więcej niż jedną encją docelową dzięki użyciu encji pośredniczących.
-
-Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z dwiema encjami docelowymi *eCommerce_eCommerceContacts* i *loyaltyScheme_loyCustomers*, jest to relacja z wieloma przeskokami i wieloma ścieżkami.
-
-:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z jedną encją docelową, a następnie łączy się z inną encją docelową z użyciem encji pośredniczącej.":::
 
 ## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami 
 
@@ -169,6 +105,6 @@ Wybierz relację i wybierz jedną z następujących opcji:
 
 ## <a name="next-step"></a>Następny krok
 
-Relacje systemowe i niestandardowe są używane do [tworzenia segmentów](segments.md) i [miar](measures.md) opartych na wielu źródłach danych, które nie są już w silosach.
+System i relacje niestandardowe służą do [tworzenia segmentów](segments.md) na podstawie wielu źródeł danych, które nie są już izolowane.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

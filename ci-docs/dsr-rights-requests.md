@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: c116f7ce208c0288851a4b2230e27784ba3a5337
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732693"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483694"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -79,14 +79,7 @@ W celu wyeksportowania danych administrator dzierżawy może wykonać następuj�
 2. Zatwierdź potwierdzenie wyeksportowania danych dla żądanego użytkownika.
 3. Pobierz eksportowane dane za pomocą adresu e-mail administratora dzierżawcy.
 
-## <a name="consent-management-preview"></a>Zarządzanie zgodami (wersja zapoznawcza)
-
-Funkcja zarządzania zgodami nie umożliwia bezpośredniego zbierania danych użytkowników. Importuje i przetwarza ona tylko dane zgody podane przez użytkowników w innych aplikacjach.
-
-Aby usunąć dane zgody dotyczące określonych użytkowników, należy usunąć je w źródłach danych, z których pozyskano je dla funkcji zarządzania zgodami. Po odświeżeniu źródła danych dane zostaną również usunięte w Centrum zgody. Aplikacje, które korzystają z encji zgody, będą również usuwać dane, które zostały usunięte ze źródła po [odświeżeniu](audience-insights/system.md#refresh-processes). Zaleca my odświeżenie źródeł danych niedługo po reakcji na żądanie podmiotu danych dotyczącego usunięcia danych użytkownika ze wszystkich innych procesów i aplikacji.
-
-
-## <a name="engagement-insights-preview"></a>Wyniki analiz interakcji (wersja zapoznawcza)
+## <a name="engagement-insights"></a>Szczegółowe informacje o zaangażowaniu
 
 ### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Usuwanie i eksportowanie danych zdarzeń zawierających informacje umożliwiające identyfikację użytkownika końcowego
 

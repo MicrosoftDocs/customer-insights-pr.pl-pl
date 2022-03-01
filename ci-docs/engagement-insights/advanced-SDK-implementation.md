@@ -4,17 +4,17 @@ description: Zaawansowane scenariusze, które należy rozważyć podczas instrum
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/27/2021
+ms.date: 11/12/2020
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 4c6646ecadbb604000d6c95b685cf6e420969a6d
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: 7455d276035bfaf1f8a93d0e3b0b0884353a4010715c05d1d696309f7eb4b233
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558715"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036341"
 ---
 # <a name="advanced-web-sdk-instrumentation"></a>Zaawansowane instrumentowanie zestawu SDK sieci Web
 
@@ -33,20 +33,20 @@ Obiekt `IUser` zawiera następujące właściwości ciągu:
 - **authType**: typ uwierzytelniania używany do uzyskania uwierzytelnionego identyfikatora użytkownika.
 - **name**: Nazwa użytkownika.
 - **email**: Adres e-mail użytkownika.
-
-W następującym przykładzie przedstawiono fragment kodu wysyłania informacji o użytkowniku. Tam, gdzie są wyświetlane funkcje poprzedzone symbolem gwiazdki *, zastąp funkcję implementacją niestandardową:
+    
+W następującym przykładzie przedstawiono fragment kodu wysyłania informacji o użytkowniku. Gdy funkcja jest oznaczana przez *, zastąp ją implementacją wywołującą te wartości:  
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     user:{
@@ -58,25 +58,25 @@ window, document
 […]
 ```
 
-Informacje o użytkowniku można również określać przez wywoływanie interfejsu API `setUser(user: IUser)`. Telemetria wysyłana po wywołaniu interfejsu API `setUser` będą zawierać informacje o użytkowniku.
+Informacje o użytkowniku można również określać, wywołując interfejs API `setUser(user: IUser)` w zestawie SDK. Dane telemetryczne wysyłane po wywołaniu `setUser API` będą zawierać informacje o użytkowniku.
 
 ## <a name="adding-custom-properties-for-each-event"></a>Dodawanie właściwości niestandardowych dla każdego zdarzenia
 
-Zestaw SDK umożliwia zdefiniowanie niestandardowych właściwości, które mogą być wysyłane przy każdym zdarzeniu. Można określić właściwości niestandardowe jako obiekt zawierający parę klucz-wartość (może to być wartość typu `string | number | boolean`). Można dodać obiekt we właściwości o nazwie `props`, podobnej do właściwości `src`, `name` i `cfg` w konfiguracji wstawki kodu.
+Zestaw SDK umożliwia zdefiniowanie niestandardowych właściwości, które mogą być wysyłane przy każdym zdarzeniu. Można określić właściwości niestandardowe jako obiekt zawierający parę klucz-wartość (może to być wartość typu `string | number | boolean`). Obiekt można dodać we właściwości o nazwie `props`, podobnie jak w `src`, `name`, i `cfg` we fragmencie kodu konfiguracji. 
 
 W następującym przykładzie przedstawiono fragment kodu wysyłania właściwości niestandardowych:
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     props:{
@@ -87,7 +87,7 @@ window, document
 […]
 ```
 
-Właściwości niestandardowe można również określać indywidualnie przez wywoływanie interfejsu API `setProperty(name: string, value: string | number | boolean)`.
+Można również określać właściwości niestandardowe pojedynczo, wywołując interfejs API `setProperty(name: string, value: string | number | boolean)` w zestawie SDK.
 
 ## <a name="sending-custom-events"></a>Przesyłaj zdarzenia niestandardowe
 

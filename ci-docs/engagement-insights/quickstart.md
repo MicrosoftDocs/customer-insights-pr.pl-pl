@@ -9,12 +9,12 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 95caaa1f67a7740328b67face00acaea65452eb0
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: eebe51d343f6afbed52a66c52ab6a60eb5cd410367fb2e4409eb8679f357c91e
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494470"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7033920"
 ---
 # <a name="first-run-experience"></a>Pierwsze uruchomienie
 
@@ -26,7 +26,7 @@ Obsługa analizy interakcji w Dynamics 365 Customer Insights umożliwia zbierani
 
 Najpierw należy mieć aktywne konto użytkownika Microsoft Azure Active Directory. 
 
-1. Otwórz [witrynę sieci Web analizy interakcji](https://home.ci.ai.dynamics.com/app/engagement-insights). 
+1. Otwórz [witrynę sieci Web analizy interakcji](https://pi.dynamics.com/). 
 
 1. Zaloguj się za pomocą konta służbowego lub szkolnego.
 

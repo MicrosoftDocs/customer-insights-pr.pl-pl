@@ -1,5 +1,5 @@
 ---
-title: Przewidywanie rezygnacji z subskrypcji (zawiera wideo)
+title: Przewidywanie zmian subskrypcji
 description: Przewiduj, czy istnieje zagrożenie, że klient przestanie używać subskrypcji na produkty lub usługi Twojej firmy.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967714"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799741"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
 
@@ -77,7 +77,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 1. Wprowadź liczbę **Dni od zakończenia subskrypcji**, przez które firma uważa, że klient jest w stanie rezygnacji. Ten okres zazwyczaj jest powiązany z działaniami biznesowymi, takimi jak oferty, lub inne działania marketingowe, które usiłują zapobiec utracie klienta.
 1. Wpisz w liczbę **Dni, które mają zostać przeanalizowane w przyszłości w celu przewidywania zmian**, aby ustawić okno przewidywania zmian. Na przykład w celu przewidywania ryzyka zmian w pracy z klientami w ciągu najbliższych 90 dni w celu dostosowania się do działań w zakresie przechowywania marketingu. Przewidywanie ryzyka rezygnacji przez dłuższe lub krótsze okresy może jednak znacznie utrudnić branie pod uwagę czynników w profilu ryzyka rezygnacji w zależności od konkretnych wymagań biznesowych. Wybierz **Dalej**, aby kontynuować
    >[!TIP]
-   > W dowolnym momencie można wybrać opcję **Zapisz roboczą**, aby zapisać przewidywanie jako roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
+   > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
 
 ### <a name="add-required-data"></a>Dodaj wymagane dane
 
