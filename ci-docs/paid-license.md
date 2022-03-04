@@ -4,22 +4,21 @@ author: m-hartmann
 description: Zapoznaj się z pierwszym uruchomieniem środowiska aplikacji Dynamics 365 Customer Insights i dowiedz się więcej o jej możliwościach.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
-ms.topic: overview
+ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645715"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350144"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Rozpoczynanie pracy po zakupie aplikacji Customer Insights
 
 W tym artykule opisano, jak wykonać pierwsze kroki po zakupie subskrypcji aplikacji Dynamics 365 Customer Insights przez organizację. Jeśli chcesz kupić usługę Customer Insights, nasze opcje do kontaktu są wymienione na [stronie internetowej Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/). 
 
-Po zakupie licencji subskrypcyjnej dla usługi Customer Insights administrator globalny dzierżawcy usługi Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. 
+Po zakupieniu licencji subskrypcji aplikacji Customer Insights administrator globalny dzierżawcy platformy Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. 
 
 Aplikacja Customer Insights ma licencję na każdego dzierżawcę i zawiera wiele możliwości. Aby zwiększyć normę domyślną, można kupić więcej wydajności i licencji. 
 - [Omówienie cen](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
@@ -40,10 +39,7 @@ Jeśli chcesz wypróbować usługę i funkcje, zobacz [Konfigurowanie środowisk
 
 ## <a name="create-your-own-environment"></a>Tworzenie własnego środowiska
 
-Po pierwszym zalogowaniu zobaczysz środowisko z przykładowymi danymi. Tych danych można używać do poznawania funkcji i aplikacji. Aby można było używać własnych danych, należy utworzyć środowisko w funkcji, w której będziesz pracować.
-
-- [Tworzenie środowiska w aplikacji Wyniki analiz odbiorców.](audience-insights/get-started-paid.md)
-- [Tworzenie środowiska w aplikacji Wyniki analiz interakcji.](engagement-insights/create-new-environment.md) 
+Po pierwszym zalogowaniu zobaczysz środowisko z przykładowymi danymi. Tych danych można używać do poznawania funkcji i aplikacji. Aby używać własnych danych, należy [utworzyć środowisko](audience-insights/get-started-paid.md).
 
 
 

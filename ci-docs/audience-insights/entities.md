@@ -3,18 +3,20 @@ title: Encje i zestawy danych
 description: Wyświetlanie danych na stronie Encji.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-entities
+- customerInsight
+ms.openlocfilehash: 1e1abdf49a3c1fe6f9fdd2cf5353a7723454f47b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900440"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355333"
 ---
 # <a name="entities-in-audience-insights"></a>Encje w analizach odbiorców
 
@@ -71,7 +73,9 @@ Pola z przeanalizowanego źródła danych mogą zawierać uszkodzone dane. Rekor
 
 Na przykład kolumna „urodziny” ma typ danych ustawiony jako „data”. Rekord klienta ma jego urodziny wprowadzone jako „01/01/19777”. System oznaczy ten rekord jako uszkodzony. Ktoś może teraz zmienić urodziny w systemie źródłowym na „1977”. Po automatycznym odświeżeniu źródeł danych pole ma teraz prawidłowy format, a rekord zostanie usunięty z uszkodzonej jednostki. 
 
-Przejdź do **Dane** > **Jednostki** i poszukaj uszkodzonych jednostek w sekcji **System**. Schemat nazewnictwa uszkodzonych jednostek: „DataSourceName_EntityName_corrupt”.
+Przejdź do **Dane** > **Jednostki** i poszukaj uszkodzonych jednostek w sekcji **System**. Schemat nazewnictwa uszkodzonych jednostek: „DataSourceName_EntityName_corrupt”. Wybierz uszkodzoną encję, aby zidentyfikować wszystkie uszkodzone pola i przyczynę na poziomie indywidualnego rekordu.
+> [!div class="mx-imgBorder"]
+> ![Przyczyna uszkodzenia.](media/corruption-reason.png "Przyczyna uszkodzenia")
 
 Customer Insights nadal przetwarza uszkodzone rekordy. Jednak mogą one powodować problemy podczas pracy z ujednoliconymi danymi.
 

@@ -2,18 +2,17 @@
 title: Użycie wymiarów demograficznych do podziału danych behawioralnych (filtrowanych wymiarów)
 description: Użyj filtrowanych ujednoliconych wymiarów profilu w celu włączania właściwości profilu klienta wyników analiz odbiorców.
 ms.date: 07/27/2021
-ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 95395e09bc0ba5ba93138957c62105f31c709e91
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461116"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8233060"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Użycie wymiarów demograficznych do podziału danych behawioralnych
 
@@ -29,7 +28,7 @@ Używając ujednoliconych wymiarów demograficznych profilu, użytkownicy wynik�
 - Środowisko wyników analiz interakcji, w którym dane profilu klienta połączone ze środowiskiem wyników analiz odbiorców, gdzie segmenty i profile klientów są tworzone. Więcej informacji: [Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Po utworzeniu łącza między środowiskami wyników analiz odbiorcy i interakcji można używać tylko danych dotyczących właściwości profilu klienta, które mogą być przydatne jako wymiary w wynikach analiz interakcji. Aby uzyskać więcej informacji, przejdź do artykułu [Włącz wyniki analiz odbiorcy ujednoliconych atrybutów i segmentów profilów](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
+> Po utworzeniu łącza między środowiskami wyników analiz odbiorcy i interakcji można używać tylko danych dotyczących właściwości profilu klienta, które mogą być przydatne jako wymiary w wynikach analiz interakcji. Aby uzyskać więcej informacji, przejdź do artykułu [Włącz wyniki analiz odbiorcy ujednoliconych atrybutów i segmentów profilów](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
 
 ## <a name="create-a-new-custom-report"></a>Utwórz nowy niestandardowy raport
 

@@ -1,42 +1,48 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Autopilot
-description: Dowiedz się, jak skonfigurować połączenie z Autopilot.
-ms.date: 12/08/2020
-ms.reviewer: philk
-ms.service: customer-insights
+description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Autopilot.
+ms.date: 10/08/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 33a8cd1ae4a77ce2248bc2805d25687c9a2c2732
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 7a7a67a52fcf39da8d50bd95817d25470fc90b6f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269251"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227679"
 ---
-# <a name="connector-for-autopilot-preview"></a>Łącznik dla usługi Autopilot (wersja zapoznawcza)
+# <a name="export-segments-to-autopilot-preview"></a>Eksportowanie segmentów do programu Autopilot (wersja zapoznawcza)
 
 Eksportuj segmenty ujednoliconych profili klientów do Autopilota i używaj ich do marketingu e-mailowego w Autopilocie. 
 
-## <a name="prerequisites"></a>Wymagania wstępne
+## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
 -   Użytkownik ma [konto usługi Autopilot](https://www.autopilothq.com/) i odpowiadające mu poświadczenia administratora.
 -   Posiadasz [skonfigurowane segmenty](segments.md) w analizach odbiorców.
 -   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
-## <a name="connect-to-autopilot"></a>Połącz z usługą Autopilot
+## <a name="known-limitations"></a>Znane ograniczenia
 
-1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+- W ramach każdego eksportu do rozwiązania Autopilot można wyeksportować łącznie 100 000 profilów klientów.
+- Eksport do Autopilot jest ograniczony do segmentów.
+- Eksportowanie do 100 000 profilów klientów do rozwiązania Autopilot może zająć do kilku godzin. 
+- Liczba profilów klientów, które można eksportować do rozwiązania Autopilot, zależy od kontraktu z rozwiązaniem Autopilot i jest ograniczona.
 
-1. W **Autopilot** wybierz **Konfiguruj**.
+## <a name="set-up-connection-to-autopilot"></a>Skonfiguruj połączenie z usługą Autopilot
 
-1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej exportu rozpoznawalną nazwę.
+1. Przejdź do **Admin** > **Połączenia**.
 
-   :::image type="content" source="media/export-autopilot.PNG" alt-text="Okienko konfiguracji dla połączenia z Autopilot.":::
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Autopilot**, aby skonfigurować połączenie.
 
-1. Wprowadź **klucz interfejsu API Autopilot** [klucz interfejsu API Autopilot](https://autopilot.docs.apiary.io/#).
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
+
+1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Wprowadź [klucz interfejsu API Autopilot](https://autopilot.docs.apiary.io/#).
 
 1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
 
@@ -44,26 +50,27 @@ Eksportuj segmenty ujednoliconych profili klientów do Autopilota i używaj ich 
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
-1. Wybierz **Dalej**, aby skonfigurować eksport.
+1. Aby zakończyć połączenie, wybierz **Zapisz**.
 
-## <a name="configure-the-connector"></a>Skonfiguruj łącznik
+## <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**.
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Autopilot. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**.
 
 1. Wybierz segmenty, które chcesz wyeksportować. Zdecydowanie **zalecamy, aby nie eksportować łącznie ponad 100 000 profili klientów** do Autopilota. 
 
 1. Wybierz pozycję **Zapisz**.
 
-## <a name="export-the-data"></a>Eksportowanie danych
+Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).
-
-## <a name="known-limitations"></a>Znane ograniczenia
-
-- Możesz wyeksportować łącznie do 100 000 profili do Autopilota.
-- Eksport do Autopilot jest ograniczony do segmentów.
-- Eksportowanie do 100 000 profili do Autopilota może zająć do kilku godzin. 
-- Liczba profilów, które można eksportować do Autopilot, jest zależna od kontraktu i ograniczona jego Autopilot.
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

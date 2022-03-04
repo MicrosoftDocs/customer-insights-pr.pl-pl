@@ -1,93 +1,224 @@
 ---
 title: Scalanie encji w przypadku zjednoczenia danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
-ms.date: 04/16/2020
-ms.service: customer-insights
+ms.date: 01/28/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+searchScope:
+- ci-match
+- ci-merge
+- ci-relationships
+- customerInsights
+ms.openlocfilehash: c7743104bf89d9a2a741f1b358a89ed0240be024
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896524"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355858"
 ---
 # <a name="merge-entities"></a>Scalanie encji
 
 Faza scalania jest ostatnią fazą procesu unifikacji danych. Jego zastosowanie powoduje uzgadnianie danych powodujących konflikty. Przykłady danych powodujących konflikty mogą zawierać nazwy klientów znalezione w dwóch zestawach danych, które są wyświetlane w różny sposób w każdym miejscu („Grant Marshall” i „Grant Marshal”) lub numery telefoniczne, który różnią się formatem (617-803-091X a 617803091X). Scalanie tych niezgodnych danych jest wykonywane na podstawie poszczególnych atrybutów.
 
+:::image type="content" source="media/merge-fields-page.png" alt-text="Strona scalania w procesie ujednolicania danych pokazująca tabelę z połączonymi polami definiującymi ujednolicony profil klienta.":::
+
 Po zakończeniu [fazy dopasowania](match-entities.md) można rozpocząć fazę scalenia, zaznaczając kafelek **Scalanie** na stronie **Ujednolicanie**.
 
 ## <a name="review-system-recommendations"></a>Przejrzyj rekomendacje systemu
 
-Na stronie **Scalanie** można wybrać atrybuty do scalenia w encji ujednoliconego profilu klienta (wynik procesu konfiguracji). Niektóre atrybuty są automatycznie scalane przez system.
+W **Dane** > **Ujednolić** > **Scal** wybierasz i wykluczasz atrybuty do połączenia w ramach ujednoliconej jednostki profilu klienta. Ujednolicony profil klienta jest wynikiem procesu unifikacji danych. Niektóre atrybuty są automatycznie scalane przez system.
 
-### <a name="view-merged-attributes"></a>Zobacz scalone atrybuty
+Aby zobaczyć atrybuty, które są zawarte w jednym z twoich automatycznie połączonych atrybutów, wybierz ten połączony atrybut **Pola klienta** na zakładce tabeli. Dwa nowe wiersze tworzące scalony atrybut będą wyświetlane w dwóch nowych wierszach pod atrybutem scalonym.
 
-Aby wyświetlić atrybuty, które są uwzględnione w jednym z automatycznie scalanych atrybutów, wybierz atrybut, który ma zostać scalony. Dwa atrybuty składające się na ten scalony atrybut są wyświetlane w dwóch nowych wierszach pod atrybutem scalonym.
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a>Rozdzielanie, zmienianie nazw, wykluczanie i edytowanie pól scalonych
 
-> [!div class="mx-imgBorder"]
-> ![Wyszukaj scalony atrybut](media/configure-data-merge-profile-attributes.png "Wyszukaj scalony atrybut")
+W celu wygenerowania ujednoliconego profilu klienta można zmienić sposób przetwarzania przez system scalonych atrybutów. Wybierz opcję **Pokaż więcej** i wybierz, co chcesz zmienić.
 
-### <a name="separate-merged-attributes"></a>Oddziel scalone atrybuty
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Opcje w menu rozwijanym Pokaż więcej, aby zarządzać połączonymi atrybutami.":::
 
-Aby wyodrębnić lub rozdzielić każdy z automatycznie scalonych atrybutów, znajdź atrybut w tabeli **Atrybuty profilu**.
+Aby uzyskać więcej informacji, zobacz następną sekcję.
 
-1. Wybierz przycisk wielokropka (...).
+## <a name="separate-merged-fields"></a>Oddzielenie połączonych pól
+
+Aby oddzielić połączone pola, znajdź atrybut w tabeli. Oddzielone pola są wyświetlane jako pojedyncze punkty danych na jednolitym profilu klienta. 
+
+1. Zaznacz scalone pole.
   
-2. Z listy rozwijanej wybierz **Rozdziel pola**.
+1. Wybierz opcję **Pokaż więcej** i wybierz pozycję **Rozdziel pola**.
+ 
+1. Potwierdź rozdział.
 
-### <a name="remove-merged-attributes"></a>Usuwanie scalonych atrybutów
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
 
-Aby wykluczyć atrybut z ostatecznej encji profilu klienta, należy go znaleźć w tabeli **Atrybuty profilu**.
+## <a name="rename-merged-fields"></a>Zmienianie nazw pól scalonych
 
-1. Wybierz przycisk wielokropka (...).
+Zmień wyświetlaną nazwę scalonych atrybutów. Nie można zmienić nazwy elementu wyjściowego.
+
+1. Zaznacz scalone pole.
   
-2. Z listy rozwijanej wybierz **Nie scalaj**.
+1. Wybierz opcję **Pokaż więcej** i wybierz pozycję **Zmień nazwę**.
 
-   Atrybut zostanie przeniesiony do sekcji **Usunięto z rekordu klienta**.
+1. Potwierdź zmienioną nazwę wyświetlania. 
 
-## <a name="manually-add-a-merged-attribute"></a>Ręczne dodanie scalonego atrybutu
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
 
-Aby dodać scalony atrybut, przejdź na stronę **Scalanie**.
+## <a name="exclude-merged-fields"></a>Wykluczanie pól połączonych
 
-1. Wybierz **Dodaj scalony atrybut**.
+Wykluczenie atrybutu z ujednoliconego profilu klienta. Jeśli pole jest wykorzystywane w innych procesach, np. w segmencie, usuń je z tych procesów, zanim wykluczysz je z profilu klienta. 
 
-2. Podaj **Nazwę**, która będzie identyfikować go na stronie **Scalenie** później.
+1. Wybierz scalone pole.
+  
+1. Wybierz opcję **Pokaż więcej** i wybierz pozycję **Wyklucz**.
 
-3. Opcjonalnie wprowadź **Nazwę wyświetlaną**, która będzie widoczna w encji ujednoliconego profilu klienta.
+1. Potwierdź wykluczenie.
 
-4. Konfigurowanie **Wybierz zduplikowane atrybuty** w celu wybrania atrybutów, które mają być scalane z dopasowanych encji. Istnieje również możliwość wyszukiwania atrybutów.
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
 
-5. Ustaw **Klasyfikuj wg ważności**, aby nadać priorytety jednemu atrybutowi nad innym. Jeśli na przykład encja *WebAccountCSV* zawiera najbardziej dokładne dane o atrybucie *Pełna nazwa*, można przypisać tę encję ponad *ContactCSV*, wybierając pozycję *WebAccountCSV*. W efekcie *WebAccountCSV* przechodzi do pierwszego priorytetu, podczas gdy *ContactCSV* przechodzi do drugiego priorytetu podczas ściągania wartości atrybutu *Pełna nazwa*.
+Na stronie **Scalanie** wybierz pozycję **Wykluczone pola**, aby wyświetlić listę wszystkich pól wykluczonych. To okienko umożliwia dodawanie z powrotem wykluczonych pól.
+
+## <a name="edit-a-merged-field"></a>Edytuj scalone pole
+
+1.  Wybierz scalone pole.
+
+1.  Wybierz opcję **Pokaż więcej** i wybierz pozycję **Edytuj**.
+
+1.  Określ, jak połączyć lub scalić pola z jednej z trzech opcji:
+    - **Ważność**: identyfikuje zwycięską wartość na podstawie klasyfikacji ważności określonej dla uczestniczących pól. Jest to opcja domyślna scalania. Wybierz pozycję **Przenieś w górę/w dół**, aby ustawić ranking ważności.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Opcja Ważność w oknie dialogowym scalania pól."::: 
+    - **Najnowsze**: identyfikuje zwycięską wartość jako wartość najnowszą. Wymaga pola daty lub pola liczbowego dla każdej encji uczestniczącej w zakresie scalania pól w celu zdefiniowania niedawności.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Opcja Niedawność w oknie dialogowym scalania pól.":::
+    - **Najstarsze**: identyfikuje zwycięską wartość jako wartość najstarszą. Wymaga pola daty lub pola liczbowego dla każdej encji uczestniczącej w zakresie scalania pól w celu zdefiniowania niedawności.
+
+1.  Aby uczestniczyć w procesie scalania, można dodać więcej pól.
+
+1.  Można zmienić nazwę scalonego pola.
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
+
+## <a name="combine-fields-manually"></a>Ręcznie połącz grupę pól
+
+Określ ręcznie łączony atrybut.
+
+1. Na stronie **Scal** wybierz opcję **Połącz**.
+
+1. Wybierz opcję **Pola**.
+
+1. Zwycięskie zasady scalania można określić na liście rozwijanej **Połącz pola wg**.
+
+1. Wybierz pole, które chcesz dodać. Wybierz **Dodaj pola**, aby połączyć więcej pól.
+
+1. Podaj **nazwę** i **nazwę pola wyjściowego**.
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany. 
+
+## <a name="combine-a-group-of-fields"></a>Połącz grupę pól
+
+Traktuj zgrupowane grupy pól jako jedną jednostkę. Na przykład jeśli nasze rekordy zawierają pola Address1, Address2, miejscowość, województwo i kod pocztowy. Prawdopodobnie nie chcemy scalać w innym rekordzie z adresem Address2, myśląc, że dane będą pełniejsze
+
+1. Na stronie **Scal** wybierz opcję **Połącz**.
+
+1. Wybierz opcję **Grupa pól**.
+
+1. Zwycięskie zasady scalania można określić na liście rozwijanej **Ustaw kolejność grup według**.
+
+1. Wybierz opcję **Dodaj** i określ, czy do pól chcesz dodać więcej pól, czy dodatkowe grupy.
+
+1. Podaj **Nazwę** i **Nazwę wyjściową** dla każdego połączonego pola.
+
+1. Podaj **Nazwę** grupy pól. 
+
+1. Wybierz pozycję **Gotowe**, aby zastosować zmiany.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
+
+## <a name="change-the-order-of-fields"></a>Zmiana kolejności pól
+
+Niektóre encje zawierają więcej szczegółów niż inne. Jeśli encja zawiera najnowsze dane o polu, możesz nadać jej priorytet nad innymi encjami podczas łączenia wartości.
+
+1. Zaznacz scalone pole.
+  
+1. Wybierz opcję **Pokaż więcej** i wybierz pozycję **Edytuj**.
+
+1. W okienku **Łączenie pól** wybierz opcję **Przenieś w górę/w dół**, aby ustawić kolejność lub przeciągnij je i upuść w żądanym miejscu.
+
+1. Potwierdź zmianę.
+
+1. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
+
+## <a name="configure-customer-id-generation"></a>Konfigurowanie generowania identyfikatora klienta 
+
+Po skonfigurowaniu scalania pól można zdefiniować sposób generowania wartości CustomerId, czyli unikatowych identyfikatorów profilu klienta. Krok scalania w procesie ujednolicania danych generuje unikatowy identyfikator profilu klienta. Identyfikator to CustomerId w encji *Klient*, który wynika z procesu ujednolicania danych. 
+
+Identyfikator CustomerId w encji Klient jest oparty na wartości skrótu pierwszej wartości podstawowych kluczy innych niż null. Klucze pochodzą z encji używanych na etapie dopasowania i scalania i wpływa na nie kolejność dopasowywania. Dlatego wygenerowany identyfikator CustomerID może ulec zmianie w przypadku zmiany wartości klucza podstawowego w encji podstawowej kolejności dopasowania. Wartość klucza podstawowego może więc nie zawsze reprezentować tego samego klienta.
+
+Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego zachowania.
+
+**Konfiguruj unikatowy identyfikator klienta**
+
+1. Przejdź do opcji **Ujednolicanie** > **Scal**.
+
+1. Wybierz kartę **Klucze**. 
+
+1. Zatrzymaj kursor w wierszu **CustomerId** i wybierz opcję **Skonfiguruj**.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Kontrolka do dostosowywania generowania identyfikatora.":::
+
+1. Wybierz do pięciu pól wchodzących w skład unikatowego identyfikatora klienta i bardziej stabilnych. Rekordy, które nie pasują do konfiguracji, używają identyfikatora skonfigurowanego w systemie.  
+
+1. Wybierz opcję **Gotowe** i uruchom proces scalania w celu zastosowania zmian.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Grupowanie profilów w gospodarstwa domowe lub klastry
+
+W procesie konfigurowania generowania profilu klienta można zdefiniować reguły grupowania profilów pokrewnych w klaster. Obecnie są dostępne dwa typy klastrów — gospodarstwa domowe i klastry niestandardowe. System automatycznie wybiera gospodarstwa domowe ze wstępnie zdefiniowanymi regułami, jeśli encja *Klient* zawiera pola semantyczne *Person.LastName* i *Location.Address*. Można też utworzyć klaster z własnymi regułami i warunkami, podobnie do [reguł dopasowania](match-entities.md#define-rules-for-match-pairs).
+
+**Definiowanie gospodarstwa domowego lub klastra**
+
+1. Przejdź do opcji **Ujednolicanie** > **Scal**.
+
+1. Na karcie **Scalanie** wybierz pozycję **Zaawansowane** > **Utwórz klaster**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Kontrolka do tworzenia nowego klastra.":::
+
+1. Wybierz klaster typu **Gospodarstwo domowe** lub **Niestandardowy**. Jeśli pola semantyczne *Person.LastName* i *Location.Address* znajdują się w encji *Klient*, zostanie automatycznie wybrane gospodarstwo domowe.
+
+1. Podaj nazwę klastra i wybierz opcję **Gotowe**.
+
+1. Wybierz kartę **Klastry**, aby znaleźć utworzony klaster.
+
+1. Określ reguły i warunki definiujące klaster.
+
+1. Wybierz opcję **Uruchom**, aby uruchomić proces scalania i utworzyć klaster.
+
+Po uruchomieniu procesu scalania identyfikatory klastra są dodawane jako nowe pola do encji *Klient*.
 
 ## <a name="run-your-merge"></a>Uruchamianie scalania
 
 Niezależnie od tego, czy ręcznie scalono atrybuty, czy pozwolono, aby system je scalił, zawsze można uruchomić scalanie. Wybierz **Uruchom** na stronie **Scalanie**, aby zacząć proces.
 
 > [!div class="mx-imgBorder"]
-> ![Zapis i uruchomienie scalania danych](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")
+> ![Zapis i uruchomienie scalania danych.](media/configure-data-merge-save-run.png "Zapis i uruchomienie scalania danych")
 
-Aby dokonać dodatkowych zmian i ponownie uruchomić krok, można anulować trwający proces scalania. Wybierz **Odświeżanie...** i wybierz **Anuluj zadanie**  w pojawiającym się okienku bocznym.
+Wybierz opcję **Uruchom tylko scalanie**, jeśli chcesz, aby wyniki pracy zostały odzwierciedlone w ujednoliconej encji klienta. Procesy niższego szczebla zostaną odświeżone zgodnie [z definicją w harmonogramie odświeżania](system.md#schedule-tab).
 
-Gdy tekst **Odświeżanie ...** zostanie zmieniony na **Pomyślne**, scalanie zakończyło się i rozwiązano sprzeczności w danych zgodnie z określonymi zasadami. Połączone i niepołączone atrybuty są zawarte w encji ujednolicony profil. Wykluczone atrybuty nie są zawarte w encji ujednolicony profil.
+Wybierz **Uruchom procesy scalania i procesy niższego rzędu**, aby odświeżyć system przy użyciu zmian. Wszystkie procesy, w tym wzbogacenie, segmenty i miary, zostaną automatycznie ponownie uruchomione. Po zakończeniu wszystkich dalszych procesów, profile klientów odzwierciedlają wszystkie wprowadzone zmiany.
 
-Jeśli nie było to pierwsze pomyślnie uruchomienie scalania, wszystkie procesy podrzędne, w tym wzbogacanie, segmentacja i miary, zostaną automatycznie uruchomione ponownie. Po ponownym uruchomieniu wszystkich procesów podrzędnych profile klienta odzwierciedlają wszelkie wprowadzone zmiany.
+Aby wprowadzić więcej zmian i ponownie uruchomić krok, można anulować trwające scalanie. Wybierz **Odświeżanie...** i wybierz **Anuluj zadanie**  w pojawiającym się okienku bocznym.
 
-> [!TIP]
-> Istnieje [sześć typów stanu](system.md#status-types) zadań/procesów. Ponadto większość procesów [zależy od innych procesów podrzędnych](system.md#refresh-policies). Istnieje możliwość wybrania stanu procesu w celu wyświetlenia szczegółowych informacji o postępie w całym zadaniu. Po wybraniu opcji **Zobacz szczegółowe informacje** dla jednego z zadań zadania, można znaleźć więcej informacji: czas przetwarzania, Data ostatniego przetwarzania oraz wszystkie błędy i ostrzeżenia skojarzone z zadaniem.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="Ścieżka przechodzenia do szczegółów, aby uzyskać szczegółowe informacje z łącza stanu zadania.":::
 
 ## <a name="next-step"></a>Następny krok
 
 Skonfiguruj [działania](activities.md), [wzbogacenie](enrichment-hub.md) lub [relacje](relationships.md), aby uzyskać dokładniejsze informacje o klientach.
 
-Jeśli zostały już skonfigurowane działania, wzbogacenia lub relacje lub jeśli segmenty są zdefiniowane, zostaną one automatycznie przetworzone w celu korzystania z najnowszych danych klienta.
-
-
-
+Jeśli już skonfigurowałeś działania, wzbogacenia lub segmenty, zostaną one przetworzone automatycznie, aby wykorzystać najnowsze dane o klientach.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

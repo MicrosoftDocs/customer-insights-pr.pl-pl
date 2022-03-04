@@ -3,26 +3,25 @@ title: Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować gotowy model prognozowania rezygnacji z transakcji.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 19befa17524aba4543f0d8a5f5f7d6f5a88b2322f1264b88fa0b31641610592a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029458"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354614"
 ---
-# <a name="transactional-churn-prediction-preview-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji (wersja zapozawcza)
+# <a name="transactional-churn-prediction-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji
 
-Ten przewodnik przeprowadzi Cię przez kompleksowy przykład prognozowania rezygnacji z transakcji w usłudze Customer Insights przy użyciu danych podanych poniżej. Żadne dane użyte w tym przewodniku nie są prawdziwymi danymi klientów i są częścią zbioru danych Contoso znajdującego się w środowisku *Demo* w ramach subskrypcji Customer Insights.
+Ten przewodnik przeprowadzi Cię przez kompleksowy przykład prognozowania rezygnacji z transakcji w usłudze Customer Insights przy użyciu danych podanych poniżej. Wszystkie dane użyte w tym przewodniku nie są prawdziwymi danymi klientów i są częścią zestawu danych Contoso znajdującego się w środowisku *Wersja demonstracyjna* w ramach subskrypcji Customer Insights.
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma produkująca wysokiej jakości maszyny do barów, które sprzedaje za pośrednictwem witryny sieci Web firmy Contoso Coffee. Ich celem jest wiedzieć, którzy klienci, którzy zazwyczaj kupują ich produkty regularnie, przestaną być aktywnymi klientami w ciągu najbliższych 60 dni. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
+Contoso to firma produkująca wysokiej jakości ekspresy do kawy i ekspresy do kawy, które sprzedają za pośrednictwem swojej witryny internetowej Contoso Coffee. Ich celem jest wiedzieć, którzy klienci, którzy zazwyczaj kupują ich produkty regularnie, przestaną być aktywnymi klientami w ciągu najbliższych 60 dni. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -31,7 +30,7 @@ Contoso to firma produkująca wysokiej jakości maszyny do barów, które sprzed
 
 ## <a name="task-1---ingest-data"></a>Zadanie 1 - pozyskiwanie danych
 
-Przejrzyj szczególnie artykuły [dotyczące spożywania danych](data-sources.md) i [importowania źródeł danych przy użyciu łączników Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych. 
+Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sources.md) i [importowania źródeł danych za pomocą łączników usługi Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Pozyskiwanie danych klienta na platformie eCommerce
 
@@ -149,7 +148,7 @@ Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utwor
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Zadanie 3 - Skonfiguruj przewidywanie rezygnacji z transakcji
 
-Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie subskrypcji. Aby zapoznać się ze szczegółowymi krokami, zobacz artykuł [Przewidywanie rezygnacji z subskrypcji (wersja zapoznawcza)](predict-subscription-churn.md). 
+Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie subskrypcji. Aby uzyskać szczegółowe informacje o krokach, zobacz artykuł [Przewidywanie rezygnacji z subskrypcji](predict-subscription-churn.md). 
 
 1. Wybierz **Analizy** > **Wykryj** i wybierz korzystanie z **Model rezygnacji klientów**.
 

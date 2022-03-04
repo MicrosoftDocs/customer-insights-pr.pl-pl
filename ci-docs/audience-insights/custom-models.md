@@ -3,18 +3,20 @@ title: Niestandardowe modele Uczenie maszynowe | Microsoft Docs
 description: Praca z modelami niestandardowymi z Uczenie maszynowe Azure w Dynamics 365 Customer Insights.
 ms.date: 12/01/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
-ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
+searchScope:
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 460b68e1e65b3033af0a03d1bcc27e718c79d7aa
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/02/2021
-ms.locfileid: "7881797"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355099"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -40,6 +42,8 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
    > [!NOTE]
    > Dane są przesyłane między wystąpieniami rozwiązania Customer Insights a wybranymi usługami internetowymi lub potokami platformy Azure w przepływie pracy. Podczas przesyłania danych do usługi platformy Azure upewnij się, że usługa jest skonfigurowana do przetwarzania danych w sposób (oraz w lokalizacji) umożliwiający zachowanie zgodności z wymaganiami prawnymi lub regulacyjnymi dotyczącymi danych Twojej organizacji.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElk]
 
 ## <a name="add-a-new-workflow"></a>Dodaj nowy przepływ pracy
 

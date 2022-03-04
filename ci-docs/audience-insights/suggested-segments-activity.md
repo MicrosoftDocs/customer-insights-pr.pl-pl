@@ -3,18 +3,20 @@ title: Sugerowane segmenty na podstawie aktywności.
 description: Pozwól, aby uczenie maszynowe pomogło Ci znaleźć nowe i interesujące segmenty na podstawie aktywności klientów.
 ms.date: 05/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: 46e8970f7fd116cb1654c94751923ce2a213ff87dd7bc7ee731a62bbd0093513
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-segment-suggestions
+- customerInsights
+ms.openlocfilehash: 9c10a32b770ea110a1166f20f72116a3a12cb92e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028419"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354476"
 ---
 # <a name="suggested-segments-based-on-activity-data-preview"></a>Sugerowane segmenty na podstawie danych aktywności (wersja zapoznawcza)
 

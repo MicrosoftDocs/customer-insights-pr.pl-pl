@@ -3,18 +3,17 @@ title: Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia k
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować model predykcji customer lifetime value.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306362"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354844"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta (CLV)
 
@@ -22,7 +21,7 @@ Ten przewodnik przeprowadzi Cię przez cały przykład przewidywania okresu istn
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma, która produkuje wysokiej jakości kawę i ekspresy do kawy. Sprzedają produkty za pośrednictwem swojej strony internetowej Contoso Coffee. Firma chce zrozumieć wartość (przychód), jaką jej klienci mogą wygenerować w ciągu najbliższych 12 miesięcy. Znajomość oczekiwanej wartości klientów w ciągu najbliższych 12 miesięcy pomoże im ukierunkować działania marketingowe na klientów o wysokiej wartości.
+Contoso to firma produkująca wysokiej jakości maszyny do barów kawowych. Produkty są dostępne w witrynie firmy Contoso Coffee. Firma chce zrozumieć wartość (przychód), jaką jej klienci mogą wygenerować w ciągu najbliższych 12 miesięcy. Znajomość oczekiwanej wartości klientów w ciągu najbliższych 12 miesięcy pomoże im ukierunkować działania marketingowe na klientów o wysokiej wartości.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -31,7 +30,7 @@ Contoso to firma, która produkuje wysokiej jakości kawę i ekspresy do kawy. S
 
 ## <a name="task-1---ingest-data"></a>Zadanie 1 - pozyskiwanie danych
 
-Zapoznaj się z artykułami [na temat pobierania danych](data-sources.md) i [importowania źródeł danych za pomocą łączników Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych.
+Przejrzyj artykuły [dotyczące pozyskiwania danych](data-sources.md) i [importowania źródeł danych za pomocą łączników usługi Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Pozyskiwanie danych klienta na platformie eCommerce
 
@@ -164,7 +163,7 @@ Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzeni
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Zadanie 3 — Skonfiguruj prognozę długookresowej wartości klienta
 
-Dzięki ujednoliconym profilom klientów możemy teraz uruchomić przewidywanie wartości życia klienta. Aby uzyskać szczegółowe informacje o krokach, zobacz temat [Wartość przewidywanie czasu życia klienta (wersja zapoznawcza)](predict-customer-lifetime-value.md).
+Dzięki ujednoliconym profilom klientów możemy teraz uruchomić przewidywanie wartości życia klienta. Aby wyświetlić szczegółowe kroki, zobacz temat [Przewidywanie wartości okresu istnienia klienta](predict-customer-lifetime-value.md).
 
 1. Przejdź do **Analizy**  > **Przewidywania** i wybierz **Model wartości okresu istnienia klienta**.
 

@@ -1,21 +1,23 @@
 ---
 title: Tworzenie środowisk w aplikacji Customer Insights
 description: Kroki tworzenia środowisk z licencjonowaną subskrypcją aplikacji Dynamics 365 Customer Insights.
-ms.date: 12/06/2021
+ms.date: 02/24/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
-ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+searchScope:
+- ci-home
+- customerInsights
+ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2022
-ms.locfileid: "8088126"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354108"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Tworzenie środowiska w aplikacji Wyniki analiz odbiorców
 
@@ -76,12 +78,14 @@ W przypadku utworzenia kilku środowisk usługi Customer Insights i zapisania en
    
 Krok **Microsoft Dataverse** umożliwia połączenie aplikacji Customer Insights ze środowiskiem Dataverse.
 
-Aby używać [gotowych modeli przewidywania](predictions-overview.md#out-of-box-models), skonfiguruj udostępnianie danych w funkcji Dataverse. Można też włączyć pozyskiwanie danych z lokalnych źródeł danych, udostępniając adres URL środowiska funkcji Microsoft Dataverse, którym administruje Twoja organizacja. Wybierz opcję **Włącz udostępnianie danych**, aby udostępnić dane wyjściowe usługi Customer Insights danym data lake zarządzanym przez usługę Dataverse.
+Udostępnij własne środowisko Microsoft Dataverse w celu udostępniania danych (profilów i analiz) aplikacjom biznesowym opartym usługach Dataverse, jak Dynamics 365 Marketing lub aplikacje oparte na modelu w usłudze Power Apps. Jeśli nie masz własnego środowiska Dataverse, pozostaw to pole puste, a my je ustanowimy.
+
+Połączenie ze środowiskiem Dataverse umożliwia również [pozyskiwanie danych z lokalnych źródeł danych za pomocą przepływów danych Power Platform i bram](data-sources.md#add-data-from-on-premises-data-sources). Możesz również użyć [modeli gotowego przewidywania](predictions-overview.md?tabs=b2c#out-of-box-models), łącząc się ze środowiskiem Dataverse.
 
 > [!IMPORTANT]
 > Customer Insights i Dataverse muszą znajdować się w tym samym regionie, aby umożliwić wymianę danych.
 
-:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Opcje konfiguracji umożliwiające udostępnianie danych funkcji Microsoft Dataverse.":::
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="udostępnianie danych z włączoną automatycznie obsługą Microsoft Dataverse dla nowych wystąpień sieci.":::
 
 > [!NOTE]
 > Aplikacja Customer Insights nie obsługuje następujących scenariuszy udostępniania danych:

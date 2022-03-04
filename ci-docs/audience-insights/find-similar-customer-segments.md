@@ -1,24 +1,29 @@
 ---
-title: Znajdź podobnych klientów z AI
+title: Znajdź podobnych klientów za pomocą AI (zawiera wideo)
 description: Znajdź segmenty podobnych klientów za pomocą sztucznej inteligencji.
 ms.date: 06/25/2020
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ee4d24ae0ae39c689956f70efe46c4226876484e6da6282dc874cec37bd287e2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-segment-builder
+- ci-segment-insights
+- customerInsights
+ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034556"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355258"
 ---
 # <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
 
 Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korzystając z sztucznej inteligencji. Aby można było korzystać z tej funkcji, musi być utworzony co najmniej jeden segment. Rozwijanie kryteriów istniejącego segmentu ułatwia znajdowanie klientów podobnych do tego segmentu.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
 > *Znajdź podobnych klientów* używa zautomatyzowanego narzędzia do oceniania danych i tworzenia prognoz na podstawie tych danych i w może służyć jako metoda profilowania, ponieważ ten termin jest definiowany przez Ogólne rozporządzenie o ochronie danych ("GDPR"). Korzystanie z tej funkcji przez klienta do przetwarzania danych może podlegać RODO lub innym prawom lub rozporządzeniom. Użytkownik ma obowiązek zagwarantować, że użytkowanie Dynamics 365 Customer Insights wraz z przewidywaniami jest zgodne ze wszystkimi obowiązującymi przepisami prawnymi i wykonawczymi, w tym prawa związane z ochroną prywatności, danymi osobowymi, danymi biometrycznymi, ochroną danych i poufność informacji.

@@ -2,7 +2,6 @@
 title: Rozpoczynanie pracy z kontami biznesowymi jako podstawowymi odbiorcami docelowymi
 description: Dowiedz się więcej o kontach biznesowych jako podstawowych odbiorcach docelowych w aplikacji Dynamics 365 Customer Insights.
 ms.date: 10/19/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
@@ -10,12 +9,16 @@ ms.custom: intro-internal
 ms.author: wimohabb
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: fb943a91154e913c85c40fbf6077c171e9240ac5
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+searchScope:
+- ci-semantic-mapping
+- ci-connections
+- customerInsights
+ms.openlocfilehash: 88882dc727c37262c9f204fbc8049abe17bd21a3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977934"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353556"
 ---
 # <a name="work-with-business-accounts-in-audience-insights"></a>Praca z kontami biznesowymi w funkcji Wyniki analiz odbiorców
 

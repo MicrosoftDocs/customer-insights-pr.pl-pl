@@ -1,38 +1,50 @@
 ---
 title: Eksport danych z Customer Insights do Dynamics 365 Sales
-description: Informacje o konfigurowaniu połączenia z Dynamics 365 Sales.
-ms.date: 08/21/2020
-ms.reviewer: philk
-ms.service: customer-insights
+description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Dynamics 365 Sales.
+ms.date: 03/03/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+searchScope:
+- ci-export
+- customerInsights
+ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643831"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355030"
 ---
-# <a name="connector-for-dynamics-365-sales-preview"></a>Łącznik dla Dynamics 365 Sales (wersja zapoznawcza)
+# <a name="use-segments-in-dynamics-365-sales-preview"></a>Używanie segmentów w usłudze Dynamics 365 Sales (wersja zapoznawcza)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Używając danych klientów, możesz tworzyć listy marketingowe oraz przepływy pracy kolejnych czynności, a także wysyłać materiały promocyjne z poziomu rozwiązania Dynamics 365 Sales.
 
-## <a name="prerequisite"></a>Warunek wstępny
+## <a name="known-limitations"></a>Znane ograniczenia
 
-Rekordy kontaktów [z Dynamics 365 Sales pozyskane przy użyciu Common Data Service](connect-power-query.md).
+- Operacje eksportu do aplikacji Dynamics 365 Sales są ograniczone do 100 000 członków na segment.
+- Operacje eksportu segmentów do aplikacji Dynamics 365 Sales mogą potrwać do 3 godzin. 
 
-## <a name="configure-the-connector-for-sales"></a>Konfigurowanie łącznika do modułu Sales
+## <a name="prerequisite-for-connection"></a>Wymaganie wstępne dla połączenia
 
-1. W analizach odbiorców przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
+1. Rekordy kontaktów muszą być obecne w Dynamics 365 Sales, zanim będzie można wyeksportować segment z Customer Insights do Sales. Przeczytaj więcej o tym, jak pozyskiwać kontakty w [Dynamics 365 Sales, używając Microsoft Dataverse](connect-power-query.md).
 
-1. W obszarze **Dynamics 365 Sales** wybierz **Konfiguruj**.
+   > [!NOTE]
+   > Eksportowanie segmentów ze statystyk odbiorców do Sales nie spowoduje utworzenia nowych rekordów kontaktów w wystąpieniach Sales. Rekordy kontaktów z działu Sales muszą być pozyskiwane w statystykach odbiorców i używane jako źródło danych. Muszą również zostać uwzględnione w ujednoliconej encji Customer, aby zmapować identyfikatory klientów do identyfikatorów kontaktów, zanim segmenty będą mogły zostać wyeksportowane.
 
-1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej exportu rozpoznawalną nazwę.
+## <a name="set-up-the-connection-to-sales"></a>Skonfiguruj połączenie z usługą Sales
+
+1. Przejdź do **Admin** > **Połączenia**.
+
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Dynamics 365 Sales**, aby skonfigurować połączenie.
+
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
+
+1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. W polu adres serwera **Adres serwera** wprowadź adres URL modułu Sales organizacji.
 
@@ -40,12 +52,24 @@ Rekordy kontaktów [z Dynamics 365 Sales pozyskane przy użyciu Common Data Serv
 
 1. Zamapuj pole identyfikatora klienta na identyfikator kontaktu Dynamics 365.
 
-1. Wybierz **Dalej**.
+1. Aby zakończyć połączenie, wybierz **Zapisz**. 
+
+## <a name="configure-an-export"></a>Konfigurowanie eksportu
+
+Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+
+1. Przejdź do **Dane** > **Eksporty**.
+
+1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Dynamics 365 Sales. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
 1. Wybierz jeden lub więcej segmentów.
 
-1. Wybierz pozycję **Zapisz**.
+1. Wybierz pozycję **Zapisz**
 
-## <a name="export-the-data"></a>Eksportowanie danych
+Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab).
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

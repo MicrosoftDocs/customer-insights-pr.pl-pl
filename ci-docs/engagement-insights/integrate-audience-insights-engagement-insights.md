@@ -2,18 +2,17 @@
 title: Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 description: Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji, by umożliwić dwukierunkowe udostępnianie danych.
 ms.date: 09/08/2021
-ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6aadd6b5018f63362f86c0e3e3ce085e94c47391
-ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
+ms.openlocfilehash: 56adc206d83bc6e34a55f11383393b5ac66da531
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2022
-ms.locfileid: "8116027"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229885"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Utwórz łącze między wynikami analiz odbiorców i wynikami analiz interakcji
 
@@ -49,7 +48,7 @@ Użyj ujednoliconych profilów i segmentów z wyników analiz odbiorców, by uzy
 
      :::image type="content" source="media/integrate2.png" alt-text="Wybierz środowisko wyników analiz odbiorców.":::
 
-1. Wybierz środowisko wyników analiz odbiorców, a następnie wybierz opcję ***Dalej**, aby zakończyć. Teraz możesz wybrać funkcje opcjonalne dla połączonych środowisk.
+1. Wybierz środowisko wyników analiz odbiorców, a następnie wybierz opcję **Dalej**, aby zakończyć. Teraz możesz wybrać funkcje opcjonalne dla połączonych środowisk.
  
 ## <a name="enable-audience-insights-unified-profiles-attributes-and-segments"></a>Włącz wyniki analiz odbiorcy ujednoliconych atrybutów i segmentów profilów
 

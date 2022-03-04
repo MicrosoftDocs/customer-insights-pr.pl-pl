@@ -1,20 +1,19 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Constant Contact
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Constant Contact.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 29f4320c798db62609283e3c48f0b47a4f0b982f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 8841945814397ffa70c56638a8bed25499c1a06f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124286"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226416"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Eksportowanie segmentów do usługi Constant Contact (wersja zapoznawcza)
 
@@ -28,10 +27,10 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Constant Cont
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do usługi Constant Contact można wyeksportować do 1 miliona profili.
+- W ramach każdego eksportu do usługi Constant Contact można wyeksportować maksymalnie 1 mln profilów klientów.
 - Eksportowanie do usługi Constant Contact jest ograniczone do segmentów.
-- Wyeksportowanie do 1 miliona profilów do usługi Constant Contact może potrwać do 1 godziny. 
-- Liczba profilów, które można eksportować usługi Constant Contact, jest ograniczona i zależy od kontraktu użytkownika z usługą Constant Contact.
+- Eksportowanie do 1 mln profilów klientów do usługi Constant Contactr może zająć do 1 godziny. 
+- Liczba profilów klientów, które można eksportować do usługi Constant Contact, zależy od kontraktu z usługą Constant Contactl i jest ograniczona.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Konfiguracja połączenia z usługą Constant Contact
 
@@ -47,7 +46,7 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Constant Cont
 
 1. Wybierz opcję **Połącz**, aby inicjować połączenie z usługą Constant Contact.
 
-1. Wybierz opcję **Uwierzytelnij za pomocą usługi AdRoll** i podaj swoje poświadczenia administratora dla usługi Constant Contact. 
+1. Wybierz pozycję **Uwierzytelnij przy stałym kontakcie** i podaj poświadczenia administratora dla stałego kontaktu. 
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
@@ -65,7 +64,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź swój [**Identyfikator listy usługi Constant Contact**](https://app.constantcontact.com/pages/contacts/ui#lists). Otwórz listę w usłudze Constant Contact, aby znaleźć identyfikator listy w adresie URL.
 
-1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Constant Contact.
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Constant Contact.
 
 1. Można też eksportować imię i Nazwisko jako dodatkowe pola, aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 

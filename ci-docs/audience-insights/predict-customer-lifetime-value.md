@@ -3,20 +3,24 @@ title: Przewidywanie Wartość okresu istnienia klienta (CLV)
 description: Potencjalne przychody aktywnych klientów w przyszłości.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 740d6a5a749e156414b0e80193334051b7f2632fe4d1f4291d74b99250f35bc2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035382"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355802"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Przewidywanie Wartości okresu istnienia klienta (wersja zapoznawcza)
+# <a name="customer-lifetime-value-clv-prediction"></a>Przewidywanie Wartość okresu istnienia klienta (CLV)
 
 Przewiduj potencjalną wartość (przychód), jaką indywidualni aktywni klienci przyniosą Twojej firmie w określonym okresie w przyszłości. Ta funkcja umożliwia osiągnięcie różnych celów: 
 - Identyfikowanie klientów o wysokiej wartości i przetwarzanie tych informacji
@@ -65,7 +69,7 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
     - Kompletność danych: Mniej niż 20% brakujących wartości w wymaganych polach w danych wejściowych   
 
 > [!NOTE]
-> - Model wymaga historii transakcji klientów. Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu/transakcji, możesz połączyć je w Power Query przed pozyskaniem danych.
+> - Model wymaga historii transakcji klientów. Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu/transakcji, możesz połączyć je w usłudze Power Query przed pozyskaniem danych.
 > - W przypadku dodatkowych danych dotyczących działań klienta (opcjonalnie) można jednak dodać tyle encji działań klienta, ile tylko będzie można uwzględnić w modelu.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Utwórz prognozę wartości okresu istnienia klienta
@@ -74,7 +78,7 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
 
 1. Wybierz kafelek **Wartość okresu istnienia klienta** i wybierz opcję **Użyj modelu**. 
 
-1. W okienku **Wartość okresu istnienia klienta (podgląd)** wybierz opcję **Wprowadzenie**.
+1. W okienku **Wartość okresu istnienia klienta** wybierz opcję **Wprowadzenie**.
 
 1. **Nazwij ten model** i **Nazwa encji wyjściowej**, aby odróżnić je od innych modeli lub encji.
 

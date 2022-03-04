@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 76b3466afd84aa439ea55afe90ae037825884f2d
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645323"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229090"
 ---
 # <a name="create-a-new-workspace-and-add-members"></a>Tworzenie nowego obszaru roboczego i dodawanie członków
 
@@ -26,11 +25,11 @@ Podczas tworzenia obszaru roboczego wybierasz typ danych, na których chcesz si�
 
 ## <a name="create-a-new-workspace"></a>Utwórz nowy obszar roboczy
 
-Proces tworzenia przestrzeni roboczej obejmuje ustawienie *środowiska* do organizacji przestrzeni roboczej. Środowisko to miejsce mogące zawierać jeden lub więcej obszarów roboczych. Środowisko pozwala zarządzać obszarami roboczymi i połączeniami z funkcją analizy odbiorców w Customer Insights.
+Proces tworzenia przestrzeni roboczej obejmuje ustawienie *środowiska* do organizacji przestrzeni roboczej. Środowisko to miejsce mogące zawierać jeden lub więcej obszarów roboczych. Środowisko może być używane do zarządzania obszarami roboczymi i połączeniami z funkcją Wyniki analiz odbiorców.
 
-1. Wybierz pozycję **Nowy** z przełącznika obszarów roboczych.
+1. Wybierz pozycję **+Nowy** z przełącznika obszarów roboczych.
 
-   :::image type="content" source="media/new-workspace.png" alt-text="Strona Customer Insights z objaśnieniami w okienku nawigacji i opisem.":::
+   :::image type="content" source="media/new-workspace.png" alt-text="Strona aplikacji Customer Insights z objaśnieniami w okienku nawigacji i opisem.":::
 
 1. W okienku **Obszar roboczy** wprowadź **nazwę obszaru roboczego**.
 

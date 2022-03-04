@@ -1,24 +1,26 @@
 ---
-title: Odświeżanie przyrostowe dla źródeł danych opartych na Power Query
-description: Odświeżanie nowych i zaktualizowanych danych dla dużych źródeł danych na podstawie Power Query.
+title: Odświeżenie przyrostowe dla danych opartych na źródłach danych Power Query
+description: Odświeżanie nowych i zaktualizowanych danych w przypadku dużych źródeł danych w zależności od wersji Power Query.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-schedule
+- customerInsights
+ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900281"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353695"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Odświeżanie przyrostowe dla źródeł danych opartych na Power Query
+# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Odświeżenie przyrostowe dla danych opartych na Power Query
 
-Ten artykuł omawia jak skonfigurować odświeżanie przyrostowe dla źródeł danych opartych na Power Query.
+Ten artykuł omawia konfigurację odświeżania przyrostowego dla źródeł danych opartych na usłudze Power Query.
 
 Odświeżanie przyrostowe dla źródeł danych daje następujące korzyści:
 
@@ -28,9 +30,9 @@ Odświeżanie przyrostowe dla źródeł danych daje następujące korzyści:
 
 ## <a name="configure-incremental-refresh"></a>Konfiguruj odświeżanie przyrostowe
 
-Informacje o odbiorcach umożliwiają przyrostowe odświeżanie źródeł danych importowanych za pomocą dodatku Power Query, które obsługują pozyskiwanie przyrostowe. Na przykład bazy danych Azure SQL z polami Data i godzina, które wskazują, kiedy rekordy danych były ostatnio aktualizowane.
+Szczegółowe dane o odbiorcach pozwalają na odświeżanie przyrostowe dla źródeł danych zaimportowanych za pomocą usługi Power Query, która obsługuje pozyskiwanie przyrostowe. Na przykład bazy danych Azure SQL z polami Data i godzina, które wskazują, kiedy rekordy danych były ostatnio aktualizowane.
 
-1. [Utwórz nowe źródło danych na podstawie Power Query](connect-power-query.md).
+1. [Tworzenie nowego źródła danych na podstawie usługi Power Query](connect-power-query.md).
 
 1. Podaj **nazwę** źródła danych.
 

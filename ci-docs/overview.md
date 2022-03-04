@@ -4,25 +4,22 @@ author: m-hartmann
 description: Uzyskaj przegląd Dynamics 365 Customer Insights i jego możliwości.
 ms.author: mhart
 ms.date: 07/30/2021
-ms.service: customer-insights
 ms.topic: overview
 ms.manager: shellyha
-ms.custom: intro-internal
-ms.openlocfilehash: 0d04de418326152dafbbf020e6bb6d3b350ca806
-ms.sourcegitcommit: 048d65bded22abadcbbad1e22f15b05828bb977b
+ms.openlocfilehash: 82b335388002158885fa55b61562db6c8370dc9d
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/06/2021
-ms.locfileid: "7474116"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350190"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Przegląd produktu dla Dynamics 365 Customer Insights
 
 [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) to część platformy danych klienta (CDP) firmy Microsoft, która pomaga w dostarczaniu spersonalizowanych rozwiązań klienta. Możliwości platformy zawierają szczegółowe informacje o tym, kim są klienci, i ich interakcja z platformą. Ujednolicaj dane klientów z wielu źródeł, aby uzyskać jeden widok klientów.
 
+[Odbiorcy dane pomagają](audience-insights/overview.md) przekształcić firmę w organizację cenną dla klienta. Specjaliści ds. marketingu, sprzedaży i obsługi klienta mają wgląd w dane potrzebne do personalizowania działań. Połącz dane ze źródeł transakcyjnych, behawioralnych i obserwacyjnych, aby stworzyć 360-stopniowy widok klienta. Szybsze wyświetlanie wyników dzięki protokołowi CDP zaprojektowanemu w celu dostarczania informacji, na których można działać. 
 
-- [Odbiorcy dane pomagają](audience-insights/overview.md) przekształcić firmę w organizację cenną dla klienta. Specjaliści ds. marketingu, sprzedaży i obsługi klienta mają wgląd w dane potrzebne do personalizowania działań. Połącz dane ze źródeł transakcyjnych, behawioralnych i obserwacyjnych, aby stworzyć 360-stopniowy widok klienta. Szybsze wyświetlanie wyników dzięki protokołowi CDP zaprojektowanemu w celu dostarczania informacji, na których można działać. 
-
-- [Rozwiązanie informacje o zaangażowaniu klientów (wersja zapoznawcza)](engagement-insights/index.yml) umożliwia interaktywne zrozumienie, w jaki sposób klienci używają Twoich usług i produktów - zarówno indywidualnie, jak i całościowo - w witrynach internetowych, aplikacjach mobilnych i połączonych produktach. Połącz analizy behawioralne z danymi transakcyjnymi, demograficznymi, ankietowymi i innymi typami danych z Microsoft Dynamics 365 Customer Insights. Zachowaj pełną kontrolę nad danymi klientów, aby zapewnić najwyższy poziom zarządzania danymi i ich zgodności.
+[Szczegółowe informacje o zaangażowaniu](engagement-insights/overview.md) byłą możliwością podglądu w usłudze Customer Insights, która skupiła się na zbieraniu zdarzeń w sieci Web i urządzeń mobilnych w celu dodatkowej analizy. Wersja zapoznawcza zakończyła 15 lutego 2022 r.
  
 ## <a name="choose-a-capability"></a>Wybierz funkcję
 

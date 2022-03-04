@@ -1,22 +1,21 @@
 ---
 title: Przewidywanie rekomendacji produktów
 description: Przewiduj produkty, które klient prawdopodobnie kupi lub z którymi będzie miał do czynienia.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: b9a9c7eb4ee3f2f0510a609757a36e5d5796a2f7
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494552"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355764"
 ---
-# <a name="product-recommendation-prediction-preview"></a>Przewidywanie rekomendacji produktów (wersja zapoznawcza)
+# <a name="product-recommendation-prediction"></a>Przewidywanie rekomendacji produktów
 
 Model rekomendacji produktowych tworzy zestawy predykcyjnych rekomendacji produktowych. Rekomendacje opierają się na wcześniejszych zachowaniach zakupowych i klientach o podobnych wzorcach zakupowych. Możesz tworzyć nowe prognozy rekomendacji produktów na stronie **Analizy** > **Przewidywania**. Wybierz **Moje przewidywania**, aby wyświetlić inne utworzone przewidywania.
 
@@ -54,7 +53,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 > [!NOTE]
 > - Model wymaga historii transakcji klientów. Definicja transakcji jest dosyć elastyczna. Wszystkie dane opisujące interakcję produktu z użytkownikiem mogą działać jako dane wejściowe. Może to być na przykład zakup produktu, udział w szkoleniu lub w wydarzeniu.
-> - Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu, zbierz je w Power Query przed pozyskaniem danych.
+> - Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu, połącz je w usłudze Power Query przed pozyskaniem danych.
 > - Jeśli zamówienie i szczegóły zamówienia to różne encje, przed użyciem w modelu należy je połączyć. Model nie działa tylko z identyfikatorem zamówienia lub identyfikatorem odbioru w encji.
 
 
@@ -62,7 +61,7 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 
 1. W Customer Insights przejdź do **Analizy** > **Przewidywania**.
 
-1. Wybierz kafelek **Model rekomendacji produktów (wersja zapoznawcza)** i wybierz opcję **Użyj tego modelu**.
+1. Wybierz kafelek **Model rekomendacji produktu** i wybierz opcję **Użyj tego modelu**.
    > [!div class="mx-imgBorder"]
    > ![Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu.](media/product-recommendation-usethismodel.PNG "Kafelek modelu rekomendacji produktu z przyciskiem Użyj tego modelu")
 
@@ -79,11 +78,11 @@ Jeśli chcesz spróbować tej funkcji, ale nie masz danych, które spełniają p
 1. Ustaw **Liczba produktów**, które mają być zalecane dla klienta. Ta wartość zależy od tego, jak Twoja metoda dostawy wypełnia dane. Jeśli możesz polecić trzy produkty, ustaw odpowiednio tę wartość.
    
    >[!TIP]
-   > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Wersja robocza tego przewidywanie się na karcie **Moje prognozy**.
+   > W dowolnym momencie można wybrać opcję **Zapisz roboczą**, aby zapisać przewidywanie jako roboczą. Wersja robocza tego przewidywanie się na karcie **Moje prognozy**.
 
-1. Wybierz, jeśli chcesz **Sugerować produkty, które klienci kupili ostatnio**.
+1. Wybierz, czy chcesz uwzględnić produkty, które ostatnio kupili klienci, w polu **Oczekiwane powtórzenie zakupów**.
 
-1. Jeśli ostatnio *nie* poleca się zakupu produktów, należy ustawić **Okno wglądu w przeszłość**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Można na przykład wskazać, że klient kupuje komputer przenośny co dwa lata. W tym oknie będzie widoczna historia zakupu za ostatnie dwa lata i po znalezienie pozycji, zostanie ona odfiltrowana z polecanych.
+1. Konfiguracja **Spójrz wstecz**. To ustawienie określa ramy czasowe, które model bierze pod uwagę przed ponownym poleceniem produktu użytkownikowi. Można na przykład wskazać, że klient kupuje komputer przenośny co dwa lata. W tym oknie będzie widoczna historia zakupu za ostatnie dwa lata i po znalezienie pozycji, zostanie ona odfiltrowana z polecanych.
 
 1. Wybierz **Dalej**
 

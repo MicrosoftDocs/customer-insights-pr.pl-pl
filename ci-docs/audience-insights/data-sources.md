@@ -1,64 +1,62 @@
 ---
 title: Użyj źródeł danych do pozyskiwania danych
 description: Informacje na temat importowania danych z różnych źródeł.
-ms.date: 04/12/2021
-ms.service: customer-insights
+ms.date: 12/06/2021
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887907"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354062"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Funkcja wglądu w odbiorców w Dynamics 365 Customer Insights łączy się z danymi z szerokiego zestawu źródeł. Łączenie się ze źródłem danych jest często określane jako proces *pozyskiwania danych*. Po pozyskaniu danych można je [ujednolicić](data-unification.md) i podejmować na nich akcje.
 
 ## <a name="add-a-data-source"></a>Dodaj źródło danych
 
-Zapoznaj się ze szczegółowymi artykułami dotyczącymi sposobu dodawania źródła danych w zależności od wybranej opcji.
+Zapoznaj się ze szczegółowymi artykułami, aby dowiedzieć się, jak dodać źródło danych, w zależności od wybranej opcji.
 
-Źródło danych można dodać na trzy podstawowe sposoby:
+Możesz dodać następujące źródła danych:
 
-- [Za pomocą licznych łączników Power Query](connect-power-query.md)
+- [Za pośrednictwem dziesiątek łączników usługi Power Query](connect-power-query.md)
 - [Z folderu Common Data Model](connect-common-data-model.md)
-- [Z własnego repozytorium tylu lake Common Data Service](connect-common-data-service-lake.md)
+- [Z własnego repozytorium tylu lake Microsoft Dataverse](connect-dataverse-managed-lake.md)
+- [Z bazy danej usługi Azure Synapse Analytics](connect-synapse.md)
+
+> [!NOTE]
+> Jeśli korzystasz z wersji testowej, w sekcji Metody importu znajdziesz opcję **Biblioteka danych Customer Insights**. Wybierz tę opcję, aby wybrać przykładowy zbiór danych dostępny dla różnych branż. Aby uzyskać więcej informacji, zobacz [Wersja próbna Dynamics 365 Customer Insights](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Dodawanie danych z lokalnych źródeł danych
 
-Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Power Platform. Przepływy danych można włączyć w funkcji Customer Insights, [podając adres URL środowiska Microsoft Dataverse](manage-environments.md#create-an-environment-in-an-existing-organization) podczas konfigurowania środowiska.
+Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz odbiorców jest obsługiwane na podstawie przepływów danych Microsoft Power Platform. Możesz włączyć przepływy danych w Customer Insights poprzez [podanie adresu URL środowiska Microsoft Dataverse](create-environment.md) podczas konfigurowania środowiska.
 
-Źródła danych tworzone po skojarzeniu środowiska Dataverse z usługą Customer Insights domyślnie będą korzystać z [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bram danych. Należy usunąć i ponownie utworzyć źródła danych, które istniały, zanim środowisko Dataverse zostało skojarzone do użycia lokalnych bram danych.
+Źródła danych, które są tworzone po powiązaniu środowiska Dataverse z Customer Insights domyślnie używają [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bramy danych. Możesz usunąć i odtworzyć źródła danych, które istniały przed powiązaniem środowiska Dataverse [używając lokalnych bram danych](/data-integration/gateway/service-gateway-app).
 
-Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Strona źródła danych pokazuje łącza do środowiska Power Platform, w którym można wyświetlać i konfigurować lokalne bramy danych.
-
-:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Zrzut ekranu strony źródeł danych przedstawiający łącza do środowiska Power Platform.":::
+Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Na stronie źródeł danych znajdują się łącza umożliwiające przejście do środowiska Microsoft Power Platform, w którym można wyświetlić i skonfigurować lokalne bramy danych.
 
 ## <a name="review-ingested-data"></a>Przeglądanie pobranych danych
 
 Zostanie wyświetlona nazwa każdego pozyskanego źródła danych, jego stan i data ostatniego odświeżenia danych dla tego źródła. Listę źródeł danych można posortować według każdej kolumny.
 
 > [!div class="mx-imgBorder"]
-> ![Dodano źródło danych](media/configure-data-datasource-added.png "Dodano źródło danych")
+> ![Dodano źródło danych.](media/configure-data-datasource-added.png "Dodano źródło danych")
 
-|Status  |Opis  |
-|---------|---------|
-|Pomyślnie   |Źródło danych zostało pomyślnie przetworzone, jeśli w kolumnie **Odświeżono** podano godzinę.
-|Nie rozpoczęto   |Źródło danych nie ma jeszcze pozyskanych danych lub nadal jest w trybie roboczym.         |
-|Odświeżanie    |Pobieranie danych jest w toku. Aby anulować operację, można wybrać opcję **Zatrzymaj odświeżanie** w kolumnie **Czynności**. Zatrzymanie odświeżania źródła danych spowoduje przywrócenie jego ostatniego stanu odświeżania.       |
-|Zakończone niepowodzeniem     |Pobieranie danych zostało napotkało błędy.         |
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
-Wybierz wartość w kolumnie **Stan** dowolnego pola źródło danych, aby przejrzeć więcej szczegółów. W okienku **Szczegółów postępu** rozwiń pozycję **Źródła danych**. Wybierz opcję **Zobacz szczegółowe informacje**, aby uzyskać więcej informacji na temat stanu odświeżania, w tym szczegóły błędów i aktualizacje procesów podrzędnych.
-
-Ładowanie danych może potrwać trochę czasu. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie **Encji**. Aby uzyskać więcej informacji, zobacz [Encje](entities.md).
+Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie **Encji**. Aby uzyskać więcej informacji, zobacz [Encje](entities.md).
 
 ## <a name="refresh-a-data-source"></a>Odśwież źródło danych
 
@@ -68,9 +66,9 @@ Przejdź do **Administrator** > **System** > [**Harmonogram**](system.md#schedul
 
 Aby odświeżyć źródło danych na żądanie, wykonaj następujące kroki:
 
-1. W analizach odbiorców przejdź do **Dane** > **Źródła danych**
+1. W analizach odbiorców przejdź do **Dane** > **Źródła danych**.
 
-2. Zaznacz pionowy wielokropek obok źródło danych, który chcesz odświeżyć, i wybierz opcję **Odśwież** z listy rozwijanej.
+2. Wybierz wielokropek pionowy obok źródła danych, które chcesz odświeżyć, i z menu rozwijanego wybierz pozycję **Odśwież**.
 
 3. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie schematu encji i danych dla wszystkich encji określonych w źródle danych.
 
@@ -80,7 +78,7 @@ Aby odświeżyć źródło danych na żądanie, wykonaj następujące kroki:
 
 1. W analizach odbiorców przejdź do **Dane** > **Źródła danych**.
 
-2. Zaznacz pionowy wielokropek obok źródła danych, które chcesz usunąć, i wybierz **Usuń** z menu rozwijanego.
+2. Wybierz wielokropek pionowy obok źródła danych, które chcesz usunąć, i z menu rozwijanego wybierz pozycję **Usuń**.
 
 3. Potwierdź usunięcie.
 

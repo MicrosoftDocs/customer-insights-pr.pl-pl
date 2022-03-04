@@ -3,18 +3,17 @@ title: Wzbogacenie za pomocą niestandardowego importu SFTP
 description: Ogólne informacje o wzbogacaniu importu niestandardowego SFTP.
 ms.date: 04/09/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304663"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229651"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
 
@@ -45,6 +44,8 @@ Aby skonfigurować niestandardowy import SFTP, muszą być spełnione następuj�
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Zrzut ekranu przedstawiający wprowadzenie lokalizacji danych.":::
 
+1. Wybierz opcję **Dalej** i wybierz zestaw danych klientów. Mogą to być wszystkie profile klientów lub segment.
+
 1. Wybierz opcję **Dalej** i podaj nazwę dla wzbogacania oraz nazwę encji wyjściowej. 
 
 1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
@@ -64,7 +65,7 @@ Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz 
 1. Po zakończeniu weryfikacji połączenie można zapisać, wybierając opcję **Zapisz**.
 
    > [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji łączności Experian](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
+   > ![Strona konfiguracji łączności Experian.](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
 
 
 ## <a name="defining-field-mappings"></a>Definiowanie mapowań pól 
@@ -123,6 +124,6 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

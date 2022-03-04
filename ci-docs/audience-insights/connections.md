@@ -3,18 +3,20 @@ title: Połączenia z innymi usługami z aplikacji Customer Insights.
 description: Udostępnianie danych w innych usługach.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304985"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354397"
 ---
 # <a name="connections-preview-overview"></a>Omówienie (podgląd) połączeń
 
@@ -47,6 +49,7 @@ Aby dodawać połączenia, trzeba mieć [uprawnienia administratora](permissions
 1. Podaj wymagane szczegóły w okienku **Konfigurowanie połączenia**. 
    1. **Wyświetlana nazwa** i typ połączenia opisują połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe tego połączenia.
    1. Dokładnie jakie pola będzie zależeć od tego, z jaką usługą jest nawiązywana połączenie. Szczegółowe informacje o określonym typie połączenia można znaleźć w artykule dotyczących usługi docelowej.
+   1. Jeśli do przechowywania wpisów tajnych używasz [własnej usługi Key Vault](use-azure-key-vault.md), aktywuj opcję **Użyj usługi Key Vault** i wybierz odpowiedni wpis tajny z listy.
 
 1. Aby utworzyć połączenie, wybierz **Zapisz**.
 
@@ -93,3 +96,6 @@ Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie ak
 
 1. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurowanie połączeń z wpisami tajnymi zarządzanymi przez własną usługę Key Vault
+
+Niektóre połączenia wymagają wpisów tajnych, takich jak klucze interfejsu API lub hasła. Niektóre połączenia obsługują wpisy tajne przechowywane w własnej usłudze Key Vault. Dowiedz się więcej o obsługiwanych połączeniach i konfigurowaniu [własnej usługi Key Vault dla wyników analiz odbiorców](use-azure-key-vault.md).

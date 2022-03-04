@@ -4,23 +4,22 @@ description: Jak wyeksportować opracowane zdarzenia i zdarzenia podstawowe.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 04/30/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: faa0c3afb08d1c0282b2164ed914637ce9aad88117af37ba44fdb81e7610e574
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: d062e2982c1041454b083630404f2b68f0da9669
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032398"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232901"
 ---
 # <a name="export-events"></a>Eksportowanie zdarzeń
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Zdarzenie reprezentuje zachowanie użytkownika. Działanie jest rekordem w momencie, gdy użytkownik wyświetla stronę (działanie Wyświetlanie) lub wchodzi w interakcję z treścią (działanie Akcja). W przypadku podjęcia decyzji o właściwościach danych, które mają być wyświetlane w raporcie, ten widok wirtualny danych jest nazywany *zdarzeniem opracowanym*. 
+Zdarzenie reprezentuje zachowanie użytkownika. Działanie jest rekordem w momencie, gdy użytkownik wyświetla stronę (działanie Wyświetlanie) lub wchodzi w interakcję z treścią (działanie Akcja). W przypadku podjęcia decyzji o właściwościach danych, które mają być wyświetlane w raporcie, ten widok wirtualny danych jest nazywany *zdarzeniem opracowanym*. Aby uzyskać więcej informacji, zobacz temat [Tworzenie i modyfikowanie zdarzeń](refined-events.md).
 
 - Zdarzenia i zdarzenia opracowane można eksportować do magazynu zewnętrznego. 
 - Eksport jest strumieniem danych przesyłanych dalej. Nie można ponownie wypełnić strumienia. 
@@ -45,26 +44,28 @@ Przed skonfigurowaniem eksportu musisz mieć dostęp i aktywną subskrypcję por
 
 ## <a name="export-events"></a>Eksportuj zdarzenia
 
-Istnieją dwa sposoby eksportu. 
+Istnieją dwa sposoby wyświetlania sesji dialogowej **Eksportowanie zdarzeń**: 
 - Wybierz opcję **Dane** > **Eksporty** i wybierz opcję **Nowy**.
 - Należy przejść do menu **Dane** > **Zdarzenia**, wybrać pozycję **Więcej [...]** obok zdarzenia, które chcesz wyeksportować, i wybrać polecenie **Eksportuj** z menu rozwijanego. 
 
+:::image type="content" source="media/new-export.png" alt-text="Tworzenie nowego eksportu.":::
+
 Program przeprowadzi Cię przez kolejne kroki tworzenia eksportu:
 
-1. Podaj nazwę w polu **Nazwa eksportu**.
+1. Podaj **nazwę eksportu**, a następnie wybierz opcję **Dalej**.
 
 1. Z listy rozwijanej **Wybór zdarzeń** wybierz zdarzenia podstawowe i zdarzenia wzbogacone, które mają być uwzględniane w eksporcie. 
 
-1. W obszarze **Struktura pliku** wybierz czas podróży, aby utworzyć nowe pliki w docelowym magazynie. Zdarzenia są eksportowane po przybyciu, bez przerwy.
+1. W sekcji **Struktura plików** wybierz czas (godzinowo lub dziennie), aby utworzyć nowe pliki w docelowym magazynie, a następnie wybierz opcję **Dalej**. Zdarzenia są eksportowane po przybyciu, bez przerwy.
 
-1. Wybierz format eksportu. Do wyboru są formaty **Common Data Model**, **CSV** i **JSON**. Aby korzystać z eksportu z innymi aplikacjami usługi Dynamics 365, zalecamy użycie formatu Common Data Model.
+1. W sesji dialogowej **Wybierz format** wybierz format eksportu. Wybierz format **Common Data Model**, **CSV** i **JSON**. Aby korzystać z eksportu z innymi aplikacjami usługi Dynamics 365, zalecamy użycie formatu **Common Data Model**.
 
-1. W kroku **wybierz lokalizację docelową** określ Azure Data Lake Storage Gen 2.
+1. W sesji dialogowej **Wybierz miejsce docelowe** określ lokalizację usługi Azure Data Lake Storage Gen 2.
     1. **Nazwa konta ADLS Gen 2** to nazwa konta magazynu, w którym chcesz zapisać eksport. 
     1. **Ścieżka folderu** definiuje miejsce eksportu w systemie plików i strukturze katalogowej konta magazynu.
     1. **Klucz udostępniony** jest dostępny w portalu Azure dla konta magazynu.
 
-1. Sprawdź i potwierdź wybrane ustawienia.
+1. Sprawdź i potwierdź wybrane opcje, aby zakończyć.
 
 ## <a name="view-and-manage-exports"></a>Wyświetl eksporty i zarządzaj nimi
 

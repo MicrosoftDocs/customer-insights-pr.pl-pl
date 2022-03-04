@@ -4,17 +4,16 @@ description: Sposób korzystania z raportów dot. lejka w celu zrozumienia, jak 
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 09/17/2021
-ms.service: customer-insights
+ms.date: 09/21/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
-ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
+ms.openlocfilehash: 7bb961c5ba8d42f704eefe0dcb22e561367f3efb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2021
-ms.locfileid: "7498655"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226274"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Tworzenie i zarządzanie raportami lejkowymi
 
@@ -163,13 +162,23 @@ Można zmienić nazwę raportu dot. lejka, usunąć go lub zmodyfikować kroki r
 
 Szczegółowe informacje o klientach oferują obecnie szczegółowe informacje dotyczące lejka dla klientów. Dzięki funkcji szczegółowych informacji dotyczących lejka można uzyskać głębsze dane na temat zachowań klientów w ramach kroków raportu lejka. Podczas tworzenia i zapisywania nowego raportu dotyczące lejka szczegółowe informacje o lejku są automatycznie generowane dla raportu. 
 
+:::image type="content" source="media/funnel-insights.png" alt-text="Szczegółowe informacje dotyczące lejka.":::
+
+> [!NOTE]
+> Szczegółowe informacje dotyczące lejka można generować tylko dla kroków lejka, które **nie** uwzględniają niestandardowych wymiarów. Do generowania szczegółowych informacji dotyczących lejka dla wszystkich kroków należy użyć gotowych wymiarów z wyników analiz interakcji do utworzenia kroków lejka. 
+
 Szczegółowe informacje dotyczące lejka można wyświetlać w następujących kategoriach na poziomie głównym i kroku: 
 
- - Współczynnik konwersji 
+ - Współczynnik konwersji
+ -    Współczynnik konwersji między krokiem realizacji i krokiem zakupu wynosi 22%.
  - Czas przejścia 
+ -    Średni czas przejścia między krokiem koszyka i krokiem realizacji wynosi 23 minuty. 
  - Czas ukończenia 
+ -    Średni czas, przez który klienci są w stanie ukończyć lejek, wynosi 47 minut. 
 
 Dzięki szczegółowym informacjom można poznać sposób zachowania klientów oraz lepiej poznać punkty zwrotu i konwersje dla raportu lejka. 
+
+Aby porównywać szczegółowe informacje z różnych kroków, wybierz pozycję **Zobacz podział kroków** lub **Porównaj z innymi krokami** na kartach szczegółowych informacji. Spowoduje to wyświetlenie wykresu słupkowego porównującego metryki dla każdego kroku lejka. 
 
 Szczegółowe informacje dotyczące lejka są ponownie przeliczane co 24 godziny lub podczas **zapisywania** raportu lejka. 
 

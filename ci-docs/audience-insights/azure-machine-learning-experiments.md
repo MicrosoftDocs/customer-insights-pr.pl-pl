@@ -2,19 +2,18 @@
 title: Eksperymenty usługi Azure Machine Learning
 description: Użyj modeli opartych na usłudze Azure Machine Learning w Dynamics 365 Customer Insights.
 ms.date: 12/02/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e37eec503c9df83ef72497e22afa1266296e642c
-ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
+ms.openlocfilehash: 3c3bed3dca40be748140a8b339191e6a42725714
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/02/2021
-ms.locfileid: "7881751"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228901"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Użyj modeli opartych na usłudze Azure Machine Learning
 

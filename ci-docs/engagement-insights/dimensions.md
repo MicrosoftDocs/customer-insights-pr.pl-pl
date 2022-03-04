@@ -5,16 +5,15 @@ ms.reviewer: mhart
 ms.author: jusali
 author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 136da1e1265c7087d861712d34d011b09cb60ad5
-ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
+ms.openlocfilehash: d35c72f73d2f3e202ae3c5a5ef26e9db89360084
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623645"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226320"
 ---
 # <a name="view-and-create-dimensions"></a>Wyświetlanie i tworzenie rozmiarów
 

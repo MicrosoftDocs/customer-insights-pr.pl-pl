@@ -1,24 +1,29 @@
 ---
-title: Spożycie danych za pośrednictwem łącznika Power Query
-description: Łączniki źródeł danych oparte na Power Query.
-ms.date: 11/01/2020
+title: Pozyskiwanie danych przez łącznik Power Query (zawiera wideo)
+description: Łączniki dla źródeł danych na podstawie edytora Power Query.
+ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: 4c12933a0684094702843be309525dd6d5d9b6f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732231"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355534"
 ---
-# <a name="connect-to-a-power-query-data-source"></a>Nawiązywanie połączenia ze źródłem danych Power Query
+# <a name="connect-to-a-power-query-data-source"></a>Łączenie ze źródłem danych Power Query
 
-Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. Dodawanie źródeł danych na podstawie łączników Power Query zazwyczaj przebiega zgodnie z krokami opisanymi w następnej sekcji. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby uzyskać więcej informacji, zobacz dokumentację dla poszczególnych łączników w [Informacje na temat łączników Power Query](/power-query/connectors/).
+Edytor Power Query oferuje szeroki zestaw łączników służących do pozyskiwania danych. Większość z tych łączników jest obsługiwana przez Dynamics 365 Customer Insights. 
+
+Dodawanie źródeł danych opartych na łącznikach Power Query zasadniczo przebiega zgodnie z krokami opisanymi w tym obszarze. W zależności od używanego łącznika wymagane są jednak różne informacje. Aby dowiedzieć się więcej, zobacz dokumentację poszczególnych łączników w temacie [Dokumentacja łączników Power Query](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,44 +33,41 @@ Power Query oferuje szeroki zestaw łączników do pozyskiwania danych. Większo
 
 1. Wybierz **Dodaj źródła danych**.
 
-1. Wybierz metodę **importu danych** i wybierz **Dalej**.
+1. Wybierz opcję **Microsoft Power Query**.
 
-1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych. Wytyczne dotyczące nazw: 
-   - Rozpocznij od litery.
-   - Używaj tylko liter i liczb. Spacje i znaki specjalne są niedozwolone.
-   - Użyj między 3 do 64 znaków.
+1. Wprowadź **Nazwę** źródła danych i wybierz **Dalej**, aby utworzyć źródło danych.
 
-1. Wybierz jeden z [dostępnych łączników](#available-power-query-data-sources). W tym przykładzie wybraliśmy łącznik **Tekst/CSV**.
+1. Wybierz jeden z [dostępnych łączników](#available-power-query-data-sources). W tym przykładzie wybieramy łącznik **Text/CSV**.
 
 1. Wprowadź wymagane informacje szczegółowe w **Ustawienia połączenia** dla wybranego łącznika i wybierz **Dalej**, aby wyświetlić podgląd danych.
 
 1. Wybierz **Przekształć dane**. W tym kroku encje zostaną dodane do źródła danych. Encje są zestawami danych. Jeśli istnieje baza danych zawierająca wiele zestawów danych, każdy zestaw danych jest swoją własną encją.
 
-1. Dialog **Power Query — edytuj zapytania** pozwala na przejrzenie i uściślenie danych. Encje, które zostały określone przez systemy w wybranych źródłach danych, są wyświetlane w lewym okienku.
+1. Okno dialogowe **Power Query — edytowanie zapytań** umożliwia przeglądanie i precyzowanie danych. Encje, które zostały określone przez systemy w wybranych źródłach danych, są wyświetlane w lewym okienku.
 
    > [!div class="mx-imgBorder"]
    > ![Okno dialogowe Edytuj zapytania.](media/data-manager-configure-edit-queries.png "Okno dialogowe Edytuj zapytania")
 
-1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Korzystając z opcji dostępnych w oknie Power Query, można stosować przekształcenia. Każde przekształcenie jest wyświetlane w obszarze **Zastosowane kroki**. Power Query oferuje wiele wstępnie wbudowanych opcji transformacji. Aby uzyskać więcej informacji, zobacz [Transformacje Power Query](/power-query/power-query-what-is-power-query#transformations).
+1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Użyj opcji dostępnych w oknie edytora Power Query, aby zastosować przekształcenia. Każde przekształcenie jest wyświetlane w obszarze **Zastosowane kroki**. Edytor Power Query zawiera wiele wstępnie zbudowanych opcji przekształceń. Aby uzyskać więcej informacji, zobacz [Przekształcenia w edytorze Power Query](/power-query/power-query-what-is-power-query#transformations).
 
-1. Kolejne encje można dodać do źródła danych, wybierając polecenie **Pobierz dane** w oknie dialogowym **Edytuj zapytania**.
+   Zalecamy używanie następujących transformacji:
 
-   Te przekształcenia są zdecydowanie zalecane:
+   - Jeśli pozyskujesz dane z pliku CSV, pierwszy wiersz często zawiera nagłówki. Przejdź do pozycji **Przekształć** i wybierz pozycję **Użyj pierwszego wiersza jako nagłówków**.
+   - Upewnij się, że typ danych jest odpowiednio ustawiony. Na przykład w przypadku pól daty wybierz typ daty.
 
-   - Jeśli pozyskujesz dane z pliku CSV, pierwszy wiersz często zawiera nagłówki. Przejdź do **Przekształć tabelę** i wybierz **Użyj nagłówków jako pierwszego wiersza**.
-   - Upewnij się, że typ danych jest odpowiednio ustawiony.
+1. Aby dodać więcej encji do źródła danych w oknie dialogowym **Edytowanie zapytań** przejdź do obszaru **Strona główna** i wybierz opcję **Pobierz dane**.
 
-1. Wybierz **Zapisz** u dołu okna Power Query, aby zapisać przekształcenia. Po zapisaniu źródło danych będzie znajdować się w **Dane** > **Źródła danych**.
+1. Wybierz przycisk **Zapisz** na dole okna edytora Power Query, aby zapisać przekształcenia. Po zapisaniu źródło danych będzie znajdować się w **Dane** > **Źródła danych**.
 
 1. Na stronie **Źródła danych** zobaczysz, że nowe źródło danych jest w stanie **Odświeżanie**.
 
-## <a name="available-power-query-data-sources"></a>Dostępne źródła danych Power Query
+## <a name="available-power-query-data-sources"></a>Dostępne źródła danych edytora Power Query
 
-Sprawdź [Informacje na temat łączników Power Query](/power-query/connectors/), aby otrzymać aktualną listę łączników, które można wybrać w celu zaimportowania danych do usługi Customer Insights. 
+Zobacz [dokumentację dotyczącą łączników w edytorze Power Query](/power-query/connectors/), aby poznać listę łączników, których możesz użyć do importowania danych do aplikacji Customer Insights. 
 
-Łączniki ze znacznikiem wyboru w kolumnie **Customer Insights (Przepływy danych)** są dostępne w celu utworzenia nowych źródeł danych na podstawie Power Query. Przejrzyj dokumentację określonego łącznika, aby dowiedzieć się więcej o jego wymaganiach wstępnych, ograniczeniach i innych szczegółach.
+Łączniki ze znacznikiem wyboru w kolumnie **Customer Insights (przepływy danych)** są dostępne do tworzenia nowych źródeł danych na podstawie edytora Power Query. Przejrzyj dokumentację określonego łącznika, aby dowiedzieć się więcej o jego wymaganiach wstępnych, ograniczeniach i innych szczegółach.
 
-## <a name="edit-power-query-data-sources"></a>Edytuj źródła danych Power Query
+## <a name="edit-power-query-data-sources"></a>Edytowanie źródeł danych edytora Power Query
 
 > [!NOTE]
 > Wprowadzenie zmian w źródłach danych, które są obecnie używane w jednym z procesów aplikacji (na przykład *segmentacja*, *dopasowywanie* lub *scalanie*) może być niemożliwe. 
@@ -81,9 +83,9 @@ Sprawdź [Informacje na temat łączników Power Query](/power-query/connectors/
 
    [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
    
-3. Zastosuj zmiany i przekształcenia w oknie dialogowym **Power Query - edytuj zapytania**, jak to opisano w sekcji [Tworzenie nowego źródła danych](#create-a-new-data-source).
+3. Zastosuj zmiany i przekształcenia w oknie dialogowym **Power Query — edytowanie zapytań** zgodnie z opisem w obszarze [Tworzenie nowego źródła danych](#create-a-new-data-source).
 
-4. Wybierz **Zapisz** w Power Query po zakończeniu edycji, aby zapisać zmiany.
+4. Wybierz przycisk **Zapisz** w edytorze Power Query po zakończeniu edycji, aby zapisać zmiany.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

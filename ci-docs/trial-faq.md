@@ -3,18 +3,17 @@ title: Często zadawane pytania dotyczące wersji próbnej — Dynamics 365 Cust
 description: Rozwiązania do często zadawanych pytań związanych z konfiguracją wersji próbnej aplikacji Customer Insights i zarządzaniem nią. Dowiedz się, jak rozwiązywać problemy specyficzne dla platformy i aplikacji.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 02/10/2022
 ms.topic: get-started
-ms.service: customer-insights
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2837ae13b4150310193a2d09d59aed66b4a69c69
-ms.sourcegitcommit: e6020c178a61beb0ee31a031c11ded914d10d995
+ms.openlocfilehash: 9badd8370358b9f5745ba6347e8db42e89c5f3d3
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2021
-ms.locfileid: "7642898"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229508"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Wersja próbna Dynamics 365 Customer Insights, często zadawane pytania
 
@@ -24,7 +23,7 @@ ms.locfileid: "7642898"
 
 Ta aplikacja nie wymaga specjalnego oprogramowania - potrzebna jest jedynie przeglądarka internetowa z zainstalowanymi najnowszymi aktualizacjami, mimo że obowiązują pewne ograniczenia. Aby korzystać z najlepszej wersji próbnej, należy unikać uzyskiwania dostępu do witryny w wersji próbnej w trybie incognito, a w zamian wybrać znajdującą się najbliżej lokalizację wersji próbnej. [Dowiedz się więcej o wymaganiach dotyczących aplikacji internetowych.](/power-platform/admin/web-application-requirements)
 
-### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Jak zarejestrować się do skorzystania z wersji próbnej bez dzierżawy Microsoft 365?
+### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Jak utworzyć konto umożliwiające korzystanie z wersji próbnej bez dzierżawcy platformy Microsoft 365?
 
 Możesz podać prywatny adres e-mail, a my utworzymy dla Ciebie konto i dzierżawę.
 
@@ -43,7 +42,7 @@ Kiedy zapiszesz się na wersję próbną, otrzymasz e-mail ze szczegółami. Je�
 
 ### <a name="how-do-i-add-more-users-to-a-trial"></a>Jak mogę dodać więcej użytkowników do wersji próbnej?
 
-Aby dodać użytkowników, przejdź do [Centrum administracyjnego Microsoft 365](https://admin.microsoft.com) przy użyciu konta administratora wersji próbnej. Postępuj zgodnie ze [wskazówkami centrum administracyjnego](/microsoft-365/admin/add-users/add-users), aby dodać użytkowników do limitu licencji próbnej. Jeśli użytkownik, którego dodajesz, ma już konto usługi Microsoft 365, przypisz mu odpowiednią rolę zabezpieczeń w organizacji próbnej. Aby uzyskać więcej informacji, zobacz [Przypisywanie roli zabezpieczeń do użytkownika](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
+Aby dodać użytkowników, przejdź do [centrum administracyjnego platformy Microsoft 365](https://admin.microsoft.com), używając konta administratora wersji próbnej. Postępuj zgodnie ze [wskazówkami centrum administracyjnego](/microsoft-365/admin/add-users/add-users), aby dodać użytkowników do limitu licencji próbnej. Jeśli użytkownik, którego dodajesz, ma już konto platformy Microsoft 365, przypisz mu odpowiednią rolę zabezpieczeń w organizacji w wersji próbnej. Aby uzyskać więcej informacji, zobacz [Przypisywanie roli zabezpieczeń do użytkownika](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
 
 ### <a name="how-many-users-can-i-add-to-my-trial-environment"></a>Ilu użytkowników mogę dodać do mojego środowiska próbnego?
 
@@ -63,7 +62,7 @@ Możesz bezpośrednio przedłużyć okres swoją wersji próbnej w aplikacji. Mo
 
 Ogólnie rzecz biorąc, zalecamy rozpoczęcie od początku z własnymi danymi podczas uaktualniania do płatnej wersji usługi Customer Insights. 
 
-Opcjonalnie, jeśli używasz tylko funkcji Wyniki analiz odbiorców, możesz skopiować dane ze środowiska w wersji próbnej po zakupie aplikacji Customer Insights. Musisz być administratorem wersji próbnej Customer Insights i globalnym administratorem dzierżawcy Microsoft 365 lub administratorem usługi Dynamics 365 w organizacji, by migrować ustawienia ze środowiska próbnego do płatnego. 
+Opcjonalnie, jeśli używasz tylko funkcji Wyniki analiz odbiorców, możesz skopiować dane ze środowiska w wersji próbnej po zakupie aplikacji Customer Insights. Musisz mieć uprawnienia administrator wersji próbnej aplikacji Customer Insights oraz administratora globalnego dzierżawcy platformy Microsoft 365 albo administratora usługi Dynamics 365 w organizacji, aby migrować ustawienia ze środowiska w wersji próbnej do środowiska płatnego. 
 
 Po zalogowaniu się do płatnego wystąpienia usługi Customer Insights po raz pierwszy zostaniesz poproszony o utworzenie nowego środowiska. W tym procesie można skopiować konfigurację z istniejącego środowiska i przeprowadzić migrację większości ustawień. Jeśli masz uprawnienia wymienione powyżej, środowisko próbne pojawi się na tej liście. Aby uzyskać więcej informacji, zobacz [Kopiowanie konfiguracji środowiska](audience-insights/manage-environments.md#copy-the-environment-configuration).
 
@@ -82,8 +81,9 @@ Po zapisaniu się na wersję próbną, trafisz na główny ekran aplikacji. Na e
 
 Większość funkcji aplikacji Customer Insights jest dostępnych w wersji próbnej.
 
-Następująca funkcja nie jest dostępna: 
+Następujące funkcje są **niedostępne**: 
 - Nie można utworzyć nowych środowisk, które korzystają z własnego konta usługi Azure Data Lake Storage.
+- Nie można usunąć środowiska w wersji próbnej. 
 
 ### <a name="how-long-does-the-trial-last"></a>Jak długo trwa okres próbny?
 

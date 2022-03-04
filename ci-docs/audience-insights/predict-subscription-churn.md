@@ -1,22 +1,21 @@
 ---
-title: Przewidywanie zmian subskrypcji
+title: Przewidywanie rezygnacji z subskrypcji (zawiera wideo)
 description: Przewiduj, czy istnieje zagrożenie, że klient przestanie używać subskrypcji na produkty lub usługi Twojej firmy.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799741"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354707"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Prognoza rezygnacji z subskrypcji (wersja zapoznawcza)
+# <a name="subscription-churn-prediction"></a>Przewidywanie zmian subskrypcji
 
 Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie, że klient przestanie używać subskrypcji na produkty lub usługi Twojej firmy. Nową prognozę rezygnacji z subskrypcji można utworzyć na stronie **Analizy** > **Przewidywania**. Wybierz **Moje przewidywania**, aby wyświetlić inne utworzone przewidywania.
 
@@ -63,7 +62,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 ## <a name="create-a-subscription-churn-prediction"></a>Utwórz prognozę rezygnacji z subskrypcji
 
 1. W analizach odbiorców przejdź do **Analizy** > **Przewidywania**.
-1. Zaznacz kafelek **Model rezygnacji z subskrypcji (wersja zapoznawcza)** i wybierz **Użyj tego modelu**.
+1. Wybierz kafelek **Model rezygnacji z subskrypcji** i wybierz opcję **Użyj tego modelu**.
    > [!div class="mx-imgBorder"]
    > ![Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu.](media/subscription-churn-usethismodel.PNG "Kafelek Model rezygnacji z subskrypcji z przyciskiem Użyj tego modelu")
 
@@ -77,7 +76,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
 1. Wprowadź liczbę **Dni od zakończenia subskrypcji**, przez które firma uważa, że klient jest w stanie rezygnacji. Ten okres zazwyczaj jest powiązany z działaniami biznesowymi, takimi jak oferty, lub inne działania marketingowe, które usiłują zapobiec utracie klienta.
 1. Wpisz w liczbę **Dni, które mają zostać przeanalizowane w przyszłości w celu przewidywania zmian**, aby ustawić okno przewidywania zmian. Na przykład w celu przewidywania ryzyka zmian w pracy z klientami w ciągu najbliższych 90 dni w celu dostosowania się do działań w zakresie przechowywania marketingu. Przewidywanie ryzyka rezygnacji przez dłuższe lub krótsze okresy może jednak znacznie utrudnić branie pod uwagę czynników w profilu ryzyka rezygnacji w zależności od konkretnych wymagań biznesowych. Wybierz **Dalej**, aby kontynuować
    >[!TIP]
-   > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
+   > W dowolnym momencie można wybrać opcję **Zapisz roboczą**, aby zapisać przewidywanie jako roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
 
 ### <a name="add-required-data"></a>Dodaj wymagane dane
 

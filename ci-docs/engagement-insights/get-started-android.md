@@ -6,16 +6,15 @@ ms.reviewer: mhart
 ms.custom: intro-internal
 ms.author: britl
 ms.date: 10/19/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 71ec4841303bd17d3f605547be8d6032c58a7b21
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: b06822b2c2d6a859bdf808f7800baef43c4ab874
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977588"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226182"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Rozpoczynanie pracy z SDK Android
 

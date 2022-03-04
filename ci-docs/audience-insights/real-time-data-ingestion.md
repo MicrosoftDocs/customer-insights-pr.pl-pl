@@ -2,19 +2,21 @@
 title: Spożycie i ograniczenia dotyczące danych w czasie rzeczywistym
 description: Ogólne informacje o możliwościach czasu rzeczywistego w statystykach odbiorców.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
-ms.service: customer-insights
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+searchScope:
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689188"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355488"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
@@ -54,7 +56,7 @@ Interfejs API czasu rzeczywistego umożliwia publikowanie nowej aktywności z sy
 
 Istnieją dwa sposoby łączenia się z interfejsem API w czasie rzeczywistym:
 
-- [pośrednio](#connect-via-the-dynamics-365-customer-insights-connector), za pomocą [łącznika Dynamics 365 Customer Insights](https://docs.microsoft.com/connectors/customerinsights/)
+- [pośrednio](#connect-via-the-dynamics-365-customer-insights-connector), za pomocą [łącznika Dynamics 365 Customer Insights](/connectors/customerinsights/)
 - [bezpośrednio](#connect-directly-to-the-real-time-api), przy użyciu kodu
 
 Oba sposoby wiążą się z poniższymi wymaganiami wstępnymi:
@@ -66,13 +68,13 @@ Oba sposoby wiążą się z poniższymi wymaganiami wstępnymi:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Połącz za pośrednictwem łącznika Dynamics 365 Customer Insights
 
-Interfejs API w czasie rzeczywistym może pobierać dane z dedykowanego łącznika Power Platform, [łącznik Dynamics 365 Customer Insights](https://docs.microsoft.com/connectors/customerinsights/), bez konieczności pisania i wdrażania kodu.    
-Łącznik może wykonywać te same akcje w czasie rzeczywistym, co interfejs API. Użytkownik musi mieć ważną licencję na łączniki Premium. Aby uzyskać więcej informacji, zobacz [Licencje na Power Apps i Power Automate, często zadawane pytania](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+Interfejs API w czasie rzeczywistym może pobierać dane z dedykowanego łącznika Power Platform, [łącznik Dynamics 365 Customer Insights](/connectors/customerinsights/), bez konieczności pisania i wdrażania kodu.    
+Łącznik może wykonywać te same akcje w czasie rzeczywistym, co interfejs API. Użytkownik musi mieć ważną licencję na łączniki Premium. Aby uzyskać więcej informacji, zobacz [Licencje na Power Apps i Power Automate, często zadawane pytania](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps i/lub Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps i/lub Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Szczegółowe informacje o tworzeniu przepływów można znaleźć w artykule [Dokumentacja Power Automate](https://docs.microsoft.com/power-automate/).
+Szczegółowe informacje o tworzeniu przepływów można znaleźć w artykule [Dokumentacja Power Automate](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Połącz bezpośrednio z interfejsem API w czasie rzeczywistym
 
@@ -83,6 +85,7 @@ Szczegółowe informacje o tym interfejsie API, w tym parametry i odpowiedzi, mo
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Informacje o sposobie korzystania z telemetrii w czasie rzeczywistym
 
-Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Możesz uzyskać [dostęp do telemetrii w czasie rzeczywistym](system.md#api-usage-tab) przechodząc do **Administracja** > **System** > **Użycie interfejsu API**. W tabeli **Operacje** wiersze operacji interfejsu API, które korzystają z metod w czasie rzeczywistym, zawierają przycisk służący do wyświetlania wykorzystania interfejsu API w czasie rzeczywistym. Przycisk jest oznaczony symbolem lornetki. Wybierz przycisk, aby otworzyć panel boczny zawierający szczegóły użycia interfejsu API w czasie rzeczywistym w bieżącym środowisku.
+Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Można uzyskać dostęp do [telemetryki w czasie rzeczywistym](system.md#api-usage-tab). 
 
-Użyj selektora **Grupuj według**, aby wybrać najlepszy sposób wyświetlania interakcji w czasie rzeczywistym na osi czasu począwszy od ostatnich 24-godzin do ostatnich 30 dni. Dane można pogrupować według metody interfejsu API, kwalifikowanej nazwy encji (pobranej encji), utworzone przez (źródło zdarzenia), wyniku (powodzenie lub niepowodzenie) lub kodów błędów. Dane są dostępne jako wykres chronologiczny i jako tabela.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

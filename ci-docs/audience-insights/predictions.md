@@ -1,24 +1,28 @@
 ---
 title: Uzupełnij częściowe dane za pomocą przewidywania
 description: Aby wypełnić niekompletne dane klientów, należy użyć przewidywania.
-ms.date: 05/05/2020
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692540"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354016"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Uzupełnij częściowe dane przy użyciu przewidywań
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Uzupełnianie częściowych danych przy użyciu przewidywań (przestarzałe)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Ta funkcja zostanie uznana za **przestarzałą** w dniu **5 listopada 2021 r.** Bieżące implementacje będą działać do momentu usunięcia tej funkcji, ale nie będzie można tworzyć nowych integracji, korzystając z poniższych instrukcji.
 
 Przewidywania umożliwiają łatwe tworzenie prognozowanych wartości, które mogą poprawić zrozumienie klienta. Na stronie **Analizy** > **Przewidywania** można wybrać pozycję **Moje przewidywania**, aby wyświetlić obszary, które zostały skonfigurowane w innych częściach analiz odbiorców, oraz umożliwić dalsze dostosowanie ich.
 
@@ -35,7 +39,7 @@ Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić
 
 2. Środowisko szczegółowych informacji odbiorcy jest dołączone do wystąpienia Dataverse.
 
-W przypadku [tworzenia nowego środowiska](get-started-paid.md) należy je skonfigurować w oknie dialogowym **Tworzenie środowiska** i wybrać opcję **Zaawansowane**. Jeśli środowisko zostało już utworzone, przejdź do jego ustawień i wybierz **Zaawansowane**. W obszarze w sekcji **Korzystanie z przewidywania** wprowadź adres URL wystąpienia Dataverse, do którego chcesz dodać środowisko.
+Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Tworzenie przewidywania w encji Klienta
 
@@ -60,6 +64,8 @@ W przypadku [tworzenia nowego środowiska](get-started-paid.md) należy je skonf
    > ![Przykład przedstawiający mapowane wartości pól w kategoriach.](media/intelligence-categorymapping.png "Przykład przedstawiający mapowane wartości pól w kategoriach")
 
 8. Wybierz **Gotowe**, a prognoza zostanie przetworzona. Przetwarzanie zajmie trochę czasu w zależności od rozmiaru i stopnia złożoności danych. Wyniki będą dostępne w nowej encji na podstawie **Nazwa encji wyjściowej** utworzonego przewidywania.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Tworzenie przewidywania podczas tworzenia segmentu
 
@@ -110,7 +116,7 @@ W ramach tego przepływu użytkownik powinien wybrać konkretny atrybut, który 
 
 ## <a name="edit-a-prediction"></a>Edytuj przewidywanie
 
-Po utworzeniu przewidywania można dostosować model w AI Builder w celu zwiększenia efektywności modelu.  
+Po utworzeniu przewidywanie można dostosować model w narzędziu AI Builder, aby zwiększyć skuteczność modelu.  
 
 1. W analizach odbiorców przejdź do **Analizy** > **Przewidywania** > **Moje przewidywania**.
 
@@ -118,14 +124,14 @@ Po utworzeniu przewidywania można dostosować model w AI Builder w celu zwięks
 
 3. W kolumnie **akcje** wybierz wielokropek i wybierz opcję **widok**.
 
-4. Wybierz **Dostosuj w aplikacji AI Builder**.
+4. Wybierz **Dostosuj w narzędziu AI Builder**.
 
-5. Zaktualizuj model w konstruktorze AI Builder. [Więcej informacji o zarządzaniu modelami w AI builder](/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Zaktualizuj model w narzędziu AI Builder. [Więcej informacji o zarządzaniu modelami w AI builder](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Następne uruchomienie funkcji przewidywania będzie mieć zaktualizowany utworzony model.
 
 > [!NOTE]
-> Nowe modele utworzone w narzędziu AI Builder nie będą wyświetlane w statystykach odbiorców, chyba że model został utworzony na podstawie doświadczeń wymienionych powyżej.
+> Nowe modele utworzone w narzędziu AI Builder nie będą wyświetlane w szczegółowych informacjach o odbiorcy, chyba że model został utworzony na postawie wyżej wymienionych doświadczeń.
 
 ## <a name="remove-a-prediction"></a>Usuń przewidywanie
 
