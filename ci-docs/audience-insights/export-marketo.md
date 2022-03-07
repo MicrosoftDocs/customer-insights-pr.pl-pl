@@ -1,19 +1,20 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Marketo
 description: Dowiedz się, jak skonfigurować połączenie i eksport do programu Marketo.
-ms.date: 10/08/2021
+ms.date: 03/03/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec286bb6a90fb4d18e89caf9166aa659b29d668e
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: b5a644e286bd44d4ebf7d1837255326c005b48d6
+ms.sourcegitcommit: 74cd4fa9cbb784d9dff174c0eec7b4dcb408d66b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232004"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059329"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportowanie segmentów do programu Marketo (wersja zapoznawcza)
 
@@ -28,10 +29,10 @@ Eksportuj segmenty ujednoliconych profili klientów w celu generowania kampanii,
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 mln profilów klientów na eksport do usługi Marketo.
+- Do 1 miliona profili na eksport do Marketo.
 - Eksport do Marketo jest ograniczony do segmentów.
-- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 3 godzin. 
-- Liczba profilów klientów, które można eksportować do usługi Marketo, zależy od kontraktu z usługą Marketo i jest ograniczona.
+- Eksportowanie segmentów razem z profilem 1 000 000 może potrwać do 3 godzin. 
+- Liczba profilów, które można eksportować do Marketo, jest zależna od kontraktu i ograniczona jego Marketo.
 
 ## <a name="set-up-connection-to-marketo"></a>Skonfiguruj połączenie z usługą Marketo
 
@@ -63,7 +64,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź **[Identyfikator listy Marketo](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Identyfikator listy jest wartością wyłącznie numeryczną. Jeśli na przykład identyfikator listy Marketo to ST12345A7, usuń znak przed i po liczbach, a następnie wprowadź `12345`. 
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. 
+1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. 
 
 1. Opcjonalnie możesz wyeksportować **Imię**, **Nazwisko**, **Miejscowość**, **Województwo** i **Kraj/region**, aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 

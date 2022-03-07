@@ -1,53 +1,39 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Google ads
-description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Google Ads.
-ms.date: 09/27/2021
+description: Dowiedz się, jak skonfigurować połączenie z reklamą usługi Google ads.
+ms.date: 11/18/2020
+ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: pkieffer
+author: phkieffer
 ms.author: philk
-ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 6d9a25af3913e755cccec745c532b35aef3cccf9
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227023"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598260"
 ---
-# <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
+# <a name="connector-for-google-ads-preview"></a>Łącznik dla usługi Google Ads (wersja zapoznawcza)
 
-Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
+Eksportuj segmenty ujednoliconych profili klientów na listę odbiorców Google Ads i używaj ich do reklamowania się w wyszukiwarce Google, Gmailu, YouTube i sieci reklamowej Google. 
 
-> [!IMPORTANT]
-> Obecnie można tylko utworzyć nowe połączenie i wyeksportować dane do usługi Google Ads, jeśli masz już zatwierdzony token dewelopera usługi Google Ads. W związku ze zmianami wprowadzonymi w zasadach eksport usługi Google Ads zostanie wkrótce zaktualizowany. Będzie dostępna opcja eksportu, która nie będzie wymagała tokenu dla deweloperów, aby zapewnić ciągłość pracy i uprościć eksportowanie do Google Ads. Zaleca się rezygnację z konfigurowania większej liczby połączeń z usługą Google Ads, aby ułatwić przejście do nowej opcji eksportowania.
-
-## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
+## <a name="prerequisites"></a>Wymagania wstępne
 
 -   Użytkownik ma [konto usługi Google Ads](https://ads.google.com/) i odpowiadające mu poświadczenia administratora.
--   Masz [zatwierdzony token dewelopera Google Ads](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
--   Spełniasz wymagania [zasad dopasowania do klienta](https://support.google.com/adspolicy/answer/6299717).
--   Spełniasz wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048).
 -   W Google Ads istnieją już odbiorcy i odpowiadające im identyfikatory. Aby uzyskać więcej informacji, zobacz temat [Odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   Posiadasz [skonfigurowane segmenty](segments.md).
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adresy e-mail, imię i nazwisko.
+-   Posiadasz [skonfigurowane segmenty](segments.md)
+-   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adresy e-mail, imię i nazwisko
 
-## <a name="known-limitations"></a>Znane ograniczenia
+## <a name="connect-to-google-ads"></a>Połącz z usługą Google Ads
 
-- Do 1 mln profilów klientów na eksport do usługi Google Ads.
-- Eksport do Google Ads jest ograniczony do segmentów.
-- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 5 minut z powodu ograniczeń po stronie dostawcy. 
-- Dopasowanie w usłudze Google Ads może potrwać do 48 godzin.
+1. Przejdź do **Administrator** > **Lokalizacje docelowe eksportu**.
 
-## <a name="set-up-connection-to-google-ads"></a>Konfiguruj połączenie z usługą Google Ads
+1. W **Google Ads** wybierz **Konfiguruj**.
 
-1. Przejdź do **Admin** > **Połączenia**.
-
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Google Ads**, aby skonfigurować połączenie.
-
-1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
-
-1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. W polu **Wyświetlana nazwa** nadaj lokalizacji docelowej exportu rozpoznawalną nazwę.
 
 1. Wpisz **[Identyfikator klienta usługi Google Ads](https://support.google.com/google-ads/answer/1704344)**.
 
@@ -55,33 +41,34 @@ Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google
 
 1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
 
+1. Wprowadź **[identyfikator odbiorcy usługi Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** i wybierz pozycję **Połącz**, aby zainicjować połączenie z usługą Google Ads.
+
 1. Wybierz **Uwierzytelnianie za pomocą usługi Google Ads** i przekaż swoje poświadczenia w usłudze Google AD.
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
-1. Aby zakończyć połączenie, wybierz **Zapisz**. 
+   :::image type="content" source="media/export-segments-googleads.PNG" alt-text="Eksportuj zrzut ekranu dla połączenia z Google Ads":::
 
-## <a name="configure-an-export"></a>Konfigurowanie eksportu
+1. Wybierz **Dalej**, aby skonfigurować eksport.
 
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+## <a name="configure-the-connector"></a>Skonfiguruj łącznik
 
-1. Przejdź do **Dane** > **Eksporty**.
-
-1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
-
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
-
-1. Wprowadź **[identyfikator odbiorcy usługi Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** i wybierz pozycję **Połącz**, aby zainicjować połączenie z usługą Google Ads.
-
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta.
+1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Powtórz te same kroki dla pól **Imię** i **Nazwisko**.
 
 1. Wybierz segmenty, które chcesz wyeksportować. W sumie do maksymalnie 1 000 000 profilów klientów można wyeksportować do Google Ads.
 
-Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
+1. Wybierz pozycję **Zapisz**.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). 
+## <a name="export-the-data"></a>Eksportowanie danych
 
-Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Możesz [eksportować dane na żądanie](export-destinations.md). Eksportowanie będzie się również odbywało podczas każdego [zaplanowanego odświeżania](system.md#schedule-tab). W usłudze Google Ads można teraz znaleźć segmenty w [Odbiorcy Google ads](https://support.google.com/google-ads/answer/7558048?hl=en/).
+
+## <a name="known-limitations"></a>Znane ograniczenia
+
+- Do 1 miliona profili na eksport do Google Ads.
+- Eksport do Google Ads jest ograniczony do segmentów.
+- Eksportowanie segmentów zawierających łącznie 1 milion profili może zająć do 5 minut ze względu na ograniczenia po stronie dostawcy. 
+- Dopasowanie w usłudze Google Ads może potrwać do 48 godzin.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

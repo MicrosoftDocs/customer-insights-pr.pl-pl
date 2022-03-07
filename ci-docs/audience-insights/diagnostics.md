@@ -3,20 +3,18 @@ title: Inspekcja Dynamics 365 Customer Insights za pomocą Azure Monitor
 description: Dowiedz się, jak wysyłać dzienniki do Microsoft Azure Monitor.
 ms.date: 12/14/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: article
 author: brndkfr
 ms.author: bkief
 manager: shellyha
-searchScope:
-- ci-system-diagnostic
-- customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: d962c359d70a068fcf939b61e340f86de088b419
+ms.sourcegitcommit: 0c3c473e0220de9ee3c1f1ee1825de0b3b3663c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354421"
+ms.lasthandoff: 12/14/2021
+ms.locfileid: "7920839"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Przekazywanie logów w Dynamics 365 Customer Insights z Azure Monitor (wersja zapoznawcza)
 

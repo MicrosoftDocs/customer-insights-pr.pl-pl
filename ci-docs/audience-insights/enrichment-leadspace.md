@@ -1,78 +1,54 @@
 ---
 title: Wzbogacanie profili firm o zewnętrzne wzbogacenie Leadspace
 description: Ogólne informacje o wzbogacaniu strony trzeciej Leadspace.
-ms.date: 09/30/2021
-ms.reviewer: mhart
+ms.date: 11/24/2020
+ms.reviewer: kishorem
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: jodahlMSFT
-ms.author: jodahl
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230647"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269435"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Wzbogacanie profili firm z Leadspace (wersja zapoznawcza)
 
-Leadspace to firma zajmującą się nauką o danych, która oferuje platformę danych dla klienta typu B2B. Umożliwia ona środowiskom, które mają ujednolicone profile klientów oparte na klientach, wzbogacanie swoich danych. Wzbogać *profile klientów* o atrybuty, takie jak wielkość firmy, lokalizacja lub sektor. Wzbogać *profile kontaktów* o atrybuty, takie jak tytuł, osoba lub weryfikacja wiadomości e-mail.
+Leadspace jest firmą badawczą, która dostarcza platformę danych klientów typu B2B. Dzięki niej klienci z ujednoliconymi profilami klientów dla firm mogą wzbogacać swoje dane. Wzbogacenia obejmują dodatkowe atrybuty, takie jak wielkość firmy, lokalizacja, branża i inne.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 Aby skonfigurować Leadspce muszą być spełnione następujące wymagania wstępne:
 
-- Użytkownik ma aktywną licencję Leadspace.
-- [Profile klientów zostały ujednolicone](customer-profiles.md) na podstawie klientów.
-- Połączenie Leadspace zostało już skonfigurowane przez administratora lub użytkownik ma uprawnienia [administratora](permissions.md#administrator) i „klucz bezterminowy” (nazywany **tokenem Leadspace**). Aby uzyskać szczegółowe informacje na temat produktu, należy bezpośrednio skontaktować się z [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
+- Posiadasz aktywną licencję Leadspace i „wieczysty klucz” (określany jako **token Leadspace**). Skontaktuj się bezpośrednio z [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/), aby uzyskać szczegółowe informacje na temat ich produktu.
+- Masz uprawnienia [Administratora](permissions.md#administrator).
+- Istnieją [ujednolicone profile klientów](customer-profiles.md) dla firm.
 
-## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
+## <a name="configuration"></a>Konfiguracja
 
 1. W analizach odbiorców przejdź do **Dane** > **Wzbogacenie**.
 
-1. Wybierz **Wzbogać moje dane** na kafelku Leadspace i wybierz **Rozpocznij**.
+1. Wybierz **Wzbogać moje dane** na kafelku Leadspace.
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Zrzut ekranu kafelka Leadspace.":::
 
-1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem, może on utworzyć połączenie, wybierając opcję **Dodaj połączenie** i wybierając **Leadspace**. 
+1. Wybierz pozycję **Rozpocznij**, a następnie wprowadź aktywny **token Leadspace** (klucz wieczysty). Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**. Potwierdzenie obydwu składników są wprowadzane po wybraniu opcji **Połącz z Leadspace**.
 
-1. Wybierz opcję **Połącz z Leadspace**, aby potwierdzić wybrane połączenie.
+1. Wybierz opcję **Mapuj dane** i wybierz zestaw danych, który chcesz wzbogacić danymi firmy z Leadspace. Można wybrać encję *Klient*, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
-1. Wybierz opcję **Dalej** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić danymi firmy z Leadspace. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Wybierz między profilem klienta a wzbogaceniem segmentu.":::
 
-    :::image type="content" source="media/enrichment-Leadspace-configuration-customer-data-set.png" alt-text="Zrzut ekranu podczas wybierania zestawu danych klienta.":::
-
-1. Wybierz opcję **Dalej** i zdefiniuj, jakiego typu pola z ujednoliconych profilów powinny być używane do wyszukiwania pasujących danych firmowych z Leadspace. Pole **Nazwa firmy** jest wymagane. Aby zwiększyć dokładność dopasowania, można dodać maksymalnie dwa inne pola, **Witrynę sieci Web firmy** i **Lokalizację firmy**.
+1. Wybierz opcję **Dalej** i zdefiniuj pola w ujednoliconych profilach, aby wyszukać pasujące dane firmy pochodzące z Leadspace. Pole **Nazwa firmy** jest wymagane. Aby zwiększyć dokładność dopasowania, można dodać maksymalnie dwa inne pola, **Witrynę sieci Web firmy** i **Lokalizację firmy**.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Okienko mapowania pola Leadspace.":::
-
-1. Wybierz **Dalej**, by zakończyć mapowanie pól.
-
-1. Zaznacz pole wyboru, jeśli masz *profile kontaktów*, które chcesz wzbogacić. Funkcja wyników analiz odbiorców będzie automatycznie mapować wymagane pola.
-
-   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Wzbogacanie rekordów kontaktów Leadspace.":::
- 
-1. Po przejrzeniu wybranych opcji podaj nazwę wzbogacania i wybierz opcję **Zapisz wzbogacenie**.
-
-
-## <a name="configure-the-connection-for-leadspace"></a>Konfigurowanie połączenia dla Leadspace 
-
-Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania *lub* wybierz pozycję **Admin** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku Leadspace.
-
-1. Wybierz **Rozpocznij**. 
-
-1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
-
-1. Podaj prawidłowy token rozwiązania firmy Leadspace.
-
-1. Przejrzyj i wyraź zgodę na **Zasady ochrony prywatności danych**, wybierając przycisk **I agree (Wyrażam zgodę)**.
-
-1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
-
-1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
    
-   :::image type="content" source="media/enrichment-Leadspace-connection.png" alt-text="Strona konfiguracji połączenia Leadspace.":::
+1. Wybierz opcję **Zastosuj**, aby zakończyć mapowanie pola.
+
+1. Wybierz **Uruchom**, aby wzbogacić profile firm. Czas trwania wzbogacenia zależy od liczby ujednoliconych profilów klientów.
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
@@ -84,8 +60,7 @@ Aby uzyskać więcej informacji, zobacz [Interfejsy API Leadspace](https://suppo
 
 ## <a name="next-steps"></a>Następne kroki
 
-
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Kompiluj na wierzchu wzbogaconych danych klientów. Utwórz [segmenty](segments.md), [miary](measures.md), a nawet [eksportuj dane](export-destinations.md), aby zapewnić klientom spersonalizowane rozwiązania.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

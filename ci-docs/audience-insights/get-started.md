@@ -5,19 +5,17 @@ ms.reviewer: mhart
 ms.author: mhart
 author: m-hartmann
 ms.date: 08/31/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-searchScope:
-- ci-home
-- customerInsights
-ms.openlocfilehash: 2776b2292560f9ea61a06d2b1b7bc7811d35c860
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 5e8545bc9bf0d953150248fa859c6ca71a12f9cf
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353740"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645277"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights-audience-insights-capability"></a>Wprowadzenie do funkcji szczegółowych informacji o odbiorcach w aplikacji Dynamics 365 Customer Insights
 
@@ -39,7 +37,7 @@ Przy pierwszym logowaniu do szczegółowych informacji o odbiorcach można skonf
 
 Ujednolicone profile to podstawy do uzyskania wglądu w dane i podjęcia działań dotyczących danych. Pobierz dane z różnych źródeł i uruchom proces ujednolicania danych w celu połączenia ujednoliconych profilów. Określ relacje między pozyskanymi encjami przy użyciu funkcji wzbogacenia, aby dodawać informacje do profilów. 
 
-1. Pozyskuj dane, tworząc źródła danych z wielu opcji. Wybierz między [łącznikami usługi Power Query](connect-power-query.md) a [folderem Common Data Model](connect-common-data-model.md) lub [Microsoft Dataverse](/dynamics365/customer-insights/audience-insights/connect-dataverse-managed-lake). 
+1. Pozyskuj dane, tworząc źródła danych z wielu opcji. Wybierz [konektory Power Query](connect-power-query.md), [folder usługi Common Data Model](connect-common-data-model.md) lub [Microsoft Dataverse](connect-common-data-service-lake.md). 
 
 1. Uruchom [proces ujednolicania danych](data-unification.md), przechodząc przez etapy [mapowania](map-entities.md), [dopasowywania](match-entities.md) i [scalania](merge-entities.md).
 

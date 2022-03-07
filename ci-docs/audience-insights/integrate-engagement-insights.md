@@ -2,23 +2,21 @@
 title: Integruj dane sieci Web dzięki wglądowi w dane dotyczące odbiorcy klientów
 description: Przenieś informacje internetowe o klientach, od statystyk zaangażowania do statystyk odbiorców.
 ms.date: 06/24/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 037e264658bc354618cff56a89645ef7552aeb13
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: 76a53a897e90152707a7c1255ed5ed93a5f3b5a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350558"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305031"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Integruj dane sieci Web dzięki wglądowi w dane dotyczące odbiorcy klientów
-
-
-[!INCLUDE [cc-beta-prerelease-disclaimer](../engagement-insights/includes/cc-beta-prerelease-disclaimer.md)]
 
 Klienci często dokonują codziennych transakcji online za pośrednictwem witryn internetowych. Funkcja analizy zaangażowania (wersja zapoznawcza) w Dynamics 365 Customer Insights jest poręcznym rozwiązaniem umożliwiającym integrację danych internetowych jako źródła. Oprócz danych transakcyjnych, demograficznych lub behawioralnych możemy zobaczyć działania w Internecie w ujednoliconych profilach klientów. Możemy wykorzystać te profile do uzyskania dodatkowych analiz, takich jak segmenty, miary czy przewidywania dotyczące aktywacji odbiorców.
 

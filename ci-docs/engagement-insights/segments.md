@@ -4,16 +4,17 @@ description: Jak tworzyć, edytować i usuwać segmenty oraz gdzie ich używać.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 06/09/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: e99c04e6c92d8ca16c2d69957e0f5b7dba0ac757
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: cedcd58373428dd35ba29ce8fdd00007257f8fa59b0d25bc584b4e832df13604
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8225389"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036161"
 ---
 # <a name="view-and-create-segments"></a>Wyświetlanie i tworzenie segmentów
 
@@ -43,27 +44,22 @@ W tej sekcji opisano sposób tworzenia *pustego segmentu* od podstaw.
 
 1. Wybierz opcję **Nowy segment**.
 
-1. W **bibliotece zasobów** wybierz opcję (+) obok atrybutu, według którego chcesz filtrować. Obecnie segmenty można tworzyć tylko na podstawie rozmiarów.
+1. W **Bibliotece zasobów** wybierz atrybut, według którego ma być filtrowany. Obecnie segmenty można tworzyć tylko na podstawie rozmiarów.
 
-   :::image type="content" source="media/create-new-segment.png" alt-text="Utwórz nowy segment.":::
-
-1. W sekcji **Reguła** wybierz operator i wartość wybranego atrybutu. Obsługiwane są następujące operacje.
-
-   :::image type="content" source="media/choose-operator-segment.png" alt-text="Wybierz operator dla swojego nowego segmentu.":::
-
+1. Wybierz operatora i wartość dla zaznaczonego atrybutu. Obsługiwane są następujące operacje.
    - **jest**: wymaga dokładnego dopasowania, aby uwzględniało wartości. Używa wartości **równa się** dla jednej wartości lub **dowolne z**, aby objąć wiele wartości.
    - **nie jest**: wymaga dokładnego dopasowania w celu wykluczenia wartości. Używa wartości **równa się** dla jednej wartości lub **dowolne z**, aby objąć wiele wartości.
    - **zaczyna się od**: ciąg, od którego zaczynają się pasujące wartości.
    - **kończy się na**: ciąg, na którym kończą się pasujące wartości.
    - **zawiera**: ciąg zawierający pasujące wartości.
 
-1. Aby dodać więcej warunków do grupy, można użyć operatorów logicznych. Atrybuty rzutowane są uwzględniane podczas używania operatorów zestawów.
+1. Aby dodać do grupy więcej warunków, można użyć dwóch operatorów logicznych. Atrybuty rzutowane są uwzględniane podczas używania operatorów zestawów.
    - **AND** operator: oba warunki muszą być spełnione w procesie segmentacji. Ta opcja jest najbardziej przydatna podczas definiowania warunków między różnymi encjami.
    - **OR** operator: jeden z warunków musi zostać osiągnięty jako część procesu segmentacji. Ta opcja jest najbardziej przydatna podczas definiowania wielu warunków dla tej samej encji.
 
 1. Wybierz **Zapisz** i wprowadź nazwę segmentu. 
 
-Segment zostanie wyświetlony na stronie **Segmenty** i będzie można go zastosować do wszystkich raportów i lejków w obszarze roboczym.
+Segment zostanie wyświetlony na stronie Segmenty i będzie można go zastosować do wszystkich raportów i lejków w obszarze roboczym.
 
 ## <a name="use-a-segment-in-a-report-or-funnel"></a>Korzystanie z segmentu w raporcie lub lejku
 
@@ -71,7 +67,7 @@ Możesz zastosować segmenty do raportu lub lejka, aby filtrować je w oparciu o
 
 :::image type="content" source="media/segment-reports-filter.png" alt-text="Raport widoków strony z rozwiniętą listą rozwijaną, na której można wybrać segmenty, które mają być stosowane.":::
 
-Aby zastosować segment, otwórz raport lub lejek. Wybierz opcję **+ Dodaj warunek** i wybierz pozycję **Filtruj według segmentu**. Wybierz z listy segment, który chcesz zastosować. Segment zostanie zastosowany w raporcie. Jeśli wykres nie obsługuje segmentu, jest to błąd. Aby uzyskać więcej informacji, zobacz [Tworzenie raportów lejka i zarządzanie nimi](funnel-reports.md).
+Aby zastosować segment, otwórz raport lub lejek. Wybierz opcję **Dodaj warunek** i wybierz pozycję **Filtruj według segmentu**. Wybierz z listy segment, który chcesz zastosować. Segment zostanie zastosowany w raporcie. Jeśli wykres nie obsługuje segmentu, jest to błąd.
  
 Raport lub lejek można *zastosować do maksymalnie trzech segmentów*.
 
@@ -95,7 +91,5 @@ Raport lub lejek można *zastosować do maksymalnie trzech segmentów*.
 1. Z listy segmentów wybierz pozycję **Więcej... [...]**. 
 1. Z listy rozwijanej wybierz pozycję **Usuń**.
 1. Wybierz **Usuń**, aby potwierdzić.
-
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

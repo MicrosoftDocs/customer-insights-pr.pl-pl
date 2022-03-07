@@ -3,17 +3,18 @@ title: Wzbogacenie za pomocą niestandardowego importu SFTP
 description: Ogólne informacje o wzbogacaniu importu niestandardowego SFTP.
 ms.date: 04/09/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 9331cf8057850e2fbe03622831f388e73056d938
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229651"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555412"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
 
@@ -43,8 +44,6 @@ Aby skonfigurować niestandardowy import SFTP, muszą być spełnione następuj�
 1.  Wybierz opcję **Dalej** i wprowadź **ścieżkę** i **nazwę pliku** dla danych, które chcesz zaimportować.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Zrzut ekranu przedstawiający wprowadzenie lokalizacji danych.":::
-
-1. Wybierz opcję **Dalej** i wybierz zestaw danych klientów. Mogą to być wszystkie profile klientów lub segment.
 
 1. Wybierz opcję **Dalej** i podaj nazwę dla wzbogacania oraz nazwę encji wyjściowej. 
 
@@ -124,6 +123,6 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

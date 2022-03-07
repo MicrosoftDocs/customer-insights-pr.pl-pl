@@ -1,25 +1,21 @@
 ---
 title: Wzbogać ujednolicone profile klientów
 description: Korzystanie z funkcji w celu wzbogacenia danych klienta.
-ms.date: 02/07/2022
+ms.date: 07/01/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-searchScope:
-- ci-enrichments
-- ci-enrichment-details
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a64bbd754d4013d0a6243074ac9f55991547be82b269047a9937b583baf98697
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355396"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032541"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -31,29 +27,15 @@ W statystykach odbiorców przejdź do **Dane** > **Wzbogacenie**, aby pracować 
 
 Aby tworzyć lub edytować wzbogacenia, trzeba mieć uprawnienia Współautor lub Administrator. Aby uzyskać więcej informacji, zobacz [Uprawnienia](permissions.md).
 
-Na karcie **Odnajdowanie** znajdziesz wszystkie obsługiwane opcje wzbogacania.
-
-# <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
+Na karcie **Odkryj** znajdziesz następujące wzbogacenia:
 
 - [Marki](enrichment-microsoft.md) dostarczone przez Microsoft
 - [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
-- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
-- [Dane demograficzne](enrichment-experian.md) dostarczane przez usługę Experian
-- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
-- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies 
-
-# <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
-
+- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
 - [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
-- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
-- [Rozszerzone dane firmy](enrichment-enhanced-company-data.md) dostarczane przez Microsoft
-- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies 
-- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
-- [Dane dotyczące zaangażowania konta](enrichment-office.md) dostarczone przez Microsoft
-
----
+- [Dane demograficzne](enrichment-experian.md) dostarczane przez usługę Experian
+- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies
+- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol)
 
 Na karcie **Moje wzbogacenia** użytkownik może zobaczyć skonfigurowane przez siebie wzbogacenia i edytować ich właściwości.
 
@@ -75,22 +57,10 @@ Uruchom lub dezaktywuj wiele wzbogaceń jednocześnie, zaznaczając je na liści
 
 ## <a name="enrichments-and-connections"></a>Wzbogacenia i połączenia
 
-Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.md), które administrator konfiguruje się z poświadczeniami i wyraża zgodę na przesyłanie danych. Połączenia mogą być używane przez administratorów i współautorów do konfigurowania wzbogaceń.  
+Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.md), które administrator konfiguruje się z poświadczeniami i wyraża zgodę na przesyłanie danych. Połączenie może być następnie używane do konfiguracji wzbogaceń przez administratorów i współautorów.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Wiele wzbogaceń tego samego typu
 
 Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogać dane tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na stronie **Wzbogacanie**.
-
-## <a name="see-the-progress-of-the-enrichment-process"></a>Wyświetlanie postępu procesu wzbogacania
-
-Można tu znaleźć szczegółowe informacje o przetwarzaniu wzbogacania, w tym informacje o stanie i potencjalnych problemach podczas odświeżania lub po zakończeniu odświeżania. Zidentyfikuj procesy związane z odświeżaniem wzbogacania i dowiedz się, ile trwa ich działanie. Stan wzbogacenia jest obsługiwany w przypadku usług Experian, Leadspace, HERE Technologies, SFTP Import i Azure Maps.
-
-Aby wyświetlić stan wzbogacania
-
-1. Przejdź do **Dane** > **Wzbogacanie**. 
-1. Na karcie **Moje wzbogacenia** wybierz stan wzbogacania, aby otworzyć okienko boczne. 
-1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**. 
-1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**. 
-1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

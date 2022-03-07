@@ -1,21 +1,22 @@
 ---
 title: Eksportowanie danych aplikacji Customer Insights do rozwiązania AdRoll
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi AdRoll.
-ms.date: 10/08/2021
+ms.date: 03/03/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3a318750077c71a17e5a47c40722f6153e6640f3
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: e8f4d4ee6b2c6cdec513b700641db568fa16076d
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227633"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5895972"
 ---
-# <a name="export-segments-to-adroll-preview"></a>Eksportowanie segmentów do usługi AdRoll (wersja zapoznawcza)
+# <a name="export-segment-lists-to-adroll-preview"></a>Eksportowanie list segmentów do usługi AdRoll (wersja zapoznawcza)
 
 Eksportuj segmenty ujednoliconych profilów klientów do rozwiązania AdRoll i używaj ich w celach reklamowych. 
 
@@ -27,11 +28,11 @@ Eksportuj segmenty ujednoliconych profilów klientów do rozwiązania AdRoll i u
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Jednocześnie można wyeksportować do 250 000 profilów klientów do usługi AdRoll.
-- Nie można eksportować segmentów, w których jest mniej niż 100 profilów klientów, do usługi AdRoll. 
+- Do rozwiązania AdRoll możesz wyeksportować łącznie do 250 000 profilów na operację eksportu.
+- Nie można eksportować segmentów obejmujących mniej niż 100 profilów do rozwiązania AdRoll. 
 - Eksport do rozwiązania AdRoll jest ograniczony do segmentów.
-- Eksportowanie do 250 000 profilów klientów do usługi AdRoll może zająć do 10 minut. 
-- Liczba profilów klientów, które można eksportować do usługi AdRoll, zależy od kontraktu z usługą AdRoll i jest ograniczona.
+- Wyeksportowanie do 250 000 profilów do rozwiązania AdRoll może potrwać do 10 minut. 
+- Liczba profilów, które można eksportować do rozwiązania AdRoll, jest zależna od kontraktu z rozwiązaniem AdRoll i ograniczana na jego podstawie.
 
 ## <a name="set-up-connection-to-adroll"></a>Skonfiguruj połączenie z usługą AdRoll
 
@@ -61,11 +62,11 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi AdRoll. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi AdRoll. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
-1. Wprowadź identyfikator **Reklamodawcy AdRoll**. Aby uzyskać więcej informacji, zobacz [Profile reklamodawców AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Aby uzyskać więcej informacji, wprowadź **identyfikator reklamodawcy AdRoll**. Więcej informacji znajdziesz w [profilach reklamodawcy AdRoll](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wyeksportowanie segmentów do rozwiązania AdRoll jest wymagane.
+3. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Wyeksportowanie segmentów do rozwiązania AdRoll jest wymagane.
 
 1. Wybierz segmenty, które chcesz wyeksportować. Wybierz segment obejmujący co najmniej 100 członków. Nie można eksportować mniejszych segmentów. Dodatkowo maksymalny rozmiar eksportowanego segmentu wynosi 250 000 członków na operację eksportu. 
 
@@ -73,9 +74,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). 
-
-Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami

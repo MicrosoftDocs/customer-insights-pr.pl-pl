@@ -1,23 +1,25 @@
 ---
 title: Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 description: Przegląd informacji o odbiorcach dla Dynamics 365 Customer Insights.
-ms.date: 08/04/2021
+ms.date: 01/18/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: b0fd10ca6f79bfec35c8a238179ba7e26e4dad98
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.custom: intro-internal
+ms.openlocfilehash: 19fc79873d32f268e194c4ebac4cf469a8b9b09f
+ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230749"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "6539128"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Informacje o odbiorcach dla Dynamics 365 Customer Insights - omówienie
 
-[Wyniki analiz odbiorców, możliwości rozwiązania Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/audience-insights-capability/) pomaga w lepszym zrozumieniu swoich klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy. Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.
+Statystyki odbiorców pomagają lepiej zrozumieć klientów. Dane z różnych źródeł transakcyjnych, behawioralnych i obserwacji można połączyć w celu utworzenia pełnego widoku klienta. Użyj tych wyników analiz, aby utworzyć skoncentrowane na kliencie rozwiązania i procesy. Ujednolicaj i zrozum dane klientów oraz wykorzystaj je do inteligentnych spostrzeżeń i działań.
 
 ## <a name="main-benefits"></a>Główne korzyści 
 
@@ -32,9 +34,9 @@ ms.locfileid: "8230749"
 
 - **Napędzaj procesy biznesowe i spersonalizowane środowiska dla klientów**
 
-  - Napędzaj spersonalizowane zaangażowanie między kanałami — daj więcej możliwości specjalistom ds. marketingu, sprzedaży i obsługi klienta. Korzystaj z gotowych, szczegółowych i dostosowanych kart profili klienta zintegrowanych z aplikacjami biznesowymi, których już używasz.
-  - Automatyzacja środowisk i procesów opartych na dostosowywanych profilach, działaniach biznesowych i segmentach.
-  - Włącz i rozszerz środowiska biznesowe na bazie [Microsoft Power Platform](https://powerplatform.microsoft.com/). Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu Power Apps.  
+  - Angażuj się osobiście w różne kanały — zapewniaj specjalistom do spraw marketingu, sprzedaży i obsługi klienta standardowe, kontekstowe informacje o kliencie i dostosowane karty profili klientów, używane we wszystkich używanych przez nich codziennie aplikacjach biznesowych
+  - Automatyzacja zorientowanych na klientach środowisk i procesów opartych na dostosowywanych profilach, działaniach biznesowych i segmentach.
+  - Włącz i rozszerz środowiska biznesowe na bazie [Microsoft Power Platform](https://powerplatform.microsoft.com/). Szybko kompiluj aplikacje z osadzonymi informacjami przy użyciu wydajnej metody niskiej kodu PowerApps.  
 
 ## <a name="key-audiences"></a>Kluczowi odbiorcy
 
@@ -48,12 +50,13 @@ ms.locfileid: "8230749"
 
 - **Użytkownicy biznesowi:**
 
-  - Wgląd w pełne profile klientów i pozyskiwania klientów.
-  - Wyświetlanie pełnych danych klientów w ramach procesach biznesowych Dynamics 365 z pakietami.
+  - Wgląd w pełne profile klientów i kompleksowe widoki pozyskiwania klientów.
+  - Wyświetlanie pełnych danych klientów w ramach procesach biznesowych Dynamics 365 z wstępnie utworzonymi pakietami.
 
 - **Analitycy biznesowi:**
 
   - Twórz konfigurowalne profile, definiuj miary, twórz segmenty i korzystaj z analiz predykcyjnych, aby uzyskać 360-stopniowy widok klienta, specyficzny dla Twojej organizacji.  
-  - Używanie gotowych łączników do kilku aplikacji Microsoft i innych firm lub interfejsów API w celu przetwarzania szczegółowych informacji.
+  - Użyj gotowych łączników dla kilku aplikacji lub interfejsów API firmy Microsoft i innych firm, aby dalej przetwarzać szczegółowe informacje.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,21 +1,22 @@
 ---
-title: Przewidywanie odpływu transakcji (zawiera wideo)
+title: Przewidywanie odpływu transakcji (Wideo)
 description: Przewiduj, czy klient jest zagrożony, jeśli przestanie kupować Twoje produkty lub usługi.
-ms.date: 01/13/2022
+ms.date: 10/20/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 9aa208ad94dcb6b1e0f110a3f974c56de00bbd07
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ad87e0fd848168d1a18f28f2ac5c507bb01e1f28
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355672"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904085"
 ---
-# <a name="transaction-churn-prediction"></a>Przewidywanie rezygnacji z transakcji
+# <a name="transaction-churn-prediction-preview"></a>Przewidywanie rezygnacji z transakcji (wersja zapoznawcza)
 
 Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzie już kupować Twoich produktów lub usług w danym oknie czasowym. Nowe przewidywania mogą być tworzone w **Analizy** > **Przewidywania**. Wybierz **Moje przewidywania**, aby wyświetlić inne utworzone przewidywania. 
 
@@ -24,7 +25,7 @@ Prognozowanie rezygnacji z transakcji pomaga przewidzieć, czy klient nie będzi
 W środowiskach opartych na kontach biznesowych można przewidywać rezygnację z transakcji klienta oraz kombinację konta i innego poziomu informacji, takich jak kategoria produktu. Dodanie wymiarów może pomóc w określeniu, na ile prawdopodobne jest, że klient „Contoso” przestanie kupować kategorię produktów „materiały biurowe”. W przypadku kont biznesowych możemy również użyć AI do wygenerowania listy potencjalnych przyczyn, dla których konto jest zagrożone dla kategorii informacji na poziomie pomocniczym.
 
 > [!TIP]
-> Wypróbuj samouczek dla przewidywania rezygnacji z transakcji za pomocą danych przykładowych: [Przykładowy przewodnik po przewidywaniu rezygnacji z transakcji](sample-guide-predict-transactional-churn.md).
+> Wypróbuj samouczek dotyczący przewidywania rezygnacji z transakcji używający przykładowych danych: [Przykład przewidywania rezygnacji z transakcji (wersja zapoznawcza) — przewodnik](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -100,12 +101,12 @@ W środowiskach opartych na kontach biznesowych można przewidywać rezygnację 
 
 1. W Customer Insights przejdź do **Analizy** > **Przewidywania**.
 
-1. Wybierz kafelek **Model rezygnacji klienta** i wybierz opcję **Użyj tego modelu**.
+1. Wybierz kafelek **Model rezygnacji klientów (wersja zapoznawcza)** i wybierz opcję **Użyj tego modelu**.
 
 1. W okienku **Model rezygnacji klienta** wybierz opcję **Transakcja** i wybierz opcję **Rozpocznij**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Zrzut ekranu z wybraną opcją transakcji w okienku modelu rezygnacji klienta.":::
- 
+
 ### <a name="name-model"></a>Nadaj nazwę modelowi
 
 1. Podaj nazwę modelu odróżniającą go od innych modeli.
@@ -116,11 +117,11 @@ W środowiskach opartych na kontach biznesowych można przewidywać rezygnację 
 
 ### <a name="define-customer-churn"></a>Definiuj rezygnację klienta
 
-1. Konfiguracja **Okno przewidywania**. Na przykład prognozuj ryzyko odejścia klientów w ciągu najbliższych 90 dni, aby dostosować się do działań marketingowych dotyczących utrzymania klientów. Przewidywanie ryzyka odejścia na dłuższy lub krótszy okres może utrudnić uwzględnienie czynników w profilu ryzyka odejścia, ale zależy to od konkretnych wymagań biznesowych.
+1. Ustaw przedział dni na prognozowanie rezygnacji w polu **Zidentyfikuj klientów, którzy mogą odejść w następnym**. Na przykład prognozuj ryzyko odejścia klientów w ciągu najbliższych 90 dni, aby dostosować się do działań marketingowych dotyczących utrzymania klientów. Przewidywanie ryzyka odejścia na dłuższy lub krótszy okres może utrudnić uwzględnienie czynników w profilu ryzyka odejścia, ale zależy to od konkretnych wymagań biznesowych.
    >[!TIP]
-   > W dowolnym momencie można wybrać opcję **Zapisz roboczą**, aby zapisać przewidywanie jako roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
+   > W dowolnym momencie możesz wybrać **Zapisz i zamknij**, aby zapisać przewidywanie jako wersję roboczą. Aby kontynuować, należy znaleźć przewidywanie w wersji roboczej na karcie **Moje przewidywania**.
 
-1. W polu **Definicja rezygnacji** wprowadź liczbę dni do zdefiniowania rezygnacji. Na przykład, jeśli klient nie dokonał zakupów w ciągu ostatnich 30 dni, może zostać uznany za klienta, który zrezygnował, w przypadku Twojej firmy. 
+1. Wprowadź liczbę dni do zdefiniowania rezygnacji w polu **Klient odszedł, jeśli nie dokonał zakupów w:**. Na przykład, jeśli klient nie dokonał zakupów w ciągu ostatnich 30 dni, może zostać uznany za klienta, który zrezygnował, w przypadku Twojej firmy. 
 
 1. Wybierz **Dalej**, aby kontynuować.
 
@@ -128,16 +129,19 @@ W środowiskach opartych na kontach biznesowych można przewidywać rezygnację 
 
 1. Wybierz opcję **Dodaj dane** i wybierz typ działania w okienku bocznym zawierającym wymagane informacje o historii transakcji lub zakupów.
 
-1. W obszarze **Wybierz działania** wybierz określone działania z wybranego typu działania, na których chcesz skupić się podczas obliczania.
+1. W obszarze **Wybierz działania** wybierz określone działania z wybranego działania, na których chcesz skupić się podczas obliczania.
 
-   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="Okienko boczne po stronie przedstawiające wybranie określone działania w ramach typu semantycznego.":::
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Okienko boczne po stronie przedstawiające wybranie określone działania w ramach typu semantycznego.":::
 
-   Jeśli działanie nie zostało jeszcze zamapowane na typ semantyczny, wybierz opcję **Edytuj**, aby to zrobić. Zostanie otwarte środowisko nadzorowane służące do mapowania działań semantycznych. Zamapuj swoje dane na odpowiednie pola w wybranym typie działania.
+1. Jeśli działanie nie zostało jeszcze zamapowane na typ semantyczny, wybierz opcję **Edytuj**, aby to zrobić. Zostanie otwarte środowisko nadzorowane służące do mapowania działań semantycznych. Zamapuj swoje dane na odpowiednie pola w wybranym typie działania.
 
-1. Zamapuj atrybuty semantyczne na pola wymagane do uruchomienia modelu. Jeśli poniższe pola nie są wypełnione, skonfiguruj relację z encji historii zakupu do encji *Klient*. Wybierz pozycję **Zapisz**.
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Typ działania ustawienia strony.":::
 
-1. W kroku **Dodaj wymagane dane** zaznacz opcję **Dalej**, aby kontynuować, jeśli nie chcesz dodawać kolejnych działań.
+1. Po zamapowaniu działania na odpowiedni typ semantyczny, wybierz opcję **Dalej**, aby kontynuować
 
+1. Zamapuj atrybuty semantyczne na pola wymagane do uruchomienia modelu. Jeśli poniższe pola nie są wypełnione, skonfiguruj relację z encji historii zakupu do encji *Klient*.
+
+1. Wybierz **Dalej**.
 
 # <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 

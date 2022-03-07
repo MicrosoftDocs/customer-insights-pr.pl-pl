@@ -5,15 +5,16 @@ ms.reviewer: mhart
 ms.author: jusali
 author: jusali
 ms.date: 10/01/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7e8c96f38af74f25080a40fd92e73f05c71320a8
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 79600a14bc7e98dfd066270f19c353fd007e1341
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229829"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623735"
 ---
 # <a name="view-and-create-metrics"></a>Wyświetlanie i tworzenie metryk
 
