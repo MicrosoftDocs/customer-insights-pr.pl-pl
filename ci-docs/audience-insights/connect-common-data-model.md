@@ -1,20 +1,24 @@
 ---
 title: Połącz dane Common Data Model z kontem Azure Data Lake
 description: Pracuj z danymi Common Data Model przy użyciu usługi Azure Data Lake Storage.
-ms.date: 12/06/2021
-ms.service: customer-insights
+ms.date: 01/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- ci-attach-cdm
+- customerInsights
+ms.openlocfilehash: 1e3b28316c06d6a15dd5690837c365b0677a882e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900210"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354940"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 
@@ -25,6 +29,8 @@ Ten artykuł zawiera informacje na temat pozyskiwania danych z folderu Common Da
 - Dane w usłudze Azure Data Lake muszą być zgodne ze standardem Common Data Model. W tym momencie inne formaty nie są obsługiwane.
 
 - Pozyskiwanie danych obsługuje wyłącznie konta magazynu Azure Data Lake *Gen2*. Nie można używać kont magazynu Azure Data Lake Gen1 do pozyskiwania danych.
+
+- Konto magazynu Azure Data Lake Storage musi mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Aby uwierzytelnić się przy użyciu głównej usługi platformy Azure, upewnij się, że jest ona skonfigurowana w dzierżawie. Aby uzyskać więcej informacji, zobacz temat [Połącz analizy odbiorców z kontem Azure Data Lake Storage Gen2 za pomocą głównej usługi platformy Azure](connect-service-principal.md).
 

@@ -1,20 +1,19 @@
 ---
 title: Łącznik Power Automate | Microsoft Docs
 description: Tworzenie przepływów w usłudze Microsoft Power Automate z poziomu aplikacji Dynamics 365 Customer Insights.
-ms.date: 01/20/2021
+ms.date: 06/24/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e973bb11b31c9e70b695ebec8aa2700fdaa5e44f
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: dc9bbe22b7f10cf92f06cae18fbece9808b87dce
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597938"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226727"
 ---
 # <a name="power-automate-connector-preview"></a>Łącznik Power Automate (wersja zapoznawcza)
 
@@ -27,13 +26,14 @@ Użyj wyzwalaczy do tworzenia przepływów w chmurze i automatyzacji powtarzalny
 - Wyzwól, kiedy odświeżanie źródła danych zakończy się niepowodzeniem. 
 - Wyzwól, kiedy odświeżanie źródła danych zakończy się sukcesem.
 - Wyzwól, kiedy w segmencie nastąpi przekroczenie progu. Wyzwalacz jest ograniczony do przekraczania progu.
-- Wyzwól, kiedy w miarze biznesowej nastąpi przekroczenie progu. Wyzwalacz jest ograniczony do przekraczania progu.
-- Wyzwalaj, gdy zostanie ukończone pełne odświeżanie (źródła danych, segmenty, miary,...).
+- Wyzwól, kiedy w miarze biznesowej nastąpi przekroczenie progu. Obsługiwane są tylko miary biznesowe bez wymiaru. Wyzwalacz jest ograniczony do przekraczania progu.
+- Wyzwalaj, gdy zostanie ukończone pełne odświeżanie (źródła danych, segmenty, miary, ...).
 - Wyzwalaj po zakończeniu odświeżania procesu unifikacji (mapowanie, dopasowanie, scalanie).
 
-[Skonfiguruj wyzwalacze w Power Automate](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
+[Skonfiguruj wyzwalacze w Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
 ## <a name="power-automate-actions"></a>Akcje Power Automate
+
 Łącznik Power Automate dostarcza innych akcji niż dostępne wyzwalacze. Aby uzyskać więcej informacji, zobacz [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/).
 
 ## <a name="create-a-power-automate-flow"></a>Utwórz przepływ Power Automate

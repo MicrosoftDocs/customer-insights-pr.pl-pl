@@ -1,24 +1,23 @@
 ---
 title: Eksperymenty usługi Azure Machine Learning
 description: Użyj modeli opartych na usłudze Azure Machine Learning w Dynamics 365 Customer Insights.
-ms.date: 11/30/2020
-ms.service: customer-insights
+ms.date: 12/02/2021
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c3bed3dca40be748140a8b339191e6a42725714
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267919"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228901"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Użyj modeli opartych na usłudze Azure Machine Learning
 
-Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania modeli uczenia maszynowego, które mogą generować dodatkowe informacje o firmie. Customer Insights integruje się z Machine Learning Studio (klasycznym) i Azure Machine Learning, aby używać własnych modeli niestandardowych. Zobacz, jak [Eksperymenty Machine Learning Studio (klasyczne)](machine-learning-studio-experiments.md), aby zapoznać się z przykładami eksperymentów opracowanych w Machine Learning Studio (wersja klasyczna). 
+Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania modeli uczenia maszynowego, które mogą generować dodatkowe informacje o firmie. Customer Insights integruje się z platformą Uczenie maszynowe Azure w celu korzystania z własnych modeli niestandardowych.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -29,30 +28,30 @@ Zunifikowane dane w Dynamics 365 Customer Insights są źródłem budowania mode
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Skonfiguruj obszar roboczy Azure Machine Learning
 
-1. Zobacz [Tworzenie obszaru roboczego Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace), aby poznać różne opcje tworzenia obszaru roboczego. Aby uzyskać najlepszą wydajność, utwórz obszar roboczy w regionie świadczenia usługi Azure, który jest geograficznie najbliższy środowiska Customer Insights.
+1. Zobacz [Tworzenie obszaru roboczego Azure Machine Learning](/azure/machine-learning/concept-workspace#-create-a-workspace), aby poznać różne opcje tworzenia obszaru roboczego. Aby uzyskać najlepszą wydajność, utwórz obszar roboczy w regionie świadczenia usługi Azure, który jest geograficznie najbliższy środowiska Customer Insights.
 
-1. Uzyskiwanie dostępu do obszaru roboczego za pośrednictwem [Azure Machine Learning Studio](https://ml.azure.com/). Istnieje kilka [sposobów interakcji](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) z obszarem roboczym.
+1. Uzyskiwanie dostępu do obszaru roboczego za pośrednictwem [Azure Machine Learning Studio](https://ml.azure.com/). Istnieje kilka [sposobów interakcji](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) z obszarem roboczym.
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Praca z projektantem Azure Machine Learning
 
-Projektant usługi Azure Machine Learning zapewnia wizualną kanwę, w której można przeciągać i upuszczać zestawy danych i moduły, podobnie jak w usłudze Machine Learning Studio (wersja klasyczna). Potok wsadowy utworzony przez projektanta można zintegrować z Customer Insights, jeśli są odpowiednio skonfigurowane. 
+Projektant Azure Machine Learning dostarcza wizualną kanwę, na której możesz przeciągać i upuszczać zestawy danych i moduły. Potok wsadowy utworzony przez projektanta można zintegrować z Customer Insights, jeśli są odpowiednio skonfigurowane. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Praca z Azure Machine Learning SDK
 
-Naukowcy zajmujący się danymi i programiści sztucznej inteligencji używają [zestawu SDK usługi Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) do tworzenia przepływów pracy uczenia maszynowego. Obecnie modele wytrenowane przy użyciu zestawu SDK nie mogą być zintegrowane bezpośrednio z Customer Insights. Potok wnioskowania wsadowego, który używa tego modelu, jest wymagany do integracji z Customer Insights.
+Naukowcy zajmujący się danymi i programiści sztucznej inteligencji używają [zestawu SDK usługi Azure Machine Learning](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) do tworzenia przepływów pracy uczenia maszynowego. Obecnie modele wytrenowane przy użyciu zestawu SDK nie mogą być zintegrowane bezpośrednio z Customer Insights. Potok wnioskowania wsadowego, który używa tego modelu, jest wymagany do integracji z Customer Insights.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Wymagania dotyczące potoku wsadowego do integracji z Customer Insights
 
 ### <a name="dataset-configuration"></a>Konfiguracja zestawu danych
 
-Musisz utworzyć zestawy danych, aby używać danych encji z Customer Insights do potoku wnioskowania wsadowego. Te zestawy danych muszą zostać zarejestrowane w obszarze roboczym. Obecnie są obsługiwane tylko [zestawy danych tabelarycznych](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset) w formacie CSV. Zestawy danych odpowiadające danej encji muszą być parametryzowane jako parametry potoku.
+Musisz utworzyć zestawy danych, aby używać danych encji z Customer Insights do potoku wnioskowania wsadowego. Te zestawy danych muszą zostać zarejestrowane w obszarze roboczym. Obecnie są obsługiwane tylko [zestawy danych tabelarycznych](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) w formacie CSV. Zestawy danych odpowiadające danej encji muszą być parametryzowane jako parametry potoku.
    
 * Parametry zestawu danych w projektancie
    
      W projektancie otwórz **Wybierz kolumny w zestawie danych** i wybierz polecenie **Ustaw jako parametr potoku**, gdzie jest określona nazwa parametru.
 
      > [!div class="mx-imgBorder"]
-     > ![Parametry zestawu danych w projektancie](media/intelligence-designer-dataset-parameters.png "Parametry zestawu danych w projektancie")
+     > ![Parametry zestawu danych w projektancie.](media/intelligence-designer-dataset-parameters.png "Parametry zestawu danych w projektancie")
    
 * Parametr zestawu danych w SDK (Python)
    
@@ -76,9 +75,9 @@ Musisz utworzyć zestawy danych, aby używać danych encji z Customer Insights d
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Importuj dane potoku do Customer Insights
 
-* Projektant dostarcza [moduł eksportowania danych](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data), który umożliwia wyeksportowanie danych wyjściowych z potoku do usługi Azure Storage. Obecnie moduł musi używać typu magazynu danych **Azure Blob Storage** i sparametryzować **Magazyn danych** i względną **Ścieżkę**. Customer Insights zastępuje oba te parametry podczas wykonywania potoku magazynem danych i ścieżką dostępną dla produktu.
+* Projektant dostarcza [moduł eksportowania danych](/azure/machine-learning/algorithm-module-reference/export-data), który umożliwia wyeksportowanie danych wyjściowych z potoku do usługi Azure Storage. Obecnie moduł musi używać typu magazynu danych **Azure Blob Storage** i sparametryzować **Magazyn danych** i względną **Ścieżkę**. Customer Insights zastępuje oba te parametry podczas wykonywania potoku magazynem danych i ścieżką dostępną dla produktu.
    > [!div class="mx-imgBorder"]
-   > ![Eksportuj konfigurację modułu danych](media/intelligence-designer-importdata.png "Eksportuj konfigurację modułu danych")
+   > ![Eksportuj konfigurację modułu danych.](media/intelligence-designer-importdata.png "Eksportuj konfigurację modułu danych")
    
 * Przy tworzeniu danych wyjściowych dotyczących wnioskowania przy użyciu kodu można przekazać wyniki na ścieżkę z *zarejestrowanego magazynu danych* w obszarze roboczym. Jeśli ścieżka i magazyn danych są sparametryzowane w potoku, Customer Insights będzie mógł odczytywać i importować dane wyjściowe wnioskowania. Obecnie obsługiwany jest tylko jeden format danych wyjściowych w formacie CSV. Ścieżka musi zawierać katalog i nazwę pliku.
 

@@ -1,38 +1,37 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi DotDigital
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi DotDigital.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d08504856e1c673ef32433b83bf491d7f4e8cee4
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: f9302e17c07238d837dcafb82baecb5aedda17de
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976859"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231631"
 ---
-# <a name="export-segment-lists-to-dotdigital-preview"></a>Eksportowanie list segmentów do usługi DotDigital (wersja zapoznawcza)
+# <a name="export-segments-to-dotdigital-preview"></a>Eksportowanie segmentów do usługi DotDigital (wersja zapoznawcza)
 
 Eksportuj segmenty ujednoliconych profili klientów do książek adresowych DotDigital i wykorzystuj je do prowadzenia kampanii, marketingu e-mailowego i budowania segmentów klientów za pomocą DotDigital. 
 
 ## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
--   Użytkownik ma [konto usługi DotDigital](https://dotdigital.com/) i odpowiadające mu poświadczenia administratora.
+-   Masz [konto DotDigital](https://dotdigital.com/) i utworzono [użytkownika interfejsu API](https://support.dotdigital.com/hc/articles/115001718730-How-do-I-create-an-API-user). Do utworzenia połączenia potrzebne są poświadczenia użytkownika interfejsu API
 -   Istnieją książki adresowe w DotDigital i odpowiadające im identyfikatory. Identyfikator można znaleźć w adresie URL podczas wybierania i otwierania książki adresowej. Aby uzyskać więcej informacji, zobacz temat [Książka adresowa DotDigital](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Posiadasz [skonfigurowane segmenty](segments.md) w analizach odbiorców.
 -   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 miliona profili na eksport do DotDigital.
+- Do 1 mln profilów klientów na eksport do usługi DotDigital.
 - Eksport do DotDigital jest ograniczony do segmentów.
-- Eksportowanie segmentów zawierających łącznie 1 milion profili może zająć do 3 godzin ze względu na ograniczenia po stronie dostawcy. 
-- Liczba profilów, które można eksportować do DotDigital, jest zależna od kontraktu i ograniczona jego DotDigital.
+- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 3 godzin z powodu ograniczeń po stronie dostawcy. 
+- Liczba profilów klientów, które można eksportować do usługi DotDigital, zależy od kontraktu z usługą DotDigital i jest ograniczona.
 
 ## <a name="set-up-connection-to-dotdigital"></a>Konfiguruj połączenie z usługą DotDigital
 
@@ -44,7 +43,7 @@ Eksportuj segmenty ujednoliconych profili klientów do książek adresowych DotD
 
 1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Wprowadź **Nazwę użytkownika i hasło DotDigital**.
+1. Wprowadź **nazwę użytkownika i hasło usługi DotDigital**. 
 
 1. Wprowadź **[Identyfikator książki adresowej DotDigital](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book)**.
 
@@ -67,7 +66,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi DotDigital. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
 
-1. W sekcji dotyczącej **Porównywanych danych** w polu **e-mail** wybierz pole w ujednoliconym profilu klienta, które reprezentuje adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**, **Imię i nazwisko**, **Płeć** i **Kod pocztowy**.
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**, **Imię i nazwisko**, **Płeć** i **Kod pocztowy**.
 
 1. Wybierz segmenty, które chcesz wyeksportować. W sumie do maksymalnie 1 000 000 profilów klientów można wyeksportować do DotDigital.
 

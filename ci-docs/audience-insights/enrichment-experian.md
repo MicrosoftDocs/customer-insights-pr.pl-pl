@@ -3,18 +3,17 @@ title: Wzbogacanie za pomocą strony trzeciej – Experian
 description: Ogólne informacje o wzbogaceniach od zewnętrznej firmy Experian.
 ms.date: 04/09/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7c82fe92b3351a782a4fa6510300d870b742d042
-ms.sourcegitcommit: 42b3bce1e20e7cc707d232844dacfeed3d6fc096
+ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/28/2021
-ms.locfileid: "6309833"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229977"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Wzbogać profile klientów dzięki danych demograficznych z Experian (wersja zapoznawcza)
 
@@ -39,7 +38,7 @@ Obecnie profily klientów są wzbogacane wyłącznie w Stanach Zjednoczonych.
 1. Wybierz opcję **Wzbogać dane** na kafelku Experian.
 
    > [!div class="mx-imgBorder"]
-   > ![Kafelek Experian](media/experian-tile.png "Experian tile")
+   > ![Kafelek Experian.](media/experian-tile.png "Experian tile")
    > 
 
 1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli jesteś administratorem, możesz utworzyć połączenie, wybierając **Dodaj połączenie** i wybierając Experian z listy rozwijanej. 
@@ -91,7 +90,7 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="next-steps"></a>Następne kroki
 
-Kompiluj na wierzchu wzbogaconych danych klientów. Twórz [segmenty](segments.md) i [miary](measures.md) oraz [eksportuj dane](export-destinations.md) w celu świadczenia klientom spersonalizowanych usług.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

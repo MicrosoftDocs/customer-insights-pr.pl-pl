@@ -1,24 +1,27 @@
 ---
 title: Eksportowanie Customer Insights do magazynu obiektów Azure Blob Storage
 description: Dowiedz się, jak skonfigurować połączenie i eksport do magazynu Blob Storage.
-ms.date: 03/03/2021
+ms.date: 10/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3c19dc6d4956a33a5bd3cea706f8a154198d487f
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 5ea8e58822e1bb901552ff1de960d5340d340003
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976194"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231264"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksportowanie listy segmentów i innych danych do magazynu Azure Blob Storage (wersja zapoznawcza)
 
 Przechowuj dane aplikacji Customer Insights w usłudze Blob Storage lub korzystaj z niej, aby przenosić swoje dane do innych aplikacji.
+
+## <a name="known-limitations"></a>Znane ograniczenia
+
+1. W przypadku usługi Azure Blob Storage można wybrać [warstwę wydajności Standardowa lub Premium](/azure/storage/blobs/storage-blob-performance-tiers). Jeśli wybierzesz warstwę wydajności Premium, wybierz [jako typ konta blokowe obiekty blob typu premium](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
 
 ## <a name="set-up-the-connection-to-blob-storage"></a>Skonfiguruj połączenie z usługą Blob Storage
 
@@ -40,11 +43,14 @@ Przechowuj dane aplikacji Customer Insights w usłudze Blob Storage lub korzysta
 
 Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
 
+> [!IMPORTANT]
+> Jeśli włączone jest ustawienie usuwania nietrwałego dla konta usługi Azure Blob Storage, eksportowanie zakończy się niepowodzeniem. Wyłącz usuwanie nietrwałe, aby wyeksportować dane do obiektów blob. Aby uzyskać więcej informacji, zobacz [Włączanie usuwania nietrwałego obiektu blob](/azure/storage/blobs/soft-delete-blob-enable.md)
+
 1. Przejdź do **Dane** > **Eksporty**.
 
 1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Azure Blob Storage. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Azure Blob Storage. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
 
 1. Zaznacz pole wyboru obok każdej encji, która ma zostać wyeksportowana do tej lokalizacji docelowej.
 
@@ -53,13 +59,16 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
 Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab).     
+
 Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
 
 Wyeksportowane dane są przechowywane w skonfigurowanym kontenerze Blob Storage. W kontenerze są automatycznie tworzone następujące ścieżki folderów:
 
-- Dla encji źródłowych i encji wygenerowanych przez system: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
+- Dla encji źródłowych i encji wygenerowanych przez system:   
+  `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
   - Przykład: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
-- Element model.json dla eksportowanych encji będzie na poziomie %ExportDestinationName%
+ 
+- Element model.json dla eksportowanych encji będzie na poziomie %ExportDestinationName%.  
   - Przykład: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

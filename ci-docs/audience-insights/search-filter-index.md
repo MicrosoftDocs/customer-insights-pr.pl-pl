@@ -1,27 +1,30 @@
 ---
 title: Wyszukiwanie i filtrowanie profilów klientów
 description: Szybki dostęp do informacji o ujednoliconych profilach klientów i filtrach dla określonych atrybutów.
-ms.date: 01/19/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+searchScope:
+- ci-search-filter
+- customerInsights
+ms.openlocfilehash: 4445f44b87a5947c3dfcf43ddb49dca9f25b69aa
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554034"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354522"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Profile klientów: Wyszukiwanie i indeks filtrów
 
 Ujednolicenie danych klienta jest encją profilu klienta, która umożliwia zunifikowany widok całej podstawowej bazy klientów. Aby szybko [znaleźć informacje o określonym kliencie lub grupie klientów](customer-profiles.md), można skonfigurować funkcje **Wyszukiwania** i **Filtrowania** na stronie **Klienci**. W tym artykule opisano, jak Administratorzy mogą edytować atrybuty na stronie **Wyszukiwanie i indeks filtrów**, które są dostępne dla użytkowników w wyszukiwaniu i filtrowaniu.
 
-> [!div class="mx-imgBorder"]
-> ![Filtr wyszukiwania.](media/search-filter.png "Filtr wyszukiwania")
+   :::image type="content" source="media/search-filter.png" alt-text="Filtr wyszukiwania":::
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="add-fields-and-specify-attributes"></a>Dodawanie pól i określanie atrybutów
 
@@ -56,11 +59,11 @@ Menu **Filtruj** na stronie **Klienci** może zawierać różną liczbę poziom�
 
 2. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
 
-3. Wybierz opcję **Uruchom** po przygotowaniu się do zastosowania ustawień.
+3. Wybierz opcję **Uruchom** po przygotowaniu się do zastosowania ustawień. Po przetworzeniu zmian można je znaleźć na [kartach klientów na stronie Klient](customer-profiles.md). 
 
 ## <a name="next-steps"></a>Następne kroki
 
-Przejdź na stronę **Klienci**, aby wyszukać profile klientów lub użyj pól indeksowanych, aby wyświetlić podzbiór wszystkich profilów klientów.
+Przejrzyj [stronę ujednoliconych profilów](customer-profiles.md), aby wyszukać profile lub użyj pól indeksowanych, aby wyświetlić podzbiór wszystkich ujednoliconych profilów.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
