@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 418575f724090628da8bd01e2569a4cb9e646337
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355904"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376521"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Korzystanie z własnej usługi Azure Key Vault (wersja zapoznawcza)
 
@@ -31,7 +31,7 @@ Aby skonfigurować magazyn kluczy w obszarze szczegółowych informacji o odbior
 
 - Masz aktywną subskrypcję platformy Azure.
 
-- Masz rolę użytkownika [Administrator](permissions.md#administrator) w rozwiązaniu analiza odbiorców. Dowiedz się więcej o [uprawnieniach użytkowników w środowisku szczegółowych informacji o odbiorcach](permissions.md#assign-roles-and-permissions).
+- Masz rolę użytkownika [Administrator](permissions.md#admin) w rozwiązaniu analiza odbiorców. Dowiedz się więcej o [uprawnieniach użytkowników w środowisku szczegółowych informacji o odbiorcach](permissions.md#assign-roles-and-permissions).
 
 - Masz role [Współautor](/azure/role-based-access-control/built-in-roles#contributor) i [Administrator dostępu użytkowników](/azure/role-based-access-control/built-in-roles#user-access-administrator) w magazynie kluczy lub grupie zasobów, do której należy magazyn kluczy. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal). Jeśli nie masz roli Administrator dostępu użytkowników w magazynie kluczy, musisz oddzielnie skonfigurować uprawnienia kontroli dostępu na podstawie ról dla jednostki usługi platformy Azure dla aplikacji Dynamics 365 Customer Insights. Wykonaj kroki, aby [użyć jednostki usługi platformy Azure](connect-service-principal.md) dla magazynu kluczy, który ma zostać połączony.
 

@@ -1,7 +1,7 @@
 ---
 title: Zarządzanie uprawnieniami użytkowników
 description: Dowiedz się o uprawnieniach i rolach użytkowników.
-ms.date: 03/25/2021
+ms.date: 02/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 85e1f4f93ac0e99ce6634dfc8fceab0c9a14885e
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355950"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376751"
 ---
 # <a name="user-permissions"></a>Uprawnienia użytkowników
 
@@ -48,7 +48,7 @@ Istnieją trzy typy ról:
 - Zarządzaj konfiguracją i wzbogacaj profile klientów ze strony **Wzbogacanie** (dotyczy tylko wzbogaceń własnych).
 - Zarządzanie i tworzenie eksportów na podstawie połączeń udostępnionych współautorom. [Dowiedz się więcej o tym, w jaki sposób administratorzy zezwalają współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-## <a name="administrator"></a>Administrator
+## <a name="admin"></a>Administrator
 
 - Wszystkie uprawnienia dostępne dla Współautora.
 - Zmień ustawienia na stronie **System**, w tym język roboczy i odśwież harmonogramy dla procesów systemowych.
@@ -60,6 +60,12 @@ Istnieją trzy typy ról:
 - Zainstaluj i użyj **Dodatek kart klientów**.
 - Dodanie **łącznika Power Apps** i korzystanie z niego.
 - Włącz korzystanie z [interfejsów API Customer Insights](apis.md).
+- [Przypisz własność środowiska](manage-environments.md#change-the-owner-of-an-environment) innemu administratorowi.
+
+## <a name="admin-owner"></a>Administrator (właściciel)
+
+- Wszystkie uprawnienia administratora.
+- [Zresetuj i usuń](manage-environments.md#reset-an-existing-environment) środowisko.
 
 ## <a name="assign-roles-and-permissions"></a>Przypisz role i uprawnienia
 

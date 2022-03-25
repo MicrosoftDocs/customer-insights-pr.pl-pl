@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: efa26fa82a950063e074a4ab930ed95383c55334
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229977"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376705"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Wzbogać profile klientów dzięki danych demograficznych z Experian (wersja zapoznawcza)
 
@@ -25,7 +25,7 @@ Aby można było skonfigurować wpisy do usługi Experian, muszą być spełnion
 
 - Użytkownik musi mieć aktywną subskrypcję Experian. Aby uzyskać subskrypcję, skontaktuj się z [Experian](https://www.experian.com/marketing-services/contact). [Dowiedz się więcej o wzbogacaniu danych Experian](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
 
-- Połączenie Experian z usługą SFTP jest już skonfigurowane przez administratora *lub* użytkownik ma uprawnienia [administratora](permissions.md#administrator). Potrzebujesz także identyfikatora użytkownika, identyfikatora strony i numeru modelu konta Secure Transport (ST) z obsługą SSH, które zostało utworzone przez Experian.
+- Połączenie Experian z usługą SFTP jest już skonfigurowane przez administratora *lub* użytkownik ma uprawnienia [administratora](permissions.md#admin). Potrzebujesz także identyfikatora użytkownika, identyfikatora strony i numeru modelu konta Secure Transport (ST) z obsługą SSH, które zostało utworzone przez Experian.
 
 ## <a name="supported-countriesregions"></a>Obsługiwane kraje/regiony
 

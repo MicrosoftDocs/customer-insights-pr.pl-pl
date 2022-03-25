@@ -8,16 +8,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 667a984f1a2287456f4e6324eafe628fba957bf5
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 9195770255bd798636b9532d6e1ca928345b3708
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232671"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376475"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Co nowego w możliwości wglądu odbiorców w Dynamics 365 Customer Insights
-
-
 
 Z przyjemnością informujemy o najnowszych aktualizacjach! W tym artykule podsumowano publiczne wersje zapoznawcze, ulepszenia ogólnej dostępności oraz aktualizacje funkcji. Aby zobaczyć długofalowe plany dotyczące funkcji, zapoznaj się z [planami wydań rozwiązań Dynamics 365 i Power Platform](/dynamics365/release-plans/).
 
@@ -26,6 +24,62 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+
+## <a name="february-2022-updates"></a>Aktualizacje z lutego 2022 r.
+
+Aktualizacje w lutym 2022 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="general-availability-for-prediction-models"></a>Ogólna dostępność dla modeli predykcyjnych
+
+Niestandardowe modele predykcji, w tym **rezygnacja subskrypcji**, **rezygnacja transakcyjny** i **wartość życiowa klienta (CLV)** stają się ogólnie dostępne jako część Customer Insights. 
+
+Aby uzyskać więcej informacji, zobacz [Przegląd przewidywań](predictions-overview.md).
+
+### <a name="new-data-source-integration-with-azure-synapse-analytics-preview"></a>Nowe źródło danych: Integracja z Azure Synapse Analytics (wersja zapoznawcza)
+
+Azure Synapse Analytics to usługa analizy dla przedsiębiorstw, która przyspiesza wgląd w szczegółowe dane w magazynach danych i w systemach danych big data.
+
+Jeśli twoja organizacja korzysta już z zaawansowanych możliwości analitycznych Azure Synapse Analytics i przechowuje dane wyjściowe w bazach Data Lake, możesz łatwo wprowadzić te dane do Customer Insights. Więcej informacji: [Nawiązywanie połączeń ze źródłami danych Azure Synapse (wersja zapoznawcza)](connect-synapse.md).
+
+### <a name="liveramp-enrichment-preview"></a>Wzbogacenie LiveRamp (wersja zapoznawcza)
+
+LiveRamp zapewnia deterministyczne rozwiązywanie problemów z tożsamością w trybie offline i konsolidację danych klientów. Możesz mapować osobiste identyfikatory w swoich danych klientów do grafu tożsamości AbiliTec i otrzymywać identyfikatory AbiliTec. Możesz wtedy wykorzystać te identyfikatory do lepszego ujednolicenia danych klientów.
+
+Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów przy użyciu danych tożsamości z LiveRamp (wersja zapoznawcza)](enrichment-liveramp.md).
+
+### <a name="enrichment-for-data-sources-preview"></a>Wzbogacanie źródeł danych (wersja zapoznawcza)
+
+Wykorzystaj dane ze źródeł takich jak Microsoft i inni partnerzy, aby wzbogacić dane o klientach przed ich ujednoliceniem. Wzbogacenie źródeł danych pomaga w uzyskaniu większej kompletności i jakości danych, co może pomóc w osiągnięciu lepszych wyników po ujednoliceniu danych.
+
+Aby uzyskać więcej informacji, zobacz [Wzbogacanie dla źródeł danych (wersja zapoznawcza)](data-sources-enrichment.md).
+
+### <a name="change-owner-of-environment"></a>Zmień właściciela środowiska
+
+Podczas gdy kilku użytkowników może mieć uprawnienia administratora w Customer Insights, tylko jeden użytkownik jest właścicielem środowiska. Ulepszone doświadczenie pozwala na zmianę właściciela środowiska i przejęcie własności, jeśli poprzedni właściciel opuścił organizację. 
+
+Aby uzyskać więcej informacji, zobacz [Zmiana właściciela środowiska](manage-environments.md#change-the-owner-of-an-environment).
+
+### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Proces przygotowania danych wymienia przyczyny uszkodzenia uszkodzonych rekordów
+
+Proces przygotowania danych pokazuje teraz powód uszkodzenia wszystkich pól z uszkodzonymi danymi na poziomie pojedynczego rekordu, co ułatwia identyfikację. 
+
+Więcej informacji: [Uszkodzone źródła danych](entities.md#corrupted-data-sources).
+
+### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Koniec podglądu dla funkcji raportowania w Wynikach analiz interakcji
+
+Wersja zapoznawcza możliwości szczegółowych informacji zaangażowania usługi Dynamics 365 Customer Insights zakończyła się 15 lutego 2022 r.  
+Ta zmiana oznacza, że wersja próbna usługi Customer Insights nie obejmuje już możliwości tworzenia lejków ani innych funkcji raportowania.
+
+Zapraszamy do zapoznania się z wieloma innymi funkcjami aplikacji [Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/), platformy danych klientów firmy Microsoft (CDP).    
+ 
+W okresie przejścia istniejący uczestnicy wersji zapoznawczej nadal mają dostęp do pewnych funkcji i możliwości wersji zapoznawczej:
+
+- Uzyskiwanie kodu do instrumentacji witryny internetowej lub aplikacji mobilnej 
+- Wyświetlanie zdarzeń i właściwości zdarzeń 
+- Ulepszanie ujednoliconych profili z pozyskanymi i uściślonymi zdarzeniami w celu odniesienia korzyści z pełnej wartości danych klienta
+  
+W okresie przejścia przechwytywane zdarzenia są nadal przesyłane strumieniowo do połączonych danych Data Lake. Po wyłączeniu tej funkcji udostępnianie danych między funkcjami zaangażowania odbiorcy i szczegółowych informacji o odbiorcy zostanie zatrzymane i do połączonego magazynu nie będą wysyłane żadne nowe zdarzenia.
+W przypadku pytań na temat zakończenia wersji zapoznawczej możliwości należy skontaktować się bezpośrednio z zespołem obsługi konta Microsoft. Zespół zajmujący się kontem klienta będzie na bieżąco informować o nadchodzących wydaniach. 
 
 ## <a name="january-2022-updates"></a>Aktualizacje ze stycznia 2022
 

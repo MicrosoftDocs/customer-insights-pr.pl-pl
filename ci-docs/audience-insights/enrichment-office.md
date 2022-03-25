@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 47239bd7f0c89742cf9c673bb2ebe4c41d853233
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228487"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376843"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Wzbogać profile klientów o dane dotyczące zaangażowania (podgląd)
 
@@ -28,7 +28,7 @@ Aby skonfigurować wzbogacenie, muszą być spełnione następujące warunki wst
 - Masz aktywną licencję na usługę Office 365 w chmurze.
 - [Profile klientów zostały ujednolicone](customer-profiles.md) na podstawie [kont klientów](work-with-business-accounts.md).
 - Twoje środowisko Customer Insights musi mieć dołączoną organizację [organizację Microsoft Dataverse](create-environment.md#step-3-connect-to-microsoft-dataverse).
-- Masz uprawnienia [administratora](permissions.md#administrator).
+- Masz uprawnienia [administratora](permissions.md#admin).
 - Masz lub możesz uzyskać zgodę od administratora dzierżawy Office 365 na wykorzystanie danych Office 365 w celu zapewnienia **Insights for the Organization** w aplikacjach Dynamics 365.
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania

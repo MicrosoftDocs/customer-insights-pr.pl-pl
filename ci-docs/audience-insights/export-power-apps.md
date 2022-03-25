@@ -8,12 +8,12 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: ae2a3b7c05e9ed860da31853c47af2aec8634e7a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 18cc32a169e79794d2d3203d462620ab41efaafe
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229045"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455965"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Łącznik Microsoft Power Apps (wersja zapoznawcza)
 
@@ -38,6 +38,8 @@ Po dodaniu Customer Insights jako połączenia danych można wybrać następują
 ### <a name="retrievable-entities"></a>Encje, które można odzyskać
 
 Można pobierać wyłącznie encje **Klient**, **UnifiedActivity**, **Segmenty** i **ContactProfile** za pośrednictwem konektora Power Apps. Encja ContactProfile jest tylko dostępna w wystąpieniu Wyniki analiz odbiorców dla klientów biznesowych. Pozostałe encje są widoczne, ponieważ związany z nimi łącznik obsługuje je za pomocą wyzwalaczy w Power Automate.
+
+Możesz wykonać maksymalnie 100 rozmów na 60 sekund. Możesz wywołać punkt końcowy API wiele razy, używając parametru $skip. [Więcej informacji o parametrze $skip.](/connectors/customerinsights/#get-items-from-an-entity).
 
 ### <a name="delegation"></a>Delegowanie
 

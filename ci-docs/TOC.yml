@@ -58,6 +58,8 @@
           href: audience-insights/connect-dataverse-managed-lake.md
         - name: Dodawanie usługi Azure Synapse Analytics
           href: audience-insights/connect-synapse.md
+        - name: Wzbogacanie źródeł danych
+          href: audience-insights/data-sources-enrichment.md
         - name: Przyrostowe odświeżanie źródeł danych
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Pozyskiwanie danych w czasie rzeczywistym
@@ -100,6 +102,8 @@
           href: audience-insights/enrichment-here.md
         - name: Wzbogacanie przy użyciu programu Leadspace
           href: audience-insights/enrichment-leadspace.md
+        - name: Wzbogacanie przy użyciu usługi LiveRamp
+          href: audience-insights/enrichment-liveramp.md
         - name: Wzbogacanie przy użyciu Experian
           href: audience-insights/enrichment-experian.md
         - name: Wzbogacanie danych usługi Office 365

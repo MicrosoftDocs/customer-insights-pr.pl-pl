@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355166"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376935"
 ---
 # <a name="match-entities"></a>Dopasowywanie encji
 
@@ -180,7 +180,19 @@ Obiekt wyjściowy deduplikacji zawiera następujące informacje:
   - Deduplication_WinnerId: To pole zawiera identyfikator zwycięzcy ze zidentyfikowanych grup lub klastrów. Jeśli Deduplication_WinnerId jest taki sam jak wartość klucza podstawowego dla rekordu, oznacza to, że rekord jest rekordem zwycięzcy.
 - Pola używane do definiowania reguł deduplikacji.
 - Pola Reguła i Wynik określające, które z reguł deduplikacji zostały zastosowane, oraz wynik zwracany przez algorytm dopasowujący.
-   
+ 
+## <a name="include-enriched-entities-preview"></a>Uwzględnij wzbogacone encje (wersja zapoznawcza)
+
+Jeśli wzbogaciłeś encje na poziomie źródła danych, wybierz je przed uruchomieniem procesu dopasowania. Wzbogacone encje mogą poprawić twoje wyniki unifikacji. Aby uzyskać więcej informacji, zobacz [Wzbogacanie dla źródeł danych](data-sources-enrichment.md). 
+
+Wzbogacona encja zawiera pola oryginalnego źródła danych oraz pola wzbogacone. Jeśli więc zdecydujesz się pracować z encją wzbogaconą, nie będzie to miało wpływu na istniejącą konfigurację. Może się jednak okazać, że będziesz musiał zaktualizować reguły dopasowania, aby zamiast nich używać pól wzbogaconych.
+
+1. Przejdź do **Dane** > **Unifikacja** > **Dopasowanie** i wybierz **Użyj wzbogaconych encji** na górze strony.
+
+1. W okienku **Użyj wzbogaconych encji** wybierz jedną lub więcej wzbogaconych encji.
+
+1. Wybierz pozycję **Gotowe**. Wszędzie tam, gdzie używana jest encja źródłowa (np. kolejność dopasowania lub reguły), jest ona automatycznie zmieniana na encję wzbogaconą.
+  
 ## <a name="run-the-match-process"></a>Uruchamianie procesu dopasowania
 
 Po skonfigurowaniu reguł dopasowania, w tym reguł dopasowania między encjami i reguł deduplikacji, można uruchomić proces dopasowania. 

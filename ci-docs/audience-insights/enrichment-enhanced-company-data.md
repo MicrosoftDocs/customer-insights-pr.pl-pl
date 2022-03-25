@@ -8,16 +8,18 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: e9cf93f28ba6918c72039670e42d26c8aaa7f922
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229416"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376367"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Wzbogacanie profilów firmy o ulepszone dane firmowe
 
 Używaj modeli Microsoft i skompilowanych danych firmy w celu poprawiania, uzupełnienia i standaryzowania profilów firm. Do poprawiania dokładności i wiedzy użyjemy [formatu Common Data Model](/common-data-model/schema/core/applicationcommon/account).
+
+Możesz także [wzbogacić dane firmy w źródłach danych](data-sources-enrichment.md), aby poprawić dokładność dopasowania w procesie ujednolicania danych. 
 
 ## <a name="how-we-enhance-company-data"></a>Jak rozszerzamy dane firmowe
 

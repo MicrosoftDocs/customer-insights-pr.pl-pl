@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 0db0c984f6bf9f7ded0704b6fa0caf39c7dace3a
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230647"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376797"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Wzbogacanie profili firm z Leadspace (wersja zapoznawcza)
 
@@ -25,7 +25,7 @@ Aby skonfigurować Leadspce muszą być spełnione następujące wymagania wstę
 
 - Użytkownik ma aktywną licencję Leadspace.
 - [Profile klientów zostały ujednolicone](customer-profiles.md) na podstawie klientów.
-- Połączenie Leadspace zostało już skonfigurowane przez administratora lub użytkownik ma uprawnienia [administratora](permissions.md#administrator) i „klucz bezterminowy” (nazywany **tokenem Leadspace**). Aby uzyskać szczegółowe informacje na temat produktu, należy bezpośrednio skontaktować się z [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
+- Połączenie Leadspace zostało już skonfigurowane przez administratora lub użytkownik ma uprawnienia [administratora](permissions.md#admin) i „klucz bezterminowy” (nazywany **tokenem Leadspace**). Aby uzyskać szczegółowe informacje na temat produktu, należy bezpośrednio skontaktować się z [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
