@@ -1,5 +1,5 @@
 ---
-title: Spożycie i ograniczenia dotyczące danych w czasie rzeczywistym
+title: Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 description: Ogólne informacje o możliwościach czasu rzeczywistego w statystykach odbiorców.
 ms.date: 10/27/2020
 ms.reviewer: mhart
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 138704445d52df3336af6af60420f0bd0ee0c639
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355488"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464115"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 

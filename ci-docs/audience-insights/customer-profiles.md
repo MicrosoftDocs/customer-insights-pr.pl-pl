@@ -14,18 +14,20 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 074d84eff65d52b083fff6c161282d4fafa1af85
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354894"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523745"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
 Na stronie **Klienci** jest wyświetlany połączony widok ujednoliconych profilów klientów. Profile klientów są dostępne po [utworzeniu ujednoliconej encji Klient](data-unification.md). Strona umożliwia wyszukiwanie klientów i definiowanie indeksu służącego do tego wyszukiwania.
 
-Klientami mogą być pojedyncze osoby lub organizacje. Każdy profil klienta jest reprezentowany przez kafelek. Aby uzyskać więcej rekordów, użyj kontrolek stronicowania. Na karcie są wyświetlane pola encji *Klient* zgodnie z **Indeksem wyszukiwania i filtrowania**. Wybierz kafelek, aby zobaczyć dane wybranego klienta na dedykowanej stronie o nazwie [Strona szczegółów klienta](customer-profiles.md#customer-details-page).
+Klientami mogą być pojedyncze osoby lub organizacje. Każdy profil klienta jest reprezentowany przez kafelek. Aby uzyskać więcej rekordów, użyj kontrolek stronicowania. Na karcie są wyświetlane pola encji *Klient* zgodnie z **Indeksem wyszukiwania i filtrowania**. Kolejność pól na każdej karcie jest wybierana przez system.
+
+Wybierz kafelek, aby zobaczyć dane wybranego klienta na dedykowanej stronie o nazwie [Strona szczegółów klienta](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
 > ![Strona Klienci z kafelkami wyników](media/customers-page-result-tiles-B2C.png "Strona Klienci z kafelkami wyników")

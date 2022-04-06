@@ -1,19 +1,19 @@
 ---
 title: Przegląd obsługiwanych scenariuszy prognozowania
 description: Scenariusze i opcje przewidywania, które obejmuje aplikacja Dynamics 365 Customer Insights.
-ms.date: 12/21/2021
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228257"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487548"
 ---
 # <a name="predictions-overview"></a>Omówienie przewidywania
 
@@ -36,6 +36,11 @@ Najłatwiejszym sposobem na rozpoczęcie przewidywania danych są predefiniowane
 - [Rezygnacja z transakcji](predict-transactional-churn.md): brak możliwości zakupu produktów lub usług przez klienta w określonym horyzoncie czasowym.
 
 ---
+
+> [!TIP]
+> Zaleca się regularne odświeżanie wraz z zaktualizowanymi danymi modeli, aby upewnić się, że są one dokładne w celu poinformowania o tym sprawy dotyczącej użytkowania firmy. Dane są odświeżane ad hoc, gdy systemowe źródła danych zostaną korzystające z nowych lub zaktualizowanych źródeł danych. Jednak w takim przypadku modele będą używać tylko rescore i nadal będą korzystać z istniejących danych szkoleniowych.
+> 
+> Możesz skonfigurować **Harmonogram aktualizacji**, ustawiając harmonogram ponownego uczenia modelu w środowisku konfiguracji. Model przeszkoli się i ponownie oceni zgodnie z tym harmonogramem, który możesz zmienić w dowolnym momencie.
 
 
 ## <a name="azure-machine-learning-integration"></a>Integracja uczenia maszynowego Azure

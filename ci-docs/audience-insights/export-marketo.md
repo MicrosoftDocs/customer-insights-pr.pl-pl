@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec286bb6a90fb4d18e89caf9166aa659b29d668e
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: d56ed779c342bb0855ee84d949f8d3ca604b92c1
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232004"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487528"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportowanie segmentów do programu Marketo (wersja zapoznawcza)
 
@@ -63,7 +63,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. Wprowadź **[Identyfikator listy Marketo](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Identyfikator listy jest wartością wyłącznie numeryczną. Jeśli na przykład identyfikator listy Marketo to ST12345A7, usuń znak przed i po liczbach, a następnie wprowadź `12345`. 
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. 
+1. W sekcji **Dopasowywanie danych** wybierz co najmniej jedno pole reprezentujące adres e-mail klienta lub identyfikator Marketo klienta. 
 
 1. Opcjonalnie możesz wyeksportować **Imię**, **Nazwisko**, **Miejscowość**, **Województwo** i **Kraj/region**, aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 

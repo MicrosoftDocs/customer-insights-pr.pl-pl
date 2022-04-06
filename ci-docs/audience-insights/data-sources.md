@@ -1,7 +1,7 @@
 ---
 title: Użyj źródeł danych do pozyskiwania danych
 description: Informacje na temat importowania danych z różnych źródeł.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: adkuppa
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 9cf97c3e30d7501ba1f188a0e25a1a103299aa7f
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354062"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464087"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -47,7 +47,18 @@ Przetwarzanie danych z lokalnych źródeł danych w programie Wynikach analiz od
 
 Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Na stronie źródeł danych znajdują się łącza umożliwiające przejście do środowiska Microsoft Power Platform, w którym można wyświetlić i skonfigurować lokalne bramy danych.
 
+> [!IMPORTANT]
+> Upewnij się, że portale zostały zaktualizowane do najnowszej wersji. Możesz zainstalować aktualizację i ponownie skonfigurować bramę z monitu wyświetlanego bezpośrednio na ekranie bramy lub [pobierz najnowszą wersję](https://powerapps.microsoft.com/downloads/). Jeśli nie używasz najnowszej wersji bramy, odświeżanie przepływu danych kończy się niepowodzeniem z komunikatami o błędach, takimi jak **Słowo kluczowe nie jest obsługiwane: właściwości konfiguracyjne. Nazwa parametru: słowo kluczowe**.
+
 ## <a name="review-ingested-data"></a>Przeglądanie pobranych danych
+Jeśli środowisko zawiera przepływy danych Power Platform, na stronie **Źródła danych** są znajdują się trzy sekcje: 
+- **Udostępnione**: źródła danych, których mogą zarządzać wszyscy administratorzy usługi Customer Insights. Przepływy danych Power BI, własne konto magazynu i dołączanie do data lake zarządzanego przez Dataverse to przykłady udostępnionych źródeł danych.
+- **Zarządzane przeze mnie**: utworzone przepływy danych Power Platform i mogą być zarządzane tylko przez użytkownika. Inni administratorzy Customer Insights mogą tylko wyświetlać te przepływy danych, ale nie mogą ich edytować, odświeżać ani usuwać.
+- **Zarządzane przez innych**: przepływy danych Power Platform utworzone przez innych administratorów. Można je wyświetlić tylko. Zawiera listę właściciela przepływu danych, do którego należy się zwrócić w celu uzyskania pomocy.
+> [!NOTE]
+> Wszystkie encje mogą być przeglądane i używane przez innych użytkowników. Kontekstowość użytkownika dotyczy tylko źródeł danych, a nie jednostek, które wynikają z tych przepływów danych.
+
+Jeśli nie są używane żadne przepływy danych Power Platform, nie zobaczysz żadnych grup ani sekcji. Strona **Źródła danych** zawiera tylko listę wszystkich źródeł danych.
 
 Zostanie wyświetlona nazwa każdego pozyskanego źródła danych, jego stan i data ostatniego odświeżenia danych dla tego źródła. Listę źródeł danych można posortować według każdej kolumny.
 

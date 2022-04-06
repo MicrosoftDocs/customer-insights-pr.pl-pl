@@ -1,42 +1,37 @@
 ---
 title: Eksportowanie danych Customer Insights do usługi Google ads
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Google Ads.
-ms.date: 09/27/2021
+ms.date: 03/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 7a85237f7aff564d6b540b2c11553a52f875fac4
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227023"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523813"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 
 Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
 
-> [!IMPORTANT]
-> Obecnie można tylko utworzyć nowe połączenie i wyeksportować dane do usługi Google Ads, jeśli masz już zatwierdzony token dewelopera usługi Google Ads. W związku ze zmianami wprowadzonymi w zasadach eksport usługi Google Ads zostanie wkrótce zaktualizowany. Będzie dostępna opcja eksportu, która nie będzie wymagała tokenu dla deweloperów, aby zapewnić ciągłość pracy i uprościć eksportowanie do Google Ads. Zaleca się rezygnację z konfigurowania większej liczby połączeń z usługą Google Ads, aby ułatwić przejście do nowej opcji eksportowania.
 
 ## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
 
 -   Użytkownik ma [konto usługi Google Ads](https://ads.google.com/) i odpowiadające mu poświadczenia administratora.
--   Masz [zatwierdzony token dewelopera Google Ads](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
 -   Spełniasz wymagania [zasad dopasowania do klienta](https://support.google.com/adspolicy/answer/6299717).
 -   Spełniasz wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048).
--   W Google Ads istnieją już odbiorcy i odpowiadające im identyfikatory. Aby uzyskać więcej informacji, zobacz temat [Odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
 -   Posiadasz [skonfigurowane segmenty](segments.md).
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adresy e-mail, imię i nazwisko.
+-   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adres e-mail, telefon, identyfikator reklamodawcy mobilnego, identyfikator użytkownika innej firmy lub adres.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 mln profilów klientów na eksport do usługi Google Ads.
 - Eksport do Google Ads jest ograniczony do segmentów.
-- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 5 minut z powodu ograniczeń po stronie dostawcy. 
+- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 30 minut z powodu ograniczeń po stronie dostawcy. 
 - Dopasowanie w usłudze Google Ads może potrwać do 48 godzin.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfiguruj połączenie z usługą Google Ads
@@ -50,8 +45,6 @@ Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google
 1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Wpisz **[Identyfikator klienta usługi Google Ads](https://support.google.com/google-ads/answer/1704344)**.
-
-1. Wprowadź **[zatwierdzony token dewelopera usługi Google Ads](https://developers.google.com/google-ads/api/docs/first-call/dev-token)**.
 
 1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
 
@@ -71,11 +64,11 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
 
-1. Wprowadź **[identyfikator odbiorcy usługi Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** i wybierz pozycję **Połącz**, aby zainicjować połączenie z usługą Google Ads.
+1. Jeśli chcesz utworzyć nową grupę odbiorców, pozostaw pole identyfikatora odbiorców Google puste. Automatycznie utworzymy nowy adres odbiorcy koncie Google Ads i użyjemy nazwy wyeksportowanego segmentu. Jeśli chcesz zaktualizować istniejące reklamy Google odbiorcy, wprowadź swój [identyfikator odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta.
+1. W sekcji **Dopasowywanie danych** wybierz co najmniej jedno pole danych do wyeksportowania i wybierz pole reprezentujące odpowiednie pola danych w obszarze Customer Insights.
 
-1. Wybierz segmenty, które chcesz wyeksportować. W sumie do maksymalnie 1 000 000 profilów klientów można wyeksportować do Google Ads.
+1. Wybierz segmenty, które chcesz wyeksportować. 
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 

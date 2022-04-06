@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376429"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523682"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Przekazywanie logów w Dynamics 365 Customer Insights z Azure Monitor (wersja zapoznawcza)
 
@@ -230,7 +230,7 @@ Zdarzenia przepływu pracy mają następujące właściwości.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Tak      | Tak  | Zawsze `WorkflowEvent`, oznaczając zdarzenie jako zdarzenie przepływu pracy.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Tak      | Tak  | Identyfikator uruchomionego przepływu pracy. Wszystkie zdarzenia przepływu i zadania w ramach wykonania przepływu mają ten sam `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Tak      | Tak  | Identyfikator operacji, zobacz [Typy operacji].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Tak      | Tak  | Identyfikator operacji, zobacz [Typy operacji](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Tak      | Nie.   | Tylko przepływ pracy. Liczba zadań, które uruchamia przepływ pracy.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Tak      | Nie.   | Opcjonalny. Tylko zdarzenia przepływu pracy. Azure Active Directory [objectId użytkownika](/azure/marketplace/find-tenant-object-id#find-user-object-id), który uruchomił przepływ pracy, zobacz także `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Tak      | Nie.   | odświeżenie `full` lub `incremental`.                                                                                                                                                                                                                            |

@@ -1,23 +1,23 @@
 ---
 title: Tworzenie środowisk w aplikacji Customer Insights
 description: Kroki tworzenia środowisk z licencjonowaną subskrypcją aplikacji Dynamics 365 Customer Insights.
-ms.date: 02/24/2022
+ms.date: 03/28/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: MichelleDevaney
-ms.author: midevane
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a538237322615f69f0a5cb43d394275bf79af00b
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354108"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491926"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Tworzenie środowiska w aplikacji Wyniki analiz odbiorców
 
@@ -83,14 +83,16 @@ Udostępnij własne środowisko Microsoft Dataverse w celu udostępniania danych
 Połączenie ze środowiskiem Dataverse umożliwia również [pozyskiwanie danych z lokalnych źródeł danych za pomocą przepływów danych Power Platform i bram](data-sources.md#add-data-from-on-premises-data-sources). Możesz również użyć [modeli gotowego przewidywania](predictions-overview.md?tabs=b2c#out-of-box-models), łącząc się ze środowiskiem Dataverse.
 
 > [!IMPORTANT]
-> Customer Insights i Dataverse muszą znajdować się w tym samym regionie, aby umożliwić wymianę danych.
+> 1. Customer Insights i Dataverse muszą znajdować się w tym samym regionie, aby umożliwić wymianę danych.
+> 1. Użytkownik musi mieć rolę Administrator globalny w środowisku Dataverse. Sprawdź, czy to [środowisko Dataverse jest skojarzone](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment) z określonymi grupami zabezpieczeń i upewnij się, że użytkownik został dodany do tych grup zabezpieczeń.
+> 1. Żadne istniejące środowisko Customer Insights nie jest już powiązane z tym środowiskiem Dataverse. Dowiedz się, [jak usunąć istniejące połączenie ze środowiskiem Dataverse](manage-environments.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="udostępnianie danych z włączoną automatycznie obsługą Microsoft Dataverse dla nowych wystąpień sieci.":::
 
-> [!NOTE]
-> Aplikacja Customer Insights nie obsługuje następujących scenariuszy udostępniania danych:
-> - Po zapisaniu wszystkich danych we własnej usłudze Azure Data Lake Storage nie będzie można włączyć udostępniania danych danym data lake zarządzanym przez funkcję Dataverse.
-> - W przypadku włączenia udostępniania usłudze Dataverse, nie będzie można [tworzyć przewidywanych lub brakujących wartości w encji](predictions.md).
+Aby uzyskać więcej informacji na temat włączania udostępniania danych z Microsoft Dataverse z własnego Azure Data Lake Storage, zobacz [Podłączanie do Microsoft Dataverse](manage-environments.md#connect-to-microsoft-dataverse).
+
+Aplikacja Customer Insights nie obsługuje następujących scenariuszy udostępniania danych:
+- W przypadku włączenia udostępniania usłudze Dataverse, nie będzie można [tworzyć przewidywanych lub brakujących wartości w encji](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Krok 4. Sfinalizuj ustawienia
 

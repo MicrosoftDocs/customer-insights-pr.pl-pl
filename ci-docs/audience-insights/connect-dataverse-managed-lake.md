@@ -1,7 +1,7 @@
 ---
 title: Tworzenie połączenia z tabelami w programie Microsoft Dataverse
 description: Zaimportuj dane z zarządzanego przez Microsoft Dataverse repozytorium typu data lake.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,16 +11,14 @@ ms.reviewer: mhart
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 81412ea8259e690eb839676d82ab31847854a97e
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354155"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464111"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Łączenie się z danymi w repozytorium typu data lake, którym zarządza Microsoft Dataverse
-
-
 
 Ten artykuł dostarcza informacji o tym, jak użytkownicy Dataverse mogą szybko połączyć się z jednostkami analitycznymi w zarządzanym jeziorze Microsoft Dataverse. 
 
@@ -29,7 +27,8 @@ Ten artykuł dostarcza informacji o tym, jak użytkownicy Dataverse mogą szybko
 
 ## <a name="important-considerations"></a>Ważne uwagi
 
-Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być przechowywane w innej lokalizacji niż miejsce przetwarzania danych lub przechowywanie ich w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft](https://www.microsoft.com/trust-center).
+1. Dane przechowywane w usługach online, np. Azure Data Lake Storage, mogą być przechowywane w innej lokalizacji niż miejsce przetwarzania danych lub przechowywanie ich w Dynamics 365 Customer Insights. Importując lub łącząc się z danymi w usługach online, użytkownik zgadza się, że dane mogą być przenoszone do programu Dynamics 365 Customer Insights i przechowywane w nim. [Dowiedz się więcej w Centrum zaufania firmy Microsoft](https://www.microsoft.com/trust-center).
+2. Widoczne są tylko encje Dataverse, [których śledzenie](/power-platform/admin/enable-change-tracking-control-data-synchronization) jest włączone. Te encje można wyeksportować do data lake zarządzanego Dataverse i używać ich w aplikacji Customer Insights. W tabelach Dataverse domyślnych włączono śledzenie zmian. W przypadku tabel niestandardowych musisz włączyć śledzenie zmian. Aby sprawdzić, czy w tabeli Dataverse włączono śledzenie zmian, przejdź do [Power Apps](https://make.powerapps.com) > **Dane** > **Tabele**. Znajdź interesującą Cię tabelę i wybierz ją. Przejdź do **Ustawienia** > **Opcje zaawansowane** i przejrzyj ustawienia **Śledź zmiany**.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Nawiązywanie połączenia z zarządzanym przez Dataverse repozytorium typu lake
 

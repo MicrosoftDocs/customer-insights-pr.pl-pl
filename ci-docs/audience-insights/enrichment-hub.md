@@ -1,7 +1,7 @@
 ---
 title: Wzbogać ujednolicone profile klientów
 description: Korzystanie z funkcji w celu wzbogacenia danych klienta.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.openlocfilehash: 510a20306e793a5ba522a6ac0d9c7194f03472d2
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372732"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491972"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -97,5 +97,19 @@ Aby wyświetlić stan wzbogacania
 1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**. 
 1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**. 
 1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu. 
+
+## <a name="enrichment-results"></a>Wyniki wzbogacenia
+
+Po zakończeniu procesu wzbogacenia można przejrzeć wyniki wzbogacenia.
+
+1. Przejdź do **Dane** > **Wzbogacanie**. 
+1. Wybierz wzbogacenie, o którym chcesz uzyskać informacje.
+
+Wszystkie wzbogacenia pokazują podstawowe informacje, takie jak liczba wzbogaconych profili, podgląd wygenerowanej encji wzbogacenia oraz liczba wzbogaconych profili w czasie. Jeśli jest dostępna, **Liczba klientów wzbogaconych według pola** zapewnia szczegółowe informacje na temat pokrycia każdego wzbogaconego pola.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="Strona wyników wzbogaceń.":::
+
+Niektóre wzbogacanie zawierają także informacje dotyczące typu wzbogacania. Odpowiednie wzbogacenie można znaleźć w dokumentacji.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
