@@ -1,37 +1,36 @@
 ---
 title: Tworzenie segmentów przy użyciu konstruktora segmentów
 description: W celu pogrupowania klientów na podstawie różnych atrybutów można utworzyć ich segmenty.
-ms.date: 10/18/2021
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segments
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 6fa6f0738bf7fba94b2fb84a70ea17483aae8dac
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 1a28289ecb740ab6cdfa603b2cd66376e7e8b576
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354568"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529598"
 ---
 # <a name="create-segments"></a>Utwórz segmenty
 
-Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje. Segmenty są zarządzane na stronie **Segmenty**. Możesz [tworzyć nowe segmenty](#create-a-new-segment), korzystając z konstruktora segmentów, lub [tworzyć szybkie segmenty](#quick-segments) z innych obszarów aplikacji. 
+Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje. Segmenty są zarządzane na stronie **Segmenty**. Możesz [tworzyć nowe segmenty](#create-a-new-segment), korzystając z konstruktora segmentów, lub [tworzyć szybkie segmenty](#quick-segments) z innych obszarów aplikacji.
 
 > [!TIP]
-> - Szybkie segmenty są obsługiwane tylko w środowiskach dla **poszczególnych klientów**.    
-> - Segmenty oparte na **poszczególnych klientach** automatycznie zawierają dostępne informacje kontaktowe dla elementów członkowskich segmentu. W środowiskach **kont biznesowych** segmenty są oparte na kontach (firmach lub filiach). Aby uwzględnić informacje kontaktowe w segmencie, użyj funkcji **Atrybuty projektu** w konstruktorze segmentów.
->    - Upewnij się, że źródła danych kontaktów są [semantycznie mapowane do encji ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+> - Szybkie segmenty są obsługiwane tylko w środowiskach dla **poszczególnych klientów**.
+> - Segmenty oparte na **poszczególnych klientach** automatycznie zawierają dostępne informacje kontaktowe dla elementów członkowskich segmentu. W środowiskach **kont biznesowych** segmenty są oparte na kontach (firmach lub filiach). Aby uwzględnić informacje kontaktowe w segmencie, użyj funkcji **Atrybuty projektu** w konstruktorze segmentów. Upewnij się, że źródła danych kontaktów są [semantycznie mapowane do encji ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Konstruktor segmentów
 
-Na poniższym obrazie przedstawiono różne aspekty konstruktora segmentów. Wskazuje segment, którego wynikiem jest grupa klientów. Klienci zamówili towary w określonym horyzoncie czasowym i zdobyli punkty nagród lub wydali określoną kwotę pieniężną. 
+Na poniższym obrazie przedstawiono różne aspekty konstruktora segmentów. Wskazuje segment, którego wynikiem jest grupa klientów. Klienci zamówili towary w określonym horyzoncie czasowym i zdobyli punkty nagród lub wydali określoną kwotę pieniężną.
 
 :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementy konstruktora segmentów." lightbox="media/segment-builder-overview.png":::
 
@@ -65,11 +64,11 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 
 1. Na stronie konstruktora segmentów można definiować lub definiować reguły. Reguła składa się z jednego lub większej liczby warunków definiującej zbiór klientów.
 
-1. W sekcji **Reguła 1** wybierz atrybut obiektu, według którego klienci mają być filtrowani. Istnieją dwa sposoby wybierania atrybutów: 
+1. W sekcji **Reguła 1** wybierz atrybut obiektu, według którego chcesz filtrować klientów. Istnieją dwa sposoby wybierania atrybutów:
    - Przejrzyj listę dostępnych obiektów i atrybutów w okienku **Dodaj do reguły** i wybierz ikonę **+** obok atrybutu, który chcesz dodać. Określ, czy atrybut ma zostać dodany do istniejącej reguły, czy podczas tworzenia nowej reguły.
    - Aby wyświetlić pasujące sugestie, wpisz nazwę atrybutu w sekcji reguły.
 
-1. Wybierz operatory, aby określić odpowiadające wartości warunku. Atrybut może mieć jeden z czterech typów danych: wartość numeryczna, ciąg, data lub wartość logiczna. W zależności od typu danych atrybutu do określania warunku są dostępne różne operatory. W przypadku segmentów z kontami biznesowymi są dostępne dwa specjalne operatory do dołączania potencjalnych hierarchii między pozyskanymi kontami. Użyj operatorów *element podrzędny* i *element nadrzędny* do dołączania pokrewnych klientów. 
+1. Wybierz operatory, aby określić odpowiadające wartości warunku. Atrybut może mieć jeden z czterech typów danych: wartość numeryczna, ciąg, data lub wartość logiczna. W zależności od typu danych atrybutu do określania warunku są dostępne różne operatory. W przypadku segmentów z kontami biznesowymi są dostępne dwa specjalne operatory do dołączania potencjalnych hierarchii między pozyskanymi kontami. Użyj operatorów *element podrzędny* i *element nadrzędny* do dołączania pokrewnych klientów.
 
 1. Wybierz opcję **Dodaj warunek**, aby dodać więcej warunków do reguły. Aby utworzyć regułę na podstawie bieżącej reguły, wybierz opcję **Dodaj regułę podrzędną**.
 
@@ -77,7 +76,7 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 
    :::image type="content" source="media/relationship-path.png" alt-text="Potencjalna ścieżka relacji podczas tworzenia reguły opartej na encji zamapowanej na encję ujednoliconego klienta.":::
 
-   Na przykład encja *eCommerce_eCommercePurchases* na zrzucie ekranu ma cztery opcje mapowania do encji *Klient*: 
+   Na przykład encja *eCommerce_eCommercePurchases* na zrzucie ekranu ma cztery opcje mapowania do encji *Klient*:
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > Klient
    - eCommerce_eCommercePurchases > klient
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
@@ -101,11 +100,11 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
       - **Część wspólna** pokrywa się z dwiema grupami. W ujednoliconej grupie pozostają tylko dane *wspólne* dla obu grup.
       - **Z wyjątkiem** łączy dwie grupy. W grupie A przechowywane są tylko te dane, które *nie są wspólne* z grupą B.
 
-1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej. 
+1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej.
 
    > [!IMPORTANT]
    > W przypadku segmentów opartych na kontach biznesowych szczegółowe informacje dotyczące jednego lub większej liczby kontaktów każdego klienta z encji *ContactProfile* muszą zostać uwzględnione w tym segmencie, aby umożliwić uaktywnienie lub wyeksportowanie tego segmentu do miejsc, w których są wymagane informacje kontaktowe. Aby uzyskać więcej informacji o encji *ContactProfile*, zobacz [mapowanie semantyczne](semantic-mappings.md).
-   > Przykładowe dane wyjściowe dla segmentu oparte na kontach biznesowych z projektowanych atrybutów kontaktów mogą wyglądać tak: 
+   > Przykładowe dane wyjściowe dla segmentu oparte na kontach biznesowych z projektowanych atrybutów kontaktów mogą wyglądać tak:
    >
    > |ID  |Nazwa klienta  |Przychód  |Nazwa kontaktu  | Rola kontaktu|
    > |---------|---------|---------|---------|---|
@@ -117,14 +116,16 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 
    > [!NOTE]
    > - **Atrybuty projektu** działają tylko w przypadku encji, które mają relację jeden do wielu z encją klienta. Na przykład jeden klient może mieć wiele subskrypcji.
-   > - Jeśli atrybut, który ma być projektowany, jest więcej niż jeden przeskok od encji *Klient*, zgodnie z definicją relacji, powinien być używany we wszystkich regułach definiowanego zapytania segmentu. 
-   > - Jeśli atrybut, który ma być projektowany, jest tylko jeden przeskok od encji *Klient*, nie musi być obecny we wszystkich regułach definiowanego zapytania segmentu. 
+   > - Jeśli atrybut, który ma być projektowany, jest więcej niż jeden przeskok od encji *Klient*, zgodnie z definicją relacji, powinien być używany we wszystkich regułach definiowanego zapytania segmentu.
+   > - Jeśli atrybut, który ma być projektowany, jest tylko jeden przeskok od encji *Klient*, nie musi być obecny we wszystkich regułach definiowanego zapytania segmentu.
    > - **Atrybuty rzutowane** są uwzględniane podczas używania operatorów zestawów.
 
-1. Przed zapisaniem i uruchomieniem segmentu wybierz opcję **Edytuj szczegóły** obok nazwy segmentu. Podaj nazwę swojego segmentu i zaktualizuj sugerowaną **nazwę encji wyjściowej** dla tego segmentu. Można również dodać opis dla segmentu.
+1. Wybierz **Edytuj szczegóły** obok segmentu bez tytułu. Podaj nazwę swojego segmentu i zaktualizuj sugerowaną **nazwę encji wyjściowej** dla tego segmentu. Opcjonalnie dodaj opis i [etykiety](work-with-tags-columns.md#manage-tags) do segmentu.
+
+   :::image type="content" source="media/segments_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
 
 1. Wybierz opcję **Uruchom**, aby zapisać segment, aktywować go i rozpocząć przetwarzanie swojego segmentu na podstawie wszystkich reguł i warunków. W przeciwnym razie będzie on zapisywany jako nieaktywny segment.
-   
+
 1. Wybierz **Wróć do segmentów**, aby wrócić do strony **Segmenty**.
 
 1. Domyślnie segment jest tworzony jako segment dynamiczny. Oznacza to, że segment jest odświeżany podczas odświeżania systemu. Aby [zatrzymać automatyczne odświeżanie](segments.md#manage-existing-segments), wybierz segment, wybierz opcję **Ustaw statyczny**. Segmenty statyczne można w dowolnej chwili [odświeżać ręcznie](segments.md#refresh-segments).
@@ -132,7 +133,7 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 > [!TIP]
 > - Konstruktor segmentów nie zasugeruje prawidłowych wartości z encji podczas ustawiania operatorów na określonych warunkach. Można przejść do obszaru **Dane** > **Encje** i pobrać dane encji, aby sprawdzić, które wartości są dostępne.
 > - Warunki oparte na datach umożliwiają przełączanie się między stałymi datami a zmiennoprzecinkowym zakresem dat.
-> - Jeśli dla swojego segmentu masz kilka reguł, reguła, która jest edytowana, ma obok siebie pionowy niebieski wiersz. 
+> - Jeśli dla swojego segmentu masz kilka reguł, reguła, która jest edytowana, ma obok siebie pionowy niebieski wiersz.
 > - Reguły i warunki można przenieść do innych miejsc definicji segmentu. Wybierz pozycję [...] obok reguły lub warunku i wybierz sposób i miejsce jego przeniesienia.
 > - Kontrolki **Cofnij** i **Ponów** na pasku poleceń umożliwiają cofnięcie zmian.
 
@@ -153,10 +154,9 @@ Szybkie segmenty umożliwiają tworzenie prostych segmentów z jednym operatorem
 
 4. System zaproponuje opcje **Szacowany rozmiar segmentu**. Użytkownik może wybrać, czy ma zostać wyświetlona definicja segmentu, czy też najpierw ją ponownie przejrzeć w celu uzyskania innego rozmiaru segmentu.
 
-    > [!div class="mx-imgBorder"]
-    > ![Nazwa i oszacowanie szybkiego segmentu.](media/quick-segment-name.png "Nazwa i oszacowanie szybkiego segmentu")
+   :::image type="content" source="media/quick-segment-name.png" alt-text="Nazwa i oszacowanie szybkiego segmentu.":::
 
-5. Podaj **Nazwę** segmentu. Opcjonalnie, podaj **Nazwę wyświetlaną**.
+5. Podaj **Nazwę** i **Nazwę podmiotu wyjściowego** dla twojego segmentu. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags).
 
 6. Wybierz opcję **Zapisz**, aby utworzyć segment.
 

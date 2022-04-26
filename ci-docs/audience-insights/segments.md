@@ -6,7 +6,7 @@ ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-customers-page
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
-ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.openlocfilehash: 68e71df3853470af47228c7365f25db3a71d15b0
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "8508579"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529552"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -51,20 +51,26 @@ Przejdź na stronę **Segmenty**, aby wyświetlić wszystkie zapisane segmenty i
 
 Każdy segment jest reprezentowany przez wiersz zawierający dodatkowe informacje o segmencie.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Wybrany segment z listą rozwijaną opcji i dostępnymi opcjami.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Wybrany segment z listą rozwijaną opcji i dostępnymi opcjami." lightbox="media/segments-selected-segment.png":::
 
-Po wybraniu segmentu są dostępne następujące akcje:
+Po zaznaczeniu segmentu dostępne są następujące akcje:
 
 - **Wyświetlanie** szczegółowych informacji o segmencie, w tym trendu liczby członków podgląd składników segmentu.
+- **Pobierz** listę członków jako plik .CSV.
 - **Edytuj** segment, aby zmienić jego właściwości.
 - **Utwórz duplikat** segmentu. Można od razu edytować jego właściwości lub po prostu zapisać duplikat.
 - **Odśwież** segment, aby uwzględnić najnowsze dane.
-- **Aktywuj** lub **Dezaktywuj** segment. Segmenty mogą być w dwóch stanach — aktywnym lub nieaktywnym. Te stany są przydatne przy edytowaniu segmentu. W przypadku nieaktywnych segmentów definicja segmentu istnieje, ale nie zawiera jeszcze żadnych klientów. W przypadku aktywowania segmentu jego stan zmieni się z "nieaktywny" na "aktywny" i rozpocznie wyszukiwanie klientów zgodnych z definicją segmentu. Jeśli skonfigurowano [zaplanowane odświeżanie](system.md#schedule-tab), segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. W przypadku aktywowania nieaktywnego segmentu zostanie on odświeżony i będzie uwzględniony w zaplanowanych odświeżeniach.
+- **Aktywuj** lub **Dezaktywuj** segment. W przypadku nieaktywnych segmentów definicja segmentu istnieje, ale nie zawiera jeszcze żadnych klientów. Aktywny segment szuka klientów, którzy pasują do definicji segmentu. Jeśli skonfigurowano [zaplanowane odświeżanie](system.md#schedule-tab), segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. W przypadku aktywowania nieaktywnego segmentu zostanie on odświeżony i będzie uwzględniony w zaplanowanych odświeżeniach.
   Alternatywnie można użyć funkcji **Zaplanuj później** na liście rozwijanej **Aktywuj/Zdezaktywuj**, aby określić przyszłą datę i godzinę aktywacji i dezaktywacji konkretnego segmentu.
+- **[Znajdź podobnych klientów](find-similar-customer-segments.md)** z danego segmentu.
 - **Zmień nazwę** segmentu.
+- **Otaguj**, aby [zarządzać etykietami](work-with-tags-columns.md#manage-tags) dla segmentu.
 - **Pobierz** listę członków jako plik .CSV.
 - **Zarządzanie eksportami**, aby zobaczyć segmenty związane z eksportem i zarządzać nimi. [Dowiedz się więcej o eksportach.](export-destinations.md)
 - **Usuń** segment.
+- **Kolumny** w [celu dostosowania wyświetlanych kolumn](work-with-tags-columns.md#customize-columns).
+- **Filtruj**, aby [filtrować etykiety](work-with-tags-columns.md#filter-on-tags).
+- **Wyszukaj nazwę**, aby wyszukać według nazwy segmentu.
 
 ## <a name="refresh-segments"></a>Odśwież segmenty
 

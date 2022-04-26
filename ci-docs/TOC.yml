@@ -44,6 +44,8 @@
           href: audience-insights/create-environment.md
         - name: Eksplorowanie szczegółowych informacji o odbiorcach
           href: audience-insights/home.md
+        - name: Praca z etykietami i kolumnami
+          href: audience-insights/work-with-tags-columns.md
         - name: Praca z klientami biznesowymi
           href: audience-insights/work-with-business-accounts.md
     - name: Źródła danych

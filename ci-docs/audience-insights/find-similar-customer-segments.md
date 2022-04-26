@@ -1,23 +1,23 @@
 ---
 title: Znajdź podobnych klientów za pomocą AI (zawiera wideo)
 description: Znajdź segmenty podobnych klientów za pomocą sztucznej inteligencji.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355258"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561583"
 ---
 # <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
 
@@ -36,6 +36,8 @@ Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korz
 
 1. Przejrzyj sugerowaną nazwę nowego segmentu i w razie potrzeby zmodyfikuj ją.
 
+1. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do nowego segmentu.
+
 1. Przejrzyj pola definiujące nowy segment. Te pola określają podstawę, z poziomu której system ma próbować znaleźć klientów podobnych do segmentu źródłowego. Domyślnie system wybierze pola zalecane.
   Pola, które mogą znacznie zmniejszyć wydajność modelu, są automatycznie wykluczane:
   
@@ -44,9 +46,9 @@ Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korz
 
 1. Wybierz, jeśli chcesz uwzględnić **Wszystkich klientów** lub tylko klientów z **Określonego istniejącego segmentu** w nowym segmencie.
 
-1. Wyłącz klientów w segmencie źródłowym, zaznaczając pole wyboru **Wyklucz wszystkie osoby w segmencie źródłowym**.
-
 1. Domyślnie system sugeruje uwzględnienie tylko 20% wielkości odbiorców docelowych w danych wyjściowych. Edytuj ten próg zależnie od potrzeb. Zwiększenie progu zmniejszy dokładność.
+
+1. Uwzględnij klientów w swoim segmencie źródłowym, zaznaczając pole wyboru **Uwzględnij członków segmentu źródłowego oprócz klientów o podobnych cechach**.
 
 1. Wybierz **Uruchom** u dołu strony, aby rozpocząć zadanie klasyfikacji dwuelementowej (metoda uczenia maszynowego), które analizuje zestaw danych.
 
@@ -67,7 +69,7 @@ Użytkownik może [pracować z danymi wyjściowymi podobnego segmentu](segments.
 
 Aby odświeżyć podobny segment, wybierz go na stronie **Segmenty** i wybierz **Odśwież** na pasku akcji.
 
-Edytowanie podobnego segmentu spowoduje przetwarzanie danych. Utworzony wcześniej segment jest aktualizowany odświeżonymi danymi.    
+Edytowanie podobnego segmentu spowoduje przetwarzanie danych. Utworzony wcześniej segment jest aktualizowany odświeżonymi danymi.
 Aby edytować podobny segment, wybierz go na stronie **Segmenty** i wybierz **Edytuj** na pasku akcji. Zastosuj zmiany i wybierz **Uruchom**, aby rozpocząć przetwarzanie.
 
 ## <a name="delete-a-similar-segment"></a>Usuń podobny segment
@@ -84,6 +86,5 @@ Model uczenia maszynowego klasyfikacji binarnych przypisuje wyniki do klientów 
 - Wyniki podobieństwa między 0,85 – 1 to klienci, których system klasyfikuje jako *bardzo podobni*
 
 Klienci o zbliżonych wynikach niższych niż 0,4 nie są uwzględnianiu w modelu wyjściowym. System nie uważa ich za wystarczająco podobnych do segmentu źródłowego.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

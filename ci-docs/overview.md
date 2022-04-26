@@ -6,12 +6,12 @@ ms.author: mhart
 ms.date: 07/30/2021
 ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: 82b335388002158885fa55b61562db6c8370dc9d
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: ff3d23d00a565bf9e5693e7cd5db644ddfe4887e
+ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350190"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "8560446"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Przegląd produktu dla Dynamics 365 Customer Insights
 
@@ -19,7 +19,7 @@ ms.locfileid: "8350190"
 
 [Odbiorcy dane pomagają](audience-insights/overview.md) przekształcić firmę w organizację cenną dla klienta. Specjaliści ds. marketingu, sprzedaży i obsługi klienta mają wgląd w dane potrzebne do personalizowania działań. Połącz dane ze źródeł transakcyjnych, behawioralnych i obserwacyjnych, aby stworzyć 360-stopniowy widok klienta. Szybsze wyświetlanie wyników dzięki protokołowi CDP zaprojektowanemu w celu dostarczania informacji, na których można działać. 
 
-[Szczegółowe informacje o zaangażowaniu](engagement-insights/overview.md) byłą możliwością podglądu w usłudze Customer Insights, która skupiła się na zbieraniu zdarzeń w sieci Web i urządzeń mobilnych w celu dodatkowej analizy. Wersja zapoznawcza zakończyła 15 lutego 2022 r.
+[Szczegółowe informacje o zaangażowaniu](engagement-insights/overview.md) byłą możliwością podglądu w usłudze Customer Insights, która skupiła się na zbieraniu zdarzeń w sieci Web i urządzeń mobilnych w celu dodatkowej analizy. Wersja zapoznawcza zakończyła się 15 lutego 2022 roku.
  
 ## <a name="choose-a-capability"></a>Wybierz funkcję
 
