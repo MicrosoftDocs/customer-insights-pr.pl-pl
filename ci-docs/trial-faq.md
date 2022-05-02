@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 9badd8370358b9f5745ba6347e8db42e89c5f3d3
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 4a269a223efa08f71db09eef2ec9a8f8a077f7a7
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229508"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641821"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Wersja próbna Dynamics 365 Customer Insights, często zadawane pytania
 
@@ -62,13 +62,13 @@ Możesz bezpośrednio przedłużyć okres swoją wersji próbnej w aplikacji. Mo
 
 Ogólnie rzecz biorąc, zalecamy rozpoczęcie od początku z własnymi danymi podczas uaktualniania do płatnej wersji usługi Customer Insights. 
 
-Opcjonalnie, jeśli używasz tylko funkcji Wyniki analiz odbiorców, możesz skopiować dane ze środowiska w wersji próbnej po zakupie aplikacji Customer Insights. Musisz mieć uprawnienia administrator wersji próbnej aplikacji Customer Insights oraz administratora globalnego dzierżawcy platformy Microsoft 365 albo administratora usługi Dynamics 365 w organizacji, aby migrować ustawienia ze środowiska w wersji próbnej do środowiska płatnego. 
+Opcjonalnie, jeśli używasz tylko funkcji Customer Insights, możesz skopiować dane ze środowiska w wersji próbnej po zakupie aplikacji Customer Insights. Musisz mieć uprawnienia administrator wersji próbnej aplikacji Customer Insights oraz administratora globalnego dzierżawcy platformy Microsoft 365 albo administratora usługi Dynamics 365 w organizacji, aby migrować ustawienia ze środowiska w wersji próbnej do środowiska płatnego. 
 
-Po zalogowaniu się do płatnego wystąpienia usługi Customer Insights po raz pierwszy zostaniesz poproszony o utworzenie nowego środowiska. W tym procesie można skopiować konfigurację z istniejącego środowiska i przeprowadzić migrację większości ustawień. Jeśli masz uprawnienia wymienione powyżej, środowisko próbne pojawi się na tej liście. Aby uzyskać więcej informacji, zobacz [Kopiowanie konfiguracji środowiska](audience-insights/manage-environments.md#copy-the-environment-configuration).
+Po zalogowaniu się do płatnego wystąpienia usługi Customer Insights po raz pierwszy zostaniesz poproszony o utworzenie nowego środowiska. W tym procesie można skopiować konfigurację z istniejącego środowiska i przeprowadzić migrację większości ustawień. Jeśli masz uprawnienia wymienione powyżej, środowisko próbne pojawi się na tej liście. Aby uzyskać więcej informacji, zobacz [Kopiowanie konfiguracji środowiska](manage-environments.md#copy-the-environment-configuration).
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Jakie są limity i wielkości w wersji próbnej?
 
-- Nie można używać własnego konta usługi Azure Data Lake Storage w celu przechowywania danych wyjściowych podczas korzystania z wersji próbnej aplikacji Wyniki analiz odbiorców. Można jednak pozyskać dane z konta Data Lake Storage.
+- Nie można używać własnego konta usługi Azure Data Lake Storage w celu przechowywania danych wyjściowych podczas korzystania z wersji próbnej aplikacji Customer Insights. Można jednak pozyskać dane z konta Data Lake Storage.
 - W środowisku usługi Dataverse można przechowywać maksymalnie 3 GB danych, które są automatycznie aprowizowane po rozpoczęciu wersji próbnej aplikacji Customer Insights.
 
 ## <a name="customer-insights-specific-questions"></a>Pytania dotyczące aplikacji Customer Insights
