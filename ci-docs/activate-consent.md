@@ -1,23 +1,22 @@
 ---
 title: Aktywowanie reguł wyrażania zgody dla segmentów
 description: Wykonaj poniższej kroki, aby połączyć dane zgody i aktywować testy zgody w funkcji Dynamics 365 Customer Insights. Administrator może także wyłączyć testy zgody.
-ms.date: 11/12/2021
-ms.subservice: audience-insights
+ms.date: 04/27/2022
 ms.topic: how-to
-author: smithy7
-ms.author: smithc
+author: anubhav-t
+ms.author: antando
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: bfa03f4b7b56b300a74ebd04721cd64b893879f1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f82e3a4031fee8bcaa88575cbd68b37385a7fffb
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646641"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755183"
 ---
 # <a name="activate-consent-rules"></a>Aktywowanie reguł zgody
 
-[Centrum zgody (wersja zapoznawcza)](consent-management/overview.md) ułatwia grupowanie danych zgody z różnych źródeł. Użyj ujednoliconej encji *Zgoda* do stosowania domyślnych testów zgody. Po zaimportowaniu danych zgody do Centrum zgody i skonfigurowaniu reguł dotyczących danych encja *Zgoda* jest automatycznie synchronizowana z funkcją Dynamics 365 Customer Insights.
+[Centrum zgody (wersja zapoznawcza)](consent-management/overview.md) ułatwia grupowanie danych zgody z różnych źródeł. Użyj ujednoliconej encji *Zgoda* do stosowania domyślnych testów zgody. Po zaimportowaniu danych dotyczących zgody i skonfigurowaniu reguł mapowania, encja *Zgoda* jest automatycznie synchronizowana z Dynamics 365 Customer Insights.
 
 ## <a name="enable-consent-checks"></a>Włącz sprawdzanie zgody
 

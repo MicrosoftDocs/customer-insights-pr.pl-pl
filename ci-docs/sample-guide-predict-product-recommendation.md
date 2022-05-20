@@ -1,7 +1,7 @@
 ---
 title: Przewodnik po przykładach prognozowania rekomendacji produktów
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować model prognozowania rekomendacji produktu po wyjęciu z pudełka.
-ms.date: 02/10/2021
+ms.date: 05/16/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 1115bab13bdca4a308a8d9eb5a1dc270801d16be
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647105"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762699"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Przewodnik po przykładach prognozowania rekomendacji produktów
 
@@ -40,7 +40,7 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
 1. Utwórz źródło danych o nazwie **eCommerce**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
 
-1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadclasscontacts.
+1. Wprowadź adres URL eCommerce kontaktów: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
 
 1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
 
@@ -50,15 +50,15 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Przekształcić datę urodzenia na datę.":::
 
-5. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommerceContacts**
+1. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommerceContacts**
 
-6. **Zapisz** źródło danych.
+1. **Zapisz** źródło danych.
 
 ### <a name="ingest-online-purchase-data"></a>Przetwarzaj dane zakupów online
 
 1. Dodanie nowego zestawu danych do tego samego źródła danych **eCommerce**. Wybierz ponownie łącznik **tekst/CSV**.
 
-1. Wprowadź adres URL danych **Zakupów w trybie online** https://aka.ms/ciadclassonline.
+1. Wprowadź adres URL danych **Zakupów w trybie online** [https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
 
 1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
 
@@ -70,12 +70,11 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
 1. **Zapisz** źródło danych.
 
-
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Przetwarzaj dane klientów ze schematu lojalnościowego
 
 1. Utwórz źródło danych o nazwie **LoyaltyScheme**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
 
-1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadclasscustomerloyalty.
+1. Wprowadź adres URL eCommerce kontaktów [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
 
 1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
 
@@ -90,64 +89,11 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
-Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzenia ujednoliconego profilu klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
-
-### <a name="map"></a>Mapuj
-
-1. Po przyjęciu danych zmapuj kontakty z danych e-commerce i lojalności na popularne typy danych. Przejdź **Dane** > **Ujednolicanie** > **Mapuj**.
-
-2. Wybierz podmioty, które reprezentują profil klienta - **eCommerceContacts** i **loyCustomers**.
-
-   ![ujednolicić źródła danych e-commerce i lojalności.](media/unify-ecommerce-loyalty.png)
-
-3. Wybierz opcję **ContactId** jako klucz podstawowy dla opcji **eCommerceContacts** i **LoyaltyID** jako klucz podstawowy dla **loyCustomers**.
-
-   ![ujednolicenie LoyaltyId jako klucza podstawowego.](media/unify-loyaltyid.png)
-
-### <a name="match"></a>Dopasowywanie
-
-1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
-
-2. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
-
-3. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
-
-   ![Ujednolicenie dopasowania eCommerce i lojalności.](media/unify-match-order.png)
-
-4. Wybierz **Tworzenie nowej reguły**
-
-5. Dodanie pierwszego warunku za pomocą narzędzia FullName.
-
-   - W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
-   - W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
-   - Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
-   - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-6. Wprowadź nazwę **FullName, Email** dla nowej reguły.
-
-   - Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   - W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
-   - W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej.
-   - Pozostaw puste pole Normalizuj.
-   - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-   ![Należy ujednolicić regułę dotyczącą nazwy i adresu e-mail.](media/unify-match-rule.png)
-
-7. Wybierz pozycję **Zapisz** i **Uruchom**.
-
-### <a name="merge"></a>Scalanie
-
-1. Przejdź na kartę **Scal**.
-
-1. W elemencie **ContactId** dla encji **loyCustomers** zmień nazwę wyświetlaną na **ContactIdLOYALTY**, aby odróżnić ją od innych przetwarzanych identyfikatorów.
-
-   ![Zmień nazwę ContactID na identyfikator lojalnościowy.](media/unify-merge-contactid.png)
-
-1. Kliknij przycisk **Zapisz** i **Uruchom**, aby rozpocząć proces scalania.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-product-recommendation-prediction"></a>Zadanie 3 — Konfigurowanie rekomendacji przewidywanie
 
-Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie subskrypcji.
+Mając ujednolicone profile klientów, możemy teraz uruchomić predykcję rekomendacji produktów.
 
 1. Przejdź do **Analizy** > **Przewidywania** i wybierz **Rekomendacje produktów**.
 
@@ -162,27 +108,36 @@ Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie sub
    - **Oczekiwane powtórzenie zakupu**: wybierz opcję **Tak**, aby wskazać, że produkty mają być dołączane do rekomendacji, które zostały zakupione przez klientów.
 
    - **Okno wglądu w przeszłość**: wybierz co najmniej **365 dni**. To ustawienie definiuje, jak daleko model spojrzy wstecz na aktywność klienta, aby użyć go jako danych wejściowych do jego zaleceń.
-   
+
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modelowe preferencje dotyczące modelu rekomendacji produktów.":::
 
-1. Wybierz **Wymagane dane** i wybierz pozycję **Dodaj dane** dla historii zakupów.
+1. W kroku **Dodaj wymagane dane** wybierz opcję **Dodaj dane**.
 
-1. Dodaj encję **eCommercePurchases : eCommerce** i zamapuj pola z eCommerce na odpowiadające im pola wymagane przez model.
+1. W okienku **Dodaj dane** wybierz **SalesOrderLine** jako jednostkę historii zakupów. W tym momencie prawdopodobnie nie jest jeszcze skonfigurowany. Otwórz łącze w panelu, aby utworzyć aktywność, wykonując następujące kroki:
+   1. Wprowadź **Nazwę działania** i wybierz *eCommercePurchases:eCommerce* jako **Encja aktywności**. **Klucz podstawowy** to *PurchaseId*.
+   1. Zdefiniuj i nazwij relację do encji *eCommerceContacts:eCommerce* i wybierz **ContactId** jako klucz obcy.
+   1. Aby ujednolicić aktywność, ustaw **Aktywność wydarzenia** jako *ŁącznaCena*, a Znacznik czasowy do *ZakupionoDnia*. Możesz określić więcej pól, jak opisano w [Działania klienta](activities.md).
+   1. Dla **Typu działania** wybierz wartość *WierszZleceniaZakupu*. Zmapuj następujące pola aktywności:
+      - ID wiersza zamówienia: IDZamówienia
+      - ID zamówienia: IDZamówienia
+      - Dane dotyczące zamówienia: ZakupioneDnia
+      - Identyfikator produktu/usługi: IDProduktu
+      - Kwota: RazemCena
+   1. Przejrzyj i zakończ ćwiczenie, zanim wrócisz do konfiguracji modelu.
 
-1. Dołącz do encji **eCommercePurchases: eCommerce** o identyfikatorze **eCommerceContacts: eCommerce**.
+1. Wracając do etapu **Wybierania aktywności**, wybierz nowo utworzoną aktywność w sekcji **Aktualności**. Wybierz **Dalej**, a mapowanie atrybutów jest już wypełnione. Wybierz **Zapisz**.
 
-   ![Dołączanie encji eCommerce.](media/model-purchase-join.png)
+1. W tym przykładowym przewodniku pomijamy zestawy **Dodaj informacje o produkcie** i **Filtry produktów**, ponieważ nie mamy danych dotyczących informacji o produkcie.
 
-1. Wybierz przycisk **Dalej**, aby ustawić harmonogram modelu.
+1. W kroku **Aktualizacja danych** ustaw harmonogram modelu.
 
    Model musi regularnie trenować, aby uczyć się nowych wzorców, gdy są pozyskiwane nowe dane. Na potrzeby tego przykładu wybierz pozycję **Miesięczny**.
 
-1. Po przejrzeniu wszystkich szczegółów wybierz pozycję **Zapisz i uruchom**.
-
+1. Po przejrzeniu wszystkich szczegółów wybierz pozycję **Zapisz i uruchom**. Za pierwszym razem uruchomienie modelu zajmie kilka minut.
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Zadanie 4 - Przejrzyj wyniki i wyjaśnienia modelu
 
-Pozwól modelowi ukończyć uczenie i ocenianie danych. Możesz teraz przejrzeć objaśnienia dotyczące modelu rekomendacji produktów. Aby uzyskać więcej informacji, zobacz temat [Przejrzyj stan i wyniki prognozy](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Pozwól modelowi ukończyć uczenie i ocenianie danych. Możesz teraz przejrzeć objaśnienia dotyczące modelu rekomendacji produktów. Aby uzyskać więcej informacji, zobacz temat [Przejrzyj stan i wyniki prognozy](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-purchased-products"></a>Zadanie 5 — Tworzenie segmentu wysoko zakupionych produktów
 
@@ -190,21 +145,19 @@ Uruchomienie modelu produkcyjnego tworzy nową jednostkę, którą możesz zobac
 
 Możesz utworzyć nowy segment na podstawie encji utworzonej przez model.
 
-1. Przejdź do **Segmenty**. Wybierz opcję **Nowy** i wybierz pozycję **Utwórz z poziomu** > **Analizy**.
+1. Przejdź do **Segmenty**. Wybierz opcję **Nowy** i wybierz pozycję **Utwórz z poziomu Analizy**.
 
    ![Tworzenie segmentu z wynikiem modelu.](media/segment-intelligence.png)
 
 1. Wybierz opcję **OOBProductRecommendationModelPrediction** punkt końcowy i zdefiniuj segment:
 
    - Pole: ProductID
-   - Operator: wartość
    - Wartość: Wybierz trzy pierwsze identyfikatory produktów
 
    :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Tworzenie segmentu na stronie wyników modelu.":::
 
-Masz teraz dynamicznie aktualizowany segment, który identyfikuje klientów, którzy są bardziej skłonni do zakupu trzech najbardziej polecanych produktów 
+Masz teraz dynamicznie aktualizowany segment identyfikujący klientów, którzy mogą być zainteresowani zakupem trzech najbardziej polecanych produktów.
 
 Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

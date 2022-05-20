@@ -17,16 +17,16 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsight
-ms.openlocfilehash: 29b5d3f5848d36abd8e941136a6330dbb7730016
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6c0a1bc5d9a42806b458142804199c733ff530ec
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646803"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755511"
 ---
 # <a name="customer-activities"></a>Działania klienta
 
-Łącząc działania klientów z [różnych źródeł danych](data-sources.md) w Dynamics 365 Customer Insights do tworzenia osi czasu, będącej listą działań Dodawaj oś czasu w aplikacjach usługi Dynamics 365 za pomocą rozwiązania [dodatku Customer Card](customer-card-add-in.md) lub pulpitu nawigacyjnego Power BI.
+Łączenie działań klientów z [różnych źródeł danych](data-sources.md) w Dynamics 365 Customer Insights. Stwórz oś czasu, na której umieścisz chronologicznie wszystkie działania. Uwzględnij oś czasu w aplikacjach Dynamics 365 za pomocą rozwiązania [Dodatek kart klientów](customer-card-add-in.md).
 
 ## <a name="define-an-activity"></a>Definiuj działanie
 
@@ -78,7 +78,7 @@ Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać 
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. Aby zapisać teraz działanie z typem działania ustawionym jako **Inne**, można wybrać opcję **Zakończ i przejrzyj**. 
 
-1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Obecnie typy działań *Opinia*, *Lojalność*, *SalesOrder*, *SalesOrderLine* i *Subskrypcja* mogą być mapowane semantycznie po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
+1. W kroku **Typ działania** wybierz typ działania i, opcjonalnie, wybierz, czy chcesz etapami mapować niektóre typy działań do użycia w innych obszarach programu Customer Insights. Typy działań typu *Opinie*, *Lojalność*, *ZamówienieSprzedaży*, *WierszZamówieniaSprzedaży* i *Subskrypcja* obsługują obecnie obszary po uzgodnieniu mapowania pól. Jeśli typ działania nie jest odpowiedni dla nowego działania, można wybrać opcję *Inne* lub *Utwórz nowe* dla niestandardowego typu działania.
 
 1. Wybierz pozycję **Dalej**, aby przejść do następnego kroku. 
 
@@ -110,7 +110,7 @@ Po skonfigurowaniu działań klienta wybierz opcję **Pokaż na osi czasu dział
 
 Aby otworzyć oś czasu dla klienta, wybierz pozycję **Klienci** i wybierz profil klienta, który chcesz wyświetlić.
 
-Jeśli klient uczestniczy w skonfigurowanym działaniu, znajdziesz je w sekcji **Oś czasu działania**.
+Jeśli klient uczestniczył w skonfigurowanej aktywności, znajdziesz to w sekcji **Oś czasu działania**.
 
 :::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Wyświetlanie skonfigurowanych działań w profilach klientów.":::
 

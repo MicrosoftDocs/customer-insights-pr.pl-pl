@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6a1c3791076a7dda4531664ca88632f7f1b914e3
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646531"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755367"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Wzbogacanie profilów klientów za pomocą usługi Azure Maps (wersja zapoznawcza)
 
@@ -51,7 +51,7 @@ Aby skonfigurować wzbogacenie danych za pomocą usługi Azure Maps, należy spe
 
 1. Wybierz **Dalej**, by zakończyć mapowanie pól.
 
-1. Oceń, czy chcesz zmodyfikować **ustawienia zaawansowane**. Zapewniają one maksymalną elastyczność obsługi zaawansowanych przypadków użycia, ale w większości przypadków wartości domyślne będą odpowiednie:
+1. Oceń, czy chcesz zmodyfikować **ustawienia zaawansowane**. Ustawienia te zostały wprowadzone, by zapewnić maksymalną elastyczność w obsłudze zaawansowanych przypadków użycia, ale wartości domyślne będą wystarczające w większości przypadków:
    - **Typ adresów**: domyślnym zachowaniem jest to, że wzbogacenie zwraca najlepsze dopasowanie adresu, nawet jeśli jest niekompletne. Aby otrzymać tylko pełne adresy &mdash; na przykład adresy z numerem telefonu &mdash; wyczyść wszystkie pola wyboru poza polem **Adresy punktów**. 
    - **Język**: domyślnie adresy są zwracane w języku regionu, do którego został określony adres. Aby zastosować ustandaryzowany język adresu, wybierz język z menu rozwijanego. Na przykład wybranie opcji **Angielski** zwróci wartość **Copenhagen, Denmark**, zamiast **København, Danmark**.
 
@@ -89,7 +89,7 @@ Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych prof
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 
-Włączenie funkcji przekazywania danych do usługi Azure Maps w aplikacji Dynamics 365 Customer Insights umożliwia przesyłanie danych poza granice obszaru zgodności dla aplikacji Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak dane osobiste. Microsoft będzie przekazywać takie dane zgodnie z Twoimi instrukcjami, ale to Ty odpowiadasz za zapewnienie, że usługa Azure Maps spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Więcej informacji można znaleźć w [Oświadczeniu o ochronie prywatności Microsoft](https://go.microsoft.com/fwlink/?linkid=396732).
+Włączenie funkcji przekazywania danych do usługi Azure Maps w aplikacji Dynamics 365 Customer Insights umożliwia przesyłanie danych poza granice obszaru zgodności dla aplikacji Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak dane osobiste. Microsoft przekaże takie dane na twoje polecenie, ale to ty jesteś odpowiedzialny za zapewnienie, że spotkanie Azure Maps spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Więcej informacji można znaleźć w [Oświadczeniu o ochronie prywatności Microsoft](https://go.microsoft.com/fwlink/?linkid=396732).
 Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

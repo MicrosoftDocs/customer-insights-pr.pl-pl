@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 10704e287960c1a9171031135ff8f78a45b6e965
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646857"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755322"
 ---
 # <a name="connections-preview-overview"></a>Omówienie (podgląd) połączeń
 
@@ -24,15 +24,15 @@ Połączenia to klucz do włączenia udostępniania danych do i z funkcji Custom
 
 Przejdź do połączeń **Admin** > **Połączenia**, aby utworzyć i wyświetlić połączenia.
 
-Na karcie **Połączenia** widać wszystkie aktywne połączenia. Na liście zostanie wyświetlony wiersz dla każdego połączenia. 
+Na karcie **Połączenia** widać wszystkie aktywne połączenia. Na liście zostanie wyświetlony wiersz dla każdego połączenia.
 
 Uzyskaj szybkie omówienie, opis i dowiedz się, co można zrobić z każdą opcją rozszerzania na karcie **Odkryj**.
 
-### <a name="exports"></a>Eksporty
+## <a name="exports"></a>Eksporty
 
 Tylko administratorzy mogą konfigurować nowe połączenia, ale mogą udzielać współautorom dostęp do korzystania z istniejących połączeń. Administratorzy określają, gdzie mogą się znaleźć dane, współautorzy definiują ładunek i częstotliwość określania ich potrzeb. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](#allow-contributors-to-use-a-connection-for-exports).
 
-### <a name="enrichments"></a>Wzbogacenia
+## <a name="enrichments"></a>Wzbogacenia
 
 Tylko administratorzy mogą konfigurować nowe połączenia, ale utworzone połączenia są zawsze dostępne zarówno dla administratorów, jak i współautorów. Administratorzy zarządzają poświadczeniami i wyrażają zgodę na przenoszenie danych. Połączenia mogą być następnie używane do wzbogacania przez administratorów i współautorów.
 
@@ -46,9 +46,9 @@ Aby dodawać połączenia, trzeba mieć [uprawnienia administratora](permissions
 
 1. Wybrać **Dodaj połączenie**, aby utworzyć nowe połączenie. Wybierz z menu rozwijanego typ połączenia, które chcesz utworzyć.
 
-1. Podaj wymagane szczegóły w okienku **Konfigurowanie połączenia**. 
+1. Podaj wymagane szczegóły w okienku **Konfigurowanie połączenia**.
    1. **Wyświetlana nazwa** i typ połączenia opisują połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe tego połączenia.
-   1. Dokładnie jakie pola będzie zależeć od tego, z jaką usługą jest nawiązywana połączenie. Szczegółowe informacje o określonym typie połączenia można znaleźć w artykule dotyczących usługi docelowej.
+   1. Dokładne pola zależą od tego, z jaką usługą się łączysz. Szczegółowe informacje o określonym typie połączenia można znaleźć w artykule dotyczących usługi docelowej.
    1. Jeśli do przechowywania wpisów tajnych używasz [własnej usługi Key Vault](use-azure-key-vault.md), aktywuj opcję **Użyj usługi Key Vault** i wybierz odpowiedni wpis tajny z listy.
 
 1. Aby utworzyć połączenie, wybierz **Zapisz**.
@@ -59,7 +59,7 @@ Możesz również wybrać **Konfiguruj** na kafelku na karcie **Odnajdź**.
 
 Podczas konfigurowania lub edytowania połączenia eksportowania należy wybrać użytkowników, którzy mogą korzystać z tego konkretnego połączenia w celu zdefiniowania [eksportów](export-destinations.md). Domyślnie połączenie jest dostępne dla użytkowników, którzy mają rolę administratora. To ustawienie można zmienić w obszarze **Określ, kto może korzystać z tego połączenia** i zezwolić użytkownikom z rolą współautora na korzystanie z tego połączenia.
 
-- Współautorzy nie mogą wyświetlać ani edytować połączenia. Podczas tworzenia eksportu będą widzieć tylko wyświetlaną nazwę i typ.
+- Współautorzy nie mogą wyświetlać ani edytować połączenia. Podczas tworzenia eksportu będą widzieć tylko nazwę wyświetlaną i jej typ.
 - Udostępniając połączenie, można umożliwić współautorom korzystanie z połączenia. Współautorzy będą widzieć udostępnione połączenia podczas skonfigurowania eksportu. Mogą zarządzać każdym eksportem, który korzysta z tego określonego połączenia.
 - To ustawienie można zmienić, zachowując przy tym eksporty, które zostały już zdefiniowane przez współautorów.
 
@@ -77,7 +77,7 @@ Podczas konfigurowania lub edytowania połączenia eksportowania należy wybrać
 
 ## <a name="remove-a-connection"></a>Usuwanie połączenia
 
-Jeśli usuwane połączenie jest używane przez wzbogacanie lub eksportowanie, należy je najpierw odłączyć lub usunąć. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu. 
+Jeśli połączenie, które usuwasz, jest używane przez wzbogacenia lub eksporty, musisz je najpierw odłączyć lub usunąć. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu.
 
 Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie aktywować, dodając do nich inne połączenie na stronie [Wzbogacenia](enrichment-hub.md) lub [Eksporty](export-destinations.md).
 
@@ -91,7 +91,7 @@ Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie ak
 
    1. Jeśli są dostępne wzbogacenia lub eksporty używające tego połączenia, wybierz przycisk, aby wyświetlić informacje o połączeniu.
       - **Eksport:** można usunąć lub odłączyć eksport, aby można było usunąć połączenie. Aby odłączyć eksport, administratorzy mogą używać akcji **Odłącz**. Ta akcja jest dostępna dla pojedynczego i wielu wybranych eksportów. Odłączenie spowoduje zachowanie konfiguracji eksportu, ale nie zostanie on uruchomiony, dopóki nie zostanie dodane do niego inne połączenie.
-      - **Wzbogacenia:** można usunąć lub dezaktywować wzbogacenia, aby można było usunąć połączenie. 
+      - **Wzbogacenia:** można usunąć lub dezaktywować wzbogacenia, aby można było usunąć połączenie.
    1. Gdy połączenie nie ma więcej zależności, wróć do opcji **Admin** > **Połączenia** i spróbuj ponownie usunąć połączenie.
 
 1. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.

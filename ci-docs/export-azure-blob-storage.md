@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 42095f369c47553e5ddf5fada54e559202c943a9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3d573a6c83b7f0b0c33e656eb383e20a96856b0b
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646952"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757399"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksportowanie listy segmentów i innych danych do magazynu Azure Blob Storage (wersja zapoznawcza)
 
@@ -44,7 +44,7 @@ Przechowuj dane aplikacji Customer Insights w usłudze Blob Storage lub korzysta
 Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
 
 > [!IMPORTANT]
-> Jeśli włączone jest ustawienie usuwania nietrwałego dla konta usługi Azure Blob Storage, eksportowanie zakończy się niepowodzeniem. Wyłącz usuwanie nietrwałe, aby wyeksportować dane do obiektów blob. Aby uzyskać więcej informacji, zobacz [Włączanie usuwania nietrwałego obiektu blob](/azure/storage/blobs/soft-delete-blob-enable.md)
+> Jeśli włączone jest ustawienie usuwania nietrwałego dla konta usługi Azure Blob Storage, eksportowanie zakończy się niepowodzeniem. Wyłącz usuwanie nietrwałe, aby wyeksportować dane do obiektów blob. Aby uzyskać więcej informacji, zobacz [Włączanie usuwania nietrwałego obiektu blob](/azure/storage/blobs/soft-delete-blob-enable)
 
 1. Przejdź do **Dane** > **Eksporty**.
 

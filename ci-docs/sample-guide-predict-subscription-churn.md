@@ -1,8 +1,8 @@
 ---
 title: Przykładowy przewodnik dotyczący prognozowania rezygnacji z subskrypcji
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować gotowy model prognozowania rezygnacji z subskrypcji.
-ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 2aea6c62421b308705899e4f8af64f64bfcb2d3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647098"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741424"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z subskrypcji
 
@@ -112,61 +112,7 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
-Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utworzyć ujednolicony profil klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
-
-### <a name="map"></a>Mapuj
-
-1. Po przyjęciu danych zmapuj kontakty z danych e-commerce i lojalności na popularne typy danych. Przejdź **Dane** > **Ujednolicanie** > **Mapuj**.
-
-1. Wybierz podmioty, które reprezentują profil klienta - **eCommerceContacts** i **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="ujednolicić źródła danych e-commerce i lojalności.":::
-
-1. Wybierz opcję **ContactId** jako klucz podstawowy dla opcji **eCommerceContacts** i **LoyaltyID** jako klucz podstawowy dla **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="ujednolicenie LoyaltyId jako klucza podstawowego.":::
-
-### <a name="match"></a>Dopasowywanie
-
-1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
-
-1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
-
-1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Ujednolicenie dopasowania eCommerce i lojalności.":::
-
-1. Wybierz **Tworzenie nowej reguły**
-
-1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
-
-   * W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
-   * W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
-   * Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
-   * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
-
-   * Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   * W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
-   * W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej. 
-   * Pozostaw puste pole Normalizuj. 
-   * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Należy ujednolicić regułę dotyczącą nazwy i adresu e-mail.":::
-
-7. Wybierz pozycję **Zapisz** i **Uruchom**.
-
-### <a name="merge"></a>Scalanie
-
-1. Przejdź na kartę **Scal**.
-
-1. W elemencie **ContactId** dla encji **loyCustomers** zmień nazwę wyświetlaną na **ContactIdLOYALTY**, aby odróżnić ją od innych przetwarzanych identyfikatorów.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="Zmień nazwę ContactID na identyfikator lojalnościowy.":::
-
-1. Kliknij przycisk **Zapisz** i **Uruchom**, aby rozpocząć proces scalania.
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Zadanie 3 - Skonfiguruj przewidywanie rezygnacji z subskrypcji
 

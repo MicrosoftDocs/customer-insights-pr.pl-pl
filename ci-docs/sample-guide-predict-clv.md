@@ -1,19 +1,19 @@
 ---
 title: Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować model predykcji customer lifetime value.
-ms.date: 05/25/2021
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 9f8d1d0f0757d8003ad3859fab75362f3988cd00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 351946c734f5a1054eb3769b2d9cced3bed48e15
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647118"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740824"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta (CLV)
 
@@ -102,64 +102,7 @@ Przejrzyj artykuły [dotyczące pozyskiwania danych](data-sources.md) i [importo
 
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
-Po przyswojeniu danych rozpoczynamy proces ujednolicenia danych w celu utworzenia ujednoliconego profilu klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
-
-### <a name="map"></a>Mapuj
-
-1. Po przyjęciu danych zmapuj kontakty z danych e-commerce i lojalności na popularne typy danych. Przejdź **Dane** > **Ujednolicanie** > **Mapuj**.
-
-1. Wybierz podmioty, które reprezentują profil klienta - **eCommerceContacts** i **loyCustomers**. Następnie wybierz pozycję **Zastosuj**.
-
-   ![ujednolicić źródła danych e-commerce i lojalności.](media/unify-ecommerce-loyalty.png)
-
-1. Wybierz opcję **ContactId** jako klucz podstawowy dla opcji **eCommerceContacts** i **LoyaltyID** jako klucz podstawowy dla **loyCustomers**.
-
-   ![ujednolicenie LoyaltyId jako klucza podstawowego.](media/unify-loyaltyid.png)
-
-1. Wybierz pozycję **Zapisz**.
-
-### <a name="match"></a>Dopasowywanie
-
-1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
-
-1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
-
-1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
-
-   ![Ujednolicenie dopasowania eCommerce i lojalności.](media/unify-match-order.png)
-
-1. Wybierz **Dodaj regułę**
-
-1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
-
-   - W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
-   - W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
-   - Wybierz rozwijaną opcję **Normalizowanie** i wybierz opcję **Typ (Telefon, Nazwa, Adres, ...)**.
-   - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
-
-   - Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   - W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
-   - W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej.
-   - Pozostaw puste pole Normalizuj.
-   - Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-   ![Należy ujednolicić regułę dotyczącą nazwy i adresu e-mail.](media/unify-match-rule.png)
-
-1. Wybierz pozycję **Gotowe**.
-
-1. Wybierz pozycję **Zapisz** i **Uruchom**.
-
-### <a name="merge"></a>Scalanie
-
-1. Przejdź na kartę **Scal**.
-
-1. W elemencie **ContactId** dla encji **loyCustomers** zmień nazwę wyświetlaną na **ContactIdLOYALTY**, aby odróżnić ją od innych przetwarzanych identyfikatorów.
-
-   ![Zmień nazwę ContactID na identyfikator lojalnościowy.](media/unify-merge-contactid.png)
-
-1. Wybierz **Zapisz** i **Uruchom scalanie i procesy podrzędne**.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Zadanie 3 — Skonfiguruj prognozę długookresowej wartości klienta
 

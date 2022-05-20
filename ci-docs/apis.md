@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: ecc8bb3dbec1d4583c4bf2a58058145343945299
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646790"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755463"
 ---
 # <a name="work-with-customer-insights-apis"></a>Pracuj z interfejsami API Customer Insights
 
@@ -25,7 +25,7 @@ Dynamics 365 Customer Insights oferuje interfejsy API do tworzenia własnych apl
 > [!IMPORTANT]
 > Szczegółowe informacje o tych interfejsach API są wymienione w [Kompendium interfejsów API Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). Zawierają one dodatkowe informacje na temat operacji i parametrów oraz odpowiedzi.
 
-Ten artykuł opisuje, jak uzyskać dostęp do interfejsów API Customer Insights, utworzyć aplikację Azure App Registration i rozpocząć pracę z dostępnymi bibliotekami klienckimi.
+Ten artykuł opisuje, jak uzyskać dostęp do interfejsów API Customer Insights, utworzyć rejestrację Azure App i rozpocząć pracę z bibliotekami klienckimi.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Rozpoczynanie korzystania z interfejsów API Customer Insights
 
@@ -83,13 +83,13 @@ Możesz użyć identyfikatora aplikacji/klienta do rejestracji tej aplikacji z b
 
 Aby uzyskać więcej informacji na temat MSAL, zobacz [Omówienie biblioteki uwierzytelniania Microsoft (MSAL)](/azure/active-directory/develop/msal-overview).
 
-Aby uzyskać więcej informacji na temat rejestracji aplikacji na platformie Azure, zobacz [Rejestrowanie aplikacji](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+Aby uzyskać więcej informacji na temat rejestracji aplikacji na platformie Azure, zobacz [Rejestrowanie aplikacji](/graph/auth-register-app-v2).
 
 Aby uzyskać więcej informacji na temat korzystania z interfejsów API w naszych bibliotekach klienckich, zobacz [biblioteki klienckie aplikacji Customer Insights](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Uprawnienia dotyczące aplikacji serwera do serwera
 
-[Sekcja rejestracji aplikacji](#create-a-new-app-registration-in-the-azure-portal) zawiera informacje na temat sposobu zarejestrowania aplikacji, która wymaga zalogowania się użytkownika w celu uwierzytelnienia. Dowiedz się, jak utworzyć rejestrację aplikacji, która nie wymaga interakcji użytkownika i może być uruchamiana na serwerze.
+[Sekcja rejestracji aplikacji](#create-a-new-app-registration-in-the-azure-portal) zawiera informacje na temat sposobu zarejestrowania aplikacji, która wymaga zalogowania się użytkownika w celu uwierzytelnienia. Dowiedz się, jak stworzyć aplikację rejestracyjną, która nie wymaga interakcji z użytkownikiem i może być uruchomiona na serwerze.
 
 1. W rejestracji aplikacji w portalu Azure Portal wybierz opcję **uprawnienia interfejsu API**.
 
@@ -112,6 +112,10 @@ Aby uzyskać więcej informacji na temat korzystania z interfejsów API w naszyc
    Otwórz Customer Insights, przejdź do **Administrator** > **Uprawnienia** i wybierz **Dodaj użytkownika**.
 
 1. Wyszukaj nazwę rejestracji swojej aplikacji, wybierz ją z listy wyników wyszukiwania i wybierz pozycję **Zapisz**.
+
+## <a name="sample-queries"></a>Przykładowe zapytania
+
+Zebraliśmy krótką listę przykładowych zapytań OData, które mogą współpracować z interfejsami API: [Przykłady zapytań OData](odata-examples.md).
 
 ## <a name="customer-insights-client-libraries"></a>Biblioteki klientów Customer Insights
 
@@ -137,7 +141,7 @@ Dowiedz się jak rozpocząć pracę za pomocą klienta C# bibliotek z NuGet.org.
 
 1. Użyj [biblioteki uwierzytelniania firmy Microsoft (MSAL)](/azure/active-directory/develop/msal-overview), aby uzyskać możliwość `AccessToken` za pomocą istniejącej [rejestracji aplikacji Azure](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Po pomyślnym uwierzytelnieniu i pobraniu tokenu można utworzyć nowy lub użyć istniejącego elementu `HttpClient` z dodatkowym elementem **„Autoryzacja” DefaultRequestHeaders** ustawionym na **„Token dostępu” elementu nośnego** i elementem **Ocp-Apim-Subscription-Key** ustawionym na [**klucz subskrypcji** ze środowiska aplikacji Customer Insights](#get-started-trying-the-customer-insights-apis).   
+1. Po pomyślnym uwierzytelnieniu i zdobyciu tokena, utwórz nowego lub użyj istniejącego `HttpClient` z **DefaultRequestHeaders "Authorization "** ustawionym na **Bearer "access token "** i **Ocp-Apim-Subscription-Key** ustawionym na [**klucz subskrypcji** z twojego środowiska Customer Insights](#get-started-trying-the-customer-insights-apis).   
  
    Nagłówek **Autoryzacji** jest resetowany w zależności od potrzeb. Na przykład ważność tokenu wygasła.
 
@@ -147,7 +151,7 @@ Dowiedz się jak rozpocząć pracę za pomocą klienta C# bibliotek z NuGet.org.
 
 1. Wywołaj z klientem „metody rozszerzające”, na przykład `GetAllInstancesAsync`. Jeśli preferowany jest dostęp do bazowego `Microsoft.Rest.HttpOperationResponse`, użyj „metod wiadomości http”, na przykład `GetAllInstancesWithHttpMessagesAsync`.
 
-1. Odpowiedź będzie prawdopodobnie typu `object`, ponieważ metoda może zwracać wiele typów (na przykład `IList<InstanceInfo>` i `ApiErrorResult`). Aby sprawdzić zwracany typ, można bezpiecznie rzutować obiekty do typów odpowiedzi określonych na [stronie szczegółów interfejsu API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) dla tej operacji.    
+1. Odpowiedź będzie prawdopodobnie typu `object`, ponieważ metoda może zwracać wiele typów (na przykład `IList<InstanceInfo>` i `ApiErrorResult`). Aby sprawdzić typ zwrotu, używasz obiektów w typach odpowiedzi określonych na stronie [Szczegóły API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) dla tej operacji.    
    
    Jeśli potrzeba więcej informacji na temat żądania, użyj **metod wiadomości http**, aby uzyskać dostęp do surowego obiektu odpowiedzi.
 

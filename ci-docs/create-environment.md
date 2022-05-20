@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 0efda9d2997bcfd069b6d2445b69d159d7d3e59b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c64ac94a7e0e743d3c13e32e394cc5d409420622
+ms.sourcegitcommit: c00441bc60b978e25f930b06c9d97b46fe462538
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646623"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "8712915"
 ---
 # <a name="create-an-environment-in-customer-insights"></a>Tworzenie środowiska w aplikacji Customer Insights
 
@@ -63,8 +63,7 @@ Dostępne są dwie opcje: **Magazyn rozwiązania Customer Insights** (magazyn da
 Zapisując dane w usłudze Azure Data Lake Storage, wyrażasz zgodę na to, że dane będą przesyłane do i przechowywane w odpowiedniej lokalizacji geograficznej dla tego konta magazynu platformy Azure. Ta lokalizacja może różnić się od miejsca, w którym są przechowywane dane aplikacji Dynamics 365 Customer Insights. Więcej informacji znajduje się w [Centrum zaufania Microsoft](https://www.microsoft.com/trust-center).
 
 > [!NOTE]
-> Obecnie program Customer Insights obsługuje następujące elementy:
-> - Pozyskane encje z przepływów danych usługi Power BI przechowywane usłudze Data Lake zarządzanej przez funkcję Microsoft Dataverse.  
+> Obecnie program Customer Insights obsługuje następujące elementy:  
 > - Konta usługi Azure Data Lake Storage z tego samego regionu platformy Azure, który został wybrany podczas tworzenia środowiska.
 > - Konta usługi Azure Data Lake Storage Gen2 z włączoną *hierarchiczną przestrzenią nazw*. Konta magazynu usługi Azure Data Lake Gen1 nie są obsługiwane.
 
@@ -80,7 +79,7 @@ Krok **Microsoft Dataverse** umożliwia połączenie aplikacji Customer Insights
 
 Udostępnij własne środowisko Microsoft Dataverse w celu udostępniania danych (profilów i analiz) aplikacjom biznesowym opartym usługach Dataverse, jak Dynamics 365 Marketing lub aplikacje oparte na modelu w usłudze Power Apps. Jeśli nie masz własnego środowiska Dataverse, pozostaw to pole puste, a my je ustanowimy.
 
-Połączenie ze środowiskiem Dataverse umożliwia również [pozyskiwanie danych z lokalnych źródeł danych za pomocą przepływów danych Power Platform i bram](data-sources.md#add-data-from-on-premises-data-sources). Możesz również użyć [modeli gotowego przewidywania](predictions-overview.md?tabs=b2c#out-of-box-models), łącząc się ze środowiskiem Dataverse.
+Połączenie ze środowiskiem Dataverse umożliwia również [pozyskiwanie danych z lokalnych źródeł danych za pomocą przepływów danych Power Platform i bram](data-sources.md#add-data-from-on-premises-data-sources).
 
 > [!IMPORTANT]
 > 1. Customer Insights i Dataverse muszą znajdować się w tym samym regionie, aby umożliwić wymianę danych.

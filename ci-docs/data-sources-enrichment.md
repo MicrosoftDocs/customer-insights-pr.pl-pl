@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 56f6a8ad20224922f9968f0ad3b6a0e0a400214b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646571"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755699"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Wzbogacanie źródeł danych (wersja zapoznawcza)
 
@@ -26,7 +26,7 @@ Aby tworzyć lub edytować wzbogacenia, musisz mieć uprawnienia współautora l
 1. Przejdź do sekcji **Dane** > **Ujednolicanie**. Wybierz encję, którą chcesz wzbogacić i wybierz jeden atrybut jako klucz główny dla tej encji. Aby uzyskać więcej informacji, zobacz [Wybierz klucz główny](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 
 1. Przejdź do **Dane** > **Źródła danych**.
- 
+
 1. Zaznacz pionową elipsę obok źródła danych, które chcesz wzbogacić i wybierz **Wzbogać**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Strona wzbogacania źródeł danych.":::

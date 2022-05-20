@@ -1,19 +1,19 @@
 ---
 title: Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować gotowy model prognozowania rezygnacji z transakcji.
-ms.date: 11/19/2020
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05c221c634b8e0f582a6c6d3f4d90e971aa9707e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647265"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741332"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z transakcji
 
@@ -86,69 +86,13 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
 
 1. Zapisz źródło danych.
 
-
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
-Po pozyskaniu danych rozpoczynamy teraz proces **Mapa, dopasuj, scal** aby utworzyć ujednolicony profil klienta. Aby uzyskać więcej informacji, zobacz [Ujednolicenie danych](data-unification.md).
-
-### <a name="map"></a>Mapuj
-
-1. Po przyjęciu danych zmapuj kontakty z danych e-commerce i lojalności na popularne typy danych. Przejdź **Dane** > **Ujednolicanie** > **Mapuj**.
-
-1. Wybierz podmioty, które reprezentują profil klienta - **eCommerceContacts** i **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="ujednolicić źródła danych e-commerce i lojalności.":::
-
-1. Wybierz opcję **ContactId** jako klucz podstawowy dla opcji **eCommerceContacts** i **LoyaltyID** jako klucz podstawowy dla **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="ujednolicenie LoyaltyId jako klucza podstawowego.":::
-
-### <a name="match"></a>Dopasowywanie
-
-1. Przejdź do karty **Dopasowywanie** i wybierz **Ustawianie kolejności**.
-
-1. Na liście rozwijanej **Podstawowe** wybierz pozycję **Kontakty eCommerceContacts : eCommerce** jako główne źródło i uwzględnij wszystkie rekordy.
-
-1. Na liście rozwijanej **Encja 2** wybierz pozycję **loyCustomers : LoyaltyScheme** i wybierz wszystkie rekordy.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Ujednolicenie dopasowania eCommerce i lojalności.":::
-
-1. Wybierz **Tworzenie nowej reguły**
-
-1. Dodanie pierwszego warunku za pomocą narzędzia FullName.
-
-   * W przypadku kontaktów eCommerce z listy rozwijanej wybierz opcję **FullName**.
-   * W przypadku kontaktów loyCustomers z listy rozwijanej wybierz opcję **FullName**.
-   * Wybierz menu rozwiajne **Normalizuj** i wybierz **Typ (telefon, nazwa, adres,...)**.
-   * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-1. Wprowadź nazwę **FullName, Email** dla nowej reguły.
-
-   * Dodaj drugi warunek dla adresu e-mail, zaznaczając opcję **Dodaj warunek**
-   * W przypadku encji kontakty eCommerce wybierz pozycję **EMail** na liście rozwijanej.
-   * W przypadku encji loyCustomers wybierz pozycję **EMail** na liście rozwijanej. 
-   * Pozostaw puste pole Normalizuj. 
-   * Ustawianie **Poziomu dokładności**: **Podstawowe** i **Wartość**: **Wysokie**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Należy ujednolicić regułę dotyczącą nazwy i adresu e-mail.":::
-
-7. Wybierz pozycję **Zapisz** i **Uruchom**.
-
-### <a name="merge"></a>Scalanie
-
-1. Przejdź na kartę **Scal**.
-
-1. W elemencie **ContactId** dla encji **loyCustomers** zmień nazwę wyświetlaną na **ContactIdLOYALTY**, aby odróżnić ją od innych przetwarzanych identyfikatorów.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="Zmień nazwę ContactID na identyfikator lojalnościowy.":::
-
-1. Kliknij przycisk **Zapisz** i **Uruchom**, aby rozpocząć proces scalania.
-
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Zadanie 3 - Skonfiguruj przewidywanie rezygnacji z transakcji
 
-Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie subskrypcji. Aby uzyskać szczegółowe informacje o krokach, zobacz artykuł [Przewidywanie rezygnacji z subskrypcji](predict-subscription-churn.md). 
+Mając ujednolicone profile klientów, możemy teraz uruchomić przewidywanie rezygnacji z transakcji. Aby uzyskać szczegółowe informacje o krokach, zobacz artykuł [Przewidywanie rezygnacji z transakcji](predict-transactional-churn.md). 
 
 1. Wybierz **Analizy** > **Wykryj** i wybierz korzystanie z **Model rezygnacji klientów**.
 
@@ -180,7 +124,7 @@ Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie sub
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Zadanie 4 - Przejrzyj wyniki i wyjaśnienia modelu
 
-Pozwól modelowi ukończyć uczenie i ocenianie danych. Możesz teraz przejrzeć wyjaśnienia dotyczące modelu rezygnacji z subskrypcji. Aby uzyskać więcej informacji, zobacz temat [Przejrzyj stan i wyniki prognozy](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Pozwól modelowi ukończyć uczenie i ocenianie danych. Możesz teraz przejrzeć wyjaśnienia dotyczące modeli rezygnacji. Aby uzyskać więcej informacji, zobacz temat [Przejrzyj stan i wyniki prognozy](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Zadanie 5 - Utwórz segment klientów o wysokim ryzyku rezygnacji
 
@@ -192,14 +136,12 @@ Możesz utworzyć nowy segment na podstawie encji utworzonej przez model.
 
    :::image type="content" source="media/segment-intelligence.PNG" alt-text="Tworzenie segmentu z wynikiem modelu.":::
 
-1. Wybierz opcję **OOBSubscriptionChurnPrediction** punkt końcowy i zdefiniuj segment: 
+1. Wybierz punkt końcowy **OOBePrognozaRezygnacjiCommerce** i zdefiniuj segment: 
    - Pole: ChurnScore
    - Operator: większy niż
    - Wartość: 0.6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Skonfiguruj segment rezygnacji z subskrypcji.":::
 
-Masz teraz dynamicznie aktualizowany segment, który identyfikuje klientów o wysokim ryzyku rezygnacji z subskrypcji.
+Segment jest obecnie aktualizowany dynamicznie, co umożliwia identyfikację klientów o wysokim poziomie ryzyka.
 
 Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
 

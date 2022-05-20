@@ -1,7 +1,7 @@
 ---
 title: Strona główna aplikacji Customer Insights
 description: Rozpocznij przeglądanie aplikacji na stronie głównej.
-ms.date: 04/12/2022
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,38 +11,55 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: ebc5eb6b2dfaa9b013cfa0c9ce60c8a0a57a065d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
+ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647198"
+ms.lasthandoff: 05/12/2022
+ms.locfileid: "8743426"
 ---
 # <a name="explore-customer-insights"></a>Poznanie aplikacji Customer Insights
 
-Możesz przejść do [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) za pomocą następującego adresu URL: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+Możesz uzyskać dostęp do [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) za pomocą następującego adresu URL: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
 
-Na **Stronie głównej** jest dostępny przegląd segmentów, działań i danych dotyczących wzbogacenia (jeśli została skonfigurowana) po zakończeniu [mapowania](map-entities.md), [dopasowania](match-entities.md) oraz [scalania](merge-entities.md) do etapów.
+**Strona główna** prowadzi Cię przez proces konfiguracji kluczowych funkcji oraz zawiera przegląd segmentów, miar i danych wzbogacających.
 
 :::image type="content" source="media/home-page.png" alt-text="Zrzut ekranu strony głównej przedstawiający przykładowe statystyki.":::
 
-Kluczowe kontrolki w aplikacji Customer Insights:
+## <a name="left-side-pane"></a>Okienko po lewej stronie
 
-- Lewe okienko: przełączanie się między podstawowymi odbiorcami docelowymi, jeśli masz środowiska B2C i B2B
+Użyj lewego panelu, aby nawigować między różnymi obszarami Customer Insights. 
 
-- Lewe okienko: nawigowanie między różnymi obszarami i wybieranie podstawowego odbiorcy docelowego
+Jeśli pracujesz z klientami biznesowymi i indywidualnymi, możesz wybrać swoją główną grupę odbiorców, by odpowiednio się na niej skoncentrować. 
 
-- Nagłówek: zmiana środowiska, w którym pracuje użytkownik, i zarządzanie nim jako administrator
+## <a name="application-header"></a>Nagłówek aplikacji
 
-- Nagłówek: określanie ustawień osobistych rozwiązania Customer Insights i uzyskiwanie opcji pomocy
+Selektor **Środowisko** pokazuje środowisko, w którym pracujesz, i pozwala ci tworzyć lub zarządzać środowiskami jako administrator.
 
-Teraz można wyświetlić następujące sekcje na stronie głównej:
+Ikona uśmiechniętej buźki to kontrolka **Powiadomienia**. Wybierz ją, aby opowiedzieć nam o swoich doświadczeniach z Customer Insights. Aktywnie słuchamy waszych opinii i z góry dziękujemy za poinformowanie nas, co wam się podoba i jak możemy to poprawić.
 
-- **Ostatnie segmenty** pokazują grupy klientów na podstawie zdefiniowanych atrybutów demograficznych, behawioralnych lub transakcyjnych. [Tworzenie segmentów](segments.md) pomaga grupować klientów i lepiej je ukierunkować na działania biznesowe.
+Kontrolka **Ustawienia**, przedstawiona w postaci ikony koła zębatego, umożliwia zbieranie szczegółów sesji dla Customer Insights oraz konfigurowanie globalnych ustawień dla profilu Microsoft 365. 
 
-- **Ostatnie miary biznesowe** pokazują kafelki ze zdefiniowanymi [kluczowymi wskaźnikami wydajności (KPI)](measures.md). Na przykład średnie prawdopodobieństwo odejścia klienta lub średnie wydatki online na klienta.
+Opcje **Pomocy**, oznaczone ikoną znaku zapytania, zawierają linki pomocy kontekstowej i inne pomocne zasoby.
 
-- **Ostatnie wzbogacenia** to wyniki zakończonych w ostatnim czasie uruchomień wzbogacania. [Wzbogacenia](enrichment-hub.md) dodają informacje o bazie klientów. Na przykład dzięki zrozumieniu zainteresowań i marek, z którymi mają oni koligacje.
+Twoje zdjęcie profilowe otwiera **Menedżera kont** dla Twojego profilu w usłudze Microsoft 365. Wybierz **Moje konto**, aby zarządzać swoimi ustawieniami osobistymi.
+
+## <a name="getting-started-with-customer-insights-section"></a>Rozpoczęcie pracy z sekcją Customer Insights
+
+Ta sekcja zawiera karty, które pomogą ci przejść przez proces konfigurowania środowiska Customer Insights. 
+
+1. Karta **Dodaj dane** pomoże ci w zaimportowaniu danych. Customer Insights obsługuje [kilka opcji wprowadzania danych o swoich klientach](data-sources.md). Wybierz **Dodaj źródła danych**, aby rozpocząć.
+1. Po pomyślnym zakończeniu początkowego importu danych możesz użyć karty **Ujednolicenie danych**, aby zharmonizować dane i [utworzyć ujednolicone profile klientów](data-unification.md) z różnych źródeł. 
+1. Mając już ujednolicone profile klientów, nadszedł czas, by przejrzeć opcje **Analizuj dane** i uzyskać dodatkowe spostrzeżenia. Wypróbuj go, aby stworzyć [miary biznesowe](measures.md) do śledzenia KPI, [zdefiniować segmenty](segments.md), aby dotrzeć do konkretnych odbiorców, lub [skonfigurować przewidywania](predictions-overview.md) z pomocą AI.
+1. Teraz, gdy dane klientów są już zaimportowane, ujednolicone i uporządkowane, możesz użyć naszych [różnych miejsc eksportu](export-destinations.md), aby podjąć działania na danych. Wybierz **Dodaj połączenia**, aby podłączyć swoje ulubione usługi. Na przykład wyeksportować dane do Dynamics 365 Marketing, aby tworzyć wychodzące kampanie marketingowe lub budować podróże klientów. 
+
+## <a name="your-customer-insights-section"></a>Twoja sekcja wiedzy o kliencie
+
+- **Segmenty** pokazują grupy klientów na podstawie zdefiniowanych atrybutów demograficznych, behawioralnych lub transakcyjnych. [Tworzenie segmentów](segments.md) pomaga grupować klientów i lepiej je ukierunkować na działania biznesowe.
+
+- **Miary biznesowe** pokazują kafelki ze zdefiniowanymi [kluczowymi wskaźnikami wydajności (KPI)](measures.md). Na przykład średnie prawdopodobieństwo odejścia klienta lub średnie wydatki online na klienta.
+
+- **Wzbogacenia** to wyniki zakończonych w ostatnim czasie uruchomień wzbogacania. [Wzbogacenia](enrichment-hub.md) dodają informacje o bazie klientów. Na przykład dzięki zrozumieniu zainteresowań i marek, z którymi mają oni koligacje.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

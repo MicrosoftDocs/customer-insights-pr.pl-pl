@@ -66,12 +66,18 @@
   items:
     - name: Omówienie ujednolicenia danych
       href: data-unification.md
-    - name: Mapowanie encji i atrybutów
+    - name: Wybierz pola źródłowe
       href: map-entities.md
-    - name: Dopasowywanie encji
+    - name: Usuń zduplikowane rekordy
+      href: remove-duplicates.md
+    - name: Warunki dopasowywania
       href: match-entities.md
-    - name: Scalanie encji
+    - name: Ujednolicenie pól klientów
       href: merge-entities.md
+    - name: Przegląd ujednolicenia danych
+      href: review-unification.md
+    - name: Zaktualizuj ustawienia ujednolicania
+      href: data-unification-update.md
 - name: Wzbogacanie danych
   items:
     - name: Wzbogacanie profilów klientów
@@ -282,6 +288,8 @@
       href: apis.md
     - name: Odwołania API
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+    - name: Przykładowe zapytania OData
+      href: odata-examples.md
 - name: Zarządzanie zgodami (wersja zapoznawcza)
   items:
     - name: Centrum pomocy

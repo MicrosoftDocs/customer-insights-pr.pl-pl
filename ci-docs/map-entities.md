@@ -1,110 +1,83 @@
 ---
-title: Mapowanie encji i atrybutów na potrzeby ujednolicania danych
-description: Wybierz encje, atrybuty, klucze podstawowe i typy semantyczne, aby mapować dane na ujednolicony profil klienta.
-ms.date: 10/18/2020
+title: Wybierz pola źródłowe do ujednolicenia danych
+description: Pierwszym krokiem w procesie ujednolicenia jest wybranie encji, atrybutów, kluczy głównych i typów semantycznych, aby zmapować dane do ujednoliconego profilu klienta.
+recommendations: false
+ms.date: 04/22/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: v-wendysmith
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: bebc600e91db471c3cd50eccb5e42be309ff09c9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a962f1353b6e25b40c60b39a81ac936873f34d92
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646695"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741008"
 ---
-# <a name="map-entities-and-attributes"></a>Mapowanie encji i atrybutów
+# <a name="select-source-fields-for-data-unification"></a>Wybierz pola źródłowe do ujednolicenia danych
 
-**Mapowanie** jest pierwszym etapem procesu ujednolicania danych. Mapowanie składa się z trzech faz:
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-- *Wybór encji*: należy zidentyfikować encje, które prowadzą do zestawu danych z pełniejszymi informacjami o klientach.
-- *Wybór atrybutu*: dla każdej encji należy określić kolumny, które mają zostać połączone i uzgodnić w fazach *dopasowywania* i *scalania*. Te kolumny są nazywane *Atrybutami*.
-- *Wybór klucza podstawowego i typu semantycznego*: Dla każdej encji zidentyfikuj atrybut, który chcesz zdefiniować jako klucz podstawowy dla tej encji, a dla każdego atrybutu zidentyfikuj typ semantyczny, który najlepiej opisuje ten atrybut.
+Pierwszym krokiem w ujednolicenia jest wybranie encji i pól w twoich zbiorach danych, które chcesz ujednolicić. Wybierz encje, które zawierają szczegóły dotyczące klientów, takie jak imię, adres, numer telefonu i e-mail. Możesz wybrać jedną lub więcej encji.
 
-Aby uzyskać więcej informacji na temat ogólnego przebiegu zjednoczenia danych, zobacz [Ujednolicanie](data-unification.md).
+## <a name="select-entities-and-fields"></a>Wybierz encje i pola
 
-## <a name="select-the-first-entities"></a>Zaznacz pierwsze encje
+1. Przejdź do sekcji **Dane** > **Ujednolicanie**.
 
-1. Przejdź **Dane** > **Ujednolicanie** > **Mapuj**.
+   :::image type="content" source="media/m3_unify_land.png" alt-text="Zrzut ekranu strony docelowej ujednolicania dla doświadczenia pierwszego uruchomienia z wyróżnieniem Zacznij..":::
 
-2. Rozpocznij fazę mapowania, zaznaczając **Wybierz encje**.
+1. Wybierz **Rozpocznij**.
 
-3. W fazach *dopasuj* i *scal* wybierz encje i atrybuty, które mają być używane. Wymagane atrybuty można wybrać z encji oddzielnie lub dodać wszystkie atrybuty z encji, zaznaczając pole wyboru **Dołącz wszystkie pola** na poziomie encji. Zalecamy wybranie co najmniej dwóch encji, które mają być korzystne w procesie zjednoczenia danych.
+1. Na stronie **Pola źródłowe** wybierz **Wybierz encje i pola**. Zostanie wyświetlony panel **Wybierz encje i pola**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Dodaj encje przykład.](media/data-manager-configure-map-add-entities-example.png "Dodaj encje przykład")
+1. Wybierz co najmniej jedną encję.
 
-   W tym przykładzie dodajemy encje **eCommerceContacts** i **loyCustomers**. Wybierając te encje, można uzyskać wgląd w informacje o tym, których użytkownicy biznesowi w trybie online są członkami programu lojalnościowego.
-   
-   Korzystając z słów kluczowych można przeszukiwać atrybuty i encje, aby wybrać wymagane, które mają zostać zamapowane.
-   
-     > [!div class="mx-imgBorder"]
-   > ![Przykład przeszukiwanych pól.](media/data-manager-configure-map-search-fields-example.png "Przykład przeszukiwanych pól")
+1. Dla każdej wybranej encji określ pola, których chcesz użyć do dopasowania rekordów klientów oraz pola, które mają być zawarte w profilu ujednoliconym. Te pola są nazywane *atrybutami*. Możesz wybrać wymagane atrybuty pojedynczo z encji lub uwzględnić wszystkie atrybuty z encji, zaznaczając pole wyboru na poziomie encji. Korzystając z słów kluczowych można przeszukiwać atrybuty i encje, aby wybrać wymagane, które mają zostać zamapowane.
 
-4. Wybierz **Zastosuj**, aby potwierdzić wybrane opcje.
+   :::image type="content" source="media/m3_select_entities.png" alt-text="Zrzut ekranu z zaznaczonymi encjami i atrybutami.":::
+
+   W tym przykładzie dodajemy encje **Kontakty** i **KlienciLojalność**. Wybierając te encje, można uzyskać wgląd w informacje o tym, których użytkownicy biznesowi w trybie online są członkami programu lojalnościowego.
+
+1. Wybierz **Zastosuj**, aby potwierdzić wybrane opcje. Zostaną wyświetlone wybrane encje i atrybuty.
 
 ## <a name="select-primary-key-and-semantic-type-for-attributes"></a>Wybierz klucz podstawowy i typ semantyczny dla atrybutów
 
-Po wybraniu encji strona **Mapa** wymienia wybrane encje do przejrzenia. Zdefiniuj klucz podstawowy encji i zidentyfikuj typ semantyczny atrybutu w encji.
+   :::image type="content" source="media/m3_select_primary.png" alt-text="Zrzut ekranu z zaznaczonymi encjami z nie zaznaczonym kluczem głównym." lightbox="media/m3_select_primary.png":::
 
-- **Klucz podstawowy**: Wybierz jeden atrybut jako klucz podstawowy dla każdej encji. Aby atrybut był prawidłowym kluczem podstawowym, nie może zawierać zduplikowanych wartości, brakujących wartości ani wartości null. Atrybuty typu danych ciąg, liczba całkowita i GUID są obsługiwane jako klucze podstawowe i będą wyświetlane w polu, w którym będzie można dokonać wyboru.
+Dla każdej encji wykonaj następujące kroki.
 
-- **Typ semantyczny atrybutu**: Kategorie atrybutów, takie jak adres e-mail lub nazwa. Aby używać modeli AI do inteligentnego przewidywania semantyki, zaoszczędzić czas i poprawić dokładność, ustaw **Inteligentne mapowanie** na **Włączone**. Inteligentne mapowanie podświetla rekomendacje semantyki w oparciu o AI w polu **Typ**. Po ustawieniu na **Wyłączone**, zobaczysz nasze zwykłe rekomendacje dotyczące mapowania. Dowolny typ semantyczny można wybrać z listy dostępnych opcji i zastąpić sugerowany wybór.
+1. Wybierz **Klucz podstawowy**. Klucz podstawowy jest atrybutem unikalnym dla danej encji. Aby atrybut był prawidłowym kluczem podstawowym, nie może zawierać zduplikowanych wartości, brakujących wartości ani wartości null. Atrybuty typu ciąg, liczba całkowita i GUID są obsługiwane jako klucze podstawowe.
 
-> [!div class="mx-imgBorder"]
-> ![Typ atrybutu i przewidywanie semantyczne.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Typ atrybutu i przewidywanie semantyczne")
+1. Aby używać modeli AI do inteligentnego przewidywania semantyki, oszczędzać czas i poprawiać dokładność, upewnij się, że **Inteligentne mapowanie** jest włączone. Inteligentne mapowanie podświetla rekomendacje semantyki w oparciu o AI w polu **Typ**. Możesz zastąpić sugerowany wybór, wybierając dowolny typ semantyczny z dostępnej listy opcji.
 
-Możliwe jest również dodanie niestandardowego typu semantycznego. Zaznacz pole typu dla atrybutu i wpisz nazwę niestandardowego typu semantycznego. Użytkownik może w ten sposób również zmieniać typy atrybutów, które były identyfikowane przez system.
+1. Dla każdego atrybutu wybierz semantyczny **Typ**, który najlepiej opisuje ten atrybut, np. imię, miasto czy adres e-mail.
 
-Wszystkie atrybuty, w przypadku których typ semantyczny jest identyfikowany automatycznie, są zgrupowane w sekcji **Przegląd zamapowanych pól**. Przejrzyj te atrybuty i ich typy semantyczne, ponieważ zostaną użyte do połączenia encji w kroku scalania ujednolicania danych.
+   > [!NOTE]
+   > Jedno pole powinno mapować się na typ semantyczny *Person.FullName*, aby wypełnić nazwę klienta w karcie klienta. W przeciwnym razie karty klientów nie będą posiadały nazw.
 
-Atrybuty, które nie są automatycznie mapowane na typ semantyczny, są zgrupowane w sekcji **Definiuj dane w niezamapowanych polach**. Zaznacz pole typu semantycznego dla niezamapowanych atrybutów, lub wprowadź niestandardową nazwę typu atrybutu.
+   1. Aby zmienić typ atrybutu zidentyfikowany przez system, wybierz inny typ. Jeśli ten typ nie istnieje, utwórz własny typ semantyczny, wybierając pole **Typ** atrybutu i wpisując nazwę własnego typu semantycznego.
 
-> [!div class="mx-imgBorder"]
-> ![Klucz podstawowy i typ atrybutu.](media/data-manager-configure-map-add-attributes.png "Klucz podstawowy i typ atrybutu")
+   1. Aby dodać atrybut zawierający adres URL do publicznie dostępnych zdjęć profilowych lub logo, wybierz encję i pole, które zawiera adres URL. W polu **Typ** wprowadź następujące:
+      - Dla osoby: Person.ProfileImage
+      - Dla organizacji: Organization.LogoImage
 
-> [!NOTE]
-> Jedno pole powinno być zamapowane na typ semantyczny Person.FullName, aby wypełnić nazwę klienta na karcie klienta. W przeciwnym razie karty klientów nie będą posiadały nazw. 
+   1. Dla atrybutu nazwy konta wpisz "Organization.Name" w polu **Typ**.
 
-## <a name="add-and-remove-attributes-and-entities"></a>Dodawanie i usuwanie atrybutów i encji
+1. Przejrzyj atrybuty, w których typ semantyczny jest identyfikowany automatycznie. Atrybuty te są wymienione w **Przegląd zmapowanych pól**. Tylko atrybuty tego samego typu mogą być łączone w kroku **Ujednolicone pola klienta**. Typy semantyczne są wykorzystywane do automatycznego sugerowania spostrzeżeń. Upewnij się, że wybrane przez ciebie typy są spójne dla wszystkich wybranych jednostek.
 
-1. Na **Ujednolicanie** > **Mapa** wybierz **Edytuj pola**.
+1. W przypadku atrybutów, które nie są automatycznie mapowane do typu semantycznego, wybierz pole typu semantycznego, wpisz własną nazwę typu atrybutu lub pozostaw je niezmapowane. Atrybuty te są wymienione w punkcie **Definiowanie danych w polach niemapowanych**.
 
-2. W okienku **Edytuj pola** dodaj lub usuń atrybuty i encje. Aby znaleźć i wybrać swoje atrybuty i encje, należy użyć narzędzia Wyszukaj lub przewinąć. Nie można usunąć atrybutu lub encji, jeśli zostały już dopasowane.
+1. Po wykonaniu kroków dla każdej jednostki wybierz **Zapisz pola źródłowe**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Dodawanie lub usuwanie atrybutów.](media/configure-data-map-edit.png "Dodawanie lub usuwanie atrybutów")
+1. Wybierz **Dalej**.
 
-3. Wybierz **Zastosuj**.
-
-## <a name="add-images-to-profiles"></a>Dodawanie obrazów do profilów
-
-Jeśli encja zawiera adresy URL publicznie dostępnych obrazów profilów lub logo, można dodać je do profilu ujednoliconego klienta.
-
-Wybierz encję i znajdź pole zawierające adres URL do obrazu profilu. W polu wejściowym **Wpisz** ręcznie wprowadź poniższą wartość: 
-- Dla osoby: Person.ProfileImage
-- Dla organizacji: Organization.LogoImage
-
-Wykonaj kroki procedury ujednolicania i upewnij się, że atrybut zawierający adres URL obrazu jest dodany również w kroku [Scal](merge-entities.md).
-
-## <a name="set-attributes-for-organizations"></a>Ustawianie atrybutów dla organizacji
-
-Dla organizacji (wersja zapoznawcza) typ atrybutu powinien zostać zamapowany na „Organization.Name”
-> [!div class="mx-imgBorder"]
-> ![Klucz podstawowy i typ atrybutu B2B.](media/configure-data-map-edit-b2b.png "Klucz podstawowy i typ atrybutu B2B")
-
-## <a name="next-step"></a>Następny krok
-
-W ramach procesu ujednolicenia danych przejdź na stronę **Dopasowywanie**. Więcej informacji na temat tej fazy można przeczytać na stronie [**Dopasowywanie**](match-entities.md).
-
-> [!TIP]
-> Zapoznaj się z następującym filmem: [Wprowadzenie: Tworzenie ujednoliconego profilu klienta](https://youtu.be/oBfGEhucAxs).
-
+> [!div class="nextstepaction"]
+> [Następny krok: Usuń duplikaty](remove-duplicates.md)
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

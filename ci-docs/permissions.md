@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b80f07dfa734f4dd762bd711151a7045f24bed7d
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653581"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740916"
 ---
 # <a name="user-permissions"></a>Uprawnienia użytkowników
 
@@ -41,7 +41,7 @@ Istnieją trzy typy ról:
 
 - Wszystkie uprawnienia dostępne dla Przeglądającego.
 - Ładuj i przekształcaj dane przy użyciu strony **Źródła danych**.
-- Uzupełnij sekcje *Ujednolicenie danych* (**Mapowanie**, **Dopasowywanie** i **Scalanie**), które skutkują encją ujednoliconego profilu klienta.
+- Zakończ **Ujednolicanie danych**, którego efektem jest ujednolicony profil klienta.
 - Zdefiniuj **Relacje** i **Działania**.
 - Utwórz segmenty, korzystając ze strony **Segmenty**.
 - Utwórz miary za pomocą strony **Miary**.

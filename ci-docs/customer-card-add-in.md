@@ -13,16 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 2dfa6c643cbe9a8531a085d8ce01b0f64776476f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646610"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755649"
 ---
 # <a name="customer-card-add-in-preview"></a>Dodatek kart klientów (wersja zapoznawcza)
-
-
 
 Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Mając zainstalowany dodatek karty klientów w obsługiwanej aplikacji Dynamics 365, możesz wyświetlać pola profilu klienta, szczegółowe informacje i oś czasu działań. Ten dodatek będzie pobierać dane z usługi Customer Insights, co nie ma wpływu na dane w połączonej aplikacji Dynamics 365.
 
@@ -31,7 +29,7 @@ Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Mając z
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Ten dodatek działa tylko w aplikacjach opartych na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
-- Aby dane usługi Dynamics 365 były mapowane do profilów klientów Customer Insights, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w kroku mapy proces ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- Aby dane usługi Dynamics 365 były mapowane do profilów klientów Customer Insights, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w kroku mapy proces ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Wszystkich użytkowników usługi Dynamics 365 dodatku Karta klienta należy [dodać jako użytkowników](permissions.md) w aplikacji Customer Insights, aby zobaczyć dane.
 - [Skonfigurowane funkcje wyszukiwania i filtrowania](search-filter-index.md) w funkcji Customer Insights są wymagane do działania wyszukiwania danych.
 - Każda kontrolka dodatku zależy od określonych danych w Customer Insights. Niektóre dane i kontrolki są dostępne tylko w środowiskach określonych typów. W konfiguracji dodatku zostanie podana informacja o tym, czy ze względu na wybrany typ środowiska kontrolka jest niedostępna. Dowiedz się więcej o [przypadkach użycia środowisk](work-with-business-accounts.md).
@@ -132,16 +130,16 @@ Nawet jeśli pola identyfikatorów zostały poprawnie skonfigurowane, klientów 
 
 **Rozwiązanie:**
 
-1. Upewnij się, że dodatek Karta został skonfigurowany zgodnie z instrukcjami: [Konfigurowanie dodatku Karta klienta](#configure-the-customer-card-add-in) 
+1. Upewnij się, że dodatek Karta został skonfigurowany zgodnie z instrukcjami: [Konfigurowanie dodatku Karta klienta](#configure-the-customer-card-add-in)
 
-1. Przejrzyj konfigurację pozyskiwania danych. Edytuj źródło danych dla systemu Dynamics 365, który zawiera identyfikator GUID kontaktu. Jeśli w edytorze Power Query identyfikator GUID kontaktu jest wyświetlany przy użyciu wielkich liter, spróbuj wykonać następujące czynności: 
+1. Przejrzyj konfigurację pozyskiwania danych. Edytuj źródło danych dla systemu Dynamics 365, który zawiera identyfikator GUID kontaktu. Jeśli w edytorze Power Query identyfikator GUID kontaktu jest wyświetlany przy użyciu wielkich liter, spróbuj wykonać następujące kroki:
     1. Edytuj źródło danych, aby otworzyć źródło danych w edytorze Power Query.
     1. Wybierz kolumnę identyfikatora kontaktu.
     1. Wybierz pozycję **Przekształć** na pasku nagłówka, aby wyświetlić dostępne akcje.
     1. Wybierz opcję **małe litery**. Sprawdź, czy identyfikatory GUID w tabeli są teraz zapisane przy użyciu małych liter.
     1. Zapisz źródło danych.
-    1. Aby propagować zmiany w identyfikatorze GUID, uruchom procesy pozyskiwania i ujednolicania danych oraz ich transmisji do klienta. 
+    1. Aby propagować zmiany w identyfikatorze GUID, uruchom procesy pozyskiwania i ujednolicania danych oraz ich transmisji do klienta.
 
-Po zakończeniu pełnego odświeżania kontrolki dodatku Karta klienta powinny wyświetlać oczekiwane dane. 
+Po zakończeniu przez system pełnego odświeżania kontrolki dodatku Karta klienta powinny wyświetlać oczekiwane dane.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

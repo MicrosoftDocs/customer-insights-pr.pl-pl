@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: cca91f2bbe2fc64554199082a79c1b388a01ab52
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647125"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740732"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Uzupełnianie częściowych danych przy użyciu przewidywań (przestarzałe)
 
@@ -37,7 +37,7 @@ Aby organizacja mogła korzystać z funkcji przewidywania, należy się upewnić
 
 1. Organizacja ma [skonfigurowane wystąpienie w Microsoft Dataverse](/ai-builder/build-model#prerequisites) i znajduje się w tej samej organizacji co Customer Insights.
 
-2. Środowisko szczegółowych informacji odbiorcy jest dołączone do wystąpienia Dataverse.
+2. Środowisko użytkownika Customer Insights jest dołączone do Twojego wystąpienia Dataverse.
 
 Aby uzyskać więcej informacji, zobacz temat [Tworzenie nowego środowiska](create-environment.md).
 
