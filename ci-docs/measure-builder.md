@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647285"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800339"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Konstruktor miar jest używany do tworzenia miar od podstaw
 
@@ -88,7 +88,7 @@ Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, mi
 
 1. Aby dodać więcej obliczeń dla miary, wybierz opcję **Nowe obliczenia**. Do nowych obliczeń można używać tylko elementów znajdujących się na tej samej ścieżce encji. Więcej obliczeń zostanie wyświetlonych jako nowe kolumny w jednostce wyniku pomiaru.
 
-1. Wybierz opcję **...** w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
+1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
 
 1. W obszarze **Podgląd** jest wyświetlony schemat danych encji wyjściowej miary wraz z filtrami i rozmiarami. Podgląd jest dynamicznie reaktywny na zmiany w konfiguracji.
 
@@ -158,7 +158,7 @@ Miary można tworzyć na poziomie poszczególnych kont (atrybut klienta, miara k
    1. Wybierz **ścieżkę relacji** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary. Jeśli do encji *Klient* jest dostępna tylko jedna ścieżka, ta kontrolka nie będzie wyświetlana.
    1. Wybierz opcję **Gotowe**, aby zastosować wybór.
 
-1. Wybierz opcję **...** w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
+1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
 
 1. W obszarze **Podgląd** jest wyświetlony schemat danych encji wyjściowej miary wraz z filtrami i rozmiarami. Podgląd jest dynamicznie reaktywny na zmiany w konfiguracji.
 

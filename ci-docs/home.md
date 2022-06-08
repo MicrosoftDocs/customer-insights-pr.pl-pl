@@ -11,34 +11,34 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
-ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
+ms.openlocfilehash: 621977068dc49b55f50f00e9762a4a5952d7b453
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2022
-ms.locfileid: "8743426"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768363"
 ---
 # <a name="explore-customer-insights"></a>Poznanie aplikacji Customer Insights
 
 Możesz uzyskać dostęp do [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) za pomocą następującego adresu URL: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
 
-**Strona główna** prowadzi Cię przez proces konfiguracji kluczowych funkcji oraz zawiera przegląd segmentów, miar i danych wzbogacających.
+Strona **Strona główna** prowadzi Cię przez proces konfiguracji kluczowych funkcji i zawiera przegląd segmentów, miar i danych wzbogacających.
 
 :::image type="content" source="media/home-page.png" alt-text="Zrzut ekranu strony głównej przedstawiający przykładowe statystyki.":::
 
 ## <a name="left-side-pane"></a>Okienko po lewej stronie
 
-Użyj lewego panelu, aby nawigować między różnymi obszarami Customer Insights. 
+Użyj lewego okienka, aby nawigować między różnymi obszarami Customer Insights.
 
-Jeśli pracujesz z klientami biznesowymi i indywidualnymi, możesz wybrać swoją główną grupę odbiorców, by odpowiednio się na niej skoncentrować. 
+Jeśli pracujesz z klientami biznesowymi i indywidualnymi, możesz wybrać swoją główną grupę odbiorców, by odpowiednio się na niej skoncentrować.
 
 ## <a name="application-header"></a>Nagłówek aplikacji
 
-Selektor **Środowisko** pokazuje środowisko, w którym pracujesz, i pozwala ci tworzyć lub zarządzać środowiskami jako administrator.
+Selektor **Środowisko** pokazuje środowisko, w którym pracujesz, i umożliwia tworzenie środowisk lub zarządzanie nimi jako administrator.
 
 Ikona uśmiechniętej buźki to kontrolka **Powiadomienia**. Wybierz ją, aby opowiedzieć nam o swoich doświadczeniach z Customer Insights. Aktywnie słuchamy waszych opinii i z góry dziękujemy za poinformowanie nas, co wam się podoba i jak możemy to poprawić.
 
-Kontrolka **Ustawienia**, przedstawiona w postaci ikony koła zębatego, umożliwia zbieranie szczegółów sesji dla Customer Insights oraz konfigurowanie globalnych ustawień dla profilu Microsoft 365. 
+Kontrolka **Ustawienia**, przedstawiona w postaci ikony koła zębatego, umożliwia zbieranie szczegółów sesji dla Customer Insights oraz konfigurowanie globalnych ustawień dla profilu Microsoft 365.
 
 Opcje **Pomocy**, oznaczone ikoną znaku zapytania, zawierają linki pomocy kontekstowej i inne pomocne zasoby.
 
@@ -46,7 +46,7 @@ Twoje zdjęcie profilowe otwiera **Menedżera kont** dla Twojego profilu w usłu
 
 ## <a name="getting-started-with-customer-insights-section"></a>Rozpoczęcie pracy z sekcją Customer Insights
 
-Ta sekcja zawiera karty, które pomogą ci przejść przez proces konfigurowania środowiska Customer Insights. 
+Ta sekcja zawiera karty, które pomogą ci przejść przez proces konfigurowania środowiska Customer Insights.
 
 1. Karta **Dodaj dane** pomoże ci w zaimportowaniu danych. Customer Insights obsługuje [kilka opcji wprowadzania danych o swoich klientach](data-sources.md). Wybierz **Dodaj źródła danych**, aby rozpocząć.
 1. Po pomyślnym zakończeniu początkowego importu danych możesz użyć karty **Ujednolicenie danych**, aby zharmonizować dane i [utworzyć ujednolicone profile klientów](data-unification.md) z różnych źródeł. 

@@ -1,41 +1,33 @@
 ---
-title: Rozpoczynanie pracy z płatną licencją aplikacji Dynamics 365 Customer Insights
+title: Kup licencje na Dynamics 365 Customer Insights
 author: m-hartmann
-description: Zapoznaj się z pierwszym uruchomieniem środowiska aplikacji Dynamics 365 Customer Insights i dowiedz się więcej o jej możliwościach.
+description: Kup licencję Dynamics 365 Customer Insights, zaloguj się i zapoznaj się z aplikacją.
 ms.author: mhart
 ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 8fcc1c97be87afe942aa3b5e23d1eb68008aa873
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9c83dc6716abd5f81eb7851d462d7d61791f542b
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641867"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768435"
 ---
-# <a name="get-started-after-purchasing-customer-insights"></a>Rozpoczynanie pracy po zakupie aplikacji Customer Insights
+# <a name="purchase-customer-insights"></a>Kup Customer Insights
 
-W tym artykule opisano, jak wykonać pierwsze kroki po zakupie subskrypcji aplikacji Dynamics 365 Customer Insights przez organizację. Jeśli chcesz kupić usługę Customer Insights, nasze opcje do kontaktu są wymienione na [stronie internetowej Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/). 
-
-Po zakupieniu licencji subskrypcji aplikacji Customer Insights administrator globalny dzierżawcy platformy Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. 
-
-Aplikacja Customer Insights ma licencję na każdego dzierżawcę i zawiera wiele możliwości. Aby zwiększyć normę domyślną, można kupić więcej wydajności i licencji. 
-- [Omówienie cen](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
-- Pojemność i uprawnienia: [Przewodnik licencjonowania rozwiązania Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
+Aby dokonać zakupu Dynamics 365 Customer Insights, zobacz dostępne opcje kontaktu w [witrynie sieci Web Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/).
 
 Jeśli chcesz wypróbować usługę i funkcje, zobacz [Konfigurowanie środowiska próbnego](trial-signup.md).
 
-## <a name="start-with-customer-insights"></a>Rozpoczynanie pracy z aplikacją Customer Insights
+Aplikacja Customer Insights ma licencję na każdego dzierżawcę i zawiera wiele możliwości. Aby zwiększyć normę domyślną, można kupić więcej wydajności i licencji.
+- [Omówienie cen](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
+- Pojemność i uprawnienia: [Przewodnik licencjonowania rozwiązania Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
 
-Środowisko pierwszego uruchomienia ułatwia wybranie początkowego fokusu przy użyciu aplikacji Customer Insights i poznanie jej możliwości przy użyciu przykładowych danych. Następnym krokiem jest utworzenie własnego środowiska i praca z własnymi danymi.
-
-**Aby zalogować się po raz pierwszy**:
+## <a name="sign-in-for-the-first-time"></a>Logowanie się po raz pierwszy
 
 1. Przejdź do [adresu URL aplikacji Customer Insights](https://home.ci.ai.dynamics.com).
-1. Zaloguj się za pomocą konta służbowego lub szkolnego. 
+1. Zaloguj się za pomocą konta służbowego lub szkolnego.
 1. Zaakceptuj warunki użytkowania usługi i ustaw preferencje dotyczące zawartości dla środowiska Customer Insights.
 
-## <a name="create-your-own-environment"></a>Tworzenie własnego środowiska
-
-Po pierwszym zalogowaniu zobaczysz środowisko z przykładowymi danymi. Tych danych można używać do poznawania funkcji i aplikacji. Aby używać własnych danych, należy [utworzyć środowisko](create-environment.md).
+Po pierwszym zalogowaniu zobaczysz środowisko z przykładowymi danymi. Możesz użyć tych danych, aby poznać funkcje i zapoznać się z aplikacją. Aby używać własnych danych, [utwórz środowisko](create-environment.md).

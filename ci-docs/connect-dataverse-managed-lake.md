@@ -11,12 +11,12 @@ ms.reviewer: mhart
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: e8a294a4bad1581539b5905160cddcd625699d90
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646628"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800186"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Łączenie się z danymi w repozytorium typu data lake, którym zarządza Microsoft Dataverse
 
@@ -62,7 +62,7 @@ Aby połączyć się z innym data lake Dataverse, [utwórz nowe źródło danych
 
 1. Przejdź do **Dane** > **Źródła danych**.
 
-2. Kliknij wielokropek obok źródła danych, który chcesz zaktualizować.
+2. Obok źródło danych chcesz zaktualizować, wybierz z wielokropek pionowy (&vellip;).
 
 3. Wybierz opcję **Edytuj** z listy.
 

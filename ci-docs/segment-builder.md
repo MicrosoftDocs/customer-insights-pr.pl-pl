@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c8e9e4976ade36c1c3c4f688a667b329bfde6e3e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647078"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800109"
 ---
 # <a name="create-segments"></a>Utwórz segmenty
 
@@ -134,8 +134,9 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 > - Konstruktor segmentów nie zasugeruje prawidłowych wartości z encji podczas ustawiania operatorów na określonych warunkach. Można przejść do obszaru **Dane** > **Encje** i pobrać dane encji, aby sprawdzić, które wartości są dostępne.
 > - Warunki oparte na datach umożliwiają przełączanie się między stałymi datami a zmiennoprzecinkowym zakresem dat.
 > - Jeśli dla swojego segmentu masz kilka reguł, reguła, która jest edytowana, ma obok siebie pionowy niebieski wiersz.
-> - Reguły i warunki można przenieść do innych miejsc definicji segmentu. Wybierz pozycję [...] obok reguły lub warunku i wybierz sposób i miejsce jego przeniesienia.
+> - Reguły i warunki można przenieść do innych miejsc definicji segmentu. Wybierz wielokropek pionowy (&vellip;) obok reguły lub warunku i wybierz sposób i miejsce jego przeniesienia.
 > - Kontrolki **Cofnij** i **Ponów** na pasku poleceń umożliwiają cofnięcie zmian.
+> - Po utworzeniu segmentu niektóre segmenty [umożliwiają śledzenie wykorzystania tego segmentu](segments.md#track-usage-of-a-segment).
 
 ## <a name="quick-segments"></a>Szybkie segmenty
 

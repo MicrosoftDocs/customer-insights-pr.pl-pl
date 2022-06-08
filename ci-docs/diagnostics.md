@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755275"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807594"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Przekazywanie logów w Dynamics 365 Customer Insights z Azure Monitor (wersja zapoznawcza)
 
@@ -38,7 +38,7 @@ Aby skonfigurować diagnostykę w Customer Insights, muszą być spełnione nast
 
 - Masz aktywną [subskrypcję platformy Azure](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Masz uprawnienia [administratora](permissions.md#admin) w Customer Insights.
-- Masz rolę **Współautora** i **Administratora dostępu użytkownika** na zasobie docelowym w Azure. Zasobem tym może być konto Azure Storage, centrum zdarzeń platformy Azure lub obszar roboczy Azure Log Analytics. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal).
+- Masz rolę **Współautora** i **Administratora dostępu użytkownika** na zasobie docelowym w Azure. Zasobem może być konto Azure Data Lake Storage, centrum zdarzeń platformy Azure lub obszar roboczy usługi Azure Log Analytics. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal). To uprawnienie jest niezbędne do konfigurowania ustawień diagnostycznych w funkcji Customer Insights, ale można je zmienić po pomyślnej konfiguracji.
 - Spełnione są [wymagania docelowe](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) usługi Azure Storage, w centrum zdarzeń platformy Azure lub analiza dzienników Azure.
 - Masz co najmniej rolę **Czytelnik** w grupie zasobów, do której należy zasób.
 

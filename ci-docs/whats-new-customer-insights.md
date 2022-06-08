@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 386198c838929a20e136288fffb1015707654d8d
-ms.sourcegitcommit: 9f256af5c4f7e99305bf09087f7ec05eebeae6a0
+ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "8700950"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833643"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nowości w rozwiązaniu Dynamics 365 Customer Insights
 
@@ -58,6 +58,7 @@ LiveRamp zapewnia rozwiązywanie problemów z tożsamością i konsolidację dan
 Aby uzyskać więcej informacji, zobacz [Wzbogacanie profilów klientów przy użyciu danych tożsamości z LiveRamp (wersja zapoznawcza)](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Organizuj segmenty i miary za pomocą znaczników i filtrów
+
 Jeśli twoja organizacja utrzymuje wiele segmentów lub miar, znalezienie właściwego może czasem wydawać się trudne. Ta nowa funkcja pozwala na organizowanie list za pomocą etykiet i kolumn. Pomaga szybko i łatwo wyszukiwać dane oraz dostosowywać widoki.
 
 Aby uzyskać więcej informacji, zobacz [Praca z etykietami i kolumnami](work-with-tags-columns.md).
@@ -65,9 +66,9 @@ Aby uzyskać więcej informacji, zobacz [Praca z etykietami i kolumnami](work-wi
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Włącz udostępnianie danych z Dataverse, gdy korzystasz z własnego konta przechowywania danych
 
 Jeśli Twoje środowisko używa własnej usługi Azure Data Lake Storage do przechowywania danych Customer Insights, udostępnianie danych za pomocą Microsoft Dataverse wymaga dodatkowej konfiguracji.
-Wcześniej mogłeś włączyć udostępnianie danych w Dataverse tylko wtedy, gdy Twoje dane były przechowywane w naszym zarządzanym data lake. 
+Wcześniej mogłeś włączyć udostępnianie danych w Dataverse tylko wtedy, gdy Twoje dane były przechowywane w naszym zarządzanym data lake.
 
-Aby uzyskać więcej informacji, zobacz [Włącz udostępnianie danych w Dataverse z własnego magazynu Azure Data Lake Storage (wersja zapoznawcza)](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
+Aby uzyskać więcej informacji, zobacz [Włącz udostępnianie danych w Dataverse z własnego magazynu Azure Data Lake Storage (wersja zapoznawcza)](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
 
 ### <a name="new-export-destinations-iterable-and-braze"></a>Nowe miejsca eksportu: Iterable i Braze
 
@@ -81,7 +82,6 @@ Zmieniające się interfejsy API w połączonych usługach wymagają aktualizacj
 
 - Google Ads: Nowa wersja łącznika eksportu Google Ads upraszcza proces uwierzytelniania i pozwala teraz na automatyczne tworzenie nowych odbiorców Google Ads. 
 - Marketo: nowa wersja łącznika eksportu Marketo zapewnia obsługę identyfikatora Marketo ID, co pozwala uniknąć duplikatów danych, zaktualizować istniejące rekordy i utworzyć nowe rekordy w Marketo. 
-
 
 ## <a name="february-2022-updates"></a>Aktualizacje z lutego 2022 r.
 

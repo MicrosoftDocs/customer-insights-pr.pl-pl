@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755463"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808519"
 ---
 # <a name="work-with-customer-insights-apis"></a>Pracuj z interfejsami API Customer Insights
 
@@ -31,11 +31,11 @@ Ten artykuł opisuje, jak uzyskać dostęp do interfejsów API Customer Insights
 
 1. [Zaloguj się](https://home.ci.ai.dynamics.com) do aplikacji Customer Insights. Jeśli nie dysponujesz jeszcze subskrypcją, [Załóż konto w celu rozpoczęcia wersji próbnej Customer Insights](https://aka.ms/tryci).
 
-1. Aby włączyć interfejsy API w środowisku Customer Insights, przejdź do **Administrator** > **Uprawnienia**. Konieczne są więc uprawnienia administratora.
+1. Aby włączyć interfejsy API w środowisku Customer Insights, przejdź do **Administrator** > **Zabezpieczenia**. Konieczne są więc uprawnienia administratora.
 
 1. Przejdź do **karty interfejsy API** i wybierz przycisk **Włącz**.    
  
-   Włączenie interfejsów API powoduje utworzenie podstawowego i dodatkowego klucza subskrypcji dla Twojej instancji, który jest używany w żądaniach API. Klucze można wygenerować ponownie, wybierając z listy ponowne **Wygeneruj ponownie podstawowy** lub **Wygeneruj ponownie pomocniczy** w **Administrator** > **Uprawnienia** > **Interfejsy API**.
+   Włączenie interfejsów API powoduje utworzenie podstawowego i dodatkowego klucza subskrypcji dla Twojej instancji, który jest używany w żądaniach API. Możesz ponownie wygenerować klucze, wybierając **Regeneruj podstawową** lub **Regeneruj drugorzędną** w **Administrator** > **Zabezpieczenia** > **APIs**.
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -62,14 +62,12 @@ Te kroki pomogą Ci rozpocząć korzystanie z interfejsów API Customer Insights
 1. W lewym okienku wybierz pozycję **Rejestracja aplikacji**.
 
 1. Wybierz **Nowa rejestracja**, podaj nazwę aplikacji i wybierz typ konta.
- 
+
    Opcjonalnie dodaj przekierowanie. http://localhost jest wystarczający do projektowania aplikacji na komputerze lokalnym.
 
 1. W nowej rejestracji aplikacji przejdź do **uprawnienia interfejsu API**.
 
-<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
-
-1. Zaznacz pole wyboru **Dodaj uprawnienie** i w okienku bocznym wybierz pozycję **Customer Insights**.
+1. Wybierz opcję **Dodaj uprawnienie** i w okienku bocznym wybierz pozycję **AI usługi Dynamics 365 for Customer Insights**.
 
 1. Dla **Typu uprawnienia** wybierz **Uprawnienia delegowane**, a następnie wybierz uprawnienie **user_impersonation**.
 
@@ -109,7 +107,7 @@ Aby uzyskać więcej informacji na temat korzystania z interfejsów API w naszyc
 
 1. Na koniec musimy dodać nazwę rejestracji aplikacji jako użytkownika w Customer Insights.  
    
-   Otwórz Customer Insights, przejdź do **Administrator** > **Uprawnienia** i wybierz **Dodaj użytkownika**.
+   Otwórz usługę Customer Insights, przejdź do **Administrator** > **Zabezpieczenia** i wybierz opcję **Dodaj użytkownika**.
 
 1. Wyszukaj nazwę rejestracji swojej aplikacji, wybierz ją z listy wyników wyszukiwania i wybierz pozycję **Zapisz**.
 

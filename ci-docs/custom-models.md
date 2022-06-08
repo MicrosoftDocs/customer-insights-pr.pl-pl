@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646718"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800433"
 ---
 # <a name="custom-machine-learning-models"></a>Niestandardowe modele Uczenie maszynowe
 
@@ -92,7 +92,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
 ## <a name="edit-a-workflow"></a>Edytuj przepływ pracy
 
-1. Na stronie **Modele niestandardowe** wybierz wielokropek pionowy w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy i wybierz **Edytuj**.
+1. Na stronie **Modele niestandardowe** wybierz wielokropek pionowy (&vellip;) w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy i wybierz **Edytuj**.
 
 1. Można zaktualizować rozpoznawalną nazwę przepływu pracy w polu **Wyświetlana nazwa**, ale nie można zmienić skonfigurowanej usługi sieci web ani potoku. Wybierz **Dalej**.
 
@@ -108,7 +108,7 @@ Przewidywania umożliwiają zwiększanie komfortu obsługi klienta, poprawianie 
 
 ## <a name="run-a-workflow"></a>Uruchamianie przepływu pracy
 
-1. Na stronie **Modele niestandardowe**, wybierz wielokropek pionowy w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy.
+1. Na stronie **Modele niestandardowe**, wybierz wielokropek pionowy (&vellip;) w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy.
 
 1. Wybierz **Uruchom**.
 
@@ -116,7 +116,7 @@ Przepływ pracy jest również uruchamiany automatycznie przy każdym planowanym
 
 ## <a name="delete-a-workflow"></a>Usuń przepływ pracy
 
-1. Na stronie **Modele niestandardowe**, wybierz wielokropek pionowy w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy.
+1. Na stronie **Modele niestandardowe**, wybierz wielokropek pionowy (&vellip;) w kolumnie **Akcje** obok utworzonego uprzednio przepływu pracy.
 
 1. Wybierz **Usuń** i potwierdź usunięcie.
 

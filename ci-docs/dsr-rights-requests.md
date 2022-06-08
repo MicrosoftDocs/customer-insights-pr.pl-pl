@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 5b39452d7a4612242739e8000e57217954c71289
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641529"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808574"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -41,7 +41,7 @@ Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia
 1. Zaloguj się w Dynamics 365 Customer Insights.
 2. Przejdź do **Dane** > **Źródła danych**
 3. Dla każdego źródła danych z listy, które zawiera usunięte dane klienta:
-   1. Wybierz (...) i wybierz **Odśwież**.
+   1. Wybierz wielokropek pionowy (&vellip;) i wybierz opcję **Odśwież**.
    2. Sprawdź status źródła danych w **Stan**. Znacznik wyboru oznacza, że odświeżanie zakończyło się powodzeniem. Trójkąt ostrzegawczy oznacza, że wystąpił problem. Jeśli zostanie wyświetlony trójkąt ostrzegawczy, skontaktuj się z D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
@@ -52,7 +52,7 @@ Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia
 Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia danych użytkownika Customer Insights:
 
 1. Zaloguj się w Dynamics 365 Customer Insights.
-2. Przejdź do **Administrator** > **Uprawnienia**.
+2. Przejdź do **Administrator** > **Zabezpieczenia** > **Uprawnienia**.
 3. Zaznacz pole wyboru dla użytkownika, którego chcesz usunąć.
 4. Wybierz **Usuń**.
 

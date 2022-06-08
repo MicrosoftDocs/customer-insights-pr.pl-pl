@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740732"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800663"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Uzupełnianie częściowych danych przy użyciu przewidywań (przestarzałe)
 
@@ -95,7 +95,7 @@ W ramach tego przepływu użytkownik powinien wybrać konkretny atrybut, który 
 
 2. Wybierz przewidywania do przeglądu.
 
-3. W kolumnie **akcje** wybierz wielokropek i wybierz opcję **widok**.
+3. Wybierz z wielokropek pionowy (&vellip;) w kolumnie **Akcje** i wybierz pozycję **Widok**.
 
 4. W widoku przewidywania będzie widoczna liczba punktów danych.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ Po utworzeniu przewidywanie można dostosować model w narzędziu AI Builder, ab
 
 2. Zaznacz przewidywanie, które chcesz edytować.
 
-3. W kolumnie **akcje** wybierz wielokropek i wybierz opcję **widok**.
+3. Wybierz z wielokropek pionowy (&vellip;) w kolumnie **Akcje** i wybierz pozycję **Widok**.
 
 4. Wybierz **Dostosuj w narzędziu AI Builder**.
 
@@ -139,7 +139,7 @@ Następne uruchomienie funkcji przewidywania będzie mieć zaktualizowany utworz
 
 2. Wybierz przewidywanie do usunięcia.
 
-3. W kolumnie **akcje** wybierz wielokropek i wybierz opcję **usuń**.
+3. Wybierz z wielokropek pionowy (&vellip;) w kolumnie **Akcje** i wybierz pozycję **Usuń**.
 
 4. Potwierdź usunięcie.
 
@@ -153,7 +153,7 @@ Jeśli użytkownik nie może zakończyć procesu dołączania Dataverse z powodu
 - Nie są przyznawane uprawnienia aplikacji.
     1. Przejdź do [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com).
     1. Wybierz **Środowiska**.
-    1. Wybierz wielokropek obok środowiska, do którego chcesz dodać uprawnienie i wybierz **Ustawienia**.
+    1. Wybierz wielokropek pionowy (&vellip;) obok środowiska, do którego chcesz dodać uprawnienie, i wybierz opcję **Ustawienia**.
     1. Rozwiń **Użytkownicy + uprawnienia** i wybierz **Użytkownicy**.
     1. Wybierz **+ Nowy** i wybierz **Użytkownik**.
     1. Wybierz **Użytkownik aplikacji**, jeśli jeszcze nie został on wybrany i wprowadź następujące informacje:

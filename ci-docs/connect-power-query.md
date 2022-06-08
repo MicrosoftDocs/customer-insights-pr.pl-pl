@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 50258365c3134c588aa79ec72c66d0de329e0ff1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 4db97ec02eb96662d30a8536ea42372f81f318d2
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646880"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800188"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Łączenie ze źródłem danych Power Query
 
@@ -76,7 +76,7 @@ Zobacz [dokumentację dotyczącą łączników w edytorze Power Query](/power-qu
 
 1. Przejdź do **Dane** > **Źródła danych**.
 
-2. Wybierz wielokropek pionowy obok źródła danych, które chcesz zmienić, i z menu rozwijanego wybierz pozycję **Edytuj**.
+2. Wybierz wielokropek (&vellip;) pionowy obok źródła danych, które chcesz zmienić, i z menu rozwijanego wybierz pozycję **Edytuj**.
 
    > [!div class="mx-imgBorder"]
    > ![Opcja Edytuj.](media/edit-option-data-sources.png "Opcja Edytuj")

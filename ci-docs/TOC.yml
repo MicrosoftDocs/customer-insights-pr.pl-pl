@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Katalog szkoleń
   items:
-    - name: Rozpoczynanie pracy
+    - name: Informacje o specjalistach od danych klientów firmy Microsoft
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Rozpoczynanie pracy z aplikacją Customer Insights
       href: /learn/modules/get-started-customer-data-platform/
     - name: Pozyskiwanie danych
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Rozpoczynanie pracy z licencją płatną
       href: paid-license.md
-    - name: Utwórz nowe środowisko
-      href: create-environment.md
     - name: Poznanie aplikacji Customer Insights
       href: home.md
     - name: Praca z etykietami i kolumnami
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Rozwiązanie Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: Przegląd schematów encji w Common Data Model
       href: entity-schemas.md
-    - name: Dane aplikacji Customer Insights w Dataverse
-      href: customer-insights-dataverse.md
     - name: Tworzenie relacji i połączonych encji
       href: relationships.md
     - name: Definiowanie mapowań semantycznych
       href: semantic-mappings.md
+- name: Środowiska
+  items:
+    - name: Utwórz nowe środowisko
+      href: create-environment.md
+    - name: Nawiązywanie połączenia z usługą Microsoft Dataverse
+      href: customer-insights-dataverse.md
+    - name: Użyj własnego Azure Data Lake Storage
+      href: own-data-lake-storage.md
+    - name: Zarządzanie ustawieniami środowiska
+      href: manage-environments.md
+    - name: Połącz z kontem magazynu przy użyciu funkcji Główna usługa
+      href: connect-service-principal.md
 - name: Administracja
   items:
     - name: Konfigurowanie konfiguracji systemu
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Przypisywanie uprawnień użytkowników
       href: permissions.md
-    - name: Omówienie połączeń
-      href: connections.md
-    - name: Zarządzanie wieloma środowiskami
-      href: manage-environments.md
     - name: Używanie własnej usługi Key Vault
       href: use-azure-key-vault.md
-    - name: Połącz z kontem magazynu przy użyciu funkcji Główna usługa
-      href: connect-service-principal.md
     - name: Eksportuj dzienniki diagnostyczne
       href: diagnostics.md
-    - name: Limity usługi
-      href: service-limits.md
-    - name: Uprawnienia i żądania usługi DSR
-      href: dsr-rights-requests.md
+    - name: Omówienie połączeń
+      href: connections.md
 - name: Interfejsy API
   items:
     - name: Praca z API
@@ -324,5 +328,9 @@
       items:
         - name: Tworzenie przewidywać przy użyciu danych dotyczących zgody
           href: consent-management/predictions-consent-data.md
+- name: Limity usługi
+  href: service-limits.md
+- name: Uprawnienia i żądania usługi DSR
+  href: dsr-rights-requests.md
 - name: Uzyskiwanie pomocy technicznej
   href: /power-platform/admin/get-help-support

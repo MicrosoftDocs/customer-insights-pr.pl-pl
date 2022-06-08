@@ -1,7 +1,7 @@
 ---
 title: Segmenty w aplikacji Customer Insights
 description: Omówienie segmentów oraz sposobu ich tworzenia i zarządzania nimi.
-ms.date: 03/30/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 9791e971387eb7db91ed7c4e4fe76552656013ba
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d616ec8273115203dddb59334a348c66e72fa678
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647065"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800755"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -58,7 +58,7 @@ Po zaznaczeniu segmentu dostępne są następujące akcje:
 - **Wyświetlanie** szczegółowych informacji o segmencie, w tym trendu liczby członków podgląd składników segmentu.
 - **Pobierz** listę członków jako plik .CSV.
 - **Edytuj** segment, aby zmienić jego właściwości.
-- **Utwórz duplikat** segmentu. Można od razu edytować jego właściwości lub po prostu zapisać duplikat.
+- **Utwórz duplikat** segmentu. Można od razu edytować właściwości tej aplikacji lub zapisać duplikat.
 - **Odśwież** segment, aby uwzględnić najnowsze dane.
 - **Aktywuj** lub **Dezaktywuj** segment. W przypadku nieaktywnych segmentów definicja segmentu istnieje, ale nie zawiera jeszcze żadnych klientów. Aktywny segment szuka klientów, którzy pasują do definicji segmentu. Jeśli skonfigurowano [zaplanowane odświeżanie](system.md#schedule-tab), segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. W przypadku aktywowania nieaktywnego segmentu zostanie on odświeżony i będzie uwzględniony w zaplanowanych odświeżeniach.
   Alternatywnie można użyć funkcji **Zaplanuj później** na liście rozwijanej **Aktywuj/Zdezaktywuj**, aby określić przyszłą datę i godzinę aktywacji i dezaktywacji konkretnego segmentu.
@@ -75,7 +75,8 @@ Po zaznaczeniu segmentu dostępne są następujące akcje:
 ## <a name="refresh-segments"></a>Odśwież segmenty
 
 Można odświeżyć wszystkie segmenty naraz, wybierając **Odśwież wszystko** na stronie **Segmenty** lub odświeżyć jeden lub wiele segmentów po ich zaznaczeniu i wybraniu **Odśwież** z opcji. Alternatywnie można skonfigurować cykliczne odświeżanie w **Administracja** > **System** > **Harmonogram**. Podczas konfigurowania odświeżania cyklicznego mają zastosowanie następujące reguły:
-- Wszystkie segmenty z typem **Dynamiczny** lub **Rozszerzenie** zostaną automatycznie odświeżone w ustawionym rytmie. Po zakończeniu odświeżania **Stan** wskazuje, czy podczas odświeżania segmentu wystąpiły jakieś problemy. **Ostatnio odświeżono** wskazuje czas ostatniego udanego odświeżenia. Jeśli wystąpi błąd, wybierz błąd, aby wyświetlić szczegółowe informacje o tym, co się stało.
+
+- Wszystkie segmenty z typem **Dynamiczny** lub **Rozszerzenie** zostaną automatycznie odświeżone w ustawionym rytmie. Po zakończeniu odświeżania **Stan** wskazuje, czy podczas odświeżania segmentu wystąpiły jakiekolwiek problemy. **Ostatnio odświeżono** wskazuje czas ostatniego udanego odświeżenia. Jeśli wystąpi błąd, wybierz błąd, aby wyświetlić szczegółowe informacje o tym, co się stało.
 - Segmenty o typie **Statyczny** *nie będą* odświeżane automatycznie. **Ostatnio odświeżono** wskazuje znacznik czasu ostatniego uruchomienia lub ręcznego odświeżania segmentów statycznych.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
@@ -86,7 +87,7 @@ Segment można wyeksportować ze strony segmentów lub ze [strony eksportowania]
 
 1. Przejdź do strony **Segmenty**.
 
-1. Wybierz **Pokaż więcej [...]** dla segmentu, który chcesz wyeksportować.
+1. Wybierz pionową elipsę (&vellip;) dla segmentu, który chcesz wyeksportować.
 
 1. Z listy rozwijanej akcji wybierz opcję **Zarządzanie eksportami**.
 
@@ -97,6 +98,26 @@ Segment można wyeksportować ze strony segmentów lub ze [strony eksportowania]
    1. Aby utworzyć nowy eksport dla wybranego segmentu, wybierz opcję **Dodaj eksport**. Aby uzyskać więcej informacji o tworzeniu eksportów, zobacz [Konfiguracja nowego eksportu](export-destinations.md#set-up-a-new-export).
 
 1. Wybierz opcję **Wstecz**, aby powrócić do strony głównej segmentów.
+
+## <a name="track-usage-of-a-segment"></a>Śledzenie użycia segmentu
+
+Jeśli używasz segmentów w aplikacjach, które są oparte na tej samej organizacji Microsoft Dataverse, która jest połączona z Customer Insights, możesz śledzić użycie segmentu. W [przypadku segmentów usługi Customer Insights używanych w Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile) system informuje o poszczególnych segmentach.
+
+Podczas edytowania segmentu, który jest używany w środowisku Customer Insights lub podczas podróży klienta w Marketing, baner w [Konstruktorze segmentów](segment-builder.md) informuje o zależnościach. Szczegóły zależności można sprawdzić bezpośrednio na bannerze lub wybierając opcję **Użycie** w konstruktorze segmentów.
+
+W **okienku użycia segmentu** są dostępne szczegółowe informacje dotyczące korzystania z tego segmentu w aplikacjach opartych na Dataverse. W przypadku segmentów używanych w miejscu klientów można znaleźć łącze do inspekcji fragmentów danych w programie Marketing, w którym jest używany ten segment. Jeśli masz uprawnienia dostępu do aplikacji Marketing, możesz uzyskać dostęp do kolejnych informacji.
+
+:::image type="content" source="media/segment-usage-pane.png" alt-text="Okienko boczne ze szczegółami użycia segmentu w konstruktorze segmentów.":::
+
+Podczas próby usunięcia tego segmentu system informuje o śledzenia segmentu. Jeśli segment, który chcesz usunąć, jest używany w procesie pozyskiwania klientów w marketingu, proces ten zostanie zatrzymany dla wszystkich użytkowników w segmencie. Jeśli materiały sprzedażowe są częścią kampanii marketingowej, usunięcie będzie miało wpływ na samą kampanię. Jednak mimo ostrzeżeń nadal można usunąć ten segment.
+
+:::image type="content" source="media/segment-usage-delete.png" alt-text="Okno dialogowe potwierdzenia usuwania segmentu, gdy segment jest używany w aplikacji Dataverse.":::
+
+### <a name="supported-apps"></a>Obsługiwane interfejsy API
+
+Użycie jest obecnie śledzone w następujących aplikacjach opartych na następujących Dataverse:
+
+- [Procesy pozyskiwania klientów w Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile)
 
 ## <a name="view-processing-history-and-segment-members"></a>Wyświetlanie historii przetwarzania i członków segmentu
 
@@ -117,6 +138,5 @@ W dolnej części znajduje się lista członków segmentu.
 > Pola wyświetlane na tej liście są oparte na atrybutach encji segmentu.
 >
 >Lista jest podglądem pasujących składników segmentu i zawiera pierwsze 100 rekordów segmentu, dzięki czemu można szybko oceniać i przejrzeć w razie potrzeby jego definicje. Aby wyświetlić wszystkie pasujące rekordy, należy [wyeksportować segment](export-destinations.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

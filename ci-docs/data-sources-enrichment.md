@@ -1,19 +1,19 @@
 ---
 title: Wzbogacanie źródeł danych
 description: Wzbogać źródła danych przed przejściem przez proces ujednolicania danych.
-ms.date: 03/02/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755699"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800294"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Wzbogacanie źródeł danych (wersja zapoznawcza)
 
@@ -27,7 +27,7 @@ Aby tworzyć lub edytować wzbogacenia, musisz mieć uprawnienia współautora l
 
 1. Przejdź do **Dane** > **Źródła danych**.
 
-1. Zaznacz pionową elipsę obok źródła danych, które chcesz wzbogacić i wybierz **Wzbogać**.
+1. Zaznacz pionową elipsę (&vellip;) obok źródła danych, które chcesz wzbogacić i wybierz **Wzbogać**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Strona wzbogacania źródeł danych.":::
 
@@ -41,11 +41,12 @@ Obecnie dla źródeł danych dostępne są następujące wzbogacenia. Zapoznaj s
 
 - [Rozszerzone adresy](enrichment-enhanced-addresses.md)
 - [Rozszerzone dane firm](enrichment-enhanced-company-data.md)
+- [Dane tożsamości z LiveRamp](enrichment-liveramp.md)
 
 ## <a name="manage-existing-data-source-enrichments"></a>Zarządzaj wzbogacaniem istniejących źródeł danych
 
 Przejdź do karty **Moje wzbogacenia**, aby zobaczyć wszystkie skonfigurowane wzbogacania.
 
-Wybierz wzbogacenie, aby wyświetlić dostępne opcje. Aby wyświetlić opcje, wybierz wielokropek (...) na elemencie listy. Jeśli skonfigurowano kilka wzbogaceń, można użyć pola wyszukiwania, aby szybko je znaleźć.
+Wybierz wzbogacenie, aby wyświetlić dostępne opcje. Aby wyświetlić opcje, można także wybrać wielokropek pionowy (&vellip;) na pozycji listy. Jeśli skonfigurowano kilka wzbogaceń, można użyć pola wyszukiwania, aby szybko je znaleźć.
 
 Możesz przeglądać, edytować, uruchamiać lub usuwać wzbogacenie źródła danych. Aby uzyskać więcej informacji, zobacz [Zarządzaj istniejącymi wzbogaceniami](enrichment-hub.md).
