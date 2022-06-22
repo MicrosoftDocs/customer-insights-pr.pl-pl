@@ -1,7 +1,7 @@
 ---
 title: Zaktualizuj ustawienia ujednolicania
 description: Uaktualnij zduplikowane reguły, reguły dopasowania lub zunifikowane pola w ustawieniach ujednolicenia.
-ms.date: 05/04/2022
+ms.date: 06/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: be399da9b98d8803d7d1a90f44a40e0d638a8d47
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 590a2996cf8b2b1c6def59b78583169ec1910b59
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755603"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844053"
 ---
 # <a name="update-the-unification-settings"></a>Zaktualizuj ustawienia ujednolicania
 
@@ -43,8 +43,9 @@ Aby przejrzeć lub zmienić ustawienia ujednolicenia po utworzeniu profilu ujedn
 
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Zrzut ekranu strony Ujednolicenie danych z zaznaczonymi opcjami Ujednolicenie.":::
 
-   - Aby zaktualizować ujednolicony profil klienta (z zależnościami lub bez), zobacz [Uruchamianie aktualizacji profilu klienta](#run-updates-to-the-unified-customer-profile)
-   - Aby ocenić jakość swoich warunków dopasowania bez aktualizowania profilu zunifikowanego, zobacz [Uruchom warunki dopasowania](#run-matching-conditions). Opcja **Uruchom tylko pasujące warunki** nie jest wyświetlana dla pojedynczej encji.
+   - Aby ocenić jakość swoich warunków dopasowania (ponowną duplikację i reguły dopasowania) bez aktualizowania profilu zunifikowanego, zobacz [Uruchom warunki dopasowania](#run-matching-conditions). Opcja **Uruchom tylko pasujące warunki** nie jest wyświetlana dla pojedynczej encji.
+   - [Ujednolicenie profili klientów](#run-updates-to-the-unified-customer-profile) do uruchomienia dopasowanych warunków u aktualizacji encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](system.md#schedule-tab).
+   - [Ujednolicenie profili klientów i zależności](#run-updates-to-the-unified-customer-profile) do uruchomienia dopasowanych warunków u aktualizacji encji unified customer profile i wszystkich zależności (takie jak wzbogacenia, segmenty czy miary). Wszystkie procesy są wznawiane automatycznie.
 
 ## <a name="edit-source-fields"></a>Edytuj pola źródłowe
 
@@ -135,11 +136,13 @@ Większość parametrów dopasowania można ponownie skonfigurować i odpowiedni
 
 ## <a name="run-matching-conditions"></a>Uruchom warunki dopasowania
 
+Uruchamianie dopasowanych warunków tylko uruchamia ponowną duplikację i reguły dopasowania oraz aktualizuje encje *Ponowną duplikacją* i *ConflationMatchPair*.
+
 1. Na stronie **Dane** > **Ujednolicenie** wybierz **Uruchamiaj tylko pasujące warunki**.
 
-   Na kafelkach **Duplikaty rekordów** i **Pasujące warunki** znajdują się **Kolejka** lub **Odświeżanie**.
+   Na kafelkach **Duplikaty rekordów** i **Pasujące warunki** znajdują się **Kolejka** lub stan **Odświeżanie**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
 1. Kiedy proces dopasowania zostanie zakończony, wybierz **Edytuj** na kafelku **Warunki dopasowania**.
 
@@ -153,10 +156,12 @@ Większość parametrów dopasowania można ponownie skonfigurować i odpowiedni
 
 1. Na stronie **Dane** > **Ujednolicenie** wybierz:
 
-   - **Ujednolicenie profili klientów**: Aktualizuje encję ujednoliconego profilu klienta bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](system.md#schedule-tab).
+   - **Ujednolicenie profili klientów**: uruchamia dopasowane warunki i aktualizacje encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](system.md#schedule-tab).
 
-   - **Ujednolicenie profili klientów i zależności**: Aktualizuje ujednolicony profil i wszystkie zależności. Wszystkie procesy są wznawiane automatycznie. Po zakończeniu wszystkich dalszych procesów profil klienta odzwierciedla zaktualizowane dane.
+   - **Ujednolicenie profili klientów i zależności**: uruchamia dopasowane warunki i aktualizacje encji ujednoliconego profilu klienta i wszystkich zależności. Wszystkie procesy są wznawiane automatycznie. Po zakończeniu wszystkich dalszych procesów profil klienta odzwierciedla zaktualizowane dane.
 
-   Na kafelkach **Duplikaty rekordów**, **Pasujące warunki** i **Ujednolicone pola klientów** widnieje **Odrobienie** lub **Odświeżenie**.
+   Na kafelkach **Duplikaty rekordów**, **Pasujące warunki** i **Ujednolicone pola klientów** widnieje **Odrobienie** lub stan **Odświeżenie**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Wyniki udanego uruchomienia są wyświetlane na stronie **Ujednolicanie**, pokazując liczbę ujednoliconych profili klientów.

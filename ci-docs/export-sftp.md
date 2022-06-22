@@ -1,19 +1,19 @@
 ---
 title: Eksportuj dane Customer Insights na serwer SFTP (zawiera wideo)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do lokalizacji SFTP.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646754"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947197"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportowanie segmentów i innych danych do SFTP (wersja zapoznawcza)
 
@@ -28,8 +28,8 @@ Danych klientów można używać w aplikacjach innych firm, eksportując je do l
 ## <a name="known-limitations"></a>Znane ograniczenia
 
 - Miejsca docelowe SFTP za zaporami nie są obecnie obsługiwane. 
-- Czas wykonania eksportu zależy od wydajności systemu. Zalecamy dwa rdzenie procesora i 1 GB pamięci jako minimalną konfigurację serwera. 
-- Eksportowanie jednostek z maksymalnie 100 milionami profili klientów może zająć 90 minut przy użyciu zalecanej minimalnej konfiguracji dwóch rdzeni procesora i 1 Gb pamięci. 
+- Czas wykonania eksportu zależy od wydajności systemu. Zalecamy dwa rdzenie procesora i 1 GB pamięci jako minimalną konfigurację serwera.
+- Eksportowanie jednostek z maksymalnie 100 milionami profili klientów może zająć 90 minut przy użyciu zalecanej minimalnej konfiguracji dwóch rdzeni procesora i 1 Gb pamięci.
 
 ## <a name="set-up-connection-to-sftp"></a>Konfiguruj połączenie z SFTP
 
@@ -64,13 +64,17 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 1. Wybierz encje, na przykład segmenty, które chcesz wyeksportować.
 
    > [!NOTE]
-   > Po wyeksportowaniu każda wybrana encja zostanie podzielona na maksymalnie pięć plików wyjściowych. 
+   > Po wyeksportowaniu każda wybrana encja zostanie podzielona na maksymalnie pięć plików wyjściowych.
 
 1. Wybierz pozycję **Zapisz**.
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab).
+Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> Eksportowanie encji zawierających dużą ilość danych może powodować wyeksportowanie wielu plików CSV w tym samym folderze dla każdego eksportu. Podział eksportu odbywa się ze względów wydajności w celu zminimalizowania czasu jego zakończenia.
 
 ## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 

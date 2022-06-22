@@ -1,7 +1,7 @@
 ---
 title: Wzbogacenie profilów firmy z Dun & Bradstreet
 description: Ogólne informacje na temat wzbogacenia innych firm z Dun & Bradstreet.
-ms.date: 04/26/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c738c2657d4cda213342629156ddc8104366bd8a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755413"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953904"
 ---
 # <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
 
@@ -22,16 +22,14 @@ Firma Dun & Bradstreet dostarcza dane komercyjne, analizy i szczegółowe inform
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Aby skonfigurować wzbogacenie Dun & Bradstreet, muszą być spełnione następujące warunki wstępne:
+- Aktywna licencja [Dun & Bradstreet](https://www.dnb.com/marketing/media/give-your-data-a-boost.html?source=microsoft_audience_insights).
+- [Ujednolicone profile klientów](customer-profiles.md) dla firm.
+- [Projekt](#set-up-your-dun--bradstreet-project) Dun & Bradstreet jest ustawiony.
+- [Połączenie](connections.md) Dun & Bradstreet jest [konfigurowane](#configure-a-connection-for-dun--bradstreet) przez administratora.
 
-- Masz aktywną licencję [Dun & Bradstreet](https://www.dnb.com/marketing/media/give-your-data-a-boost.html?source=microsoft_audience_insights).
-- Istnieją [ujednolicone profile klientów](customer-profiles.md) dla firm.
-- Połączenie [Dun & Bradstreet](connections.md) jest konfigurowane przez administratora. Można je utworzyć, jeśli masz uprawnienia [administratora](permissions.md#admin) i poświadczenia z Dun & Bradstreet Connect.
-
-## <a name="setting-up-your-dun--bradstreet-project"></a>Konfigurowanie projektu Dun & Bradstreet
+## <a name="set-up-your-dun--bradstreet-project"></a>Skonfiguruj projekt Dun & Bradstreet
 
 Jako licencjonowany użytkownik Dun & Bradstreet [możesz skonfigurować projekt Dun & Bradstreet Connect](https://connect.dnb.com?lead_source=microsoft_audienceinsights).
-
 
 1. Zaloguj się w [Dun & Bradstreet Connect](https://connect.dnb.com?lead_source=microsoft_audienceinsights). Aby pobrać poświadczenia, [przywróć hasło](https://sso.dnb.com/signin/forgot-password?lead_source=microsoft_audienceinsights).
 
@@ -47,66 +45,69 @@ Jako licencjonowany użytkownik Dun & Bradstreet [możesz skonfigurować projekt
 
    :::image type="content" source="media/enrichment-dnb-s3info.png" alt-text="Zrzut ekranu przedstawiający wybór informacji s3 w projekcie Dun & Bradstreet.":::
 
-## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
-
-1. Przejdź do **Dane** > **Wzbogacanie**.
-
-1. Wybierz opcję **Wzbogać moje dane** na kafelku Dun & Bradstreet i wybierz opcję **Wprowadzenie**.
-
-   :::image type="content" source="media/enrichment-dnb-tile.png" alt-text="Zrzut ekranu kafelka Dun & Bradstreet.":::
-
-1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli użytkownik jest administratorem połączenia, może utworzyć połączenie. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Dun & Bradstreet**.
-
-1. Wybierz opcję **Połącz z Dun & Bradstreet** w celu potwierdzenia połączenia.
-
-1. Wybierz **Następny** i wybierz **Zestaw danych klienta**, który chcesz wzbogacić o dane firmy z projektu Dun & Bradstreet. Można wybrać encję **Klient**, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko ujednolicone profile klientów zawarte w tym segmencie.
-
-1. Wybierz **Dalej** i określ, jakiego typu pola z twoich profili zunifikowanych są używane do wyszukiwania dopasowanych danych firmy z projektu Dun & Bradstreet. Wymagane są albo pola **Numer DUNS**, albo **Nazwa firmy** i **Kraj**. Pole kraju obsługuje [dwu- lub trzyliterowe kody kraju](https://www.iso.org/iso-3166-country-codes.html), nazwę kraju w języku angielskim, nazwę kraju w języku macierzystym i prefiks telefonu. Niektóre typowe warianty kraju to:
-
-- US: Stany Zjednoczone Ameryki, Stany Zjednoczone, USA, Ameryka.
-- CA: Kanada.
-- GB: Zjednoczone Królestwo, UK, Wielka Brytania, GB, Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej, Zjednoczone Królestwo Wielkiej Brytanii.
-- AU: Australia, Związek Australijski.
-- FR: Francja, Republika Francuska.
-- DE: Niemcy, German, Deutschland, Allemagne, Republika Federalna Niemiec, Republika Niemiecka.
-
-   :::image type="content" source="media/enrichment-dnb-mapping.png" alt-text="Okienko mapowania pól Dun & Bradstreet.":::
-
-1. Wybierz **Dalej**, by zakończyć mapowanie pól.
-
-1. Po przejrzeniu wybranych opcji podaj nazwę wzbogacania i wybierz opcję **Zapisz wzbogacenie**.
-
 ## <a name="configure-a-connection-for-dun--bradstreet"></a>Konfigurowanie połączenia dla Dun & Bradstreet
 
-Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz **Dodaj połączenie** podczas konfigurowania wzbogacenia *lub* przejdź do **Admin** > **Połączenia** i wybierz **Ustaw** na kafelku Dun & Bradstreet.
+Musisz być [administratorem](permissions.md#admin) w Customer Insights i mieć poświadczenia z Dun & Bradstreet Connect.
 
-1. Wybierz **Rozpocznij**.
+1. Wybierz **Dodaj połączenie** podczas konfigurowania wzbogacenia lub przejdź do **Admin** > **Połączenia** i wybierz **Ustaw** na kafelku Dun & Bradstreet.
 
-1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
+1. Wprowadź nazwę połączenia.
 
-1. Podaj prawidłowe poświadczenia Dun & Bradstreet i szczegóły projektu Dun & Bradstreet *Region, Ścieżka folderu upuszczania i Nazwa folderu upuszczania*. Te [informacje pochodzą](#setting-up-your-dun--bradstreet-project) z projektu Dun & Bradstreet.
+1. Podaj prawidłowe poświadczenia Dun & Bradstreet i szczegóły projektu Dun & Bradstreet *Region, Ścieżka folderu upuszczania i Nazwa folderu upuszczania*. Te [informacje pochodzą](#set-up-your-dun--bradstreet-project) z projektu Dun & Bradstreet.
 
-1. Przejrzyj i wyraź zgodę na **Zasady ochrony prywatności danych**, wybierając przycisk **I agree (Wyrażam zgodę)**.
+1. Przejrzyj i wyraź zgodę na [Zasady ochrony prywatności danych](#data-privacy-and-compliance), wybierając przycisk **I agree (Wyrażam zgodę)**.
 
-1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
-
-1. Po zakończeniu weryfikacji wybierz opcję **Zapisz**.
+1. Wybierz **Weryfikuj**, aby sprawdzić poprawność konfiguracji, a następnie wybierz opcję **Zapisz**.
 
    :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Strona konfiguracji połączenia Dun & Bradstreet.":::
 
+### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
+
+Po włączeniu Dynamics 365 Customer Insights do transmisji danych do Dun & Bradstreet można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na twoje polecenie, ale to ty jesteś odpowiedzialny za zapewnienie, że Dun & Bradstreet spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
+Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
+
+## <a name="supported-countries-or-regions"></a>Obsługiwane kraje lub regiony
+
+Obecnie są dostępne opcje dla następujących krajów/regionów: Kanada (angielski) lub Stany Zjednoczone (angielski).
+
+## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
+
+1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
+
+1. Wybierz opcję **Wzbogać moje dane** na kafelku Dun & Bradstreet **Dane firm**.
+
+   :::image type="content" source="media/enrichment-dnb-tile.png" alt-text="Zrzut ekranu kafelka Dun & Bradstreet.":::
+
+1. Przejrzyj omówienie, a następnie wybierz **Dalej**.
+
+1. Wybierz połączenie i potwierdź. Skontaktuj się z administratorem, jeśli nie jest dostępne.
+
+1. Wybierz **Dalej**.
+
+1. Wybierz **Zestaw danych klienta** i wybierz profil i segment, który chcesz wzbogacić o dane firmy z Dun & Bradstreet. Można wybrać encję *Klient*, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+
+1. Określ, jakiego typu pola z twoich profili zunifikowanych powinny być używane do wyszukiwania pasujących danych firmy z Dun & Bradstreet. Wymagane jest co najmniej jedno z pól **Nazwa i adres**, **Telefon** lub **Wiadomość e-mail**.
+
+1. Wybierz **Dalej**
+
+1. Zamapuj pola na dane firmy z Dun & Bradstreet. Wymagane są albo pola **Numer DUNS**, albo **Nazwa firmy** i **Kraj**.
+
+      :::image type="content" source="media/enrichment-dnb-mapping.png" alt-text="Okienko mapowania pól Dun & Bradstreet.":::
+
+1. Wybierz **Dalej**, by zakończyć mapowanie pól.
+
+1. Podaj **Nazwę** dla wzbogacenia oraz **Nazwa encji wyjściowej**.
+
+1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
+
+1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
+
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
-Po odświeżeniu wzbogacenia można zapoznać się z nowo wzbogaconymi danymi firmowymi w ramach [Moje wzbogacenia](enrichment-hub.md). Możesz sprawdzić czas ostatniej aktualizacji oraz liczbę wzbogaconych profilów.
-
-Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 ## <a name="next-steps"></a>Następne kroki
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do Dun & Bradstreet można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na twoje polecenie, ale to ty jesteś odpowiedzialny za zapewnienie, że Dun & Bradstreet spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

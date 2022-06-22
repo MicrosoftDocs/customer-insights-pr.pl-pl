@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 36ad957f59b23df6ee83d9d90898ef03ddfd320a
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833410"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011854"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
 
@@ -51,7 +51,13 @@ Przed utworzeniem nowej nazwy głównej usługi dla Customer Insights sprawdź, 
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Udziel uprawnień do nazwy głównej usługi, aby uzyskać dostęp do konta magazynu
 
-Przejdź do portalu Azure, aby przyznać uprawnienia do głównej usługi dla konta magazynu, które chcesz użyć w funkcji Customer Insights.
+Przejdź do portalu Azure, aby przyznać uprawnienia do głównej usługi dla konta magazynu, które chcesz użyć w funkcji Customer Insights. Do konta lub kontenera magazynu musi być przypisana jedna z następujących ról:
+
+|Poświadczenia|Wymagania|
+|----------|------------|
+|Obecnie zalogowany użytkownik|**Rola**: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu.<br>**Poziom**: można przyznać uprawnienia dla konta magazynu lub kontenera.</br>|
+|Jednostka usługi Customer Insights<br>Używanie usługi Azure Data Lake Storage jako źródła danych</br>|Opcja 1<ul><li>**Rola**: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla konta magazynu.</li></ul>Opcja 2 *(bez udostępniania głównego dostępu usługi do konta magazynu)*<ul><li>**Rola 1**: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla kontenera.</li><li>**Rola 2**: Delegat danych obiektów blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla konta magazynu.</li></ul>|
+|Jednostka usługi Customer Insights <br>Używanie Azure Data Lake Storage jako lokalizacji wyjściowej lub docelowej</br>|Opcja 1<ul><li>**Rola**: współautor obiektu blob magazynu lub właściciel obiektu blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla konta magazynu.</li></ul>Opcja 2 *(bez udostępniania głównego dostępu usługi do konta magazynu)*<ul><li>**Rola**: współautor obiektu blob magazynu lub właściciel obiektu blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla kontenera.</li><li>**Rola 2**: Delegat obiektów blob magazynu.</li><li>**Poziom**: można przyznać uprawnienia dla konta magazynu.</li></ul>|
 
 1. W tym celu należy przejść do [portalu administracyjnego Azure](https://portal.azure.com) i zalogować się do organizacji.
 
@@ -62,7 +68,7 @@ Przejdź do portalu Azure, aby przyznać uprawnienia do głównej usługi dla ko
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Zrzut ekranu przedstawiający portal Azure Portal podczas dodawania przypisania roli.":::
 
 1. W okienku **Dodaj przypisane roli** ustaw następujące właściwości:
-   - Rola: **Współautor danych w usłudze Blob Storage**
+   - Rola: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu na podstawie wymienionych wyżej uprawnień.
    - Przypisz dostęp do: **Użytkownik, grupa lub nazwa główna usługi**
    - Wybierz członków: **Dynamics 365 AI dla Customer Insights** ([podmiot usługi](#create-a-new-service-principal) wyszukiwany wcześniej w tej procedurze)
 

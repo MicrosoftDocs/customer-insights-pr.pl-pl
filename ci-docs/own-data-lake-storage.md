@@ -3,17 +3,17 @@ title: Używanie własnego konta Azure Data Lake Storage Gen2
 author: mukeshpo
 description: Dowiedz się więcej o wymaganiach dotyczących używania własnego konta Azure Data Lake Storage do przechowywania danych Customer Insights.
 ms.author: mukeshpo
-ms.date: 05/30/2022
+ms.date: 06/08/2022
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 ms.reviewer: mhart
-ms.openlocfilehash: 9fcd7645e34bf310ac3a1b98a0dd9a60598b19dc
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 5acb58906c1a9db54337f3b4dc2ab7891db7954e
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833928"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011946"
 ---
 # <a name="use-your-own-azure-data-lake-storage-gen2-account"></a>Używanie własnego konta Azure Data Lake Storage Gen2
 
@@ -37,6 +37,7 @@ Podczas tworzenia nowego środowiska upewnij się, że istnieje konto Data Lake 
 1. Wybierz sposób **podłączenia magazynu**. Można wybrać opcję opartą na zasobach i opcję uwierzytelniania opartą na subskrypcji. Aby uzyskać więcej informacji, zobacz [Łączenie z kontem Azure Data Lake Storage przy użyciu głównej usługi Azure](connect-service-principal.md).
    - W przypadku **Subskrypcja Azure** wybierz **Subskrypcja**, **Grupa zasobów** i **Konto magazynu** zawierające kontener `customerinsights`.
    - W przypadku **Klucz konta** podaj **Nazwa konta** i **Klucz konta** dla konta Data Lake Storage. Zastosowanie tej metody uwierzytelniania oznacza, że użytkownik jest informowany o tym, czy organizacja używa kluczy. Podczas obracania [należy zaktualizować konfigurację środowiska](manage-environments.md#edit-an-existing-environment) przy użyciu nowego klucza.
+1. Określ, czy używać łącza Azure Private Link do łączenia się z kontem magazynu i [Tworzenia połączenia z łączem Private Link](security-overview.md#private-links-tab) w procesie dwuetapowym.
 
 Po zakończeniu procesów systemowych, takich jak pozyskiwanie danych, system tworzy odpowiednie foldery na koncie magazynu. Pliki danych i pliki *model.json* są tworzone i dodawane do folderów na podstawie nazwy procesu.
 

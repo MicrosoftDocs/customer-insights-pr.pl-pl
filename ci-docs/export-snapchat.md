@@ -1,19 +1,19 @@
 ---
 title: Eksportowanie danych usługi Customer Insights do usługi Snapchat
 description: Dowiedz się, jak skonfigurować połączenie i eksport do programu Snapchat.
-ms.date: 10/08/2021
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 171b8bf0f4a034c78e872b671602ae7653271da7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d64b482c322af8632e29ec41d6e34c390c5e646c
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647145"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947289"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Eksportowanie segmentów do usługi Snapchat (wersja zapoznawcza)
 
@@ -21,7 +21,8 @@ Wyeksportuj segmenty ujednoliconych profilów klientów do usługi Snapchat i u�
 
 ## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
--   Posiadasz konto [konto biznesowe Snapchat](https://business.snapchat.com/), [konto reklamowe Snapchat](https://ads.snapchat.com/) i odpowiednie dane logowania administratora.
+-   Posiadasz konto [konto biznesowe Snapchat](https://business.snapchat.com/), [konto reklamowe Snapchat](https://ads.snapchat.com/) i odpowiednie dane logowania administratora. Musisz być co najmniej członkiem Konta organizacji i Menedżerem danych określonego konta reklamowego. 
+-   Masz przynajmniej odbiocrów w Manedżerze odbiorców Snapchat typu SAM (Snap Audience Match). 
 -   Masz [skonfigurowane segmenty](segments.md) w Customer Insights.
 -   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
@@ -60,7 +61,7 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Snapchat. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
 
-1. Wprowadź [**identyfikator odbiorcy usługi Snapchat**](https://businesshelp.snapchat.com/s/article/custom-audiences).
+1. Wprowadź [**Segment/identyfikator odbiorców Snapchat**](https://businesshelp.snapchat.com/s/article/custom-audiences). Identyfikator odbiorcy znajduje się w adresie URL po wybraniu opcji odbiorcy w Menedżerze odbiorcy Snapchat. 
 
 1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Wymagane jest wyeksportowanie segmentów do usługi Snapchat.
 

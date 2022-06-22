@@ -1,19 +1,19 @@
 ---
 title: Wzbogacenie za pomocą niestandardowego importu SFTP
 description: Ogólne informacje o wzbogacaniu importu niestandardowego SFTP.
-ms.date: 04/09/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f52d24cbe793bee7948ad2af31059cd3edf40f94
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646544"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953732"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
 
@@ -21,54 +21,13 @@ Niestandardowy import protokołu Secure File Transfer Protocol (SFTP) umożliwia
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Aby skonfigurować niestandardowy import SFTP, muszą być spełnione następujące wymagania wstępne:
+- Znana jest nazwa i lokalizacja pliku (ścieżka), które mają być zaimportowane na hoście SFTP.
 
-- Masz nazwę pliku i lokalizację (ścieżkę) pliku, który ma być importowany na hosta SFTP.
-- Istnieje plik *model.json* określający [schemat Common Data Model](/common-data-model/) dla danych, które mają być importowane. Plik ten musi znajdować się w tym samym katalogu, co plik przeznaczony do zaimportowania.
-- Połączenie z usługą SFTP jest już skonfigurowane przez administratora *lub* użytkownik ma uprawnienia [administratora](permissions.md#admin). Potrzebne będą poświadczenia użytkownika, adres URL i numer portu dla lokalizacji SFTP, z której chcesz zaimportować dane.
+- Dostępny jest plik *model.json* określający schemat Common Data Model dla importowanych danych. Plik ten musi znajdować się w tym samym katalogu, co plik przeznaczony do zaimportowania.
 
+- [Połączenie](connections.md) SFTP jest [skonfigurowane](#configure-the-connection-for-sftp-custom-import).
 
-## <a name="configure-the-import"></a>Konfigurowanie importu
-
-1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
-
-1. Na **Niestandardowym kafelku importu SFTP** wybierz opcję **Wzbogać dane**, a następnie wybierz opcję **Rozpocznij**.
-
-   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Kafelek niestandardowego importu SFTP.":::
-
-1. Wybierz [połączenie](connections.md) z listy rozwijanej. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie. Jeśli jesteś administratorem, możesz utworzyć połączenie, wybierając **Dodaj połączenie** i wybierając **SFTP Custom Import** z listy rozwijanej.
-
-1. Wybierz opcję **Połącz z importem niestandardowym**, aby potwierdzić wybrane połączenie.
-
-1.  Wybierz opcję **Dalej** i wprowadź **ścieżkę** i **nazwę pliku** dla danych, które chcesz zaimportować.
-
-    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Zrzut ekranu przedstawiający wprowadzenie lokalizacji danych.":::
-
-1. Wybierz opcję **Dalej** i wybierz zestaw danych klientów. Mogą to być wszystkie profile klientów lub segment.
-
-1. Wybierz opcję **Dalej** i podaj nazwę dla wzbogacania oraz nazwę encji wyjściowej. 
-
-1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
-
-## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurowanie połączenia do niestandardowego importu SFTP 
-
-Aby skonfigurować połączenia, użytkownik musi być administratorem. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania *lub* wybierz pozycję **Admin** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku Import niestandardowy.
-
-1. Wprowadź nazwę połączenia w polu **Wyświetlana nazwa**.
-
-1. Wprowadź prawidłową nazwę użytkownika, hasło i adres URL hosta serwera SFTP, na którym znajdują się dane do zaimportowania.
-
-1. Sprawdź poprawność i wyraź zgodę na **Prywatność danych i zgodność z przepisami** zaznaczając pole wyboru **Zgadzam się**.
-
-1. Wybierz opcję **Weryfikuj**, aby sprawdzić poprawność konfiguracji.
-
-1. Po zakończeniu weryfikacji połączenie można zapisać, wybierając opcję **Zapisz**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Strona konfiguracji łączności Experian.](media/enrichment-SFTP-connection.png "Strona konfiguracji łączności Experian")
-
-
-## <a name="defining-field-mappings"></a>Definiowanie mapowań pól 
+## <a name="file-schema-example"></a>Przykład schematu pliku
 
 Katalog zawierający plik, który ma zostać zaimportowany na serwerze SFTP, musi również zawierać plik typu *model.JSON*. Ten plik definiuje schemat, który ma być używany do importowania danych. Do określenia mapowania pól schemat musi używać modelu [Common Data Model](/common-data-model/). Prosty przykład pliku model.json wygląda następująco:
 
@@ -82,12 +41,12 @@ Katalog zawierający plik, który ma zostać zaimportowany na serwerze SFTP, mus
             "attributes": [
                 {
                     "name": "CustomerId",
-                    "friendlyName": "Client id",
+                    "friendlyName": "Client ID",
                     "dataType": "string"
                 },
                 {
                     "name": "PreferredCity",
-                    "friendlyName": "Preferred City for vacation",
+                    "friendlyName": "Preferred city for vacation",
                     "dataType": "string"
                 },
                 {
@@ -114,13 +73,56 @@ Katalog zawierający plik, który ma zostać zaimportowany na serwerze SFTP, mus
 }
 ```
 
+## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurowanie połączenia do niestandardowego importu SFTP
+
+Użytkownik musi być [administratorem](permissions.md#admin) w Customer Insights, a także mieć poświadczenia, adres URL i numer portu dla lokalizacji SFTP, z której mają zostać zaimportowane dane.
+
+1. Wybierz opcję **Dodaj połączenie** podczas konfigurowania wzbogacania lub wybierz pozycję **Administrator** > **Połączenia** i wybierz opcję **Konfiguruj** na kafelku Import niestandardowy.
+
+   :::image type="content" source="media/enrichment-SFTP-connection.png" alt-text="Strona konfiguracji połączenia Import niestandardowy.":::
+
+1. Wprowadź nazwę połączenia.
+
+1. Wprowadź prawidłową nazwę użytkownika, hasło i adres URL hosta serwera SFTP, na którym znajdują się dane do zaimportowania.
+
+1. Przejrzyj i wyraź zgodę na [Zasady ochrony prywatności danych](#data-privacy-and-compliance), wybierając przycisk **I agree (Wyrażam zgodę)**.
+
+1. Wybierz **Weryfikuj**, aby sprawdzić poprawność konfiguracji, a następnie wybierz opcję **Zapisz**.
+
+### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
+
+Po włączeniu Dynamics 365 Customer Insights do przesyłania danych do Importowania niestandardowego, zezwalasz na transfer danych poza granicami zgodności dla Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak Dane osobowe. Microsoft przekaże takie dane na polecenie użytkownika, ale on jesteś odpowiedzialny za zapewnienie, że dane spełniają wszelkie zobowiązania dotyczące prywatności lub bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
+Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
+
+## <a name="configure-the-import"></a>Konfigurowanie importu
+
+1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
+
+1. Wybierz opcję **Wzbogać moje dane** na kafelku **Import niestandardowy SFTP**.
+
+   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Kafelek niestandardowego importu SFTP.":::
+
+1. Przejrzyj omówienie, a następnie wybierz **Dalej**.
+
+1. Wybierz połączenie. Skontaktuj się z administratorem, jeśli nie jest dostępne.
+
+1. Wybierz **Zestaw danych klienta** i wybierz profil i segment, który chcesz wzbogacić. Można wybrać encję *Klient*, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+
+1. Wybierz **Dalej**.
+
+1. Wprowadź **ścieżkę** i **nazwę pliku** danych, który chcesz zaimportować.
+
+1. Wybierz **Dalej**.
+
+1. Podaj **Nazwę** dla wzbogacenia oraz **Nazwa encji wyjściowej**.
+
+1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
+
+1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
+
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
-Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Można również zezwolić, aby system automatycznie uruchamiał wzbogacenie w ramach [zaplanowanego odświeżenia](system.md#schedule-tab). Czas przetwarzania zależy od rozmiaru danych do zaimportowania i połączenia z serwerem SFTP.
-
-Po zakończeniu procesu wzbogacania możesz przejrzeć nowo zaimportowane dane wzbogacenia niestandardowego w sekcji **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
-
-Aby uzyskać dostęp do szczegółowego widoku poszczególnych wzbogaconych profilów, należy zaznaczyć **Wyświetl wzbogacone dane**.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 ## <a name="next-steps"></a>Następne kroki
 

@@ -1,5 +1,5 @@
 ---
-title: Wzbogać profile klientów danymi firmy Microsoft
+title: Wzbogać profile klientów dzięki danych o różnych zainteresowaniach i danych od firmy Microsoft
 description: Używanie danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu koligacji i wskaźnika Share of Voice.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,25 +12,16 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c016a394fdf485057a190d03bfed9ce5481f435
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646808"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953778"
 ---
 # <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Wzbogacanie profilów klientów przy użyciu koligacji i wskaźnika Share of Voice (wersja zapoznawcza)
 
 Użyj danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu sympatii do marki, sympatii do zainteresowań i wskaźnika Share of Voice (SoV). Sympatie te oraz wskaźnik SoV opierają się na danych od osób, które mają cechy demograficzne podobne do Twoich klientów. Te informacje pomogą Ci lepiej zrozumieć i segmentować klientów na podstawie ich sympatii do poszczególnych marek i zainteresowań lub odpowiednich wskaźników SoV.
-
-Przejdź do opcji **Dane** > **Wzbogacenie**, by [skonfigurować i wyświetlać wzbogacenia](enrichment-hub.md).
-
-Aby skonfigurować wzbogacanie za pomocą sympatii do marki i wskaźnika SoV, przejdź na kartę **Odnajdowanie** i wybierz opcję **Wzbogać moje dane** na kafelku **Marki**.
-
-Aby skonfigurować wzbogacanie za pomocą sympatii do zainteresowań i wskaźnika SoV, przejdź na kartę **Odnajdowanie** i wybierz opcję **Wzbogać moje dane** na kafelku **Zainteresowania**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Kafelki marek i zainteresowań.](media/BrandsInterest-tile-Hub.png "Kafelki marek i zainteresowań")
 
 ## <a name="how-we-determine-affinities-and-sov"></a>Jak określamy sympatie i wskaźnik SoV
 
@@ -45,7 +36,6 @@ Używamy udostępnianych przez Microsoft danych wyszukiwania online do wyszukiwa
 Na każdym wzbogaconym profilu klienta podajemy dwie powiązane wartości - poziom podobieństwa i wynik podobieństwa. Te wartości pomagają określić, jak silne jest podobieństwo segmentu demograficznego tego profilu, marki lub zainteresowań w porównaniu z innymi segmentami demograficznymi.
 
 *Poziom sympatii* składa się z czterech poziomów, a *wynik sympatii* jest obliczany w skali 100-punktowej, mapowej na poziomy a automatycznie.
-
 
 |Poziom sympatii |Wynik sympatii  |
 |---------|---------|
@@ -64,78 +54,65 @@ Wskaźnik SoV jest obliczany na 100-punktowej skali. Suma wskaźników SoV dla w
 
 Obecnie obsługujemy następujące opcje kraju/regionu: Australia, Kanada (angielski), Francja, Niemcy, Zjednoczone Królestwo lub Stany Zjednoczone (angielski).
 
-Aby wybrać kraj lub region, otwórz **Wzbogacanie marek** lub **Wzbogacanie zainteresowań** i wybierz **Zmień** obok **Kraj/Region**. W okienku **Ustawienia kraju/regionu** wybierz jedną z opcji i wybierz **Zastosuj**.
+## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
-### <a name="implications-related-to-country-selection"></a>Implikacje dotyczące wyboru kraju
+1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
 
-- Podczas [wybierania własnej marki](#define-your-brands-or-interests) system oferuje sugestie dotyczące wybranego kraju lub regionu.
+   - Aby skonfigurować wzbogacanie za pomocą sympatii do marki i wskaźnika SoV, wybierz opcję **Wzbogać moje dane** na kafelku **Marki**.
 
-- [Wybierając branżę](#define-your-brands-or-interests), otrzymasz najbardziej odpowiednie marki lub zainteresowania w oparciu o wybrany kraj lub region.
+   - Aby skonfigurować wzbogacanie za pomocą sympatii zainteresowania i wskaźnika SoV, wybierz opcję **Wzbogać moje dane** na kafelku **Zainteresowania**.
 
-- Podczas [wzbogacania profili](#refresh-enrichment), wzbogacimy wszystkie profile klientów, dla których otrzymamy dane dla wybranych marek i zainteresowań, w tym profile, które nie znajdują się w wybranym kraju lub regionie. Na przykład jeśli wybrano Niemcy, wzbogacimy profile zlokalizowane w Stanach Zjednoczonych, jeśli w Stanach Zjednoczonych dostępne są dane dotyczące wybranych źródeł i zainteresowań.
+   > [!div class="mx-imgBorder"]
+   > ![Kafelki marek i zainteresowań.](media/BrandsInterest-tile-Hub.png "Kafelki marek i zainteresowań")
 
-## <a name="configure-enrichment"></a>Konfigurowanie wzbogacenia
+1. Przejrzyj omówienie, a następnie wybierz **Dalej**.
 
-Porady pomagają w konfigurowaniu wzbogacania. 
+1. Aby zmienić kraj lub region, wybierz opcję **Zmień** obok opcji **Kraj/Region**. W okienku ustawień **Kraj/Region** wybierz [obsługiwany kraj/region](#supported-countriesregions) i wybierz opcję **Zastosuj**.
 
-### <a name="define-your-brands-or-interests"></a>Zdefiniuj swoje marki i zainteresowania
+   > [!NOTE]
+   > Podczas wybierania własnej marki system oferuje sugestie dotyczące wybranego kraju lub regionu. Wybierając branżę, otrzymasz najbardziej odpowiednie marki lub zainteresowania w oparciu o wybrany kraj lub region.
 
-Wybierz do pięciu marek lub zainteresowań, używając jednej lub obu tych opcji:
+1. Wybierz do pięciu marek lub zainteresowań, używając jednej lub obu tych opcji:
 
-- **Branża**: wybierz branżę z listy rozwijanej, a następnie wybierz jedną z najlepszych opcji lub zainteresowań tej branży.
-- **Wybierz swoją**: Wprowadź markę lub interes, który jest istotny dla Twojej organizacji, a następnie wybierz spośród pasujących propozycji. Jeśli nie ukazujemy szukanej marki lub zainteresowania, wyślij nam opinię przy użyciu łącza **Sugeruj**.
+   - **Branża**: wybierz branżę z listy rozwijanej, a następnie wybierz jedną z najlepszych opcji lub zainteresowań tej branży.
+   - **Wybierz swoją**: Wprowadź markę lub interes, który jest istotny dla Twojej organizacji, a następnie wybierz spośród pasujących propozycji. Jeśli nie ukazujemy szukanej marki lub zainteresowania, wyślij nam opinię przy użyciu łącza **Sugeruj**.
 
-### <a name="review-enrichment-preferences"></a>Przejrzyj preferencje wzbogacania
+1. Wybierz opcję **Dalej** i przejrzyj domyślne preferencje dotyczące wzbogacenia i zaktualizuj je zgodnie z potrzebami.
 
-Przejrzyj domyślne preferencje wzbogacania i zaktualizuj je w razie potrzeby.
+   :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Zrzut ekranu okna preferencji dotyczących wzbogacenia.":::
 
-:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Zrzut ekranu okna preferencji dotyczących wzbogacenia.":::
+1. Wybierz **Dalej**.
 
-### <a name="select-entity-to-enrich"></a>Wybierz encję do wzbogacenia
+1. Wybierz **Zestaw danych klienta** i wybierz profil i segment, który chcesz wzbogacić o dane dotyczące tożsamości z Microsoft. Można wybrać encję *Klient*, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
-Wybierz pozycję **Wzbogacona encja** i wybierz zestaw danych, który chcesz wzbogacić danymi od Microsoft. Można wybrać encję Klient, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
+1. Wybierz **Dalej**.
 
-### <a name="map-your-fields"></a>Zamapuj swoje pola
+1. Zamapuj pola z ujednoliconego obiektu klienta na dane firmy Microsoft.
 
-Mapuj pola z ujednoliconej encji klienta, aby zdefiniować segment demograficzny, którego system ma używać do wzbogacania danych klientów. Zamapuj kraj / region i przynajmniej atrybuty Data urodzenia lub Płeć. Ponadto musisz zamapować co najmniej jeden z następujących atrybutów: Miejscowość (i Województwo) albo Kod pocztowy. Wybierz **Edytuj**, aby zdefiniować mapowanie pól i wybierz **Zastosuj** po zakończeniu. Wybierz **Zapisz**, aby zakończyć mapowanie pola.
+   > [!NOTE]
+   > Wymagane są atrybuty Data urodzenia lub płeć. Wymagany jest co najmniej kod pocztowy lub kraj/region i miejscowość (i województwo). Zaleca się, aby data konwersji oznaczała konwersję na typ data/godzina podczas in pozyskiwania danych. Alternatywnie, może to być ciąg w formacie [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html): „rrrr-MM-dd” or „rrrr-MM-ddTHH:mm:ss”.
 
-Obsługiwane są następujące formaty i wartości, wielkość liter w przypadku wartości nie ma znaczenia:
+1. Wybierz **Dalej**, by zakończyć mapowanie pól.
 
-- **Data urodzenia**: Zaleca się, aby data urodzenia była konwertowana na typ DateTime podczas pozyskiwania danych. Alternatywnie, może to być ciąg w formacie [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html): „rrrr-MM-dd” or „rrrr-MM-ddTHH:mm:ss”.
-- **Płeć**: męska, żeńska, nieznane.
-- **Kod pocztowy**: pięciocyfrowe kody ZIP dla Stanów Zjednoczonych, standardowy kod pocztowy wszędzie indziej.
-- **Miasto**: Nazwa miasta w języku angielskim.
-- **Stan/Prowincja**: Dwuliterowy skrót dla Stanów Zjednoczonych i Kanady. Dwuliterowy lub trzyliterowy skrót dla Australii. Nie dotyczy Francji, Niemiec lub Wielkiej Brytanii.
-- **Kraj/region**:
+1. Podaj nazwę wzbogacenia. **Nazwa encji wyjściowej** jest wybierana automatycznie.
 
-  - US: Stany Zjednoczone Ameryki, Stany Zjednoczone, USA, US i Ameryka
-  - CA: Kanada, CA
-  - GB: Zjednoczone Królestwo, UK, Wielka Brytania, GB, Zjednoczone Królestwo Wielkiej Brytanii i Irlandii Północnej, Zjednoczone Królestwo Wielkiej Brytanii
-  - AU: Australia, AU, Związek Australijski (Commonwealth of Australia)
-  - FR: Francja, FR, Republika Francuska
-  - DE: Niemcy, niemiecki, Deutschland, Allemagne, DE, Republika Federalna Niemiec, Republika Niemiec
+   :::image type="content" source="media/enrichment-interests-summary.png" alt-text="Strona przeglądania i nazywania zainteresowań.":::
 
-## <a name="review-and-name-the-enrichment"></a>Przeglądanie i nazywanie wzbogacania
+1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
 
-Na koniec można przejrzeć te informacje i podać nazwę dla wzbogacania.
+1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-:::image type="content" source="media/enrichment-interests-summary.png" alt-text="Strona przeglądania i nazywania zainteresowań.":::
-
-## <a name="refresh-enrichment"></a>Odświeżenie wzbogacenia
-
-Należy uruchomić wzbogacenie po skonfigurowaniu marek, zainteresowań i mapowania pól dla demografii. Aby rozpocząć proces, wybierz **Uruchom** na stronie konfiguracji marki lub zainteresowań. Oprócz tego można zezwolić systemowi na automatyczne uruchamianie wzbogacenia w ramach zaplanowanego odświeżenia.
-
-W zależności od rozmiaru danych klientów może upłynąć kilka minut, aby można było wykonać wzbogacanie systemu.
-
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+   Podczas wzbogacania profili, wzbogacimy wszystkie profile klientów, dla których otrzymamy dane dla wybranych marek i zainteresowań, w tym profile, które nie znajdują się w wybranym kraju lub regionie. Na przykład jeśli wybrano Niemcy, wzbogacimy profile zlokalizowane w Stanach Zjednoczonych, jeśli w Stanach Zjednoczonych dostępne są dane dotyczące wybranych źródeł i zainteresowań.
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
-Po uruchomieniu procesu wzbogacenia przejdź do **Moje wzbogacenia**, aby przejrzeć całkowitą liczbę wzbogaconych klientów i podział marek lub zainteresowań we wzbogaconych profilach klientów.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Podgląd wyników po uruchomieniu procesu wzbogacania.":::
 
-Skorzystaj z wykresu z liczbą wzbogaconych profilów klientów w czasie oraz podglądami wzbogaconych encji. Przejrzyj wzbogacone dane, wybierając pozycję **Zobacz więcej** na wykresach **Poziom sympatii** lub **Wskaźnik Share of Voice**. Wzbogacone dane dotyczące marek trafiają do encji **BrandAffinityFromMicrosoft** i **BrandShareOfVoiceFromMicrosoft**. Dane dotyczące zainteresowań znajdują się w encjach **InterestAffinityFromMicrosoft** i **InterestShareOfVoiceFromMicrosoft**. Te encje są również wymienione w grupie **Wzbogacanie** w **Dane** > **Encje**.
+Wyniki zawierają wykresy **Poziom koligacji** lub **Share of Voice**.
+
+Encje utworzone ze wzbogacań są wymienione w grupie **Wzbogacanie** w **Dane** > **Encje**. Wzbogacone dane dotyczące marek trafiają do encji **BrandAffinityFromMicrosoft** i **BrandShareOfVoiceFromMicrosoft**. Dane dotyczące zainteresowań znajdują się w encjach **InterestAffinityFromMicrosoft** i **InterestShareOfVoiceFromMicrosoft**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Zobacz dane dotyczące wzbogacenia na karcie klienta
 

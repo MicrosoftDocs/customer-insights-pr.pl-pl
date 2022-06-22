@@ -48,14 +48,14 @@
   items:
     - name: Omówienie źródeł danych
       href: data-sources.md
+    - name: Tworzenie połączenia z danymi w programie Azure Data Lake Storage
+      href: connect-common-data-model.md
+    - name: Nawiązywanie połączenia z rozwiązaniem Azure Synapse Analytics
+      href: connect-synapse.md
+    - name: 'Łączenie się z danymi w repozytorium typu data lake, którym zarządza Microsoft Dataverse'
+      href: connect-dataverse-managed-lake.md
     - name: Dodawanie źródeł danych za pośrednictwem edytora Power Query
       href: connect-power-query.md
-    - name: Dodaj folder Common Data Model jako źródło danych
-      href: connect-common-data-model.md
-    - name: Dodaj repozytorium data lake zarządzane przez Dataverse
-      href: connect-dataverse-managed-lake.md
-    - name: Dodawanie usługi Azure Synapse Analytics
-      href: connect-synapse.md
     - name: Wzbogacanie źródeł danych
       href: data-sources-enrichment.md
     - name: Przyrostowe odświeżanie źródeł danych
@@ -82,27 +82,27 @@
   items:
     - name: Wzbogacanie profilów klientów
       href: enrichment-hub.md
+    - name: Konta z danych Office 365
+      href: enrichment-office.md
     - name: Marki i zainteresowania
       href: enrichment-microsoft.md
+    - name: Dane firm od firmy Dun & Bradstreet
+      href: enrichment-dnb.md
+    - name: Dane firm od firmy Leadspace
+      href: enrichment-leadspace.md
+    - name: Dane demograficzne z Experian
+      href: enrichment-experian.md
     - name: Rozszerzone adresy
       href: enrichment-enhanced-addresses.md
     - name: Rozszerzone dane firm
       href: enrichment-enhanced-company-data.md
-    - name: Wzbogacanie przy użyciu usługi Azure Maps
-      href: enrichment-azure-maps.md
-    - name: Wzbogacenie z Dun & Bradstreet
-      href: enrichment-dnb.md
-    - name: 'Wzbogać dane, korzystając z rozwiązania firmy HERE Technologies'
-      href: enrichment-here.md
-    - name: Wzbogacanie przy użyciu programu Leadspace
-      href: enrichment-leadspace.md
-    - name: Wzbogacanie przy użyciu usługi LiveRamp
+    - name: Tożsamość przy użyciu usługi LiveRamp
       href: enrichment-liveramp.md
-    - name: Wzbogacanie przy użyciu Experian
-      href: enrichment-experian.md
-    - name: Wzbogacanie danych usługi Office 365
-      href: enrichment-office.md
-    - name: Wzbogacenie za pomocą niestandardowego importu SFTP
+    - name: Dane lokalizacji z usługi Azure Maps
+      href: enrichment-azure-maps.md
+    - name: Dane lokalizacji od firmy HERE Technologies
+      href: enrichment-here.md
+    - name: Import niestandardowy SFTP
       href: enrichment-SFTP-custom-import.md
 - name: Ujednolicone profile
   items:
@@ -112,6 +112,8 @@
       href: search-filter-index.md
     - name: Zdefiniuj działania klientów
       href: activities.md
+    - name: Zarządzanie zgodą na potrzeby usługi Customer Insights
+      href: consent-management.md
 - name: Segments
   items:
     - name: Omówienie segmentów
@@ -294,40 +296,6 @@
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
     - name: Przykładowe zapytania OData
       href: odata-examples.md
-- name: Zarządzanie zgodami (wersja zapoznawcza)
-  items:
-    - name: Centrum pomocy
-      href: consent-management/index.yml
-    - name: Omówienie funkcji
-      href: consent-management/overview.md
-    - name: Rozpoczynanie pracy
-      items:
-        - name: Rozpoczynanie pracy
-          href: consent-management/get-started.md
-        - name: Pojęcia i terminologia
-          href: consent-management/glossary.md
-    - name: Importuj dane dotyczące zgód
-      items:
-        - name: Importuj dane dotyczące zgód
-          href: consent-management/import-consent-data.md
-        - name: Ustawianie danych dotyczących zgody i stosowanie preferencji dotyczących zgody
-          href: consent-management/set-consent-rules.md
-    - name: Zarządzanie danymi dotyczącymi zgody
-      items:
-        - name: Włącz reguły wyrażania zgody w aplikacji Customer Insights
-          href: activate-consent.md
-        - name: 'Zarządzaj domyślnymi regułami wyrażania zgody, używając segmentów w aplikacji Customer Insights'
-          href: change-default-consent-rules.md
-    - name: Zarządzanie ustawieniami i użytkownikami
-      items:
-        - name: Konfigurowanie ustawień systemu
-          href: consent-management/system-settings.md
-        - name: Zarządzanie użytkownikami i uprawnieniami
-          href: consent-management/manage-users.md
-    - name: Używanie danych dotyczących zgody
-      items:
-        - name: Tworzenie przewidywać przy użyciu danych dotyczących zgody
-          href: consent-management/predictions-consent-data.md
 - name: Limity usługi
   href: service-limits.md
 - name: Uprawnienia i żądania usługi DSR

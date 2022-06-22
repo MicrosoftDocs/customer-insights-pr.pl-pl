@@ -1,7 +1,7 @@
 ---
 title: Ulepszenia wzbogacania adresu (zawiera wideo)
 description: Wzbogacaj i normalizuj informacje adresowe z profili klientów za pomocą modeli firmy Microsoft.
-ms.date: 01/19/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b4fef3b5e30e1cac4e5cb4401498f2f0981a409e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646524"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953824"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Wzbogacenie profili klientów za pomocą ulepszonych adresów
 
@@ -53,17 +53,17 @@ Informacje o adresie mogą mieć niestandardowy format i zawierać błędy pisow
 
 ### <a name="limitations"></a>Ograniczenia
 
-Funkcja ulepszania adresów współpracuje tylko z wartościami, które już istnieją w sprawdzanych danych adresów. Model nie potrafi: 
+Poprawione adresy działają tylko z wartościami, które już istnieją w pozyskanych danych adresów. Model nie potrafi:
 
 1. Zweryfikować, czy adres jest poprawny.
 2. Sprawdzić, czy któraś z wartości, na przykład kodów pocztowy lub nazwa ulicy, jest prawidłowa.
 3. Zmienić wartości, które nie są przez niego rozpoznawane.
 
-W modelu do poprawiania adresów są używane techniki oparte na uczeniu maszynowym. Chociaż stosujemy wysoki próg ufności, kiedy model zmienia wartość wejściową, jak w przypadku każdego modelu opartego na uczeniu maszynowym, 100-procentowa dokładność nie jest gwarantowana.
+W modelu do poprawiania adresów są używane techniki oparte na uczeniu maszynowym. Tak jak w przypadku każdego modelu opartego na uczeniu maszynowym nie jest zagwarantowana 100-procentowa dokładność.
 
 ## <a name="supported-countries-or-regions"></a>Obsługiwane kraje lub regiony
 
-Obecnie oferujemy wzbogacenie adresów w tych krajach lub regionach: 
+Obecnie oferujemy wzbogacenie adresów w tych krajach lub regionach:
 
 - Australia
 - Kanada
@@ -74,50 +74,46 @@ Obecnie oferujemy wzbogacenie adresów w tych krajach lub regionach:
 - Zjednoczone Królestwo
 - Stany Zjednoczone
 
-Adresy muszą zawierać wartość kraju/regionu. Nie są przetwarzane adresy krajów lub regionów, które nie są obsługiwane, ani adresy, które nie mają podanego kraju lub regionu.
-
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
-1. Przejdź do **Dane** > **Wzbogacanie**.
+1. Przejdź do **Dane** > **Wzbogacenie** i wybierz kartę **Odkrywanie**.
 
 1. Wybierz opcję **Wzbogać dane** na kafelku **Ulepszone adresy**.
 
    :::image type="content" source="media/enhanced-addresses-tile.png" alt-text="Zrzut ekranu kafelka Ulepszone adresy.":::
 
-1. Wybierz **Zestaw danych klienta** i wybierz encję zawierającą adresy, które chcesz wzbogacić. Można wybrać encję *Klient*, aby wzbogacić adresy we wszystkich profilach klientów lub wybrać encję segmentu, która wzbogaci adresy tylko w profilach klientów zawartych w tym segmencie.
+1. Przejrzyj omówienie, a następnie wybierz **Dalej**.
+
+1. Wybierz **Zestaw danych klienta** i wybierz profil i segment, który chcesz wzbogacić. Można wybrać encję *Klient*, aby wzbogacić wszystkie profile klientów, lub wybierz jednostkę segmentu, aby wzbogacić tylko profile klientów zawarte w tym segmencie.
 
 1. Wybierz sposób formatowania adresów w Twoich zestawach danych. Wybierz **Adres z pojedynczym atrybutem**, jeśli adresy w Twoich danych zawierają tylko jedno pole. Wybierz **Adres z wieloma atrybutami**, jeśli adresy w Twoich danych zawierają więcej niż jedno pole.
+
+1. Wybierz opcję **Dalej** i zamapuj pola adresu z ujednoliconej encji klienta.
+
+    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Strona ulepszonego mapowania pola adresu.":::
 
    > [!NOTE]
    > Kraj/region jest obowiązkowy zarówno w adresach jednoatrybutowych, jak i wieloatrybutowych. Adresy nie zawierające prawidłowych lub obsługiwanych wartości kraju/regionu nie zostaną wzbogacone.
 
-1.  Zamapuj pola adresu z ujednoliconej encji klienta.
-
-    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Strona ulepszonego mapowania pola adresu.":::
-
 1. Wybierz **Dalej**, by zakończyć mapowanie pól.
 
-1. Podaj nazwę dla wzbogacania oraz encję wyjściową.
+1. Podaj **Nazwę** dla wzbogacenia oraz **Obiekt wyjściowy**.
 
 1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
-Aby rozpocząć proces wzbogacania, wybierz **Uruchom** na pasku poleceń. Można również zezwolić, aby system automatycznie uruchamiał wzbogacenie w ramach [zaplanowanego odświeżenia](system.md#schedule-tab). Czas przetwarzania zależy od rozmiaru danych klienta.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Po zakończeniu procesu wzbogacania można przejrzeć dane nowo wzbogacone profile klientów w **Moje wzbogacenia**. Ponadto znajdziesz tam czas ostatniej aktualizacji i liczbę wzbogaconych profilów.
-
-Możesz zobaczyć przykładowe dane wzbogacone w kafelku **Podglądu wzbogaconych klientów**. Wybierz opcję **Zobacz więcej** i wybierz kartę **Dane**, aby uzyskać dostęp do szczegółowego widoku każdego z wzbogaconych profilów.
+**Liczba klientów wzbogaconych według pola** zapewnia szczegółowe informacje na temat pokrycia każdego wzbogaconego pola.
 
 ### <a name="overview-card"></a>Karta przeglądowa
 
-Na karcie przeglądowej są szczegółowe informacje dotyczące zakresu wzbogacania. 
+Na karcie **przeglądowej zmiany klientów** są szczegółowe informacje dotyczące zakresu wzbogacania:
 
-* **Adresy przetwarzane i zmieniane**: Liczba profili klientów z adresami, które zostały pomyślnie wzbogacone.
-
-* **Adresy przetwarzane i niezmieniane**: Liczba profili klientów z adresami, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
-
-* **Adresy nieprzetworzone i niezmienione**: Liczba profili klientów z adresami, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
+- **Adresy przetwarzane i zmieniane**: Liczba profili klientów z adresami, które zostały pomyślnie wzbogacone.
+- **Adresy przetwarzane i niezmieniane**: Liczba profili klientów z adresami, które zostały rozpoznane, ale nie zostały zmienione. Zazwyczaj zdarza się to, jeśli dane wejściowe są prawidłowe i nie można ich poprawić przez wzbogacenie.
+- **Adresy nieprzetworzone i niezmienione**: Liczba profili klientów z adresami, które nie zostały rozpoznane. Zwykle w przypadku danych wejściowych, które są nieprawidłowe lub nieobsługiwane przez wzbogacenie.
 
 ## <a name="next-steps"></a>Następne kroki
 

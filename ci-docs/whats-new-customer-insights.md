@@ -1,19 +1,19 @@
 ---
-title: Nowe i nadchodzące funkcje
+title: Nowe i zaktualizowane funkcje
 description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 05/03/2022
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: d06f8be114f558d7adadf2913107c5fd69686875
+ms.sourcegitcommit: 9dd767051014e06d8d9f2f616e248573f24df4cb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833643"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8843360"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nowości w rozwiązaniu Dynamics 365 Customer Insights
 
@@ -24,6 +24,37 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+## <a name="may-2022-updates"></a>Aktualizacje z maja 2022 r.
+
+Aktualizacje w maju 2022 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="updated-data-unification-experience"></a>Zaktualizowane środowisko ujednolicania danych
+
+ Ujednolicenie danych pozwala na połączenie niegdyś odrębnych źródeł danych w jeden główny zbiór danych, który zapewnia ujednolicony widok tych danych. Dane mogą być ujednolicone dla pojedynczej lub wielu encji. Najpierw należy [wybrać encje i pola źródłowe](map-entities.md), [usunąć zduplikowane rekordy](remove-duplicates.md), określić reguły [dopasowania warunków](match-entities.md) i zdefiniować [pola, które mają być uwzględnić w unified customer profile](merge-entities.md).
+
+Aby uzyskać więcej informacji, zobacz [Omówienie ujednolicania danych](data-unification.md).
+
+### <a name="refreshed-home-page-in-customer-insights"></a>Odświeżona strona główna w aplikacji Customer Insights
+
+**Strona główna** prowadzi użytkownika przez proces konfiguracji kluczowych funkcji i zawiera przegląd segmentów, miar i danych wzbogacających. Odświeżyliśmy środowisko, aby dostarczyć bardziej odpowiednich informacji w skrócie.
+
+Aby uzyskać więcej informacji, zobacz temat [Poznaj Customer Insights](home.md).
+
+### <a name="track-usage-of-a-segment"></a>Śledzenie użycia segmentu
+
+Możesz teraz [śledzić użycie segmentów](segments.md#track-usage-of-a-segment) w aplikacjach, które są oparte na tej samej organizacji Dataverse, która jest połączona z Customer Insights. W [przypadku segmentów usługi Customer Insights używanych w Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile) system informuje o poszczególnych segmentach.
+
+### <a name="export-to-criteo"></a>Eksportowanie do usługi Criteo
+
+Criteo platforma online, która pomaga użytkownikom w zarządzaniu reklamami cyfrowymi. Możesz teraz eksportować segmenty unified customer profile w celu generowania kampanii, dostarczania e-mail marketingu i korzystania z określonych grup klientów za pomocą Criteo.
+
+Aby uzyskać więcej informacji, zobacz [Eksportowanie segmentów w Criteo (wersja zapoznawcza)](export-criteo.md).
+
+### <a name="refined-documentation-structure-for-environment-creation"></a>Uściślona struktura dokumentacji dotyczącej tworzenia środowiska
+
+Poprawiliśmy dokumenty pomocy dotyczące tworzenia środowisk i zarządzania nimi w aplikacji Customer Insights. Artykuły są teraz zgrupowane w węźle Środowiska w spisie treści. Te artykuły zawierają więcej wskazówek na różne sposoby tworzenia środowisk i mają bardziej czytelną strukturę. Jeśli masz opinię, którą chcesz się podzielić, daj nam znać za pośrednictwem formantów pod koniec artykułów pomocy.
+
+Aby uzyskać więcej informacji, zobacz temat [Jak to zrobić: tworzenie nowego środowiska](create-environment.md).
 
 ## <a name="april-2022-updates"></a>Aktualizacja z kwietnia 2022 r.
 

@@ -1,7 +1,7 @@
 ---
 title: Wyświetlaj profile klientów
 description: Umożliwia uzyskanie połączonego widoku ujednoliconych danych klienta.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755795"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947059"
 ---
 # <a name="customer-profiles"></a>Profile klientów
 
@@ -55,9 +55,9 @@ Klientów można filtrować według pól encji *Klient*. Podobnie jak w przypadk
 
 Wybierz dowolną tabliczkę z klientami, aby otworzyć **Stronę szczegółów klienta**. Ten widok zawiera zunifikowane informacje dotyczące wybranego klienta. Szczegóły klienta zawierają następujące informacje:
 
-**Kafelek profilu klienta**: ten kafelek przedstawia różne wartości w ujednoliconej encji *Klient*. Jeśli pole nie ma wartości dla wybranego profilu klienta, nie będzie ono wyświetlane. Kafelek jest uporządkowany na sekcje:
+**Kafelek profilu klienta**: ten kafelek przedstawia różne wartości w ujednoliconej encji *Klient*. Jeśli pole nie ma wartości dla wybranego profilu klienta, nie będzie ono wyświetlane poza polem adresu. Kafelek jest uporządkowany na sekcje:
 
-- W pierwszej sekcji przedstawiono wstępnie zdefiniowany zestaw pól, a po nich wszystkie pola w indeksie wyszukiwania i filtrowania. Wszystkie pola związane z adresami są połączone w jeden wiersz, jeśli profil zawiera takie pola.
+- W pierwszej sekcji przedstawiono wstępnie zdefiniowany zestaw pól, a po nich wszystkie pola w indeksie wyszukiwania i filtrowania. Wszystkie pola związane z adresami są połączone w jeden wiersz, który jest wyświetlany nawet, jeśli profil nie zawiera informacji o adresie.
 - **Kontakty tego klienta**: w środowiskach dotyczących kont biznesowych w drugiej sekcji będą widoczne wszystkie kontakty pokrewne dotyczące tego klienta. Każdy kontakt jest wyświetlany z ich polami. Puste pola są ukryte.
 - **Pola dodatkowe**: pokazuje pozostałe pola wybranego klienta z wyjątkiem identyfikatorów.
 - **Identyfikatory**: zawiera listę wszystkich identyfikatorów pod ich nazwą encji. Pola są identyfikowane jako identyfikatory według semantyki kategoryzującej je w odpowiedni sposób.

@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: c0db75afdde91bbd60fbece77eb2660a38b84860
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 46a67e58f79029246029e2d06789525c2131f100
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833781"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011900"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Wersja próbna Dynamics 365 Customer Insights, często zadawane pytania
 
@@ -66,7 +66,7 @@ Opcjonalnie, jeśli używasz tylko funkcji Customer Insights, możesz skopiować
 
 Po zalogowaniu się do płatnego wystąpienia usługi Customer Insights po raz pierwszy zostaniesz poproszony o utworzenie nowego środowiska. W tym procesie można skopiować konfigurację z istniejącego środowiska i przeprowadzić migrację większości ustawień. Jeśli masz uprawnienia wymienione powyżej, środowisko próbne pojawi się na tej liście. Aby uzyskać więcej informacji, zobacz [Kopiowanie konfiguracji środowiska](create-environment.md#copy-the-environment-configuration).
 
-### <a name="what-are-the-trial-limits-and-quotas"></a>Jakie są limity i wielkości w wersji próbnej?
+### <a name="what-are-the-trial-limits-and-quotas"></a>Jakie limity i limity przydziału obowiązują w wersji próbnej?
 
 - Nie można używać własnego konta usługi Azure Data Lake Storage w celu przechowywania danych wyjściowych podczas korzystania z wersji próbnej aplikacji Customer Insights. Można jednak pozyskać dane z konta Data Lake Storage.
 - W środowisku usługi Dataverse można przechowywać maksymalnie 3 GB danych, które są automatycznie aprowizowane po rozpoczęciu wersji próbnej aplikacji Customer Insights.

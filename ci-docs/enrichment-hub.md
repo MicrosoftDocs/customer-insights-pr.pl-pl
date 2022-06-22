@@ -1,7 +1,7 @@
 ---
 title: Wzbogać ujednolicone profile klientów
 description: Korzystanie z funkcji w celu wzbogacenia danych klienta.
-ms.date: 03/29/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800618"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954054"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Wzbogacenie profilów klientów (wersja zapoznawcza)
 
@@ -35,29 +35,29 @@ Na karcie **Odnajdowanie** znajdziesz wszystkie obsługiwane opcje wzbogacania.
 
 # <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
+- [Tożsamość AbiliTec Identity](enrichment-liveramp.md) dostarczona przez LiveRamp AbiliTec
 - [Marki](enrichment-microsoft.md) dostarczone przez Microsoft
-- [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
-- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
 - [Dane demograficzne](enrichment-experian.md) dostarczane przez usługę Experian
-- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
-- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies 
-- [Tożsamość](enrichment-liveramp.md) dostarczona przez LiveRamp AbiliTec
+- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
+- [Zainteresowania](enrichment-microsoft.md) dostarczone przez Microsoft
+- [Dane lokalizacji](enrichment-azure-maps.md) według map Microsoft Azure
+- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies
+- [Dane niestandardowe SFTP](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol)
 
 # <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
-- [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
-- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft 
-- [Rozszerzone dane firmy](enrichment-enhanced-company-data.md) dostarczane przez Microsoft
-- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies 
-- [Dane niestandardowe](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol) 
-- [Azure Maps](enrichment-azure-maps.md) oferowane przez Microsoft
-- [Dane firmy](enrichment-dnb.md) podane przez Dun & Bradstreet
 - [Dane dotyczące zaangażowania konta](enrichment-office.md) dostarczone przez Microsoft
+- [Dane firmy](enrichment-dnb.md) podane przez Dun & Bradstreet
+- [Dane firmy](enrichment-leadspace.md) zapewniane przez Leadspace
+- [Ulepszone adresy](enrichment-enhanced-addresses.md) od Microsoft
+- [Rozszerzone dane firmy](enrichment-enhanced-company-data.md) dostarczane przez Microsoft
+- [Dane lokalizacji](enrichment-azure-maps.md) według map Microsoft Azure
+- [Dane lokalizacji](enrichment-here.md) dostarczane przez HERE Technologies
+- [Dane niestandardowe SFTP](enrichment-SFTP-custom-import.md) za pomocą protokołu SFTP (Secure File Transfer Protocol)
 
 ---
 
-Na karcie **Moje wzbogacenia** użytkownik może zobaczyć skonfigurowane przez siebie wzbogacenia i edytować ich właściwości.
+Na karcie **Moje wzbogacenia** użytkownik może zobaczyć skonfigurowane przez siebie wzbogacenia i edytować ich właściwości. Można także tworzyć [segmenty](segments.md) i [miary](measures.md) na pomocą wzbogacania.
 
 ## <a name="manage-existing-enrichments"></a>Zarządzanie istniejącymi wzbogaceniami
 
@@ -81,36 +81,45 @@ Wzbogacenia innych firm konfiguruje się przy użyciu [połączeń](connections.
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Wiele wzbogaceń tego samego typu
 
-Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogać dane tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na stronie **Wzbogacanie**.
+Podczas konfigurowania wzbogacania jest określana encja do wzbogacenia, która umożliwia wzbogacenie tylko podzestawu profilów. Na przykład wzbogać dane tylko dla określonego segmentu. Można skonfigurować wiele wzbogaceń tego samego typu i ponownie używać tego samego połączenia. Niektóre wzbogacenia będą mieć ograniczoną liczbę wzbogaceń tego samego typu, które można utworzyć. Ograniczenia i bieżące użycie są widoczne na każdym kafelku na karcie **Poznaj** na stronie **Wzbogacanie**.
 
 ## <a name="enrich-data-sources-before-unification"></a>Wzbogać źródła danych przed unifikacją
 
 Możesz wzbogacić dane klientów przed ujednoliceniem danych, aby zwiększyć jakość dopasowania danych. Aby uzyskać więcej informacji, zobacz [wzbogacanie źródła danych](data-sources-enrichment.md).
 
-## <a name="see-the-progress-of-the-enrichment-process"></a>Wyświetlanie postępu procesu wzbogacania
+## <a name="run-or-refresh-enrichments"></a>Uruchamianie i odświeżanie wzbogacenia
+
+1. Wybierz **Uruchom**, aby rozpocząć proces wzbogacenia. Lub można również zezwolić, aby system automatycznie uruchamiał wzbogacenie w ramach [zaplanowanego odświeżenia](system.md#schedule-tab). Czas przetwarzania zależy od rozmiaru danych klienta.
+
+1. Opcjonalnie [sprawdź postęp procesu wzbogacania](#see-the-progress-of-the-enrichment-process).
+
+1. Po zakończeniu procesu wzbogacania przejdź do **mojego wzbogacenia** w celu przejrzenia nowo wzbogacenia danych profilów klientów, czasu ostatniej aktualizacji i liczby profilów wzbogaconych.
+
+1. Wybierz wzbogacanie, aby wyświetlić [wyniki wzbogacenia](#enrichment-results).
+
+### <a name="see-the-progress-of-the-enrichment-process"></a>Wyświetlanie postępu procesu wzbogacania
 
 Można tu znaleźć szczegółowe informacje o przetwarzaniu wzbogacania, w tym informacje o stanie i potencjalnych problemach podczas odświeżania lub po zakończeniu odświeżania. Zidentyfikuj procesy związane z odświeżaniem wzbogacania i dowiedz się, ile trwa ich działanie. Stan wzbogacenia jest obsługiwany w przypadku usług Experian, Leadspace, HERE Technologies, SFTP Import i Azure Maps.
 
-Aby wyświetlić stan wzbogacania
-
-1. Przejdź do **Dane** > **Wzbogacanie**. 
-1. Na karcie **Moje wzbogacenia** wybierz stan wzbogacania, aby otworzyć okienko boczne. 
-1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**. 
-1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**. 
-1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu. 
+1. Przejdź do **Dane** > **Wzbogacanie**.
+1. Na karcie **Moje wzbogacenia** wybierz stan wzbogacania, aby otworzyć okienko boczne.
+1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**.
+1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**.
+1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu.
 
 ## <a name="enrichment-results"></a>Wyniki wzbogacenia
 
-Po zakończeniu procesu wzbogacenia można przejrzeć wyniki wzbogacenia.
+Po zakończeniu procesu wzbogacenia przejrzyj wyniki wzbogacenia.
 
-1. Przejdź do **Dane** > **Wzbogacanie**. 
-1. Wybierz wzbogacenie, o którym chcesz uzyskać informacje.
+1. Przejdź do **Dane** > **Wzbogacanie**.
+1. Na karcie **Moje wzbogacenia** wybierz wzbogacanie, o którym chcesz uzyskać informacje.
 
-Wszystkie wzbogacenia pokazują podstawowe informacje, takie jak liczba wzbogaconych profili, podgląd wygenerowanej encji wzbogacenia oraz liczba wzbogaconych profili w czasie. Jeśli jest dostępna, **Liczba klientów wzbogaconych według pola** zapewnia szczegółowe informacje na temat pokrycia każdego wzbogaconego pola.
+Wszystkie wzbogacenia pokazują podstawowe informacje, takie jak liczba wzbogaconych profili oraz liczba wzbogaconych profili w czasie. Kafelek **Podgląd wzbogaconych klientów** zawiera przykładową encję wzbogacenia. Aby uzyskać dostęp do szczegółowego widoku, wybierz opcję **Zobacz więcej** i wybierz kartę **Dane**.
 
 :::image type="content" source="media/enrichments-results.png" alt-text="Strona wyników wzbogaceń.":::
 
-Niektóre wzbogacanie zawierają także informacje dotyczące typu wzbogacania. Odpowiednie wzbogacenie można znaleźć w dokumentacji.
+Jeśli jest dostępna, **Liczba klientów wzbogaconych według pola** zapewnia szczegółowe informacje na temat pokrycia każdego wzbogaconego pola.
 
+Niektóre wzbogacanie zawierają także informacje dotyczące typu wzbogacania. Aby uzyskać więcej informacji, zobacz powiązaną dokumentację.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

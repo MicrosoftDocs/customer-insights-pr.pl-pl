@@ -1,19 +1,19 @@
 ---
 title: Żądania podmiotów danych osobowych (DSR) w kontekście rozporządzenia RODO | Microsoft Docs
 description: Odpowiadanie na żądania podmiotów danych osobowych w Dynamics 365 Customer Insights.
-ms.date: 08/11/2021
+ms.date: 05/23/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808574"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947381"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -77,11 +77,5 @@ W celu wyeksportowania danych administrator dzierżawy może wykonać następuj�
 1. Wysłąć wiadomość e-mail na adres D365CI@microsoft.com określając adres e-mail użytkownika w żądaniu. Zespół Customer Insights wyśle wiadomość e-mail na adres e-mail zarejestrowanego administratora dzierżawcy, pytając o potwierdzenie wyeksportowania danych.
 2. Zatwierdź potwierdzenie wyeksportowania danych dla żądanego użytkownika.
 3. Pobierz eksportowane dane za pomocą adresu e-mail administratora dzierżawcy.
-
-## <a name="consent-management-preview"></a>Zarządzanie zgodami (wersja zapoznawcza)
-
-Funkcja zarządzania zgodami nie umożliwia bezpośredniego zbierania danych użytkowników. Importuje i przetwarza ona tylko dane zgody podane przez użytkowników w innych aplikacjach.
-
-Aby usunąć dane zgody dotyczące określonych użytkowników, należy usunąć je w źródłach danych, z których pozyskano je dla funkcji zarządzania zgodami. Po odświeżeniu źródła danych dane zostaną również usunięte w Centrum zgody. Aplikacje, które korzystają z encji zgody, będą również usuwać dane, które zostały usunięte ze źródła po [odświeżeniu](system.md#refresh-processes). Zaleca my odświeżenie źródeł danych niedługo po reakcji na żądanie podmiotu danych dotyczącego usunięcia danych użytkownika ze wszystkich innych procesów i aplikacji.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

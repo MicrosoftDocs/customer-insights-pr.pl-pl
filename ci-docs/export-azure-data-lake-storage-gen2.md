@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 8b14992f8312d333d8a12501e8a28496c8434779
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646772"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947243"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Eksportowanie listy segmentów i innych danych do usługi Azure Data Lake Storage Gen 2 (wersja zapoznawcza)
 
@@ -21,11 +21,9 @@ Przechowuj dane aplikacji Customer Insights na koncie usługi Data Lake Storage 
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-1. Podczas tworzenia konta magazynu dla danych typu data lake użytkownik usługi Azure Data Lake Storage Gen2 może wybrać [warstwę wydajności Standardowa lub Premium](/azure/storage/blobs/create-data-lake-storage-account). Jeśli wybierzesz warstwę wydajności Premium, jako typ konta wybierz blokowe obiekty blob typu premium. 
+1. Podczas tworzenia konta magazynu dla danych typu data lake użytkownik usługi Azure Data Lake Storage Gen2 może wybrać [warstwę wydajności Standardowa lub Premium](/azure/storage/blobs/create-data-lake-storage-account). Jeśli wybierzesz warstwę wydajności Premium, jako typ konta wybierz blokowe obiekty blob typu premium.
 
-
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Konfigurowanie połączenia z usługą Azure Data Lake Storage Gen2 
-
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Konfigurowanie połączenia z usługą Azure Data Lake Storage Gen2
 
 1. Przejdź do **Admin** > **Połączenia**.
 
@@ -39,7 +37,7 @@ Przechowuj dane aplikacji Customer Insights na koncie usługi Data Lake Storage 
     - Informacje o tworzeniu konta magazynu do używania z Azure Data Lake Storage Gen2 można przeczytać w temacie [Utwórz konto magazynu](/azure/storage/blobs/create-data-lake-storage-account). 
     - Aby dowiedzieć się, jak znaleźć nazwę i klucz klienta konta magazynu Azure Data Lake Gen 2, zobacz [Zarządzanie ustawieniami konta magazynu w portalu Azure Portal](/azure/storage/common/storage-account-manage).
 
-1. Aby zakończyć połączenie, wybierz **Zapisz**. 
+1. Aby zakończyć połączenie, wybierz **Zapisz**.
 
 ## <a name="configure-an-export"></a>Konfigurowanie eksportu
 
@@ -57,8 +55,12 @@ Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia
 
 Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
+Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab).
+Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand).
 
-Wyeksportowane dane są przechowywane w skonfigurowanym kontenerze magazynu Azure Data Lake Gen 2. 
+Wyeksportowane dane są przechowywane w skonfigurowanym kontenerze magazynu Azure Data Lake Gen 2.
+
+> [!TIP]
+> Eksportowanie encji zawierających dużą ilość danych może powodować wyeksportowanie wielu plików CSV w tym samym folderze dla każdego eksportu. Podział eksportu odbywa się ze względów wydajności w celu zminimalizowania czasu jego zakończenia.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
