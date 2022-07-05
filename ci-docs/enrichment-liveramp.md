@@ -1,5 +1,5 @@
 ---
-title: Wzbogacanie danych tożsamościowych LiveRamp
+title: Wzbogacanie profilów klientów przy użyciu danych tożsamości z LiveRamp (wersja zapoznawcza)
 description: Wzbogać profile klientów o dane LiveRamp.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954008"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081283"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Wzbogacanie profilów klientów przy użyciu danych tożsamości z LiveRamp (wersja zapoznawcza)
 
@@ -79,7 +79,7 @@ Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi Li
 
 1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Ulepszenia wzbogacania adresu (zawiera wideo)
+title: Wzbogacanie profilów klientów o ulepszone adresy (zawiera film wideo)
 description: Wzbogacaj i normalizuj informacje adresowe z profili klientów za pomocą modeli firmy Microsoft.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -14,14 +14,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 01f1c917c75e932cc69f4c7251e57524fc859dce
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953824"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081229"
 ---
-# <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Wzbogacenie profili klientów za pomocą ulepszonych adresów
+# <a name="enrich-customer-profiles-with-enhanced-addresses"></a>Wzbogacanie profilów klientów o ulepszone adresy
 
 Adresy w Twoich danych mogą być nieustrukturyzowane, niekompletne lub nieprawidłowe. Użyj modeli firmy Microsoft do normalizacji i wzbogacenia adresów do [formatu Common Data Model](/common-data-model/schema/core/applicationcommon/address) w celu lepszej dokładności i głębszej analizy.
 
@@ -101,7 +101,7 @@ Obecnie oferujemy wzbogacenie adresów w tych krajach lub regionach:
 
 1. Wybierz opcję **Zapisz wzbogacenie** po przejrzeniu wybranych opcji.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

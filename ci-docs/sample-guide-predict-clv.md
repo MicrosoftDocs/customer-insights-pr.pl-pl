@@ -1,5 +1,5 @@
 ---
-title: Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta
+title: Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta (CLV)
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować model predykcji customer lifetime value.
 ms.date: 03/31/2022
 ms.reviewer: v-wendysmith
@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 351946c734f5a1054eb3769b2d9cced3bed48e15
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 2013533ed225a396d21e51e63297d7608ce58ac6
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740824"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051650"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Przykładowy przewodnik po prognozowaniu wartości całego cyklu życia klienta (CLV)
 

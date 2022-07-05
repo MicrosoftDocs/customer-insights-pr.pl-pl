@@ -13,16 +13,16 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3e1b1ce00eeda1cead9ba05beae65b6903d0b9cf
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647345"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055227"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Przewidywanie Wartość okresu istnienia klienta (CLV)
 
-Przewiduj potencjalną wartość (przychód), jaką indywidualni aktywni klienci przyniosą Twojej firmie w określonym okresie w przyszłości. Ta funkcja umożliwia osiągnięcie różnych celów: 
+Przewiduj potencjalną wartość (przychód), jaką indywidualni aktywni klienci przyniosą Twojej firmie w określonym okresie w przyszłości. Ta funkcja umożliwia osiągnięcie różnych celów:
 - Identyfikowanie klientów o wysokiej wartości i przetwarzanie tych informacji
 - Twórz strategiczne segmenty klientów w oparciu o ich potencjalną wartość, aby prowadzić spersonalizowane kampanie z ukierunkowaną sprzedażą, marketingiem i działaniami wsparcia
 - Kieruj rozwojem produktu, koncentrując się na funkcjach zwiększających wartość klienta

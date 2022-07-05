@@ -1,5 +1,5 @@
 ---
-title: Wzbogacenie profilów firmy z Dun & Bradstreet
+title: Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
 description: Ogólne informacje na temat wzbogacenia innych firm z Dun & Bradstreet.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953904"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081432"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
+# <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
 
 Firma Dun & Bradstreet dostarcza dane komercyjne, analizy i szczegółowe informacje dla firm. Dzięki niej klienci z ujednoliconymi profilami klientów dla firm mogą wzbogacać swoje dane. Wzbogacenie zawiera atrybuty, takie jak numer DUNS, wielkość firmy, lokalizacja, branża i inne.
 
@@ -102,7 +102,7 @@ Obecnie są dostępne opcje dla następujących krajów/regionów: Kanada (angie
 
 1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

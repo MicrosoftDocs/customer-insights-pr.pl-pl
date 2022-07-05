@@ -21,14 +21,14 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: a7b10d985d5cba64b25595a3d7c101d6cb5c62a5
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647325"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081445"
 ---
-# <a name="relationships-between-entities"></a>Relacje między encjami
+# <a name="relationships-between-entities-and-entity-paths"></a>Relacje między encjami i ścieżkami encji
 
 Relacje łączą encje i definiują graf Twoich danych, gdy encje posiadają wspólny identyfikator, klucz obcy. Do tego klucza obcego można się odwoływać z jednej encji do drugiej. Połączone podmioty umożliwiają definiowanie segmentów i miar w oparciu o wiele źródeł danych.
 

@@ -1,5 +1,5 @@
 ---
-title: Wzbogacenie za pomocą niestandardowego importu SFTP
+title: Wzbogacanie profilów klientów za pomocą niestandardowego importu SFTP (wersja zapoznawcza)
 description: Ogólne informacje o wzbogacaniu importu niestandardowego SFTP.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953732"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081337"
 ---
-# <a name="enrich-customer-profiles-with-custom-data-preview"></a>Wzbogacanie profili klientów za pomocą danych niestandardowych (wersja zapoznawcza)
+# <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Wzbogacanie profilów klientów za pomocą niestandardowego importu SFTP (wersja zapoznawcza)
 
 Niestandardowy import protokołu Secure File Transfer Protocol (SFTP) umożliwia importowanie danych, które nie muszą przechodzić przez proces ujednolicania danych. To elastyczny, bezpieczny i łatwy sposób podawania danych. Niestandardowy import SFTP może być używany w połączeniu z [eksportem SFTP](export-sftp.md), który umożliwia wyeksportowanie danych profilu klienta potrzebnych do wzbogacenia. Dane te można następnie przetwarzać i wzbogacać, a import niestandardowy (SFDP) może zostać użyty w celu zwrócenia wzbogacanych danych do Dynamics 365 Customer Insights.
 
@@ -120,7 +120,7 @@ Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć 
 
 1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

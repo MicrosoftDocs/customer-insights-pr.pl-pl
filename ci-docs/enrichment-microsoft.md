@@ -1,5 +1,5 @@
 ---
-title: Wzbogać profile klientów dzięki danych o różnych zainteresowaniach i danych od firmy Microsoft
+title: Wzbogać profile klientów dzięki danych o różnych zainteresowaniach i danych od firmy Microsoft (wersja zapoznawcza)
 description: Używanie danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu koligacji i wskaźnika Share of Voice.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953778"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081505"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Wzbogacanie profilów klientów przy użyciu koligacji i wskaźnika Share of Voice (wersja zapoznawcza)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Wzbogać profile klientów dzięki danych o różnych zainteresowaniach i danych od firmy Microsoft (wersja zapoznawcza)
 
 Użyj danych stanowiących własność Microsoft do wzbogacania danych klientów przy użyciu sympatii do marki, sympatii do zainteresowań i wskaźnika Share of Voice (SoV). Sympatie te oraz wskaźnik SoV opierają się na danych od osób, które mają cechy demograficzne podobne do Twoich klientów. Te informacje pomogą Ci lepiej zrozumieć i segmentować klientów na podstawie ich sympatii do poszczególnych marek i zainteresowań lub odpowiednich wskaźników SoV.
 
@@ -104,7 +104,7 @@ Obecnie obsługujemy następujące opcje kraju/regionu: Australia, Kanada (angie
 
    Podczas wzbogacania profili, wzbogacimy wszystkie profile klientów, dla których otrzymamy dane dla wybranych marek i zainteresowań, w tym profile, które nie znajdują się w wybranym kraju lub regionie. Na przykład jeśli wybrano Niemcy, wzbogacimy profile zlokalizowane w Stanach Zjednoczonych, jeśli w Stanach Zjednoczonych dostępne są dane dotyczące wybranych źródeł i zainteresowań.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

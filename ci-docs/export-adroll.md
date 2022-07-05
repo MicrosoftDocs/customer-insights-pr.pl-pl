@@ -1,5 +1,5 @@
 ---
-title: Eksportowanie danych aplikacji Customer Insights do rozwiązania AdRoll
+title: Eksportowanie segmentów do usługi AdRoll (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi AdRoll.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec7d2d4d137f2f0e3e1ff2ec0d09bff8ac4f28ea
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 13c7dd3b8556ad807fba6c537525b463480e860b
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646700"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081565"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Eksportowanie segmentów do usługi AdRoll (wersja zapoznawcza)
 
@@ -21,9 +21,9 @@ Eksportuj segmenty ujednoliconych profilów klientów do rozwiązania AdRoll i u
 
 ## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
--   Masz [konto rozwiązania AdRoll](https://www.adroll.com/) i odpowiadające mu poświadczenia administratora.
--   Masz [skonfigurowane segmenty](segments.md) w Customer Insights.
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
+- Masz [konto rozwiązania AdRoll](https://www.adroll.com/) i odpowiadające mu poświadczenia administratora.
+- Masz [skonfigurowane segmenty](segments.md) w Customer Insights.
+- Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 

@@ -6,14 +6,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 99ec463299a24ea81cfe26bb785e36bdefdcd080
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833321"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054445"
 ---
-# <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Praca z ujednoliconymi profilami klientów w usłudze Dynamics 365 Marketing
+# <a name="use-unified-customer-profiles-in-dynamics-365-marketing"></a>Używanie ujednoliconych profilów klienta w usłudze Dynamics 365 Marketing
 
 Aplikacja [Dynamics 365 Marketing](/dynamics365/marketing/overview) podnosi poziom obsługi klienta, umożliwiając organizowanie spersonalizowanych procesów pozyskiwania we wszystkich punktach kontaktu, aby wzmocnić relacje i zdobyć lojalność. Aplikacja Dynamics 365 Marketing bezproblemowo współpracuje z aplikacjami Dynamics 365 Sales, Dynamics 365 Customer Insights, Microsoft Teams oraz innymi produktami i umożliwia podejmowanie szybszych i lepszych decyzji przy użyciu mocy danych i AI.
 

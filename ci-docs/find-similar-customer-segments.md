@@ -1,5 +1,5 @@
 ---
-title: Znajdź podobnych klientów za pomocą AI (zawiera wideo)
+title: Znajdź podobnych klientów za pomocą AI (wersja zapoznawcza) (zawiera wideo)
 description: Znajdź segmenty podobnych klientów za pomocą sztucznej inteligencji.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
@@ -12,14 +12,14 @@ searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 7877349817829f7486a63a1355a81361e1cb2c13
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d58b2e424fd81ad691db4b2576bdf5655038ed89
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646911"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054815"
 ---
-# <a name="similar-customers-preview"></a>Podobni klienci (wersja zapoznawcza)
+# <a name="find-similar-customers-with-ai-preview"></a>Znajdź podobnych klientów za pomocą AI (wersja zapoznawcza)
 
 Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korzystając z sztucznej inteligencji. Aby można było korzystać z tej funkcji, musi być utworzony co najmniej jeden segment. Rozwijanie kryteriów istniejącego segmentu ułatwia znajdowanie klientów podobnych do tego segmentu.
 

@@ -1,5 +1,5 @@
 ---
-title: Eksportowanie danych rozwiązania Customer Insights do usługi Salesforce Marketing Cloud
+title: Eksportowanie danych do usługi Salesforce Marketing Cloud (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i wyeksportować je do usługi Salesforce Marketing Cloud.
 ms.date: 07/23/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: aaf5c2607099bbfccf7ed75330267da8c3c5fe1b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c3a6a40d9b9f08c8ebca8cb4a9196a1a79f03afa
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647398"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081465"
 ---
-# <a name="export-segments-and-other-data-to-salesforce-marketing-cloud-preview"></a>Eksportowanie segmentów i innych danych do usługi Salesforce Marketing Cloud (wersja zapoznawcza)
+# <a name="export-data-to-salesforce-marketing-cloud-preview"></a>Eksportowanie danych do usługi Salesforce Marketing Cloud (wersja zapoznawcza)
 
 Wykorzystaj dane swoich klientów w Salesforce Marketing Cloud, eksportując je za pośrednictwem lokalizacji Secure File Transfer Protocol (SFTP).
 

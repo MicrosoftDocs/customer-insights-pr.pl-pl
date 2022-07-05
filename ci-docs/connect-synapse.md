@@ -1,5 +1,5 @@
 ---
-title: Pozyskaj dane z usługi Azure Synapse Analytics
+title: Połącz źródło danych usługi Azure Synapse (wersja zapoznawcza)
 description: Bazy danych w usłudze Azure Synapse jako źródła danych w programie Dynamics 365 Customer Insights.
 ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011440"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052712"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Połącz źródło danych usługi Azure Synapse Analytics (wersja zapoznawcza)
 
@@ -59,7 +59,7 @@ Aby uzyskać więcej informacji, zobacz [Omówienie usługi Azure Synapse](/azur
 
 1. Wybierz [dostępne połączenie](connections.md) z usługą Azure Synapse Analytics lub utwórz nowe.
 
-1. Wybierz **Bazę danych** w obszarze roboczym połączonym w wybranym połączeniu usługi Azure Synapse Analytics i wybierz opcję **Dalej**.
+1. Wybierz **Bazę danych** w obszarze roboczym połączonym w wybranym połączeniu usługi Azure Synapse Analytics i wybierz opcję **Dalej**. Obecnie obsługujemy tylko bazę danych typu *Baza danych lake*.
 
 1. Wybierz encje do pozyskania z podłączonej bazy danych i wybierz **Dalej**.
 

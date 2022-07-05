@@ -1,5 +1,5 @@
 ---
-title: Wzbogacanie za pomocą strony trzeciej – HERE Technologies
+title: Wzbogacanie profilów klientów za pomocą HERE Technologies (wersja zapoznawcza)
 description: Ogólne informacje o wzbogacaniu strony trzeciej HERE Technologies.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953686"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052064"
 ---
-# <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Wzbogacenie profili klientów za pomocą HERE Technologies (wersja zapoznawcza)
+# <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Wzbogacanie profilów klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
 HERE Technologies to firma oferująca platformę lokalizacyjną, która dostarcza dane i usługi zorientowane na lokalizację. Usługi wzbogacenia danych firmy HERE Technologies poprawiają dokładność informacji o lokalizacjach klientów. Zapewnia on normalizację adresów, szerokość i długość geograficzną wyodrębniania itp.
 
@@ -72,7 +72,7 @@ Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć 
 
 1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

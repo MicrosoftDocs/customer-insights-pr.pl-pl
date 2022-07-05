@@ -1,5 +1,5 @@
 ---
-title: Wzbogacanie profili firm o zewnętrzne wzbogacenie Leadspace
+title: Wzbogacenie profilów firmy z Leadspace (wersja zapoznawcza)
 description: Ogólne informacje o wzbogacaniu strony trzeciej Leadspace.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: ca53f15bd7c71b3b4acb396c4daf52d7c7aff9eb
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954192"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081355"
 ---
-# <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Wzbogacanie profili firm z Leadspace (wersja zapoznawcza)
+# <a name="enrich-company-profiles-with-leadspace-preview"></a>Wzbogacenie profilów firmy z Leadspace (wersja zapoznawcza)
 
 Leadspace to firma zajmującą się nauką o danych, która oferuje platformę danych dla klienta typu B2B. Umożliwia ona środowiskom, które mają ujednolicone profile klientów oparte na klientach, wzbogacanie swoich danych. Wzbogać *profile klientów* o atrybuty, takie jak wielkość firmy, lokalizacja lub sektor. Wzbogać *profile kontaktów* o atrybuty, takie jak tytuł, osoba lub weryfikacja wiadomości e-mail.
 
@@ -82,7 +82,7 @@ Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć 
 
 1. Wybierz przycisk **Uruchom**, aby rozpocząć proces wzbogacenia lub zamknąć, aby powrócić do strony **Wzbogacanie**.
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

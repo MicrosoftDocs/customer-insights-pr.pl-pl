@@ -1,5 +1,5 @@
 ---
-title: Wzbogać profile klientów o dane z Microsoft Office 365
+title: Wzbogać profile klientów o dane z Microsoft Office 365 (wersja zapoznawcza)
 description: Użyj zastrzeżonych danych z Microsoft Office, aby wzbogacić swoje profile klientów o dane dotyczące zaangażowania.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 75762afb70814c8a81c1574ee7ea1553a2048737
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954146"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055687"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Wzbogać profile klientów o dane dotyczące zaangażowania (podgląd)
+# <a name="enrich-customer-profiles-with-data-from-microsoft-office-365-preview"></a>Wzbogać profile klientów o dane z Microsoft Office 365 (wersja zapoznawcza)
 
 Wykorzystaj dane z usługi Microsoft Office 365, aby wzbogacić profile kont klientów o spostrzeżenia dotyczące zaangażowania za pośrednictwem aplikacji Office 365. Dane dotyczące zaangażowania składają się z aktywności e-mailowej i aktywności na spotkaniach, które są agregowane na poziomie konta. Na przykład liczba maili z konta biznesowego lub liczba spotkań z tego konta. Nie są udostępniane żadne dane dotyczące poszczególnych użytkowników.
 
@@ -75,7 +75,7 @@ Wybierz **Uruchom**, aby rozpocząć proces wzbogacenia.
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
-## <a name="enrichment-results"></a>Wyniki wzbogacenia
+## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]Jest to encja pakietu *Office*. *Office_UserEntity* zawiera identyfikatory Active Directory dla adresów e-mail, które zostały wybrane podczas konfiguracji wzbogacania.
 
