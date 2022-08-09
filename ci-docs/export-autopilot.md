@@ -1,52 +1,53 @@
 ---
 title: Eksportowanie segmentów do programu Autopilot (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Autopilot.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e3af3d03e70c4ce9d229c84c582ec4f302be8c9f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 449d2c5e32697e4a5d2c9dff4a5a1cbdb26aeb4d
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081427"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195073"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Eksportowanie segmentów do programu Autopilot (wersja zapoznawcza)
 
-Eksportuj segmenty ujednoliconych profili klientów do Autopilota i używaj ich do marketingu e-mailowego w Autopilocie. 
+Eksportuj segmenty ujednoliconych profili klientów do Autopilota i używaj ich do marketingu e-mailowego w Autopilocie.
 
 ## <a name="prerequisites-for-a-connection"></a>Wymagania wstępne dla połączenia
 
--   Użytkownik ma [konto usługi Autopilot](https://www.autopilothq.com/) i odpowiadające mu poświadczenia administratora.
--   Masz [skonfigurowane segmenty](segments.md) w Customer Insights.
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
+- [Konto usługi Autopilot](https://www.autopilothq.com/) i odpowiadające mu poświadczenia administratora.
+- [Klucz interfejsu API usługi Autopilot](https://autopilot.docs.apiary.io/#)
+- [Skonfigurowane segmenty](segments.md) w Customer Insights.
+- Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- W ramach każdego eksportu do rozwiązania Autopilot można wyeksportować łącznie 100 000 profilów klientów.
-- Eksport do Autopilot jest ograniczony do segmentów.
-- Eksportowanie do 100 000 profilów klientów do rozwiązania Autopilot może zająć do kilku godzin. 
-- Liczba profilów klientów, które można eksportować do rozwiązania Autopilot, zależy od kontraktu z rozwiązaniem Autopilot i jest ograniczona.
+- Do 100 000 profili klientów na eksport do Autopilota, co może potrwać nawet kilka godzin. Liczba profilów klientów, które można eksportować do usługi Autopilot, zależy od kontraktu z usługą Autopilot i jest ograniczona.
+- Tylko segmenty.
 
 ## <a name="set-up-connection-to-autopilot"></a>Skonfiguruj połączenie z usługą Autopilot
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Przejdź do **Admin** > **Połączenia**.
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Autopilot**, aby skonfigurować połączenie.
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Autopilot**.
 
 1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
 
-1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Określ, kto może używać tego połączenia. Domyślnie – tylko administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Wprowadź [klucz interfejsu API Autopilot](https://autopilot.docs.apiary.io/#).
+1. Wprowadź klucz interfejsu API Autopilot.
 
-1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
-1. Wybierz opcję **Połącz**, aby zainicjować połączenie z Autopilot.
+1. Wybierz opcję **Połącz**, aby zainicjować połączenie.
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
@@ -54,28 +55,24 @@ Eksportuj segmenty ujednoliconych profili klientów do Autopilota i używaj ich 
 
 ## <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Przejdź do **Dane** > **Eksporty**.
 
-1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+1. Wybierz opcję **Dodaj eksport**.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Autopilot. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Autopilot. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie.
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. Powtórz te kroki dla innych pól opcjonalnych, takich jak **Imię**, **Nazwisko**.
+1. Wpisz nazwę eksportu.
 
-1. Wybierz segmenty, które chcesz wyeksportować. Zdecydowanie **zalecamy, aby nie eksportować łącznie ponad 100 000 profili klientów** do Autopilota. 
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta.
+
+1. Opcjonalnie można wyeksportować inne pola, **Imię** lub **Nazwisko**.
+
+1. Wybierz segmenty, które chcesz wyeksportować zgodnie ze znanymi ograniczeniami.
 
 1. Wybierz pozycję **Zapisz**.
 
-Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
-
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi Autopilot można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że Autopilot spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć tę lokalizację docelową eksportu, aby przestać używać tej funkcji.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

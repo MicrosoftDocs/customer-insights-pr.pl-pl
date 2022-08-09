@@ -1,85 +1,83 @@
 ---
 title: Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi Google Ads.
-ms.date: 03/31/2022
+ms.date: 07/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b7f08936d7d90322cb4e62396a2961fe06273b76
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: fd7498ecf17ef8a3a8f22dcc49ae204bef88b47f
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081645"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196591"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportowanie segmentów do usługi Google Ads (wersja zapoznawcza)
 
-Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network. 
+Wyeksportuj segmenty ujednoliconych profili klientów do listy odbiorców Google Ads i wykorzystaj je do reklam w wyszukiwarce Google, poczcie Gmail, serwisie YouTube i sieci reklamowej Google Display Network.
 
+## <a name="prerequisites"></a>Wymagania wstępne
 
-## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
-
--   Użytkownik ma [konto usługi Google Ads](https://ads.google.com/) i odpowiadające mu poświadczenia administratora.
--   Spełniasz wymagania [zasad dopasowania do klienta](https://support.google.com/adspolicy/answer/6299717).
--   Spełniasz wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048).
--   Posiadasz [skonfigurowane segmenty](segments.md).
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adres e-mail, telefon, identyfikator reklamodawcy mobilnego, identyfikator użytkownika innej firmy lub adres.
+- [Konto usługi Google Ads](https://ads.google.com/) i odpowiadające mu poświadczenia administratora.
+- [Identyfikator klienta usługi Google Ads](https://support.google.com/google-ads/answer/1704344).
+- Spełnione są wymagania [zasad Customer Match](https://support.google.com/adspolicy/answer/6299717).
+- Spełnione są wymagania [rozmiarów list marketingowych](https://support.google.com/google-ads/answer/7558048).
+- [Skonfigurowane segmenty](segments.md).
+- Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pola reprezentujące adres e-mail, telefon, identyfikator reklamodawcy mobilnego, identyfikator użytkownika innej firmy lub adres.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Eksport do Google Ads jest ograniczony do segmentów.
-- Eksportowanie segmentów z łącznie 1 mln profilów klientów może zająć do 30 minut z powodu ograniczeń po stronie dostawcy. 
+- Eksportuj do 1 miliona profili klientów na eksport do Google Ads, co może potrwać do 30 minut ze względu na ograniczenia po stronie dostawcy.
+- Tylko segmenty.
 - Dopasowanie w usłudze Google Ads może potrwać do 48 godzin.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfiguruj połączenie z usługą Google Ads
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Przejdź do **Admin** > **Połączenia**.
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Google Ads**, aby skonfigurować połączenie.
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Google Ads**.
 
 1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
 
-1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Określ, kto może używać tego połączenia. Domyślnie – tylko administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Wpisz **[Identyfikator klienta usługi Google Ads](https://support.google.com/google-ads/answer/1704344)**.
+1. Wpisz Identyfikator klienta usługi Google Ads.
 
-1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
 1. Wybierz **Uwierzytelnianie za pomocą usługi Google Ads** i przekaż swoje poświadczenia w usłudze Google AD.
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
-1. Aby zakończyć połączenie, wybierz **Zapisz**. 
+1. Aby zakończyć połączenie, wybierz **Zapisz**.
 
 ## <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Przejdź do **Dane** > **Eksporty**.
 
-1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+1. Wybierz opcję **Dodaj eksport**.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Jeśli nie widzisz tej nazwy sekcji, to znaczy, że nie masz dostępu do żadnych połączeń tego typu.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Google Ads. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie.
 
-1. Jeśli chcesz utworzyć nową grupę odbiorców, pozostaw pole identyfikatora odbiorców Google puste. Automatycznie utworzymy nowy adres odbiorcy koncie Google Ads i użyjemy nazwy wyeksportowanego segmentu. Jeśli chcesz zaktualizować istniejące reklamy Google odbiorcy, wprowadź swój [identyfikator odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
+1. Wpisz nazwę eksportu.
+
+1. Wybierz, czy chcesz użyć istniejącej listy odbiorców, czy utworzyć nową:
+   - Aby zaktualizować istniejące reklamy Google odbiorcy, wprowadź swój [identyfikator odbiorcy Google Ads](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns).
+   - Aby utworzyć nową grupę odbiorców, pozostaw pole identyfikatora odbiorców Google puste. Customer Insights automatycznie utworzy nowy adres odbiorcy koncie Google Ads i użyjemy nazwy wyeksportowanego segmentu.
 
 1. W sekcji **Dopasowywanie danych** wybierz co najmniej jedno pole danych do wyeksportowania i wybierz pole reprezentujące odpowiednie pola danych w obszarze Customer Insights.
 
-1. Wybierz segmenty, które chcesz wyeksportować. 
+1. Wybierz segmenty, które chcesz wyeksportować.
 
-Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
+1. Wybierz pozycję **Zapisz**.
 
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). 
-
-Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi Google Ads można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że Google Ads spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć tę lokalizację docelową eksportu, aby przestać używać tej funkcji.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

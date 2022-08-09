@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 98e9e330e7ef9cf085caa94a506fa788cebdd67b
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081247"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207196"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Wzbogacanie źródeł danych (wersja zapoznawcza)
 
@@ -21,9 +21,9 @@ Wykorzystaj dane ze źródeł takich jak Microsoft i inni partnerzy, aby wzbogac
 
 ## <a name="enrich-a-data-source"></a>Wzbogacanie źródła danych
 
-Aby tworzyć lub edytować wzbogacenia, musisz mieć uprawnienia współautora lub administratora. Aby uzyskać więcej informacji, zobacz [Uprawnienia](permissions.md).  
+Aby tworzyć lub edytować wzbogacenia, musisz mieć [uprawnienia](permissions.md) współautora lub administratora.  
 
-1. Przejdź do sekcji **Dane** > **Ujednolicanie**. Wybierz encję, którą chcesz wzbogacić i wybierz jeden atrybut jako klucz główny dla tej encji. Aby uzyskać więcej informacji, zobacz [Wybierz klucz główny](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Przejdź do sekcji **Dane** > **Ujednolicanie**. Wybierz encję, którą chcesz wzbogacić i wybierz jeden atrybut jako [klucz główny](map-entities.md#select-primary-key-and-semantic-type-for-attributes) dla tej encji.
 
 1. Przejdź do **Dane** > **Źródła danych**.
 
@@ -47,8 +47,8 @@ Obecnie dla źródeł danych dostępne są następujące wzbogacenia. Zapoznaj s
 
 ## <a name="manage-existing-data-source-enrichments"></a>Zarządzaj wzbogacaniem istniejących źródeł danych
 
-Przejdź do karty **Moje wzbogacenia**, aby zobaczyć wszystkie skonfigurowane wzbogacania.
+Przejdź do **Dane** > **Wzbogacanie**. Na karcie **Moje wzbogacenia** wyświetl skonfigurowane wzbogacania, ich stan, liczbę wzbogaconych klientów i czas ostatniego odświeżania danych. Listę wzbogacań można posortować według dowolnej kolumny lub użyć pola wyszukiwania, aby znaleźć wzbogacanie, którym chcesz zarządzać.
 
-Wybierz wzbogacenie, aby wyświetlić dostępne opcje. Aby wyświetlić opcje, można także wybrać wielokropek pionowy (&vellip;) na pozycji listy. Jeśli skonfigurowano kilka wzbogaceń, można użyć pola wyszukiwania, aby szybko je znaleźć.
+Wybierz wzbogacenie, aby wyświetlić dostępne opcje. Aby wyświetlić opcje, można także wybrać wielokropek pionowy (&vellip;) na pozycji listy.
 
-Możesz przeglądać, edytować, uruchamiać lub usuwać wzbogacenie źródła danych. Aby uzyskać więcej informacji, zobacz [Zarządzaj istniejącymi wzbogaceniami](enrichment-hub.md).
+Możesz przeglądać, edytować, uruchamiać lub usuwać wzbogacenie źródła danych. Aby uzyskać więcej informacji, zobacz [Zarządzaj istniejącymi wzbogaceniami](enrichment-hub.md#manage-existing-enrichments).

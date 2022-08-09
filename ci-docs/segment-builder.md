@@ -1,6 +1,6 @@
 ---
-title: Utwórz segmenty
-description: Tworzenie segmentów klientów w celu pogrupowania ich na podstawie różnych atrybutów korzystających z segmentów konstruktora lub szybkich segmentów.
+title: Twórz złożone segmenty za pomocą narzędzia do tworzenia segmentów
+description: Użyj narzędzia do tworzenia segmentów, aby tworzyć złożone segmenty klientów, grupując je na podstawie różnych atrybutów.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,20 +13,19 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: b99d9575d3b6af91758d80eb04170773b08cc9ab
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: cde373cd65e296675e1b3c92f3024e1093853842
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053985"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170648"
 ---
-# <a name="create-segments"></a>Utwórz segmenty
+# <a name="create-complex-segments-with-segment-builder"></a>Twórz złożone segmenty za pomocą narzędzia do tworzenia segmentów
 
-Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje. Segmenty są zarządzane na stronie **Segmenty**. Możesz [tworzyć nowe segmenty](#create-a-new-segment), korzystając z konstruktora segmentów, lub [tworzyć szybkie segmenty](#quick-segments) z innych obszarów aplikacji.
+Zdefiniować złożone filtry dla ujednoliconej encji klienta i jej encji pokrewnych. Każdy segment, po przetworzeniu, tworzy zestaw rekordów klientów, który można eksportować i na którym można podejmować akcje.
 
 > [!TIP]
-> - Szybkie segmenty są obsługiwane tylko w środowiskach dla **poszczególnych klientów**.
-> - Segmenty oparte na **poszczególnych klientach** automatycznie zawierają dostępne informacje kontaktowe dla elementów członkowskich segmentu. W środowiskach **kont biznesowych** segmenty są oparte na kontach (firmach lub filiach). Aby uwzględnić informacje kontaktowe w segmencie, użyj funkcji **Atrybuty projektu** w konstruktorze segmentów. Upewnij się, że źródła danych kontaktów są [semantycznie mapowane do encji ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+> Segmenty oparte na **poszczególnych klientach** automatycznie zawierają dostępne informacje kontaktowe dla elementów członkowskich segmentu. W środowiskach **kont biznesowych** segmenty są oparte na kontach (firmach lub filiach). Aby uwzględnić informacje kontaktowe w segmencie, użyj funkcji **Atrybuty projektu** w konstruktorze segmentów. Upewnij się, że źródła danych kontaktów są [semantycznie mapowane do encji ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Konstruktor segmentów
 
@@ -34,7 +33,7 @@ Na poniższym obrazie przedstawiono różne aspekty konstruktora segmentów. Wsk
 
 :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementy konstruktora segmentów." lightbox="media/segment-builder-overview.png":::
 
-1. Organizuj segmenty za pomocą reguł i reguł podrzędnych. Każda reguła lub reguła podrzędna składa się z warunków. Łączenie warunków z operatorami logicznymi
+1. Organizuj segmenty za pomocą reguł i reguł podrzędnych. Każda reguła lub reguła podrzędna składa się z warunków. Łączenie warunków z operatorami logicznymi.
 
 1. Wybierz [ścieżkę relacji](relationships.md) między jednostkami, która dotyczy reguły. Ścieżka relacji określa, które atrybuty mogą być używane w warunku.
 
@@ -52,17 +51,15 @@ Na poniższym obrazie przedstawiono różne aspekty konstruktora segmentów. Wsk
 
 W tym przykładzie przedstawiono możliwości w zakresie segmentacji. Definiujemy segment dla klientów, którzy kupili towary online za co najmniej 500 USD *i* są zainteresowani opracowaniem oprogramowania.
 
-## <a name="create-a-new-segment"></a>Utwórz nowy segment
+## <a name="create-a-new-segment-with-segment-builder"></a>Utwórz nowy segment za pomocą narzędzia do tworzenia segmentów
 
-Istnieje wiele sposobów utworzenia nowego segmentu. W tej sekcji opisano sposób tworzenia własnego segmentu od podstaw. Można również utworzyć *krótki segment* na podstawie istniejących obiektów lub skorzystać z uczenia maszynowego, aby uzyskać *sugerowane segmenty*. Aby uzyskać więcej informacji, przejdź do tematu [Omówienie segmentów](segments.md).
+1. Przejdź do **Segmenty**.
 
-Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji roboczej segment jest zapisywany jako nieaktywny segment. Po zakończeniu konfiguracji segmentu uruchom ją, aby aktywować segment. Można również użyć funkcji **Aktywuj** segment na stronie **Wszystkie segmenty**.
+1. Wybierz opcję **Nowy** > **Utwórz własne**. Na stronie konstruktora segmentów można definiować lub definiować reguły. Reguła składa się z jednego lub większej liczby warunków definiującej zbiór klientów.
 
-1. Przejdź do strony **Segmenty**.
+1. Wybierz **Edytuj szczegóły** obok segmentu bez tytułu. Podaj nazwę swojego segmentu i zaktualizuj sugerowaną **nazwę encji wyjściowej** dla tego segmentu. Opcjonalnie dodaj opis i [etykiety](work-with-tags-columns.md#manage-tags) do segmentu.
 
-1. Wybierz opcję **Nowy** > **Utwórz własne**.
-
-1. Na stronie konstruktora segmentów można definiować lub definiować reguły. Reguła składa się z jednego lub większej liczby warunków definiującej zbiór klientów.
+   :::image type="content" source="media/segments_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
 
 1. W sekcji **Reguła 1** wybierz atrybut obiektu, według którego chcesz filtrować klientów. Istnieją dwa sposoby wybierania atrybutów:
    - Przejrzyj listę dostępnych obiektów i atrybutów w okienku **Dodaj do reguły** i wybierz ikonę **+** obok atrybutu, który chcesz dodać. Określ, czy atrybut ma zostać dodany do istniejącej reguły, czy podczas tworzenia nowej reguły.
@@ -72,35 +69,30 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
 
 1. Wybierz opcję **Dodaj warunek**, aby dodać więcej warunków do reguły. Aby utworzyć regułę na podstawie bieżącej reguły, wybierz opcję **Dodaj regułę podrzędną**.
 
-1. Jeśli reguła używa encji innych niż encja *Klient*, należy ustawić ścieżkę relacji. Ścieżka relacji musi poinformować system, które relacja mają uzyskać dostęp do encji ujednoliconego klienta. Wybierz opcję **Ustaw ścieżkę relacji**, aby zamapować wybraną encję na ujednoliconą encję klienta. Jeśli jest dostępna tylko jedna ścieżka relacji, system wybierze ją automatycznie. Różne ścieżki relacji mogą dostarczyć różnych wyników. Każda reguła może mieć własną ścieżkę relacji.
+1. Jeśli reguła używa innych encji niż encja *Klient*, wybierz **Ustaw ścieżkę relacji**, aby zmapować wybraną encję do ujednoliconej encji klienta. Jeśli jest dostępna tylko jedna ścieżka relacji, system wybierze ją automatycznie. Różne [ścieżki relacji](relationships.md#relationship-paths) mogą dostarczyć różnych wyników. Każda reguła może mieć własną ścieżkę relacji.
 
    :::image type="content" source="media/relationship-path.png" alt-text="Potencjalna ścieżka relacji podczas tworzenia reguły opartej na encji zamapowanej na encję ujednoliconego klienta.":::
 
-   Na przykład encja *eCommerce_eCommercePurchases* na zrzucie ekranu ma cztery opcje mapowania do encji *Klient*:
-   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > Klient
-   - eCommerce_eCommercePurchases > klient
-   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
-   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Klient Przy wyborze ostatniej opcji w warunkach reguły można uwzględnić atrybuty wszystkich wymienionych encji. Prawdopodobnie będzie mniej wyników, ponieważ pasujące rekordy klientów muszą być częścią wszystkich encji. W tym przykładzie klienci muszą mieć zakupione towary za pośrednictwem handlu elektronicznego (*eCommerce_eCommercePurchases*) w punkcie sprzedaży (*POS_posPurchases*) i uczestniczyć w naszym programie lojalnościowym (*loyaltyScheme_loyCustomers*). Przy wyborze drugiej opcji możemy wybrać tylko atrybuty z encji *eCommerce_eCommercePurchases* i *Klient*. Najprawdopodobniej powoduje to więcej profilów klientów.
-
 1. Jeśli w regule istnieje kilka warunków, można wybrać operator logiczny, który je łączy.  
-   - Operator **I**: aby uwzględnić rekord w segmencie, muszą zostać spełnione wszystkie warunki. Ta opcja jest najbardziej przydatna podczas definiowania warunków między różnymi encjami.
-   - Operator **LUB**: aby uwzględnić rekord w segmencie, musi zostać spełniony jeden z warunków. Ta opcja jest najbardziej przydatna podczas definiowania wielu warunków dla tej samej encji.
+   - Operator **I**: aby uwzględnić rekord w segmencie, muszą zostać spełnione wszystkie warunki. Użyj tej opcji, gdy definiujesz warunki w różnych encjach.
+   - Operator **LUB**: aby uwzględnić rekord w segmencie, musi zostać spełniony jeden z warunków. Użyj tej opcji, gdy definiujesz wiele warunków dla tej samej encji.
 
    :::image type="content" source="media/segmentation-either-condition.png" alt-text="Reguła z dwoma warunkami I.":::
 
    Podczas używania operatora LUB wszystkie warunki muszą być oparte na encji w ścieżki relacji.
 
-   - Można utworzyć wiele reguł w celu utworzenia różnych zestawów rekordów klientów. Można łączyć grupy w celu uwzględnienia klientów wymaganych dla danego przypadku biznesowego. Aby utworzyć nową regułę, wybierz **Dodaj regułę**. W szczególności jeśli nie można uwzględnić encji w regule z powodu określonej ścieżki relacji, należy utworzyć nową regułę, aby wybrać z niej formularz atrybutów.
+1. Aby utworzyć różne zestawy rekordów klientów, utwórz wiele reguł. Aby uwzględnić klientów wymaganych dla Twojego uzasadnienia biznesowego, połącz grupy. W szczególności, jeśli nie możesz uwzględnić jednostki w regule z powodu określonej ścieżki relacji, utwórz nową regułę, aby wybrać z niej atrybuty.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Dodaj nową regułę do segmentu i wybierz operator zestawu.":::
 
-   - Wybierz jeden z operatorów: **Związek**, **Część wspólna** lub **Z wyjątkiem**.
+   1. Wybierz **Dodaj regułę**.
+   1. Wybierz jeden z operatorów: **Związek**, **Część wspólna** lub **Z wyjątkiem**.
 
       - **Związek** łączy dwie grupy.
       - **Część wspólna** pokrywa się z dwiema grupami. W ujednoliconej grupie pozostają tylko dane *wspólne* dla obu grup.
       - **Z wyjątkiem** łączy dwie grupy. W grupie A przechowywane są tylko te dane, które *nie są wspólne* z grupą B.
 
-1. Domyślnie segmenty generują encję wyjściową zawierającą wszystkie atrybuty profilów klientów zgodne ze zdefiniowanymi filtrami. Jeśli segment jest oparty na encjach innych niż encja *Klient*, do encji wyjściowej można dodać więcej atrybutów z tych encji. Wybierz pozycję **Atrybuty projektu**, aby wybrać atrybuty, które będą dołączane do encji wyjściowej.
+1. Domyślnie encja wyjściowa będzie automatycznie zawierała wszystkie atrybuty profili klientów, które pasują do zdefiniowanych filtrów. Jeśli segment jest oparty na encjach innych niż *Klient*, wybierz **Atrybuty projektu**, aby dodać więcej atrybutów z tych encji do encji wyjściowej.
 
    > [!IMPORTANT]
    > W przypadku segmentów opartych na kontach biznesowych szczegółowe informacje dotyczące jednego lub większej liczby kontaktów każdego klienta z encji *ContactProfile* muszą zostać uwzględnione w tym segmencie, aby umożliwić uaktywnienie lub wyeksportowanie tego segmentu do miejsc, w których są wymagane informacje kontaktowe. Aby uzyskać więcej informacji o encji *ContactProfile*, zobacz [mapowanie semantyczne](semantic-mappings.md).
@@ -120,48 +112,18 @@ Podczas tworzenia segmentu można zapisać jego wersje robocze. Na etapie wersji
    > - Jeśli atrybut, który ma być projektowany, jest tylko jeden przeskok od encji *Klient*, nie musi być obecny we wszystkich regułach definiowanego zapytania segmentu.
    > - **Atrybuty rzutowane** są uwzględniane podczas używania operatorów zestawów.
 
-1. Wybierz **Edytuj szczegóły** obok segmentu bez tytułu. Podaj nazwę swojego segmentu i zaktualizuj sugerowaną **nazwę encji wyjściowej** dla tego segmentu. Opcjonalnie dodaj opis i [etykiety](work-with-tags-columns.md#manage-tags) do segmentu.
+1. Wybierz opcję **Uruchom**, aby utworzyć segment. Wybierz opcję **Zapisz**, jeśli chcesz zachować bieżącą konfigurację i uruchomić segment później. Zostanie wyświetlona strona **Segmenty**.
 
-   :::image type="content" source="media/segments_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
+### <a name="segment-builder-tips"></a>Wskazówki dotyczące tworzenia segmentów
 
-1. Wybierz opcję **Uruchom**, aby zapisać segment, aktywować go i rozpocząć przetwarzanie swojego segmentu na podstawie wszystkich reguł i warunków. W przeciwnym razie będzie on zapisywany jako nieaktywny segment.
+Tworząc segment przy użyciu konstruktora segmentów, należy pamiętać o następujących wskazówkach:
 
-1. Wybierz **Wróć do segmentów**, aby wrócić do strony **Segmenty**.
-
-1. Domyślnie segment jest tworzony jako segment dynamiczny. Oznacza to, że segment jest odświeżany podczas odświeżania systemu. Aby [zatrzymać automatyczne odświeżanie](segments.md#manage-existing-segments), wybierz segment, wybierz opcję **Ustaw statyczny**. Segmenty statyczne można w dowolnej chwili [odświeżać ręcznie](segments.md#refresh-segments).
-
-> [!TIP]
-> - Konstruktor segmentów nie zasugeruje prawidłowych wartości z encji podczas ustawiania operatorów na określonych warunkach. Można przejść do obszaru **Dane** > **Encje** i pobrać dane encji, aby sprawdzić, które wartości są dostępne.
-> - Warunki oparte na datach umożliwiają przełączanie się między stałymi datami a zmiennoprzecinkowym zakresem dat.
-> - Jeśli dla swojego segmentu masz kilka reguł, reguła, która jest edytowana, ma obok siebie pionowy niebieski wiersz.
-> - Reguły i warunki można przenieść do innych miejsc definicji segmentu. Wybierz wielokropek pionowy (&vellip;) obok reguły lub warunku i wybierz sposób i miejsce jego przeniesienia.
-> - Kontrolki **Cofnij** i **Ponów** na pasku poleceń umożliwiają cofnięcie zmian.
-> - Po utworzeniu segmentu niektóre segmenty [umożliwiają śledzenie wykorzystania tego segmentu](segments.md#track-usage-of-a-segment).
-
-## <a name="quick-segments"></a>Szybkie segmenty
-
-Szybkie segmenty umożliwiają tworzenie prostych segmentów z jednym operatorem w celu szybszego wglądu w dane.
-
-1. Na stronie **Segmentów** wybierz opcję **Nowy** > **Utwórz za pomocą**.
-   - Wybierz opcję **profile**, aby zbudować segment utworzony na podstawie *ujednoliconej encji klienta*.
-   - Wybierz opcję **Miary**, aby utworzyć segment na podstawie miar utworzonych wcześniej.
-   - Wybierz opcję **Analizy**, aby utworzyć segment wokół jednej z encji wyjściowych wygenerowanych przy użyciu funkcji **Przewidywania** lub **Modele niestandardowe**.
-
-2. W oknie dialogowym **Nowy szybki segment** wybierz atrybut z listy rozwijanej **Pole**.
-
-3. System ten zapewnia więcej szczegółowych informacji, które pomogą utworzyć lepsze segmenty klientów.
-   - W przypadku pól kategorii pokażemy 10 największych klientów. Wybierz **Wartość** i wybierz **Przejrzyj**.
-   - W przypadku atrybutu numerycznego system pokaże, jaka wartość atrybutu mieści się w percentylu każdego klienta Wybierz **Operator** i **Wartość**, a następnie wybierz pozycję **Przeglądaj**.
-
-4. System zaproponuje opcje **Szacowany rozmiar segmentu**. Użytkownik może wybrać, czy ma zostać wyświetlona definicja segmentu, czy też najpierw ją ponownie przejrzeć w celu uzyskania innego rozmiaru segmentu.
-
-   :::image type="content" source="media/quick-segment-name.png" alt-text="Nazwa i oszacowanie szybkiego segmentu.":::
-
-5. Podaj **Nazwę** i **Nazwę podmiotu wyjściowego** dla twojego segmentu. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags).
-
-6. Wybierz opcję **Zapisz**, aby utworzyć segment.
-
-7. Po zakończeniu przetwarzania segmentu można go wyświetlić tak samo, jak każdy inny segment utworzony przez użytkownika.
+- Konstruktor segmentów nie zasugeruje prawidłowych wartości z encji podczas ustawiania operatorów na określonych warunkach. Można przejść do obszaru **Dane** > **Encje** i pobrać dane encji, aby sprawdzić, które wartości są dostępne.
+- Warunki oparte na datach umożliwiają przełączanie się między stałymi datami a zmiennoprzecinkowym zakresem dat.
+- Jeśli dla swojego segmentu masz kilka reguł, reguła, która jest edytowana, ma obok siebie pionowy niebieski wiersz.
+- Reguły i warunki można przenieść do innych miejsc definicji segmentu. Wybierz wielokropek pionowy (&vellip;) obok reguły lub warunku i wybierz sposób i miejsce jego przeniesienia.
+- Kontrolki **Cofnij** i **Ponów** na pasku poleceń umożliwiają cofnięcie zmian.
+- Po utworzeniu segmentu niektóre segmenty [umożliwiają śledzenie wykorzystania tego segmentu](segments.md#track-usage-of-a-segment).
 
 ## <a name="next-steps"></a>Następne kroki
 

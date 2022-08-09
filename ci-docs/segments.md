@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 8b2c2f9b84bf8b7f37d1468b871946ecb3e6aa98
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050960"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170694"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -27,54 +27,68 @@ Segmenty umożliwiają grupowanie klientów na podstawie atrybutów demograficzn
 
 Profile klientów zgodne z filtrami definicji segmentu są określane mianem *członków* segmentu. Niektóre [ograniczenia dotyczące usług](/dynamics365/customer-insights/service-limits) mają zastosowanie.
 
-## <a name="create-a-new-segment"></a>Utwórz nowy segment
+## <a name="create-a-segment"></a>Utwórz segment
 
-Istnieje wiele sposobów utworzenia nowego segmentu: 
+Wybierz sposób tworzenia segmentu na podstawie wartości odbiorcy.
 
 # <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
-- Złożony segment z konstruktorem segmentów: [Tworzenie własnego](segment-builder.md#create-a-new-segment) 
-- Proste segmenty z jednym operatorem: [szybki segment](segment-builder.md#quick-segments) 
-- Oparty na sztucznej inteligencji sposób na znalezienie podobnych klientów: [podobni klienci](find-similar-customer-segments.md) 
-- Sugestie oparte na SI, bazujące na miarach lub atrybutach: [sugerowane segmenty w celu usprawnienia działań](suggested-segments.md) 
-- Sugestie na bazie działań: [sugerowane segmenty oparte na działaniach klienta](suggested-segments-activity.md) 
+- Złożone segmenty z budowniczym segmentów: [Tworzenie własnego](segment-builder.md)
+- Proste segmenty z jednym operatorem: [szybki segment](segment-quick.md)
+- Oparty na sztucznej inteligencji sposób na znalezienie podobnych klientów: [podobni klienci](find-similar-customer-segments.md)
+- Sugestie oparte na SI, bazujące na miarach lub atrybutach: [Sugerowane segmenty na podstawie miar](suggested-segments.md)
+- Sugestie na bazie działań: [sugerowane segmenty oparte na działaniach klienta](suggested-segments-activity.md)
 
 # <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
-- Złożony segment z konstruktorem segmentów: [Tworzenie własnego](segment-builder.md#create-a-new-segment)
+- Proste lub złożone segmenty z budowniczym segmentów: [Tworzenie własnego](segment-builder.md)
 
 ---
 
 ## <a name="manage-existing-segments"></a>Zarządzanie istniejącymi segmentami
 
-Przejdź na stronę **Segmenty**, aby wyświetlić wszystkie zapisane segmenty i zarządzać nimi.
+Przejdź na stronę **Segmenty**, aby wyświetlić utworzone segmenty, ich stan, liczbę członków i czas ostatniego odświeżania danych. Możesz posortować listę segmentów według dowolnej kolumny lub skorzystać z pola wyszukiwania, aby znaleźć segment, którym chcesz zarządzać.
 
-Każdy segment jest reprezentowany przez wiersz zawierający dodatkowe informacje o segmencie.
+Wybierz segment, aby wyświetlić dostępne działania.
 
 :::image type="content" source="media/segments-selected-segment.png" alt-text="Wybrany segment z listą rozwijaną opcji i dostępnymi opcjami." lightbox="media/segments-selected-segment.png":::
 
-Po zaznaczeniu segmentu dostępne są następujące akcje:
-
-- **Wyświetlanie** szczegółowych informacji o segmencie, w tym trendu liczby członków podgląd składników segmentu.
+- [**Wyświetlanie**](#view-segment-details) szczegółowych informacji o segmencie, w tym trendu liczby członków i podgląd składników segmentu.
 - **Pobierz** listę członków jako plik .CSV.
 - **Edytuj** segment, aby zmienić jego właściwości.
 - **Utwórz duplikat** segmentu. Można od razu edytować właściwości tej aplikacji lub zapisać duplikat.
-- **Odśwież** segment, aby uwzględnić najnowsze dane.
-- **Aktywuj** lub **Dezaktywuj** segment. W przypadku nieaktywnych segmentów definicja segmentu istnieje, ale nie zawiera jeszcze żadnych klientów. Aktywny segment szuka klientów, którzy pasują do definicji segmentu. Jeśli skonfigurowano [zaplanowane odświeżanie](system.md#schedule-tab), segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. W przypadku aktywowania nieaktywnego segmentu zostanie on odświeżony i będzie uwzględniony w zaplanowanych odświeżeniach.
-  Alternatywnie można użyć funkcji **Zaplanuj później** na liście rozwijanej **Aktywuj/Zdezaktywuj**, aby określić przyszłą datę i godzinę aktywacji i dezaktywacji konkretnego segmentu.
-- **[Znajdź podobnych klientów](find-similar-customer-segments.md)** z danego segmentu.
+- [**Odśwież**](#refresh-segments) segment, aby uwzględnić najnowsze dane.
+- **Aktywuj** lub **Dezaktywuj** segment. Nieaktywne segmenty nie zostaną odświeżone podczas [zaplanowanego odświeżenia](system.md#schedule-tab), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. Aktywne segmenty są odświeżane w zależności od ich typu: statycznego lub dynamicznego.
+- **Jako statyczny** lub **Jako dynamiczny** należy dynamiczną typ segmentu. Segmenty statyczne należy odświeżać ręcznie. Segmenty dynamiczne są automatycznie odświeżane podczas odświeżania systemu.
+- [**Znajdź podobnych klientów**](find-similar-customer-segments.md) z danego segmentu.
 - **Zmień nazwę** segmentu.
 - **Otaguj**, aby [zarządzać etykietami](work-with-tags-columns.md#manage-tags) dla segmentu.
-- **Pobierz** listę członków jako plik .CSV.
-- **Zarządzanie eksportami**, aby zobaczyć segmenty związane z eksportem i zarządzać nimi. [Dowiedz się więcej o eksportach.](export-destinations.md)
+- [**Zarządzanie eksportami**](#export-segments), aby zobaczyć segmenty związane z eksportem i zarządzać nimi. [Dowiedz się więcej o eksportach.](export-destinations.md)
 - **Usuń** segment.
 - **Kolumny** w [celu dostosowania wyświetlanych kolumn](work-with-tags-columns.md#customize-columns).
 - **Filtruj**, aby [filtrować etykiety](work-with-tags-columns.md#filter-on-tags).
 - **Wyszukaj nazwę**, aby wyszukać według nazwy segmentu.
 
+## <a name="view-segment-details"></a>Wyświetlanie szczegółowych informacji o segmencie
+
+Na stronie **Segmenty** wybierz segment, aby wyświetlić historię przetwarzania oraz członków segmentu.
+
+W górnej części strony znajduje się wykres trendów zawierający wizualizacje zmian w licznikach członków. Umieść wskaźnik myszy nad punktami danych, aby wyświetlić liczbę członków w określonym dniu. Zmień ramy czasowe wizualizacji.
+
+:::image type="content" source="media/segment-time-range.png" alt-text="Zakres czasu segmentu.":::
+
+W dolnej części znajduje się lista członków segmentu.
+
+> [!NOTE]
+> Pola wyświetlane na tej liście są oparte na atrybutach encji segmentu.
+>
+>Lista jest podglądem pasujących składników segmentu i zawiera pierwsze 100 rekordów segmentu, dzięki czemu można szybko oceniać i przejrzeć w razie potrzeby jego definicje. Aby wyświetlić wszystkie pasujące rekordy, [wyeksportuj segment](export-destinations.md).
+
 ## <a name="refresh-segments"></a>Odśwież segmenty
 
-Można odświeżyć wszystkie segmenty naraz, wybierając **Odśwież wszystko** na stronie **Segmenty** lub odświeżyć jeden lub wiele segmentów po ich zaznaczeniu i wybraniu **Odśwież** z opcji. Alternatywnie można skonfigurować cykliczne odświeżanie w **Administracja** > **System** > **Harmonogram**. Podczas konfigurowania odświeżania cyklicznego mają zastosowanie następujące reguły:
+Segmenty mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. Aby ręcznie odświeżyć jeden lub więcej segmentów, zaznacz je i wybierz **Odśwież**.
+
+Aby [zaplanować automatyczne odświeżanie](system.md#schedule-tab), przejdź do strony **Administrator** > **System** > **Harmonogram**. Obowiązują następujące zasady:
 
 - Wszystkie segmenty z typem **Dynamiczny** lub **Rozszerzenie** zostaną automatycznie odświeżone w ustawionym rytmie. Po zakończeniu odświeżania **Stan** wskazuje, czy podczas odświeżania segmentu wystąpiły jakiekolwiek problemy. **Ostatnio odświeżono** wskazuje czas ostatniego udanego odświeżenia. Jeśli wystąpi błąd, wybierz błąd, aby wyświetlić szczegółowe informacje o tym, co się stało.
 - Segmenty o typie **Statyczny** *nie będą* odświeżane automatycznie. **Ostatnio odświeżono** wskazuje znacznik czasu ostatniego uruchomienia lub ręcznego odświeżania segmentów statycznych.
@@ -83,17 +97,13 @@ Można odświeżyć wszystkie segmenty naraz, wybierając **Odśwież wszystko**
 
 ## <a name="export-segments"></a>Eksportowanie segmentów
 
-Segment można wyeksportować ze strony segmentów lub ze [strony eksportowania](export-destinations.md). 
+Eksportuj segmenty do innych aplikacji, aby dalej wykorzystywać dane. Segment można wyeksportować ze strony segmentów lub ze [strony eksportowania](export-destinations.md).
 
-1. Przejdź do strony **Segmenty**.
+1. Na stronie **Segmenty** zaznacz segment, który chcesz przejrzeć.
 
-1. Wybierz pionową elipsę (&vellip;) dla segmentu, który chcesz wyeksportować.
+1. Wybierz **Zarządzaj eksportem**. Zostanie otwarta strona **Eksportty (wersja zapoznawcza) dla segmentu**. Wyświetl wszystkie skonfigurowane eksporty pogrupowane według tego, czy zawierają bieżący segment, czy nie.
 
-1. Z listy rozwijanej akcji wybierz opcję **Zarządzanie eksportami**.
-
-1. Zostanie otwarta strona **Eksportty (wersja zapoznawcza) dla segmentu**. Można wyświetlić wszystkie skonfigurowane eksporty pogrupowane według tego, czy zawierają bieżący segment, czy nie.
-
-   1. Aby dodać wybrany segment do eksportu, **edytuj** odpowiedni eksport, aby wybrać odpowiedni segment, a następnie zapisz. W środowiskach dla poszczególnych klientów można zamiast tego wybrać eksport z listy i wybrać opcję **Dodaj segment**, aby osiągnąć ten sam efekt.
+   1. Aby dodać wybrany segment do eksportu, **edytuj** odpowiedni eksport, aby wybrać odpowiedni segment, a następnie zapisz. W środowiskach dla poszczególnych klientów można wybrać eksport z listy i wybrać opcję **Dodaj segment**, aby osiągnąć ten sam efekt.
 
    1. Aby utworzyć nowy eksport dla wybranego segmentu, wybierz opcję **Dodaj eksport**. Aby uzyskać więcej informacji o tworzeniu eksportów, zobacz [Konfiguracja nowego eksportu](export-destinations.md#set-up-a-new-export).
 
@@ -105,7 +115,7 @@ Jeśli używasz segmentów w aplikacjach, które są oparte na tej samej organiz
 
 Podczas edytowania segmentu, który jest używany w środowisku Customer Insights lub podczas podróży klienta w Marketing, baner w [Konstruktorze segmentów](segment-builder.md) informuje o zależnościach. Szczegóły zależności można sprawdzić bezpośrednio na bannerze lub wybierając opcję **Użycie** w konstruktorze segmentów.
 
-W **okienku użycia segmentu** są dostępne szczegółowe informacje dotyczące korzystania z tego segmentu w aplikacjach opartych na Dataverse. W przypadku segmentów używanych w miejscu klientów można znaleźć łącze do inspekcji fragmentów danych w programie Marketing, w którym jest używany ten segment. Jeśli masz uprawnienia dostępu do aplikacji Marketing, możesz uzyskać dostęp do kolejnych informacji.
+W **okienku użycia segmentu** są dostępne szczegółowe informacje dotyczące korzystania z tego segmentu w aplikacjach opartych na Dataverse. W przypadku segmentów używanych w miejscu klientów można znaleźć łącze do inspekcji fragmentów danych w programie Marketing, w którym jest używany ten segment. Jeśli masz uprawnienia dostępu do aplikacji Marketing, zobacz tam więcej szczegółów.
 
 :::image type="content" source="media/segment-usage-pane.png" alt-text="Okienko boczne ze szczegółami użycia segmentu w konstruktorze segmentów.":::
 
@@ -118,25 +128,5 @@ Podczas próby usunięcia tego segmentu system informuje o śledzenia segmentu. 
 Użycie jest obecnie śledzone w następujących aplikacjach opartych na następujących Dataverse:
 
 - [Procesy pozyskiwania klientów w Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile)
-
-## <a name="view-processing-history-and-segment-members"></a>Wyświetlanie historii przetwarzania i członków segmentu
-
-Istnieje możliwość wyświetlenia skonsolidowanych danych o segmencie dzięki przejrzeniu jego szczegółów.
-
-Na stronie **Segmenty** zaznacz segment, który chcesz przejrzeć.
-
-W górnej części strony znajduje się wykres trendów zawierający wizualizacje zmian w licznikach członków. Umieść wskaźnik myszy nad punktami danych, aby wyświetlić liczbę członków w określonym dniu.
-
-Użytkownik może aktualizować horyzont czasowy wizualizacji.
-
-> [!div class="mx-imgBorder"]
-> ![Zakres czasu segmentu.](media/segment-time-range.png "Zakres czasu segmentu")
-
-W dolnej części znajduje się lista członków segmentu.
-
-> [!NOTE]
-> Pola wyświetlane na tej liście są oparte na atrybutach encji segmentu.
->
->Lista jest podglądem pasujących składników segmentu i zawiera pierwsze 100 rekordów segmentu, dzięki czemu można szybko oceniać i przejrzeć w razie potrzeby jego definicje. Aby wyświetlić wszystkie pasujące rekordy, należy [wyeksportować segment](export-destinations.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

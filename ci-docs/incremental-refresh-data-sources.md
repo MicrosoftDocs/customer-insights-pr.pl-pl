@@ -11,18 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: de39743eb8728fac34e417724c5f73bf44309c89
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9012038"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207150"
 ---
 # <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Odświeżenie przyrostowe dla Power Query i źródła danych Azure Data Lake
 
-Ten artykuł omawia konfigurację odświeżania przyrostowego dla źródeł danych opartych na usłudze Power Query lub Azure Data Lake.
-
-Odświeżanie przyrostowe dla źródeł danych daje następujące korzyści:
+Odświeżanie przyrostowe dla źródeł danych opartych na Power Query lub Azure Data Lake zapewnia następujące korzyści:
 
 - **Szybsze odświeżenia** — Odświeżane są tylko te dane, które zostały zmienione. Można na przykład odświeżyć tylko ostatnie pięć dni z historycznego zestawu danych.
 - **Zwiększona niezawodność** — Wraz z mniejszą liczbą odświeżeń nie jest konieczne długie utrzymywanie połączeń z nietrwałymi systemami źródłowymi, co zmniejsza ryzyko problemów z połączeniem.
@@ -73,6 +71,7 @@ Funkcja Customer Insights umożliwia odświeżanie przyrostowe danych dla źród
 
    1. Przejdź do folderu głównego zawierającego pliki CSV lub .parquet po pełne dane, przeniesienia przyrostowe danych i usunięcia przyrostowe danych.
    1. Wprowadź rozszerzenie dla pełnych danych oraz plików (\.csv or \.parquet).
+   1. W przypadku plików .csv wybierz ogranicznik kolumny i jeśli chcesz, aby pierwszy wiersz pliku był nagłówkiem kolumny.
    1. Wybierz pozycję **Zapisz**.
 
 1. Dla daty **ostatniej aktualizacji** wybierz atrybut sygnatury czasowej daty.

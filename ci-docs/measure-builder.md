@@ -1,5 +1,5 @@
 ---
-title: Tworzenie nowych miar przy użyciu konstruktora miar
+title: Tworzenie miar przy użyciu konstruktora miar
 description: Tworzenie miar od podstaw w celu przeanalizowania kluczowych metryk dotyczących działalności.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
@@ -11,26 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: fac00b8a1b4ca6e09dd29abe46dfe240adcc029e
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081652"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170875"
 ---
-# <a name="create-new-measures-with-the-measure-builder"></a>Tworzenie nowych miar przy użyciu konstruktora miar
+# <a name="create-measures-with-measure-builder"></a>Tworzenie miar przy użyciu konstruktora miar
 
-W tym artykule opisano sposób tworzenia nowej [miary](measures.md) od podstaw. Konstruktor miar umożliwia definiowanie obliczeń przy użyciu operatorów, funkcji agregacji i filtrów. Miarę można utworzyć z atrybutami z encji powiązanych z encją ujednolicony *Klient*.
+Konstruktor miar umożliwia definiowanie obliczeń przy użyciu operatorów, funkcji agregacji i filtrów. Zdefiniuj miary za pomocą atrybutów z jednostek, które są powiązane z ujednoliconą jednostką *Klient*.
 
 Tworzenie miar w środowiskach B2C i B2B działa tak samo. Jeśli jednak w środowisku B2B są [używane konta z hierarchiami](relationships.md#set-up-account-hierarchies), można agregować miarę dla powiązanych kont podległych.
 
-Można również szybko utworzyć miarę, wybierając zestaw najczęściej używanych i wstępnie zdefiniowanych miar. Więcej informacji zawiera temat [Używanie szablonu do tworzenia miary](measure-templates.md).
-
 # <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
-Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, miara klienta) lub na poziomie jednostki biznesowej/organizacji (miara biznesowa). Atrybut klienta i miara klienta to dwa typy umożliwiające śledzenie wydajności na klienta. Może to być na przykład łączna kwota wydawana przez każdego klienta. Miary biznesowe umożliwiają śledzenie wydajności na biznes. Na przykład łączny przychód według firmy.
+Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, miara klienta) lub na poziomie jednostki biznesowej/organizacji (miara biznesowa). Atrybut klienta i miara klienta umożliwiają śledzenie wydajności na klienta. Może to być na przykład łączna kwota wydawana przez każdego klienta. Miary biznesowe śledzą wydajność na firmę. Na przykład łączny przychód według firmy.
 
-- Atrybut klienta: generuje dane wyjściowe jako nowy atrybut, który jest zapisywany jako nowa kolumna w encji wygenerowanej przez system o nazwie *Customer_Measure*. Podczas odświeżania atrybutu klienta wszystkie inne atrybuty klienta w encji *Customer_Measure* także są równocześnie odświeżane. Ponadto atrybuty klienta są wyświetlane na karcie profilu klienta. Po uruchomieniu lub zapisaniu atrybutu klienta nie można zmienić go na miarę klienta.
+- Atrybut klienta: generuje dane wyjściowe jako nowy atrybut, który jest zapisywany jako nowa kolumna w encji wygenerowanej przez system o nazwie *Customer_Measure*. Podczas odświeżania atrybutu klienta wszystkie inne atrybuty klienta w encji *Customer_Measure* także są równocześnie odświeżane. Ponadto atrybuty klienta są wyświetlane na karcie profilu klienta. Po uruchomieniu lub zapisaniu nie można zmienić atrybutu klienta na miarę klienta.
 
 - Miara klienta: generuje dane wyjściowe jako własną encję i nie można zmienić jej na atrybut klienta po jej uruchomieniu lub zapisaniu. Miary klienta nie są wyświetlane w karcie profilu klienta.
 
@@ -38,9 +36,15 @@ Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, mi
 
 1. Przejdź do **Miar**.
 
-1. Wybierz opcję **Nowa** i wybierz pozycję **Utwórz własną**.
+1. Wybierz opcję **Nowy** > **Utwórz własne**.
 
    :::image type="content" source="media/measure-b2c.png" alt-text="Pusty ekran konfiguracji dla miary B2C. " lightbox="media/measure-b2c.png":::
+
+1. Wybierz **Edytuj szczegóły** obok działania bez tytułu. Podaj nazwę miary. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do miary.
+
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
+
+1. Wybierz pozycję **Gotowe**.
 
 1. Aby śledzić wyniki na poziomie biznesowym, przełącz **Typ pomiaru** na **Poziom biznesowy**. Domyślnie wybrany jest **Poziom klienta**. Poziom **Klient** automatycznie dodaje atrybut *CustomerId* do wymiarów, a **poziom firmowy** automatycznie go usuwa.
 
@@ -62,7 +66,7 @@ Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, mi
    1. Encja danych: wybierz encję zawierającą atrybut, który chcesz zmierzyć.
    1. Atrybut danych: wybierz atrybut, którego chcesz użyć w funkcji agregowania, aby obliczyć miarę. Możesz wybrać tylko jeden atrybut naraz.
    1. Atrybut danych można także wybrać z istniejącej miary, wybierając kartę **Miary** lub można także wyszukać nazwę encji lub miary.
-   1. Wybierz opcję **Dodaj**, aby dodać do miary wybrany atrybut.
+   1. Wybierz **Dodaj**.
 
 1. Aby zbudować bardziej złożone miary, możesz dodać więcej atrybutów lub użyć operatorów matematycznych w funkcji miary.
 
@@ -70,35 +74,29 @@ Miary można tworzyć na poziomie poszczególnych klientów (atrybut klienta, mi
   
    1. W sekcji **Dodawanie atrybutu** okienka **Filtry** wybierz atrybut, którego chcesz użyć do tworzenia filtrów.
    1. Ustaw operatory filtru, aby zdefiniować filtr dla każdego wybranego atrybutu.
-   1. Wybierz opcję **Zastosuj**, aby dodać do miary wybrany filtr.
+   1. Wybierz **Zastosuj**.
 
 1. Wybierz opcję **Rozmiar**, aby wybrać więcej pól, które zostaną dodane jako kolumny do encji wyjściowej miary.
 
    1. Wybierz opcję **Edytuj rozmiary**, aby dodać atrybuty danych, według których chcesz grupować wartości miary. Na przykład miasto lub płeć.
-   > [!TIP]
-   > Jeśli jako **typ miary** wybrano **Poziom klienta**, atrybut *CustomerId* jest już dodany. Jeśli usuniesz ten atrybut, **Typ miary** zmieni się na **Poziom biznesowy**.
-   1. Wybierz opcję **Gotowe**, aby dodać do miary wybrany wymiar.
+      > [!TIP]
+      > Jeśli jako **typ miary** wybrano **Poziom klienta**, atrybut *CustomerId* jest już dodany. Jeśli usuniesz ten atrybut, **Typ miary** zmieni się na **Poziom biznesowy**.
+   1. Wybierz pozycję **Gotowe**.
 
 1. Jeśli w danych znajdują się wartości, które trzeba zastąpić liczbą całkowitą, wybierz opcję **Regułę**. Skonfiguruj regułę i upewnij się, że jako zamienniki wybierane są tylko liczby całkowite. Na przykład zastąp wartość *null* wartością *0*.
 
 1. Jeśli istnieje wiele ścieżek między mapowaną encją danych a encją *Klient*, musisz wybrać jedną ze zidentyfikowanych [ścieżek relacji między encjami](relationships.md). Wyniki mogą się różnić w zależności od wybranej ścieżki.
 
    1. Wybierz **ścieżkę relacji** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary. Jeśli do encji *Klient* jest dostępna tylko jedna ścieżka, ta kontrolka nie będzie wyświetlana.
-   1. Wybierz opcję **Gotowe**, aby zastosować wybór.
+   1. Wybierz pozycję **Gotowe**.
 
-1. Aby dodać więcej obliczeń dla miary, wybierz opcję **Nowe obliczenia**. Do nowych obliczeń można używać tylko elementów znajdujących się na tej samej ścieżce encji. Więcej obliczeń zostanie wyświetlonych jako nowe kolumny w jednostce wyniku pomiaru.
+1. Aby dodać więcej obliczeń dla miary, wybierz opcję **Nowe obliczenia**. Do nowych obliczeń można używać tylko elementów znajdujących się na tej samej ścieżce encji. Więcej obliczeń zostanie wyświetlonych jako nowe kolumny w jednostce wyniku pomiaru. Opcjonalnie wybierz opcję **Edytuj nazwę**, aby utworzyć nazwę obliczania.
 
-1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
+1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat** lub **Usuń** obliczenia z miary.
 
 1. W obszarze **Podgląd** jest wyświetlony schemat danych encji wyjściowej miary wraz z filtrami i rozmiarami. Podgląd jest dynamicznie reaktywny na zmiany w konfiguracji.
 
-1. Wybierz **Edytuj szczegóły** obok działania bez tytułu. Podaj nazwę miary. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do miary.
-
-   :::image type="content" source="media/measures_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
-
-1. Wybierz opcję **Uruchom**, aby obliczyć wyniki dla skonfigurowanej miary. Wybierz opcję **Zapisz i zamknij**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później.
-
-1. Wybierz **Miary**, aby zobaczyć nowo utworzoną miarę na liście.
+1. Wybierz opcję **Uruchom**, aby obliczyć wyniki dla skonfigurowanej miary. Wybierz opcję **Zapisz i zamknij**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później. Wyświetla się strona **Miary**.
 
 # <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
@@ -113,6 +111,11 @@ Miary można tworzyć na poziomie poszczególnych kont (atrybut klienta, miara k
 1. Wybierz **Nowy**.
 
    :::image type="content" source="media/measure-b2b.png" alt-text="Pusty ekran konfiguracji dla miary B2B. ":::
+
+1. Wybierz **Edytuj szczegóły** obok działania bez tytułu. Podaj nazwę miary. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do miary. 
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
+
+1. Wybierz pozycję **Gotowe**.
 
 1. W obszarze konfiguracji wybierz funkcję agregowania z menu rozwijanego **Wybierz funkcję**. Funkcje agregowania obejmują:
    - **Sum**
@@ -144,12 +147,12 @@ Miary można tworzyć na poziomie poszczególnych kont (atrybut klienta, miara k
 
    1. Wybierz opcję **Edytuj rozmiary**, aby dodać atrybuty danych, według których chcesz grupować wartości miary. Na przykład miasto lub płeć.
       > [!TIP]
-      > Jeśli jako **typ miary** wybrano **Poziom klienta**, atrybut *CustomerId* jest już dodany. Jeśli usuniesz ten atrybut, **Typ miary** przełączy się na **Poziom biznesowy**.
+      > Atrybut *CustomerId* został już dodany, wskazując, że jest to typ miary na poziomie klienta. Jeśli usuniesz atrybut, typ miary zmieni się na poziom biznesowy.
    1. Wybierz opcję **Gotowe**, aby dodać do miary wybrany wymiar.
 
 1. Jeśli w danych znajdują się wartości, które trzeba zastąpić liczbą całkowitą, wybierz opcję **Regułę**. Skonfiguruj regułę i upewnij się, że jako zamienniki wybierane są tylko liczby całkowite. Na przykład zastąp wartość *null* wartością *0*.
 
-1. Można używać przełącznika **Zwiń wszystkich klientów podrzędnych**, jeśli [używasz klientów z hierarchiami](relationships.md#set-up-account-hierarchies).
+1. Jeśli [używasz kont z hierarchiami](relationships.md#set-up-account-hierarchies), przejrzyj **Zwiń subkonta**.
    - Jeśli ustawiono wartość **Wył.**, miara jest obliczana dla każdego klienta. Każdy klient ma własny wynik.
    - Jeśli ustawiono wartość **Wł.**, wybierz opcję **Edytuj**, aby wybrać hierarchię klientów według pozyskanych hierarchii. Miara daje tylko jeden wynik, ponieważ jest agregowana przy użyciu klientów podrzędnych.
 
@@ -158,14 +161,16 @@ Miary można tworzyć na poziomie poszczególnych kont (atrybut klienta, miara k
    1. Wybierz **ścieżkę relacji** i wybierz ścieżkę encji, która powinna być używana do identyfikacji miary. Jeśli do encji *Klient* jest dostępna tylko jedna ścieżka, ta kontrolka nie będzie wyświetlana.
    1. Wybierz opcję **Gotowe**, aby zastosować wybór.
 
-1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat**, **Zmień nazwę** lub **Usuń** obliczenia z miary.
+1. Wybierz wielokropek pionowy (&vellip;) w obliczeniach jako **Duplikat** lub **Usuń** obliczenia z miary.
 
 1. W obszarze **Podgląd** jest wyświetlony schemat danych encji wyjściowej miary wraz z filtrami i rozmiarami. Podgląd jest dynamicznie reaktywny na zmiany w konfiguracji.
 
-1. Wybierz **Edytuj szczegóły** obok działania bez tytułu. Podaj nazwę miary. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do miary.
+1. Wybierz opcję **Uruchom**, aby obliczyć wyniki dla skonfigurowanej miary. Wybierz opcję **Zapisz i zamknij**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później. Wyświetla się strona **Miary**.
 
-   :::image type="content" source="media/measures_edit_details.png" alt-text="Okno dialogowe Edytuj szczegóły.":::
+---
 
-1. Wybierz opcję **Uruchom**, aby obliczyć wyniki dla skonfigurowanej miary. Wybierz opcję **Zapisz i zamknij**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później.
+## <a name="next-step"></a>Następny krok
 
-1. Wybierz **Miary**, aby zobaczyć nowo utworzoną miarę na liście.
+Istniejące miary można wykorzystać do utworzenia [segmentu klienta](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

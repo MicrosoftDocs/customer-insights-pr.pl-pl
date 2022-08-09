@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647498"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171108"
 ---
 # <a name="transaction-churn-prediction"></a>Przewidywanie rezygnacji z transakcji
 
@@ -240,7 +240,7 @@ Dodaj listę klientów biznesowych i kont, których chcesz użyć jako testów p
    - **Nazwa przewidywania**: Nazwa przewidywania podana podczas jej tworzenia.
    - **Typ przewidywania**: typ modelu używanego przez przewidywanie
    - **Encja wyjściowa**: Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.
-     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-new-segment) z wybranym progiem.
+     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-segment) z wybranym progiem.
      Nie wszyscy klienci muszą być aktywnymi klientami. Niektórzy z nich mogą nie mieć żadnego działania przez dłuższy czas i są już traktowane jako rezygnacja na podstawie definicji rezygnacji. Przewidywanie ryzyka rezygnacji dla klientów, którzy już zrezygnowali, nie jest przydatne, ponieważ ci odbiorcy nie są dla Ciebie interesujący.
    - **Przewidywane pole**: to pole jest wypełniane tylko w przypadku niektórych typów przewidywań i nie jest używane w przewidywaniu rezygnacji.
    - **Stan**: Stan przebiegu przewidywania.

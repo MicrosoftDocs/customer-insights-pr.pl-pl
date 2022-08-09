@@ -1,7 +1,7 @@
 ---
 title: Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 description: Pracuj z danymi Common Data Model przy użyciu usługi Azure Data Lake Storage.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081306"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207012"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Tworzenie połączenia z danymi w programie Azure Data Lake Storage
 
@@ -82,7 +82,7 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
    :::image type="content" source="media/ADLS_required.png" alt-text="Okno dialogowe przedstawiające wymaganie dla klucza podstawowego":::
 
    > [!TIP]
-   > Aby edytować encje w interfejsie edycji JSON, zaznacz opcję **Pokaż więcej** > **Edytuj plik schematu**. Wprowadź zmiany i wybierz **Zapisz**.
+   > Aby edytować jednostkę w interfejsie edycji JSON, wybierz jednostkę, a następnie **Edytuj plik schematu**. Wprowadź zmiany i wybierz **Zapisz**.
 
 1. W przypadku wybranych encji, które wymagają pozyskiwania, opcja **Wymagane** jest wyświetlana w obszarze **Odświeżanie przyrostowe**. Aby uzyskać informacje o tych encjach, zobacz [Konfigurowanie odświeżania przyrostowego źródeł danych platformy Azure Data](incremental-refresh-data-sources.md).
 
@@ -101,6 +101,10 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
    1. Wybierz pozycję **Gotowe**.
 
 1. Wybierz pozycję **Zapisz**. Zostanie otwarta strona **Źródła danych** z nowymi źródło danych **Odświeżania**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie [**Encji**](entities.md).
 
 ### <a name="create-a-new-schema-file"></a>Utwórz nowy plik schematu
 
@@ -148,6 +152,9 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
 
 1. Wybierz pozycję **Zapisz**. Zostanie otwarta strona **Źródła danych** z nowymi źródło danych **Odświeżania**.
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie [**Encji**](entities.md).
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Edytuj źródło danych Azure Data Lake Storage
 
@@ -179,8 +186,16 @@ Możesz zaktualizować za pomocą opcji *Połącz z kontem magazynu, używając*
       > [!IMPORTANT]
       > Jeśli istnieją zależności między istniejącym plikiem model.json lub manifest.json a zestawem jednostek, zostanie wyświetlony komunikat o błędzie i nie będzie można wybrać innego pliku model.json lub manifest.json. Usuń te zależności przed zmianą pliku model.json lub manifest.json lub utwórz nowe źródło danych z plikiem model.json lub manifest.json, którego chcesz użyć, aby uniknąć usuwania zależności.
    - Aby zmienić lokalizację pliku danych lub klucz podstawowy, wybierz opcję **Edytuj**.
-   - Aby zmienić dane pozyskiwania przyrostowego, zobacz [Konfigurowanie odświeżania przyrostowego źródła danych platformy Azure Data Lake](incremental-refresh-data-sources.md)
+   - Aby zmienić dane pozyskiwania przyrostowego, zobacz [Konfigurowanie odświeżania przyrostowego źródła danych platformy Azure Data Lake](incremental-refresh-data-sources.md).
+   - Należy zmienić nazwę encji tak, aby odpowiadała nazwie encji w pliku json.
+
+     > [!NOTE]
+     > Po insekwencji zawsze należy zachować nazwę encji w programie Customer Insights tak samo, jak nazwa encji w pliku model.json lub manifest.json. Customer Insights sprawdza poprawność wszystkich nazw jednostek za pomocą modelu.json lub manifest.json podczas każdego odświeżania systemu. Jeśli nazwa jednostki zostanie zmieniona w usłudze Customer Insights lub poza nią, wystąpi błąd, ponieważ usługa Customer Insights nie może znaleźć nowej nazwy jednostki w pliku .json. Jeśli przetworzona nazwa jednostki została przypadkowo zmieniona, edytuj nazwę jednostki w Customer Insights, aby była zgodna z nazwą w pliku .json.
 
 1. Wybierz **Atrybuty,** które chcesz dodać lub zmienić, albo w celu włączenia funkcji profilowania danych. Następnie wybierz **Gotowe**.
 
 1. Kliknij przycisk **Zapisz**, aby zastosować zmiany i wrócić do strony **Źródła danych**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

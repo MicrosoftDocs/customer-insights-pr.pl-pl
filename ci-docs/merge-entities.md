@@ -14,16 +14,14 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: ceb2724ad490c1ba44fd9b7ff2be04721892fca4
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081625"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139670"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Ujednolicenie pól klientów w celu ujednolicania danych
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 W tym kroku procesu ujednolicania wybierz i wyklucz atrybuty, które mają zostać połączone w ramach ujednoliconej jednostki profilu. Na przykład, jeśli trzy encje mają dane mailowe, możesz chcieć zachować wszystkie trzy osobne pola mailowe lub połączyć je w jedno pole mailowe dla ujednoliconego profilu. Niektóre atrybuty są automatycznie łączone przez system. Możesz tworzyć stabilne i unikalne identyfikatory klientów oraz grupować powiązane profile w klastry.
 

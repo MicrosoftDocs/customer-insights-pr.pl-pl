@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 39d68011df9e4341244af627bb71f4e3635256bb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081728"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195671"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
@@ -28,7 +28,7 @@ Funkcjonalność czasu rzeczywistego zapewnia natychmiastowe wykorzystanie danyc
 
 Aktualizacje w czasie rzeczywistym mają czas wygaśnięcia, po którym nie będą już zastępować wartości ze źródła danych:
 
-- Aktualizacje profilu będą przechowywane przez 4 godziny
+- Aktualizacje profilu będą przechowywane przez cztery godziny
 - Działania będą przechowywane przez 30 dni
 
 Te wartości są parametrami wywołania interfejsu API, które można zmienić. Mają one na celu zagwarantowanie, że dane źródłowe pozostaną źródłem prawdy. Jeśli chcesz, aby aktualizacje w czasie rzeczywistym były uwzględniane dłużej, musisz dodać je do źródła danych, aby były pobierane podczas następnego zaplanowanego odświeżania.

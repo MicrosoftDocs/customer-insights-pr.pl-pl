@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: b3a0643ab71c98ce212f4e4581a584d8382c67eb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081710"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183644"
 ---
 # <a name="semantic-mappings-preview"></a>Mapowania semantyczne (wersja zapoznawcza)
 
@@ -32,13 +32,13 @@ Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniam
 
 1. W kroku **Dane encji** ustaw wartości następujących pól:
 
-   - **Nazwa mapowania semantycznego encji**: podaj nazwę mapowania semantycznego encji.
-   - **Encja źródłowa**: wybierz encję zawierającą dane kontaktów.
-   - **Klucz podstawowy**: wybierz pole, które jednoznacznie identyfikuje rekord kontaktu. Nie może ono zawierać żadnych powielonych wartości, pustych wartości ani brakujących wartości.
+   - **Nazwa mapowania semantycznego encji**: nazwa mapowania semantycznego encji.
+   - **Encja źródłowa**: encja zawierającą dane kontaktów.
+   - **Klucz podstawowy**: pole, które jednoznacznie identyfikuje rekord kontaktu. Nie może ono zawierać żadnych powielonych wartości, pustych wartości ani brakujących wartości.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard1.png" alt-text="Konfigurowanie mapowania semantycznego encji z nazwą, encją źródłową i kluczem podstawowym.":::
 
-1. Wybierz **Dalej**, aby kontynuować.
+1. Wybierz **Dalej**.
 
 1. W kroku **Relacje** skonfiguruj szczegóły, aby łączyć dane kontaktów z odpowiadającymi im danymi klienta. Ten krok obrazuje połączenie między encjami.  
 
@@ -55,43 +55,38 @@ Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniam
 
    > [!NOTE]
    > Można skonfigurować więcej relacji między encją kontaktu a innymi encjami klienta za pomocą encji pośrednich.
-   >  :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="Wizualizacje różnych relacji łączą encje kontaktów z encjami klientów.":::
+   
+     :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="Wizualizacje różnych relacji łączą encje kontaktów z encjami klientów.":::
 
-1. Wybierz opcję **Dalej** po zakończeniu konfiguracji relacji.
+1. Wybierz **Dalej**.
 
 1. W kroku **Ustaw typ semantyczny** wybierz opcję **Typ semantyczny**. Obecnie jest dostępny jeden **typ semantyczny** o nazwie *ContactProfile*.
 
-1. Mapuj swoje dane na *ContactProfile* (**typ semantyczny**) dla pokazanych pól.
-   - Pole wymagane: identyfikator kontaktu
-   - Pola opcjonalne: imię, nazwisko, data urodzenia, płeć, podstawowy adres e-mail i podstawowy numer telefonu
+1. Zamapuj swój identyfikator kontaktu na typ semantyczny *ContactProfile* **Contact ID**. Opcjonalnie zmapuj inne pola, takie jak imię, nazwisko, płeć lub adres e-mail.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard5.png" alt-text="Mapowanie atrybutów danych kontaktów na podane pola wymagane i opcjonalne.":::
 
-1. Wybierz **Dalej**, aby kontynuować.
+1. Wybierz **Dalej**.
 
-1. W kroku **Przegląd** zapoznaj się z konfiguracją mapowania semantycznego. Wybierz opcję **Edytuj** dla odpowiadającej sekcji, aby wprowadzić zmiany.
+1. W kroku **Przegląd** zapoznaj się z konfiguracją mapowania semantycznego. Aby wprowadzić zmiany, wybierz opcję **Edytuj** dla odpowiadającej sekcji.
 
-1. Wybierz opcję **Zapisz**, aby zapisać nowe **mapowanie semantyczne**.
+1. Wybierz pozycję **Zapisz**.
 
-1. Po zapisaniu można wybrać polecenie **Uruchom** proces mapowania pochyłego lub wybrać opcję **Zamknij**, aby zapisać mapowanie semantyczne bez przetwarzania.
-
-1. Aby uruchomić mapowanie semantyczne, wybierz mapowanie semantyczne i wybierz opcję **Odśwież**.
+1. Aby przetworzyć mapowanie semantyczne, wybierz **Uruchom**. Można też wybrać opcję **Zamknij**, by zapisać mapowanie semantyczne bez jego przetwarzania. Aby uruchomić go później, wybierz mapowanie semantyczne i wybierz **Odśwież**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Zarządzanie istniejącymi mapowaniami semantycznymi
 
-W obszarze **Dane** > **Mapowania semantyczne (wersja zapoznawcza)** można wyświetlić wszystkie zapisane mapowania semantyczne i zarządzać nimi. Każde mapowanie semantyczne jest reprezentowane przez osobny wiersz. Znajdują się w nim szczegółowe informacje o encji źródłowej, typie semantycznym, typie mapowania i jego stanie.
+Przejdź do **Dane** > **Mapowania semantyczne (wersja zapoznawcza)**, aby wyświetlić zapisane mapowania semantyczne, ich encję źródłową, typ semantyczny, typ mapowania i stan.
 
 :::image type="content" source="media/semantic-mapping-options.png" alt-text="Opcje zarządzania mapowaniami semantycznymi.":::
 
-- **Edytuj**: otwiera konfigurację mapowania semantycznego z kroku przeglądu. Można zmienić bieżącą konfigurację. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
-
-- **Odśwież**: odświeża wybrane mapowanie semantyczne przy użyciu najbardziej aktualnych danych z encji, które są częścią konfiguracji. Odświeżanie każdego danego mapowania semantycznego spowoduje odświeżenie wszystkich mapowań semantycznych tego samego typu.
-
-- **Zmień nazwę**: otwiera sesję dialogową, w której można wprowadzić inną nazwę wybranego mapowania semantycznego. Wybierz pozycję **Zapisz**, aby zastosować zmiany.
-
-- **Usuń**: otwiera sesję dialogową, aby potwierdzić usunięcie wybranego mapowania. Wybierając mapowania semantyczne i ikonę usuwania, można także usunąć kilka mapowań semantycznych jednocześnie. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
+Wybierz mapowanie semantyczne, aby wyświetlić dostępne akcje.
+- **Edytuj** bieżącą konfigurację. Wybierz opcję **Zapisz** i **Uruchom**, aby przetworzyć zmiany.
+- **Odśwież** mapowanie semantyczne, by uwzględnić najnowsze dane. Odświeżanie każdego danego mapowania semantycznego spowoduje odświeżenie wszystkich mapowań semantycznych tego samego typu.
+- **Zmień nazwę** mapowania semantycznego. Wybierz pozycję **Zapisz**.
+- **Usuń** mapowanie semantyczne. Aby usunąć więcej niż jedno mapowanie semantyczne naraz, wybierz mapowania semantyczne i ikonę usuwania. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 
 ## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Użyj semantycznego mapowania encji ContactProfile do tworzenia aktywności na poziomie kontaktu
 
@@ -100,7 +95,7 @@ Po utworzeniu semantycznego mapowania encji *ContactProfile* możesz przechwytyw
    > [!NOTE]
    > Aby aktywność na poziomie kontaktu działała, musisz posiadać oba atrybuty **AccountID** i **ContactID** dla każdego rekordu w danych aktywności.
 
-1. [Definiowanie mapowania semantycznego encji *ContactProfile*.](#define-a-contactprofile-semantic-entity-mapping) i uruchomić mapowanie semantyczne.
+1. [Zdefiniuj mapowanie encji semantycznych *ContactProfile*](#define-a-contactprofile-semantic-entity-mapping) i uruchom mapowanie semantyczne.
 
 1. Wybierz pozycję **Dane** > **Działania**.
 
@@ -119,14 +114,14 @@ Po utworzeniu semantycznego mapowania encji *ContactProfile* możesz przechwytyw
 
 1. Uruchom swoje mapowania aktywności.
 
-1. Twoje działania na poziomie kontaktu będą teraz widoczne na Twojej osi czasu klienta.
+1. Po zakończeniu mapowania działań na poziomie kontaktu wybierz opcję **Klienci**. Działania na poziomie kontaktu są wyświetlane na osi czasu klienta.
 
    :::image type="content" source="media/Contact_Activities2.png" alt-text="Wynik końcowy po skonfigurowaniu działań kontaktowych":::
 
 ### <a name="contact-level-activity-timeline-filtering"></a>Filtrowanie osi czasu aktywności na poziomie kontaktu
 
-Po skonfigurowaniu mapowania aktywności na poziomie kontaktu i uruchomieniu go, oś czasu aktywności dla twoich klientów zostanie zaktualizowana. Zawiera ich identyfikatory lub imiona, w zależności od konfiguracji twojego *ContactProfile*, dla działań, które podjęli. Możesz filtrować aktywności według kontaktów na osi czasu, aby zobaczyć konkretne kontakty, które Cię interesują. Dodatkowo możesz zobaczyć wszystkie aktywności, które nie są przypisane do konkretnego kontaktu, wybierając **Aktywności nieprzypisane do kontaktu**.
+Oś czasu działań dla Twoich klientów zawiera ich identyfikatory lub imiona i nazwiska, w zależności od konfiguracji twojego *ContactProfile*, dla działań, które podjęli. Filtruj działania według kontaktów na osi czasu, aby zobaczyć konkretne kontakty, które Cię interesują. Aby wyświetlić wszystkie aktywności, które nie są przypisane do konkretnego kontaktu, wybierz **Aktywności nieprzypisane do kontaktu**.
 
-   :::image type="content" source="media/Contact_Activities3.png" alt-text="Opcje filtrowania dostępne dla aktywności na poziomie kontaktu.":::
+:::image type="content" source="media/Contact_Activities3.png" alt-text="Opcje filtrowania dostępne dla aktywności na poziomie kontaktu.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

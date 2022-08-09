@@ -14,43 +14,56 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: 880c06bffcfa269151d96cb4c597eed4832fc61b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081705"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170856"
 ---
 # <a name="measures-overview"></a>Omówienie miar
 
-Miary pomagają lepiej poznać zachowania klientów i wydajność biznesową. Analizują one odpowiednie wartości z [ujednoliconych profilów](data-unification.md). Na przykład, firma chce zobaczyć *całkowite wydatki na klienta*, aby zrozumieć historię zakupów poszczególnych klientów lub zmierzyć *całkowitą sprzedaż firmy*, aby zrozumieć zagregowany poziom przychodów w całej firmie.  
+Miary pomagają lepiej poznać zachowania klientów i wydajność biznesową. Analizują one odpowiednie wartości z [ujednoliconych profilów](data-unification.md). Na przykład, firma chce zobaczyć *całkowite wydatki na klienta*, aby zrozumieć historię zakupów poszczególnych klientów lub zmierzyć *całkowitą sprzedaż firmy*, aby zrozumieć zagregowany poziom przychodów w całej firmie.
 
-Miary są tworzone za [pomocą konstruktora miar](measure-builder.md), platformy zapytań o dane z różnymi operatorami i prostymi opcjami mapowania. Umożliwia filtrowanie danych, grupowanie wyników, wykrywanie [ścieżek relacji między encjami](relationships.md) i wyświetlanie podglądu danych wyjściowych. Aby efektywnie konfigurować najczęściej używane miary, można użyć [wstępnie zdefiniowanych szablonów](measure-templates.md).
+Twórz miary, aby planować działania biznesowe, wysyłając zapytania do danych klientów i wydobywając spostrzeżenia. Na przykład utworzenie miary *całkowitych wydatków na klienta* i *całkowitego zwrotu na klienta* pomaga zidentyfikować grupę klientów z wysokimi wydatkami, ale z wysokim zwrotem. Następnie aby dodać następne najlepsze akcje, można [utworzyć segment](segments.md) na podstawie tych działań.
 
-Użyj konstruktora miar, aby zaplanować działania biznesowe, wykonując zapytania dotyczące danych klientów i wyodrębniając szczegółowe informacje. Na przykład utworzenie miary *całkowitych wydatków na klienta* i *całkowitego zwrotu na klienta* pomaga zidentyfikować grupę klientów z wysokimi wydatkami, ale z wysokim zwrotem. Aby dodać następne najlepsze akcje, można [utworzyć segment](segments.md) na podstawie tych działań.
+## <a name="create-a-measure"></a>Utwórz miarę
 
-## <a name="manage-your-measures"></a>Zarządzanie miarami
+Wybierz sposób tworzenia miary na podstawie grupy docelowej.
 
-Listę miar można znaleźć na stronie **Miary**.
+# <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
 
-Znajdziesz informacje o rodzaju miary, twórcy, dacie utworzenia, stanie i stanie. Po wybraniu miary z listy można wyświetlić podgląd danych wyjściowych i pobrać plik CSV.
+- Konstruktor miar od podstaw: [twórz własne](measure-builder.md).
+- Z powszechnie stosowanych miar: [Użyj predefiniowanych szablonów](measure-templates.md).
+
+# <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
+
+Konstruktor miar od podstaw: [twórz własne](measure-builder.md).
+
+---
+
+## <a name="manage-existing-measures"></a>Zarządzaj istniejącymi środkami
+
+Przejdź do strony **Miary**, aby wyświetlić utworzone miary, ich status, typ miary i czas ostatniego odświeżenia danych. Listę miar można posortować według dowolnej kolumny lub użyć pola wyszukiwania, aby znaleźć miarę, którą chcesz zarządzać.
+
+Wybierz obok miary, aby wyświetlić dostępne działania. Wybierz nazwę taktu, aby wyświetlić podgląd danych wyjściowych i pobrać plik CSV.
 
 :::image type="content" source="media/measures-actions.png" alt-text="Akcje służące do zarządzania pojedynczymi miarami."lightbox="media/measures-actions.png":::
 
-Po zaznaczeniu segmentu dostępne są następujące miary:
-
-- **Edytuj** konfigurację miary.
-- **Duplikuj** miarę. Można od razu edytować jego właściwości lub po prostu zapisać duplikat.
-- **Odśwież** miarę na podstawie najnowszych danych. Aby odświeżyć wszystkie miary w tym samym czasie, wybierz wszystkie miary, a następnie **Odśwież**.
+- **Edytuj** miara, aby zmienić jego właściwości.
+- **Odśwież** miara, aby uwzględnić najnowsze dane.
 - **Zmień nazwę** miary.
-- **Aktywuj** lub **Dezaktywuj**. Nieaktywne miary nie będą odświeżane podczas [zaplanowanego odświeżania](system.md#schedule-tab).
-- **Otaguj**, aby [zarządzać etykietami](work-with-tags-columns.md#manage-tags) dla segmentu.
+- **Aktywuj** lub **Dezaktywuj** miara. Nieaktywne miary nie zostaną odświeżone podczas [zaplanowanego odświeżenia](system.md#schedule-tab), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia.
+- **Otaguj**, aby [zarządzać etykietami](work-with-tags-columns.md#manage-tags) dla miary.
 - **Usuń** miarę.
+- **Kolumny** w [celu dostosowania wyświetlanych kolumn](work-with-tags-columns.md#customize-columns).
+- **Filtruj**, aby [filtrować etykiety](work-with-tags-columns.md#filter-on-tags).
+- **Wyszukaj nazwę**, aby wyszukać według nazwy miary.
+
+## <a name="refresh-measures"></a>Odświeżanie miar
+
+Miary mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. Aby ręcznie odświeżyć jedno lub więcej miar, wybierz je i wybierz opcję **Odśwież**. Aby [zaplanować automatyczne odświeżanie](system.md#schedule-tab), przejdź do strony **Administrator** > **System** > **Harmonogram**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-## <a name="next-step"></a>Następny krok
-
-Istniejące miary można wykorzystać do utworzenia [segmentu klienta](segments.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

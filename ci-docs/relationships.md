@@ -21,12 +21,12 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e622e5fa0b5738e31db1c668d95312adbc4f7d36
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081445"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183582"
 ---
 # <a name="relationships-between-entities-and-entity-paths"></a>Relacje między encjami i ścieżkami encji
 
@@ -34,7 +34,7 @@ Relacje łączą encje i definiują graf Twoich danych, gdy encje posiadają wsp
 
 Istnieją trzy typy relacje: 
 - Nieedytowalne relacje systemowe, tworzone przez system w ramach procesu ujednolicania danych
-- Nieedytowalne relacje dziedziczone, które są tworzone automatycznie na podstawie pobieranych źródeł danych 
+- Nieedytowalne relacje dziedziczone, które są tworzone automatycznie na podstawie pobieranych źródeł danych
 - Edytowalne relacje niestandardowe, tworzone i konfigurowane przez użytkowników
 
 ## <a name="non-editable-system-relationships"></a>Nieedytowalne powiązania systemowe
@@ -67,69 +67,66 @@ Relacja składa się z *encji źródłowej* zawierającej klucz obcy i *encję d
    - **Opis**: opis relacji.
    - **Encja źródłowa**: Encja używana jako źródło w relacji. Przykład: SupportCase.
    - **Encja docelowa**: Encja używana jako cel w relacji. Przykład: Klient.
-   - **Kardynalność źródła**: Określ kardynalność encji źródłowej. Podobieństwo opisuje liczbę możliwych elementów w zestawie. Zawsze odnosi się do kardynalności docelowej. Można wybrać **Jedna** lub **Wiele**. Relacje obsługują tylko wiele-do-jednego i jeden-do-jednego.  
+   - **Kardynalność źródła**: kardynalność encji źródłowej. Podobieństwo opisuje liczbę możliwych elementów w zestawie. Zawsze odnosi się do kardynalności docelowej. Można wybrać **Jedna** lub **Wiele**. Relacje obsługują tylko wiele-do-jednego i jeden-do-jednego.  
      - Wiele do jednego: wiele rekordów źródłowych może odnosić się do jednego rekordu docelowego. Przykład: wiele spraw pomocy technicznej od jednego klienta.
      - Jeden-do-jednego: pojedynczy rekord źródłowy odnosi się do rekordu jednego docelowego. Przykład: jeden identyfikator lojalnościowy dla pojedynczego klienta.
 
      > [!NOTE]
      > Relacje wiele-do-wielu można tworzyć przy użyciu dwóch relacji wiele-do-jednego i encji łączącej, która łączy encję źródłową i encję docelową.
 
-   - **Kardynalność docelowa**: wybierz kardynalność rekordów encji docelowej. 
-   - **Pole klucza źródłowego**: pole klucza obcych w encji źródłowej. Przykład: SupportCase może użyć pola CaseID jako pola klucza obcych.
-   - **Pole klucza docelowego**: Pole kluczowe encji docelowej. Przykład klient może użyć pola klucza **CustomerID**.
+   - **Kardynalność docelowa**: kardynalność rekordów encji docelowej.
+   - **Pole klucza źródłowego**: pole klucza obcych w encji źródłowej. Przykład: SupportCase może użyć pola **CaseID** jako pola klucza obcych.
+   - **Pole klucza docelowego**: pole kluczowe encji docelowej. Przykład: klient może użyć pola klucza **CustomerID**.
 
 4. Wybierz pozycję **ZApisz**, aby utworzyć niestandardową relację.
 
 ## <a name="set-up-account-hierarchies"></a>Konfigurowanie hierarchii klientów
 
-Środowiska, w których skonfigurowano używanie kont biznesowych jako podstawowych docelowych odbiorców, mogą konfigurować hierarchie kont dla pokrewnych kont biznesowych. Może to być na przykład firma z oddzielnymi jednostkami biznesowymi. 
+Środowiska, w których skonfigurowano używanie kont biznesowych jako podstawowych docelowych odbiorców, mogą konfigurować hierarchie kont dla pokrewnych kont biznesowych. Może to być na przykład firma z oddzielnymi jednostkami biznesowymi.
 
 Organizacje tworzą hierarchie kont, aby lepiej zarządzać kontami i ich relacjami. Customer Insights obsługuje hierarchie kont nadrzędnych i podrzędnych, które już istnieją w pozyskanych danych klientów. Na przykład konta z aplikacji Dynamics 365 Sales. Te hierarchie można skonfigurować na stronie **Relacje**.
 
 1. Przejdź do pozycji **Dane** > **Relacje**.
 1. Wybierz kartę **Hierarchia klientów**.
-1. Wybierz pozycję **Nowa hierarchia klientów**. 
-1. W okienku **Hierarchia klientów** podaj nazwę hierarchii. System tworzy nazwę encji wyjściowej. Można zmienić nazwę encji wyjściowej.
+1. Wybierz pozycję **Nowa hierarchia klientów**.
+1. W okienku **Hierarchia klientów** podaj nazwę hierarchii. System tworzy nazwę obiektu wyjściowego, ale można go zmienić.
 1. Wybierz encję zawierającą hierarchię klientów. Zazwyczaj znajduje się ona w tej samej encji, która zawiera klientów.
-1. Wybierz **identyfikator klienta** i **nadrzędny identyfikator klienta** z wybranej encji 
-1. Wybierz opcję **Zapisz**, aby zastosować ustawienia i sfinalizować hierarchię klientów.
+1. Wybierz **Identyfikator UID klienta** i **Identyfikator UID elementu nadrzędnego** z wybranej encji.
+1. Kliknij **Zapisz**, aby sfinalizować hierarchię kont.
 
-## <a name="view-relationships"></a>Widok relacji
+## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami
 
-Strona Relacje zawiera listę wszystkich utworzonych relacji. Każdy wiersz reprezentuje relację, która zawiera również szczegółowe informacje o encji źródłowej, encji docelowej i kardynalności. 
+Przejdź do **Relacje**, aby wyświetlić wszystkie utworzone relacje, encję źródłową, encję docelową i podobieństwo.
 
 :::image type="content" source="media/relationships-list.png" alt-text="Lista relacji i opcji na pasku akcji strony Relacje.":::
 
-Ta strona oferuje zestaw opcji dla istniejących i nowych relacji: 
-- **Nowa rezerwacji:** [Utwórz niestandardową relację](#create-a-custom-relationship).
-- **Wizualizacja**: [poznaj wizualizację relacji](#explore-the-relationship-visualizer) w celu odszukania diagramu sieciowego istniejącego relacje i ich podobieństwa.
-- **Filtruj według**: wybierz typ relacje, które mają być wyświetlane na liście.
-- **Wyszukiwanie relacje**: Użyj wyszukiwania tekstowego według właściwości relacji.
+Użyj opcji **Filtruj według** lub **Relacje wyszukiwania** i znajdź określoną relację. Aby zobaczyć diagram sieciowy istniejących relacji i ich liczności, wybierz [**Wizualizator**](#explore-the-relationship-visualizer).
+
+Wybierz relację, aby wyświetlić dostępne akcje:
+- **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
+- **Usuń**: usuń niestandardowe relacje.
+- **Widok**: Wyświetlanie utworzonych w systemie i dziedziczonych relacji.
 
 ### <a name="explore-the-relationship-visualizer"></a>Poznawanie wizualizacji relacji
 
 Wizualizator relacji pokazuje diagram sieciowy istniejących relacji między połączonymi podmiotami i ich kardynalności. Także wizualizuje ścieżkę relacji.
 
-Aby dostosować widok, możesz zmienić położenie pól, przeciągając je na kanwę.
-
 :::image type="content" source="media/relationship-visualizer.png" alt-text="Zrzut ekranu diagramu sieci wizualizatora relacji z połączeniami między powiązanymi podmiotami.":::
 
-Dostępne opcje: 
+Aby dostosować widok, możesz zmienić położenie pól, przeciągając je na kanwę. Inne opcje obejmują: 
 - **Eksportuj jako plik obrazu**: zapisz bieżący widok jako plik obrazu.
 - **Zmień na układ poziomy/pionowy**: zmień wyrównanie encji i relacji.
 - **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
 
 ## <a name="relationship-paths"></a>Ścieżki relacji
 
-Ścieżka relacji opisuje encje, które są połączone z relacjami między encją źródłową i encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu. 
-
-Ścieżka relacji informuje system, które relacje mają uzyskiwać dostęp do encji ujednoliconego profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
+Ścieżka relacji opisuje encje, które są połączone z relacjami między encją źródłową i encją docelową. Jest ona używana podczas tworzenia segmentu lub miary zawierającej inne encje niż encja ujednoliconego profilu i jest dostępnych wiele opcji, aby dotrzeć do ujednoliconej encji profilu. Różne ścieżki relacji mogą dostarczyć różnych wyników.
 
 Na przykład obiekt, *eCommerce_eCommercePurchases* ma następujące relacje do encji ujednoliconego profilu *Klient*:
 
 - eCommerce_eCommercePurchases > klient
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > klient
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > klient 
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > klient
 
 Ścieżka relacji określa encje, których można używać podczas tworzenia reguł dla miar lub segmentów. Wybranie opcji z najdłuższa ścieżką relacji najprawdopodobniej dostarczy mniejszą liczbę wyników, ponieważ dopasowane rekordy muszą być częścią wszystkich encji. W tym przykładzie klient musi mieć zakupione towary za pośrednictwem handlu elektronicznego (eCommerce_eCommercePurchases) w punkcie sprzedaży (POS_posPurchases) i uczestniczyć w naszym programie lojalnościowym (loyaltyScheme_loyCustomers). Wybór pierwszej opcji spowoduje prawdopodobnie dodatkowe rezultaty, ponieważ klienci muszą istnieć tylko w jednej dodatkowej encji.
 
@@ -155,7 +152,7 @@ Relacja jest klasyfikowana jako **relacja pośrednia**, gdy encja źródłowa je
 
 #### <a name="multi-hop-relationship"></a>Relacja z wieloma przeskokami
 
-*Relacja z wieloma przeskokami* to *relacja pośrednia*, która umożliwia połączenie encji źródłowej z encją docelową za pośrednictwem co najmniej jednej encji pośredniczącej.
+**Relacja z wieloma przeskokami** to *relacja pośrednia*, która umożliwia połączenie encji źródłowej z encją docelową za pośrednictwem co najmniej jednej encji pośredniczącej.
 
 Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z encją docelową o nazwie *eCommerce_eCommerceContacts*, jest to relacja z wieloma przeskokami.
 
@@ -168,16 +165,6 @@ Relacji z wieloma przeskokami i wieloma ścieżkami można używać razem do two
 Na przykład jeśli encja działania o nazwie *eCommerce_eCommercePurchasesWest* łączy się z encją pośredniczącą o nazwie *eCommerce_eCommercePurchasesEast*, a następnie łączy się z dwiema encjami docelowymi *eCommerce_eCommerceContacts* i *loyaltyScheme_loyCustomers*, jest to relacja z wieloma przeskokami i wieloma ścieżkami.
 
 :::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Encja źródłowa łączy się bezpośrednio z jedną encją docelową, a następnie łączy się z inną encją docelową z użyciem encji pośredniczącej.":::
-
-## <a name="manage-existing-relationships"></a>Zarządzaj istniejącymi relacjami 
-
-Na stronie Relacje każda relacja jest reprezentowana przez wiersz. 
-
-Wybierz relację i wybierz jedną z następujących opcji: 
- 
-- **Edycja**: Zaktualizuj właściwości relacji niestandardowych w okienku edycji i zapisz zmiany.
-- **Usuń**: usuń niestandardowe relacje.
-- **Widok**: Wyświetlanie utworzonych w systemie i dziedziczonych relacji. 
 
 ## <a name="next-step"></a>Następny krok
 

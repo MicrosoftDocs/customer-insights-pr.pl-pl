@@ -1,7 +1,7 @@
 ---
 title: Omówienie źródeł danych
 description: Dowiedz się, jak importować lub pozyskiwać dane z różnych źródeł.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,20 +12,20 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: fbe44f655bdbc20ef7f0956022395e2dcb570adf
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051466"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207104"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
 Dynamics 365 Customer Insights oferuje połączenia, które łączą dane z szerokiego zakresu źródeł. Łączenie się ze źródłem danych jest często określane jako proces *pozyskiwania danych*. Po pozyskaniu danych można [ujednolicić](data-unification.md), generować informacje i aktywować dane w celu tworzenia spersonalizowanych doświadczeń.
 
-## <a name="add-data-sources"></a>Dodaj źródła danych
+## <a name="add-or-edit-data-sources"></a>Dodaj lub edytuj źródła danych
 
-Źródła danych można dołączać lub importować do aplikacji Customer Insights. Poniższe łącza zawierają instrukcje dodawania źródeł danych.
+Źródła danych można dołączać lub importować do aplikacji Customer Insights. Poniższe linki zawierają instrukcje dotyczące dodawania i edytowania źródeł danych.
 
 **Dołączanie źródła danych**
 
@@ -50,13 +50,18 @@ Jeśli w środowisku skonfigurowano użycie magazynu rozwiązania Customer Insig
 
 Jeśli w środowisku nie są wykorzystywane przepływy danych Power Platform, strona **Źródła danych** zawiera tylko listę wszystkich źródeł danych. Nie są wyświetlane żadne sekcje.
 
-Należy przejść do **Dane** > **Źródła danych**, aby wyświetlić nazwę poszczególnych pozyskanych źródeł danych, ich stan i czas ostatniego odświeżania danych dla tego źródła. Listę źródeł danych można posortować według każdej kolumny.
+## <a name="manage-existing-data-sources"></a>Zarządzaj istniejącymi źródłami danych
 
-:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Dodano źródło danych.":::
+Należy przejść do **Dane** > **Źródła danych**, aby wyświetlić nazwę poszczególnych pozyskanych źródeł danych, ich stan i czas ostatniego odświeżania danych dla tego źródła. Możesz posortować listę źródeł danych według dowolnej kolumny lub użyć pola wyszukiwania, aby znaleźć źródło danych, którym chcesz zarządzać.
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+Wybierz źródło danych, aby wyświetlić dostępne akcje.
 
-Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie **Encji**. Aby uzyskać więcej informacji, zobacz [Encje](entities.md).
+:::image type="content" source="media/data_sources_showmore.png" alt-text="Dodano źródło danych.":::
+
+- [**Edytuj**](#add-or-edit-data-sources) źródło danych, aby zmienić jego właściwości.
+- [**Odśwież**](#refresh-data-sources) źródło danych, aby uwzględnić najnowsze dane.
+- [**Wzbogać**](data-sources-enrichment.md) źródła danych przed unifikacją.
+- **Usuń** źródło danych. Usunąć źródło danych można tylko wtedy, gdy dane nie są używane w przetwarzaniu, takim jak ujednolicanie, dane szczegółowe, aktywacje lub eksport.
 
 ## <a name="refresh-data-sources"></a>Odśwież źródła danych
 
@@ -64,23 +69,12 @@ Należy przejść do **Dane** > **Źródła danych**, aby wyświetlić nazwę po
 
 Przejdź do **Administrator** > **System** > [**Harmonogram**](system.md#schedule-tab), aby skonfigurować zaplanowane w systemie odświeżanie pozyskanych źródeł danych.
 
-Aby odświeżyć źródło danych na żądanie, wykonaj następujące kroki:
+Aby odświeżyć źródło danych na żądanie:
 
 1. Przejdź do **Dane** > **Źródła danych**.
 
-1. Wybierz wielokropek pionowy (&vellip;) obok źródła danych, które chcesz odświeżyć, i z menu rozwijanego wybierz pozycję **Odśwież**. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie schematu encji i danych dla wszystkich encji określonych w źródle danych.
+1. Wybierz źródło danych chcesz odświeżyć i wybierz opcję **Odśwież**. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie schematu encji i danych dla wszystkich encji określonych w źródle danych.
 
-1. Wybierz **Zatrzymaj odświeżanie**, aby anulować istniejące odświeżanie, a źródło danych przywróci do ostatniego stanu odświeżania.
-
-## <a name="delete-a-data-source"></a>Usuń źródło danych
-
-Usunąć źródło danych można tylko wtedy, gdy dane nie są używane w przetwarzaniu, takim jak ujednolicanie, dane szczegółowe, aktywacje lub eksport.
-
-1. Przejdź do **Dane** > **Źródła danych**.
-
-2. Wybierz wielokropek pionowy (&vellip;) obok źródła danych, które chcesz usunąć, i z menu rozwijanego wybierz pozycję **Usuń**.
-
-3. Potwierdź usunięcie.
-
+1. Wybierz stan obok okienka **Szczegóły postępu**, aby wyświetlić postęp. Aby anulować zadanie, wybierz opcję **Anuluj zadanie** w dolnej części okienka.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

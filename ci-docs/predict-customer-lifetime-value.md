@@ -1,7 +1,7 @@
 ---
 title: Przewidywanie Wartość okresu istnienia klienta (CLV)
 description: Potencjalne przychody aktywnych klientów w przyszłości.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,21 +13,22 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055227"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186453"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Przewidywanie Wartość okresu istnienia klienta (CLV)
 
 Przewiduj potencjalną wartość (przychód), jaką indywidualni aktywni klienci przyniosą Twojej firmie w określonym okresie w przyszłości. Ta funkcja umożliwia osiągnięcie różnych celów:
+
 - Identyfikowanie klientów o wysokiej wartości i przetwarzanie tych informacji
 - Twórz strategiczne segmenty klientów w oparciu o ich potencjalną wartość, aby prowadzić spersonalizowane kampanie z ukierunkowaną sprzedażą, marketingiem i działaniami wsparcia
 - Kieruj rozwojem produktu, koncentrując się na funkcjach zwiększających wartość klienta
 - Zoptymalizuj strategię sprzedaży lub marketingu i dokładniej przydziel budżet na potrzeby dotarcia do klientów
-- Rozpoznawaj i nagradzaj wartościowych klientów za pomocą programów lojalnościowych lub programów nagród 
+- Rozpoznawaj i nagradzaj wartościowych klientów za pomocą programów lojalnościowych lub programów nagród
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -35,7 +36,7 @@ Zanim zaczniesz, zastanów się, co CLV oznacza dla Twojej firmy. Obecnie obsłu
 
 Ponieważ konfigurowanie i uruchamianie modelu CLV nie zajmuje dużo czasu, rozważ utworzenie kilku modeli z różnymi preferencjami wejściowymi i porównaj wyniki modeli, aby zobaczyć, który scenariusz modelu najlepiej odpowiada Twoim potrzebom biznesowym.
 
-###  <a name="data-requirements"></a>Wymagania dotyczące danych
+### <a name="data-requirements"></a>Wymagania dotyczące danych
 
 Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w celu zwiększenia wydajności modelu. Im więcej danych może przetworzyć model, tym dokładniejsza będzie prognoza. Dlatego zachęcamy do pozyskiwania większej ilości danych o aktywności klientów, jeśli są dostępne.
 
@@ -52,11 +53,12 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
     - Działania w sieci: historia odwiedzin na stronie, historia e-maili
     - Działania lojalnościowe: historia gromadzenia i wykorzystania punktów lojalnościowych
     - Obsługa klienta dziennika, zgłoszenia, skargi lub historii zwrotów
+    - Informacje o profilu klienta
 - Dane o działaniach klientów (opcjonalnie):
     - Identyfikatory działań w celu wyróżnienia działań tego samego typu
     - Identyfikatory klientów, umożliwiające mapowanie działań do klientów
     - Informacje o działaniu zawierające nazwę i datę działania
-    - Semantyczny schemat danych dla działań obejmuje: 
+    - Semantyczny schemat danych dla działań obejmuje:
         - **Klucz podstawowy**: Unikatowy identyfikator działania
         - **Sygnatura czasowa**: Data i godzina zdarzenia identyfikowanego przez klucz podstawowy
         - **Zdarzenie (nazwa działania)**: Nazwa wydarzenia, którego chcesz użyć
@@ -66,7 +68,7 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
     - Wystarczające dane historyczne: co najmniej jeden rok danych transakcji. Najlepiej dwa do trzech lat danych transakcji, aby przeanalizować CLV przez jeden rok.
     - Wiele zakupów na klienta: Idealnie, co najmniej dwie do trzech transakcji na identyfikator klienta, najlepiej w wielu datach.
     - Liczba klientów: co najmniej 100 unikatowych klientów, najlepiej więcej niż 10 000 klientów. Model zakończy z niepowodzeniem, jeśli będzie mniej niż 100 klientów oraz niewystarczające dane historycznych
-    - Kompletność danych: Mniej niż 20% brakujących wartości w wymaganych polach w danych wejściowych   
+    - Kompletność danych: Mniej niż 20% brakujących wartości w wymaganych polach w danych wejściowych
 
 > [!NOTE]
 > - Model wymaga historii transakcji klientów. Obecnie można skonfigurować tylko jedną encję historii transakcji. Jeśli istnieje wiele encji zakupu/transakcji, możesz połączyć je w usłudze Power Query przed pozyskaniem danych.
@@ -122,11 +124,11 @@ Poniższe dane są wymagane, a jeśli oznaczono je jako opcjonalne, zalecane w c
 
 1. Wybierz **Dalej**.
 
-### <a name="add-optional-data"></a>Dodaj dane opcjonalne
+### <a name="add-optional-activity-data"></a>Dodaj opcjonalne dane dotyczące działań
 
-Dane odzwierciedlające kluczowe interakcje z klientami (takie jak internet, obsługa klienta i dzienniki zdarzeń) dodają kontekst do rekordów transakcji. Więcej wzorców znalezionych w danych o aktywności klientów może poprawić dokładność prognoz. 
+Dane odzwierciedlające kluczowe interakcje z klientami (takie jak internet, obsługa klienta i dzienniki zdarzeń) dodają kontekst do rekordów transakcji. Więcej wzorców znalezionych w danych o aktywności klientów może poprawić dokładność prognoz.
 
-1. W kroku **Dodatkowe dane (opcjonalnie)** wybierz opcję **Dodaj dane**. Wybierz encję czynności klienta, która dostarcza informacje o działaniu klienta w sposób opisany w sekcji [wymagania wstępne](#prerequisites).
+1. W kroku **Dodatkowe dane (opcjonalnie)** wybierz opcję **Dodaj dane** w obszarze **Informacje o modelu zwiększenia za pomocą dodatkowych danych działań**. Wybierz encję czynności klienta, która dostarcza informacje o działaniu klienta w sposób opisany w sekcji [wymagania wstępne](#prerequisites).
 
 1. Zmapuj pola semantyczne na atrybuty w encji działań klienta i wybierz przycisk **Dalej**.
 
@@ -135,15 +137,34 @@ Dane odzwierciedlające kluczowe interakcje z klientami (takie jak internet, obs
 1. Wybierz typ działania dopasowania do typu działania klienta, które jest dodawane. Wybierz jeden z istniejących typów działań lub dodaj nowy typ działania.
 
 1. Skonfiguruj relację z encji działania klienta z encją *Klient*.
-    
+
     1. Wybierz pole, które identyfikuje klienta w tabeli aktywności klientów. Może być bezpośrednio powiązany z głównym identyfikatorem *Klienta* encji klienta.
     1. Wybierz encję *Klient* pasującą do podstawowej encji *Klienta*.
     1. Wprowadź nazwę, która opisuje relację.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Obraz przedstawiający krok w przepływie konfiguracji służący do dodawania dodatkowych danych i konfigurowania czynności z wypełnionymi przykładami.":::
 
-1. Wybierz pozycję **Zapisz**.    
+1. Wybierz pozycję **Zapisz**.
     Dodaj więcej danych, jeśli chcesz uwzględnić inne działania klientów.
+
+1. Dodaj opcjonalne dane klienta lub wybierz przycisk **Dalej**.
+
+### <a name="add-optional-customer-data"></a>Dodaj opcjonalne dane klienta
+
+Wybierz jeden z 18 najczęściej używanych atrybutów profilu klienta, które mają być używane jako wprowadzenie do modelu. Te atrybuty mogą prowadzić do bardziej spersonalizowanych, trafnych i praktycznych wyników modelu w przypadku zastosowań biznesowych.
+
+Na przykład: firma Contoso Coffee chce przewidzieć wartość życiową klienta, aby dotrzeć do klientów o wysokiej wartości ze spersonalizowaną ofertą związaną z wprowadzeniem na rynek ich nowego ekspresu do kawy. Firma Contoso używa modelu CLV i dodaje wszystkie 18 atrybutów profilu klienta, aby zobaczyć, które czynniki wpływają na klientów o najwyższej wartości. Uważają, że lokalizacja klienta jest dla nich najważniejszym czynnikiem.
+Dzięki tym informacjom organizują lokalne wydarzenie z okazji uruchomienia ekspresu do kawy i współpracują z lokalnymi sprzedawcami w celu uzyskania spersonalizowanych ofert i specjalnych wrażeń podczas wydarzenia. Bez tych informacji firma Contoso mogła wysłać tylko ogólne marketingowe wiadomości e-mail i stracić możliwość personalizacji dla tego lokalnego segmentu swoich klientów o wysokiej wartości.
+
+1. W kroku **Dodatkowe dane (opcjonalnie)** wybierz opcję **Dodaj dane** w obszarze **Jeszcze bardziej zwiększ wgląd w model dzięki dodatkowym danym klientów**.
+
+1. Dla **Encji** wybierz pozycję **Klient: CustomerInsights**, aby wybrać ujednoliconą tabelę profilu klienta mapowana na dane atrybutu klienta. Jako **identyfikator klienta** wybierz pozycję **System.Customer.CustomerId**.
+
+1. Mapowanie większej liczby pól, jeśli dane są dostępne w ujednoliconych profilach klientów.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Przykład zamapowanych pól dla danych profilu klienta.":::
+
+1. Wybierz opcję **Zapisz** po zamapowaniu atrybutów, których powinien używać model w celu wartości cyklu życia klienta.
 
 1. Wybierz **Dalej**.
 

@@ -1,7 +1,7 @@
 ---
 title: Praca z danymi aplikacji Customer Insights w Microsoft Dataverse
 description: Dowiedz się, jak połączyć Customer Insights i Microsoft Dataverse i zrozumieć encje wyjściowe, które są eksportowane do Dataverse.
-ms.date: 05/30/2022
+ms.date: 07/15/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 89ff629033230de3c6252b6a3a16816d9b3c1287
+ms.sourcegitcommit: 85b198de71ff2916fee5500ed7c37c823c889bbb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011557"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "9153417"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Praca z danymi aplikacji Customer Insights w Microsoft Dataverse
 
@@ -31,13 +31,25 @@ Połączenie ze środowiskiem Dataverse umożliwia również [pozyskiwanie danyc
 - Żadne inne środowisko Customer Insights nie jest już powiązane ze środowiskiem Dataverse, z którym chcesz się połączyć. Dowiedz się, [jak usunąć istniejące połączenie ze środowiskiem Dataverse](#remove-an-existing-connection-to-a-dataverse-environment).
 - Środowisko Microsoft Dataverse może łączyć się tylko z jednym kontem magazynu. Stosuje się ją tylko wtedy, gdy środowisko jest konfigurowane do [używania przez użytkownika Azure Data Lake Storage](own-data-lake-storage.md).
 
+## <a name="dataverse-storage-capacity-entitlement"></a>Pojemność magazynu uprawnienia Dataverse
+
+Subskrypcja usługi Customer Insights umożliwia nadsyłanie dodatkowej wydajności dla istniejącej istniejącej [wydajności magazynu Dataverse w organizacji](/power-platform/admin/capacity-storage). Dodana pojemność zależy od liczby profili, z których korzysta Twoja subskrypcja.
+
+**Przykład:**
+
+Zakładając, że otrzymasz 15 GB miejsca na bazę danych i 20 GB miejsca na pliki na 100 000 profili klientów. Jeśli Twoja subskrypcja obejmuje 300 000 profili klientów, całkowita pojemność magazynu będzie wynosić 45 GB (3 x 15 GB) magazynu bazy danych i 60 GB magazynu plików (3 x 20 GB). Podobnie, jeśli masz subskrypcję B2B z 30 000 kont, całkowita pojemność magazynu będzie wynosić 45 GB (3 x 15 GB) magazynu bazy danych i 60 GB magazynu plików (3 x 20 GB).
+
+Pojemność dziennika nie jest przyrostowa i stała dla Twojej organizacji.
+
+Aby uzyskać więcej informacji na temat szczegółowych uprawnień dyspozycyjności, zobacz [Przewodnik po licencjonowaniu Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 ## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Łączenie środowiska Dataverse z usługą Customer Insights
 
 Krok **Microsoft Dataverse** pozwala połączyć Customer Insights ze środowiskiem Dataverse podczas [tworzenia środowiska Customer Insights](create-environment.md).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="udostępnianie danych z włączoną automatycznie obsługą Microsoft Dataverse dla nowych środowisk sieci.":::
 
-Administratorzy mogą skonfigurować usługę Customer Insights w celu połączenia istniejącego środowiska Dataverse. Podając adres URL do środowiska Dataverse, dołączasz do nowego środowiska Customer Insights.
+Administratorzy mogą skonfigurować usługę Customer Insights w celu połączenia istniejącego środowiska Dataverse. Podając adres URL do środowiska Dataverse, dołączasz do nowego środowiska Customer Insights. Po ustanowieniu połączenia między usługą Customer Insights a Dataverse, nie zmieniaj nazwy organizacji dla środowiska Dataverse. Nazwa organizacji jest używana w adresie URL Dataverse, a zmieniona nazwa przerwie połączenie z usługą Customer Insights.
 
 Jeśli nie chcesz korzystać z istniejącego środowiska Dataverse, system tworzy nowe środowisko dla danych Customer Insights w Twojej dzierżawie. [Administratorzy Power Platform mogą kontrolować, kto może tworzyć środowiska](/power-platform/admin/control-environment-creation). Gdy konfigurujesz nowe środowisko Customer Insights, a administrator wyłączył tworzenie środowisk Dataverse dla wszystkich z wyjątkiem administratorów, możesz nie być w stanie utworzyć nowego środowiska.
 
@@ -84,7 +96,7 @@ Aby wykonać skrypty PowerShell, musisz najpierw odpowiednio skonfigurować Powe
 
     2. `ByolSetup.ps1`
         - Aby uruchomić ten skrypt, potrzebujesz uprawnień *Właściciel danych obiektów blob magazynu* na poziomie konta magazynu/kontenera. W przeciwnym razie ten skrypt utworzy go dla Ciebie. Przypisanie roli można usunąć ręcznie po pomyślnym uruchomieniu skryptu.
-        - Ten skrypt programu PowerShell dodaje wymaganą kontrolę dostępu opartą na tole (RBAC) dla usługi Microsoft Dataverse i dowolnych aplikacji biznesowych opartych na Dataverse. Aktualizuje również Listę kontroli dostępu (ACL) w kontenerze CustomerInsights dla grup zabezpieczeń utworzonych za pomocą skryptu `CreateSecurityGroups.ps1`. Grupa współautor będzie mieć uprawnienie *rwx*, a grupa Czytelnicy będzie mieć tylko uprawnienie *r-x*.
+        - Ten skrypt programu PowerShell dodaje wymaganą kontrolę dostępu opartą na roli dla usługi Microsoft Dataverse i dowolnych aplikacji biznesowych opartych na Dataverse. Aktualizuje również Listę kontroli dostępu (ACL) w kontenerze CustomerInsights dla grup zabezpieczeń utworzonych za pomocą skryptu `CreateSecurityGroups.ps1`. Grupa współautor będzie mieć uprawnienie *rwx*, a grupa Czytelnicy będzie mieć tylko uprawnienie *r-x*.
         - Wykonaj ten skrypt programu PowerShell w programie Windows PowerShell, podając identyfikator subskrypcji platformy Azure zawierający nazwę usługi Azure Data Lake Storage, nazwę konta magazynu, nazwę grupy zasobów oraz wartości identyfikatorów grupy zabezpieczeń czytelnik i współautor. Otwórz skrypt PowerShell w edytorze, aby przejrzeć dodatkowe informacje i zaimplementowaną logikę.
         - Skopiuj ciąg wyjściowy po pomyślnym uruchomieniu skryptu. Ciąg wyjściowy wygląda następująco: `https://DVBYODLDemo/customerinsights?rg=285f5727-a2ae-4afd-9549-64343a0gbabc&cg=720d2dae-4ac8-59f8-9e96-2fa675dbdabc`
 

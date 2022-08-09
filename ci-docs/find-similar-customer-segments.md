@@ -12,69 +12,59 @@ searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: d58b2e424fd81ad691db4b2576bdf5655038ed89
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 09fe36a4da45d114cbfccf8dad1e7b80b4b7e320
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054815"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170740"
 ---
 # <a name="find-similar-customers-with-ai-preview"></a>Znajdź podobnych klientów za pomocą AI (wersja zapoznawcza)
 
-Dzięki tej funkcji można znaleźć podobnych klientów w bazie klientów, korzystając z sztucznej inteligencji. Aby można było korzystać z tej funkcji, musi być utworzony co najmniej jeden segment. Rozwijanie kryteriów istniejącego segmentu ułatwia znajdowanie klientów podobnych do tego segmentu.
+Znajdź podobnych klientów na bazie klientów przy użyciu sztucznej analizy. Aby można było korzystać z tej funkcji, musi być utworzony co najmniej jeden segment. Rozwijanie kryteriów istniejącego segmentu ułatwia znajdowanie klientów podobnych do tego segmentu.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
-> *Znajdź podobnych klientów* używa zautomatyzowanego narzędzia do oceniania danych i tworzenia prognoz na podstawie tych danych i w może służyć jako metoda profilowania, ponieważ ten termin jest definiowany przez Ogólne rozporządzenie o ochronie danych ("GDPR"). Korzystanie z tej funkcji przez klienta do przetwarzania danych może podlegać RODO lub innym prawom lub rozporządzeniom. Użytkownik ma obowiązek zagwarantować, że użytkowanie Dynamics 365 Customer Insights wraz z przewidywaniami jest zgodne ze wszystkimi obowiązującymi przepisami prawnymi i wykonawczymi, w tym prawa związane z ochroną prywatności, danymi osobowymi, danymi biometrycznymi, ochroną danych i poufność informacji.
+> *Znajdź podobnych klientów* używa zautomatyzowanych środków do oceny danych i tworzenia prognoz na podstawie tych danych. W związku z tym może być stosowany jako metoda profilowania, zgodnie z definicją tego terminu w Ogólnym Rozporządzeniu o Ochronie Danych („RODO”). Korzystanie z tej funkcji przez klienta do przetwarzania danych może podlegać RODO lub innym prawom lub rozporządzeniom. Użytkownik ma obowiązek zagwarantować, że użytkowanie Dynamics 365 Customer Insights wraz z przewidywaniami jest zgodne ze wszystkimi obowiązującymi przepisami prawnymi i wykonawczymi, w tym prawa związane z ochroną prywatności, danymi osobowymi, danymi biometrycznymi, ochroną danych i poufność informacji.
 
-## <a name="finding-similar-customers"></a>Znajdowanie podobnych klientów
+## <a name="find-similar-customers"></a>Znajdź podobnych klientów
 
 1. Wybierz **Segmenty** i wybierz segment, na którym chcesz bazować nowy segment. To Twój *segment źródłowy*.
 
-1. Na pasku akcji wybierz **Znajdź podobnych klientów**.
+1. Wybierz **Znajdź podobnych klientów**.
 
 1. Przejrzyj sugerowaną nazwę nowego segmentu i w razie potrzeby zmodyfikuj ją.
 
 1. Opcjonalnie dodaj [etykiety](work-with-tags-columns.md#manage-tags) do nowego segmentu.
 
-1. Przejrzyj pola definiujące nowy segment. Te pola określają podstawę, z poziomu której system ma próbować znaleźć klientów podobnych do segmentu źródłowego. Domyślnie system wybierze pola zalecane.
+1. Przejrzyj pola definiujące nowy segment. Te pola określają podstawę, z poziomu której system ma próbować znaleźć klientów podobnych do segmentu źródłowego. Domyślnie system wybierze pola zalecane. W razie potrzeby dodaj więcej pól.
   Pola, które mogą znacznie zmniejszyć wydajność modelu, są automatycznie wykluczane:
   
    - Pola o następujących typach danych: StringType, BooleanType, CharType, LongType, IntType, DoubleType, FloatType, ShortType
    - Pola z kardynalnością (liczbą elementów w polu) mniejszą niż 2 lub większą niż 30
 
-1. Wybierz, jeśli chcesz uwzględnić **Wszystkich klientów** lub tylko klientów z **Określonego istniejącego segmentu** w nowym segmencie.
+1. Wybierz, czy chcesz uwzględnić **Wszystkich klientów** z wyjątkiem segmentu źródłowego, czy tylko klientów z **różnego segmentu** w nowym segmencie.
 
 1. Domyślnie system sugeruje uwzględnienie tylko 20% wielkości odbiorców docelowych w danych wyjściowych. Edytuj ten próg zależnie od potrzeb. Zwiększenie progu zmniejszy dokładność.
 
 1. Uwzględnij klientów w swoim segmencie źródłowym, zaznaczając pole wyboru **Uwzględnij członków segmentu źródłowego oprócz klientów o podobnych cechach**.
 
-1. Wybierz **Uruchom** u dołu strony, aby rozpocząć zadanie klasyfikacji dwuelementowej (metoda uczenia maszynowego), które analizuje zestaw danych.
+1. Wybierz **Uruchom** u dołu strony, aby rozpocząć [zadanie klasyfikacji dwuelementowej](#about-similarity-scores) (metoda uczenia maszynowego), które analizuje zestaw danych.
 
 ## <a name="view-the-similar-segment"></a>Wyświetl podobny segment
 
-Po przetworzeniu podobnego segmentu znajdziesz nowy segment na stronie **Segmenty**.
+Po przetworzeniu podobnego segmentu znajdziesz nowy segment na stronie **Segmenty** z typem **Rozszerzenie**.
 
-> [!div class="mx-imgBorder"]
-> ![Segment Podobni klienci.](media/expanded-segment.png "Segment Podobni klienci")
+Wybierz opcję **Widok**, aby zobaczyć rozsyłanie [wyników między podobnymi](#about-similarity-scores) wynikami i wartościami wyniku podobieństwa w obszarze **Podgląd członków segmentu**.
 
-Wybierz **Widok** na pasku akcji, aby otworzyć Szczegóły segmentu. Ten widok zawiera informacje na temat rozkładu wyniku dla [wyników podobieństwa](#about-similarity-scores). Wartości wyników podobieństwa są również dostępne w **Podglądzie elementów członkowskich segmentu**.
+:::image type="content" source="media/expanded-segment.png" alt-text="Segment Podobni klienci.":::
 
-## <a name="use-the-output-of-a-similar-segment"></a>Użyj wyniku podobnego segmentu
+## <a name="manage-a-similar-segment"></a>Zarządzaj podobnym segmentem
 
-Użytkownik może [pracować z danymi wyjściowymi podobnego segmentu](segments.md) tak samo jak z innymi segmentami. Można na przykład wyeksportować segment lub utworzyć miarę.
+[Pracuj z podobnym segmentem i zarządzaj nim](segments.md#manage-existing-segments) tak jak w przypadku innych segmentów. Można na przykład wyeksportować segment lub utworzyć miarę.
 
-## <a name="refresh-and-edit-a-similar-segment"></a>Odśwież i edytuj podobny segment
-
-Aby odświeżyć podobny segment, wybierz go na stronie **Segmenty** i wybierz **Odśwież** na pasku akcji.
-
-Edytowanie podobnego segmentu spowoduje przetwarzanie danych. Utworzony wcześniej segment jest aktualizowany odświeżonymi danymi.
-Aby edytować podobny segment, wybierz go na stronie **Segmenty** i wybierz **Edytuj** na pasku akcji. Zastosuj zmiany i wybierz **Uruchom**, aby rozpocząć przetwarzanie.
-
-## <a name="delete-a-similar-segment"></a>Usuń podobny segment
-
-Wybierz segment na stronie **Segmenty** i wybierz **Usuń** na pasku akcji. Następnie potwierdź usunięcie.
+Edytuj, odświeżaj, zmieniaj nazwę, pobieraj i usuwaj podobny segment. Edytowanie podobnego segmentu spowoduje przetwarzanie danych. Utworzony wcześniej segment jest aktualizowany odświeżonymi danymi.
 
 ## <a name="about-similarity-scores"></a>Informacje na temat wyników podobieństwa
 

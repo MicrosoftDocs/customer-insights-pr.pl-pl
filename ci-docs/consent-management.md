@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 77b09b6eb0a916e724542d503d96d19c5581aca1
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "8947505"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188061"
 ---
 # <a name="use-customer-consent"></a>Użycie zgody klienta
 
@@ -50,7 +50,7 @@ Przykładowa tabela prostej bazy danych zgody z wieloma opcjami wyrażania zgody
 
 ## <a name="import-and-unify-consent-data"></a>Importowanie i ujednolicenie danych zgody
 
-Dane zgody można importować w taki sam sposób, jak w przypadku innych źródeł danych do Customer Insights. Aby uzyskać więcej informacji na temat obsługiwanych źródeł danych i sposobu ich importowania, zobacz [Omówienie źródeł danych](data-sources.md).
+Importuj dane dotyczące zgody w taki sam sposób, w jaki pozyskujesz inne źródła danych do Customer Insights. Aby uzyskać więcej informacji na temat obsługiwanych źródeł danych i sposobu ich importowania, zobacz [Omówienie źródeł danych](data-sources.md).
 
 Aby uzyskać więcej informacji na temat ujednolicania źródeł danych, zobacz [Omówienie ujednolicania danych](data-unification.md).
 
@@ -71,3 +71,5 @@ Ważne jest, aby stan zgody klienta był aktualizowany. Zaplanowane odświeżeni
 Innymi słowy, dane źródłowe importowane do rozwiązania Customer Insights zawsze mają najnowsze informacje.
 
 Aby uzyskać więcej informacji, zobacz [Ręczne odświeżanie segmentów](segments.md#refresh-segments) lub [konfigurowanie zaplanowanego odświeżania](system.md#schedule-tab).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

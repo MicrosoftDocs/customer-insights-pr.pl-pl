@@ -11,25 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6dc7fce78d10ba91de4b2abf54c6c6ab1c919d3a
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051697"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170786"
 ---
 # <a name="create-measures-from-templates"></a>Utwórz miary na podstawie szablonów
 
-Do ich utworzenia miar można użyć wstępnie zdefiniowanych szablonów najczęściej stosowanych [miar](measures.md). Szczegółowe opisy szablonów i działanie z przewodnikiem mogą ułatwić efektywne tworzenie miar. Szablony są budowane na podstawie zamapowanych danych z encji *Ujednolicone działanie*. Należy więc upewnić się, że skonfigurowano [działania klientów](activities.md) przed utworzeniem miary na podstawie szablonu.
+Do ich utworzenia miar można użyć wstępnie zdefiniowanych szablonów najczęściej stosowanych [miar](measures.md). Szablony są budowane na podstawie zamapowanych danych z encji *Ujednolicone działanie*. Należy więc upewnić się, że skonfigurowano [działania klientów](activities.md) przed utworzeniem miary na podstawie szablonu.
 
-Aby utworzyć miary niestandardowe, zobacz temat [Korzystanie z konstruktora miar do tworzenia miar od podstaw](measure-builder.md).
+Szablony miar są obsługiwane tylko w środowiskach dla **poszczególnych klientów**. Aby utworzyć miary niestandardowe lub utworzyć miary B-do-B, zobacz [Korzystanie z konstruktora miar](measure-builder.md).
 
-# <a name="individual-consumers-b-to-c"></a>[Klienci indywidualni (B2C)](#tab/b2c)
-
-Dostępne szablony miar: 
+Dostępne szablony miar:
 - Średnia wartość transakcji (ATV)
 - Łączna wartość transakcji
 - Średni przychód dzienny
+- Średni przychód miesięczny
 - Średni przychód roczny
 - Liczba transakcji
 - Zdobyte punkty lojalnościowe
@@ -63,15 +62,16 @@ Dostępne szablony miar:
 
 1. W następnej sekcji wybierz pozycję **Dodaj dane**, aby wybrać działania i zmapować odpowiednie dane z encji *Ujednolicone działanie*.
 
-    1. Krok 1 z 2: w obszarze **Typ działania** wybierz typ encji, której chcesz użyć. W przypadku **Działań** wybierz encje, które chcesz zamapować.
-    1. Krok 2 z 2: wybierz atrybut z encji *Ujednolicone działanie* dla składnika wymaganego przez formułę. Na przykład w przypadku Średniej wartości transakcji jest to atrybut reprezentujący wartość Transakcji. W przypadku **Znacznika czasu działania** wybierz atrybut z encji Ujednolicone działanie reprezentujący datę i godzinę działania.
-   
-1. Po pomyślnym mapowaniu danych można zobaczyć stan jako **Zakończone** oraz nazwę zamapowanych działań i atrybutów.
+    1. Krok 1 z 2: w obszarze **Typ działania** wybierz typ encji, której chcesz użyć. W przypadku **Działań** wybierz encje, które chcesz zamapować, a następnie wybierz **Dalej**.
+    1. Krok 2 z 2: wybierz atrybut z encji *Ujednolicone działanie* dla składnika wymaganego przez formułę. Na przykład w przypadku Średniej wartości transakcji jest to atrybut reprezentujący wartość Transakcji. W przypadku **Znacznika czasu działania** wybierz atrybut z encji *Ujednolicone działanie* reprezentujący datę i godzinę działania.
+    1. Wybierz pozycję **Zapisz**.
 
-1. Teraz można wybrać opcję **Uruchom**, aby obliczyć wyniki miary. Aby uściślić go później, wybierz opcję **Zapisz kopię roboczą**.
+    Po pomyślnym mapowaniu danych można zobaczyć stan jako **Zakończone** oraz nazwę zmapowanych działań i atrybutów.
 
-# <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
+1. Wybierz opcję **Uruchom**, aby obliczyć wyniki miary. Wybierz opcję **Zapisz wersję roboczą**, jeśli chcesz zachować bieżącą konfigurację i uruchomić miarę później. Wyświetla się strona **Miary**.
 
-Ta funkcja jest dostępna tylko dla działań utworzonych w środowiskach, w których klienci indywidualni są podstawowymi odbiorcami docelowymi.
+## <a name="next-step"></a>Następny krok
 
----
+Istniejące miary można wykorzystać do utworzenia [segmentu klienta](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

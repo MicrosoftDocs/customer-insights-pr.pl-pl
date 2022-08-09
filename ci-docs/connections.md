@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081234"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195187"
 ---
 # <a name="connections-preview-overview"></a>Omówienie (podgląd) połączeń
 
@@ -27,6 +27,12 @@ Przejdź do połączeń **Admin** > **Połączenia**, aby utworzyć i wyświetli
 Na karcie **Połączenia** widać wszystkie aktywne połączenia. Na liście zostanie wyświetlony wiersz dla każdego połączenia.
 
 Uzyskaj szybkie omówienie, opis i dowiedz się, co można zrobić z każdą opcją rozszerzania na karcie **Odkryj**.
+
+## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
+
+Po włączeniu usługi Dynamics 365 Customer Insights w celu przesyłania danych do stron trzecich lub innych produktów firmy Microsoft, zezwalasz na przesyłanie danych poza granice zgodności dla usługi Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale Ty jesteś odpowiedzialny za zapewnienie, że osoba trzecia wywiąże się z wszelkich zobowiązań dotyczących prywatności i bezpieczeństwa, które możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Administrator Dynamics 365 Customer Insights może w dowolnym momencie usunąć połączenie, aby przerwać korzystanie z funkcji.
 
 ## <a name="exports"></a>Eksporty
 
@@ -41,8 +47,6 @@ Tylko administratorzy mogą konfigurować nowe połączenia, ale utworzone poł�
 Aby dodawać połączenia, trzeba mieć [uprawnienia administratora](permissions.md). W przypadku łączenia się z innymi usługami Microsoft założono, że obie usługi są w tej samej organizacji.
 
 1. Przejdź do **Admin** > **Połączenia (wersja zapoznawcza)**.
-
-1. Przejdź do karty **Połączenia**.
 
 1. Wybrać **Dodaj połączenie**, aby utworzyć nowe połączenie. Wybierz z menu rozwijanego typ połączenia, które chcesz utworzyć.
 
@@ -99,3 +103,5 @@ Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie ak
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurowanie połączeń z wpisami tajnymi zarządzanymi przez własną usługę Key Vault
 
 Niektóre połączenia wymagają wpisów tajnych, takich jak klucze interfejsu API lub hasła. Niektóre połączenia obsługują wpisy tajne przechowywane w własnej usłudze Key Vault. Dowiedz się więcej o obsługiwanych połączeniach i konfigurowaniu [własnej usługi Key Vault dla Customer Insights](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

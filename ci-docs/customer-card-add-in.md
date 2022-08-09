@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081252"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9194936"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Dodatek do kart klienta dla aplikacji Dynamics 365 (wersja zapoznawcza)
 
@@ -28,21 +28,25 @@ Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Mając z
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-- Ten dodatek działa tylko w aplikacjach opartych na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
-- Aby dane usługi Dynamics 365 były mapowane do profilów klientów Customer Insights, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w kroku mapy proces ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Aplikacje oparte na modelu w Dynamics 365, takich jak Sales lub Customer Service, w wersji 9.0 lub nowszej.
+- Aby dane usługi Dynamics 365 były mapowane do profilów klientów Customer Insights, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w procesie ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Wszystkich użytkowników usługi Dynamics 365 dodatku Karta klienta należy [dodać jako użytkowników](permissions.md) w aplikacji Customer Insights, aby zobaczyć dane.
-- [Skonfigurowane funkcje wyszukiwania i filtrowania](search-filter-index.md) w funkcji Customer Insights są wymagane do działania wyszukiwania danych.
+- [Skonfigurowane funkcje wyszukiwania i filtrowania](search-filter-index.md) w Customer Insights.
 - Każda kontrolka dodatku zależy od określonych danych w Customer Insights. Niektóre dane i kontrolki są dostępne tylko w środowiskach określonych typów. W konfiguracji dodatku zostanie podana informacja o tym, czy ze względu na wybrany typ środowiska kontrolka jest niedostępna. Dowiedz się więcej o [przypadkach użycia środowisk](work-with-business-accounts.md).
-  - **Kontrola miary**: wymaga [skonfigurowanych miar](measures.md) typu atrybutów klienta.
-  - **Kontrola danych**: wymaga danych generowanych przy użyciu [prognoz lub niestandardowych modeli](predictions-overview.md).
-  - **Kontrola szczegółów klienta**: wszystkie pola z profilu są dostępne w ujednoliconym profilu klienta.
-  - **Kontrola wzbogacenia**: wymaga czynnych [wzbogaceń](enrichment-hub.md) zastosowanych dla profilów klienta. Dodatek do karty obsługuje te elementy wzbogacające: [Marki](enrichment-microsoft.md) dostarczane przez Microsoft, [Zainteresowania](enrichment-microsoft.md) dostarczane przez Microsoft oraz [Dane dot. interakcji Office](enrichment-office.md) dostarczane przez Microsoft.
-  - **Kontrola kontaktów**: wymaga definicji encji semantycznej typu Kontakty.
-  - **Kontrola osi czasu**: wymagane są [skonfigurowane działania](activities.md).
+  - **Kontrola miary** wymaga [skonfigurowanych miar atrybutów klienta](measures.md).
+  - **Kontrola danych** wymaga danych generowanych przy użyciu [prognoz lub niestandardowych modeli](predictions-overview.md).
+  - **Kontrola szczegółów klienta** pokazuje wszystkie pola z profilu są dostępne w ujednoliconym profilu klienta.
+  - **Kontrola wzbogacenia** wymaga czynnych [wzbogaceń](enrichment-hub.md) zastosowanych dla profilów klienta. Dodatek do karty obsługuje te elementy wzbogacające: [Marki](enrichment-microsoft.md) dostarczane przez Microsoft, [Zainteresowania](enrichment-microsoft.md) dostarczane przez Microsoft oraz [Dane dot. interakcji Office](enrichment-office.md) dostarczane przez Microsoft.
+  - **Kontrola kontaktów** wymaga kontaktu semantycznego typu encji.
+  - **Kontrola osi czasu** wymaga [skonfigurowanych działań](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Zainstaluj dodatek kart klientów
 
-Dodatek Karta klienta to rozwiązanie dla aplikacji Customer Engagement w Dynamics 365. Aby zainstalować rozwiązanie, przejdź do AppSource i wyszukaj **Karta klienta Dynamics**. Wybierz [Dodatek kart klientów w AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) i wybierz **Pobierz teraz**.
+Dodatek Karta klienta to rozwiązanie dla aplikacji Customer Engagement w Dynamics 365. Aby zainstalować rozwiązanie:
+
+1. Przejdź do AppSource i wyszukaj kartę **Klienta klienta Dynamics**.
+
+1. Wybierz [Dodatek kart klientów w AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) i wybierz **Pobierz teraz**.
 
 Aby zainstalować rozwiązanie, konieczne może być zalogowanie się przy użyciu poświadczeń administracyjnych do aplikacji Dynamics 365. Może upłynąć trochę czasu zanim rozwiązanie zostanie zainstalowane w środowisku użytkownika.
 

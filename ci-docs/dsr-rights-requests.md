@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 6c6ce49c18de3a09d28138316d893e6842919042
+ms.sourcegitcommit: ff0f4b5664d995870c91adb87c7d3780a582efca
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947381"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "9146708"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Żądania osób, których dotyczą dane, w kontekście rozporządzenia RODO
 
@@ -31,18 +31,22 @@ Dokładamy wszelkich starań, aby pomóc klientom w spełnianiu ich wymagań dot
 
 Customer Insights oferuje następujące doświadczenia w produkcie, które usuwają dane osobowe dotyczące konkretnego użytkownika lub klienta:
 
-- **Zarządzanie żądaniami usuwania danych klienta**: dane klienta w Customer Insights są pobierane z oryginalnych źródeł danych spoza Customer Insights. Wszystkie żądania dotyczące usuwania danych według RODO muszą zostać wykonane w oryginalnym źródle danych.
+- **Zarządzanie żądaniami usuwania danych klienta**: dane klienta w Customer Insights są pobierane z oryginalnych źródeł danych spoza Customer Insights. Najpierw wykonaj żądania usunięcia RODO w oryginalnym źródle danych.
 - **Zarządzanie żądaniami usunięcia danych użytkownika Customer Insights**: Dane dla użytkowników są tworzone przez Customer Insights. Wszystkie żądania dotyczące usuwania danych według RODO muszą zostać wykonane w Customer Insights.
 
 ##### <a name="manage-requests-to-delete-customer-data"></a>Zarządzanie żądaniami usunięcia danych klienta
 
-Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia danych klienta, które zostały usunięte ze źródła danych:
+Administrator Customer Insights może wykonać poniższe kroki w celu usunięcia danych klienta, które zostały usunięte ze źródła danych. Upewnij się, że żądanie usunięcia zostało wykonane w źródle danych przed wykonaniem poniższych kroków. 
 
 1. Zaloguj się w Dynamics 365 Customer Insights.
-2. Przejdź do **Dane** > **Źródła danych**
-3. Dla każdego źródła danych z listy, które zawiera usunięte dane klienta:
+1. Przejdź do **Dane** > **Źródła danych**
+1. Dla każdego źródła danych z listy, które zawiera usunięte dane klienta:
    1. Wybierz wielokropek pionowy (&vellip;) i wybierz opcję **Odśwież**.
-   2. Sprawdź status źródła danych w **Stan**. Znacznik wyboru oznacza, że odświeżanie zakończyło się powodzeniem. Trójkąt ostrzegawczy oznacza, że wystąpił problem. Jeśli zostanie wyświetlony trójkąt ostrzegawczy, skontaktuj się z D365CI@microsoft.com.
+   1. Sprawdź status źródła danych w **Stan**. Znacznik wyboru oznacza, że odświeżanie zakończyło się powodzeniem. Trójkąt ostrzegawczy oznacza, że wystąpił problem. Jeśli zostanie wyświetlony trójkąt ostrzegawczy, skontaktuj się z D365CI@microsoft.com.
+1. Po pomyślnym odświeżeniu źródeł danych uruchom również odświeżenia podrzędne. Zwłaszcza jeśli nie masz zaplanowanego cyklicznego pełnego odświeżenia Customer Insights. 
+
+> [!IMPORTANT]
+> Segmenty statyczne nie są uwzględniane w pełnym odświeżaniu lub uruchomionych odświeżeniach po żądaniu usunięcia. Aby upewnić się, że dane klientów zostaną usunięte również z segmentów statycznych, należy odtworzyć segmenty statyczne z odświeżonymi danymi źródłowymi.
 
 > [!div class="mx-imgBorder"]
 > ![Zarządzanie żądaniami usunięcia danych klienta według RODO.](media/gdpr-data-sources.png "Zarządzanie żądaniami usunięcia danych klienta według RODO")
@@ -77,5 +81,10 @@ W celu wyeksportowania danych administrator dzierżawy może wykonać następuj�
 1. Wysłąć wiadomość e-mail na adres D365CI@microsoft.com określając adres e-mail użytkownika w żądaniu. Zespół Customer Insights wyśle wiadomość e-mail na adres e-mail zarejestrowanego administratora dzierżawcy, pytając o potwierdzenie wyeksportowania danych.
 2. Zatwierdź potwierdzenie wyeksportowania danych dla żądanego użytkownika.
 3. Pobierz eksportowane dane za pomocą adresu e-mail administratora dzierżawcy.
+
+### <a name="data-deletion-handling-in-dynamics-365-customer-insights"></a>Obsługa usuwania danych w Dynamics 365 Customer Insights
+
+1. Dane zostaną usunięte (partycje danych i migawki danych), jeśli partycje danych i migawki danych będą nieaktywne przez ponad 30 dni, co oznacza, że zostały zastąpione nową partycją danych i migawką danych poprzez odświeżenie źródeł danych.
+2. Nie wszystkie dane i migawki są usuwane. Najnowsza partycja danych i migawka danych są z definicji aktywne, ponieważ są używane w Customer Insights. W przypadku najnowszych danych nie ma znaczenia, czy źródła danych nie zostały odświeżone w ciągu ostatnich 30 dni.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

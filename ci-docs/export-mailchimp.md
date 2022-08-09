@@ -1,85 +1,80 @@
 ---
 title: Eksportowanie segmentów do usługi Mailchimp (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do programu Mailchimp.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3a19c517eeca71a19649e3d07cf47e5d25df6a68
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 54aec10e24b6356e2e4317cf33e740a1a086a2dd
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081396"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196867"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Eksportowanie segmentów do usługi Mailchimp (wersja zapoznawcza)
 
 Wyeksportowane segmenty zunifikowanych profilów klientów umożliwiają MailChimp tworzenie biuletynów i kampanii za pośrednictwem poczty e-mail.
 
-## <a name="prerequisites-for-connection"></a>Wymagania wstępne dla połączenia
+## <a name="prerequisites"></a>Wymagania wstępne
 
--   Użytkownik ma [konto usługi Mailchimp](https://mailchimp.com/) i odpowiadające mu poświadczenia administratora.
--   W Mailchimp istnieją już odbiorcy i odpowiadające im identyfikatory. Aby uzyskać więcej informacji, zobacz temat [Odbiorcy Mailchimp](https://mailchimp.com/help/create-audience/).
--   Posiadasz [skonfigurowane segmenty](segments.md)
--   Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
+- [Konto usługi Mailchimp](https://mailchimp.com/) i odpowiadające mu poświadczenia administratora.
+- [Istniejący odbiorcy w Mailchimp](https://mailchimp.com/help/create-audience/) i odpowiadające im [identyfikatory odbiorców](https://mailchimp.com/help/find-audience-id/).
+- [Skonfigurowane segmenty](segments.md).
+- Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
-- Do 1 mln profilów klientów na eksport do usługi Mailchimp.
-- Eksport do Mailchimp jest ograniczony do segmentów.
-- Eksportowanie segmentów z ponad 1 mln profilów klientów może zająć do trzech godzin. 
-- Liczba profilów klientów, które można eksportować do usługi Mailchimp, zależy od kontraktu z usługą Mailchimp i jest ograniczona.
+- Do 1 miliona profili klientów na eksport do Mailchimp, co może zająć do 3 godzin. Liczba profilów klientów, które można eksportować do usługi Mailchimp, zależy od kontraktu z usługą Mailchimp.
+- Tylko segmenty.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Skonfiguruj połączenie z usługą Mailchimp
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Przejdź do **Admin** > **Połączenia**.
 
-1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Mailchimp**, aby skonfigurować połączenie.
+1. Wybierz opcję **Dodaj połączenie** i wybierz opcję **Mailchimp**.
 
 1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
 
-1. Określ, kto może używać tego połączenia. Jeśli nie podejmiesz działania, ustawieniem domyślnym będą administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Określ, kto może używać tego połączenia. Domyślnie – tylko administratorzy. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Wybierz **Zgadzam się**, aby potwierdzić **Prywatność danych i zgodność z przepisami**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
-1. Wybierz opcję **Połącz**, aby inicjować połączenie z usługą Mailchimp.
+1. Wybierz opcję **Połącz**, aby zainicjować połączenie.
 
 1. Wybierz **Uwierzytelnianie za pomocą usługi Mailchimp** i przekaż swoje poświadczenia w usłudze Mailchimp.
 
 1. Wybierz **Dodaj siebie jako eksportowanie użytkowników** i przekaż poświadczenia Customer Insights.
 
-1. Aby zakończyć połączenie, wybierz **Zapisz**. 
+1. Aby zakończyć połączenie, wybierz **Zapisz**.
 
-## <a name="configure-the-connector"></a>Skonfiguruj łącznik
+## <a name="configure-an-export"></a>Konfigurowanie eksportu
 
-Ten eksport można skonfigurować, jeśli użytkownik ma dostęp do połączenia tego typu. Aby uzyskać więcej informacji, zobacz temat [Uprawnienia wymagane do konfigurowania eksportu](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
-1. Przejdź do **Dane**> **Eksporty**.
+1. Przejdź do **Dane** > **Eksporty**.
 
-1. Wybierz **Dodaj miejsce docelowe**, aby utworzyć nowy eksport.
+1. Wybierz opcję **Dodaj eksport**.
 
-1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Mailchimp. Jeśli nie widać nazwy tej sekcji, nie ma dostępnych połączeń tego typu dla tego użytkownika.
+1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji usługi Mailchimp. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie.
 
-1. Wpisz swój **[Identyfikator odbiorcy usługi MailChimp](https://mailchimp.com/help/find-audience-id/)**
+1. Wpisz nazwę eksportu.
 
-1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta. 
+1. Wpisz swój **Identyfikator odbiorcy usługi Mailchimp**.
+
+1. W sekcji **Dopasowywanie danych** w polu **E-mail** wybierz pole reprezentujące adres e-mail klienta.
 
 1. Opcjonalnie możesz wyeksportować **Imię** i **Nazwisko**, aby utworzyć bardziej spersonalizowane wiadomości e-mail. Wybierz opcję **Dodaj atrybut**, aby zamapować te pola.
 
-1. Wybierz segmenty, które chcesz wyeksportować. W sumie do maksymalnie 1 000 000 profilów klientów można wyeksportować do Mailchimp.
+1. Wybierz segmenty, które chcesz wyeksportować.
 
 1. Wybierz pozycję **Zapisz**.
 
-Zapisanie eksportu nie uruchamia natychmiastowo eksportu.
-
-Eksport jest uruchamiany z każdym [zaplanowanym odświeżeniem](system.md#schedule-tab). Można również [eksportować dane na żądanie](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi Mailchimp można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że Mailchimp spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć tę lokalizację docelową eksportu, aby przestać używać tej funkcji.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

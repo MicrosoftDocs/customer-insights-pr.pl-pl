@@ -1,19 +1,19 @@
 ---
 title: Nowości w rozwiązaniu Dynamics 365 Customer Insights
 description: Informacje o nowych funkcjach, ulepszeniach i poprawkach błędów.
-ms.date: 06/02/2022
+ms.date: 06/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 4b5b95d1774d22827b3c08c2b6ccbb7858f1b04b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
+ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054031"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "9114259"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nowości w rozwiązaniu Dynamics 365 Customer Insights
 
@@ -23,6 +23,34 @@ Wdrażamy aktualizacje kolejno regionami. Niektóre regiony mogą zobaczyć nowe
 
 > [!TIP]
 > Aby przesłać i głosować na żądania funkcji i sugestie dotyczące produktu, przejdź do [portalu Pomysły aplikacji Dynamics 365](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2022-updates"></a>Aktualizacje z czerwca 2022 r.
+
+Aktualizacje w czerwcu 2022 r. zawierają nowe funkcje, uaktualnienia wydajności i poprawki usterek.
+
+### <a name="updated-user-experience-for-data-sources-and-data-ingestion"></a>Zaktualizowane środowisko użytkownika dotyczące źródeł danych i pozyskiwania danych
+
+Importowanie danych z szerokiego zakresu źródeł danych jest podstawą do zaimportowania danych klientów w programie Dynamics 365 Customer Insights. Zrewidowaliśmy środowisko użytkownika dotyczące importowania i łączenia źródeł danych. Ta aktualizacja ma ułatwić użytkownikom wgląd w dane programu Customer Insights.
+
+Aby uzyskać więcej informacji, zobacz [Omówienie źródeł danych](data-sources.md).
+
+### <a name="export-to-inmobi"></a>Eksportuj do programu InMobi
+
+Program InMobi pomaga zrozumieć, zidentyfikować i pozyskiwać odbiorców. Segmenty i inne dane można eksportować do usługi InMobi za pośrednictwem kont Azure Blob Storage.
+
+Aby uzyskać więcej informacji, zobacz [Eksportowanie do InMobi (wersja zapoznawcza)](export-inmobi.md)
+
+### <a name="lockbox-support-in-customer-insights"></a>Obsługa skrzynki odbiorczej w aplikacji Customer Insights
+
+Aplikacja Skrytka klienta udostępnia interfejs do przeglądania i zatwierdzania (lub odrzucania) żądań dostępu do danych. Te żądania występują, gdy dostęp do danych klienta jest potrzebny do rozwiązania sprawy pomocy technicznej.
+
+Aby uzyskać więcej informacji, zobacz [Bezpieczne uzyskiwanie dostępu do danych klientów przy użyciu skrytki klienta (wersja zapoznawcza)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
+
+### <a name="connect-to-your-data-using-azure-private-link"></a>Łączenie się z danymi przy użyciu łącza Azure Private Link
+
+Usługa Azure Private Link umożliwia dostęp rozwiązania Customer Insights do konta Azure Data Lake Storage za punktem końcowym w sieci wirtualnej. W przypadku danych na koncie magazynu, które nie jest widoczne w publicznym Internecie, Provate Link umożliwia połączenie z dostępem do tej sieci zastrzeżonej.
+
+Aby uzyskać więcej informacji, zobacz [Użyj linku prywatnego w Customer Insights](security-overview.md#private-links-tab).
 
 ## <a name="may-2022-updates"></a>Aktualizacje z maja 2022 r.
 

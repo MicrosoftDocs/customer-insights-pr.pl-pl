@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 415cd5d675512b4f434998afaa8265c8e45c562b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 72aa38242df21181f142833db03c825574455986
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647338"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171062"
 ---
 # <a name="subscription-churn-prediction"></a>Przewidywanie zmian subskrypcji
 
@@ -121,7 +121,7 @@ Prognoza rezygnacji z subskrypcji pomaga przewidzieć, czy istnieje zagrożenie,
    - **Nazwa przewidywania:** Nazwa przewidywania podawana podczas jego tworzenia.
    - **Typ przewidywania:** Typ modelu używanego na potrzeby przewidywania
    - **Encja wyjściowa:** Nazwa encji, w której mają być przechowywane wyniki przewidywania. Encję o tej nazwie można znaleźć w **Dane** > **Encje**.    
-     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-new-segment) z wybranym progiem.
+     W encji wyjściowej *ChurnScore* jest prawdopodobieństwem rezygnacji, a *IsChurn* jest binarnym poziomem na podstawie wyniku *ChurnScore* z progiem 0,5. Domyślny próg może nie działać w tym scenariuszu. [Utwórz nowy segment](segments.md#create-a-segment) z wybranym progiem.
    - **Pole przewidywane:** To pole jest wypełniane tylko w przypadku niektórych typów przewidywań, i nie jest używane w przewidywaniu rezygnacji z subskrypcji.
    - **Stan:** Bieżący stan uruchomienia przewidywania.
         - **W kolejce:** Przewidywanie oczekuje obecnie na uruchomienie innych procesów.
