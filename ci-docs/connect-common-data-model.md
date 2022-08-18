@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207012"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245846"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Tworzenie połączenia z danymi w programie Azure Data Lake Storage
 
@@ -56,8 +56,8 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
 
 1. Wybierz jedną z następujących opcji **Połącz używanie magazynu**. Aby uzyskać więcej informacji, zobacz [Łączenie Customer Insights z kontem Azure Data Lake Storage Gen2 przy użyciu głównej usługi Azure](connect-service-principal.md).
 
-   - **Zasób Azure**: Wprowadź **Identyfikator zasobu**. Opcjonalnie, jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#private-links-tab).
-   - **Subskrypcja Azure**: wybierz **Subskrypcję**, a następnie konto **Grupa zasobów** i **Konto magazynu**. Opcjonalnie, jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#private-links-tab).
+   - **Zasób Azure**: Wprowadź **Identyfikator zasobu**. Opcjonalnie, jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#set-up-an-azure-private-link).
+   - **Subskrypcja Azure**: wybierz **Subskrypcję**, a następnie konto **Grupa zasobów** i **Konto magazynu**. Opcjonalnie, jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > Potrzebujesz jednej z następujących ról w kontenerze lub koncie magazynu do utworzenia źródła danych:
@@ -176,7 +176,7 @@ Możesz zaktualizować za pomocą opcji *Połącz z kontem magazynu, używając*
         > - Właściciel danych Storage Blob
         > - Współautor danych w usłudze Blob Storage
 
-   - Jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#private-links-tab).
+   - Jeśli chcesz uzyskać dane z konta magazynu za pośrednictwem łącza Azure Private Link, wybierz opcję **Włącz łącze prywatne**. Aby uzyskać więcej informacji, zobacz [Łącza Private Links](security-overview.md#set-up-an-azure-private-link).
 
 1. Wybierz **Dalej**.
 1. Zmień dowolną z następujących czynności:

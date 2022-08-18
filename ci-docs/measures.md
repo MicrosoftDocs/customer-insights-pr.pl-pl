@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170856"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245386"
 ---
 # <a name="measures-overview"></a>Omówienie miar
 
@@ -53,7 +53,7 @@ Wybierz obok miary, aby wyświetlić dostępne działania. Wybierz nazwę taktu,
 - **Edytuj** miara, aby zmienić jego właściwości.
 - **Odśwież** miara, aby uwzględnić najnowsze dane.
 - **Zmień nazwę** miary.
-- **Aktywuj** lub **Dezaktywuj** miara. Nieaktywne miary nie zostaną odświeżone podczas [zaplanowanego odświeżenia](system.md#schedule-tab), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia.
+- **Aktywuj** lub **Dezaktywuj** miara. Nieaktywne miary nie zostaną odświeżone podczas [zaplanowanego odświeżenia](schedule-refresh.md), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia.
 - **Otaguj**, aby [zarządzać etykietami](work-with-tags-columns.md#manage-tags) dla miary.
 - **Usuń** miarę.
 - **Kolumny** w [celu dostosowania wyświetlanych kolumn](work-with-tags-columns.md#customize-columns).
@@ -62,7 +62,7 @@ Wybierz obok miary, aby wyświetlić dostępne działania. Wybierz nazwę taktu,
 
 ## <a name="refresh-measures"></a>Odświeżanie miar
 
-Miary mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. Aby ręcznie odświeżyć jedno lub więcej miar, wybierz je i wybierz opcję **Odśwież**. Aby [zaplanować automatyczne odświeżanie](system.md#schedule-tab), przejdź do strony **Administrator** > **System** > **Harmonogram**.
+Miary mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. Aby ręcznie odświeżyć jedno lub więcej miar, wybierz je i wybierz opcję **Odśwież**. Aby [zaplanować automatyczne odświeżanie](schedule-refresh.md), przejdź do strony **Administrator** > **System** > **Harmonogram**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173800"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224308"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>Personalizowanie interfejsu przy użyciu danych o znanych i nieznanych użytkownikach
 
-Zarządzanie danymi klientów nie jest nowym wyzwaniem, ale staje się coraz trudniejsze w miarę jak użytkownicy poruszają się po różnych kanałach cyfrowych oferowanych przez marki. Użytkownik, który jest znany (uwierzytelniony) w jednym kanale, staje się nieznany (nieuwierzytelniony) w innym, jeśli nie jest zalogowany. Problemem często jest to, że nieuwierzytelnieni (nieznani) użytkownicy nie mają wspólnego identyfikatora. Można go wykorzystać do kojarzenia znaczących atrybutów profili i generowania ujednoliconych profili klientów. Customer Insights pomaga rozwiązać ten problem, pobierając dane z metod śledzenia w Twoich systemach źródłowych. Skonsolidowane profile nieznane i znane zapewniają organizacjom pełny wgląd w aktualne profile oraz ich historyczne transakcje, zachowania i dane demograficzne. Idzie nawet o krok dalej, zapewniając rozdzielczość tożsamości, która pozwala ujednolicić aktywność klienta w wielu kanałach, w tym na stronie internetowej, w sklepie, w programach lojalnościowych itp.
+Zarządzanie danymi klientów nie jest nowym wyzwaniem, ale staje się coraz trudniejsze w miarę jak użytkownicy poruszają się po różnych kanałach cyfrowych oferowanych przez marki. Użytkownik, który jest znany (uwierzytelniony) w jednym kanale, staje się nieznany (nieuwierzytelniony) w innym, jeśli nie jest zalogowany. Problemem często jest to, że nieuwierzytelnieni (nieznani) użytkownicy nie mają wspólnego identyfikatora. Można go wykorzystać do kojarzenia znaczących atrybutów profili i generowania ujednoliconych profili klientów. Customer Insights pomaga rozwiązać ten problem, pobierając dane z metod śledzenia w Twoich systemach źródłowych. Skonsolidowanie znanych i znanych profilów umożliwia organizacjom pełny obraz aktualnych profilów oraz ich transakcji historycznych, zachowań i danych demograficznych. Idzie nawet o krok dalej, zapewniając rozdzielczość tożsamości, która pozwala ujednolicić aktywność klienta w wielu kanałach, w tym na stronie internetowej, w sklepie, w programach lojalnościowych itp.
 
 ## <a name="sample-scenario"></a>Przykładowy scenariusz
 

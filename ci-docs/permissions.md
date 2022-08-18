@@ -1,7 +1,7 @@
 ---
-title: Zarządzanie uprawnieniami użytkowników
+title: Przypisywanie uprawnień użytkowników
 description: Dowiedz się o uprawnieniach i rolach użytkowników.
-ms.date: 02/09/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,20 +12,16 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 30b37645cad4e795ef20579e20e3f2bbdb2afbf6
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: a59a672b6f7e1e67c2162ea14bb9860df0d551aa
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054893"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245432"
 ---
-# <a name="manage-user-permissions"></a>Zarządzanie uprawnieniami użytkowników
+# <a name="assign-user-permissions"></a>Przypisywanie uprawnień użytkowników
 
-Na stronie **Uprawnienia** możesz skonfigurować role i uprawnienia dotyczące korzystania z funkcji Customer Insights.
-
-Aby wyświetlić stronę, trzeba mieć uprawnienia administratora. Aby uzyskać dostęp do strony uprawnień, przejdź do strony **Administrator** > **Zabezpieczenia** > **Użytkownicy**.
-
-Istnieją trzy typy ról:
+Dostęp do danych Customer Insights jest ograniczony do użytkowników w organizacji, którzy są dodani do aplikacji przez administratora. Administrator może dodawać, edytować lub usuwać użytkowników. Użytkownik może być jednym użytkownikiem, grupą lub aplikacją. Istnieją trzy typy ról, które może mieć użytkownik:
 
 ## <a name="viewer"></a>Przeglądający
 
@@ -46,13 +42,13 @@ Istnieją trzy typy ról:
 - Utwórz segmenty, korzystając ze strony **Segmenty**.
 - Utwórz miary za pomocą strony **Miary**.
 - Zarządzaj konfiguracją i wzbogacaj profile klientów ze strony **Wzbogacanie** (dotyczy tylko wzbogaceń własnych).
-- Zarządzanie i tworzenie eksportów na podstawie połączeń udostępnionych współautorom. [Dowiedz się więcej o tym, w jaki sposób administratorzy zezwalają współautorom na używanie połączenia w celu eksportowania](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Zarządzanie i tworzenie eksportów na podstawie [połączeń udostępnionych współautorom](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="admin"></a>Administrator
 
 - Wszystkie uprawnienia dostępne dla Współautora.
-- Zmień ustawienia na stronie **System**, w tym język roboczy i odśwież harmonogramy dla procesów systemowych.
-- Wyświetl i dodaj uprawnienia przy użyciu strony **Uprawnienia**.
+- Zmień ustawienia na stronie **System**, w tym język roboczy, odśwież harmonogramy dla procesów systemowych i eksportowania dzienników diagnostycznych.
+- Na stronie **Zabezpieczenia** zmień ustawienia, w tym użytkowników, klucze interfejsów API, łącza prywatne i magazyn kluczy key vault.
 - Ustaw definicje Wyszukiwanie i Filtrowanie dla strony Klienci za pomocą strony **Wyszukiwanie i indeks filtrów** (dostępnej przez stronę **Klienci**).
 - Zarządzaj połączeniami i zezwalaj innym rolom użytkownika na dostęp do nich na stronie **Połączenia**.
 - Zarządzaj konfiguracją i wzbogacaj profile klientów ze strony **Wzbogacanie** (dotyczy wszystkich wzbogaceń).
@@ -67,24 +63,27 @@ Istnieją trzy typy ról:
 - Wszystkie uprawnienia administratora.
 - [Zresetuj i usuń](manage-environments.md#reset-an-existing-environment-preview) środowisko.
 
-## <a name="assign-roles-and-permissions"></a>Przypisz role i uprawnienia
+## <a name="add-users"></a>Dodaj użytkowników
 
-1. Przejdź do **Administrator** > **Zabezpieczenia** > **Użytkownicy**.
+1. Przejdź do pozycji **Administracja** > **Zabezpieczenia** i wybierz kartę **Użytkownicy**.
 
 1. Wybierz pozycję **Dodaj użytkowników**, aby otworzyć okienko **Dodawanie/Edytowanie uprawnień**.
 
-1. Użyj pola **Wyszukaj**, aby znaleźć użytkownika lub grupę Azure Active Directory, którego lub której uprawnienia chcesz dostosować. Wybierz **Rola**, aby przypisać ją do tego użytkownika lub grupy.
+1. Użyj pola **Wyszukaj**, aby znaleźć użytkownika lub grupę Azure Active Directory, które chcesz dodać. Wybierz **Rola**, aby przypisać ją do tego użytkownika lub grupy.
 
-1. Wybierz pozycję **Zapisz**. Bieżące środowisko zostanie automatycznie udostępnione użytkownikowi lub członkom grupy, której uprawnienia zostały zmienione. Użytkownicy mogą uzyskiwać dostęp do aplikacji Customer Insights i pracować zgodnie z ich określonymi rolami.
+1. Wybierz pozycję **Zapisz**. Bieżące środowisko jest automatycznie udostępnione użytkownikowi lub członkom grupy. Użytkownicy mogą uzyskiwać dostęp do aplikacji Customer Insights i pracować zgodnie z ich określonymi rolami.
 
 ## <a name="view-current-permissions"></a>Wyświetl bieżące uprawnienia
 
-Przejdź do opcji **Administrator** > **Zabezpieczenia** > **Użytkownicy**, aby sprawdzić, jakie przypisania ról są obecnie aktywne.
+Przejdź do opcji **Administrator** > **Zabezpieczenia** i wybierz kartę **Użytkownicy**, aby wyświetlić listę aktywnych użytkowników i ich przypisania ról. Listę użytkowników można posortować według dowolnej kolumny lub użyć pola wyszukiwania, aby znaleźć konkretnego użytkownika.
 
-- Kolumna **Typ** określa pojedynczego użytkownika, grupę lub aplikację. System obsługuje poszczególnych użytkowników i grupy.
-- Role są określane w kolumnie **Rola**.
-- Zaznacz tytuł dowolnej kolumny, aby posortować wyniki według wartości tej kolumny.
-- Użyj pola **Wyszukaj** w górnej części strony, aby zlokalizować określonych użytkowników.
+## <a name="manage-current-users"></a>Zarządzanie bieżącymi użytkownikami
 
+Przejdź do **Administrator** > **Zabezpieczenia** i wybierz kartę **Użytkownicy**. Listę użytkowników można posortować według dowolnej kolumny lub użyć pola wyszukiwania, aby znaleźć użytkownika, którym chcesz zarządzać.
+
+Wybierz użytkownika, aby wyświetlić dostępne akcje.
+
+- **Edytuj**, aby edytować rolę użytkownika w funkcji Customer Insights. Wybierz **Zapisz**, aby potwierdzić zmianę.
+- **Usuń**, aby usunąć użytkownika z dostępu do danych Customer Insights. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

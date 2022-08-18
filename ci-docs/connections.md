@@ -1,7 +1,7 @@
 ---
 title: Omówienie (podgląd) połączeń
 description: Połączenia z innymi usługami z aplikacji Customer Insights.
-ms.date: 04/09/2021
+ms.date: 08/04/2022
 ms.reviewer: nikeller
 ms.subservice: audience-insights
 ms.topic: overview
@@ -11,91 +11,89 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 8580dc7d90c75f66f73efc15f8e38f5e10fbb8a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195187"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245524"
 ---
 # <a name="connections-preview-overview"></a>Omówienie (podgląd) połączeń
 
-Połączenia to klucz do włączenia udostępniania danych do i z funkcji Customer Insights. Każde połączenie ustanawia udostępnianie danych w określonej usłudze. Połączenia są podstawą do [konfigurowania wzbogaceń innych firm](enrichment-hub.md) i [konfigurowania eksportów](export-destinations.md). To samo połączenie może być używane wiele razy. Na przykład jedno połączenie z usługą Dynamics 365 Marketing działa dla wielu eksportów, a jedno połączenie Leadspace może zostać użyte dla kilku wzbogaceń.
+Połączenia to klucz do włączenia udostępniania danych do i z funkcji Customer Insights. Każde połączenie ustanawia udostępnianie danych w określonej usłudze. Użyj połączeń do [skonfigurowania wzbogaceń innych firm](enrichment-hub.md) i [konfigurowania eksportów](export-destinations.md). To samo połączenie może być używane wiele razy. Na przykład jedno połączenie z usługą Dynamics 365 Marketing działa dla wielu eksportów, a jedno połączenie Leadspace może zostać użyte dla kilku wzbogaceń.
 
-Przejdź do połączeń **Admin** > **Połączenia**, aby utworzyć i wyświetlić połączenia.
+## <a name="export-connections"></a>Eksportuj połączenia
 
-Na karcie **Połączenia** widać wszystkie aktywne połączenia. Na liście zostanie wyświetlony wiersz dla każdego połączenia.
+Tylko administratorzy mogą konfigurować nowe połączenia, ale mogą [udzielać współautorom dostęp](#allow-contributors-to-use-a-connection-for-exports) do korzystania z istniejących połączeń. Administratorzy określają, gdzie mogą się znaleźć dane, współautorzy definiują ładunek i częstotliwość określania ich potrzeb.
 
-Uzyskaj szybkie omówienie, opis i dowiedz się, co można zrobić z każdą opcją rozszerzania na karcie **Odkryj**.
-
-## <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu usługi Dynamics 365 Customer Insights w celu przesyłania danych do stron trzecich lub innych produktów firmy Microsoft, zezwalasz na przesyłanie danych poza granice zgodności dla usługi Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale Ty jesteś odpowiedzialny za zapewnienie, że osoba trzecia wywiąże się z wszelkich zobowiązań dotyczących prywatności i bezpieczeństwa, które możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Administrator Dynamics 365 Customer Insights może w dowolnym momencie usunąć połączenie, aby przerwać korzystanie z funkcji.
-
-## <a name="exports"></a>Eksporty
-
-Tylko administratorzy mogą konfigurować nowe połączenia, ale mogą udzielać współautorom dostęp do korzystania z istniejących połączeń. Administratorzy określają, gdzie mogą się znaleźć dane, współautorzy definiują ładunek i częstotliwość określania ich potrzeb. Aby uzyskać więcej informacji, zobacz [Zezwalanie współautorom na używanie połączenia w celu eksportowania](#allow-contributors-to-use-a-connection-for-exports).
-
-## <a name="enrichments"></a>Wzbogacenia
+## <a name="enrichment-connections"></a>Połączenia ze wzbogaceniami
 
 Tylko administratorzy mogą konfigurować nowe połączenia, ale utworzone połączenia są zawsze dostępne zarówno dla administratorów, jak i współautorów. Administratorzy zarządzają poświadczeniami i wyrażają zgodę na przenoszenie danych. Połączenia mogą być następnie używane do wzbogacania przez administratorów i współautorów.
 
 ## <a name="add-a-new-connection"></a>Dodaj nowe połączenie
 
-Aby dodawać połączenia, trzeba mieć [uprawnienia administratora](permissions.md). W przypadku łączenia się z innymi usługami Microsoft założono, że obie usługi są w tej samej organizacji.
+### <a name="prerequisites"></a>Wymagania wstępne
 
-1. Przejdź do **Admin** > **Połączenia (wersja zapoznawcza)**.
+- [Uprawnienia administratora](permissions.md)
+- Inne usługi Microsoft, jeśli dostępne, znajdują się w tej samej organizacji
 
-1. Wybrać **Dodaj połączenie**, aby utworzyć nowe połączenie. Wybierz z menu rozwijanego typ połączenia, które chcesz utworzyć.
+1. Przejdź do **Admin** > **Połączenia**.
 
-1. Podaj wymagane szczegóły w okienku **Konfigurowanie połączenia**.
-   1. **Wyświetlana nazwa** i typ połączenia opisują połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe tego połączenia.
-   1. Dokładne pola zależą od tego, z jaką usługą się łączysz. Szczegółowe informacje o określonym typie połączenia można znaleźć w artykule dotyczących usługi docelowej.
-   1. Jeśli do przechowywania wpisów tajnych używasz [własnej usługi Key Vault](use-azure-key-vault.md), aktywuj opcję **Użyj usługi Key Vault** i wybierz odpowiedni wpis tajny z listy.
+1. Wybierz opcję **Dodaj połączenie** i wybierz typ połączenia, które chcesz utworzyć. Lub przejdź do karty **Odkryj** i wybierz **Konfiguruj** na kafelku połączenia.
+
+1. W polu **Wyświetlana nazwa** nadaj połączeniu rozpoznawalną nazwę. Wyświetlana nazwa i typ połączenia opisują to połączenie. Zaleca się wybranie nazwy objaśniającej cel i miejsce docelowe połączenia.
+
+1. Wprowadź wymagane informacje. Dokładne pola zależą od tego, z jaką usługą się łączysz. Szczegółowe informacje o określonym typie połączenia można znaleźć w artykule dotyczących usługi docelowej.
+
+1. Jeśli do przechowywania wpisów tajnych używasz [własnej usługi Key Vault](use-azure-key-vault.md), aktywuj opcję **Użyj usługi Key Vault** i wybierz odpowiedni wpis tajny z listy.
+
+1. Przejrzyj prywatność danych i zgodność z przepisami i wybierz opcję **Wyrażam zgodę**.
 
 1. Aby utworzyć połączenie, wybierz **Zapisz**.
 
-Możesz również wybrać **Konfiguruj** na kafelku na karcie **Odnajdź**.
+### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
 
-### <a name="allow-contributors-to-use-a-connection-for-exports"></a>Zezwalaj współautorom na używanie połączenia do eksportowania
+Po włączeniu usługi Dynamics 365 Customer Insights w celu przesyłania danych do stron trzecich lub innych produktów firmy Microsoft, zezwalasz na przesyłanie danych poza granice zgodności dla usługi Dynamics 365 Customer Insights, w tym potencjalnie poufnych danych, takich jak dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale Ty jesteś odpowiedzialny za zapewnienie, że osoba trzecia wywiąże się z wszelkich zobowiązań dotyczących prywatności i bezpieczeństwa, które możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
 
-Podczas konfigurowania lub edytowania połączenia eksportowania należy wybrać użytkowników, którzy mogą korzystać z tego konkretnego połączenia w celu zdefiniowania [eksportów](export-destinations.md). Domyślnie połączenie jest dostępne dla użytkowników, którzy mają rolę administratora. To ustawienie można zmienić w obszarze **Określ, kto może korzystać z tego połączenia** i zezwolić użytkownikom z rolą współautora na korzystanie z tego połączenia.
+Administrator Dynamics 365 Customer Insights może w dowolnym momencie usunąć połączenie, aby przerwać korzystanie z funkcji.
+
+## <a name="allow-contributors-to-use-a-connection-for-exports"></a>Zezwalaj współautorom na używanie połączenia do eksportowania
+
+Podczas konfigurowania lub edytowania połączenia eksportowania należy wybrać użytkowników, którzy mogą korzystać z tego konkretnego połączenia w celu zdefiniowania [eksportów](export-destinations.md). Domyślnie połączenie jest dostępne dla użytkowników, którzy mają rolę administratora. Zmień ustawienie **Określ, kto może korzystać z tego połączenia**, by zezwolić użytkownikom z rolą współautora na korzystanie z tego połączenia.
 
 - Współautorzy nie mogą wyświetlać ani edytować połączenia. Podczas tworzenia eksportu będą widzieć tylko nazwę wyświetlaną i jej typ.
 - Udostępniając połączenie, można umożliwić współautorom korzystanie z połączenia. Współautorzy będą widzieć udostępnione połączenia podczas skonfigurowania eksportu. Mogą zarządzać każdym eksportem, który korzysta z tego określonego połączenia.
 - To ustawienie można zmienić, zachowując przy tym eksporty, które zostały już zdefiniowane przez współautorów.
 
-## <a name="edit-a-connection"></a>Edytowanie połączenia
+## <a name="manage-existing-connections"></a>Zarządzanie istniejącymi połączeniami
 
-1. Przejdź do **Admin** > **Połączenia (wersja zapoznawcza)**.
+1. Przejdź do **Admin** > **Połączenia**.
 
-1. Przejdź do karty **Połączenia**.
+1. Wybierz kartę **Wzbogacenie** lub **Eksport**, aby wyświetlić listę połączeń wzbogacenia lub eksportu, typ połączenia, czas jego utworzenia i kto ma do niego dostęp. Listę połączeń można posortować według którejkolwiek kolumny.
 
-1. Wybierz pionowy wielokropek (&vellip;) dla połączenia, które chcesz edytować.
+1. Wybierz połączenie, aby wyświetlić dostępne akcje.
 
-1. Zaznacz **Edytuj**.
+   - **Edytuj** połączenie.
+   - [**Usuń**](#remove-a-connection) połączenie.
 
-1. Zmień wartości, które chcesz zaktualizować i wybierz **Zapisz**.
+### <a name="remove-a-connection"></a>Usuwanie połączenia
 
-## <a name="remove-a-connection"></a>Usuwanie połączenia
+Jeśli połączenie, które usuwasz, jest używane przez wzbogacenia lub eksporty, najpierw je odłącz lub usuń. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu.
 
-Jeśli połączenie, które usuwasz, jest używane przez wzbogacenia lub eksporty, musisz je najpierw odłączyć lub usunąć. Okno dialogowe usuwania przeprowadzi do odpowiedniego wzbogacenia lub eksportu.
+> [!TIP]
+> Wyłączone wzbogacenia i odłączone eksporty stają się nieaktywne. Można je ponownie aktywować, dodając do nich inne połączenie na stronie [Wzbogacenia](enrichment-hub.md) lub [Eksporty](export-destinations.md).
 
-Odłączone wzbogacenia i eksporty stają się nieaktywne. Można je ponownie aktywować, dodając do nich inne połączenie na stronie [Wzbogacenia](enrichment-hub.md) lub [Eksporty](export-destinations.md).
+1. Przejdź do **Admin** > **Połączenia**.
 
-1. Przejdź do **Admin** > **Połączenia (wersja zapoznawcza)**.
+1. Wybierz kartę **Wzbogacenie** lub **Eksporty**.
 
-1. Przejdź do karty **Połączenia**.
-
-1. Wybierz pionowy wielokropek (&vellip;) dla połączenia, które chcesz usunąć.
+1. Wybierz połączenie do usunięcia.
 
 1. Wybierz **Usuń** z menu rozwijanego. Pojawia się okno dialogowe potwierdzenia.
 
    1. Jeśli są dostępne wzbogacenia lub eksporty używające tego połączenia, wybierz przycisk, aby wyświetlić informacje o połączeniu.
-      - **Eksport:** można usunąć lub odłączyć eksport, aby można było usunąć połączenie. Aby odłączyć eksport, administratorzy mogą używać akcji **Odłącz**. Ta akcja jest dostępna dla pojedynczego i wielu wybranych eksportów. Odłączenie spowoduje zachowanie konfiguracji eksportu, ale nie zostanie on uruchomiony, dopóki nie zostanie dodane do niego inne połączenie.
-      - **Wzbogacenia:** można usunąć lub dezaktywować wzbogacenia, aby można było usunąć połączenie.
+      - **Eksporty:** wybierz opcję **Usuń** eksport lub **Odłącz połączenie**. Odłączenie połączenia spowoduje zachowanie konfiguracji eksportu, ale nie zostanie on uruchomiony, dopóki nie zostanie dodane do niego inne połączenie.
+      - **Wzbogacanie:** wybierz opcję **Usuń** lub **Wyłącz** wzbogacanie.
    1. Gdy połączenie nie ma więcej zależności, wróć do opcji **Admin** > **Połączenia** i spróbuj ponownie usunąć połączenie.
 
 1. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.

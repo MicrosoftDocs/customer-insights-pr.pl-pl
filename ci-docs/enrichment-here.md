@@ -1,19 +1,19 @@
 ---
 title: Wzbogacanie profilów klientów za pomocą HERE Technologies (wersja zapoznawcza)
 description: Ogólne informacje o wzbogacaniu strony trzeciej HERE Technologies.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 26de9fce863c9832b70adf3ce39cb2ae0ce43d0e
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 86a070342193dd7afda38823d90f4bd28c8b862e
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196269"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237871"
 ---
 # <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Wzbogacanie profilów klientów za pomocą HERE Technologies (wersja zapoznawcza)
 
@@ -33,16 +33,11 @@ Musisz mieć rolę [administratora](permissions.md#admin) funkcji Customer Insig
 
 1. Wprowadź nazwę połączenia i prawidłowy klucz interfejsu API HERE Technologies.
 
-1. Przejrzyj i wyraź zgodę na [Zasady ochrony prywatności danych](#data-privacy-and-compliance), wybierając przycisk **I agree (Wyrażam zgodę)**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
 1. Wybierz **Weryfikuj**, aby sprawdzić poprawność konfiguracji, a następnie wybierz opcję **Zapisz**.
 
    :::image type="content" source="media/enrichment-HERE-connection.png" alt-text="Strona konfiguracji połączenia HERE Technologies.":::
-
-### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do usługi HERE Technologies można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na Twoje polecenie, ale jesteś odpowiedzialny za zapewnienie, że HERE Technologies spełnia wszelkie Twoje zobowiązania dotyczące prywatności i bezpieczeństwa. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 

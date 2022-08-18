@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139624"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245607"
 ---
 # <a name="update-the-unification-settings"></a>Zaktualizuj ustawienia ujednolicania
 
@@ -42,7 +42,7 @@ Aby przejrzeć lub zmienić ustawienia ujednolicenia po utworzeniu profilu ujedn
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Zrzut ekranu strony Ujednolicenie danych z zaznaczonymi opcjami Ujednolicenie.":::
 
    - Aby ocenić jakość swoich warunków dopasowania (ponowną duplikację i reguły dopasowania) bez aktualizowania profilu zunifikowanego, zobacz [Uruchom warunki dopasowania](#run-matching-conditions). Opcja **Uruchom tylko pasujące warunki** nie jest wyświetlana dla pojedynczej encji.
-   - [Ujednolicenie profili klientów](#run-updates-to-the-unified-customer-profile) do uruchomienia dopasowanych warunków u aktualizacji encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](system.md#schedule-tab).
+   - [Ujednolicenie profili klientów](#run-updates-to-the-unified-customer-profile) do uruchomienia dopasowanych warunków u aktualizacji encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](schedule-refresh.md).
    - [Ujednolicenie profili klientów i zależności](#run-updates-to-the-unified-customer-profile) do uruchomienia dopasowanych warunków u aktualizacji encji unified customer profile i wszystkich zależności (takie jak wzbogacenia, segmenty czy miary). Wszystkie procesy są wznawiane automatycznie.
 
 ## <a name="edit-source-fields"></a>Edytuj pola źródłowe
@@ -154,7 +154,7 @@ Uruchamianie dopasowanych warunków tylko uruchamia ponowną duplikację i regu�
 
 1. Na stronie **Dane** > **Ujednolicenie** wybierz:
 
-   - **Ujednolicenie profili klientów**: uruchamia dopasowane warunki i aktualizacje encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](system.md#schedule-tab).
+   - **Ujednolicenie profili klientów**: uruchamia dopasowane warunki i aktualizacje encji unified customer profile bez wpływu na zależności (takie jak wzbogacenia, segmenty czy miary). Zależne procesy nie są uruchamiane, ale będą odświeżane zgodnie z [definicją w harmonogramie odświeżania](schedule-refresh.md).
 
    - **Ujednolicenie profili klientów i zależności**: uruchamia dopasowane warunki i aktualizacje encji ujednoliconego profilu klienta i wszystkich zależności. Wszystkie procesy są wznawiane automatycznie. Po zakończeniu wszystkich dalszych procesów profil klienta odzwierciedla zaktualizowane dane.
 

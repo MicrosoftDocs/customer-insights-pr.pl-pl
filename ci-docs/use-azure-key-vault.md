@@ -1,7 +1,7 @@
 ---
 title: Korzystanie z własnej usługi Azure Key Vault (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować usługę Customer Insights do używania własnego magazynu kluczy Azure Key Vault w celu zarządzania wpisami tajnymi.
-ms.date: 10/06/2021
+ms.date: 08/02/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -11,58 +11,63 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 8fdb131de35c7d936d2921265f03faa5682db6f6
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 229fb5698a02d1d73c30442f61c7b1b5fce918bf
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081472"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246168"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Korzystanie z własnej usługi Azure Key Vault (wersja zapoznawcza)
 
-Połączenie dedykowanego [magazynu kluczy Azure](/azure/key-vault/general/basic-concepts) ze środowiskiem Customer Insights o odbiorcach ułatwia organizacjom spełnienie wymagań dotyczących zgodności.
-Dedykowanego magazynu kluczy można używać do tworzenia etapów i używania wpisów danych w granicach zgodności organizacji. Customer Insights mogą użyć wpisów tajnych w usłudze Azure Key Vault, aby [skonfigurować połączenia](connections.md) z platformami innych firm.
+Połączenie dedykowanego [magazynu kluczy Azure key vault](/azure/key-vault/general/basic-concepts) ze środowiskiem Customer Insights o odbiorcach ułatwia organizacjom spełnienie wymagań dotyczących zgodności.
 
 ## <a name="link-the-key-vault-to-the-customer-insights-environment"></a>Łączenie magazynu kluczy ze środowiskiem Customer Insights
 
+Ustawianie dedykowanego magazynu kluczy do tworzenia etapów i używania wpisów danych w granicach zgodności organizacji.
+
 ### <a name="prerequisites"></a>Wymagania wstępne
 
-Aby skonfigurować magazyn kluczy w obszarze Customer Insights, należy spełnić następujące wymagania wstępne:
+- Aktywna subskrypcja platformy Azure.
 
-- Masz aktywną subskrypcję platformy Azure.
+- Rola [Administrator](permissions.md#admin) [przypisana](permissions.md#add-users) w rozwiązaniu Customer Insights.
 
-- Masz rolę użytkownika [Administrator](permissions.md#admin) w rozwiązaniu Customer Insights. Dowiedz się więcej o [uprawnieniach użytkowników w Customer Insights](permissions.md#assign-roles-and-permissions).
+- Role [Współautor](/azure/role-based-access-control/built-in-roles#contributor) i [Administrator dostępu użytkowników](/azure/role-based-access-control/built-in-roles#user-access-administrator) w magazynie kluczy key vault lub grupie zasobów, do której należy magazyn kluczy key vault. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal). Jeśli nie masz roli Administrator dostępu użytkowników w magazynie kluczy, skonfiguruj uprawnienia kontroli dostępu na podstawie ról dla jednostki usługi platformy Azure dla aplikacji Dynamics 365 Customer Insights. Wykonaj kroki, aby [użyć jednostki usługi platformy Azure](connect-service-principal.md) dla magazynu kluczy, który ma zostać połączony.
 
-- Masz role [Współautor](/azure/role-based-access-control/built-in-roles#contributor) i [Administrator dostępu użytkowników](/azure/role-based-access-control/built-in-roles#user-access-administrator) w magazynie kluczy lub grupie zasobów, do której należy magazyn kluczy. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal). Jeśli nie masz roli Administrator dostępu użytkowników w magazynie kluczy, musisz oddzielnie skonfigurować uprawnienia kontroli dostępu na podstawie ról dla jednostki usługi platformy Azure dla aplikacji Dynamics 365 Customer Insights. Wykonaj kroki, aby [użyć jednostki usługi platformy Azure](connect-service-principal.md) dla magazynu kluczy, który ma zostać połączony.
+- Magazyn Key Vault musi być **wyłączoną** zaporę Key Vault.
 
-- Zapora usługi Key Vault w magazynie kluczy musi być **wyłączona**.
+- Magazyn kluczy key vault znajduje się w tej samej [lokalizacji platformy Azure](https://azure.microsoft.com/global-infrastructure/geographies/#overview), co środowisko Customer Insights. Aby poznać region środowiska, przejdź do karty **Administrator** > **System** i **Informacje** w Customer Insights.
 
-- Magazyn kluczy znajduje się w tej samej [lokalizacji platformy Azure](https://azure.microsoft.com/global-infrastructure/geographies/#overview), co środowisko Customer Insights. Obszar środowiska w obszarze Customer Insights w obszarze **Administracja** > **System** > **Informacje** > **Region**.
+### <a name="recommendations"></a>Rekomendacje
+
+- [Należy użyć oddzielnego lub dedykowanego magazynu kluczy](/azure/key-vault/general/best-practices#why-we-recommend-separate-key-vaults) zawierającego tylko wpisy tajne wymagane dla Customer Insights.
+
+- Postępuj zgodnie z [najlepszymi rozwiązaniami do użycia w usłudze Key Vault](/azure/key-vault/general/best-practices#turn-on-logging) w przypadku opcji kontroli dostępu, tworzenia kopii zapasowych, inspekcji i odzyskiwania.
 
 ### <a name="link-a-key-vault-to-the-environment"></a>Łączenie magazynu kluczy ze środowiskiem
 
 1. Przejdź do pozycji **Administracja** > **Bezpieczeństwo**, a następnie wybierz kartę **Key Vault**.
 1. Na kafelku **Magazyn kluczy** wybierz opcję **Konfiguracja**.
 1. Wybierz **subskrypcję**.
-1. Wybierz magazyn kluczy z listy rozwijanej **Key Vault**. Jeśli wyświetlono zbyt wiele magazynów kluczy, wybierz grupę zasobów w celu ograniczenia wyników wyszukiwania.
-1. Zaakceptuj oświadczenie dotyczące **zasad ochrony poufności informacji i zgodności**.
+1. Wybierz magazyn kluczy z listy rozwijanej **Key Vault**. Jeśli dostępnych jest zbyt wiele magazynów kluczy, wybierz grupę zasobów w celu ograniczenia wyników wyszukiwania.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 1. Wybierz pozycję **Zapisz**.
 
-:::image type="content" source="media/set-up-azure-key-vault.png" alt-text="Kroki procesu konfigurowania połączonego magazynu kluczy w obszarze Customer Insights.":::
-
-Kafelek **Key Vault** będzie teraz zawierał nazwę połączonego magazynu kluczy, grupę zasobów i subskrypcję. Jest on gotowy do użycia w konfiguracji połączenia.
-Aby uzyskać szczegółowe informacje na temat uprawnień do magazynu kluczy, które są przyznawane w Customer Insights, przejdź do sekcji [Uprawnienia przyznawane w magazynie kluczy do Customer Insights](#permissions-granted-on-the-key-vault) w dalszej części tego artykułu.
+Kafelek **Key Vault** będzie teraz zawierał nazwę połączonego magazynu kluczy, subskrypcję i grupę zasobów. Jest on gotowy do użycia w konfiguracji połączenia.
+Aby uzyskać szczegółowe informacje na temat uprawnień do magazynu kluczy, które są przyznawane w Customer Insights, przejdź do sekcji [Uprawnienia przyznawane w magazynie kluczy do Customer Insights](#permissions-granted-on-the-key-vault).
 
 ## <a name="use-the-key-vault-in-the-connection-setup"></a>Korzystanie z magazynu kluczy w konfiguracji połączenia
 
-Podczas [konfigurowania połączeń](connections.md) z platformami innych firm do konfigurowania połączeń można użyć wpisów tajnych z połączonego magazynu kluczy.
+Podczas [konfigurowania połączeń](connections.md) z [obsługiwanymi platformami innych firm](#supported-connection-types) do konfigurowania połączeń użyj wpisów tajnych z połączonego magazynu kluczy.
 
 1. Przejdź do **Admin** > **Połączenia**.
 1. Wybierz opcję **Dodaj połączenie**.
 1. W przypadku obsługiwanych typów połączenia dostępny jest przełącznik **Użyj usługi Key Vault** po połączeniu z magazynem kluczy.
-1. Zamiast ręcznie wprowadzać dane do magazynu kluczy, można wybrać nazwę wpisu tajnego, która wskazuje na wartość w magazynie kluczy.
+1. Zamiast ręcznie wprowadzać dane do magazynu kluczy, wybierz nazwę wpisu tajnego, która wskazuje na wartość w magazynie kluczy.
 
-:::image type="content" source="media/use-key-vault-secret.png" alt-text="Okienko połączenia z połączeniem SFTP, które korzysta z wpisu tajnego usługi Key Vault.":::
+   :::image type="content" source="media/use-key-vault-secret.png" alt-text="Okienko połączenia z połączeniem SFTP, które korzysta z wpisu tajnego usługi Key Vault.":::
+
+1. Aby utworzyć połączenie, wybierz **Zapisz**.
 
 ## <a name="supported-connection-types"></a>Obsługiwane typy połączeń
 
@@ -97,19 +102,13 @@ Powyższe wartości to minimum do wymienienia na liście i odczytu podczas wykon
 
 ### <a name="azure-role-based-access-control"></a>Kontrola dostępu na podstawie ról na platformie Azure
 
-Role Key Vault — czytelnik i Key Vault — użytkownik wpisów tajnych zostaną dodane do Customer Insights. Aby uzyskać szczegółowe informacje na temat tych ról, przejdź do tematu [Wbudowane role platformy Azure dla operacji płaszczyzny danych usługi Key Vault](/azure/key-vault/general/rbac-guide?tabs=azure-cli).
-
-## <a name="recommendations"></a>Rekomendacje
-
-- Należy użyć oddzielnego lub dedykowanego magazynu kluczy zawierającego tylko wpisy tajne wymagane dla Customer Insights. Dowiedz się więcej o tym, dlaczego [zalecane jest używanie oddzielnych magazynów kluczy](/azure/key-vault/general/best-practices#why-we-recommend-separate-key-vaults).
-
-- Postępuj zgodnie z [najlepszymi rozwiązaniami do użycia w usłudze Key Vault](/azure/key-vault/general/best-practices#turn-on-logging) w przypadku opcji kontroli dostępu, tworzenia kopii zapasowych, inspekcji i odzyskiwania.
+[Role Key Vault — czytelnik i Key Vault — użytkownik wpisów tajnych](/azure/key-vault/general/rbac-guide?tabs=azure-cli) zostaną dodane do Customer Insights.
 
 ## <a name="frequently-asked-questions"></a>Często zadawane pytania
 
 ### <a name="can-customer-insights-write-secrets-or-overwrite-secrets-into-the-key-vault"></a>Czy funkcja Customer Insights może zapisywać wpisy tajne lub nadpisywać wpisy tajne w magazynie kluczy?
 
-Nr Tylko uprawnienia do odczytu i tworzenie listy określone w sekcji [przyznawanych uprawnień](#permissions-granted-on-the-key-vault) we wcześniejszej części tego artykułu są przyznawane funkcji Customer Insights. W systemie nie można dodawać, usuwać ani nadpisywać wpisów tajnych w magazynie kluczy. Również z tego powodu nie można wprowadzać poświadczeń w przypadku, gdy połączenie używa usługi Key Vault.
+Nie Tylko uprawnienia do odczytu i tworzenie listy określone w sekcji [przyznawanych uprawnień](#permissions-granted-on-the-key-vault) są przyznawane funkcji Customer Insights. W systemie nie można dodawać, usuwać ani nadpisywać wpisów tajnych w magazynie kluczy. Również z tego powodu nie można wprowadzać poświadczeń w przypadku, gdy połączenie używa usługi Key Vault.
 
 ### <a name="can-i-change-a-connection-from-using-key-vault-secrets-to-default-authentication"></a>Czy można zmienić połączenie z używania wpisów tajnych usługi Key Vault na uwierzytelnianie domyślne?
 
@@ -117,7 +116,7 @@ Nr Po skonfigurowaniu połączenia przy użyciu wpisu tajnego z połączonego ma
 
 ### <a name="how-can-i-revoke-access-to-a-key-vault-for-customer-insights"></a>Jak cofnąć dostęp do magazynu kluczy dla funkcji Customer Insights?
 
-W zależności od tego, czy włączono [zasady dostępu usługi Key Vault](/azure/key-vault/general/assign-access-policy?tabs=azure-portal) lub [kontrolę dostępu na podstawie ról platformy Azure](/azure/key-vault/general/rbac-guide?tabs=azure-cli), należy usunąć uprawnienia jednostki usługi `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` o nazwie `Dynamics 365 AI for Customer Insights`. Wszystkie połączenia z magazynem kluczy zostaną zatrzymane.
+Jeśli włączono [zasady dostępu usługi Key Vault](/azure/key-vault/general/assign-access-policy?tabs=azure-portal) lub [kontrolę dostępu na podstawie ról platformy Azure](/azure/key-vault/general/rbac-guide?tabs=azure-cli), usuń uprawnienia jednostki usługi `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` o nazwie `Dynamics 365 AI for Customer Insights`. Wszystkie połączenia z magazynem kluczy zostaną zatrzymane.
 
 ### <a name="a-secret-thats-used-in-a-connection-got-removed-from-the-key-vault-what-can-i-do"></a>Wpis tajny używany w połączeniu został usunięty z magazynu kluczy. Co mogę zrobić?
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053893"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245892"
 ---
 # <a name="data-enrichment-preview-overview"></a>Omówienie wzbogacania danych (wersja zapoznawcza)
 
@@ -76,7 +76,7 @@ Wybierz wzbogacanie, aby wyświetlić dostępne akcje.
 - **Wyświetl** szczegóły wzbogacenia dzięki liczbie ulepszonych profilów klientów.
 - **Edytuj** konfigurację wzbogacenia.
 - [**Uruchom**](#run-or-refresh-enrichments) wzbogacenie, aby zaktualizować profile klientów za pomocą najnowszych danych. Uruchom wiele wzbogaceń jednocześnie, wybierając je z listy.
-- **Aktywowanie** lub **dezaktywowanie** wzbogacenia. Nieaktywne wzbogacenia nie będą odświeżane podczas [zaplanowanego odświeżania](system.md#schedule-tab).
+- **Aktywowanie** lub **dezaktywowanie** wzbogacenia. Nieaktywne wzbogacenia nie będą odświeżane podczas [zaplanowanego odświeżania](schedule-refresh.md).
 - **Usuń** wzbogacenie.
 
 Można także tworzyć [segmenty](segments.md) i [miary](measures.md) na pomocą wzbogacania.
@@ -85,7 +85,7 @@ Można także tworzyć [segmenty](segments.md) i [miary](measures.md) na pomocą
 
 Po uruchomieniu, wzbogacenia można odświeżać automatycznie lub ręcznie na żądanie.
 
-1. Aby ręcznie odświeżyć jedno lub więcej wzbogaceń, wybierz je i wybierz opcję **Uruchom**. Aby [zaplanować automatyczne odświeżanie](system.md#schedule-tab), przejdź do strony **Administrator** > **System** > **Harmonogram**. Czas przetwarzania zależy od rozmiaru danych klienta.
+1. Aby ręcznie odświeżyć jedno lub więcej wzbogaceń, wybierz je i wybierz opcję **Uruchom**. Aby [zaplanować automatyczne odświeżanie](schedule-refresh.md), przejdź do strony **Administrator** > **System** > **Harmonogram**. Czas przetwarzania zależy od rozmiaru danych klienta.
 
 1. Opcjonalnie [sprawdź postęp procesu wzbogacania](#see-the-progress-of-the-enrichment-process).
 
@@ -102,6 +102,8 @@ Można tu znaleźć szczegółowe informacje o przetwarzaniu wzbogacania, w tym 
 1. W okienku **szczegółów postępu** rozwiń sekcję **Wzbogacanie**.
 1. W obszarze wzbogacania, dla którego chcesz wyświetlić postęp, wybierz opcję **Zobacz szczegóły**.
 1. W okienku **szczegółów zadania** wybierz opcję **Pokaż szczegóły**, aby wyświetlić procesy związane z aktualizowaniem wzbogacenia i jego stanu.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Wyświetlanie wyników wzbogacenia
 

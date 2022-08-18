@@ -1,7 +1,7 @@
 ---
 title: Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
 description: Ogólne informacje na temat wzbogacenia innych firm z Dun & Bradstreet.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: e89b64774dcb519a071dd3d403473807a50e7f33
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196039"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237917"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Wzbogacenie profilów firmy z Dun & Bradstreet (wersja zapoznawcza)
 
@@ -55,16 +55,11 @@ Musisz być [administratorem](permissions.md#admin) w Customer Insights i mieć 
 
 1. Podaj prawidłowe poświadczenia Dun & Bradstreet i szczegóły projektu Dun & Bradstreet *Region, Ścieżka folderu upuszczania i Nazwa folderu upuszczania*. Te [informacje pochodzą](#set-up-your-dun--bradstreet-project) z projektu Dun & Bradstreet.
 
-1. Przejrzyj i wyraź zgodę na [Zasady ochrony prywatności danych](#data-privacy-and-compliance), wybierając przycisk **I agree (Wyrażam zgodę)**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
 1. Wybierz **Weryfikuj**, aby sprawdzić poprawność konfiguracji, a następnie wybierz opcję **Zapisz**.
 
    :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Strona konfiguracji połączenia Dun & Bradstreet.":::
-
-### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Po włączeniu Dynamics 365 Customer Insights do transmisji danych do Dun & Bradstreet można przesyłać dane spoza granicy zgodności dla Dynamics 365 Customer Insights, w tym również dane osobowe. Microsoft przekaże takie dane na twoje polecenie, ale to ty jesteś odpowiedzialny za zapewnienie, że Dun & Bradstreet spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732).
-Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
 
 ## <a name="supported-countries-or-regions"></a>Obsługiwane kraje lub regiony
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139670"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213595"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Ujednolicenie pól klientów w celu ujednolicania danych
 
@@ -58,6 +58,9 @@ W tym kroku procesu ujednolicania wybierz i wyklucz atrybuty, które mają zosta
 
 1. Określ, jak połączyć lub scalić pola z jednej z trzech opcji:
     - **Ważność**: identyfikuje zwycięską wartość na podstawie klasyfikacji ważności określonej dla uczestniczących pól. Jest to opcja domyślna scalania. Wybierz pozycję **Przenieś w górę/w dół**, aby ustawić ranking ważności.
+
+      > [!NOTE]
+      > Customer Insights używa pierwszej wartości, która nie jest null. Na przykład jeżeli dane encje A, B i C są w takiej kolejności, a Nazwa.A i Nazwa.B mają wartość null, wówczas jest używana wartość z wartości Nazwa.C.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Opcja Ważność w oknie dialogowym scalania pól.":::
 

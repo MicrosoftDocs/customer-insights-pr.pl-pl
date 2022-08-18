@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195671"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246121"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
 Działająca niemal w czasie rzeczywistym funkcja umożliwia wyświetlenie, w ciągu zaledwie sekund, najnowszych interakcji między klientami a produktami lub usługami.
 
-[W zaplanowanym odświeżaniu](system.md#schedule-tab) znajduje się wiele rekordów i przedstawiono wiele operacji złożonych. Po pierwsze, dane są pobierane ze źródła danych. Następnie dane są ujednolicane i wzbogacane o dodatkowe informacje. Każdy przebieg tego procesu może potrwać od kilku minut do kilku godzin.
+[W zaplanowanym odświeżaniu](schedule-refresh.md) znajduje się wiele rekordów i przedstawiono wiele operacji złożonych. Po pierwsze, dane są pobierane ze źródła danych. Następnie dane są ujednolicane i wzbogacane o dodatkowe informacje. Każdy przebieg tego procesu może potrwać od kilku minut do kilku godzin.
 
 Funkcjonalność czasu rzeczywistego zapewnia natychmiastowe wykorzystanie danych do momentu, gdy kolejne zaplanowane odświeżanie pobierze te dane ze źródła danych.
 
@@ -85,7 +85,7 @@ Szczegółowe informacje o tym interfejsie API, w tym parametry i odpowiedzi, mo
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Informacje o sposobie korzystania z telemetrii w czasie rzeczywistym
 
-Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Można uzyskać dostęp do [telemetryki w czasie rzeczywistym](system.md#api-usage-tab). 
+Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Można uzyskać dostęp do [telemetryki w czasie rzeczywistym](system.md#view-api-usage). 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

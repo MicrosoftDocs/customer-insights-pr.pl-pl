@@ -8,12 +8,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: a180f6462452d9830d0daa150a35a9d0acad925a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 42abfb305efaccaeef48e32f2cc69f3d36fbe73d
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081572"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245478"
 ---
 # <a name="manage-predictions"></a>Zarządzaj przewidywaniami
 
@@ -58,7 +58,7 @@ Poniższe kolumny w raporcie zawierają informacje pomocne do poprawy danych dla
 
 ## <a name="refresh-a-prediction"></a>Odświeżanie przewidywania
 
-Przewidywania będą odświeżane automatycznie w oparciu o ten sam [harmonogram odświeżania danych](system.md#schedule-tab) skonfigurowany w ustawieniach. Można je również ręcznie odświeżyć.
+Przewidywania będą odświeżane automatycznie w oparciu o ten sam [harmonogram odświeżania danych](schedule-refresh.md) skonfigurowany w ustawieniach. Można je również ręcznie odświeżyć.
 
 1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
 

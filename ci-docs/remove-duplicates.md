@@ -2,7 +2,7 @@
 title: Usuwanie duplikatów przed rozsyłaniem danych
 description: Drugim krokiem w procesie ujednolicania jest wybór rekordu, który należy zachować w przypadku znalezienia duplikatów.
 recommendations: false
-ms.date: 04/22/2022
+ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,16 +13,25 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a838fbdabdb3bfffc6d3835a3f0e97306a43964a
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139442"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213640"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Usuwanie duplikatów przed rozsyłaniem danych
 
-Ten krok w ujednolicenia opcjonalnie umożliwia ustawienie reguł obsługi zduplikowanych rekordów w obrębie encji. *Deduplikacja* identyfikuje duplikaty rekordów i łączy je w jeden rekord. Rekordy źródłowe są łączone ze scalanym rekordem z innymi identyfikatorami. Jeśli reguły nie są skonfigurowane, stosowane są reguły zdefiniowane przez system.
+Ten opcjonalny krok w ujednolicenia umożliwia ustawienie reguł likwidowania zduplikowanych rekordów **w** obrębie encji. Usuwanie duplikatów identyfikuje wiele rekordów dla klienta i wybiera najlepsze rekordy do zachowanie (na podstawie podstawowych preferencji scalania) lub scala rekordy w jeden (na podstawie zaawansowanych preferencji scalania). Rekordy źródłowe są łączone ze scalanym rekordem z innymi identyfikatorami. Jeśli reguły nie są skonfigurowane, stosowane są reguły zdefiniowane przez system.
+
+## <a name="default-deduplication"></a>Domyślna deduplikacja
+
+Jeśli żadne reguły deduplikacji nie są skonfigurowane, stosowane są reguły zdefiniowane w systemie.
+
+- Klucz podstawowy jest zduplikowany.
+  W przypadku rekordów o tym samym kluczu podstawowym zwycięzcą jest rekord **Najbardziej wypełniony** (ten o najmniejszej liczbie wartości null).
+- Do encji są stosowane wszystkie reguły dopasowywania między encjami.
+  Na przykład, jeśli w kroku dopasowania encja A jest dopasowana do encji B w encjach *FullName* i *DateofBirth*, encja A jest również deduplikowana przez parametr *FullName* i *DateofBirth*. Ponieważ nazwa *FullName* i *DateofBirth* są prawidłowymi kluczami identyfikacji klienta w encji A, klucze te są również prawidłowe w przypadku identyfikowania zduplikowanych klientów w encji A.
 
 ## <a name="include-enriched-entities-preview"></a>Uwzględnij wzbogacone encje (wersja zapoznawcza)
 

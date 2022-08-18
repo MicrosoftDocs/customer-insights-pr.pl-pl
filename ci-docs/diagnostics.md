@@ -1,7 +1,7 @@
 ---
-title: Przekazywanie logów w Dynamics 365 Customer Insights z Azure Monitor (wersja zapoznawcza)
+title: Eksportuj dzienniki diagnostyczne (wersja zapoznawcza)
 description: Dowiedz się, jak wysyłać dzienniki do Microsoft Azure Monitor.
-ms.date: 12/14/2021
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: article
@@ -11,71 +11,92 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 8c72df7054a682244215bbee54968d6aef4bbf59
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052666"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245938"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Przekazywanie logów w Dynamics 365 Customer Insights z Azure Monitor (wersja zapoznawcza)
+# <a name="export-diagnostic-logs-preview"></a>Eksportuj dzienniki diagnostyczne (wersja zapoznawcza)
 
-Dynamics 365 Customer Insights zapewnia bezpośrednią integrację z Azure Monitor. Logi zasobów Azure Monitor pozwalają monitorować i wysyłać logi do [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) lub strumieniować je do [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
+Przekaż dalej dzienniki z rozwiązania Customer Insights do usługi Azure Monitor. Logi zasobów Azure Monitor pozwalają monitorować i wysyłać logi do [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) lub strumieniować je do [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
 
-W aplikacji Customer Insights są wysyłane następujące dzienniki zdarzeń:
+Aplikacja Customer Insights wysyła następujące dzienniki zdarzeń:
 
 - **Zdarzenia inspekcji**
-  - **APIEvent** — umożliwia zmianę śledzenia wykonanego za pomocą interfejsu użytkownika Dynamics 365 Customer Insights.
+  - **APIEvent** — umożliwia zmianę śledzenia za pomocą interfejsu użytkownika Dynamics 365 Customer Insights.
 - **Zdarzenia operacyjne**
-  - **WorkflowEvent** – Przepływ pracy pozwala na skonfigurowanie [Źródła danych](data-sources.md), [unifikację](data-unification.md) i [wzbogacenie](enrichment-hub.md) oraz [eksport](export-destinations.md) danych do innych systemów. Wszystkie te kroki można wykonać pojedynczo (np. uruchomić pojedynczy eksport). Mogą one również działać w sposób zorganizowany (np. odświeżanie danych ze źródeł danych, które uruchamia proces ujednolicenia, który będzie pobierał elementy wzbogacające i po zakończeniu eksportował dane do innego systemu). Aby uzyskać więcej informacji, zobacz schemat [Schemat WydarzeniaPrzepływuPracy](#workflow-event-schema).
-  - **APIEvent** — wszystkie wywołania interfejsów API do wystąpienia klienta w Dynamics 365 Customer Insights. Aby uzyskać więcej informacji, zobacz [schemat APIEvent](#api-event-schema).
+  - **WorkflowEvent** — przepływ pracy pozwala na skonfigurowanie [źródeł danych](data-sources.md), [unifikację](data-unification.md) i [wzbogacenie](enrichment-hub.md) oraz na koniec [eksport](export-destinations.md) danych do innych systemów. Te kroki można wykonać pojedynczo (np. uruchomić pojedynczy eksport). Mogą one również działać w sposób zorganizowany (np. odświeżanie danych ze źródeł danych, które uruchamia proces ujednolicenia, który będzie pobierał elementy wzbogacające i po zakończeniu eksportował dane do innego systemu). Aby uzyskać więcej informacji, zobacz schemat [Schemat WydarzeniaPrzepływuPracy](#workflow-event-schema).
+  - **APIEvent** — wysyła wszystkie wywołania interfejsów API do wystąpienia klienta w Dynamics 365 Customer Insights. Aby uzyskać więcej informacji, zobacz [schemat APIEvent](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Skonfiguruj ustawienia diagnostyczne
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 
-Aby skonfigurować diagnostykę w Customer Insights, muszą być spełnione następujące warunki wstępne:
-
-- Masz aktywną [subskrypcję platformy Azure](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Masz uprawnienia [administratora](permissions.md#admin) w Customer Insights.
-- Masz rolę **Współautora** i **Administratora dostępu użytkownika** na zasobie docelowym w Azure. Zasobem może być konto Azure Data Lake Storage, centrum zdarzeń platformy Azure lub obszar roboczy usługi Azure Log Analytics. Aby uzyskać więcej informacji, przejdź do tematu [Dodawanie i usuwanie przypisań ról platformy Azure za pomocą witryny Azure Portal](/azure/role-based-access-control/role-assignments-portal). To uprawnienie jest niezbędne do konfigurowania ustawień diagnostycznych w funkcji Customer Insights, ale można je zmienić po pomyślnej konfiguracji.
+- Aktywna [subskrypcja platformy Azure](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- Uprawnienia [administratora](permissions.md#admin) w Customer Insights.
+- [Rola współautora i administratora dostępu użytkownika](/azure/role-based-access-control/role-assignments-portal) na zasobie docelowym w Azure. Zasobem może być konto Azure Data Lake Storage, centrum zdarzeń platformy Azure lub obszar roboczy usługi Azure Log Analytics. To uprawnienie jest niezbędne do konfigurowania ustawień diagnostycznych w funkcji Customer Insights, ale można je zmienić po pomyślnej konfiguracji.
 - Spełnione są [wymagania docelowe](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) usługi Azure Storage, w centrum zdarzeń platformy Azure lub analiza dzienników Azure.
-- Masz co najmniej rolę **Czytelnik** w grupie zasobów, do której należy zasób.
+- Co najmniej rola **Czytelnik** w grupie zasobów, do której należy zasób.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Skonfiguruj diagnostykę za pomocą Azure Monitor
 
-1. W Customer Insights wybierz **System** > **Diagnostyka**, aby zobaczyć miejsca docelowe diagnostyki skonfigurowane w tej instancji.
+1. W Customer Insights przejdź do **Administrator** > **System** i wybierz kartę **Diagnostyka**.
 
 1. Wybierz **Dodaj lokalizację docelową**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Połączenie diagnostyki](media/diagnostics-pane.png "Połączenie diagnostyki")
+   :::image type="content" source="media/diagnostics-pane.png" alt-text="Połączenie diagnostyki.":::
 
 1. Podaj nazwę w nazwie **Miejsca docelowego diagnostyki**.
 
-1. Wybierz **Dzierżawę** subskrypcji Azure z zasobem docelowym i wybierz **Zaloguj się**.
-
 1. Wybierz **Typ zasobu** (konto Storage, centrum zdarzeń lub analiza dzienników).
 
-1. Wybierz **Subskrypcję** dla zasobu docelowego.
+1. Wybierz **Subskrypcję**, **Grupę zasobów** i **Zasób** dla docelowego zasobu. Informacje o uprawnieniach i dzienniku można znaleźć w [Konfiguracji źródła docelowego](#configuration-on-the-destination-resource).
 
-1. Wybierz **Grupa zasobów** dla zasobu docelowego.
-
-1. Wybierz **Zasób**.
-
-1. Potwierdź oświadczenie dotyczące **zasad ochrony poufności informacji i zgodności**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
 1. Wybierz **Połącz z systemem**, aby połączyć się z zasobem docelowym. Logi zaczną pojawiać się w miejscu docelowym po 15 minutach, jeśli API jest w użyciu i generuje zdarzenia.
 
-### <a name="remove-a-destination"></a>Usuń miejsce docelowe
+## <a name="configuration-on-the-destination-resource"></a>Konfiguracja na zasobie docelowym
 
-1. Przejdź do **Systemu** > **Diagnostyka**.
+W zależności od tego, jaki typ zasobu wybierzesz, poniższe zmiany zostaną automatycznie zastosowane:
+
+### <a name="storage-account"></a>Storage account
+
+Nazwa główna usługi Customer Insights otrzymuje uprawnienie **Współautor konta przechowywania** na wybranym zasobie i tworzy dwa kontenery pod wybraną przestrzenią nazw:
+
+- `insight-logs-audit` zawierający **wydarzenia związane z audytem**
+- `insight-logs-operational` zawierające **zdarzenia operacyjne**
+
+### <a name="event-hub"></a>Centrum zdarzeń usługi Event Hubs
+
+Nazwa główna usługi Customer Insights otrzymuje uprawnienie **Właściciel danych Azure Event Hubs** na zasobie i tworzy dwa Event Huby w wybranej przestrzeni nazw:
+
+- `insight-logs-audit` zawierający **wydarzenia związane z audytem**
+- `insight-logs-operational` zawierające **zdarzenia operacyjne**
+
+### <a name="log-analytics"></a>Log Analytics
+
+Zleceniodawca usługi Customer Insights otrzymuje uprawnienie **Współtwórca Log Analytics** na zasobie. Logi są dostępne w **Dzienniki** > **Tabele** > **Zarządzanie dziennikami** na wybranym obszarze roboczym Log Analytics. Rozwiń rozwiązanie **Zarządzanie dziennikami** i zlokalizuj tabele `CIEventsAudit` oraz `CIEventsOperational`.
+
+- `CIEventsAudit` zawierający **wydarzenia związane z audytem**
+- `CIEventsOperational` zawierające **zdarzenia operacyjne**
+
+W oknie **Kwerendy** rozwiń rozwiązanie **Inspekcja** i znajdź przykładowe kwerendy poprzez wyszukanie `CIEvents`.
+
+## <a name="remove-a-diagnostics-destination"></a>Usuń lokalizację docelową danych diagnostycznych
+
+1. Przejdź do pozycji **Administracja** > **System** i wybierz kartę **Diagnostyka**.
 
 1. Wybierz z listy miejsce docelowe diagnostyki.
 
+   > [!TIP]
+   > Usunięcie celu powoduje zatrzymanie przesyłania dalej dziennika, ale nie powoduje usunięcia zasobu w subskrypcji platformy Azure. Aby usunąć zasób w Azure, możesz wybrać link w kolumnie **Akcje**, aby otworzyć portal Azure dla wybranego zasobu i tam go usunąć. Następnie usuń miejsce docelowe diagnostyki.
+
 1. W kolumnie **Akcje** wybierz ikonę **Usuń**.
 
-1. Potwierdź usunięcie, aby zatrzymać przekazywanie dziennika. Zasób w subskrypcji Azure nie zostanie usunięty. Możesz wybrać link w kolumnie **Akcje**, aby otworzyć portal Azure dla wybranego zasobu i tam go usunąć.
+1. Potwierdź usunięcie, aby usunąć miejsce docelowe, i zatrzymać przesyłanie dalej dziennika.
 
 ## <a name="log-categories-and-event-schemas"></a>Kategorie dzienników i schematy zdarzeń
 
@@ -89,36 +110,9 @@ Customer Insights oferuje dwie kategorie:
 - **Audyt zdarzeń**: [Zdarzenia API](#api-event-schema), aby śledzić zmiany konfiguracji w serwisie. Operacje `POST|PUT|DELETE|PATCH` należą do tej kategorii.
 - **Zdarzenia operacyjne**: [zdarzenia API](#api-event-schema) lub [zdarzenia przepływu pracy](#workflow-event-schema) wygenerowane podczas korzystania z usługi.  Na przykład, żądania `GET` lub zdarzenia wykonania przepływu pracy.
 
-## <a name="configuration-on-the-destination-resource"></a>Konfiguracja na zasobie docelowym
-
-W zależności od tego, jaki typ zasobu wybierzesz, poniższe kroki zostaną automatycznie zastosowane:
-
-### <a name="storage-account"></a>Storage account
-
-Nazwa główna usługi Customer Insights otrzymuje uprawnienie **Współautor konta przechowywania** na wybranym zasobie i tworzy dwa kontenery pod wybraną przestrzenią nazw:
-
-- `insight-logs-audit` zawierający **wydarzenia związane z audytem**
-- `insight-logs-operational` zawierające **zdarzenia operacyjne**
-
-### <a name="event-hub"></a>Centrum zdarzeń usługi Event Hubs
-
-Nazwa główna usługi Customer Insights otrzymuje uprawnienie **Właściciel danych Azure Event Hubs** na zasobie i utworzy dwa Event Huby w wybranej przestrzeni nazw:
-
-- `insight-logs-audit` zawierający **wydarzenia związane z audytem**
-- `insight-logs-operational` zawierające **zdarzenia operacyjne**
-
-### <a name="log-analytics"></a>Log Analytics
-
-Zleceniodawca usługi Customer Insights otrzymuje uprawnienie **Współtwórca Log Analytics** na zasobie. Logi będą dostępne w **Dzienniki** > **Tabele** > **Zarządzanie dziennikami** na wybranym obszarze roboczym Log Analytics. Rozwiń rozwiązanie **Zarządzanie dziennikami** i zlokalizuj tabele `CIEventsAudit` oraz `CIEventsOperational`.
-
-- `CIEventsAudit` zawierający **wydarzenia związane z audytem**
-- `CIEventsOperational` zawierające **zdarzenia operacyjne**
-
-W oknie **Kwerendy** rozwiń rozwiązanie **Inspekcja** i znajdź przykładowe kwerendy poprzez wyszukanie `CIEvents`.
-
 ## <a name="event-schemas"></a>Schematy zdarzeń
 
-Zdarzenia API i zdarzenia przepływu pracy mają wspólną strukturę, a szczegóły, gdzie się różnią, znajdziesz w [schemacie zdarzeń API](#api-event-schema) lub [schemacie zdarzeń przepływu pracy](#workflow-event-schema).
+Zdarzenia interfejsu API i zdarzenia przepływu pracy mają wspólną strukturę, ale istnieje między nimi kilka różnic. Aby uzyskać więcej informacji, zobacz [schemat zdarzenia interfejsu API](#api-event-schema) lub [schemat zdarzenia przepływu pracy](#workflow-event-schema).
 
 ### <a name="api-event-schema"></a>Schemat zdarzeń API
 
@@ -220,7 +214,6 @@ Przepływ pracy zawiera wiele kroków. [Źródła danych](data-sources.md), [uni
 | `durationMs`    | Długi      | Opcjonalnie          | Czas trwania operacji w milisekundach.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Opcjonalnie          | Obiekt JSON z większą liczbą właściwości dla danej kategorii wydarzeń.                                                                                        | Zobacz podrozdział [Propertie przepływu pracy](#workflow-properties-schema)                                                                                                       |
 | `level`         | String    | Wymagania          | Poziom istotności zdarzenia.                                                                                                                                  | `Informational`, `Warning` lub `Error`                                                                                                                                   |
-|                 |
 
 #### <a name="workflow-properties-schema"></a>Schemat właściwości przepływu pracy
 
@@ -247,3 +240,5 @@ Zdarzenia przepływu pracy mają następujące właściwości.
 | `properties.additionalInfo.AffectedEntities` | Nie.       | Tak  | Opcjonalny. Tylko dla OperationType `Export`. Zawiera listę skonfigurowanych encji w eksporcie.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | Nie.       | Tak  | Opcjonalny. Tylko dla OperationType `Export`. Szczegółowa wiadomość dotycząca eksportu.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | Nie.       | Tak  | Opcjonalny. Tylko dla OperationType `Segmentation`. Wskazuje całkowitą liczbę członków segmentu.                                                                                                                                                    |
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

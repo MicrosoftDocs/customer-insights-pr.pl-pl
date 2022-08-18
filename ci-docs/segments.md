@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170694"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246306"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
@@ -58,7 +58,7 @@ Wybierz segment, aby wyświetlić dostępne działania.
 - **Edytuj** segment, aby zmienić jego właściwości.
 - **Utwórz duplikat** segmentu. Można od razu edytować właściwości tej aplikacji lub zapisać duplikat.
 - [**Odśwież**](#refresh-segments) segment, aby uwzględnić najnowsze dane.
-- **Aktywuj** lub **Dezaktywuj** segment. Nieaktywne segmenty nie zostaną odświeżone podczas [zaplanowanego odświeżenia](system.md#schedule-tab), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. Aktywne segmenty są odświeżane w zależności od ich typu: statycznego lub dynamicznego.
+- **Aktywuj** lub **Dezaktywuj** segment. Nieaktywne segmenty nie zostaną odświeżone podczas [zaplanowanego odświeżenia](schedule-refresh.md), a segment nieaktywne mają **Stan** wyświetlany jako **Pominięty**, co oznacza, że nie wystąpiła jeszcze próba odświeżenia. Aktywne segmenty są odświeżane w zależności od ich typu: statycznego lub dynamicznego.
 - **Jako statyczny** lub **Jako dynamiczny** należy dynamiczną typ segmentu. Segmenty statyczne należy odświeżać ręcznie. Segmenty dynamiczne są automatycznie odświeżane podczas odświeżania systemu.
 - [**Znajdź podobnych klientów**](find-similar-customer-segments.md) z danego segmentu.
 - **Zmień nazwę** segmentu.
@@ -88,7 +88,7 @@ W dolnej części znajduje się lista członków segmentu.
 
 Segmenty mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. Aby ręcznie odświeżyć jeden lub więcej segmentów, zaznacz je i wybierz **Odśwież**.
 
-Aby [zaplanować automatyczne odświeżanie](system.md#schedule-tab), przejdź do strony **Administrator** > **System** > **Harmonogram**. Obowiązują następujące zasady:
+Aby [zaplanować automatyczne odświeżanie](schedule-refresh.md), przejdź do strony **Administrator** > **System** > **Harmonogram**. Obowiązują następujące zasady:
 
 - Wszystkie segmenty z typem **Dynamiczny** lub **Rozszerzenie** zostaną automatycznie odświeżone w ustawionym rytmie. Po zakończeniu odświeżania **Stan** wskazuje, czy podczas odświeżania segmentu wystąpiły jakiekolwiek problemy. **Ostatnio odświeżono** wskazuje czas ostatniego udanego odświeżenia. Jeśli wystąpi błąd, wybierz błąd, aby wyświetlić szczegółowe informacje o tym, co się stało.
 - Segmenty o typie **Statyczny** *nie będą* odświeżane automatycznie. **Ostatnio odświeżono** wskazuje znacznik czasu ostatniego uruchomienia lub ręcznego odświeżania segmentów statycznych.

@@ -1,47 +1,50 @@
 ---
-title: Ustawienia zabezpieczeń w Customer Insights
+title: Konfigurowanie ustawienia zabezpieczeń
 description: Dowiedz się więcej o ustawieniach zabezpieczeń w Dynamics 365 Customer Insights.
-ms.date: 06/08/2022
+ms.date: 08/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 163deb9bed4f82d742c46cace27dd128f0aca18b
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947428"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246075"
 ---
-# <a name="security-settings-in-customer-insights"></a>Ustawienia zabezpieczeń w Customer Insights
+# <a name="configure-security-settings"></a>Konfigurowanie ustawienia zabezpieczeń
 
-Na stronie **Zabezpieczenia** znajduje się lista opcji konfigurowania uprawnień użytkowników i funkcji, które ułatwiają lepiej zabezpieczyć usługę Dynamics 365 Customer Insights. Dostęp do tej strony mogą uzyskać tylko administratorzy.
+Zarządzanie kluczami interfejsów API, uzyskiwanie dostępu do danych klientów i konfigurowanie łącza prywatnego Azure Private Link.
 
-Aby skonfigurować ustawienia, przejdź do strony **Administrator** > **Zabezpieczenia**.
+## <a name="manage-api-keys"></a>Zarządzaj kluczami interfejsu API
 
-Strona **Zabezpieczenia** zawiera następujące karty:
+Wyświetlaj i zarządzaj kluczami, aby używać [interfejsów API funkcji Customer Insights](apis.md) z danymi w środowisku.
 
-- [Użytkownicy](#users-tab)
-- [Interfejsy API](#apis-tab)
-- [Linki prywatne](#private-links-tab)
-- [Key Vault](#key-vault-tab)
-- [Bezpieczne uzyskiwanie dostępu do danych klientów przy użyciu skrytki klienta (wersja zapoznawcza)](#securely-access-customer-data-with-customer-lockbox-preview)
+1. Przejdź do pozycji **System** > **Zabezpieczenia** i wybierz kartę **Interfejsy API**.
 
-## <a name="users-tab"></a>Karta Użytkownicy
+1. Jeśli dostęp interfejsu API do środowiska nie został ustawiony, wybierz opcję **Włącz**. Lub aby zablokować dostęp interfejsu API do środowiska, wybierz opcję **Wyłącz** i potwierdź.
 
-Dostęp do danych Customer Insights jest ograniczony do użytkowników w organizacji, którzy zostali dodani do aplikacji przez administratora. Karta **Użytkownicy** umożliwia zarządzanie dostępem użytkowników i ich uprawnieniami. Aby uzyskać więcej informacji, zobacz [Uprawnienia użytkownika](permissions.md).
+1. Zarządzanie podstawowymi i pomocniczym kluczami interfejsu API:
 
-## <a name="apis-tab"></a>Karta Interfejsy API
+   1. Aby wyświetlić podstawowy lub pomocniczy klucz interfejsu API, wybierz symbol **Pokaż**.
 
-Wyświetlaj i zarządzaj kluczami, aby używać [interfejsów API funkcji Customer Insights](apis.md) z danymi środowiska.
+   1. Aby skopiować podstawowy lub pomocniczy klucz interfejsu API, wybierz symbol **Kopiuj**.
 
-Nowe klucze podstawowe i dodatkowe można utworzyć, wybierając opcję **Ponowne generowanie podstawowe** lub **Ponowne generowanie pomocnicze**. 
+   1. Nowe podstawowe i dodatkowe klucze interfejsu API można utworzyć, wybierając opcję **Ponowne generowanie podstawowe** lub **Ponowne generowanie pomocnicze**.
 
-Aby zablokować dostęp interfejsu API do środowiska, wybierz opcję **Wyłącz**. Jeśli interfejsy API są wyłączone, można ponownie wybrać opcję **Włącz**, aby przyznać dostęp.
+## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Bezpieczne uzyskiwanie dostępu do danych klientów przy użyciu skrytki klienta (wersja zapoznawcza)
 
-## <a name="private-links-tab"></a>Karty Private Link
+Funkcja Customer Insights używa z funkcji Skrytki klienta Power Platform. Aplikacja Skrytka klienta udostępnia interfejs do przeglądania i zatwierdzania (lub odrzucania) żądań dostępu do danych. Te żądania występują, gdy dostęp do danych klienta jest potrzebny do rozwiązania sprawy pomocy technicznej. Aby można było korzystać z tej funkcji, funkcja Customer Insights musi mieć istniejące połączenie ze środowiskiem Microsoft Dataverse w dzierżawie.
+
+Aby uzyskać więcej informacji na temat funkcji Skrytki klienta, zobacz [podsumowanie](/power-platform/admin/about-lockbox#summary) funkcji Skrytki klienta Power Platform . W artykule opisano również [przepływ pracy](/power-platform/admin/about-lockbox#workflow) i wymaganą [konfigurację](/power-platform/admin/about-lockbox#enable-the-lockbox-policy) w celu włączenia funkcji Skrytki klienta.
+
+> [!IMPORTANT]
+> Administratorzy globalni dla Power Platform lub administratorzy Power Platform mogą zatwierdzać żądania skrzynki klienta wydawane dla usługi Customer Insights.
+
+## <a name="set-up-an-azure-private-link"></a>Konfigurowanie łącza prywatnego Azure Private Link
 
 Usługa [Azure Private Link](/azure/private-link/private-link-overview) umożliwia dostęp rozwiązania Customer Insights do konta Azure Data Lake Storage za punktem końcowym w sieci wirtualnej. W przypadku danych na koncie magazynu, które nie jest widoczne w publicznym Internecie, Provate Link umożliwia połączenie z dostępem do tej sieci zastrzeżonej.
 
@@ -51,26 +54,22 @@ Usługa [Azure Private Link](/azure/private-link/private-link-overview) umożliw
 > - Customer Insights: Administrator
 > - Wbudowana rola Azure: [Współautor konta magazynu](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
 > - Uprawnienia dla niestandardowej roli Azure: [Microsoft.Storage/storageAccounts/read i Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
->
 
-Konfigurowanie Private Link w Customer Insights to proces dwuetapowy. Najpierw należy rozpocząć tworzenie łącza Private Link w **Administrator** > **Zabezpieczenia** > **Private Link** w Customer Insights. Okienko **Dodaj Private Link** zawiera listę kont magazynu od dzierżawcy, do których użytkownik ma uprawnienia. Wybierz konto magazynu i wyraź zgodę na utworzenie Private Link.
+1. W Customer Insights przejdź do **Administrator** > **Zabezpieczenia** i wybierz kartę **Łącza prywatne**.
 
-Następnie należy zatwierdzić łącze Private Link po stronie konta Magazyn danych Data Lake. Otwórz łącze przedstawione na ekranie, aby zatwierdzić nowe Private Link.
+1. Wybierz **Dodaj prywatne łącza**.
 
-## <a name="key-vault-tab"></a>Karta Key Vault
+   Okienko **Dodaj Private Link** zawiera listę kont magazynu od dzierżawcy, do których użytkownik ma uprawnienia.
 
-Karta **Key Vault** umożliwia łączenie i zarządzanie własnym magazynem [Azure key vault](/azure/key-vault/general/basic-concepts) w środowisku.
-Dedykowanego magazynu kluczy można używać do tworzenia etapów i używania wpisów danych w granicach zgodności organizacji. Customer Insights mogą użyć wpisów tajnych w usłudze Azure Key Vault, aby [skonfigurować połączenia](connections.md) z platformami innych firm.
+1. Wybierz subskrypcja, grupa zasobów i konto magazynu.
 
-Aby uzyskać więcej informacji, przejrzyj temat [Użyj własnego magazynu Azure Key Vault](use-azure-key-vault.md).
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
-## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Bezpieczne uzyskiwanie dostępu do danych klientów przy użyciu skrytki klienta (wersja zapoznawcza)
+1. Wybierz pozycję **Zapisz**.
 
-Funkcja Customer Insights korzysta z funkcji Skrytki klienta Power Platform. Aplikacja Skrytka klienta udostępnia interfejs do przeglądania i zatwierdzania (lub odrzucania) żądań dostępu do danych. Te żądania występują, gdy dostęp do danych klienta jest potrzebny do rozwiązania sprawy pomocy technicznej. Aby można było korzystać z tej funkcji, funkcja Customer Insights musi mieć istniejące połączenie ze środowiskiem Microsoft Dataverse w dzierżawie.
+1. Należy przejść do konta Data Lake Storage i otworzyć łącze przedstawione na ekranie.
 
-Aby uzyskać więcej informacji na temat funkcji Skrytki klienta, zobacz [podsumowanie](/power-platform/admin/about-lockbox#summary) funkcji Skrytki klienta Power Platform . W artykule opisano również [przepływ pracy](/power-platform/admin/about-lockbox#workflow) i wymaganą [konfigurację](/power-platform/admin/about-lockbox#enable-the-lockbox-policy) w celu włączenia funkcji Skrytki klienta.
+1. Zatwierdzanie łącza prywatnego Private Link.
 
-> [!IMPORTANT]
-> Administratorzy globalni dla Power Platform lub administratorzy Power Platform mogą zatwierdzać żądania skrzynki klienta wydawane dla usługi Customer Insights.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

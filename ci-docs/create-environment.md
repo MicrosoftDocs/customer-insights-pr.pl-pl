@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142832"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245570"
 ---
 # <a name="how-to-create-a-new-environment"></a>Instrukcje: Utwórz nowe środowisko
 
@@ -48,7 +48,7 @@ W kroku **Podstawowe informacje** wybierz, czy chcesz utworzyć środowisko od p
 
 Podaj następujące szczegóły:
 
-- **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić.
+- **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić. Jeśli masz więcej niż jedno środowisko pracy, nadaj każdemu łatwą do zidentyfikowania nazwę.
 - **Wybierz swoją firmę**: wybierz podstawowych odbiorców dla nowego środowiska. Można pracować z poszczególnymi konsumentami (B2C) lub [kontami biznesowymi (B2B)](work-with-business-accounts.md). Jeśli Twoja organizacja prowadzi interesy głównie z osobami, takimi jak sprzedawca detaliczny lub kawiarnia, wybierz indywidualnych konsumentów. Jeśli głównymi odbiorcami są inne firmy, takie jak producent samochodów lub firma papiernicza, wybierz konta biznesowe.
 - **Wpisz**: Wybierz, czy chcesz utworzyć środowisko produkcyjne, czy piaskownicę. Środowiska piaskownicy nie zezwalają na zaplanowane odświeżanie danych i są przeznaczone do wstępnej implementacji i testowania. Środowiska piaskownicy używają tych samych podstawowych odbiorców co aktualnie wybrane środowisko produkcyjne.
 - **Region**: Region, w którym usługa jest wdrażana i hostowana. Aby [korzystać z własnego konta Azure Data Lake Storage](own-data-lake-storage.md) lub [połączyć się z istniejącą organizacją Microsoft Dataverse](customer-insights-dataverse.md), środowisko Customer Insights musi być w tym samym regionie.

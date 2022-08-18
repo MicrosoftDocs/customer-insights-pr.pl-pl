@@ -1,19 +1,19 @@
 ---
 title: Wzbogać profile klientów dzięki danych demograficznych z Experian (wersja zapoznawcza)
 description: Ogólne informacje o wzbogaceniach od zewnętrznej firmy Experian.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 876853ab42e8c08ad1abacb8d8a205c0aadabcf7
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fccb37cde3f05a70009c18b6c52db01a5ede094d
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195949"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238009"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Wzbogać profile klientów dzięki danych demograficznych z Experian (wersja zapoznawcza)
 
@@ -41,13 +41,9 @@ Użytkownik musi być [administratorem](permissions.md#admin) Customer Insights 
 
 1. Wprowadź nazwę połączenia i prawidłowy identyfikator użytkownika, identyfikator strony i numer modelu dla bezpiecznego konta transportowego Experian.
 
-1. Przejrzyj i wyraź zgodę na [Zasady ochrony prywatności danych](#data-privacy-and-compliance), wybierając przycisk **I agree (Wyrażam zgodę)**.
+1. Przejrzyj zasady [Prywatność danych i zgodność z przepisami](connections.md#data-privacy-and-compliance) i wybierz opcję **Wyrażam zgodę**.
 
 1. Wybierz **Weryfikuj**, aby sprawdzić poprawność konfiguracji, a następnie wybierz opcję **Zapisz**.
-
-### <a name="data-privacy-and-compliance"></a>Prywatność danych i zgodność z przepisami
-
-Włączenie w Dynamics 365 Customer Insights opcji przekazywania danych do usługi Experian umożliwia przesyłanie danych poza granice obszaru zgodności dla Dynamics 365 Customer Insights, w tym potencjalnie poufne dane, takie jak dane osobiste. Microsoft będzie przekazywać takie dane zgodnie z Twoimi instrukcjami, ale to Ty jesteś odpowiedzialny za zapewnienie, że Experian spełnia wszelkie zobowiązania dotyczące prywatności i bezpieczeństwa, jakie możesz mieć. Aby uzyskać więcej informacji, zobacz temat [Oświadczenie o ochronie prywatności firmy Microsoft.](https://go.microsoft.com/fwlink/?linkid=396732). Administrator Dynamics 365 Customer Insights w dowolnym momencie może usunąć wzbogacanie, aby przestać używać tej funkcji.
 
 ## <a name="configure-the-enrichment"></a>Konfiguracja wzbogacania
 
