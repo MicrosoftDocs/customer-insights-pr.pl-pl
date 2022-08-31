@@ -1,19 +1,19 @@
 ---
 title: Eksportowanie segmentów do usługi LinkedIn Ads (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksport do usługi LinkedIn Ads.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196821"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304716"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportowanie segmentów do usługi LinkedIn Ads (wersja zapoznawcza)
 
@@ -24,7 +24,7 @@ Eksportuj segmenty ujednoliconych profili klientów do LinkedIn Ads, aby tworzy�
 - [Konto LinkedIn Campaign Manager](https://business.linkedin.com/marketing-solutions/ads) i odpowiednie poświadczenia administratora.
 - [Identyfikator konta LinkedIn Campaign Manager](https://www.linkedin.com/help/lms/answer/a424270).
 - [Skonfigurowane segmenty](segments.md) w Customer Insights.
-- Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail.
+- Wyeksportowane segmenty wymagają co najmniej jednego określonego pola w zależności od tego, czy w poszczególnych serwisach wybierzesz [grupowanie kontaktów](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) czy grupy [odbiorców firm](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). Możliwe pola są wyświetlane w kroku **dopasowywania** danych podczas [konfigurowania eksportu](#configure-an-export).
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 

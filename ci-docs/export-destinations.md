@@ -1,7 +1,7 @@
 ---
 title: Omówienie eksportów (wersja zapoznawcza)
 description: Zarządzaj eksportami do udostępniania danych.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245340"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304072"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
@@ -28,7 +28,7 @@ ms.locfileid: "9245340"
 Istnieją dwa główne typy eksportów:  
 
 - **Eksportowanie danych wyjściowych** umożliwia wyeksportowanie dowolnego typu encji dostępnych w aplikacji Customer Insights. Encje wybrane do wyeksportowania są eksportowane ze wszystkimi polami danych, metadanymi, schematami i szczegółami mapowania.
-- **Eksporty segmentów** umożliwiają eksportowanie encji segmentów z aplikacji Customer Insights. Segmenty reprezentują listę profilów klientów. Podczas konfigurowania eksportu należy wybrać uwzględnione pola danych, w zależności od systemu docelowego, do którego są eksportowane dane.
+- **Eksporty segmentów** umożliwiają eksportowanie encji segmentów z aplikacji Customer Insights. W przypadku pojedynczych segmentów (B-do-C) segmenty reprezentują listę profilów klientów. W przypadku firm (B-to-B) [segmenty mogą przedstawiać listę klientów lub kontaktów](segment-builder.md#create-a-new-segment-with-segment-builder). Podczas konfigurowania eksportu należy wybrać uwzględnione pola danych, w zależności od systemu docelowego, do którego są eksportowane dane.
 
 ### <a name="export-segments"></a>Eksportowanie segmentów
 
@@ -39,13 +39,14 @@ W większości przypadków opcja eksportu obsługuje oba typy środowisk. Ekspor
 - Segmenty w kontekście środowisk indywidualnych klientów są wbudowane w encji *ujednoliconego profilu klienta*. Każdy segment spełniający wymagania systemów docelowych (na przykład adres e-mail) może zostać wyeksportowany.
 
 **Środowiska eksportowania segmentów dla kont biznesowych (B2B)**  
-- Segmenty w kontekście środowisk kont biznesowych są wbudowane w encji *klienta*. Aby wyeksportować segmenty kont w stanie takim, jak są, system docelowy musi obsługiwać czyste segmenty klientów. Ta opcja ma miejsce w przypadku serwisu [LinkedIn](export-linkedin-ads.md), gdy podczas definiowania eksportu zostanie wybrania opcja **firma**.
-- Wszystkie inne systemy docelowe wymagają pól z encji kontaktu. Aby segmenty klientów mogą pobierać dane z kontaktów pokrewnych, definicja segmentu musi mieć atrybuty projektu encji kontaktu. Dowiedz się więcej o [konfigurowaniu segmentów i atrybutów projektu](segment-builder.md).
+- Segmenty w kontekście środowisk kont biznesowych są wbudowane w encji *klienta* lub *kontaktu*. Aby wyeksportować segmenty kont w stanie takim, jak są, system docelowy musi obsługiwać czyste segmenty klientów. Ta opcja ma miejsce w przypadku serwisu [LinkedIn](export-linkedin-ads.md), gdy podczas definiowania eksportu zostanie wybrania opcja **firma**.
+- Wszystkie inne systemy docelowe wymagają pól z encji kontaktu.
+- W przypadku dwóch typów segmentów (kontakty i konta) aplikacja Customer Insights automatycznie określa, które segmenty mogą być eksportowane w oparciu o system docelowy. Na przykład w przypadku systemu docelowego, takiego jak Mailchimp, funkcja Customer Insights pozwala jedynie wybrać segmenty kontaktów do wyeksportowania.
 
 **Limity dotyczące eksportów segmentu**  
 - Docelowe systemy innych firm mogą ograniczyć liczbę profilów klientów, które można eksportować. 
 - W przypadku poszczególnych klientów po wybraniu segmentu eksportu zobaczysz rzeczywistą liczbę elementów członkowskich segmentu. Pojawi się ostrzeżenie, jeśli segment jest zbyt duży. 
-- W przypadku kont biznesowych zobaczysz liczbę kont w segmencie; jednak liczba kontaktów, które mogą być projektowane, nie jest pokazywana. W niektórych przypadkach może to doprowadzić do tego, że wyeksportowany segment będzie zawierać więcej profilów klientów niż jest w stanie zaakceptować system docelowy. Jeśli limity systemu docelowego zostaną przekroczone, eksport zostanie pominięty.
+- W przypadku kont biznesowych w zależności od segmentu jest widać liczbę kont lub kontaktów. Pojawi się ostrzeżenie, jeśli segment jest zbyt duży. Przekroczenie limitów wyników w systemach docelowych spowoduje pominięcie eksportu.
 
 ## <a name="set-up-a-new-export"></a>Konfiguracja nowego eksportu
 
@@ -110,6 +111,20 @@ Aby wyeksportować dane bez oczekiwania na zaplanowane odświeżenie, przejdź d
 
 - Aby uruchomić wszystkie eksporty, wybierz polecenie **Uruchom wszystkie** na pasku poleceń. Uruchamiane są tylko eksporty z aktywnym harmonogramem. Aby uruchomić nie aktywny eksport, uruchom pojedynczy eksport.
 - Aby uruchomić pojedynczy eksport, wybierz go z listy i wybierz przycisk **Uruchom** na pasku poleceń.
+
+## <a name="troubleshooting"></a>Rozwiązywanie problemów
+
+### <a name="segment-not-eligible-for-export"></a>Segment nie jest uprawniony do eksportu
+
+**Problem** w środowisku kont biznesowych eksporty nie powiedzie się z komunikatem o błędzie: "Do tego miejsca docelowego eksportowania nie jest uprawniony następujący segment: "{nazwa segmentu}". Należy wybrać tylko segmenty typu ContactProfile i spróbować ponownie".
+
+**Środowiska rozwiązania** Customer Insights dotyczące kont biznesowych zaktualizowano w celu obsługi segmentów kontaktów oprócz segmentów klientów. Z powodu tej zmiany eksporty wymagają szczegółów kontaktu tylko dla segmentów opartych na kontaktach.
+
+1. [Utwórz segment na podstawie kontaktów](segment-builder.md) dopasowania do używanego wcześniej segmentu.
+
+1. Po uruchomieniu tego segmentu kontaktu dokonaj edycji odpowiedniego eksportu i wybierz nowy segment.
+
+1. Wybierz **opcję Zapisz**, aby zapisać konfigurację lub **Zapisz i uruchom** w celu od razu przetestowania tego eksportu.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

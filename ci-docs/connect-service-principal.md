@@ -1,7 +1,7 @@
 ---
 title: Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
 description: Do łączenia się z własnym repozytorium data lake użyj nazwy głównej usługi Azure.
-ms.date: 05/31/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,27 +11,28 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 949caa73578dbe0a511726ec045c0fd5f4621de4
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: eba10068c48db5c147100c25a397bcc13b014784
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081301"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304210"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Połącz się z kontem Azure Data Lake Storage przy użyciu nazwy głównej usługi Azure
 
-Ten artykuł omawia, jak połączyć Dynamics 365 Customer Insights z kontem Azure Data Lake Storage, używając nazwy głównej usługi Azure zamiast kluczy konta przechowywania.
+Dynamics 365 Customer Insights ma opcję połączenia z kontem Azure Data Lake Storage za pomocą nazwy głównej usługi Azure zamiast kluczy konta magazynu.
 
 Zautomatyzowane narzędzia korzystające z usług platformy Azure powinny zawsze mieć ograniczone uprawnienia. Zamiast logowania się do aplikacji jako w pełni uprzywilejowany użytkownik, platforma Azure oferuje nazwy głównej usługi. Możesz użyć nazwy głównej usługi do bezpiecznego [dodania lub edycji folderu Common Data Model jako źródła danych](connect-common-data-model.md) lub [utworzenia lub aktualizacji środowiska](create-environment.md).
 
-> [!IMPORTANT]
->
-> - Konto usługi Data Lake Storage, które będzie korzystać z jednostki usługi, musi być typu Gen2 i mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace). Konta magazynu usługi Azure Data Lake Gen1 nie są obsługiwane.
-> - Aby utworzyć jednostkę usługi, potrzebujesz uprawnień administratora dla dzierżawy platformy Azure.
+## <a name="prerequisites"></a>Wymagania wstępne
+
+- Konto usługi Data Lake Storage, które będzie korzystać z głównej usługi, musi mieć Gen2. Konta magazynu usługi Azure Data Lake Gen1 nie są obsługiwane.
+- Konto magazynu Azure Data Lake Storage musi mieć [włączoną hierarchiczną przestrzeń nazw](/azure/storage/blobs/data-lake-storage-namespace).
+- Uprawnienia administratora dla dzierżawy platformy Azure, jeśli musisz utworzyć nową jednostkę usługi.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Utwórz nazwę główną usługi Azure dla rozwiązania Customer Insights
 
-Przed utworzeniem nowej nazwy głównej usługi dla Customer Insights sprawdź, czy istnieje on już w twojej organizacji.
+Przed utworzeniem nowej nazwy głównej usługi dla Customer Insights sprawdź, czy istnieje on już w twojej organizacji. W większości przypadków już istnieje.
 
 ### <a name="look-for-an-existing-service-principal"></a>Poszukaj istniejącej nazwy głownej usługi
 
@@ -43,15 +44,29 @@ Przed utworzeniem nowej nazwy głównej usługi dla Customer Insights sprawdź, 
 
 4. Dodaj filtr dla **Identyfikatora aplikacji zaczynającego się od** `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` lub wyszukiwanie jej nazwy `Dynamics 365 AI for Customer Insights`.
 
-5. Jeśli znaleziono pasujący rekord, oznacza to, że nazwa główna usługi już istnieje.
+5. Jeśli znaleziono pasujący rekord, oznacza to, że nazwa główna usługi już istnieje. [Udziel uprawnień](#grant-permissions-to-the-service-principal-to-access-the-storage-account) do nazwy głównej usługi, aby uzyskać dostęp do konta magazynu.
 
    :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Zrzut ekranu przedstawiający istniejący nazwę główną usługi.":::
 
-6. Jeśli nie zostaną zwrócone żadne wyniki, można utworzyć [nową główną usługę](#create-a-new-service-principal). W większości przypadków już istnieje i wystarczy tylko udzielić uprawnień do głównej usługi w celu uzyskania dostępu do konta magazynu.
+6. Jeśli nie są zwracane żadne wyniki, [utwórz nową nazwę główną](#create-a-new-service-principal).
+
+### <a name="create-a-new-service-principal"></a>Utwórz nową nazwę główną usługi
+
+1. Zainstaluj najnowszą wersję programu Azure Active Directory PowerShell dla programu Graph. Aby uzyskać więcej informacji, przejdź do [instalacji programu Azure Active Directory PowerShell dla programu Graph](/powershell/azure/active-directory/install-adv2).
+
+   1. Na komputerze naciśnij klawisz Windows na klawiaturze i wyszukaj program **Windows PowerShell** i wybierz opcję **Uruchom jako Administrator**.
+
+   1. W wyświetlonym oknie PowerShell wprowadź polecenie `Install-Module AzureAD`.
+
+2. Utwórz nazwę główną usługi dla usługi Customer Insights przy użyciu modułu Azure AD PowerShell.
+
+   1. W oknie PowerShell wprowadź polecenie `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Zastąp *[identyfikator swojego katalogu]* rzeczywistym identyfikatorem katalogu subskrypcji Azure, w której chcesz utworzyć główną usługę. Parametr nazwy środowiska, `AzureEnvironmentName`, jest opcjonalny.
+  
+   1. Wprowadź `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. To polecenie tworzy podmiot główny usługi dla rozwiązania Customer Insights w wybranej subskrypcji platformy Azure.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Udziel uprawnień do nazwy głównej usługi, aby uzyskać dostęp do konta magazynu
 
-Przejdź do portalu Azure, aby przyznać uprawnienia do głównej usługi dla konta magazynu, które chcesz użyć w funkcji Customer Insights. Do konta lub kontenera magazynu musi być przypisana jedna z następujących ról:
+Aby przyznać uprawnienia do podmiotu usługi dla konta magazynu, które ma być potrzebne w funkcji Customer Insights, należy przypisać jedną z następujących ról do konta magazynu lub konteneru:
 
 |Poświadczenia|Wymagania|
 |----------|------------|
@@ -68,9 +83,9 @@ Przejdź do portalu Azure, aby przyznać uprawnienia do głównej usługi dla ko
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Zrzut ekranu przedstawiający portal Azure Portal podczas dodawania przypisania roli.":::
 
 1. W okienku **Dodaj przypisane roli** ustaw następujące właściwości:
-   - Rola: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu na podstawie wymienionych wyżej uprawnień.
-   - Przypisz dostęp do: **Użytkownik, grupa lub nazwa główna usługi**
-   - Wybierz członków: **Dynamics 365 AI dla Customer Insights** ([podmiot usługi](#create-a-new-service-principal) wyszukiwany wcześniej w tej procedurze)
+   - **Rola**: czytnik danych obiektu blob magazynu, współautor obiektu blob magazynu lub właściciel obiektu blob magazynu na podstawie wymienionych wyżej uprawnień.
+   - **Przypisz dostęp do**: **Użytkownik, grupa lub nazwa główna usługi**
+   - **Wybierz** członków: **Dynamics 365 AI dla Customer Insights** (podmiot [usługi wyszukiwany](#create-a-new-service-principal) wcześniej w tej procedurze)
 
 1. Wybierz **Przejrzyj + przypisz**.
 
@@ -78,7 +93,7 @@ Rozpowszechnienie zmian może zająć do 15 minut.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-customer-insights"></a>Wprowadź identyfikator zasobu Azure lub szczegóły subskrypcji Azure w załączniku do konta magazynu i rozwiązania Customer Insights
 
-W funkcji Customer Insights można dołączyć konto Data Lake Storage w celu [przechowywania danych wyjściowych](manage-environments.md) lub [użycia ich jako źródło danych](connect-dataverse-managed-lake.md). Ta opcja umożliwia wybór podejścia opartego na zasobach lub subskrypcji. W zależności od wybranego podejścia postępuj zgodnie z procedurą podaną w jednej z poniższych sekcji.
+Dołączyć konto Data Lake Storage do Customer Insights w celu [przechowywania danych wyjściowych](manage-environments.md) lub [użycia ich jako źródła danych](connect-dataverse-managed-lake.md). Wybierz metodę [opartą na zasobach](#resource-based-storage-account-connection) lub [oparta na subskrypcjach](#subscription-based-storage-account-connection) i wykonaj te czynności.
 
 ### <a name="resource-based-storage-account-connection"></a>Połączenie z kontem magazynu oparte na zasobach
 
@@ -92,7 +107,7 @@ W funkcji Customer Insights można dołączyć konto Data Lake Storage w celu [p
 
 1. W oknie Customer Insights wstaw identyfikator zasobu w polu zasobów wyświetlanym na ekranie połączenia z kontem magazynu.
 
-   :::image type="content" source="media/ADLS-SP-ResourceIdConnection.png" alt-text="Wprowadź informacje o identyfikatorze zasobu konta magazynu.":::   
+   :::image type="content" source="media/ADLS-SP-ResourceIdConnection.png" alt-text="Wprowadź informacje o identyfikatorze zasobu konta magazynu.":::
 
 1. Kontynuuj pozostałe kroki w aplikacji Customer Insights, aby dołączyć konto magazynu.
 
@@ -107,19 +122,5 @@ W funkcji Customer Insights można dołączyć konto Data Lake Storage w celu [p
 1. W Customer Insights podczas dołączania konta magazynu wybierz wartości odpowiadające im pól.
 
 1. Kontynuuj pozostałe kroki w aplikacji Customer Insights, aby dołączyć konto magazynu.
-
-### <a name="create-a-new-service-principal"></a>Utwórz nową nazwę główną usługi
-
-1. Zainstaluj najnowszą wersję programu Azure Active Directory PowerShell dla programu Graph. Aby uzyskać więcej informacji, przejdź do [instalacji programu Azure Active Directory PowerShell dla programu Graph](/powershell/azure/active-directory/install-adv2).
-
-   1. Na komputerze naciśnij klawisz Windows na klawiaturze i wyszukaj program **Windows PowerShell** i wybierz opcję **Uruchom jako Administrator**.
-
-   1. W wyświetlonym oknie PowerShell wprowadź polecenie `Install-Module AzureAD`.
-
-2. Utwórz nazwę główną usługi dla usługi Customer Insights przy użyciu modułu Azure AD PowerShell.
-
-   1. W oknie PowerShell wprowadź polecenie `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Zastąp *[identyfikator swojego katalogu]* rzeczywistym identyfikatorem katalogu subskrypcji Azure, w której chcesz utworzyć główną usługę. Parametr nazwy środowiska, `AzureEnvironmentName`, jest opcjonalny.
-  
-   1. Wprowadź `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. To polecenie tworzy podmiot główny usługi dla rozwiązania Customer Insights w wybranej subskrypcji platformy Azure.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

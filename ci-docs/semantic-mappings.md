@@ -1,9 +1,9 @@
 ---
 title: Mapowania semantyczne (wersja zapoznawcza)
 description: Omówienie mapowań semantycznych i sposobu ich używania.
-ms.date: 12/01/2021
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -11,18 +11,19 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: 8780c11c8b091717349f0fd75a36b99c3a63ab49
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183644"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303889"
 ---
 # <a name="semantic-mappings-preview"></a>Mapowania semantyczne (wersja zapoznawcza)
 
-Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniami, na wstępnie zdefiniowane schematy. Te schematy ułatwiają funkcji Customer Insights lepsze zrozumienie atrybutów danych. Mapowanie semantyczne i dostarczone dane włączają nowe szczegółowe informacje i funkcje w obszarze Customer Insights. Aby mapować dane działań na schematy, należy zapoznać się z dokumentacją dotyczącą [działań](activities.md).
+> [!NOTE]
+> Strona **Mapowania mapowania danych** jest dostępna tylko dla środowisk biznesowych (B-to-B), w których przy użyciu tej strony utworzono już profile kontaktów. Możesz nadal tworzyć profile poszczególnych kontaktów i zarządzać nimi, korzystając ze strony **Odwzorowania semantyczne**. Możesz też [ujednoliceć dane kontaktów w](data-unification-contacts.md) celu usunięcia duplikatów, zidentyfikować dopasowania w poszczególnych encji i utworzyć jeden ujednolicony profil kontaktu. Następnie możesz użyć ujednoliconego profilu kontaktu do tworzenia działań na poziomie kontaktu.
 
-**Mapowania semantyczne są obecnie włączone w środowiskach opartych na kontach biznesowych**. *ContactProfile* jest jedynym typem mapowania semantycznego, który jest obecnie dostępny w funkcji Customer Insights.
+Mapowania semantyczne umożliwiają mapowanie danych, które nie są działaniami, na wstępnie zdefiniowane schematy. Te schematy ułatwiają funkcji Customer Insights lepsze zrozumienie atrybutów danych. Mapowanie semantyczne i dostarczone dane włączają nowe szczegółowe informacje i funkcje w obszarze Customer Insights. Aby mapować dane działań na schematy, należy zapoznać się z dokumentacją dotyczącą [działań](activities.md).
 
 ## <a name="define-a-contactprofile-semantic-entity-mapping"></a>Definiowanie mapowania semantycznego encji ContactProfile
 
@@ -87,41 +88,5 @@ Wybierz mapowanie semantyczne, aby wyświetlić dostępne akcje.
 - **Odśwież** mapowanie semantyczne, by uwzględnić najnowsze dane. Odświeżanie każdego danego mapowania semantycznego spowoduje odświeżenie wszystkich mapowań semantycznych tego samego typu.
 - **Zmień nazwę** mapowania semantycznego. Wybierz pozycję **Zapisz**.
 - **Usuń** mapowanie semantyczne. Aby usunąć więcej niż jedno mapowanie semantyczne naraz, wybierz mapowania semantyczne i ikonę usuwania. Aby potwierdzić usunięcie, wybierz opcję **Usuń**.
-
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Użyj semantycznego mapowania encji ContactProfile do tworzenia aktywności na poziomie kontaktu
-
-Po utworzeniu semantycznego mapowania encji *ContactProfile* możesz przechwytywać aktywności kontaktów. Dzięki temu możesz zobaczyć na osi czasu aktywności na koncie, który kontakt był odpowiedzialny za poszczególne aktywności. Większość kroków jest zgodna z typową konfiguracją mapowania aktywności.
-
-   > [!NOTE]
-   > Aby aktywność na poziomie kontaktu działała, musisz posiadać oba atrybuty **AccountID** i **ContactID** dla każdego rekordu w danych aktywności.
-
-1. [Zdefiniuj mapowanie encji semantycznych *ContactProfile*](#define-a-contactprofile-semantic-entity-mapping) i uruchom mapowanie semantyczne.
-
-1. Wybierz pozycję **Dane** > **Działania**.
-
-1. Aby utworzyć nowe działanie, wybierz pozycję **Dodaj działanie**.
-
-1. Nazwij aktywność, wybierz źródłową encję aktywności i wybierz klucz główny encji aktywności.
-
-1. W kroku **Relacje** utwórz pośrednią relację między danymi źródłowymi aktywności a kontami, używając danych kontaktowych jako jednostki pośredniczącej. Aby uzyskać więcej informacji, przejdź do [ścieżek relacji bezpośredniej i pośredni](relationships.md#relationship-paths).
-   - Przykładowa relacja dla działania o nazwie *Zakupy*:
-      - **Dane aktywności Źródła Zakupów** > **Dane kontaktowe** na atrybucie **ContactID**
-      - **Dane kontaktu** > **Dane konta** na atrybucie **AccountID**
-
-   :::image type="content" source="media/Contact_Activities1.png" alt-text="Przykładowa konfiguracja relacji.":::
-
-1. Po ustawieniu relacji wybierz **Dalej** i zakończ konfigurację mapowania aktywności. Szczegółowe kroki dotyczące tworzenia aktywności znajdziesz w dziale [definiowanie aktywności](activities.md).
-
-1. Uruchom swoje mapowania aktywności.
-
-1. Po zakończeniu mapowania działań na poziomie kontaktu wybierz opcję **Klienci**. Działania na poziomie kontaktu są wyświetlane na osi czasu klienta.
-
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Wynik końcowy po skonfigurowaniu działań kontaktowych":::
-
-### <a name="contact-level-activity-timeline-filtering"></a>Filtrowanie osi czasu aktywności na poziomie kontaktu
-
-Oś czasu działań dla Twoich klientów zawiera ich identyfikatory lub imiona i nazwiska, w zależności od konfiguracji twojego *ContactProfile*, dla działań, które podjęli. Filtruj działania według kontaktów na osi czasu, aby zobaczyć konkretne kontakty, które Cię interesują. Aby wyświetlić wszystkie aktywności, które nie są przypisane do konkretnego kontaktu, wybierz **Aktywności nieprzypisane do kontaktu**.
-
-:::image type="content" source="media/Contact_Activities3.png" alt-text="Opcje filtrowania dostępne dla aktywności na poziomie kontaktu.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

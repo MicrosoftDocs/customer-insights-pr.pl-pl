@@ -1,7 +1,7 @@
 ---
-title: 'Instrukcje: Utwórz nowe środowisko'
+title: Utwórz nowe środowisko
 description: Kroki do tworzenia środowisk w rozwiązaniu Dynamics 365 Customer Insights.
-ms.date: 05/31/2022
+ms.date: 08/15/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,25 +12,25 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 0a45e2fd2bdb7b85883a536f8b42ee650e54db7e
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245570"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304257"
 ---
-# <a name="how-to-create-a-new-environment"></a>Instrukcje: Utwórz nowe środowisko
+# <a name="create-a-new-environment"></a>Utwórz nowe środowisko
 
-Po [zakupieniu licencji subskrypcji usługi Dynamics 365 Customer Insights](paid-license.md) administrator globalny dzierżawy usługi Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. Przejdź do [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start), aby rozpocząć. W tym scenariuszu można przejść bezpośrednio do [Krok 1: podaj podstawowe informacje](#step-1-provide-basic-information).
+Po [zakupieniu licencji subskrypcji usługi Dynamics 365 Customer Insights](paid-license.md) administrator globalny dzierżawy usługi Microsoft 365 otrzymuje wiadomość e-mail z zaproszeniem do utworzenia środowiska. Przejdź do [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start), aby rozpocząć. W tym scenariuszu zacznij od [Krok 1: podaj podstawowe informacje](#step-1-provide-basic-information).
 
-Po utworzeniu pierwszego środowiska administrator globalny dzierżawy Microsoft 365 może [dodawać użytkowników z ich organizacji jako administratorów](permissions.md). Administratorzy mogą dalej zarządzać użytkownikami i środowiskami. Jeśli Twoja organizacja kupi więcej niż jedną licencję na Customer Insights, [skontaktuj się z naszym zespołem pomocy technicznej](https://go.microsoft.com/fwlink/?linkid=2079641), aby zwiększyć liczbę dostępnych środowisk Aby uzyskać więcej informacji dotyczących wydajności i wydajności dodatku, przejrzyj przewodnik [licencjonowania usługi Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
+Po utworzeniu pierwszego środowiska administrator globalny dzierżawy Microsoft 365 może [dodawać użytkowników z ich organizacji jako administratorów](permissions.md). Administratorzy ci mogą następnie zarządzać użytkownikami i środowiskami. Jeśli Twoja organizacja kupi więcej niż jedną licencję na Customer Insights, [skontaktuj się z naszym zespołem pomocy technicznej](https://go.microsoft.com/fwlink/?linkid=2079641), aby zwiększyć liczbę dostępnych środowisk Aby uzyskać więcej informacji dotyczących wydajności i wydajności dodatku, przejrzyj przewodnik [licencjonowania usługi Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544). Po utworzeniu dodatkowych środowisk przejdź [do procesu tworzenia środowiska](#start-the-environment-creation-process).
 
 > [!TIP]
 > Jeśli chcesz wypróbować tę usługę, zobacz [Konfigurowanie środowiska w wersji próbnej](trial-signup.md).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-Aby tworzyć środowiska i zarządzać nimi, musisz mieć [uprawnienia administratora](permissions.md) w aplikacji Customer Insights.
+[Uprawnienia administratora](permissions.md) w Customer Insights
 
 ## <a name="start-the-environment-creation-process"></a>Rozpoczynanie procesu tworzenia środowiska
 
@@ -38,47 +38,49 @@ Aby tworzyć środowiska i zarządzać nimi, musisz mieć [uprawnienia administr
   
    :::image type="content" source="media/environment-picker.png" alt-text="Wybierz selektor środowiska.":::
 
-1. Postępuj zgodnie ze wskazówkami opisanymi w poniższych sekcjach, aby podać wszystkie wymagane informacje dotyczące nowego środowiska. Jeśli wcześniej skonfigurowano środowisko, można także [skopiować konfigurację](#copy-the-environment-configuration).
+1. Postępuj zgodnie ze wskazówkami opisanymi w poniższych sekcjach, aby podać wszystkie wymagane informacje dotyczące nowego środowiska.
 
 ## <a name="step-1-provide-basic-information"></a>Krok 1: Podaj podstawowe informacje
 
-W kroku **Podstawowe informacje** wybierz, czy chcesz utworzyć środowisko od podstaw, czy [skopiować dane z innego środowiska](#copy-the-environment-configuration).
+1. Wybierz, czy chcesz utworzyć środowisko od podstaw, czy skopiować dane z innego środowiska. [Kopiowanie danych z innego środowiska](#copy-the-environment-configuration) wymaga dodatkowych kroków.
 
    :::image type="content" source="media/environment-settings-dialog.png" alt-text="Okno dialogowe, aby utworzyć nowe środowisko Customer Insights.":::
 
-Podaj następujące szczegóły:
+1. Podaj następujące szczegóły:
 
-- **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić. Jeśli masz więcej niż jedno środowisko pracy, nadaj każdemu łatwą do zidentyfikowania nazwę.
-- **Wybierz swoją firmę**: wybierz podstawowych odbiorców dla nowego środowiska. Można pracować z poszczególnymi konsumentami (B2C) lub [kontami biznesowymi (B2B)](work-with-business-accounts.md). Jeśli Twoja organizacja prowadzi interesy głównie z osobami, takimi jak sprzedawca detaliczny lub kawiarnia, wybierz indywidualnych konsumentów. Jeśli głównymi odbiorcami są inne firmy, takie jak producent samochodów lub firma papiernicza, wybierz konta biznesowe.
-- **Wpisz**: Wybierz, czy chcesz utworzyć środowisko produkcyjne, czy piaskownicę. Środowiska piaskownicy nie zezwalają na zaplanowane odświeżanie danych i są przeznaczone do wstępnej implementacji i testowania. Środowiska piaskownicy używają tych samych podstawowych odbiorców co aktualnie wybrane środowisko produkcyjne.
-- **Region**: Region, w którym usługa jest wdrażana i hostowana. Aby [korzystać z własnego konta Azure Data Lake Storage](own-data-lake-storage.md) lub [połączyć się z istniejącą organizacją Microsoft Dataverse](customer-insights-dataverse.md), środowisko Customer Insights musi być w tym samym regionie.
+   - **Nazwa**: Nazwa tego środowiska. To pole jest już wypełnione, jeśli skopiowano istniejące środowisko, ale można to zmienić.
+   - **Wybierz swoją firmę**: główni odbiorcy w nowym środowisku: indywidualni konsumenci (B-do-C) lub [konta firmowe](work-with-business-accounts.md) (B-to-B). Jeśli Twoja organizacja prowadzi interesy głównie z osobami, takimi jak sprzedawca detaliczny lub kawiarnia, wybierz indywidualnych konsumentów. Jeśli głównymi odbiorcami są inne firmy, takie jak producent samochodów lub firma papiernicza, wybierz konta biznesowe.
+   - **Typ**: Rodzaj środowiska: produkcja lub piaskownica. Środowiska piaskownicy nie zezwalają na zaplanowane odświeżanie danych i są przeznaczone do wstępnej implementacji i testowania. Środowiska piaskownicy używają tych samych podstawowych odbiorców co aktualnie wybrane środowisko produkcyjne.
+   - **Region**: Region, w którym usługa jest wdrażana i hostowana. Aby [korzystać z własnego konta Azure Data Lake Storage](own-data-lake-storage.md) lub [połączyć się z istniejącą organizacją Microsoft Dataverse](customer-insights-dataverse.md), środowisko Customer Insights musi być w tym samym regionie.
+
+1. Wybierz **Dalej**.
 
 ## <a name="step-2-configure-data-storage"></a>Krok 2. Skonfiguruj magazyn danych
 
-W kroku **Magazyn danych** wybierz miejsce przechowywania danych z funkcji Customer Insights.
+1. Wybierz miejsce przechowywania danych Customer Insights:
 
-Do wyboru są dwie opcje:
+   - **Magazyn Customer Insights**: Przechowywanie danych jest zarządzane automatycznie. Jest to opcja domyślna i jeśli nie ma określonych wymagań dotyczących przechowywania danych na własnym koncie magazynu, zalecamy użycie tej opcji.
+   - **Azure Data Lake Storage**: własne konto Azure Data Lake Storage do przechowywania danych, aby mieć pełną kontrolę nad miejscem przechowywania danych. Wykonaj kroki opisane w [Korzystanie z własnego konta Azure Data Lake Storage](own-data-lake-storage.md).
 
-- **Magazyn Customer Insights**: Przechowywaniem danych zarządza zespół Customer Insights. Jest to opcja domyślna i jeśli nie ma określonych wymagań dotyczących przechowywania danych na własnym koncie magazynu, zalecamy użycie tej opcji.
-- **Azure Data Lake Storage**: Określ własne konto Azure Data Lake Storage do przechowywania danych, aby mieć pełną kontrolę nad miejscem przechowywania danych. Aby uzyskać więcej informacji, zobacz [Korzystanie z własnego konta Azure Data Lake Storage](own-data-lake-storage.md).
+   :::image type="content" source="media/data-storage-environment.png" alt-text="Wybierz preferowaną opcję przechowywania danych.":::
 
-:::image type="content" source="media/data-storage-environment.png" alt-text="Wybierz preferowaną opcję przechowywania danych.":::
+1. Wybierz **Dalej**.
 
 ## <a name="step-3-connect-to-microsoft-dataverse"></a>Krok 3. Nawiąż połączenie z funkcją Microsoft Dataverse
 
-Krok **Microsoft Dataverse** umożliwia połączenie aplikacji Customer Insights ze środowiskiem Dataverse. Udostępniaj dane za pomocą Dataverse, aby używać ich z aplikacjami biznesowymi opartymi na Dataverse, takimi jak Dynamics 365 Marketing lub aplikacje oparte na modelach w Power Apps.
+Jeśli masz środowisko Dataverse, połącz Customer Insights. Udostępniaj dane za pomocą Dataverse, aby używać ich z aplikacjami biznesowymi opartymi na Dataverse, takimi jak Dynamics 365 Marketing lub aplikacje oparte na modelach w Power Apps.
 
-Pozostaw to pole puste, jeśli nie masz własnego środowiska Dataverse, a my je dla Ciebie utworzymy.
+1. Wykonaj kroki opisane w tece [Praca z danymi aplikacji Customer Insights w programie Microsoft Dataverse](customer-insights-dataverse.md).
 
-Aby uzyskać więcej informacji, zobacz [Praca z danymi usługi Customer Insights w Microsoft Dataverse](customer-insights-dataverse.md).
+   :::image type="content" source="media/dataverse-provisioning.png" alt-text="udostępnianie danych z włączoną automatycznie obsługą Microsoft Dataverse dla nowych środowisk sieci.":::
 
-:::image type="content" source="media/dataverse-provisioning.png" alt-text="udostępnianie danych z włączoną automatycznie obsługą Microsoft Dataverse dla nowych środowisk sieci.":::
+1. Wybierz **Dalej**.
 
-### <a name="step-4-finalize-the-settings"></a>Krok 4. Sfinalizuj ustawienia
+## <a name="step-4-finalize-the-settings"></a>Krok 4. Sfinalizuj ustawienia
 
-W kroku **Przegląd** przejdź przez wszystkie określone ustawienia. Kiedy wszystko wygląda na zakończone, wybierz opcję **Utwórz**, aby skonfigurować środowisko.
+Przejrzyj podane ustawienia. Kiedy wszystko wygląda na zakończone, wybierz opcję **Utwórz**, aby skonfigurować środowisko.
 
-Niektóre ustawienia możesz zmienić później. Aby uzyskać więcej informacji, zobacz [Zarządzanie środowiskami](manage-environments.md).
+Aby zmienić niektóre ustawienia później, zobacz temat [Zarządzanie środowiskami](manage-environments.md).
 
 ## <a name="work-with-your-new-environment"></a>Praca z nowym środowiskiem
 
@@ -92,11 +94,9 @@ Przejrzyj poniższe artykuły, aby ułatwić sobie pracę z konfigurowaniem apli
 
 ## <a name="copy-the-environment-configuration"></a>Kopiowanie konfiguracji środowiska
 
-Jako administrator możesz skopiować konfigurację z istniejącego środowiska podczas tworzenia nowego.
+Jako administrator, jeśli zdecydujesz się skopiować konfigurację z istniejącego środowiska, wybierz z listy wszystkich dostępnych środowisk w Twojej organizacji.
 
 :::image type="content" source="media/environment-settings-dialog.png" alt-text="Zrzut ekranu przedstawiający opcje ustawień w ustawieniach środowiska.":::
-
-Zobaczysz listę wszystkich dostępnych środowisk w organizacji, z których można kopiować dane.
 
 Kopiowane są następujące ustawienia konfiguracji:
 
@@ -113,25 +113,25 @@ Kopiowane są następujące ustawienia konfiguracji:
 - Modele przewidywania
 - Przypisania ról
 
-## <a name="set-up-a-copied-environment"></a>Skonfiguruj skopiowane środowisko
+### <a name="set-up-a-copied-environment"></a>Skonfiguruj skopiowane środowisko
 
-Podczas kopiowania konfiguracji środowiska musisz wykonać kilka dodatkowych kroków, aby potwierdzić poświadczenia:
+Podczas kopiowania konfiguracji środowiska, po utworzeniu skopiowanego środowiska wyświetlany jest komunikat potwierdzający. Wykonaj następujące kroki, aby potwierdzić poświadczenia.
 
-- Profile klientów. Najpierw uwierzytelnij i pozyskaj źródła danych oraz uruchom ujednolicenie danych w celu odtworzenia profili klientów.
-- Poświadczenia źródła danych. Aby ręcznie uwierzytelnić i odświeżyć źródła danych, musisz podać poświadczenia dla każdego źródła danych.
-- Źródła danych z folderu Common Data Model i Dataverse. Musisz ręcznie utworzyć te źródła danych o tej samej nazwie, co w środowisku źródłowym.
-- Sekrety połączeń używane do eksportowania i wzbogacania. Musisz ponownie uwierzytelnić połączenia, a następnie ponownie aktywować wzbogacanie i eksporty.
+1. Wybierz **Przejdź do źródeł danych**, aby wyświetlić listę źródeł danych. Wszystkie źródła danych ukażą stan **Wymagane poświadczenia**.
 
-Po utworzeniu skopiowanego środowiska zobaczysz komunikat potwierdzający. Wybierz **Przejdź do źródeł danych**, aby wyświetlić listę źródeł danych.
+   :::image type="content" source="media/data-sources-copied.png" alt-text="Lista źródeł danych, które zostały skopiowane i wymagają uwierzytelniania.":::
 
-Wszystkie źródła danych ukażą stan **Wymagane poświadczenia**. Dokonaj edycji źródeł danych i wprowadź poświadczenia, aby je odświeżyć.
+1. Dokonaj edycji źródeł danych i wprowadź poświadczenia, aby je odświeżyć. Źródła danych z folderu Common Data Model i Dataverse muszą być tworzone ręcznie z taką samą nazwą jak w środowisku źródłowym.
 
-:::image type="content" source="media/data-sources-copied.png" alt-text="Lista źródeł danych, które zostały skopiowane i wymagają uwierzytelniania.":::
+1. Po odświeżeniu źródeł danych przejdź do **Dane** > **Ujednolicanie**. W tym miejscu można znaleźć ustawienia z poziomu środowiska źródłowego. Edytuj je w razie potrzeby lub wybierz **Ujednolicić** > **Ujednolicić profile i zależności klientów**, aby rozpocząć proces ujednolicenia danych i utworzyć ujednoliconą jednostkę klienta.
 
-Po odświeżeniu źródeł danych przejdź do **Dane** > **Ujednolicanie**. W tym miejscu można znaleźć ustawienia z poziomu środowiska źródłowego. Edytuj je zgodnie z wymaganiami lub wybierz **Uruchom**, aby rozpocząć proces ujednolicania danych i utworzyć zunifikowaną encję klienta.
+   > [!TIP]
+   > W przypadku kont i kontaktów wybierz **Ujednolicenie kont** > **Ujednolicenie profili i zależności**.
 
-Po zakończeniu ujednolicania danych należy przejść do **Miary** i **Segmenty**, aby je również odświeżyć.
+1. Po zakończeniu ujednolicania danych należy przejść do **Miary** i **Segmenty**, aby je również odświeżyć.
 
-Zanim ponownie aktywujesz eksporty i wzbogacenia, przejdź do **Administrator** > **Połączenia**, aby ponownie uwierzytelnić połączenia w nowym środowisku.
+1. Przejdź do **Administrator** > **Połączenia**, aby ponownie uwierzytelnić połączenia w nowym środowisku.
+
+1. Przejdź do **Dane** > **Wzbogacenie** i **Dane** > **Eksporty** w celu ponownej aktywacji.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

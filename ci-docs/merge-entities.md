@@ -2,7 +2,7 @@
 title: Ujednolicenie pól klientów w celu ujednolicania danych
 description: Scalanie encji w celu utworzenia ujednoliconych profili klientów.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213595"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304026"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Ujednolicenie pól klientów w celu ujednolicania danych
+# <a name="unify-customer-fields"></a>Ujednolicenie pól klientów
 
-W tym kroku procesu ujednolicania wybierz i wyklucz atrybuty, które mają zostać połączone w ramach ujednoliconej jednostki profilu. Na przykład, jeśli trzy encje mają dane mailowe, możesz chcieć zachować wszystkie trzy osobne pola mailowe lub połączyć je w jedno pole mailowe dla ujednoliconego profilu. Niektóre atrybuty są automatycznie łączone przez system. Możesz tworzyć stabilne i unikalne identyfikatory klientów oraz grupować powiązane profile w klastry.
+W tym kroku procesu ujednolicania wybierz i wyklucz atrybuty, które mają zostać połączone w ramach ujednoliconej jednostki profilu. Na przykład, jeśli trzy encje mają dane mailowe, możesz chcieć zachować wszystkie trzy osobne pola mailowe lub połączyć je w jedno pole mailowe dla ujednoliconego profilu. Niektóre atrybuty są automatycznie łączone przez system. Można utworzyć stabilne i unikatowe identyfikatory klientów. W przypadku klientów indywidualnych można pogrupować powiązane profile w klaster.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Strona scalania w procesie ujednolicania danych pokazująca tabelę z połączonymi polami definiującymi ujednolicony profil klienta.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Strona ujednolicenia pól klienta w procesie ujednolicenia danych pokazująca tabelę ze scalonymi polami, które definiują ujednolicony profil klienta.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Przeglądaj i aktualizuj pola klientów
 
@@ -47,7 +47,7 @@ W tym kroku procesu ujednolicania wybierz i wyklucz atrybuty, które mają zosta
 
 1. Opcjonalnie, [wygeneruj konfigurację identyfikatora klienta](#configure-customer-id-generation).
 
-1. Opcjonalnie [pogrupuj profile w gospodarstwa domowe lub klastry](#group-profiles-into-households-or-clusters).
+1. Opcjonalnie dla B-to-C [pogrupuj profile w gospodarstwa domowe lub klastry](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Następny krok: Przegląd ujednolicenia](review-unification.md)
@@ -161,7 +161,7 @@ Skonfigurowanie stabilnego identyfikatora klienta umożliwia uniknięcie tego za
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Grupowanie profilów w gospodarstwa domowe lub klastry
 
-Możesz zdefiniować reguły grupujące powiązane profile w klastry. Obecnie są dostępne dwa typy klastrów — gospodarstwa domowe i klastry niestandardowe. System automatycznie wybiera gospodarstwa domowe ze wstępnie zdefiniowanymi regułami, jeśli encja *Klient* zawiera pola semantyczne *Person.LastName* i *Location.Address*. Można też utworzyć klaster z własnymi regułami i warunkami, podobnie do [reguł dopasowania](match-entities.md#define-rules-for-match-pairs).
+Dla klientów indywidualnych można zdefiniować reguły grupujące powiązane profile w klaster. Obecnie są dostępne dwa typy klastrów — gospodarstwa domowe i klastry niestandardowe. System automatycznie wybiera gospodarstwa domowe ze wstępnie zdefiniowanymi regułami, jeśli encja *Klient* zawiera pola semantyczne *Person.LastName* i *Location.Address*. Można też utworzyć klaster z własnymi regułami i warunkami, podobnie do [reguł dopasowania](match-entities.md#define-rules-for-match-pairs).
 
 1. Wybierz **Zaawansowane** > **Utwórz klaster**.
 

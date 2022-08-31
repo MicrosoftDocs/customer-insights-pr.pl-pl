@@ -1,7 +1,7 @@
 ---
 title: Omówienie segmentów
 description: Omówienie segmentów oraz sposobu ich tworzenia i zarządzania nimi.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246306"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304808"
 ---
 # <a name="segments-overview"></a>Omówienie segmentów
 
 Segmenty umożliwiają grupowanie klientów na podstawie atrybutów demograficznych, transakcyjnych i behawioralnych. W celu realizacji celów biznesowych można korzystać z segmentów w celu ukierunkowania kampanii promocyjnych, działań sprzedaży i akcji obsługi klienta.
 
-Profile klientów zgodne z filtrami definicji segmentu są określane mianem *członków* segmentu. Niektóre [ograniczenia dotyczące usług](/dynamics365/customer-insights/service-limits) mają zastosowanie.
+Profile klientów lub kontaktów zgodne z filtrami definicji segmentu są określane mianem *członków* segmentu. Niektóre [ograniczenia dotyczące usług](/dynamics365/customer-insights/service-limits) mają zastosowanie.
 
 ## <a name="create-a-segment"></a>Utwórz segment
 
@@ -41,13 +41,19 @@ Wybierz sposób tworzenia segmentu na podstawie wartości odbiorcy.
 
 # <a name="business-accounts-b-to-b"></a>[Klienci biznesowi (B2B)](#tab/b2b)
 
-- Proste lub złożone segmenty z budowniczym segmentów: [Tworzenie własnego](segment-builder.md)
+Segment klientów lub segment kontaktów (podgląd) dzięki konstruktorowi segmentów: [tworzenie własnych](segment-builder.md)
+
+> [!NOTE]
+> W większości miejsc eksportu są wymagane informacje kontaktowe do celów marketingowych. Dlatego należy utworzyć segmenty kontaktów, które będą korzystać z tych eksportów.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Zarządzanie istniejącymi segmentami
 
-Przejdź na stronę **Segmenty**, aby wyświetlić utworzone segmenty, ich stan, liczbę członków i czas ostatniego odświeżania danych. Możesz posortować listę segmentów według dowolnej kolumny lub skorzystać z pola wyszukiwania, aby znaleźć segment, którym chcesz zarządzać.
+Przejdź na stronę **Segmenty**, aby wyświetlić utworzone segmenty, ich stan i stan oraz czas ostatniego odświeżania danych. Możesz posortować listę segmentów według dowolnej kolumny lub skorzystać z pola wyszukiwania, aby znaleźć segment, którym chcesz zarządzać.
+
+> [!TIP]
+> W środowiskach B-to-B kolumna **Typ odbiorcy** umożliwia określenie, czy segment jest oparty na kontach, czy na kontaktach.
 
 Wybierz segment, aby wyświetlić dostępne działania.
 
@@ -82,7 +88,7 @@ W dolnej części znajduje się lista członków segmentu.
 > [!NOTE]
 > Pola wyświetlane na tej liście są oparte na atrybutach encji segmentu.
 >
->Lista jest podglądem pasujących składników segmentu i zawiera pierwsze 100 rekordów segmentu, dzięki czemu można szybko oceniać i przejrzeć w razie potrzeby jego definicje. Aby wyświetlić wszystkie pasujące rekordy, [wyeksportuj segment](export-destinations.md).
+> Lista jest podglądem pasujących składników segmentu i zawiera pierwsze 100 rekordów segmentu, dzięki czemu można szybko oceniać i przejrzeć w razie potrzeby jego definicje. Aby wyświetlić wszystkie pasujące rekordy, zaznacz **opcję Zobacz więcej**, co powoduje otwarcie strony [**Encje**](entities.md) lub wyeksportowanie [segmentu](export-destinations.md).
 
 ## <a name="refresh-segments"></a>Odśwież segmenty
 

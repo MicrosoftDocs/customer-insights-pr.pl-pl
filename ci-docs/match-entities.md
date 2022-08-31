@@ -2,7 +2,7 @@
 title: Warunki dopasowania dla ujednolicenia danych
 description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientów.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139716"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304670"
 ---
 # <a name="match-conditions-for-data-unification"></a>Warunki dopasowania dla ujednolicenia danych
 
@@ -27,6 +27,8 @@ Ten krok w ujednolicenia określa kolejność dopasowania i zasady dopasowania m
 
 > [!NOTE]
 > Po utworzeniu warunków dopasowania i wybraniu **Dalej** nie możesz usunąć wybranej encji lub atrybutu. W razie potrzeby wybierz **Wstecz**, aby przejrzeć wybrane encje i atrybuty przed kontynuowaniem.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Uwzględnij wzbogacone encje (wersja zapoznawcza)
 
@@ -43,14 +45,14 @@ Jeśli wzbogaciłeś encje na poziomie źródła danych, aby poprawić wyniki uj
 Każde dopasowanie ujednolica co najmniej dwie encje w postaci jednej skonsolidowanej encji. Jednocześnie są w nim zachowywane unikatowe rekordy klientów. Kolejność dopasowania wskazuje kolejność, w jakiej system próbuje dopasować rekordy.
 
 > [!IMPORTANT]
-> Pierwsza jednostka na liście jest nazywana jednostką główną. Podmiot główny służy jako podstawa twojego zbioru danych zunifikowanych profili. Dodatkowe jednostki, które zostaną wybrane, zostaną dodane do tej jednostki.
+> Pierwsza jednostka nazywana jest jednostką podstawową, która służy jako podstawa dla twoich zunifikowanych profili. Dodatkowe jednostki, które zostaną wybrane, zostaną dodane do tej jednostki.
 >
 > Ważne uwagi:
 >
 > - Jako jednostkę główną wybierz jednostkę posiadającą najbardziej kompletne i wiarygodne dane profilowe o swoich klientach.
 > - Wybierz encję, która kilka atrybutów wspólnych z innymi encjami (np. imię i nazwisko, numer telefonu lub adres e-mail), jako encję podstawową.
 
-1. Na stronie **Warunków dopasowania** użyj strzałek w górę i w dół, aby przenieść encje w wybranej kolejności, lub przeciągnij je i upuść. Na przykład wybierz element **Contacts:eCommerce** jako encję podstawową i element **CustomerLoyalty:Loyalty** jako drugą encję.
+1. Na stronie **Warunków dopasowania** użyj strzałek w górę i w dół, aby przenieść encje w wybranej kolejności, lub przeciągnij je i upuść. Na przykład wybierz element **eCommerceCustomers** jako encję podstawową i element **loyCustomers** jako drugą encję.
 
 1. Aby każdy rekord w encji był unikalnym klientem, niezależnie od tego, czy zostanie znalezione dopasowanie, wybierz **Uwzględnij wszystkie rekordy**. Wszystkie rekordy w tej encji, które nie pasują do rekordów w innych encjach, są uwzględniane w profilu ujednoliconym. Rekordy, które nie mają dopasowania, nazywane są pojedynczymi.
   
@@ -70,7 +72,7 @@ Ostrzeżenie obok nazwy encji oznacza, że dla danej pary dopasowań nie został
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Zrzut ekranu okienka Dodaj regułę.":::
 
-   - **Wybierz podmiot/pole (pierwszy wiersz)**: Wybierz powiązaną encję i atrybut, aby określić właściwość rekordu, która prawdopodobnie jest unikalna dla klienta. Może to być na przykład numer telefonu lub adres e-mail. Unikaj dopasowywania według atrybutów typu działania. Na przykład identyfikator zakupu prawdopodobnie nie będzie mieć dopasowania w innych typach rekordów.
+   - **Wybierz podmiot/pole (pierwszy wiersz)**: Wybierz powiązaną encję i atrybut, która prawdopodobnie jest unikalna dla klienta. Może to być na przykład numer telefonu lub adres e-mail. Unikaj dopasowywania według atrybutów typu działania. Na przykład identyfikator zakupu prawdopodobnie nie będzie mieć dopasowania w innych typach rekordów.
 
    - **Wybierz podmiot/pole (drugi rząd)**: Wybierz atrybut, który odnosi się do atrybutu encji określonej w pierwszym rzędzie.
 
@@ -116,7 +118,7 @@ Reguły dopasowania reprezentują zestawy warunków. Aby dopasować encje wedłu
 
 ### <a name="add-exceptions-to-a-rule"></a>Dodawanie wyjątków do reguły
 
-W większości przypadków encja dopasowania potencjalnych klientów do unikatowych profilów klientów ze skonsolidowanych danymi. Aby dynamicznie rozwiązać rzadkie przypadki wyników fałszywie dodatnich i fałszywie ujemnych, można zdefiniować wyjątki dla reguły dopasowania. Wyjątki są stosowanie po przetworzeniu reguł dopasowania w celu uniknięcia dopasowania wszystkich rekordów, które spełniają kryteria wyjątków.
+W większości przypadków encja dopasowania potencjalnych klientów do unikatowych profilów klientów ze skonsolidowanych danymi. Aby rozwiązać rzadkie przypadki wyników fałszywie dodatnich i fałszywie ujemnych, można zdefiniować wyjątki dla reguły dopasowania. Wyjątki są stosowanie po przetworzeniu reguł dopasowania w celu uniknięcia dopasowania wszystkich rekordów, które spełniają kryteria wyjątków.
 
 Jeśli na przykład reguła dopasowania zawiera nazwisko, miejscowość i datę urodzenia, system będzie identyfikować bliźniacze wpisy z tym samym nazwiskiem, zamieszkałe w tej samej miejscowości, jako ten sam profil. Można określić wyjątek, który nie pasuje do profilów, jeśli imiona w encji, które są łączone, nie są takie same.
 
@@ -134,7 +136,7 @@ Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne
 |---------|---------|---------|
 |Zawsze pasują     | Określa wartości, które są zawsze dopasowane.         |  Zawsze dopasowuje *Mike* i *MikeR*.       |
 |Nigdy nie pasują     | Określa wartości, które nigdy nie są dopasowane.        | Nie dopasuje *John* i *Jonathan*.        |
-|Obejście niestandardowe     | Określa wartości, które system powinien zawsze ignorować na etapie dopasowania. |  Podczas dopasowania ignoruj wartości *11111* i *Nieznane*.        |
+|Obejdź            | Określa wartości, które system powinien zawsze ignorować na etapie dopasowania. |  Podczas dopasowania ignoruj wartości *11111* i *Nieznane*.        |
 |Mapowanie aliasu    | Zdefiniowanie wartości, które system powinien rozważyć jako tę samą wartość.         | Załóż, że *Joe* jest równe *Joseph*.        |
 
 1. Wybierz **Niestandardowy**.
