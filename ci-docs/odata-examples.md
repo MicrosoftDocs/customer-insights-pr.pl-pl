@@ -1,27 +1,27 @@
 ---
 title: Przykłady zapytań OData dla interfejsów API usługi Customer Insights
 description: Powszechnie używane przykłady wykorzystania Open Data Protocol (OData) do zadawania pytań Customer Insights API w celu przeglądania danych.
-ms.date: 05/25/2022
+ms.date: 08/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
-ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
+ms.openlocfilehash: 26e56a3bab01ba55284a52e72efbcbfbaadaad6f
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "9121575"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387215"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>Przykłady zapytań OData dla interfejsów API usługi Customer Insights
 
 Open Data Protocol (OData) jest protokołem dostępu do danych zbudowanym na podstawowych protokołach, takich jak HTTP. Wykorzystuje powszechnie akceptowane metodologie, takie jak REST dla sieci. Istnieją różne rodzaje bibliotek i narzędzi, które mogą być używane do korzystania z usług OData.
 
-Ten artykuł zawiera listę często poszukiwanych przykładowych zapytań, które pomogą Ci w budowaniu własnych implementacji opartych na [Customer Insights API](apis.md).
+Aby pomóc Ci w tworzeniu własnych implementacji opartych na [Interfejsach API Customer Insights](apis.md), przejrzyj często zadawane przykładowe zapytania.
 
-Musisz zmodyfikować próbki zapytań, aby działały na docelowych środowiskach: 
+Musisz zmodyfikować próbki zapytań, aby działały na docelowych środowiskach:
 
 - {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` gdzie {instanceId} jest identyfikatorem GUID środowiska Customer Insights, które chcesz przeszukać. Operacja [ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) pozwala ci znaleźć {InstanceId}, do których masz dostęp.
 - {CID}: GUID zunifikowanego rekordu klienta. Przykład: `ce759201f786d590bf2134bff576c369`.
@@ -31,7 +31,7 @@ Musisz zmodyfikować próbki zapytań, aby działały na docelowych środowiskac
 
 ## <a name="customer"></a>kliencie
 
-Poniższa tabela zawiera zestaw przykładowych zapytań dla encji *Klient*.
+Przykładowe zapytania dotyczące *encji* Klient.
 
 |Typ zapytania |Przykład  | Uwaga  |
 |---------|---------|---------|
@@ -46,7 +46,7 @@ Poniższa tabela zawiera zestaw przykładowych zapytań dla encji *Klient*.
 
 ## <a name="unified-activity"></a>Ujednolicona aktywność
 
-Poniższa tabela zawiera zestaw przykładowych zapytań dla encji *Ujednolicona aktywność*.
+Przykładowe zapytania dotyczące encji *UnifiedActivity*.
 
 |Typ zapytania |Przykład  | Uwaga  |
 |---------|---------|---------|
@@ -59,7 +59,7 @@ Poniższa tabela zawiera zestaw przykładowych zapytań dla encji *Ujednolicona 
 
 ## <a name="other-examples"></a>Inne przykłady
 
-Poniższa tabela zawiera zestaw przykładowych zapytań dla innych encji.
+Przykładowe zapytania dotyczące innych encji.
 
 |Typ zapytania |Przykład  | Uwaga  |
 |---------|---------|---------|

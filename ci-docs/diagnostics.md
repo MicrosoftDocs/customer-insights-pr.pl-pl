@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245938"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352814"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Eksportuj dzienniki diagnostyczne (wersja zapoznawcza)
 
@@ -36,8 +36,8 @@ Aplikacja Customer Insights wysyła następujące dzienniki zdarzeń:
 
 - Aktywna [subskrypcja platformy Azure](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Uprawnienia [administratora](permissions.md#admin) w Customer Insights.
+- Poprawny zasób na platformie Azure, który spełnia [wymagania docelowe dotyczące](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) Magazynu Azure, Centrum zdarzeń Azure lub Analizy dzienników Azure.
 - [Rola współautora i administratora dostępu użytkownika](/azure/role-based-access-control/role-assignments-portal) na zasobie docelowym w Azure. Zasobem może być konto Azure Data Lake Storage, centrum zdarzeń platformy Azure lub obszar roboczy usługi Azure Log Analytics. To uprawnienie jest niezbędne do konfigurowania ustawień diagnostycznych w funkcji Customer Insights, ale można je zmienić po pomyślnej konfiguracji.
-- Spełnione są [wymagania docelowe](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) usługi Azure Storage, w centrum zdarzeń platformy Azure lub analiza dzienników Azure.
 - Co najmniej rola **Czytelnik** w grupie zasobów, do której należy zasób.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Skonfiguruj diagnostykę za pomocą Azure Monitor
