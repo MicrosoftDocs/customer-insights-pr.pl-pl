@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: dd433b57e8695891a08d6f7fdb8c87befd2e1cfa
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246121"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396074"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Pozyskiwanie danych w czasie rzeczywistym (wersja zapoznawcza)
 
@@ -82,10 +82,5 @@ Możesz korzystać z funkcji czasu rzeczywistego, tworząc własny potok i łąc
 Działanie można ogłosić w formacie systemu źródłowego lub w formacie UnifiedActivity. Pobierz format, tworząc wywołanie interfejsu API do /api/instances/{instanceId}/manage/entities/UnifiedActivity.
 
 Szczegółowe informacje o tym interfejsie API, w tym parametry i odpowiedzi, można znaleźć w sekcji **EntityData** w [skorowidzu interfejsów API Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). Aby uzyskać więcej informacji, zobacz temat [Praca z interfejsami API Customer Insights](apis.md).
-
-## <a name="understand-your-real-time-usage-with-telemetry"></a>Informacje o sposobie korzystania z telemetrii w czasie rzeczywistym
-
-Uzyskaj przegląd liczby żądań do interfejsu API czasu rzeczywistego i informacje o problemach, które może napotkać system. Można uzyskać dostęp do [telemetryki w czasie rzeczywistym](system.md#view-api-usage). 
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

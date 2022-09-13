@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245846"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396104"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Tworzenie połączenia z danymi w programie Azure Data Lake Storage
 
@@ -39,6 +39,8 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
   - Czytnik danych Storage Blob
   - Właściciel danych Storage Blob
   - Współautor danych w usłudze Blob Storage
+
+- Użytkownik konfigurujący połączenie źródła danych musi mieć co najmniej uprawnienia współautora danych w usłudze Blob Storage dla konta magazynu.
 
 - Dane w magazynie Data Lake Storage powinny być zgodne ze standardem Common Data Model dla przechowywania danych oraz mają wspólny model danych reprezentujący schemat plików danych (*.csv lub *.parquet). W manifeście muszą być podane szczegółowe informacje o encjach, takie jak kolumny encji i typy danych, a także o lokalizacji i typie pliku danych. Aby uzyskać więcej informacji, zobacz [Manifest Common Data Model](/common-data-model/sdk/manifest). Jeśli ten manifest nie istnieje, administratorzy z dostępem właściciela danych obiektów blob magazynu lub współautora danych obiektów blob magazynu mogą zdefiniować schemat podczas pozyskiwania danych.
 
@@ -62,7 +64,7 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
    > [!NOTE]
    > Potrzebujesz jednej z następujących ról w kontenerze lub koncie magazynu do utworzenia źródła danych:
    >
-   >  - Czytnik danych obiektów blob magazynu wystarcza do odczytywania z konta magazynu i pozyskiwania danych do usługi Customer Insights. 
+   >  - Czytnik danych obiektów blob magazynu wystarcza do odczytywania z konta magazynu i pozyskiwania danych do usługi Customer Insights.
    >  - Współautor lub właściciel obiektów blob magazynu jest wymagany, jeśli chcesz edytować pliki manifestu bezpośrednio w Customer Insights.  
   
 1. Wybierz nazwę **Kontener** zawierającą dane i schemat (plik model.json lub manifest.json), z których chcesz zaimportować dane, i wybierz przycisk **Dalej**.

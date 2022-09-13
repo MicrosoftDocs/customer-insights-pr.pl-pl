@@ -160,8 +160,6 @@
           href: sentiment-analysis.md
         - name: Używanie modeli niestandardowych z usługi Uczenie maszynowe Azure
           href: custom-models.md
-        - name: Uzupełnij częściowo brakujące dane
-          href: predictions.md
     - name: Przykładowe przewodniki
       items:
         - name: Przykładowy przewodnik dotyczący przewidywania CLV

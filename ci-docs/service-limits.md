@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 421e1aa41a54a4b8c34ac27fc7c02e510d2bb588
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387169"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411753"
 ---
 # <a name="service-limits-in-customer-insights"></a>Ograniczenia dotyczące usług w Customer Insights
 
@@ -23,7 +23,7 @@ ms.locfileid: "9387169"
 
 | Obszar  | Limity  | Uwagi |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmenty, miary i przewidywania | 300  | Łączna liczba [segmentów](segments.md), [miar](measures.md) i [przewidywań](predictions.md) nie może przekraczać 300.  |
+| Segmenty, miary i przewidywania | 300  | Łączna liczba [segmentów](segments.md), [miar](measures.md) i [przewidywań](predictions-overview.md) nie może przekraczać 300.  |
 | Relacje | 20 poziomów głębokości relacji w ścieżkach jednostek. | Podczas tworzenia [segmentów](segments.md) lub [miar](measures.md) przy użyciu interfejsu konstruktora ścieżki jednostki mogą mieć maksymalnie do 20 przeskoków relacji między jednostką początkową a docelową.  |
 
 ## <a name="fair-scheduling-of-jobs"></a>Uczciwie planowanie zadań

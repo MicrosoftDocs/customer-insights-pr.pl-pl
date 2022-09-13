@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246260"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396014"
 ---
 # <a name="view-system-configuration"></a>Wyświetl konfigurację systemu
 
@@ -38,12 +38,6 @@ Wyświetl szczegółowe informacje na temat wykorzystania interfejsu API w czasi
    - **Wywołania interfejsu API** — wykres, który wizualizuje zagregowaną liczbę wywołań interfejsu API w wybranym przedziale czasu.
    - **Transfer danych** — wykres przedstawiający ilość danych przesłanych przez interfejs API w wybranym okresie.
    - **Operacje** — tabelę z wierszami dla każdej dostępnej operacji API i szczegółami użycia tych operacji. Wybierz nazwę operacji, aby przejść do odwołania [do interfejsu API](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   Operacje, które korzystają z [pozyskiwania danych w czasie rzeczywistym](real-time-data-ingestion.md), zawierają symbol lornetki, który umożliwia wyświetlanie informacji o użyciu interfejsów API w czasie rzeczywistym.
-
-   1. Wybierz przycisk lornetki, aby otworzyć panel **Użycie interfejsu API w czasie rzeczywistym** zawierający szczegóły użycia interfejsu API w czasie rzeczywistym dla operacji.
-   1. **Wybierz horyzont czasowy** do wyświetlenia.
-   1. Pole **Grupuj według** umożliwia wybranie sposobu najlepszego prezentowania interakcji w czasie rzeczywistym. Grupuj dane według **metody**, **kwalifikowanej nazwy encji** (pozyskanej encji), **Utworzone przed** (źródło zdarzenia), **Wynik** (powodzenie lub niepowodzenie) lub **Błąd** interfejsu API. Dane są dostępne jako wykres chronologiczny i jako tabela.
 
 ## <a name="view-system-information"></a>Wyświetl informacje o systemie
 

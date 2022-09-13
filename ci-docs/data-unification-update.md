@@ -1,7 +1,7 @@
 ---
 title: Aktualizowanie ustawieńification klienta, konta lub kontaktu
 description: Zaktualizuj zduplikowane reguły, reguły dopasowania lub ujednolicone pola w ustawieniach ujednolicenia klienta lub konta.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304348"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392484"
 ---
 # <a name="update-unification-settings"></a>Zaktualizuj ustawienia ujednolicania
 
@@ -38,7 +38,7 @@ Aby przejrzeć lub zmienić ustawienia ujednolicenia po utworzeniu profilu ujedn
    > Kafelek **Pasujące warunki** jest wyświetlany tylko wtedy, gdy wybrano wiele encji.
 
 1. Wybierz, co chcesz zaktualizować:
-   - [Pola źródłowe](#edit-source-fields), aby dodać encje lub atrybuty albo zmienić typy atrybutów.
+   - [Pola źródłowe](#edit-source-fields), aby dodać atrybuty lub encje albo zmienić typy atrybutów. Aby usunąć atrybut, zobacz [Usuwanie ujednoliconego pola](#remove-a-unified-field). Aby usunąć encję, zobacz [Usuwanie ujednoliconej encji](#remove-a-unified-entity).
    - [Duplikaty rekordów](#manage-deduplication-rules), aby zarządzać regułami deduplikacji lub preferencjami scalania.
    - [Warunki dopasowania](#manage-match-rules), aby zaktualizować reguły dopasowania dla dwóch lub więcej encji.
    - [Zunifikowane pola klienta](#manage-unified-fields), aby połączyć lub wykluczyć pola. Możesz także grupować powiązane profile w klastry.
@@ -53,8 +53,6 @@ Aby przejrzeć lub zmienić ustawienia ujednolicenia po utworzeniu profilu ujedn
 
 ## <a name="edit-source-fields"></a>Edytuj pola źródłowe
 
-Nie możesz usunąć atrybutu lub encji, jeśli zostały one już zunifikowane.
-
 1. Wybierz **Edytuj** na kafelku **Pola źródłowe**.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Zrzut ekranu strony Pola źródłowe pokazujący liczbę kluczy głównych, zmapowanych i niezmapowanych pól":::
@@ -66,6 +64,80 @@ Nie możesz usunąć atrybutu lub encji, jeśli zostały one już zunifikowane.
 1. Opcjonalnie możesz zmienić klucz główny dla encji, typy atrybutów oraz włączyć lub wyłączyć **inteligentne mapowanie**. Aby uzyskać więcej informacji, zobacz temat [Wybierz pola źródłowe](map-entities.md).
 
 1. Wybierz **Następny**, aby wprowadzić zmiany w regułach deduplikacji, lub wybierz **Zapisz i zamknij** i wróć do [Aktualizuj ustawienia ujednolicenia](#update-unification-settings)
+
+### <a name="remove-a-unified-field"></a>Usuwanie ujednoliconego pola
+
+Aby usunąć pole, które zostało ujednolicone, należy je usunąć z zależności, takich jak segmenty, miary, wzbogacenia lub relacje.
+
+1. Po usunięciu wszystkich zależności pola przejdź do pozycji **Dane** > **Ujednolicanie**.
+
+1. Wybierz **Edytuj** na kafelku **Ujednolicone pola klientów**.
+
+1. Wybierz wszystkie wystąpienia pola, a następnie wybierz opcję **Wyklucz**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Zrzut ekranu strony ujednoliconych pól przedstawiający wybrane pola i przycisk Wyklucz":::
+
+1. Wybierz pozycję **Gotowe**, aby potwierdzić, a następnie wybierz **Zapisz i zamknij**.
+
+   > [!TIP]
+   > Jeśli zostanie wyświetlony komunikat „Nie można zapisać ujednolicenia. Nie można zmodyfikować ani usunąć określonego zasobu z powodu wcześniejszych zależności”, pole jest nadal używane we wcześniejszej zależności.
+
+1. Jeśli pole jest używane w regule dla zduplikowanych rekordów lub pasujących warunków, należy wykonać następujące kroki. W przeciwnym razie przejdź do następnego kroku.
+   1. Wybierz **Edytuj** na kafelku **Duplikaty rekordów**.
+   1. Usuń pole ze wszystkich reguł, w których jest używane, a następnie wybierz opcję **Dalej**.
+   1. Na stronie **Pasujące warunki** usuń pole ze wszystkich reguł, w których jest używane (jeśli tak jest), a następnie wybierz opcję **Zapisz i zamknij**.
+   1. Wybierz pozycję **Ujednolicanie** > **Ujednolić profile i zależności klientów**. Przed podjęciem następnego kroku poczekaj na zakończenie procesu ujednolicania.
+
+1. Wybierz **Edytuj** na kafelku **Pola źródłowe**.
+
+1. Wybierz pozycję **Wybierz encje i pola** i wyczyść pole wyboru obok każdego wystąpienia pola.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Zrzut ekranu przedstawiający okno dialogowe Wybieranie encji i pól z wyczyszczonymi polami wyboru":::
+
+1. Wybierz **Zastosuj**.
+
+1. Wybierz **Zapisz i zamknij**.
+
+1. Wybierz pozycję **Ujednolicanie** > **Ujednolić profile i zależności klientów**, aby zaktualizować ujednolicony profil.
+
+### <a name="remove-a-unified-entity"></a>Usuwanie ujednoliconej encji
+
+Aby usunąć encję, która zostało ujednolicona, należy ją usunąć z zależności, takich jak segmenty, miary, wzbogacenia lub relacje.
+
+1. Po usunięciu wszystkich zależności encji przejdź do pozycji **Dane** > **Ujednolicanie**.
+
+1. Wybierz **Edytuj** na kafelku **Ujednolicone pola klientów**.
+
+1. Wybierz wszystkie pola dla encji, a następnie wybierz pozycję **Wyklucz**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Zrzut ekranu ujednoliconych pól z zaznaczonymi wszystkimi polami dla encji i przyciskiem Wyklucz":::
+
+1. Wybierz pozycję **Gotowe**, aby potwierdzić, a następnie wybierz **Zapisz i zamknij**.
+
+   > [!TIP]
+   > Jeśli zostanie wyświetlony komunikat „Nie można zapisać ujednolicenia. Nie można zmodyfikować ani usunąć określonego zasobu z powodu wcześniejszych zależności”, encja jest nadal używana we wcześniejszej zależności.
+
+1. Wybierz **Edytuj** na kafelku **Duplikaty rekordów**.
+
+1. Usuń wszystkie reguły z encji, jeśli istnieją, a następnie wybierz opcję **Dalej**.
+
+1. Na stronie **Pasujące warunki** wybierz encję, a następnie wybierz opcję **Usuń**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Zrzut ekranu pasujących warunków z zaznaczoną encją i przyciskiem Usuń":::
+
+1. Wybierz **Zapisz i zamknij**.
+
+1. Wybierz **Edytuj** na kafelku **Pola źródłowe**.
+
+1. Wybierz pozycję **Wybierz encje i pola** i wyczyść pole wyboru obok każdej encji.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Zrzut ekranu przedstawiający okno dialogowe Wybieranie encji i pól z wyczyszczonym polem wyboru encji":::
+
+1. Wybierz **Zastosuj**.
+
+1. Wybierz **Zapisz i zamknij**.
+
+1. Wybierz pozycję **Ujednolicanie** > **Ujednolić profile i zależności klientów**, aby zaktualizować ujednolicony profil.
 
 ## <a name="manage-deduplication-rules"></a>Zarządzaj regułami deduplikacji
 
