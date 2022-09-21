@@ -5,19 +5,19 @@ ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
-author: adkuppa
-ms.author: matgos
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 7af51ed04fbd28149ea501c58e6fe71b5fa6d4b6
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207058"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463278"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Łączenie ze źródłem danych Power Query
 
@@ -63,7 +63,9 @@ Dodawanie źródeł danych opartych na łącznikach Power Query zasadniczo przeb
 Ładowanie danych może zająć czas. Po pomyślnym odświeżeniu dane z pobierania można przejrzeć na stronie [**Encji**](entities.md).
 
 > [!CAUTION]
-> Źródło danych oparte na Power Query tworzy [przepływ danych w Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Nie należy zmieniać nazwy przepływu danych w centrum administracyjnym Power Platform używanego w aplikacji Customer Insights. Zmiana nazwy przepływu danych powoduje problemy z odwołaniami między danymi w aplikacji Customer Insights źródło danych przepływem danych Dataverse.
+>
+> - Źródło danych oparte na Power Query tworzy [przepływ danych w Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Nie należy zmieniać nazwy przepływu danych w centrum administracyjnym Power Platform używanego w aplikacji Customer Insights. Zmiana nazwy przepływu danych powoduje problemy z odwołaniami między danymi w aplikacji Customer Insights źródło danych przepływem danych Dataverse.
+> - Jednoczesne oceny źródeł danych Power Query w Customer Insights mają takie same [ograniczenia odświeżania, jak przepływy danych w PowerBI.com](/power-query/power-query-online-limits#refresh-limits). Jeśli odświeżenie danych zakończy się niepowodzeniem, ponieważ osiągnięto limit oceny, zaleca się dostosowanie harmonogramu odświeżania dla każdego przepływu danych, aby zapewnić, że źródła danych nie będą przetwarzane jednocześnie.
 
 ### <a name="available-power-query-data-sources"></a>Dostępne źródła danych edytora Power Query
 
@@ -77,7 +79,7 @@ Przetwarzanie danych z lokalnych źródeł danych jest obsługiwane na podstawie
 
 Źródła danych, które są tworzone po powiązaniu środowiska Dataverse z Customer Insights domyślnie używają [przepływów danych Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Przepływy danych obsługują lokalną łączność przy użyciu bramy danych. Możesz usunąć i odtworzyć źródła danych, które istniały przed powiązaniem środowiska Dataverse [używając lokalnych bram danych](/data-integration/gateway/service-gateway-app).
 
-Brama danych z istniejącego lub środowiska Power BI lub Power Apps będzie widoczna i można jej użyć ponownie w usłudze Customer Insights. Na stronie źródeł danych znajdują się łącza umożliwiające przejście do środowiska Microsoft Power Platform, w którym można wyświetlić i skonfigurować lokalne bramy danych.
+Bramy danych z istniejących środowisk Power BI lub Power Apps będą widoczne i można ich użyć ponownie w usłudze Customer Insights, jeśli brama danych i środowisko Customer Insights znajdują się w tym samym regionie świadczenia platformy Azure. Na stronie źródeł danych znajdują się łącza umożliwiające przejście do środowiska Microsoft Power Platform, w którym można wyświetlić i skonfigurować lokalne bramy danych.
 
 > [!IMPORTANT]
 > Upewnij się, że portale zostały zaktualizowane do najnowszej wersji. Możesz zainstalować aktualizację i ponownie skonfigurować bramę z monitu wyświetlanego bezpośrednio na ekranie bramy lub [pobierz najnowszą wersję](https://powerapps.microsoft.com/downloads/). Jeśli nie używasz najnowszej wersji bramy, odświeżanie przepływu danych kończy się niepowodzeniem z komunikatami o błędach, takimi jak **Słowo kluczowe nie jest obsługiwane: właściwości konfiguracyjne. Nazwa parametru: słowo kluczowe**.

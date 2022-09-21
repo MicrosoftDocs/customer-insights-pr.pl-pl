@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 44f58d694b9bd35a8d8c04d487d40743291e0566
+ms.sourcegitcommit: ef3e17134d44d2731605381ea0385dbc5aef6120
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304072"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9460203"
 ---
 # <a name="exports-preview-overview"></a>Omówienie eksportów (wersja zapoznawcza)
 
@@ -81,6 +81,11 @@ Wybierz eksport, aby wyświetlić dostępne akcje.
 ## <a name="schedule-and-run-exports"></a>Zaplanuj i uruchom eksport
 
 Każdy skonfigurowany eksport ma harmonogram odświeżania. Podczas odświeżania system szuka nowych lub zaktualizowanych danych do uwzględnienia w eksporcie. Domyślnie eksport jest uruchamiany w ramach każdego [zaplanowanego odświeżania systemu](schedule-refresh.md). Można dostosować harmonogram odświeżania lub wyłączyć go, aby eksporty były wykonywane ręcznie.
+
+> [!TIP]
+> Można zminimalizować czas przetwarzania eksportów segmentów dzięki następującym najlepszym sprawdzonym metodom:
+> - Rozłożenie podmiotów segmentowych na wiele eksportów.
+> - Unikanie planowania wszystkich eksportów jednocześnie. Wykonywanie zaplanowanych eksportów w odstępach 30- lub 60-minutowych.
 
 Harmonogramy eksportu zależą od stanu środowiska. Jeśli istnieją aktualizacje dotyczące [zależności](system.md#refresh-processes) po uruchomieniu zaplanowanego eksportu, system najpierw je uzupełni, a następnie uruchomi eksport. Kolumna **Odświeżony** pokazuje, kiedy ostatnio odświeżono eksport.
 

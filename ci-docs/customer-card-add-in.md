@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 65fd80cc563b8b3b8c8874b66f179f8b0c7a19f0
+ms.sourcegitcommit: fe33cc76d015232ff8737f77193f44f2b884bb6b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194936"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "9473655"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Dodatek do kart klienta dla aplikacji Dynamics 365 (wersja zapoznawcza)
 
@@ -32,7 +32,8 @@ Zobacz pełen obraz klientów bezpośrednio w aplikacjach Dynamics 365. Mając z
 - Aby dane usługi Dynamics 365 były mapowane do profilów klientów Customer Insights, zalecamy [pozyskiwane z aplikacji Dynamics 365 przy użyciu konektora Microsoft Dataverse](connect-power-query.md). Jeśli używasz innej metody do pozyskiwania kontaktów (lub kont) Dynamics 365, musisz upewnić się, że pole `contactid` (lub `accountid`) jest ustawione jako [klucz podstawowy dla tego źródła danych w procesie ujednolicania danych](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Wszystkich użytkowników usługi Dynamics 365 dodatku Karta klienta należy [dodać jako użytkowników](permissions.md) w aplikacji Customer Insights, aby zobaczyć dane.
 - [Skonfigurowane funkcje wyszukiwania i filtrowania](search-filter-index.md) w Customer Insights.
-- Każda kontrolka dodatku zależy od określonych danych w Customer Insights. Niektóre dane i kontrolki są dostępne tylko w środowiskach określonych typów. W konfiguracji dodatku zostanie podana informacja o tym, czy ze względu na wybrany typ środowiska kontrolka jest niedostępna. Dowiedz się więcej o [przypadkach użycia środowisk](work-with-business-accounts.md).
+- Niektóre dane i kontrolki są dostępne tylko w środowiskach określonych typów. W konfiguracji dodatku zostanie podana informacja o tym, czy ze względu na wybrany typ środowiska kontrolka jest niedostępna. Ten błąd będzie wyświetlany wewnątrz kontrolki podczas renderowania. Dowiedz się więcej o [przypadkach użycia środowisk](work-with-business-accounts.md).
+- Każda kontrolka dodatku zależy od określonych danych w Customer Insights.
   - **Kontrola miary** wymaga [skonfigurowanych miar atrybutów klienta](measures.md).
   - **Kontrola danych** wymaga danych generowanych przy użyciu [prognoz lub niestandardowych modeli](predictions-overview.md).
   - **Kontrola szczegółów klienta** pokazuje wszystkie pola z profilu są dostępne w ujednoliconym profilu klienta.
