@@ -7,21 +7,21 @@
 - name: Katalog szkoleń
   items:
     - name: Informacje o specjalistach od danych klientów firmy Microsoft
-      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+      href: /certifications/exams/mb-260?tab=tab-instructor-led
     - name: Rozpoczynanie pracy z aplikacją Customer Insights
-      href: /learn/modules/get-started-customer-data-platform/
+      href: /training/modules/get-started-customer-data-platform/
     - name: Pozyskiwanie danych
-      href: /learn/modules/ingest-data-customer-insights/
+      href: /training/modules/ingest-data-customer-insights/
     - name: Utwórz ujednolicony profil klienta
-      href: /learn/modules/unified-customer-profile/
+      href: /training/modules/unified-customer-profile/
     - name: Praca z aplikacją Customer Insights
-      href: /learn/modules/working-with-customer-insights/
+      href: /training/modules/working-with-customer-insights/
     - name: Wzbogacanie danych i tworzenie przewidywań
-      href: /learn/modules/enrich-data/
+      href: /training/modules/enrich-data/
     - name: Zarządzanie połączeniami zewnętrznymi
-      href: /learn/modules/configure-third-party-connections/
+      href: /training/modules/configure-third-party-connections/
     - name: Administrowanie Customer Insights
-      href: /learn/modules/administer-customer-data-platform/
+      href: /training/modules/administer-customer-data-platform/
 - name: Bezpłatna wersja próbna
   items:
     - name: Rejestracja w celu uzyskania wersji próbnej
@@ -118,6 +118,8 @@
       href: consent-management.md
     - name: Korzystanie z danych sieci Web w celu personalizacji
       href: unknown-to-known.md
+    - name: Zarządzaj profilami nieznanych klientów
+      href: manage-unknown-profiles.md
 - name: Segments
   items:
     - name: Omówienie segmentów
