@@ -1,7 +1,7 @@
 ---
 title: Łączenie ze źródłem danych Power Query (zawiera wideo)
 description: Pozyskiwanie danych przez łącznik Power Query (zawiera wideo).
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
-ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
+ms.openlocfilehash: 4cc7e57dfb0f8d050e91adc441c24e849882f5d8
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "9463278"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609909"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Łączenie ze źródłem danych Power Query
 
@@ -43,16 +43,17 @@ Dodawanie źródeł danych opartych na łącznikach Power Query zasadniczo przeb
 
 1. Wybierz **Przekształć dane**.
 
-1. Okno dialogowe **Power Query — edytowanie zapytań** umożliwia przeglądanie i precyzowanie danych. Encje, które zostały określone przez systemy w wybranych źródłach danych, są wyświetlane w lewym okienku.
+1. Przeglądanie i precyzowanie danych na stronie **Power Query — edytuj zapytania**. Encje, które zostały określone przez systemy w wybranych źródłach danych, są wyświetlane w lewym okienku.
 
    :::image type="content" source="media/data-manager-configure-edit-queries.png" alt-text="Okno dialogowe Edytuj zapytania":::
 
-1. Dane można również przekształcać. Wybierz encję do edycji lub przekształcenia. Użyj opcji dostępnych w oknie edytora Power Query, aby zastosować przekształcenia. Każde przekształcenie jest wymienione w obszarze **Zastosowane kroki**. Edytor Power Query zawiera wiele [wstępnie zbudowanych opcji przekształceń](/power-query/power-query-what-is-power-query#transformations).
+1. Przekształć swoje dane. Wybierz encję do edycji lub przekształcenia. Użyj opcji dostępnych w oknie edytora Power Query, aby zastosować przekształcenia. Każde przekształcenie jest wymienione w obszarze **Zastosowane kroki**. Edytor Power Query zawiera wiele [wstępnie zbudowanych opcji przekształceń](/power-query/power-query-what-is-power-query#transformations).
 
-   Zalecamy używanie następujących transformacji:
-
-   - Jeśli pozyskujesz dane z pliku CSV, pierwszy wiersz często zawiera nagłówki. Przejdź do pozycji **Przekształć** i wybierz pozycję **Użyj pierwszego wiersza jako nagłówków**.
-   - Upewnij się, że typ danych jest odpowiednio ustawiony. Na przykład w przypadku pól daty wybierz typ daty.
+   > [!IMPORTANT]
+   > Zalecamy używanie następujących transformacji:
+   >
+   > - Jeśli pozyskujesz dane z pliku CSV, pierwszy wiersz często zawiera nagłówki. Przejdź do pozycji **Przekształć** i wybierz pozycję **Użyj pierwszego wiersza jako nagłówków**.
+   > - Upewnij się, że typ danych jest odpowiednio ustawiony i pasuje do danych. Na przykład w przypadku pól daty wybierz typ daty.
 
 1. Aby dodać więcej encji do źródła danych w oknie dialogowym **Edytowanie zapytań** przejdź do obszaru **Strona główna** i wybierz opcję **Pobierz dane**. Powtarzaj kroki 5–10 do momentu dodania wszystkich encji do źródła danych. Jeśli istnieje baza danych zawierająca wiele zestawów danych, każdy zestaw danych jest swoją własną encją.
 
@@ -102,5 +103,51 @@ Bramy danych z istniejących środowisk Power BI lub Power Apps będą widoczne 
 1. Wybierz przycisk **Zapisz**, aby zastosować zmiany i wrócić do strony **Źródła danych**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Typowe powody błędów pozyskiwania lub uszkodzonych danych
+
+### <a name="data-type-does-not-match-data"></a>Typ danych nie jest zgodny z danymi
+
+Najbardziej typowe niezgodności typów danych występują, gdy pole daty nie ma poprawnego formatu daty.
+
+Dane można naprawić u źródła i ponownie je pozyskać. Można też poprawić transformację w aplikacji Customer Insights. Aby naprawić transformację:
+
+1. Przejdź do **Dane** > **Źródła danych**.
+
+1. Obok źródła danych z uszkodzonymi danymi, wybierz **Edytuj**.
+
+1. Wybierz **Dalej**.
+
+1. Wybierz każde zapytanie i przeszukaj przekształcenia zastosowane w niepoprawnych „Zastosowanych krokach” lub kolumnach daty, które nie zostały przekształcone przy użyciu formatu daty.
+
+   :::image type="content" source="media/PQ_corruped_date.png" alt-text="Power Query— edycja z wyświetlaniem niepoprawnego formatu daty":::
+
+1. Zmień typ danych, aby prawidłowo pasował do danych.
+
+1. Wybierz pozycję **Zapisz**. To źródło danych jest odświeżane.
+
+## <a name="troubleshoot-ppdf-power-query-based-data-source-refresh-issues"></a>Rozwiązywanie problemów z odświeżaniem i odświeżaniem źródła danych Power Query PPDF
+
+Jeśli dane są nieaktualne lub po odświeżeniu źródło danych wystąpią błędy, należy wykonać następujące kroki:
+
+1. Przejdź do [Power Platform](https://make.powerapps.com).
+
+1. Wybierz **Środowisko** dla swojego wystąpienia usługi Customer Insights.
+
+1. Przejdź do **Przepływy danych**.
+
+1. Dla przepływu danych odpowiadającego danemu źródłu danych w programie Customer Insights wybierz z wielokropek pionowy (&vellip;), a następnie wybierz opcję **Pokaż historię odświeżania**.
+
+1. Jeśli **Stan** przepływu danych to **Powodzenie**, własność opartego na Power Query źródła danych mogła zostać zmieniona:
+
+   1. Przejrzyj harmonogram odświeżania z historii odświeżania.
+   1. Ustaw nowy harmonogram właściciela i zapisz ustawienia.
+
+1. Jeśli **Stan** przepływu danych **nie powiedzie się**:
+
+   1. Pobierz plik odświeżenia historii.
+   1. Sprawdź pobrany plik, aby poznać przyczynę niepowodzenia.
+   1. Jeśli błąd nie może zostać rozwiązany, wybierz opcję **?**, aby otworzyć bilet pomocy technicznej. Podaj pobrany plik odświeżenia historii.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

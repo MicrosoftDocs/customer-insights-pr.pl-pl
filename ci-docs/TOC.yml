@@ -162,6 +162,8 @@
           href: sentiment-analysis.md
         - name: Używanie modeli niestandardowych z usługi Uczenie maszynowe Azure
           href: custom-models.md
+        - name: Tworzenie segmentów opartych przewidywaniach
+          href: prediction-based-segment.md
     - name: Przykładowe przewodniki
       items:
         - name: Przykładowy przewodnik dotyczący przewidywania CLV
@@ -174,10 +176,6 @@
           href: sample-guide-predict-product-recommendation.md
         - name: Eksperymenty z Uczeniem Maszynowym Azure
           href: azure-machine-learning-experiments.md
-    - name: Zarządzaj przewidywaniami
-      href: manage-predictions.md
-    - name: Tworzenie segmentów opartych przewidywaniach
-      href: prediction-based-segment.md
 - name: Opcje eksportu
   items:
     - name: Eksporty

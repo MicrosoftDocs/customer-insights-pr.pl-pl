@@ -1,7 +1,7 @@
 ---
 title: Przykładowy przewodnik dotyczący prognozowania rezygnacji z subskrypcji
 description: Skorzystaj z tego przykładowego przewodnika, aby wypróbować gotowy model prognozowania rezygnacji z subskrypcji.
-ms.date: 03/31/2022
+ms.date: 09/19/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,77 +11,73 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 7e754be9a2cb9450949c6b3667bbd37aa39cf0bf
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741424"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610019"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Przykładowy przewodnik dotyczący prognozowania rezygnacji z subskrypcji
 
-Przeprowadzimy Cię przez cały przewodnik przewidywania rezygnacji z subskrypcji, korzystając z przykładowych danych podanych poniżej. 
+Ten przewodnik przeprowadza po przewidywaniu rezygnacji z subskrypcji, korzystając z przykładowych danych. Zaleca się, aby wypróbować to przewidywanie [w nowym środowisku](manage-environments.md).
 
 ## <a name="scenario"></a>Scenariusz
 
-Contoso to firma produkująca wysokiej jakości ekspresy do kawy i ekspresy do kawy, które sprzedają za pośrednictwem swojej witryny internetowej Contoso Coffee. Ostatnio rozpoczęły działalność subskrypcyjną, aby klienci regularnie otrzymywali kawę. Ich celem jest zrozumienie, którzy subskrybenci mogą anulować subskrypcję w ciągu najbliższych kilku miesięcy. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
+Contoso to firma produkująca wysokiej jakości maszyny do barów kawowych. Produkty są dostępne w witrynie firmy Contoso Coffee. Ostatnio rozpoczęły działalność subskrypcyjną, aby klienci regularnie otrzymywali kawę. Ich celem jest zrozumienie, którzy subskrybenci mogą anulować subskrypcję w ciągu najbliższych kilku miesięcy. Wiedza o tym, który z ich klientów **prawdopodobnie odejdzie**, może pomóc im zaoszczędzić wysiłki marketingowe, koncentrując się na ich utrzymaniu.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
 - Co najmniej [Uprawnienia współautora](permissions.md) w Customer Insights.
-- Zaleca się, aby zaimplementować poniższe kroki [w nowym środowisku](manage-environments.md).
 
 ## <a name="task-1---ingest-data"></a>Zadanie 1 - pozyskiwanie danych
 
-Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sources.md) i [importowania źródeł danych za pomocą łączników usługi Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych. 
+Przejrzyj artykuły [dotyczące pozyskiwania danych](data-sources.md) i [łączenie ze źródłem danych Power Query](connect-power-query.md). Poniższe informacje zakładają, że znasz ogólne zasady przetwarzania danych.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Pozyskiwanie danych klienta na platformie eCommerce
 
-1. Utwórz źródło danych o nazwie **eCommerce**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
+1. Utwórz źródło danych Power Query o nazwie **Handel elektroniczny**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
 
 1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadclasscontacts.
 
-1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
+1. Podczas edytowania danych wybierz opcję **Przekształć**, a następnie **Użyj pierwszego wiersza jako nagłówków**.
 
 1. Zaktualizuj typ danych dla kolumn wymienionych poniżej:
-
    - **DateOfBirth**: Data
    - **CreatedOn**: Data/Czas/Strefa
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Przekształcić datę urodzenia na datę.":::
 
-1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **eCommerceContacts**
+1. WW polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych **eCommerceContacts**
 
 1. Zapisz źródło danych.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Przetwarzaj dane klientów ze schematu lojalnościowego
 
-1. Utwórz źródło danych o nazwie **LoyaltyScheme**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
+1. Utwórz źródło danych o nazwie **LoyaltyScheme** i wybierz łącznik typu **tekst/CSV**.
 
-1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadclasscustomerloyalty.
+1. Wprowadź adres URL klientów lojalnościowych https://aka.ms/ciadclasscustomerloyalty.
 
-1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
+1. Podczas edytowania danych wybierz opcję **Przekształć**, a następnie **Użyj pierwszego wiersza jako nagłówków**.
 
 1. Zaktualizuj typ danych dla kolumn wymienionych poniżej:
-
    - **DateOfBirth**: Data
    - **RewardsPoints**: Pełny numer
    - **CreatedOn**: Data/godzina
 
-1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **loyCustomers**.
+1. WW polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych na **loyCustomers**.
 
 1. Zapisz źródło danych.
 
 ### <a name="ingest-subscription-information"></a>Przetwarzaj informacje o subskrypcji
 
-1. Utwórz źródło danych o nazwie **SubscriptionHistory**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
+1. Utwórz źródło danych o nazwie **SubscriptionHistory** i wybierz łącznik typu **tekst/CSV**.
 
-1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadchurnsubscriptionhistory.
+1. Wprowadź adres URL dla subskrypcji https://aka.ms/ciadchurnsubscriptionhistory.
 
-1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
+1. Podczas edytowania danych wybierz opcję **Przekształć**, a następnie **Użyj pierwszego wiersza jako nagłówków**.
 
 1. Zaktualizuj typ danych dla kolumn wymienionych poniżej:
-
    - **SubscriptioID**: Pełny numer
    - **SubscriptionAmount**: waluta
    - **SubscriptionEndDate**: Data/godzina
@@ -91,92 +87,107 @@ Przejrzyj w szczególności artykuły [dotyczące pozyskiwania danych](data-sour
    - **Is_auto_renew**: Prawda/fałsz
    - **RecurringFrequencyInMonths**: pełny numer
 
-1. W polu **Nazwa** w panelu po prawej stronie zmień nazwę źródła danych z **Zapytanie** na **SubscriptionHistory**.
+1. W polu **Nazwa** w prawym panelu zmień nazwę źródła danych z Zapytanie na **SubscriptionHistory**.
 
 1. Zapisz źródło danych.
 
 ### <a name="ingest-customer-data-from-website-reviews"></a>Przetwarzaj dane klientów z recenzji witryn
 
-1. Utwórz źródło danych o nazwie **Strona internetowa**, wybierz opcję importowania i wybierz łącznik typu **tekst/CSV**.
+1. Utwórz źródło danych o nazwie **Strona internetowa** i wybierz łącznik typu **tekst/CSV**.
 
-1. Wprowadź adres URL eCommerce kontaktów https://aka.ms/ciadclasswebsite.
+1. Wprowadź adres URL dla opinii w witrynie internetowej https://aka.ms/ciadclasswebsite.
 
-1. Podczas edytowania danych wybierz opcję **Przekształć** i **Użyj pierwszego wiersza jako nagłówków**.
+1. Podczas edytowania danych wybierz opcję **Przekształć**, a następnie **Użyj pierwszego wiersza jako nagłówków**.
 
 1. Zaktualizuj typ danych dla kolumn wymienionych poniżej:
-
    - **ReviewRating**: Pełny numer
    - **ReviewDate**: Data
 
-1. WW polu „Nazwa” w panelu po prawej stronie zmień nazwę źródła danych z **Query** na **webReviews**.
+1. W polu **Nazwa** w prawym panelu zmień nazwę źródła danych z Zapytanie na **webReviews**.
 
 ## <a name="task-2---data-unification"></a>Zadanie 2 - ujednolicenie danych
 
+Przegląd artykułu [o ujednolicaniu danych](data-unification.md). Poniższe informacje zakładają, że znasz ogólne zasady ujednolicania danych.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-the-subscription-churn-prediction"></a>Zadanie 3 - Skonfiguruj przewidywanie rezygnacji z subskrypcji
+## <a name="task-3---create-transaction-history-activity"></a>Zadanie 3 — utwórz działanie historii transakcji
 
-Dzięki ujednoliconym profilom klienta można teraz uruchomić przewidywanie subskrypcji. Aby uzyskać szczegółowe informacje o krokach, zobacz artykuł [Przewidywanie rezygnacji z subskrypcji](predict-subscription-churn.md). 
+Przejrzyj artykuł [o działaniach dotyczących klienta](activities.md). Poniższe informacje zakładają, że znasz ogólne zasady tworzenia działań.
 
-1. Wybierz **Analizy** > **Wykryj** i wybierz korzystanie z **Model rezygnacji klientów**.
+1. Utwórz działanie o nazwie **SubscriptionHistory** z encją *Subskrypcja* i jej kluczem podstawowym **CustomerId**.
 
-1. Wybierz opcję **Subskrypcja** i wybierz pozycję **Rozpocznij pracę**.
+1. Utwórz relację między elementami *SubscriptionHistory:Subscription* i *eCommerceContacts:eCommerce* z elementem **CustomerID** jako kluczem obcym, który ma połączyć te dwie encje.
+
+1. Wybierz **SubscriptionType** dla **EventActivity** i **SubscriptionEndDate** dla **TimeStamp**.
+
+1. Wybierz opcję **Subskrypcja** dla **Typu działania** i semantycznie przemapuj dane działań.
+
+1. Uruchom działanie.
+
+1. Dodaj inne działanie klienta i zamapuj jego nazwy pól na odpowiednie pola:
+   - Jednostka aktywności klienta: Recenzje:Strona internetowa
+   - Klucz podstawowy: Website.Reviews.ReviewId
+   - Timestamp: Website.Reviews.ReviewDate
+   - Zdarzenie (nazwa działania): Website.Reviews.ActivityTypeDisplay
+   - Szczegóły (kwota lub wartość): Website.Reviews.ReviewRating
+
+1. Uruchom działanie.
+
+## <a name="task-4---configure-the-subscription-churn-prediction"></a>Zadanie 4 - Skonfiguruj przewidywanie rezygnacji z subskrypcji
+
+Dzięki ujednoliconym profilom klienta i utworzonemu działaniu można teraz uruchomić przewidywanie subskrypcji. Aby uzyskać szczegółowe informacje o krokach, zobacz [Przewidywanie rezygnacji z subskrypcji](predict-subscription-churn.md).
+
+1. Przejdź do opcji **Analizy** > **Przewidywania**.
+
+1. Na karcie **Utwórz** wybierz **Model użycia** na kafelku **Model rezygnacji klienta**.
+
+1. Wybierz opcję **Subskrypcja** dla typu rozsyłania, a następnie wybierz opcję **Rozpocznij**.
 
 1. Nazwij model **Przewidywanie rezygnacji z subskrypcji OOB**, a następnie encję wyjściową **OOBSubscriptionChurnPrediction**.
 
-1. Zdefiniować dwa warunki dotyczące modelu rezygnacji:
+1. Zdefiniuj preferencje modelu:
+   - **Dni od zakończenia subskrypcji**: **60** dni oznacza, że klient jest uważany za utraconego, jeśli nie odnowi subskrypcji w tym okresie po zakończeniu subskrypcji.
+   - **Dni do zbadania przyszłej przyszłości**: **93** dni, czyli czas trwania, dla którego model przewiduje, którzy klienci mogą zrezygnować. Im dalej w przyszłości spojrzysz, tym mniej dokładne wyniki.
 
-   * **Liczba dni od zakończenia subskrypcji**: **co najmniej 60** dni. Jeśli klient nie odnowi subskrypcji w tym okresie po zakończeniu subskrypcji, zostanie uznany za rezygnującego. 
+   :::image type="content" source="media/model-subs-levers.PNG" alt-text="Wybierz preferencje modelu i definicję rezygnacji.":::
 
-   * **Definicja rezygnacji**: **co najmniej 93** dni. Czas trwania modelu przewidywania, którzy klienci mogą odejść. Im dalej w przyszłości spojrzysz, tym mniej dokładne wyniki.
+1. Wybierz **Dalej**.
 
-     :::image type="content" source="media/model-subs-levers.PNG" alt-text="Wybierz dźwignie modelu Okno predykcji i Definicja rezygnacji.":::
+1. W kroku **Wymagane dane** wybierz opcję **Dodaj dane**, aby udostępnić historię subskrypcji.
 
-1. Wybierz **Dodaj wymagane dane** i wybierz pozycję **Dodaj dane** dla historii subskrypcji.
+1. Wybierz obiekt **Subskrypcja** i encję SubscriptionHistory i wybierz opcję **Dalej**. Wymagane dane są automatycznie wypełniane z działania. Wybierz pozycję **Zapisz**.
 
-1. Dodaj encję **Subskrypcja : SubscriptionHistory** i zamapuj pola z eCommerce na odpowiadające im pola wymagane przez model.
+1. W działaniach klienta wybierz **Dodaj dane**.
 
-1. Połącz encję **Subskrypcja : SubscriptionHistory** z encją **eCommerceContacts: eCommerce**, nazwij relację **eCommerceSubscription**.
+1. W tym przykładzie dodaj działanie przeglądu sieci Web.
 
-   :::image type="content" source="media/model-subscription-join.PNG" alt-text="Dołączanie encji eCommerce.":::
+1. Wybierz **Dalej**.
 
-1. W obszarze Działania klienta dodaj encję **webReviews: Website** i zamapuj pola z webReviews na odpowiednie pola wymagane przez model. 
-   - Klucz podstawowy: ReviewId
-   - Znacznik czasu: ReviewDate
-   - Zdarzenie: ReviewRating
-
-1. Skonfiguruj działanie dotyczące recenzji witryn. Wybierz **Przegląd** działań i dołącz do encji **webReviews : Website** z **eCommerceContacts: eCommerce**.
-
-1. Wybierz przycisk **Dalej**, aby ustawić harmonogram modelu.
-
-   Model musi regularnie trenować, aby uczyć się nowych wzorców, gdy są pozyskiwane nowe dane. Na potrzeby tego przykładu wybierz pozycję **Miesięczny**.
+1. W kroku **Aktualizacje danych** ustaw **Miesięcznie** dla harmonogram modelu.
 
 1. Po przejrzeniu wszystkich szczegółów wybierz pozycję **Zapisz i uruchom**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Zadanie 4 - Przejrzyj wyniki i wyjaśnienia modelu
+## <a name="task-5---review-model-results-and-explanations"></a>Zadanie 5 - Przejrzyj wyniki i wyjaśnienia modelu
 
-Pozwól modelowi ukończyć uczenie i ocenianie danych. Możesz teraz przejrzeć wyjaśnienia dotyczące modelu rezygnacji z subskrypcji. Aby uzyskać więcej informacji, zobacz temat [Przejrzyj stan i wyniki prognozy](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Pozwól modelowi ukończyć uczenie i ocenianie danych. Przejrzyj wyjaśnienia dotyczące modeli rezygnacji z subskrypcji. Aby uzyskać więcej informacji, zobacz [Wyświetl wyniki przewidywania](predict-subscription-churn.md#view-prediction-results).
 
-## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Zadanie 5 - Utwórz segment klientów o wysokim ryzyku rezygnacji
+## <a name="task-6---create-a-segment-of-high-churn-risk-customers"></a>Zadanie 6 - Utwórz segment klientów o wysokim ryzyku rezygnacji
 
-Uruchomienie modelu produkcyjnego tworzy nową jednostkę, którą możesz zobaczyć **Dane** > **Encje**.   
+Uruchomienie modelu powoduje utworzenie nowej encji wymienionej w **Dane** > **Encje**. Możesz utworzyć nowy segment na podstawie encji utworzonej przez model.
 
-Możesz utworzyć nowy segment na podstawie encji utworzonej przez model.
+1. Na stronie wyników wybierz opcję **Utwórz segment**.
 
-1.  Przejdź do **Segmenty**. Wybierz opcję **Nowy** i wybierz pozycję **Utwórz z poziomu** > **Analizy**. 
+1. Utwórz regułę, używając encji **OOBSubscriptionChurnPrediction** i zdefiniuj segment:
+   - **Pole**: ChurnScore
+   - **Operator**: większy niż
+   - **Wartość**: 0,6
 
-   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Tworzenie segmentu z wynikiem modelu.":::
+1. Wybierz opcję **Zapisz** i **Uruchom** segment.
 
-1. Wybierz opcję **OOBSubscriptionChurnPrediction** punkt końcowy i zdefiniuj segment: 
-   - Pole: ChurnScore
-   - Operator: większy niż
-   - Wartość: 0.6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Skonfiguruj segment rezygnacji z subskrypcji.":::
+Masz teraz dynamicznie aktualizowany segment, który identyfikuje klientów o wysokim ryzyku rezygnacji z subskrypcji. Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
 
-Masz teraz dynamicznie aktualizowany segment, który identyfikuje klientów o wysokim ryzyku rezygnacji z subskrypcji.
-
-Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
-
+> [!TIP]
+> Na stronie **Segmenty** można także utworzyć segment dla modelu przewidywania modelu, wybierając opcję **Nowy** i wybierając opcję **Utwórz z** >  **Analizy**. Aby uzyskać więcej informacji, zobacz [Tworzenie nowego segmentu za pomocą szybkich segmentów](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

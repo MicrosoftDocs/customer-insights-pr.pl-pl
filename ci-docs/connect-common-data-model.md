@@ -1,7 +1,7 @@
 ---
 title: Połącz z folderem Common Data Model za pomocą Azure Data Lake Account
 description: Pracuj z danymi Common Data Model przy użyciu usługi Azure Data Lake Storage.
-ms.date: 07/27/2022
+ms.date: 09/29/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
-ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
+ms.openlocfilehash: c12603b9ed8a814356a0f8d0137e97afc749b87c
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/02/2022
-ms.locfileid: "9396104"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609961"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Tworzenie połączenia z danymi w programie Azure Data Lake Storage
 
@@ -43,6 +43,10 @@ Pozyskiwanie danych do Dynamics 365 Customer Insights przy użyciu konta Azure D
 - Użytkownik konfigurujący połączenie źródła danych musi mieć co najmniej uprawnienia współautora danych w usłudze Blob Storage dla konta magazynu.
 
 - Dane w magazynie Data Lake Storage powinny być zgodne ze standardem Common Data Model dla przechowywania danych oraz mają wspólny model danych reprezentujący schemat plików danych (*.csv lub *.parquet). W manifeście muszą być podane szczegółowe informacje o encjach, takie jak kolumny encji i typy danych, a także o lokalizacji i typie pliku danych. Aby uzyskać więcej informacji, zobacz [Manifest Common Data Model](/common-data-model/sdk/manifest). Jeśli ten manifest nie istnieje, administratorzy z dostępem właściciela danych obiektów blob magazynu lub współautora danych obiektów blob magazynu mogą zdefiniować schemat podczas pozyskiwania danych.
+
+## <a name="recommendations"></a>Rekomendacje
+
+Aby uzyskać optymalną wydajność, rozwiązanie Customer Insights zaleca, aby rozmiar partycji nie przekraczał 1 GB, a liczba plików partycji w folderze nie może przekraczać 1000.
 
 ## <a name="connect-to-azure-data-lake-storage"></a>Nawiązywanie połączenia z rozwiązaniem Azure Data Lake Storage
 
@@ -199,5 +203,101 @@ Możesz zaktualizować za pomocą opcji *Połącz z kontem magazynu, używając*
 1. Kliknij przycisk **Zapisz**, aby zastosować zmiany i wrócić do strony **Źródła danych**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Typowe powody błędów pozyskiwania lub uszkodzonych danych
+
+Podczas pozyskiwania danych niektóre typowe przyczyny, dla których rekord jest uważany za uszkodzony, to:
+
+- Typy danych i wartości pól nie pasują do pliku źródłowego i schematu
+- Liczba kolumn w pliku źródłowym nie jest zgodne ze schematem
+- Pola zawierają znaki, które powodują, że kolumny nie są zgodne z oczekiwanym schematem. Na przykład: niepoprawnie sformatowane cudzysłowy, niezamknięte cudzysłowy, znaki nowego wiersza lub znaki tabulatora.
+- Brak plików partycji
+- Jeśli istnieją kolumny datetime/date/datetimeoffset, ich format musi być określony w schemacie, jeśli nie jest zgodny ze standardowym formatem.
+
+### <a name="schema-or-data-type-mismatch"></a>Niezgodność schematu lub typu danych
+
+Jeśli dane nie spełniają wymagań schematu, proces pozyskiwania zakończy się błędami. Popraw dane źródłowe lub schemat i ponowne je pozyskaj.
+
+### <a name="partition-files-are-missing"></a>Brak plików partycji
+
+- Jeśli pozyskiwanie zakończyło się powodzeniem bez uszkodzonych rekordów, ale nie można wyświetlić żadnych danych, należy edytować plik model.json lub manifest.json, aby upewnić się, że partycje są określone. Następnie [odśwież źródło danych](data-sources.md#refresh-data-sources).
+
+- Jeśli pozyskiwanie danych występuje jednocześnie z odświeżaniem źródeł danych podczas automatycznego odświeżania harmonogramu, pliki partycji mogą być puste lub niedostępne do przetwarzania przez funkcję Customer Insights. Aby wyrównać z nadrzędnym harmonogramem odświeżania, należy zmienić [harmonogram odświeżania systemowego](schedule-refresh.md) lub harmonogram odświeżania źródła danych. Wyrównaj synchronizację, aby odświeżenia nie były dostępne jednocześnie i dostarczało najnowszych danych do przetworzenia w Customer Insights.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Pole Data/godzina w nieprawidłowym formacie
+
+Pola data/godzina w encji nie mają formatów ISO 8601 ani en-US. Domyślny format data/godzina w danych Customer Insights to format en-US. Wszystkie pola data/godzina w encji powinny mieć ten sam format. Customer Insights obsługuje inne formaty podane jako adnotacje lub cechy na poziomie źródła lub encji w modelu lub manifest.json. Na przykład: 
+
+**Model.json**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  W pliku manifest.json format data/godzina można określić na poziomie encji lub na poziomie atrybutu. Na poziomie encji użyj „exhibitTrait” w encji w pliku *.manifest.cdm.json, by określić format data/godzina. Na poziomie atrybutu użyj „appliedTraits” w atrybucie w pliku entityname.cdm.json.
+
+**Manifest.json na poziomie encji**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json na poziomie atrybutu**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

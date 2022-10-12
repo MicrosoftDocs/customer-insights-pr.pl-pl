@@ -1,7 +1,7 @@
 ---
 title: Omówienie źródeł danych
 description: Dowiedz się, jak importować lub pozyskiwać dane z różnych źródeł.
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f89da3cf5b56e367bd673740f80cd82ec0907b28
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245662"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610065"
 ---
 # <a name="data-sources-overview"></a>Omówienie źródeł danych
 
@@ -65,7 +65,9 @@ Wybierz źródło danych, aby wyświetlić dostępne akcje.
 
 ## <a name="refresh-data-sources"></a>Odśwież źródła danych
 
-Źródła danych mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. [Lokalne źródła danych](connect-power-query.md#add-data-from-on-premises-data-sources) są odświeżane według własnych harmonogramów, które są ustawiane podczas pozyskiwania danych. W przypadku dołączonych źródeł danych, konsumują one najnowsze dane dostępne z tego źródła danych.
+Źródła danych mogą być odświeżane w harmonogramie automatycznym lub ręcznie odświeżane na żądanie. [Lokalne źródła danych](connect-power-query.md#add-data-from-on-premises-data-sources) są odświeżane według własnych harmonogramów, które są ustawiane podczas pozyskiwania danych. Aby uzyskać porady dotyczące rozwiązywania problemów, zobacz [Rozwiązywanie problemów PPDF związanych z odświeżaniem źródła danych opartego na Power Query](connect-power-query.md#troubleshoot-ppdf-power-query-based-data-source-refresh-issues).
+
+W przypadku dołączonych źródeł danych, konsumują one najnowsze dane dostępne z tego źródła danych.
 
 Przejdź do **Administrator** > **System** > [**Harmonogram**](schedule-refresh.md), aby skonfigurować zaplanowane w systemie odświeżanie pozyskanych źródeł danych.
 
@@ -76,5 +78,37 @@ Aby odświeżyć źródło danych na żądanie:
 1. Wybierz źródło danych chcesz odświeżyć i wybierz opcję **Odśwież**. Źródło danych jest teraz wyzwalane w celu ręcznego odświeżenia. Odświeżenie źródła danych spowoduje zaktualizowanie schematu encji i danych dla wszystkich encji określonych w źródle danych.
 
 1. Wybierz stan obok okienka **Szczegóły postępu**, aby wyświetlić postęp. Aby anulować zadanie, wybierz opcję **Anuluj zadanie** w dolnej części okienka.
+
+## <a name="corrupt-data-sources"></a>Uszkodzone źródła danych
+
+Pozyskiwane dane mogą spowodować uszkodzenie rekordów, co może spowodować zakończenie procesu pozyskiwania danych z błędami lub ostrzeżeniami.
+
+> [!NOTE]
+> Jeśli pozyskiwanie danych zakończy się błędami, kolejne przetwarzanie (takie jak ujednolicenie lub utworzenie działania), które będzie korzystać ze źródła danych zostanie pominięte. Jeśli pozyskiwane zostanie zakończone z ostrzeżeniami, kolejne przetwarzanie będzie trwać, ale niektóre rekordy nie zostaną uwzględnione.
+
+Te błędy mogą być widoczne w szczegółach zadania.
+
+:::image type="content" source="media/corrupt-task-error.png" alt-text="Szczegóły zadania prezentujące uszkodzony błąd danych.":::
+
+Uszkodzone rekordy są pokazane w encjach utworzonych przez system.
+
+### <a name="fix-corrupt-data"></a>Naprawianie uszkodzonych danych
+
+1. Aby wyświetlić uszkodzone dane, przejdź do **Dane** > **Jednostki** i poszukaj uszkodzonych jednostek w sekcji **System**. Schemat nazewnictwa uszkodzonych jednostek: „DataSourceName_EntityName_corrupt”.
+
+1. Wybierz uszkodzoną encję, a następnie kartę **Dane**.
+
+1. Zidentyfikuj uszkodzone pola rekordu i przyczynę.
+
+   :::image type="content" source="media/corruption-reason.png" alt-text="Przyczyna uszkodzenia." lightbox="media/corruption-reason.png":::
+
+   > [!NOTE]
+   > **Dane** > **Encje** pokazuje tylko część uszkodzonych rekordów. Aby wyświetlić wszystkie uszkodzone rekordy, należy wyeksportować pliki do kontenera na koncie magazynu przy użyciu [procesu eksportowania funkcji Customer Insights](export-destinations.md). Jeśli używasz własnego konta magazynu, możesz także sprawdzić folder Customer Insights w swoim koncie magazynu.
+
+1. Naprawianie uszkodzonych danych. Na przykład w przypadku źródeł danych Azure Data Albo [popraw dane w magazynie Data Lake lub zaktualizuj typy danych w pliku manifest/model.json](connect-common-data-model.md#common-reasons-for-ingestion-errors-or-corrupt-data). W przypadku źródeł danych Power Query popraw dane w pliku źródłowym i [popraw typ danych w kroku transformacji](connect-power-query.md#data-type-does-not-match-data) na stronie **Power Query — Edytuj zapytania**.
+
+Po następnym odświeżeniu źródła danych poprawione rekordy są pozyskiwane do usługi Customer Insights i przekazywane do procesów podrzędnych.
+
+Na przykład kolumna „urodziny” ma typ danych ustawiony jako „data”. Rekord klienta ma jego urodziny wprowadzone jako „01/01/19777”. System oflaguje ten rekord jako uszkodzony. Zmień datę urodzin w systemie źródłowym na „1977”. Po automatycznym odświeżeniu źródeł danych pole ma teraz prawidłowy format, a rekord zostanie usunięty z uszkodzonej jednostki.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

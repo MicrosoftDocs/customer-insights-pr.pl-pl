@@ -1,23 +1,23 @@
 ---
 title: Tworzenie segmentu na podstawie modelu przewidywania
 description: Tworzenie segmentów w oparciu o encję wyjściową modelu przewidywania.
-ms.date: 03/24/2021
+ms.date: 09/19/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: d67594f2467c1a0fde84b1ba0bd1afa4025e7b71
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ed9c6247a1f9148628dc9b5217484e98a576224e
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081378"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610433"
 ---
 # <a name="create-a-segment-based-on-a-prediction-model-preview"></a>Tworzenie segmentu na podstawie modelu przewidywania (wersja zapoznawcza)
 
-Wyniki przewidywań mogą być czasem stosowane tylko dla podzbioru klientów. Należy zwiększyć personalizację rekomendacji, tworząc segmenty z wyników modeli przewidywania. Można na przykład przekazać konkretne rekomendacje klientom, którzy preferują określony typ usługi. 
+Wyniki przewidywań mogą być czasem stosowane tylko dla podzbioru klientów. Należy zwiększyć personalizację rekomendacji, tworząc segmenty z wyników modeli przewidywania. Można na przykład przekazać konkretne rekomendacje klientom, którzy preferują określony typ usługi.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -34,10 +34,15 @@ Wyniki przewidywań mogą być czasem stosowane tylko dla podzbioru klientów. N
 
 1. Wybierz **Analizy** > **Przewidywania** i wybierz kartę **Moje przewidywania**.
 
-1. Wybierz pionowy wielokropek obok modelu, który chcesz przejrzeć, i wybierz opcję **Wyświetl**.
+1. Wybierz model, który chcesz przejrzeć, a następnie wybierz pozycję **Wyświetl**.
 
 1. Na stronie wyników wybierz opcję **Utwórz segment**. Aby uzyskać więcej informacji na temat strony wyników, przejrzyj artykuł o modelu.
 
    :::image type="content" source="media/prediction-create-segment.png" alt-text="Zrzut ekranu strony wyników przewidywania z wyróżnieniem akcji Utwórz segment.":::
 
-1. Tworzenie nowego segmentu w oparciu o encję wyjściową wybranego modelu. Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
+1. Tworzenie nowego segmentu, używając atrybutów z encji wyjściowej wybranego modelu. Aby uzyskać więcej informacji, zobacz [Tworzenie segmentów i zarządzanie nimi](segments.md).
+
+> [!TIP]
+> Na stronie **Segmenty** można także utworzyć segment dla modelu przewidywania modelu, wybierając opcję **Nowy** i wybierając opcję **Utwórz z** >  **Analizy**. Aby uzyskać więcej informacji, zobacz [Tworzenie nowego segmentu za pomocą szybkich segmentów](segment-quick.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]
