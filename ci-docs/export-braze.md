@@ -1,19 +1,19 @@
 ---
 title: Eksportowanie segmentów do Braze (wersja zapoznawcza)
 description: Dowiedz się, jak skonfigurować połączenie i eksportować do programu Braze.
-ms.date: 07/25/2022
+ms.date: 10/06/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 84dc7f13f30e0334d431fe5b5866c7f87e82ab27
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
+ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195120"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9655280"
 ---
 # <a name="export-segments-to-braze-preview"></a>Eksportowanie segmentów do Braze (wersja zapoznawcza)
 
@@ -23,6 +23,7 @@ Eksportuj segmenty ujednoliconych profili klientów do Braze i wykorzystuj je do
 
 - [Konto Braze](https://www.braze.com/) i odpowiednie poświadczenia administratora.
 - [Klucz interfejsu API braze](https://www.braze.com/docs/api/basics/)
+- [Punkt końcowy REST usługi Braze](https://www.braze.com/docs/api/basics/#api-definitions) 
 - [Skonfigurowane segmenty](segments.md) w Customer Insights.
 - Ujednolicone profile klientów w wyeksportowanych segmentach zawierają pole reprezentujące adres e-mail i identyfikator klienta Braze.
 
@@ -30,6 +31,7 @@ Eksportuj segmenty ujednoliconych profili klientów do Braze i wykorzystuj je do
 
 - Przenieś milion profili klientów do Braze, co może zająć do 40 minut. Liczba profilów klientów, które można eksportować do usługi Braze, zależy od kontraktu z usługą Braze.
 - Tylko segmenty.
+- Usługa Azure Private Link nie jest obsługiwana w przypadku eksportowania w usłudze Braze.
 
 ## <a name="set-up-connection-to-braze"></a>Skonfiguruj połączenie z usługą Braze
 
@@ -62,6 +64,8 @@ Eksportuj segmenty ujednoliconych profili klientów do Braze i wykorzystuj je do
 1. Wybierz opcję **Dodaj eksport**.
 
 1. W polu **Połączenie dla eksportu** wybierz połączenie z sekcji Braze. Skontaktuj się z administratorem, jeśli nie jest dostępne żadne połączenie.
+
+1. Wprowadź punkt końcowy REST w polu **Nazwa hosta** w następującym formacie: `rest.iad-03.braze.com`.
 
 1. Wpisz nazwę eksportu.
 
