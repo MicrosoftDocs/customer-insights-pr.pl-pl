@@ -2,7 +2,7 @@
 title: Warunki dopasowania dla ujednolicenia danych
 description: Dopasowanie encji w celu utworzenia ujednoliconych profili klientów.
 recommendations: false
-ms.date: 07/27/2022
+ms.date: 10/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: bbd2c5f441b85460250c11f02358ea67260278d6
+ms.sourcegitcommit: 52ea58c872b10f1e6f9d120be93df93cca1a12dd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304670"
+ms.lasthandoff: 10/26/2022
+ms.locfileid: "9721534"
 ---
 # <a name="match-conditions-for-data-unification"></a>Warunki dopasowania dla ujednolicenia danych
 
@@ -130,12 +130,12 @@ Jeśli na przykład reguła dopasowania zawiera nazwisko, miejscowość i datę 
 
 ### <a name="specify-custom-match-conditions"></a>Określanie niestandardowych warunków dopasowania
 
-Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne są cztery opcje:
+Określ warunki zastępowania domyślnej logiki dopasowania. Dostępne są cztery opcje:
 
-|Opcja  |Description |Przykład  |
+|Opcja  |opis |Przykład  |
 |---------|---------|---------|
-|Zawsze pasują     | Określa wartości, które są zawsze dopasowane.         |  Zawsze dopasowuje *Mike* i *MikeR*.       |
-|Nigdy nie pasują     | Określa wartości, które nigdy nie są dopasowane.        | Nie dopasuje *John* i *Jonathan*.        |
+|Zawsze pasują     | Określa wartości dla kluczy podstawowych, które są zawsze dopasowane.         |  Zawsze należy dopasować wiersz z kluczem podstawowym *12345* do wiersza z kluczem podstawowym *54321*.       |
+|Nigdy nie pasują     | Określa wartości dla kluczy podstawowych, które nigdy nie są dopasowane.        | Nigdy nie dopasowuj wiersz z kluczem podstawowym *12345* do wiersza z kluczem podstawowym *54321*.        |
 |Obejdź            | Określa wartości, które system powinien zawsze ignorować na etapie dopasowania. |  Podczas dopasowania ignoruj wartości *11111* i *Nieznane*.        |
 |Mapowanie aliasu    | Zdefiniowanie wartości, które system powinien rozważyć jako tę samą wartość.         | Załóż, że *Joe* jest równe *Joseph*.        |
 
@@ -143,17 +143,18 @@ Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Przycisk Niestandardowy":::
 
-1. Wybierz **typ niestandardowy** i zaznacz **pobierz szablon**. Dla każdej opcji dopasowania trzeba mieć osobny szablon.
+1. Wybierz **typ niestandardowy** i zaznacz **pobierz szablon**. Zmień nazwę szablonu bez użycia spacji. Dla każdej opcji dopasowania użyj osobnego szablonu.
 
-1. Otwórz pobrany plik szablonu i wypełnij szczegóły. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
-    - Entity1: Sprzedaż
-    - Entity1Key: 12345
-    - Encja2: Kontakt
-    - Entity2Key: 34567
+1. Otwórz pobrany plik szablonu i wypełnij szczegóły. Szablon zawiera pola umożliwiające określenie encji i wartości kluczy podstawowych encji, które mają być używane w dopasowaniu niestandardowym. W nazwach encji jest rozróżniana wielkość liter. Na przykład aby klucz podstawowy *12345* z encji *Sprzedaż* zawsze był dopasowany do klucza podstawowego *34567* z encji *Kontakt*, wypełnij szablon:
+   - Entity1: Sprzedaż
+   - Entity1Key: 12345
+   - Encja2: Kontakt
+   - Entity2Key: 34567
 
    Ten sam plik szablonu może zawierać rekordy dopasowania niestandardowego pochodzące z wielu encji.
 
-   Jeśli chcesz określić niestandardowe dopasowanie do deduplikacji w encji, podaj tę samą jednostkę, co Entity1 i Entity2, i ustaw różne wartości klucza podstawowego.
+   > [!NOTE]
+   > Jeśli chcesz określić niestandardowe dopasowanie do deduplikacji w encji, podaj tę samą jednostkę, co Entity1 i Entity2, i ustaw różne wartości klucza podstawowego. Do użycia niestandardowego dopasowania należy zdefiniować co najmniej jedną regułę deduplikacji dla encji.
 
 1. Po dodaniu wszystkich zastąpień zapisz plik szablonu.
 
@@ -169,6 +170,8 @@ Można określić warunki zastępowania domyślnej logiki dopasowania. Dostępne
    - W przypadku **Pominięcie** lub **Mapowania aliasu** wybierz **Edytuj** w istniejącej regule dopasowania lub utwórz nową regułę. W liście rozwijanej Normalizacje wybierz opcję **Pominięcie niestandardowe** lub **Mapowanie aliasu** i wybierz **Wykonano**.
 
 1. Wybierz **Gotowe** w panelu **Niestandardowe**, aby zastosować niestandardową konfigurację dopasowania.
+
+   Każdy przejmowany plik szablonu jest swoim własnym źródłem danych. Jeśli zostaną wykryte rekordy, które wymagają specjalnego dopasowania, należy zaktualizować odpowiednie źródło danych. Aktualizacja będzie używana podczas następnego procesu unifikacji. Na przykład identyfikujesz bliźnięta o prawie tym samym imieniu mieszkające pod tym samym adresem, które zostały połączone jako jedna osoba. Zaktualizuj źródło danych, aby zidentyfikować jednostki jako oddzielne, unikatowe rekordy.
 
 > [!div class="nextstepaction"]
 > [Następny krok: Ujednolicenie pól](merge-entities.md)
