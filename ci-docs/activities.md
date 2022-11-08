@@ -1,12 +1,12 @@
 ---
 title: Działania związane z klientami lub kontaktami biznesowymi
 description: Definiowanie działań klientów i wyświetlanie ich na osi czasu w profilach klientów.
-ms.date: 08/12/2022
+ms.date: 10/26/2022
 ms.subservice: audience-insights
 ms.reviewer: v-wendysmith
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: srivas15
+ms.author: shsri
 manager: shellyha
 searchScope:
 - ci-entities
@@ -17,12 +17,12 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: d8caa477278f04c3a0a95ced15f4bea2a22aa8cd
+ms.sourcegitcommit: da6a2d189edacc8f2c0f2abedcb28245f26fe74c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304118"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9723794"
 ---
 # <a name="customer-or-business-contact-activities"></a>Działania związane z klientami lub kontaktami biznesowymi
 
@@ -41,6 +41,9 @@ Encja musi zawierać co najmniej jeden atrybut typu **Data**, który ma zostać 
    - **Nazwa działania**: wybierz nazwę działania.
    - **Encja działań**: Wybierz encję zawierającą dane transakcyjne lub działania.
    - **Klucz podstawowy**: Wybierz pole, które jednoznacznie identyfikuje rekord. Nie może ono zawierać żadnych powielonych wartości, pustych wartości ani brakujących wartości.
+
+     > [!NOTE]
+     > Klucz podstawowy każdego wiersza musi pozostać spójny podczas operacji odświeżania źródła danych. Jeśli klucz podstawowy wiersza zostanie zaktualizowany podczas odświeżania źródła danych, utworzy duplikaty w encji działania wyjściowego. 
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Skonfiguruj dane działań za pomocą nazwy, encji i klucza podstawowego.":::
 
@@ -132,7 +135,15 @@ W przypadku kont firmowych (od B do B) użyj encji *ContactProfile*, aby rejestr
 
 1. Wybierz **Dodaj działanie**.
 
-1. Nazwij aktywność, wybierz źródłową encję aktywności i wybierz klucz główny encji aktywności.
+1. W kroku **Dane dotyczące działania** wpisz następujące informacje:
+
+   - **Nazwa działania**: wybierz nazwę działania.
+   - **Encja działań**: Wybierz encję zawierającą dane transakcyjne lub działania.
+   - **Klucz podstawowy**: Wybierz pole, które jednoznacznie identyfikuje rekord. Nie może ono zawierać żadnych powielonych wartości, pustych wartości ani brakujących wartości.
+
+     > [!NOTE]
+     > Klucz podstawowy każdego wiersza musi pozostać spójny podczas operacji odświeżania źródła danych. Jeśli klucz podstawowy wiersza zostanie zaktualizowany podczas odświeżania źródła danych, utworzy duplikaty w encji działania wyjściowego. 
+
 
 1. W kroku **Relacje** utwórz pośrednią relację między danymi źródłowymi aktywności a kontami, używając danych kontaktowych jako jednostki pośredniczącej. Aby uzyskać więcej informacji, przejdź do [ścieżek relacji bezpośredniej i pośredni](relationships.md#relationship-paths).
    - Przykładowa relacja dla działania o nazwie *Zakupy*:

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195027"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724629"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Eksportowanie segmentów do Menedżera reklam serwisu Facebook (wersja zapoznawcza)
 
@@ -25,11 +25,13 @@ Eksportuj segmenty zunifikowanych profilów klientów do Menedżera Facebook Ads
 
 - Musisz mieć [konto reklamowe Facebook Ads](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) zawierające [konto firmowe Facebook Business](https://business.facebook.com/).
 - Administrator do uprawnienia [Konto Facebook Ads](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Niestandardowe warunki dotyczące odbiorców muszą być zaakceptowane przez użytkownika konfigurującego połączenie w aplikacji Customer Insights.
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
 - Do 10 miliona profili klientów na eksport do Facebook Ads Manager, co może zająć do 90 minut.
 - Tylko segmenty.
+- Integracja Facebook Ads nie obsługuje użytkowników z ponad 25 kontami reklamowymi.
 - Typ *listy klientów* Facebook tylko dla [odbiorców niestandardowych](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
   > [!NOTE]
   > W niektórych przypadkach na liście rozwijanej mogą być widoczne niestandardowe grupy odbiorców różnych typów. W przypadku wybrania innego typu niż *lista klientów*, eksport nie powiedzie się.

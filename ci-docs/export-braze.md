@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
-ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
+ms.openlocfilehash: a3967008ec166cb6f099659b0791f1318126c0da
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "9655280"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725229"
 ---
 # <a name="export-segments-to-braze-preview"></a>Eksportowanie segmentów do Braze (wersja zapoznawcza)
 
@@ -29,6 +29,7 @@ Eksportuj segmenty ujednoliconych profili klientów do Braze i wykorzystuj je do
 
 ## <a name="known-limitations"></a>Znane ograniczenia
 
+- Link prywatny w połączeniu z opcją BYOS (Bring your owne storage) nie jest obsługiwany.
 - Przenieś milion profili klientów do Braze, co może zająć do 40 minut. Liczba profilów klientów, które można eksportować do usługi Braze, zależy od kontraktu z usługą Braze.
 - Tylko segmenty.
 - Usługa Azure Private Link nie jest obsługiwana w przypadku eksportowania w usłudze Braze.
