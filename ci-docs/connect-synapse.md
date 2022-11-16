@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 7bc0c3614e6dd39fbd65ae098ed679d95d09de9d
-ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
+ms.openlocfilehash: 675fd03c44a7a7a492b111895d79c2e77f93a5b5
+ms.sourcegitcommit: 4ba74816ebfa46412c64c40a61e1f31c4ccc40f2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2022
-ms.locfileid: "9259811"
+ms.lasthandoff: 11/03/2022
+ms.locfileid: "9738169"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Połącz źródło danych usługi Azure Synapse Analytics (wersja zapoznawcza)
 
@@ -45,7 +45,7 @@ Aby uzyskać więcej informacji, zobacz [Omówienie usługi Azure Synapse](/azur
 
 - *[Tożsamość zarządzanego obszaru roboczego Azure Synapse](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* musi mieć uprawnienia **Współautor danych w usłudze Blob Storage** na koncie Azure Data Lake Storage Gen2, na którym zlokalizowane są dane i połączone z obszarem roboczym Azure Synapse. Więcej informacji na temat [używania portalu Azure w celu przydzielania roli Azure, aby uzyskać dostęp do danych kolejki i danych blob](/azure/storage/common/storage-auth-aad-rbac-portal) oraz [Współautor danych w usłudze Blob Storage — uprawnienia](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- W Azure Synapse workspace, *nazwa główna usługi Customer Insights*, którą jest „Dynamics 365 AI for Customer Insights”, ma przypisaną rolę **Administrator Synapse**. Aby uzyskać więcej informacji, zobacz temat [Jak skonfigurować formant dostępu dla obszaru roboczego Synapse](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- W Azure Synapse workspace, *nazwa główna usługi Customer Insights*, którą jest „Dynamics 365 AI for Customer Insights”, ma przypisaną rolę **Administrator Synapse**. **Użytkownik** mieć co najmniej rolę **Współautor Synapse** przypisaną do obszaru roboczego. Aby uzyskać więcej informacji, zobacz temat [Jak skonfigurować formant dostępu dla obszaru roboczego Synapse](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
 - Jeśli środowisko Customer Insights przechowuje dane we [własnym Azure Data Lake Storage](own-data-lake-storage.md), użytkownik, który konfiguruje połączenie z Azure Synapse Analytics, musi mieć co najmniej wbudowaną rolę **Czytelnik** dla konta magazyny Data Lake Storage. Aby uzyskać więcej informacji, zobacz [przypisywanie ról Azure za pomocą portalu Azure](/azure/role-based-access-control/role-assignments-portal).
 
